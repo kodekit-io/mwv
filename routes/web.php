@@ -28,6 +28,7 @@ Route::group(['middleware' => 'auth'], function () {
     Route::get('/project-management', 'ProjectController@index');
     Route::get('/add-project', 'ProjectController@add');
     Route::post('/save-project', 'ProjectController@saveProject');
+    Route::get('/chart-1/{pid}', 'ChartController@chartOne');
 });
 
 Route::get( '/apiclient', function() {
