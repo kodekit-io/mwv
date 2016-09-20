@@ -28,6 +28,8 @@ Route::group(['middleware' => 'auth'], function () {
     Route::get('/project-management', 'ProjectController@index');
     Route::get('/add-project', 'ProjectController@add');
     Route::post('/save-project', 'ProjectController@saveProject');
+    Route::get('/project-detail/{pid}', 'ProjectController@detail');
+
     Route::get('/chart-1/{pid}', 'ChartController@chartOne');
 });
 

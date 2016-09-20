@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\ApiService;
+use App\ChartService;
 use Illuminate\Http\Request;
 
 use App\Http\Requests;
@@ -50,7 +51,19 @@ class ProjectController extends Controller
                 ->withInput()
                 ->with(['message' => $response->msg]);
         }
+    }
 
+    public function detail($projectId)
+    {
+        $chartService = new ChartService($this->apiService);
+        $chart = $chartService->projectChart($projectId, '1,2,3,4');
 
+        $data['brandEquity'] = \GuzzleHttp\json_encode($chart->brandEquity);
+        $data['shareOfVoice'] = \GuzzleHttp\json_encode($chart->shareOfVoice);
+        $data['volumeTrending'] = \GuzzleHttp\json_encode($chart->volumeTrending);
+        $data['mediaDistribution'] = \GuzzleHttp\json_encode($chart->mediaDistribution);
+        $data['projectId'] = $projectId;
+
+        return view('project-detail', $data);
     }
 }
