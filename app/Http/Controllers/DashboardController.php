@@ -25,13 +25,12 @@ class DashboardController extends Controller
         $projects = $this->apiService->projectList();
         $data['projects'] = $projects;
 
-         foreach ($projects as $project) {
-             $chart = $this->projectChart($project->pid, '1');
-             $data[$project->pid]['project'] = $project;
-             $data[$project->pid]['brandEquity'] = $chart->brandEquity;
-         }
-
-        // var_dump($data);
+        foreach ($projects as $project) {
+            $chart = $this->projectChart($project->pid, '1');
+            if ($chart) {
+                $data['charts'][$project->pid]['brandEquity'] = \GuzzleHttp\json_encode($chart->brandEquity);
+            }
+        }
 
         return view('home', $data);
     }
@@ -42,10 +41,10 @@ class DashboardController extends Controller
             'pid' => $projectId,
             'widgetID' => $chartIds,
             'StartDate' => '2016-08-01',
-            'EndDate' => '2016-08-2',
+            'EndDate' => date('Y-m-d'),
             'sentiment' => '1,0,-1'
         ];
 
-        return $this->apiService->post('dashboard/analytics/charts', $params);
+        return $this->apiService->getChart($params);
     }
 }

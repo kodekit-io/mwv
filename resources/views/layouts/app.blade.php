@@ -86,8 +86,9 @@
     <script src="/js/app.js"></script>
     <script src="http://code.highcharts.com/highcharts.js"></script>
     <script src="https://code.highcharts.com/highcharts-more.js"></script>
-    <script src="http://code.highcharts.com/exporting.js"></script>
+    <script src="http://code.highcharts.com/modules/exporting.js"></script>
 
-    <script src="/js/dashboard.js"></script>
+    @section('page-level-scripts')
+    @show
 </body>
 </html>

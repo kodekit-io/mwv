@@ -1,5 +1,56 @@
-$(function () {
-    $('#container').highcharts({
+function brandChart($id, $data) {
+    if ($data.length === 0) {
+        $content.html("<div class='center'>No data chart</div>");
+    } else {
+        var $content = [];
+
+        var $netsen = 0,
+            $sim = 0,
+            $buzz = 0,
+            $uniq = 0,
+            $color = '',
+            $keywordID = '',
+            $keywordName = '',
+            $BrandFavourableTalkability = 0,
+            $EarnedMediaShare = 0,
+            $NetBrandReputation = 0;
+
+
+        for (var i = 0; i < $data.length; i++) {
+            $netsen = $data[i].netsen;
+            $sim = $data[i].sim;
+            $buzz = $data[i].buzz;
+            $uniq = $data[i].unquser;
+            $color = $data[i].color;
+            $keywordID = $data[i].keywordID;
+            $keywordName = $data[i].keywordName;
+            $BrandFavourableTalkability = $data[i].brandFavourableTalkability;
+            $EarnedMediaShare = $data[i].earnedMediaShare;
+            $NetBrandReputation = $data[i].netBrandReputation;
+
+            $content[i] = {
+                data: [
+                    {
+                        x: $netsen,
+                        y: $sim,
+                        z: $uniq,
+                        keywordId: $keywordID,
+                        name: $keywordName,
+                        BrandFavourableTalkability: $BrandFavourableTalkability,
+                        EarnedMediaShare: $EarnedMediaShare,
+                        NetBrandReputation: $NetBrandReputation,
+                        Buzz: $buzz
+                    }
+                ],
+                color: $color
+            };
+        } //end of for
+        showEquityChart($id, $content);
+    }
+}
+
+function showEquityChart($id, $data) {
+    $('#' + $id).highcharts({
 
         chart: {
             type: 'bubble',
@@ -71,16 +122,18 @@ $(function () {
             //}]
         },
 
-        //tooltip: {
-        //    useHTML: true,
-        //    headerFormat: '<table>',
-        //    pointFormat: '<tr><th colspan="2"><h3>{point.country}</h3></th></tr>' +
-        //    '<tr><th>Fat intake:</th><td>{point.x}g</td></tr>' +
-        //    '<tr><th>Sugar intake:</th><td>{point.y}g</td></tr>' +
-        //    '<tr><th>Obesity (adults):</th><td>{point.z}%</td></tr>',
-        //    footerFormat: '</table>',
-        //    followPointer: true
-        //},
+        tooltip: {
+            useHTML: true,
+            headerFormat: '<table><caption>{point.key}</caption>',
+            pointFormat: '<tr><td style="color: {series.color}">Net Sentiment</td><td style="text-align: right"><b>{point.x}</b></td></tr>' +
+            '<tr><td style="color: {series.color}">Sim Score</td><td style="text-align: right"><b>{point.y}</b></td></tr>' +
+            '<tr><td style="color: {series.color}">Unique User</td><td style="text-align: right"><b>{point.z}</b></td></tr>' +
+            '<tr><td style="color: {series.color}">Buzz Size</td><td style="text-align: right"><b>{point.Buzz}</b></td></tr>' +
+            '<tr><td style="color: {series.color}">Brand Favourable Talkability</td><td style="text-align: right"><b>{point.BrandFavourableTalkability}</b></td></tr>' +
+            '<tr><td style="color: {series.color}">Earned Media Share</td><td style="text-align: right"><b>{point.EarnedMediaShare}</b></td></tr>' +
+            '<tr><td style="color: {series.color}">Net Brand Reputation</td><td style="text-align: right"><b>{point.NetBrandReputation}</b></td></tr>',
+            footerFormat: '</table>',
+        },
 
         plotOptions: {
             series: {
@@ -91,25 +144,7 @@ $(function () {
             }
         },
 
-        series: [{
-            data: [
-                { x: 95, y: 95, z: 13.8, name: 'BE', country: 'Belgium' },
-                { x: 86.5, y: 102.9, z: 14.7, name: 'DE', country: 'Germany' },
-                { x: 80.8, y: 91.5, z: 15.8, name: 'FI', country: 'Finland' },
-                { x: 80.4, y: 102.5, z: 12, name: 'NL', country: 'Netherlands' },
-                { x: 80.3, y: 86.1, z: 11.8, name: 'SE', country: 'Sweden' },
-                { x: 78.4, y: 70.1, z: 16.6, name: 'ES', country: 'Spain' },
-                { x: 74.2, y: 68.5, z: 14.5, name: 'FR', country: 'France' },
-                { x: 73.5, y: 83.1, z: 10, name: 'NO', country: 'Norway' },
-                { x: 71, y: 93.2, z: 24.7, name: 'UK', country: 'United Kingdom' },
-                { x: 69.2, y: 57.6, z: 10.4, name: 'IT', country: 'Italy' },
-                { x: 68.6, y: 20, z: 16, name: 'RU', country: 'Russia' },
-                { x: 65.5, y: 126.4, z: 35.3, name: 'US', country: 'United States' },
-                { x: 65.4, y: 50.8, z: 28.5, name: 'HU', country: 'Hungary' },
-                { x: 63.4, y: 51.8, z: 15.4, name: 'PT', country: 'Portugal' },
-                { x: 64, y: 82.9, z: 31.3, name: 'NZ', country: 'New Zealand' }
-            ]
-        }]
+        series: $data
 
     });
-});
+};

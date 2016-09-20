@@ -32,7 +32,7 @@ class ApiAuthController extends Controller
         $params = $request->only(['username', 'password']);
         $params['appkey'] = config('services.mediawave.app_key');
 
-        $apiLoginResult = $this->apiService->post('auth/login', $params, false);
+        $apiLoginResult = $this->apiService->login($params);
 
         if ($apiLoginResult->status == 'OK') {
             $token = $apiLoginResult->token;

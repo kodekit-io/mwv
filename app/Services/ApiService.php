@@ -9,6 +9,10 @@ class ApiService
 {
     protected $apiBaseUrl;
     protected $client;
+    /**
+     * @var FakeResult
+     */
+    private $fakeResult;
 
     /**
      * ApiService constructor.
@@ -18,6 +22,7 @@ class ApiService
         $this->apiBaseUrl = config('services.mediawave.api_base_url');
 
         $this->client = new Client();
+        $this->fakeResult = new FakeResult();
     }
 
     public function post($url, $params, $withToken=true)
@@ -29,11 +34,6 @@ class ApiService
         $response = $this->client->post($apiUrl, [
             'form_params' => $params
         ]);
-
-//        if ($url == 'dashboard/analytics/charts') {
-//            print_r($params);
-//            exit;
-//        }
 
         $parsedResponse = $this->parseResponse($response);
 
@@ -63,6 +63,8 @@ class ApiService
         $projectListApi = $this->post('project/list', $params);
 
         return $projectListApi->projectList;
+        $fakeProjects = \GuzzleHttp\json_decode($this->fakeResult->fakeProjects());
+        return $fakeProjects->projectList;
     }
 
     public function addProject($projectName)
@@ -74,6 +76,28 @@ class ApiService
         $addProjectResponse = $this->post('project/add', $params);
 
         return $addProjectResponse;
+    }
+
+    public function login($params)
+    {
+        return $this->post('auth/login', $params, false);
+        $user = new \stdClass();
+        $user->userId = '837475';
+        $user->userName = 'Dummy User';
+        $dummy = new \stdClass();
+        $dummy->status = 'OK';
+        $dummy->token = '23ssdf';
+        $dummy->user = $user;
+        return $dummy;
+    }
+
+    public function getChart($params)
+    {
+        return $this->post('dashboard/analytics/charts', $params, true);
+        $fakeResult = $this->fakeResult->fakeChart($params['pid']);
+        if ($fakeResult) {
+            return \GuzzleHttp\json_decode($fakeResult);
+        }
     }
 
 
