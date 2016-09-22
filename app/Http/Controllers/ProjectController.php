@@ -57,7 +57,7 @@ class ProjectController extends Controller
     {
         $chartService = new ChartService($this->apiService);
         $chart = $chartService->projectChart($projectId, '1,2,3,4');
-
+        $data['project'] = $chart->project;
         $data['brandEquity'] = \GuzzleHttp\json_encode($chart->brandEquity);
         $data['shareOfVoice'] = \GuzzleHttp\json_encode($chart->shareOfVoice);
         $data['volumeTrending'] = \GuzzleHttp\json_encode($chart->volumeTrending);
