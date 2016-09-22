@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>MediaWave Platform</title>
+    <title>Login - MediaWave Platform</title>
 
     <link href="/favicon.ico" rel="shortcut icon">
 
@@ -16,9 +16,6 @@
     <link rel="stylesheet" href="{!! asset('mediawave/css/components/datepicker.min.css') !!}" />
     <link rel="stylesheet" href="{!! asset('mediawave/css/materialize.min.css') !!}" />
     <link rel="stylesheet" href="{!! asset('mediawave/css/main.css') !!}" />
-
-    @section('page-level-styles')
-    @show
 
     <!-- HTML5 Shiv and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -30,9 +27,31 @@
 </head>
 <body>
 
-@include('layouts.nav')
+<header class="uk-width-1-1 md-head-login gradient">
+    <img src="{!! asset('mediawave/img/logo-white.png') !!}" alt="MediaWave Dasboard" />
+</header>
+<h1 class="md-title-login uk-width-1-1 black white-text">LOGIN</h1>
+<main class="valign-wrapper">
+    <div class="uk-width-medium-1-3 uk-width-4-5 uk-container-center valign">
+        <form id="login" name="login" class="" method="post" action="{!! url('/login') !!}">
+            {!! csrf_field() !!}
+            <div class="input-field">
+                <i class="material-icons prefix">account_circle</i>
+                <input id="username" name="username" type="text" class="validate" required>
+                <label for="username">Username</label>
+            </div>
+            <div class="input-field">
+                <i class="material-icons prefix">lock</i>
+                <input id="password" name="password" type="password" class="validate" required>
+                <label for="password">Password</label>
+            </div>
+            <div class="input-field">
+                <button class="btn waves-effect waves-light btn-large uk-width-1-1 gradient-clearsky hoverable" type="submit" name="action">LOG ME IN!</button>
+            </div>
 
-@yield('content')
+        </form>
+    </div>
+</main>
 
 
 <footer class="page-footer grey lighten-3">
@@ -43,41 +62,8 @@
 
 <!-- link all the scripts -->
 <script src="{!! asset('mediawave/js/jquery.min.js') !!}"></script>
-<script src="{!! asset('mediawave/js/uikit.min.js') !!}"></script>
+<script src="{!! asset('mediawave/js/jquery.validate.min.js') !!}"></script>
 <script src="{!! asset('mediawave/js/materialize.min.js') !!}"></script>
-
-<script src="{!! asset('mediawave/js/html2canvas.js') !!}"></script>
-<script src="{!! asset('mediawave/js/html2canvas.svg.js') !!}"></script>
-<script src="{!! asset('mediawave/js/jquery.plugin.html2canvas.js') !!}"></script>
-
-@section('page-level-plugins')
-@show
-
 <script src="{!! asset('mediawave/js/main.js') !!}"></script>
-
-<script>
-    //Screenshot
-    function capture() {
-        $('main').html2canvas({
-            letterRendering: true,
-            background: '#E6E6E6',
-            onrendered: function (canvas) {
-                $('#img_screenshot').val(canvas.toDataURL("image/png"));
-                document.getElementById("screenshot").submit();
-            }
-        });
-    }
-</script>
-<div class="fixed-action-btn" style="bottom: 5px; right: 5px;">
-    <form id="screenshot" method="POST" enctype="multipart/form-data" action="screenshot.php">
-        <input type="hidden" name="img_screenshot" id="img_screenshot" value="" />
-        <a class="btn-floating tooltipped" data-position="left" data-delay="25" data-tooltip="Take a Screenshot" onclick="capture();">
-            <i class="material-icons">camera_enhance</i>
-        </a>
-    </form>
-</div>
-
-@section('page-level-scripts')
-@show
 </body>
 </html>

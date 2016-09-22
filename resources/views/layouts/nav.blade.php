@@ -1,16 +1,16 @@
 <header class="navbar-fixed">
     <nav class="md-head-container gradient-fluenza z-depth-0">
         <a href="home.php" title="MediaWave" class="left">
-            <img class="md-logo-head" src="assets/img/logo-white.png" alt="MediaWave" />
+            <img class="md-logo-head" src="{!! asset('mediawave/img/logo-white.png') !!}" alt="MediaWave" />
         </a>
         <h1 class="md-title-page left">
             <?php
-            if (isset($project)) {
+            if (isset($projectName)) {
                 echo '<a data-activates="projectlist" class="dropdown-button truncate">';
-                echo $pagetitle;
+                echo $pageTitle;
                 echo '<i class="material-icons right">arrow_drop_down</i></a>';
             } else {
-                echo $pagetitle;
+                echo $pageTitle;
             }
             ?>
         </h1>
@@ -23,7 +23,7 @@
 
         <ul class="right hide-on-med-and-down">
             <li>
-                <a href="home.php" name="topnav" class="tooltipped" data-position="bottom" data-delay="25" data-tooltip="Dashboard">
+                <a href="{!! url('/dashboard') !!}" name="topnav" class="tooltipped" data-position="bottom" data-delay="25" data-tooltip="Dashboard">
                     <i class="material-icons left">dashboard</i>All Projects
                 </a>
             </li>

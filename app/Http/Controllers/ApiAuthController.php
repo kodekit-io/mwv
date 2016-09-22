@@ -24,7 +24,7 @@ class ApiAuthController extends Controller
 
     public function getLogin()
     {
-        return view('login');
+        return view('mediawave.login');
     }
 
     public function postLogin(Request $request)

@@ -126,20 +126,21 @@
               //console.log('add key clicked with ' + kk + 'children');
                var fieldHTML_key = '<div id="key-'+kk+'" class="card z-depth-0"> \
                     <div class="card-content"> \
-                         <ul class="uk-grid uk-grid-small uk-grid-width-1-4 wrap_operation-'+kk+'" data-uk-grid-margin> \
+                         <ul class="uk-grid uk-grid-small uk-grid-width-medium-1-4 wrap_operation-'+kk+'"> \
                               <li> \
+                                   <label class="label_key"><i class="material-icons">label</i></label> \
                                    <input type="text" name="field_keys['+kk+'][]" value=""/> \
                               </li> \
                          </ul> \
                     </div> \
                     <div class="card-action"> \
-                         <a class="dropdown-button uk-button black" data-activates="opdrop-'+kk+'" title="Add Form">Add Form</a> \
+                         <a class="dropdown-button uk-button teal darken-4 white-text" data-activates="opdrop-'+kk+'" title="Add Form"><i class="uk-icon uk-icon-plus-square"></i> Add Form</a> \
                          <ul id="opdrop-'+kk+'" class="dropdown-content"> \
                               <li><a href="javascript:void(0);" class="add_and" onclick="addField('+kk+', \'and\')"> AND</a></li> \
                               <li><a href="javascript:void(0);" class="add_or" onclick="addField('+kk+', \'or\')"> OR</a></li> \
                               <li><a href="javascript:void(0);" class="add_not" onclick="addField('+kk+', \'not\')"> NOT</a></li> \
                          </ul> \
-                         <a class="uk-button red z-depth-0 right remove_key" onclick="removeKey(this)" title="Remove">Remove</a> \
+                         <a class="uk-button uk-margin-remove right red white-text remove_key" onclick="removeKey(this)" title="Remove Keyword"><i class="uk-icon uk-icon-minus-square"></i> Remove Keyword</a> \
                     </div> \
                </div>';
               $(wrap_all).append(fieldHTML_key);
@@ -180,7 +181,7 @@ function addField(id, type) {
     }
     console.log(label);
     var removebtn_and = '<a href="javascript:void(0);" class="uk-button uk-button-mini red accent-2 remove_and" onclick="deleteField(this)" title="Delete This"><i class="uk-icon uk-icon-close"></i></a>';
-    var fieldHTML_and = '<li class="input_and"><label>'+label+'</label><input class="field-keys" type="text" name="field_keys['+id+'][]" data-prefix="'+label+'" value=""/>'+removebtn_and+'</li>';
+    var fieldHTML_and = '<li class="input_'+label+'"><label>'+label+'</label><input class="field-keys" type="text" name="field_keys['+id+'][]" data-prefix="'+label+'" value=""/>'+removebtn_and+'</li>';
     $(wrapper).append(fieldHTML_and);
 }
 
@@ -191,5 +192,3 @@ function deleteField(el) {
 function removeKey(el) {
     $(el).closest('div.card').remove();
 }
-
-

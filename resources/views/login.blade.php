@@ -1,69 +1,59 @@
-<!DOCTYPE html>
-    <html>
+@extends('layouts.app')
 
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
+@section('content')
+    <div class="container">
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2">
+                <div class="panel panel-default">
+                    <div class="panel-heading">Login</div>
+                    <div class="panel-body">
+                        @if ($errors->has('error'))
+                            <div class="alert alert-danger">
+                                {!! $errors->first('error') !!}
+                            </div>
+                        @endif
+                        <form class="form-horizontal" role="form" method="POST" action="{{ url('/login') }}">
+                            {{ csrf_field() }}
 
-        <title>Login - MediaWave Platform</title>
+                            <div class="form-group{{ $errors->has('username') ? ' has-error' : '' }}">
+                                <label for="username" class="col-md-4 control-label">Username</label>
 
-        <link href="/favicon.ico" rel="shortcut icon">
+                                <div class="col-md-6">
+                                    <input id="username" type="text" class="form-control" name="username" value="{{ old('username') }}" required autofocus>
 
-        <!-- link all the styles -->
-        <!--<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i" />-->
-        <link rel="stylesheet" href="{!! asset('mediawave/css/uikit.min.css') !!}" />
-        <link rel="stylesheet" href="{!! asset('mediawave/css/components/datepicker.min.css') !!}" />
-        <link rel="stylesheet" href="{!! asset('mediawave/css/materialize.min.css') !!}" />
-        <link rel="stylesheet" href="{!! asset('mediawave/css/main.css') !!}" />
+                                    @if ($errors->has('username'))
+                                        <span class="help-block">
+                                        <strong>{{ $errors->first('username') }}</strong>
+                                    </span>
+                                    @endif
+                                </div>
+                            </div>
 
-        <!-- HTML5 Shiv and Respond.js IE8 support of HTML5 elements and media queries -->
-        <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-        <!--[if lt IE 9]>
-        <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
-        <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-        <![endif]-->
+                            <div class="form-group{{ $errors->has('password') ? ' has-error' : '' }}">
+                                <label for="password" class="col-md-4 control-label">Password</label>
 
-    </head>
-    <body>
+                                <div class="col-md-6">
+                                    <input id="password" type="password" class="form-control" name="password" required>
 
-    <header class="uk-width-1-1 md-head-login gradient">
-        <img src="{!! asset('mediawave/img/logo-white.png') !!}" alt="MediaWave Dasboard" />
-    </header>
-    <h1 class="md-title-login uk-width-1-1 black white-text">LOGIN</h1>
-    <main class="valign-wrapper">
-        <div class="uk-width-medium-1-3 uk-width-4-5 uk-container-center valign">
-            <form id="login" name="login" class="" method="post" action="{!! url('/login') !!}">
-                {!! csrf_field() !!}
-                <div class="input-field">
-                    <i class="material-icons prefix">account_circle</i>
-                    <input id="username" name="username" type="text" class="validate" required>
-                    <label for="username">Username</label>
+                                    @if ($errors->has('password'))
+                                        <span class="help-block">
+                                        <strong>{{ $errors->first('password') }}</strong>
+                                    </span>
+                                    @endif
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <div class="col-md-8 col-md-offset-4">
+                                    <button type="submit" class="btn btn-primary">
+                                        Login
+                                    </button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
                 </div>
-                <div class="input-field">
-                    <i class="material-icons prefix">lock</i>
-                    <input id="password" name="password" type="password" class="validate" required>
-                    <label for="password">Password</label>
-                </div>
-                <div class="input-field">
-                    <button class="btn waves-effect waves-light btn-large uk-width-1-1 gradient-clearsky hoverable" type="submit" name="action">LOG ME IN!</button>
-                </div>
-
-            </form>
+            </div>
         </div>
-    </main>
-
-
-    <footer class="page-footer grey lighten-3">
-        <div class="footer-copyright md-head-container grey-text">
-            &copy; <?php echo date('Y'); ?> Copyright <a class="grey-text" href="http://www.mediawave.biz" target="_blank" title="MediaWave">MediaWave</a>
-        </div>
-    </footer>
-
-    <!-- link all the scripts -->
-    <script src="{!! asset('mediawave/js/jquery.min.js') !!}"></script>
-    <script src="{!! asset('mediawave/js/jquery.validate.min.js') !!}"></script>
-    <script src="{!! asset('mediawave/js/materialize.min.js') !!}"></script>
-    <script src="{!! asset('mediawave/js/main.js') !!}"></script>
-    </body>
-    </html>
+    </div>
+@endsection

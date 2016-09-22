@@ -24,6 +24,7 @@ class DashboardController extends Controller
     {
         $projects = $this->apiService->projectList();
         $data['projects'] = $projects;
+        $data['pageTitle'] = 'Dashboard';
 
 //        foreach ($projects as $project) {
 //            $chart = $this->projectChart($project->pid, '1');
@@ -32,7 +33,7 @@ class DashboardController extends Controller
 //            }
 //        }
 
-        return view('home', $data);
+        return view('mediawave.home', $data);
     }
 
 

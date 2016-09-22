@@ -70,6 +70,10 @@ function showEquityChart($id, $data) {
         //    text: 'Source: <a href="http://www.euromonitor.com/">Euromonitor</a> and <a href="https://data.oecd.org/">OECD</a>'
         //},
 
+        title: {
+            text: 'Brand Equity'
+        },
+
         xAxis: {
             gridLineWidth: 1,
             title: {
@@ -122,17 +126,32 @@ function showEquityChart($id, $data) {
             //}]
         },
 
+        //tooltip: {
+        //    useHTML: true,
+        //    headerFormat: '<table><caption>{point.key}</caption>',
+        //    pointFormat: '<tr><td style="color: {series.color}">Net Sentiment</td><td style="text-align: right"><b>{point.x}</b></td></tr>' +
+        //    '<tr><td style="color: {series.color}">Sim Score</td><td style="text-align: right"><b>{point.y}</b></td></tr>' +
+        //    '<tr><td style="color: {series.color}">Unique User</td><td style="text-align: right"><b>{point.z}</b></td></tr>' +
+        //    '<tr><td style="color: {series.color}">Buzz Size</td><td style="text-align: right"><b>{point.Buzz}</b></td></tr>' +
+        //    '<tr><td style="color: {series.color}">Brand Favourable Talkability</td><td style="text-align: right"><b>{point.BrandFavourableTalkability}</b></td></tr>' +
+        //    '<tr><td style="color: {series.color}">Earned Media Share</td><td style="text-align: right"><b>{point.EarnedMediaShare}</b></td></tr>' +
+        //    '<tr><td style="color: {series.color}">Net Brand Reputation</td><td style="text-align: right"><b>{point.NetBrandReputation}</b></td></tr>',
+        //    footerFormat: '</table>',
+        //},
+
         tooltip: {
             useHTML: true,
-            headerFormat: '<table><caption>{point.key}</caption>',
-            pointFormat: '<tr><td style="color: {series.color}">Net Sentiment</td><td style="text-align: right"><b>{point.x}</b></td></tr>' +
-            '<tr><td style="color: {series.color}">Sim Score</td><td style="text-align: right"><b>{point.y}</b></td></tr>' +
-            '<tr><td style="color: {series.color}">Unique User</td><td style="text-align: right"><b>{point.z}</b></td></tr>' +
-            '<tr><td style="color: {series.color}">Buzz Size</td><td style="text-align: right"><b>{point.Buzz}</b></td></tr>' +
-            '<tr><td style="color: {series.color}">Brand Favourable Talkability</td><td style="text-align: right"><b>{point.BrandFavourableTalkability}</b></td></tr>' +
-            '<tr><td style="color: {series.color}">Earned Media Share</td><td style="text-align: right"><b>{point.EarnedMediaShare}</b></td></tr>' +
-            '<tr><td style="color: {series.color}">Net Brand Reputation</td><td style="text-align: right"><b>{point.NetBrandReputation}</b></td></tr>',
-            footerFormat: '</table>',
+            headerFormat: '<ul class="uk-list uk-margin-remove">',
+            pointFormat: '<li><strong>{point.name}</strong></li>' +
+            '<li>Net Sentiment: {point.x}</li>' +
+            '<li>Sims Score: {point.y}</li>' +
+            '<li>Unique User: {point.z}</li>' +
+            '<li>Buzz Size: {point.Buzz}</li>' +
+            '<li>Brand Favourable Talkability: {point.BrandFavourableTalkability}</li>' +
+            '<li>Earned Media Share: {point.EarnedMediaShare}</li>' +
+            '<li>Net Brand Reputation: {point.NetBrandReputation}</li>',
+            footerFormat: '</ul>',
+            followPointer: true
         },
 
         plotOptions: {
