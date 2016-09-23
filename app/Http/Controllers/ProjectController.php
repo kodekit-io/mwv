@@ -36,7 +36,8 @@ class ProjectController extends Controller
 
     public function add()
     {
-        return view('add-project');
+        $data['pageTitle'] = 'Add Project';
+        return view('mediawave.add-project', $data);
     }
 
     public function saveProject(Request $request)

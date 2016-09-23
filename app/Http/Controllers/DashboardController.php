@@ -26,13 +26,6 @@ class DashboardController extends Controller
         $data['projects'] = $projects;
         $data['pageTitle'] = 'Dashboard';
 
-//        foreach ($projects as $project) {
-//            $chart = $this->projectChart($project->pid, '1');
-//            if ($chart) {
-//                $data['charts'][$project->pid]['brandEquity'] = \GuzzleHttp\json_encode($chart->brandEquity);
-//            }
-//        }
-
         return view('mediawave.home', $data);
     }
 

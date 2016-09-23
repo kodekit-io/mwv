@@ -26,7 +26,7 @@ Route::get('/logout', 'ApiAuthController@logout');
 Route::group(['middleware' => 'auth'], function () {
     Route::get('/dashboard', 'DashboardController@index');
     Route::get('/project-management', 'ProjectController@index');
-    Route::get('/add-project', 'ProjectController@add');
+    Route::get('/create-project', 'ProjectController@add');
     Route::post('/save-project', 'ProjectController@saveProject');
     Route::get('/project-detail/{pid}', 'ProjectController@detail');
 

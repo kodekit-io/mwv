@@ -33,7 +33,7 @@
                 </a>
             </li>
             <li>
-                <a href="project-create.php" name="topnav" class="tooltipped" data-position="bottom" data-delay="25" data-tooltip="New Project">
+                <a href="/create-project" name="topnav" class="tooltipped" data-position="bottom" data-delay="25" data-tooltip="New Project">
                     <i class="material-icons left">add_circle</i>New Project
                 </a>
             </li>
