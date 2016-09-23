@@ -4,6 +4,16 @@
 <main class="">
     <div class="md-container">
         <div class="uk-grid uk-grid-width-medium-1-2 uk-grid-width-large-1-3 uk-grid-width-xlarge-1-4 uk-grid-medium uk-grid-match" data-uk-grid-margin>
+             <div>
+                 <div class="uk-panel uk-panel-box valign-wrapper">
+                     <div class="valign uk-width-1-1 uk-text-center">
+                         <a href="#" title="Create New Project">
+                             <i class="material-icons light-blue-text large">add_circle</i>
+                         </a>
+                         <h6 class="uk-margin-bottom-remove light-blue-text">CREATE NEW PROJECT</h6>
+                     </div>
+                 </div>
+             </div>
             @foreach($projects as $project)
             <div>
                 <div id="deletID-{!! $project->pid !!}" class="modal">
@@ -33,16 +43,7 @@
                 </div>
             </div>
             @endforeach
-            <div>
-                <div class="uk-panel uk-panel-box valign-wrapper">
-                    <div class="valign uk-width-1-1 uk-text-center">
-                        <a href="#" title="Create New Project">
-                            <i class="material-icons light-blue-text large">add_circle</i>
-                        </a>
-                        <h6 class="uk-margin-bottom-remove light-blue-text">CREATE NEW PROJECT</h6>
-                    </div>
-                </div>
-            </div>
+
         </div>
     </div>
 </main>
@@ -66,8 +67,11 @@
                     url : '{{ url('chart-1/' . $project->pid) }}',
                     beforeSend : function(xhr) {
                         $('#' + 'container-{!! $project->pid !!}').block({
-                            message: '<span>Processing</span>',
-                            css: { border: '3px solid #a00' }
+                            //message: '<span>Processing</span>',
+                            //css: { border: '3px solid #a00' }
+                            message: '<img src="{!! asset('mediawave/img/spinner.gif') !!}">',
+                            css: { border: 'none', marginTop: '-32px' },
+                            overlayCSS: { backgroundColor: '#fff', zIndex: 100 }
                         });
                     },
                     complete : function(xhr, status) {
