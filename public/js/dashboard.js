@@ -141,15 +141,15 @@ function showEquityChart($id, $data) {
 
         tooltip: {
             useHTML: true,
-            headerFormat: '<ul class="uk-list uk-margin-remove">',
-            pointFormat: '<li><strong>{point.name}</strong></li>' +
-            '<li>Net Sentiment: {point.x}</li>' +
-            '<li>Sims Score: {point.y}</li>' +
-            '<li>Unique User: {point.z}</li>' +
-            '<li>Buzz Size: {point.Buzz}</li>' +
-            '<li>Brand Favourable Talkability: {point.BrandFavourableTalkability}</li>' +
-            '<li>Earned Media Share: {point.EarnedMediaShare}</li>' +
-            '<li>Net Brand Reputation: {point.NetBrandReputation}</li>',
+            headerFormat: '<ul class="uk-list uk-margin-remove" style="width:200px;">',
+            pointFormat: '<li><h6 class="white-text uk-margin-remove">{point.name}</h6></li>' +
+            '<li>Net Sentiment: <div class="right">{point.x}</div></li>' +
+            '<li>Sims Score: <div class="right">{point.y}</div></li>' +
+            '<li>Unique User: <div class="right">{point.z}</div></li>' +
+            '<li>Buzz Size: <div class="right">{point.Buzz}</div></li>' +
+            '<li>Brand Favourable Talkability: <div class="right">{point.BrandFavourableTalkability}</div></li>' +
+            '<li>Earned Media Share: <div class="right">{point.EarnedMediaShare}</div></li>' +
+            '<li>Net Brand Reputation: <div class="right">{point.NetBrandReputation}</div></li>',
             footerFormat: '</ul>',
             followPointer: true
         },
