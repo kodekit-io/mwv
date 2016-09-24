@@ -1,6 +1,6 @@
 <header class="navbar-fixed">
     <nav class="md-head-container gradient-fluenza z-depth-0">
-        <a href="home.php" title="MediaWave" class="left">
+        <a href="{!! url('/dashboard') !!}" title="MediaWave" class="left">
             <img class="md-logo-head" src="{!! asset('mediawave/img/logo-white.png') !!}" alt="MediaWave" />
         </a>
         <h1 class="md-title-page left">
@@ -33,7 +33,7 @@
                 </a>
             </li>
             <li>
-                <a href="/create-project" name="topnav" class="tooltipped" data-position="bottom" data-delay="25" data-tooltip="New Project">
+                <a href="{!! url('/create-project') !!}" name="topnav" class="tooltipped" data-position="bottom" data-delay="25" data-tooltip="New Project">
                     <i class="material-icons left">add_circle</i>New Project
                 </a>
             </li>

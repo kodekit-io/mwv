@@ -16,21 +16,47 @@
              </div>
             @foreach($projects as $project)
             <div>
-                <div id="deletID-{!! $project->pid !!}" class="modal">
-                    <div class="modal-content">
-                        <h4>Are you sure?</h4>
-                        <p>Is this good bye? There will be no way of going back, dude!</p>
-                    </div>
-                    <div class="modal-footer">
-                        <a href="#" class=" modal-action modal-close waves-effect waves-light btn red z-depth-0 uk-margin-small-right">YES!</a>
-                        <a href="#" class=" modal-action modal-close waves-effect waves-green btn grey z-depth-0 uk-margin-right">CANCEL</a>
-                    </div>
+                <div id="edit-{!! $project->pid !!}" class="modal modal-fixed-footer modal-small">
+                    <form id="" name="" class="" method="post" action="">
+                         <div class="modal-content">
+                             <h4>Edit Project</h4>
+                             <p>Provide your password then click EDIT to continue</p>
+                                {!! csrf_field() !!}
+                                <div class="input-field">
+                                    <i class="material-icons prefix">lock</i>
+                                    <input id="password" name="password" type="password" class="validate" required>
+                                    <label for="password">Password</label>
+                                </div>
+                         </div>
+                         <div class="modal-footer">
+                             <a href="#" class="left uk-width-medium-2-5 modal-action modal-close waves-effect waves-green btn grey z-depth-0">CANCEL</a>
+                             <button class="uk-width-medium-2-5 modal-action modal-close waves-effect waves-light btn blue z-depth-0" type="submit" name="action">EDIT</button>
+                         </div>
+                    </form>
+                </div>
+                <div id="delete-{!! $project->pid !!}" class="modal modal-fixed-footer modal-small">
+                    <form id="" name="" class="" method="post" action="">
+                         <div class="modal-content">
+                             <h4>Are you sure?</h4>
+                             <p>Provide your password then click YES to DELETE this project</p>
+                                {!! csrf_field() !!}
+                                <div class="input-field">
+                                    <i class="material-icons prefix">lock</i>
+                                    <input id="password" name="password" type="password" class="validate" required>
+                                    <label for="password">Password</label>
+                                </div>
+                         </div>
+                         <div class="modal-footer">
+                             <a href="#" class="left uk-width-medium-2-5 modal-action modal-close waves-effect waves-green btn grey z-depth-0">CANCEL</a>
+                             <button class="uk-width-medium-2-5 modal-action modal-close waves-effect waves-light btn red z-depth-0" type="submit" name="action">YES!</button>
+                         </div>
+                    </form>
                 </div>
                 <div class="md-card hoverable">
                     <div class="md-card-toolbar">
                         <div class="md-card-toolbar-actions">
-                            <a class="btn waves-effect waves-light z-depth-0 cyan tooltipped" data-position="top" data-delay="25" data-tooltip="Edit Project"><i class="material-icons md-icon">mode_edit</i></a>
-                            <a href="#deletID-{!! $project->pid !!}" class="btn waves-effect waves-light z-depth-0 red darken-4 tooltipped modal-trigger" data-position="top" data-delay="25" data-tooltip="Delete Project"><i class="material-icons md-icon">delete</i></a>
+                            <a href="#edit-{!! $project->pid !!}" class="btn waves-effect waves-light z-depth-0 cyan tooltipped modal-trigger" data-position="top" data-delay="25" data-tooltip="Edit Project"><i class="material-icons md-icon">mode_edit</i></a>
+                            <a href="#delete-{!! $project->pid !!}" class="btn waves-effect waves-light z-depth-0 red darken-4 tooltipped modal-trigger" data-position="top" data-delay="25" data-tooltip="Delete Project"><i class="material-icons md-icon">delete</i></a>
                         </div>
                         <h2 class="md-card-toolbar-heading-text">{!! $project->pname !!}</h2>
                     </div>

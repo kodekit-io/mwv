@@ -984,15 +984,15 @@ nav .nav-wrapper i {
 }
 
 /* Charts */
-@media only screen and (max-width: 767px) {
-}
-
-#deletID1, #deletID2 {
+.modal-small {
 	width: 25%;
 }
+.modal-small.modal-fixed-footer {
+	height: 40%;
+}
 
-@media only screen and (max-width: 767px) {
-	#deletID1, #deletID2 {
+@media only screen and (max-width: 768px) {
+	.modal-small {
 		width: 80%;
 	}
 }
