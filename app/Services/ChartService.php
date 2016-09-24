@@ -27,7 +27,16 @@ class ChartService
             'sentiment' => '1,0,-1'
         ];
 
-        return $this->apiService->getChart($params);
+        return $this->getChart($params);
+    }
+
+    public function getChart($params)
+    {
+        return $this->apiService->post('dashboard/analytics/charts', $params, true);
+        $fakeResult = $this->fakeResult->fakeChart($params['pid']);
+        if ($fakeResult) {
+            return \GuzzleHttp\json_decode($fakeResult);
+        }
     }
 
 }

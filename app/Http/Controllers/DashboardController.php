@@ -3,26 +3,27 @@
 namespace App\Http\Controllers;
 
 use App\ApiService;
+use App\ProjectService;
 use Illuminate\Http\Request;
 
 use App\Http\Requests;
 
 class DashboardController extends Controller
 {
-    protected $apiService;
+    private $projectService;
 
     /**
      * DashboardController constructor.
-     * @param $apiService
+     * @param ProjectService $projectService
      */
-    public function __construct(ApiService $apiService)
+    public function __construct(ProjectService $projectService)
     {
-        $this->apiService = $apiService;
+        $this->projectService = $projectService;
     }
 
     public function index()
     {
-        $projects = $this->apiService->projectList();
+        $projects = $this->projectService->projectList();
         $data['projects'] = $projects;
         $data['pageTitle'] = 'Dashboard';
 

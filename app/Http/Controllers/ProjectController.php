@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\ApiService;
 use App\ChartService;
+use App\ProjectService;
 use Illuminate\Http\Request;
 
 use App\Http\Requests;
@@ -11,21 +12,26 @@ use App\Http\Requests;
 class ProjectController extends Controller
 {
 
-    protected $apiService;
+    private $projectService;
+    /**
+     * @var ChartService
+     */
+    private $chartService;
 
     /**
      * ProjectController constructor.
-     * @param $apiService
+     * @param ProjectService $projectService
+     * @param ChartService $chartService
      */
-    public function __construct()
+    public function __construct(ProjectService $projectService, ChartService $chartService)
     {
-        $apiService = new ApiService();
-        $this->apiService = $apiService;
+        $this->projectService = $projectService;
+        $this->chartService = $chartService;
     }
 
     public function index()
     {
-        $data['projects'] = $this->apiService->projectList();
+        $data['projects'] = $this->projectService->projectList();
 //        $project1 = new \stdClass();
 //        $project1->pname = 'Project 1';
 //        $projects[] = $project1;
@@ -42,11 +48,9 @@ class ProjectController extends Controller
 
     public function saveProject(Request $request)
     {
-        $projectName = $request->input('name');
-        $response = $this->apiService->addProject($projectName);
-//        var_dump($response); exit;
+        $response = $this->projectService->addProject($request->except(['_token']));
         if ($response->status == 'OK') {
-            return redirect('project-management')->with(['message' => $response->msg]);
+            return redirect('dashboard')->with(['message' => $response->msg]);
         } else {
             return redirect('add-project')
                 ->withInput()
@@ -56,8 +60,8 @@ class ProjectController extends Controller
 
     public function detail($projectId)
     {
-        $chartService = new ChartService($this->apiService);
-        $chart = $chartService->projectChart($projectId, '1,2,3,4');
+        $chart = $this->chartService->projectChart($projectId, '1,2,3,4');
+        $data['pageTitle'] = 'Project Detail';
         $data['project'] = $chart->project;
         $data['brandEquity'] = \GuzzleHttp\json_encode($chart->brandEquity);
         $data['shareOfVoice'] = \GuzzleHttp\json_encode($chart->shareOfVoice);

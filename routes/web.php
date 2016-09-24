@@ -33,6 +33,10 @@ Route::group(['middleware' => 'auth'], function () {
     Route::get('/chart-1/{pid}', 'ChartController@chartOne');
 });
 
+Route::get('/datatable', function() {
+    return view('datatable');
+});
+
 Route::get( '/apiclient', function() {
 
     $client = new Client();

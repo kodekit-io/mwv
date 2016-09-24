@@ -30,6 +30,7 @@ class ApiService
         if ($withToken) {
             $params['auth_token'] = session('api_token');
         }
+//        var_dump($params); exit;
         $apiUrl = $this->apiBaseUrl . $url;
         $response = $this->client->post($apiUrl, [
             'form_params' => $params
@@ -55,29 +56,6 @@ class ApiService
         return $response;
     }
 
-    public function projectList()
-    {
-        $params = [
-            'uid'  => \Auth::user()->id
-        ];
-        $projectListApi = $this->post('project/list', $params);
-
-        return $projectListApi->projectList;
-        $fakeProjects = \GuzzleHttp\json_decode($this->fakeResult->fakeProjects());
-        return $fakeProjects->projectList;
-    }
-
-    public function addProject($projectName)
-    {
-        $params = [
-            'uid' => \Auth::user()->id,
-            'pname' => $projectName
-        ];
-        $addProjectResponse = $this->post('project/add', $params);
-
-        return $addProjectResponse;
-    }
-
     public function login($params)
     {
         return $this->post('auth/login', $params, false);
@@ -89,15 +67,6 @@ class ApiService
         $dummy->token = '23ssdf';
         $dummy->user = $user;
         return $dummy;
-    }
-
-    public function getChart($params)
-    {
-        return $this->post('dashboard/analytics/charts', $params, true);
-        $fakeResult = $this->fakeResult->fakeChart($params['pid']);
-        if ($fakeResult) {
-            return \GuzzleHttp\json_decode($fakeResult);
-        }
     }
 
 

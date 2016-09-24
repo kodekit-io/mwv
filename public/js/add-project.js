@@ -98,6 +98,16 @@ $(function(){
             var action = $(this).attr('data-prefix');
             $(this).val(action + ' ' + oldVal);
         });
+        $( ".field-topic" ).each(function( index ) {
+            var oldVal = $( this ).val();
+            var action = $(this).attr('data-prefix');
+            $(this).val(action + ' ' + oldVal);
+        });
+        $( ".field-excld" ).each(function( index ) {
+            var oldVal = $( this ).val();
+            var action = $(this).attr('data-prefix');
+            $(this).val(action + ' ' + oldVal);
+        });
         this.submit();
     });
 });
