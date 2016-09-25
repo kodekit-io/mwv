@@ -7,7 +7,7 @@
              <div>
                  <div class="uk-panel uk-panel-box valign-wrapper">
                      <div class="valign uk-width-1-1 uk-text-center">
-                         <a href="#" title="Create New Project">
+                         <a href="{!! url('/create-project') !!}" title="Create New Project">
                              <i class="material-icons light-blue-text large">add_circle</i>
                          </a>
                          <h6 class="uk-margin-bottom-remove light-blue-text">CREATE NEW PROJECT</h6>

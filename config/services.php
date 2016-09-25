@@ -38,6 +38,7 @@ return [
     'mediawave' => [
         'api_base_url' => env('MEDIAWAVE_API_BASE_URL'),
         'app_key' => env('MEDIAWAVE_APP_KEY'),
+        'api_mode' => env('MEDIAWAVE_API_MODE')
     ],
 
 ];

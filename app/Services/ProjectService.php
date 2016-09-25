@@ -6,24 +6,34 @@ class ProjectService
 {
 
     protected $apiService;
+    /**
+     * @var FakeResult
+     */
+    private $fakeResult;
+    private $apiMode;
 
     /**
      * ProjectService constructor.
      * @param $apiService
      */
-    public function __construct(ApiService $apiService)
+    public function __construct(ApiService $apiService, FakeResult $fakeResult)
     {
         $this->apiService = $apiService;
+        $this->fakeResult = $fakeResult;
+        $this->apiMode = config('services.mediawave.api_mode');
     }
 
     public function projectList()
     {
-        $params = [
-            'uid'  => \Auth::user()->id
-        ];
-        $projectListApi = $this->apiService->post('project/list', $params);
+        if ($this->apiMode == 'PRODUCTION') {
+            $params = [
+                'uid'  => \Auth::user()->id
+            ];
+            $projectListApi = $this->apiService->post('project/list', $params);
 
-        return $projectListApi->projectList;
+            return $projectListApi->projectList;
+        }
+
         $fakeProjects = \GuzzleHttp\json_decode($this->fakeResult->fakeProjects());
         return $fakeProjects->projectList;
     }

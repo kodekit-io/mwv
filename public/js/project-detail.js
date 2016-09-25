@@ -520,11 +520,13 @@ function shareMedia($id, $data) {
         /*
          End of information
          */
+        console.log($content);
         chartShareMedia($content, $id);
 
     }
 }
 function chartShareMedia(dataSet, id) {
+
     var $chartMedia = new Highcharts.Chart({
         chart: {
             //height: 300,
@@ -548,7 +550,7 @@ function chartShareMedia(dataSet, id) {
             pointFormat: '{series.name}: <b>{point.y}</b> ({point.percentage:.1f}%)<br/>'
         },
         xAxis: {
-            type: 'category'
+            categories: ['Twitter', 'Oranges', 'Pears', 'Grapes', 'Bananas']
         },
         plotOptions: {
              column: {

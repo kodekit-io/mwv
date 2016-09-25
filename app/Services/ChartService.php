@@ -7,14 +7,21 @@ class ChartService
 {
 
     protected $apiService;
+    /**
+     * @var FakeResult
+     */
+    private $fakeResult;
+    private $apiMode;
 
     /**
      * Chart constructor.
      * @param $apiService
      */
-    public function __construct(ApiService $apiService)
+    public function __construct(ApiService $apiService, FakeResult $fakeResult)
     {
         $this->apiService = $apiService;
+        $this->fakeResult = $fakeResult;
+        $this->apiMode = config('services.mediawave.api_mode');
     }
 
     public function projectChart($projectId, $chartIds)
@@ -32,11 +39,11 @@ class ChartService
 
     public function getChart($params)
     {
-        return $this->apiService->post('dashboard/analytics/charts', $params, true);
-        $fakeResult = $this->fakeResult->fakeChart($params['pid']);
-        if ($fakeResult) {
-            return \GuzzleHttp\json_decode($fakeResult);
+        if ($this->apiMode == 'PRODUCTION') {
+            return $this->apiService->post('dashboard/analytics/charts', $params, true);
         }
+        $fakeResult = $this->fakeResult->fakeChart($params['pid']);
+        return \GuzzleHttp\json_decode($fakeResult);
     }
 
 }

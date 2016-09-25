@@ -60,15 +60,21 @@ class ProjectController extends Controller
 
     public function detail($projectId)
     {
-        $chart = $this->chartService->projectChart($projectId, '1,2,3,4');
+        $chart = $this->chartService->projectChart($projectId, '1,2,3,4,5,6,7,8');
         $data['pageTitle'] = 'Project Detail';
         $data['project'] = $chart->project;
+
+        // var_dump($chart); exit;
+
         $data['brandEquity'] = \GuzzleHttp\json_encode($chart->brandEquity);
         $data['shareOfVoice'] = \GuzzleHttp\json_encode($chart->shareOfVoice);
         $data['volumeTrending'] = \GuzzleHttp\json_encode($chart->volumeTrending);
         $data['mediaDistribution'] = \GuzzleHttp\json_encode($chart->mediaDistribution);
+        $data['sentimentMediaDistribution'] = \GuzzleHttp\json_encode($chart->sentimentMediaDistribution);
+        $data['sentimentBrandDistributions'] = \GuzzleHttp\json_encode($chart->sentimentBrandDistributions);
+
         $data['projectId'] = $projectId;
 
-        return view('project-detail', $data);
+        return view('mediawave.project-detail', $data);
     }
 }
