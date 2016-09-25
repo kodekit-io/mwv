@@ -48,7 +48,7 @@
                 </a>
             </li>
             <li class="uk-margin-left">
-                <a href="#" class="uk-margin-remove md-btn-logout  tooltipped" data-position="bottom" data-delay="25" data-tooltip="LOGOUT">
+                <a href="{!! url('/logout') !!}" class="uk-margin-remove md-btn-logout  tooltipped" data-position="bottom" data-delay="25" data-tooltip="LOGOUT">
                     <span class="uk-border-circle black"><i class="material-icons">power_settings_new</i></span>
                 </a>
             </li>

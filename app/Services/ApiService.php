@@ -9,10 +9,8 @@ class ApiService
 {
     protected $apiBaseUrl;
     protected $client;
-    /**
-     * @var FakeResult
-     */
-    private $fakeResult;
+
+    private $apiMode;
 
     /**
      * ApiService constructor.
@@ -20,9 +18,8 @@ class ApiService
     public function __construct()
     {
         $this->apiBaseUrl = config('services.mediawave.api_base_url');
-
         $this->client = new Client();
-        $this->fakeResult = new FakeResult();
+        $this->apiMode = config('services.mediawave.api_mode');
     }
 
     public function post($url, $params, $withToken=true)
@@ -58,7 +55,10 @@ class ApiService
 
     public function login($params)
     {
-        return $this->post('auth/login', $params, false);
+        if ($this->apiMode == 'PRODUCTION') {
+            return $this->post('auth/login', $params, false);
+        }
+
         $user = new \stdClass();
         $user->userId = '837475';
         $user->userName = 'Dummy User';
