@@ -60,11 +60,11 @@ class ProjectController extends Controller
 
     public function detail($projectId)
     {
-        $chart = $this->chartService->projectChart($projectId, '1,2,3,4,5,6,7,8');
+        $chart = $this->chartService->projectChart($projectId, '1,2,3,4,5,6,12');
         $data['pageTitle'] = 'Project Detail';
         $data['project'] = $chart->project;
 
-        // var_dump($chart); exit;
+        //var_dump($chart); exit;
 
         $data['brandEquity'] = \GuzzleHttp\json_encode($chart->brandEquity);
         $data['shareOfVoice'] = \GuzzleHttp\json_encode($chart->shareOfVoice);
