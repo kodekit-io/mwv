@@ -99,8 +99,8 @@
                             </div>
                             <h2 class="md-card-toolbar-heading-text">BRAND EQUITY</h2>
                         </div>
-                        <div id="brand-equity-container" class="md-card-content">
-                            <div class="md-chart"></div>
+                        <div id="brandequity" class="md-card-content">
+                            <div id="brand-equity-container" class="md-chart"></div>
                         </div>
                     </div>
                 </li>
@@ -113,9 +113,9 @@
                             </div>
                             <div class="md-card-toolbar-heading-text">
                                 <ul class="uk-subnav uk-subnav-pill" data-uk-switcher="{connect:'#trend ul'}">
-                                    <li class="uk-active"><a>BUZZ</a></li>
-                                    <li><a>POST</a></li>
-                                    <li><a>REACH</a></li>
+                                    <li class="uk-active"><a>BUZZ TREND</a></li>
+                                    <li><a>POST TREND</a></li>
+                                    <li><a>REACH TREND</a></li>
                                     <li><a>INTERACTIONS</a></li>
                                 </ul>
                             </div>
@@ -149,7 +149,7 @@
                             <h2 class="md-card-toolbar-heading-text">BUZZ</h2>
                         </div>
                         <div id="buzz" class="md-card-content">
-                            <div class="md-chart"></div>
+                            <div id="id-chartnya-disini" class="md-chart"></div>
                         </div>
                     </div>
                 </li>
@@ -163,7 +163,7 @@
                             <h2 class="md-card-toolbar-heading-text">POST</h2>
                         </div>
                         <div id="post" class="md-card-content">
-                            <div class="md-chart"></div>
+                            <div id="id-chartnya-disini" class="md-chart"></div>
                         </div>
                     </div>
                 </li>
@@ -177,7 +177,7 @@
                             <h2 class="md-card-toolbar-heading-text">INTERACTIONS</h2>
                         </div>
                         <div id="interaction" class="md-card-content">
-                            <div class="md-chart"></div>
+                            <div id="id-chartnya-disini" class="md-chart"></div>
                         </div>
                     </div>
                 </li>
@@ -191,7 +191,7 @@
                             <h2 class="md-card-toolbar-heading-text">UNIQUE USERS</h2>
                         </div>
                         <div id="unique" class="md-card-content">
-                            <div class="md-chart"></div>
+                            <div id="id-chartnya-disini" class="md-chart"></div>
                         </div>
                     </div>
                 </li>
@@ -205,7 +205,7 @@
                             <h2 class="md-card-toolbar-heading-text">SENTIMENT</h2>
                         </div>
                         <div id="sentiment" class="md-card-content">
-                            <div class="md-chart"></div>
+                            <div id="id-chartnya-disini" class="md-chart"></div>
                         </div>
                     </div>
                 </li>
@@ -219,7 +219,7 @@
                             <h2 class="md-card-toolbar-heading-text">INTERACTION RATE</h2>
                         </div>
                         <div id="ir" class="md-card-content">
-                            <div class="md-chart"></div>
+                            <div id="id-chartnya-disini" class="md-chart"></div>
                         </div>
                     </div>
                 </li>
@@ -232,8 +232,8 @@
                             </div>
                             <h2 class="md-card-toolbar-heading-text">SHARE OF MEDIA</h2>
                         </div>
-                        <div id="share-media-container" class="md-card-content">
-                            <div class="md-chart"></div>
+                        <div id="mediashare" class="md-card-content">
+                            <div id="share-media-container" class="md-chart"></div>
                         </div>
                     </div>
                 </li>
@@ -247,9 +247,45 @@
                             <h2 class="md-card-toolbar-heading-text">WORD CLOUDS</h2>
                         </div>
                         <div id="wordcloud" class="md-card-content">
-                            <div class="md-chart"></div>
+                            <div id="id-chartnya-disini" class="md-chart"></div>
                         </div>
                     </div>
+                </li>
+                <li class="uk-width-medium-1-1">
+                    <div class="md-card hoverable">
+                        <div class="md-card-toolbar">
+                            <div class="md-card-toolbar-actions">
+                                <a class="btn waves-effect waves-light z-depth-0 amber lighten-4 tooltipped" data-position="top" data-delay="25" data-tooltip="Help"><i class="material-icons">help</i></a>
+                                <a class="btn waves-effect waves-light z-depth-0 green lighten-4 tooltipped" data-position="top" data-delay="25" data-tooltip="Minimize" data-uk-toggle="{target:'#author'}"><i class="material-icons md-icon">fullscreen</i></a>
+                            </div>
+                            <h2 class="md-card-toolbar-heading-text">INFLUENCER</h2>
+                        </div>
+                        <div id="author" class="md-card-content">
+                             <div id="tabel-container" class="uk-width-1-1">
+                                 <?php //AUTHOR ?>
+                                 <table id="" class="uk-table uk-table-striped uk-table-hover bordered" cellspacing="0" width="100%">
+                                     <thead>
+                                     <tr>
+                                         <th>Author</th>
+                                         <th>Popular</th>
+                                         <th>Active</th>
+                                         <th>Impact</th>
+                                         <th></th>
+                                     </tr>
+                                     </thead>
+                                     <tbody>
+                                     <tr>
+                                         <td></td>
+                                         <td></td>
+                                         <td></td>
+                                         <td></td>
+                                         <td></td>
+                                     </tr>
+                                     </tbody>
+                                 </table>
+                             </div>
+                        </div>
+                   </div>
                 </li>
                 <li class="uk-width-medium-1-1">
                     <div class="md-card hoverable">

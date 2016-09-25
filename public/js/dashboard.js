@@ -158,7 +158,11 @@ function showEquityChart($id, $data) {
             series: {
                 dataLabels: {
                     enabled: true,
-                    format: '{point.name}'
+                    format: '{point.name}',
+                    style: {
+                        fontWeight: 'normal',
+                        color: '#000'
+                    }
                 }
             }
         },
