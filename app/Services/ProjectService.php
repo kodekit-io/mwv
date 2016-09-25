@@ -6,14 +6,19 @@ class ProjectService
 {
 
     protected $apiService;
+    /**
+     * @var FakeResult
+     */
+    private $fakeResult;
 
     /**
      * ProjectService constructor.
      * @param $apiService
      */
-    public function __construct(ApiService $apiService)
+    public function __construct(ApiService $apiService, FakeResult $fakeResult)
     {
         $this->apiService = $apiService;
+        $this->fakeResult = $fakeResult;
     }
 
     public function projectList()

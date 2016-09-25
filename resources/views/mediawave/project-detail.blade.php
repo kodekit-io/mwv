@@ -382,6 +382,7 @@
 
 @section('page-level-scripts')
     <script type="text/javascript" src="{{ asset('js/project-detail.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('js/sentiment-media-distribution.js') }}"></script>
     <!-- script type="text/javascript" src="{{ asset('js/jquery.blockUI.js') }}"></script -->
     <script>
         $(document).ready(function() {
@@ -391,7 +392,8 @@
         });
         brandChart('brand-equity-container', jQuery.parseJSON('{!! $brandEquity !!}'));
         // shareOfVoice('share-of-voice-container', jQuery.parseJSON('{!! $shareOfVoice !!}'));
-        shareMedia('share-media-container', jQuery.parseJSON('{!! $mediaDistribution !!}'));
+        // shareMedia('share-media-container', jQuery.parseJSON('{!! $mediaDistribution !!}'));
+        sentimentMediaDistribution('share-media-container', jQuery.parseJSON('{!! $sentimentMediaDistribution !!}'));
     </script>
 
 @endsection

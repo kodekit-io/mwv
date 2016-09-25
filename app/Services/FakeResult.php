@@ -330,48 +330,48 @@ class FakeResult
                       "mediaID": "1",
                       "mediaName": "Facebook",
                       "positive": {
-                        "buzz": 954,
-                        "percentage": 100
+                        "buzz": 400,
+                        "percentage": 40
                       },
                       "neutral": {
-                        "buzz": 0,
-                        "percentage": 0
+                        "buzz": 300,
+                        "percentage": 30
                       },
                       "negative": {
-                        "buzz": 0,
-                        "percentage": 0
+                        "buzz": 300,
+                        "percentage": 30
                       }
                     },
                     {
                       "mediaID": "2",
                       "mediaName": "Twitter",
                       "positive": {
-                        "buzz": 1348,
-                        "percentage": 100
+                        "buzz": 450,
+                        "percentage": 45
                       },
                       "neutral": {
-                        "buzz": 0,
-                        "percentage": 0
+                        "buzz": 370,
+                        "percentage": 37
                       },
                       "negative": {
-                        "buzz": 0,
-                        "percentage": 0
+                        "buzz": 180,
+                        "percentage": 18
                       }
                     },
                     {
                       "mediaID": "5",
                       "mediaName": "Video",
                       "positive": {
-                        "buzz": 1,
-                        "percentage": 100
+                        "buzz": 200,
+                        "percentage": 20
                       },
                       "neutral": {
-                        "buzz": 0,
-                        "percentage": 0
+                        "buzz": 600,
+                        "percentage": 60
                       },
                       "negative": {
-                        "buzz": 0,
-                        "percentage": 0
+                        "buzz": 200,
+                        "percentage": 20
                       }
                     }
                   ],
@@ -950,48 +950,8 @@ class FakeResult
           },
           "projectList": [
             {
-              "pid": "103951832013",
-              "pname": "mie competitor"
-            },
-            {
-              "pid": "1133462522015",
-              "pname": "Mie Instan di TV One"
-            },
-            {
-              "pid": "133142782014",
-              "pname": "Mie Instant"
-            },
-            {
-              "pid": "11401312112015",
-              "pname": "My Noodlez"
-            },
-            {
-              "pid": "1320363102013",
-              "pname": "Popmie & Competitor"
-            },
-            {
-              "pid": "13282912112014",
-              "pname": "Soundsfair"
-            },
-            {
-              "pid": "153510232016",
-              "pname": "special case indomie"
-            },
-            {
-              "pid": "1137172212015",
-              "pname": "Special Case Lays"
-            },
-            {
-              "pid": "913501762016",
-              "pname": "special case pepsico"
-            },
-            {
               "pid": "2253502522013",
               "pname": "susu"
-            },
-            {
-              "pid": "95981932013",
-              "pname": "susu2"
             }
           ]
         }';

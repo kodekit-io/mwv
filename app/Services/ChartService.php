@@ -7,14 +7,19 @@ class ChartService
 {
 
     protected $apiService;
+    /**
+     * @var FakeResult
+     */
+    private $fakeResult;
 
     /**
      * Chart constructor.
      * @param $apiService
      */
-    public function __construct(ApiService $apiService)
+    public function __construct(ApiService $apiService, FakeResult $fakeResult)
     {
         $this->apiService = $apiService;
+        $this->fakeResult = $fakeResult;
     }
 
     public function projectChart($projectId, $chartIds)
