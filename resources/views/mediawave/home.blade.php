@@ -96,7 +96,7 @@
                             //message: '<span>Processing</span>',
                             //css: { border: '3px solid #a00' }
                             message: '<img src="{!! asset('mediawave/img/spinner.gif') !!}">',
-                            css: { border: 'none', marginTop: '-32px' },
+                            css: { border: 'none', zIndex: 100 },
                             overlayCSS: { backgroundColor: '#fff', zIndex: 100 }
                         });
                     },

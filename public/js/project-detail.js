@@ -55,20 +55,12 @@ function showEquityChart($id, $data) {
         chart: {
             type: 'bubble',
             plotBorderWidth: 1,
-            zoomType: 'xy'
+            //zoomType: 'xy'
         },
 
         legend: {
-            enabled: false
+            enabled: true
         },
-
-        //title: {
-        //    text: 'Sugar and fat intake per country'
-        //},
-
-        //subtitle: {
-        //    text: 'Source: <a href="http://www.euromonitor.com/">Euromonitor</a> and <a href="https://data.oecd.org/">OECD</a>'
-        //},
 
         title: {
             text: null
@@ -82,21 +74,6 @@ function showEquityChart($id, $data) {
             labels: {
                 format: '{value}'
             },
-            //plotLines: [{
-            //    color: 'black',
-            //    dashStyle: 'dot',
-            //    width: 2,
-            //    value: 65,
-            //    label: {
-            //        rotation: 0,
-            //        y: 15,
-            //        style: {
-            //            fontStyle: 'italic'
-            //        },
-            //        text: 'Safe fat intake 65g/day'
-            //    },
-            //    zIndex: 3
-            //}]
         },
 
         yAxis: {
@@ -109,21 +86,6 @@ function showEquityChart($id, $data) {
                 format: '{value}'
             },
             maxPadding: 0.2,
-            //plotLines: [{
-            //    color: 'black',
-            //    dashStyle: 'dot',
-            //    width: 2,
-            //    value: 50,
-            //    label: {
-            //        align: 'right',
-            //        style: {
-            //            fontStyle: 'italic'
-            //        },
-            //        text: 'Safe sugar intake 50g/day',
-            //        x: -10
-            //    },
-            //    zIndex: 3
-            //}]
         },
 
         //tooltip: {
@@ -141,15 +103,15 @@ function showEquityChart($id, $data) {
 
         tooltip: {
             useHTML: true,
-            headerFormat: '<ul class="uk-list uk-margin-remove">',
-            pointFormat: '<li><strong>{point.name}</strong></li>' +
-            '<li>Net Sentiment: {point.x}</li>' +
-            '<li>Sims Score: {point.y}</li>' +
-            '<li>Unique User:</li>' +
-            '<li>Buzz Size:</li>' +
-            '<li>Brand Favourable Talkability</li>' +
-            '<li>Earned Media Share:</li>' +
-            '<li>Net Brand Reputation:</li>',
+            headerFormat: '<ul class="uk-list uk-margin-remove" style="width:200px;">',
+            pointFormat: '<li><h6 class="white-text uk-margin-remove">{point.name}</h6></li>' +
+            '<li>Net Sentiment: <div class="right">{point.x}</div></li>' +
+            '<li>Sims Score: <div class="right">{point.y}</div></li>' +
+            '<li>Unique User: <div class="right">{point.z}</div></li>' +
+            '<li>Buzz Size: <div class="right">{point.Buzz}</div></li>' +
+            '<li>Brand Favourable Talkability: <div class="right">{point.BrandFavourableTalkability}</div></li>' +
+            '<li>Earned Media Share: <div class="right">{point.EarnedMediaShare}</div></li>' +
+            '<li>Net Brand Reputation: <div class="right">{point.NetBrandReputation}</div></li>',
             footerFormat: '</ul>',
             followPointer: true
         },
@@ -157,7 +119,11 @@ function showEquityChart($id, $data) {
             series: {
                 dataLabels: {
                     enabled: true,
-                    format: '{point.name}'
+                    format: '{point.name}',
+                    style: {
+                        fontWeight: 'normal',
+                        color: '#000'
+                    }
                 }
             }
         },
@@ -217,7 +183,7 @@ function shareOfVoice($id, $data) {
 function chartShareOfVoice(dataSet, id) {
     var $chart = new Highcharts.Chart({
         chart: {
-            height: 300,
+            //height: 300,
             renderTo: id,
             //backgroundColor: '#0AAED5',
             type: 'pie',
@@ -351,7 +317,7 @@ function chartShareOfVoice(dataSet, id) {
 
 }
 
-
+/*
 function shareMedia($id, $data) {
     if ($data.length === 0) {
         $content.html("<div class='center'>No data chart</div>");
@@ -386,9 +352,7 @@ function shareMedia($id, $data) {
             };
         }
         // chartShareMedia([{data:$content,color:$dataColor}]);
-        /*
-         Information
-         */
+        //Information
         $brandArrTertinggi = $data.sort(function(a, b) {
             return parseInt(b.buzz) - parseInt(a.buzz)
         });
@@ -404,9 +368,7 @@ function shareMedia($id, $data) {
         }
         //var $html = $firstBrand + '<br/><br/>';
         //popovercontent('left', 'Share Of Media', 'smsound', $html);
-        /*
-         End of information
-         */
+        //End of information
         chartShareMedia($content, $id);
 
     }
@@ -415,7 +377,7 @@ function shareMedia($id, $data) {
 function chartShareMedia(dataSet, id) {
     var $chartMedia = new Highcharts.Chart({
         chart: {
-            height: 300,
+            //height: 300,
             renderTo: id,
             //backgroundColor: '#3CC37B',
             type: 'pie',
@@ -437,10 +399,13 @@ function chartShareMedia(dataSet, id) {
         },
         plotOptions: {
             pie: {
-                innerSize: '70%',
+                innerSize: '50%',
                 dataLabels: {
                     enabled: false
-                }
+               },
+               allowPointSelect: true,
+               cursor: 'pointer',
+               showInLegend: true
             }, series: {
                 cursor: 'pointer',
                 point: {
@@ -489,7 +454,7 @@ function chartShareMedia(dataSet, id) {
         }]
     }, function($chartMedia) {
         var circleradius = 72;
-        $chartMedia.renderer.text('<span style="color: white">Share Of Media</span>', 75, 155).css({
+        $chartMedia.renderer.text('<span>Share Of Media</span>', 75, 155).css({
             width: circleradius * 2,
             color: '#4572A7',
             fontSize: '16px',
@@ -497,5 +462,106 @@ function chartShareMedia(dataSet, id) {
         }).attr({
             zIndex: 999
         }).add();
+
+    });
+}
+*/
+function shareMedia($id, $data) {
+    if ($data.length === 0) {
+        $content.html("<div class='center'>No data chart</div>");
+    } else {
+
+        var $mediaId = 0, $buzz = 0, $keywordID = '', $keywordName = '', $topicName = "", $percentage = 0, $color = "";
+        var $content = [], $dataColor = [];
+
+        var getColor = {
+            'Facebook': '#507bbf',
+            'Twitter': '#63cef2',
+            'Blog': '#79d9b3',
+            'News': '#97cf74',
+            'Video': '#f35951'
+        };
+
+        var $brandArrTertinggi = [], $firstBrand = '';
+
+        for (var i = 0; i < $data.length; i++) {
+            $mediaId = $data[i].mediaID;
+            $buzz = $data[i].buzz;
+            $percentage = $data[i].percentage;
+            $keywordID = $data[i].keywordID;
+            $keywordName = $data[i].keywordName;
+            $topicName = $data[i].mediaName;
+            $content[i] = {
+                 name: $topicName,
+                 data: [[$keywordName, $buzz]],
+                 color: getColor[$topicName]
+            };
+
+        }
+        // chartShareMedia([{data:$content,color:$dataColor}]);
+        /*
+         Information
+         */
+        $brandArrTertinggi = $data.sort(function(a, b) {
+            return parseInt(b.buzz) - parseInt(a.buzz)
+        });
+
+        // console.log("brandArrTertinggi : ",$brandArrTertinggi);
+
+        for (var $i = 0; $i < $brandArrTertinggi.length; $i++) {
+            if ($i == 0) {
+                $firstBrand += '<b>' + $brandArrTertinggi[$i].mediaName + '</b>' + '(' + $brandArrTertinggi[$i].buzz + ')' + ' get Top Share Media and followed by ';
+            } else if ($i > 0) {
+                $firstBrand += ',<b> ' + $brandArrTertinggi[$i].mediaName + '</b>' + '(' + $brandArrTertinggi[$i].buzz + ') ';
+            }
+        }
+        //var $html = $firstBrand + '<br/><br/>';
+        //popovercontent('left', 'Share Of Media', 'smsound', $html);
+        /*
+         End of information
+         */
+        chartShareMedia($content, $id);
+
+    }
+}
+function chartShareMedia(dataSet, id) {
+    var $chartMedia = new Highcharts.Chart({
+        chart: {
+            //height: 300,
+            renderTo: id,
+            //backgroundColor: '#3CC37B',
+            type: 'column',
+            events: {
+                click: function() {
+                    hideCtxMenu();
+                }
+            }
+        },
+        title: {
+            text: null
+        },
+        credits: {
+            enabled: false
+        },
+        tooltip: {
+            // pointFormat: 'Total Buzz: <b>{point.y}</b>'
+            pointFormat: '{series.name}: <b>{point.y}</b> ({point.percentage:.1f}%)<br/>'
+        },
+        xAxis: {
+            type: 'category'
+        },
+        plotOptions: {
+             column: {
+                  stacking: 'normal',
+                  dataLabels: {
+                       enabled: true,
+                       color: (Highcharts.theme && Highcharts.theme.dataLabelsColor) || 'black'
+                  },
+                  allowPointSelect: true,
+                  cursor: 'pointer',
+                  showInLegend: true
+             },
+        },
+        series: dataSet
     });
 }
