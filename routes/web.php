@@ -27,6 +27,7 @@ Route::group(['middleware' => 'auth'], function () {
     Route::get('/dashboard', 'DashboardController@index');
     Route::get('/project-management', 'ProjectController@index');
     Route::get('/create-project', 'ProjectController@add');
+    Route::get('/create-project-ig', 'ProjectController@addig');
     Route::post('/save-project', 'ProjectController@saveProject');
     Route::get('/project-detail/{pid}', 'ProjectController@detail');
 

@@ -3,8 +3,8 @@
 @section('content')
 <nav class="uk-navbar md-subnav gradient-fluenza darken">
     <ul class="uk-navbar-nav md-head-container">
-        <li class="uk-active"><a href="">Create Project</a></li>
-        <li><a href="">Create Instagram Project</a></li>
+        <li class="uk-active"><a href="{!! url('/create-project') !!}">Create Project</a></li>
+        <li><a href="{!! url('/create-project-ig') !!}">Create Instagram Project</a></li>
     </ul>
 </nav>
 <main class="">
@@ -60,7 +60,7 @@
                             </ul>
                         </div>
                     </div>
-                    <a href="javascript:void(0);" class="uk-button btn blue z-depth-0 add_key uk-width-medium-1-5" title="Add Keyword">ADD KEYWORD</a>
+                    <a href="javascript:void(0);" class="uk-button btn blue z-depth-0 add_key uk-width-medium-1-5" title="Add Keyword">ADD MORE KEYWORD</a>
 
                     <div class="uk-panel uk-panel-box uk-margin-top">
                         <a class="btn amber darken-4 right uk-margin-left nextstep tooltipped" data-position="top" data-delay="25" data-tooltip="Next Step: Create Topics" data-uk-switcher-item="1">NEXT STEP</a>
@@ -84,7 +84,7 @@
                              </ul>
                          </div>
                      </div>
-                     <a href="javascript:void(0);" class="uk-button btn blue z-depth-0 add_topic uk-width-medium-1-5" title="Add Topic">ADD TOPIC</a>
+                     <a href="javascript:void(0);" class="uk-button btn blue z-depth-0 add_topic uk-width-medium-1-5" title="Add Topic">ADD MORE TOPIC</a>
 
                      <div class="uk-panel uk-panel-box uk-margin-top">
                         <a class="btn white black-text left prevstep tooltipped" data-position="top" data-delay="25" data-tooltip="Prev Step: Keywords" data-uk-switcher-item="0">BACK</a>
@@ -109,7 +109,7 @@
                              </ul>
                          </div>
                      </div>
-                     <a href="javascript:void(0);" class="uk-button btn blue z-depth-0 add_excld uk-width-medium-1-5" title="Add Exclude">ADD EXCLUDE</a>
+                     <a href="javascript:void(0);" class="uk-button btn blue z-depth-0 add_excld uk-width-medium-1-5" title="Add Exclude">ADD MORE EXCLUDE</a>
 
                      <div class="uk-panel uk-panel-box uk-margin-top">
                         <a class="btn white black-text left prevstep tooltipped" data-position="top" data-delay="25" data-tooltip="Prev Step: Topics" data-uk-switcher-item="1">BACK</a>
@@ -128,7 +128,7 @@
                               <textarea id="key-1" name="field_key[1][]" class="materialize-textarea uk-margin-small-bottom"></textarea>
                          </div>
                     </div>
-                    <a href="javascript:void(0);" class="uk-button btn blue z-depth-0 add_advkey uk-width-medium-1-5 uk-margin-bottom" title="Add Keyword">ADD KEYWORD</a>
+                    <a href="javascript:void(0);" class="uk-button btn blue z-depth-0 add_advkey uk-width-medium-1-5 uk-margin-bottom" title="Add Keyword">ADD MORE KEYWORD</a>
                 </li>
                 <li>
                       <h5>CREATE TOPICS</h5>
@@ -137,7 +137,7 @@
                                 <textarea id="topic-1" name="field_topic[1][]" class="materialize-textarea uk-margin-small-bottom"></textarea>
                            </div>
                       </div>
-                      <a href="javascript:void(0);" class="uk-button btn blue z-depth-0 add_advtopic uk-width-medium-1-5 uk-margin-bottom" title="Add Topic">ADD TOPIC</a>
+                      <a href="javascript:void(0);" class="uk-button btn blue z-depth-0 add_advtopic uk-width-medium-1-5 uk-margin-bottom" title="Add Topic">ADD MORE TOPIC</a>
                 </li>
                 <li>
                       <h5>CREATE EXCLUDED TOPICS</h5>
@@ -146,7 +146,7 @@
                                 <textarea id="excld-1" name="field_excld[1][]" class="materialize-textarea uk-margin-small-bottom"></textarea>
                            </div>
                       </div>
-                      <a href="javascript:void(0);" class="uk-button btn blue z-depth-0 add_advexcld uk-width-medium-1-5 uk-margin-bottom" title="Add Exclude">ADD EXCLUDE</a>
+                      <a href="javascript:void(0);" class="uk-button btn blue z-depth-0 add_advexcld uk-width-medium-1-5 uk-margin-bottom" title="Add Exclude">ADD MORE EXCLUDE</a>
 
                       <div class="uk-panel uk-panel-box uk-margin-top">
                         <button type="submit" class="btn amber darken-4 right uk-margin-left nextstep tooltipped" data-position="top" data-delay="25" data-tooltip="Save Query">SAVE NOW</button>

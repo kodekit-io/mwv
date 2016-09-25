@@ -110,7 +110,15 @@ $(function(){
         });
         this.submit();
     });
+    $(".chips").material_chip();
+    
+    var htag = $(".wrap_hashtag .chips").material_chip('data');
+    $('.wrap_hashtag  .chips').on('chip.add', function(e, chip){
+         console.log(htag);
+    });
+
 });
+
 //keyword
 function addKey(id, type) {
     var wrapper = $('.key-op-' + id);
