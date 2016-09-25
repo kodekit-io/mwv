@@ -42,8 +42,13 @@ class ProjectController extends Controller
 
     public function add()
     {
-        $data['pageTitle'] = 'Add Project';
+        $data['pageTitle'] = 'Create Project';
         return view('mediawave.add-project', $data);
+    }
+    public function addig()
+    {
+        $data['pageTitle'] = 'Create Instagram Project';
+        return view('mediawave.add-project-ig', $data);
     }
 
     public function saveProject(Request $request)

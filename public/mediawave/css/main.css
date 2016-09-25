@@ -1031,6 +1031,19 @@ nav .nav-wrapper i {
 	position: relative;
 }
 
+.chips {
+	border: 1px solid #eee;
+	padding: 10px;
+	width: 100%;
+	background: #f7f7f7;
+	min-height: 100px;
+	margin-bottom: 10px;
+}
+.chips .chip,
+.chips .input {
+	font-size: 1em !important;
+}
+
 
 /* Charts */
 .modal-small {
