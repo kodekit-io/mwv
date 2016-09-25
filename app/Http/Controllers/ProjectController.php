@@ -71,6 +71,7 @@ class ProjectController extends Controller
         $data['volumeTrending'] = \GuzzleHttp\json_encode($chart->volumeTrending);
         $data['mediaDistribution'] = \GuzzleHttp\json_encode($chart->mediaDistribution);
         $data['sentimentMediaDistribution'] = \GuzzleHttp\json_encode($chart->sentimentMediaDistribution);
+        $data['sentimentBrandDistributions'] = \GuzzleHttp\json_encode($chart->sentimentBrandDistributions);
 
         $data['projectId'] = $projectId;
 

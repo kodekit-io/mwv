@@ -205,7 +205,7 @@
                             <h2 class="md-card-toolbar-heading-text">SENTIMENT</h2>
                         </div>
                         <div id="sentiment" class="md-card-content">
-                            <div id="id-chartnya-disini" class="md-chart"></div>
+                            <div id="share-brand-container" class="md-chart"></div>
                         </div>
                     </div>
                 </li>
@@ -383,6 +383,7 @@
 @section('page-level-scripts')
     <script type="text/javascript" src="{{ asset('js/project-detail.js') }}"></script>
     <script type="text/javascript" src="{{ asset('js/sentiment-media-distribution.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('js/sentiment-brand-distribution.js') }}"></script>
     <!-- script type="text/javascript" src="{{ asset('js/jquery.blockUI.js') }}"></script -->
     <script>
         $(document).ready(function() {
@@ -394,6 +395,8 @@
         // shareOfVoice('share-of-voice-container', jQuery.parseJSON('{!! $shareOfVoice !!}'));
         // shareMedia('share-media-container', jQuery.parseJSON('{!! $mediaDistribution !!}'));
         sentimentMediaDistribution('share-media-container', jQuery.parseJSON('{!! $sentimentMediaDistribution !!}'));
+        sentimentBrandDistribution('share-brand-container', jQuery.parseJSON('{!! $sentimentBrandDistributions !!}'));
     </script>
 
 @endsection
+

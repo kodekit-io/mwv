@@ -359,6 +359,22 @@ class FakeResult
                       }
                     },
                     {
+                    "mediaID": "3",
+                      "mediaName": "Blog",
+                      "positive": {
+                        "buzz": 400,
+                        "percentage": 40
+                      },
+                      "neutral": {
+                        "buzz": 300,
+                        "percentage": 30
+                      },
+                      "negative": {
+                        "buzz": 300,
+                        "percentage": 30
+                      }
+                    },
+                    {
                       "mediaID": "5",
                       "mediaName": "Video",
                       "positive": {
