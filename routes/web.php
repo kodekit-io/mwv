@@ -34,6 +34,7 @@ Route::group(['middleware' => 'auth'], function () {
     Route::get('/report-add', 'ProjectController@reportAdd');
     Route::get('/report-view', 'ProjectController@reportView');
     Route::get('/edit-project/{pid}', 'ProjectController@edit');
+    Route::get('/profile', 'ProjectController@profile');
     Route::post('/update-project', 'ProjectController@update');
 
     Route::get('/chart-1/{pid}', 'ChartController@chartOne');

@@ -104,13 +104,18 @@ class ProjectController extends Controller
     }
     public function reportAdd()
     {
-        $data['pageTitle'] = 'Create Report';
+        $data['pageTitle'] = 'Report';
         return view('mediawave.report-add', $data);
     }
     public function reportView()
     {
-        $data['pageTitle'] = 'View Report';
+        $data['pageTitle'] = 'Report';
         return view('mediawave.report-view', $data);
+    }
+    public function profile()
+    {
+        $data['pageTitle'] = 'Profile';
+        return view('mediawave.profile', $data);
     }
 
     public function edit($projectId)
