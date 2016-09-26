@@ -8,12 +8,12 @@
     <nav class="uk-navbar md-subnav gradient-fluenza darken">
         <div class="md-head-container">
             <ul class="uk-navbar-nav">
-                <li class="uk-active">
+                <li>
                     <a href="{!! url('project-detail/' . $project->pid) !!}" name="subnav" class="tooltipped" data-position="bottom" data-delay="25" data-tooltip="All Media">
                         <span class="uk-border-circle pink accent-4"><i class="material-icons left">work</i></span>
                     </a>
                 </li>
-                <li>
+                <li class="uk-active">
                     <a href="{!! url('project-detail-twitter/' . $project->pid) !!}" name="subnav" class="tooltipped" data-position="bottom" data-delay="25" data-tooltip="Twitter">
                         <span class="uk-border-circle blue lighten-2"><i class="uk-icon-twitter"></i></span>
                     </a>
@@ -90,21 +90,7 @@
                 </form>
             </div>
             <ul class="uk-grid uk-grid-medium" data-uk-grid data-uk-grid-margin>
-                <li class="uk-width-medium-1-2">
-                    <div class="md-card hoverable">
-                        <div class="md-card-toolbar">
-                            <div class="md-card-toolbar-actions">
-                                <a class="btn waves-effect waves-light z-depth-0 amber lighten-4 tooltipped" data-position="top" data-delay="25" data-tooltip="Help"><i class="material-icons">help</i></a>
-                                <a class="btn waves-effect waves-light z-depth-0 green lighten-4 tooltipped" data-position="top" data-delay="25" data-tooltip="Minimize" data-uk-toggle="{target:'#brandequity'}"><i class="material-icons md-icon">fullscreen</i></a>
-                            </div>
-                            <h2 class="md-card-toolbar-heading-text">BRAND EQUITY</h2>
-                        </div>
-                        <div id="brandequity" class="md-card-content">
-                            <div id="brand-equity-container" class="md-chart"></div>
-                        </div>
-                    </div>
-                </li>
-                <li class="uk-width-medium-1-2">
+                <li class="uk-width-medium-1-1">
                     <div class="md-card hoverable">
                         <div class="md-card-toolbar">
                             <div class="md-card-toolbar-actions">
@@ -114,26 +100,21 @@
                             <div class="md-card-toolbar-heading-text">
                                 <ul class="uk-subnav uk-subnav-pill" data-uk-switcher="{connect:'#trend ul'}">
                                     <li class="uk-active"><a>BUZZ TREND</a></li>
-                                    <li><a>POST TREND</a></li>
+                                    <li><a>USER TREND</a></li>
                                     <li><a>REACH TREND</a></li>
-                                    <li><a>INTERACTIONS</a></li>
                                 </ul>
                             </div>
-
                         </div>
                         <div id="trend" class="md-card-content">
                             <ul class="uk-switcher">
                                 <li>
-                                    <div id="buzztrend" class="md-chart"></div>
+                                    <div id="buzztrend" class="md-chart">BUZZ TREND</div>
                                 </li>
                                 <li>
-                                    <div id="posttrend" class="md-chart"></div>
+                                    <div id="usertrend" class="md-chart">USER TREND</div>
                                 </li>
                                 <li>
-                                    <div id="reachtrend" class="md-chart"></div>
-                                </li>
-                                <li>
-                                    <div id="interacttrend" class="md-chart"></div>
+                                    <div id="reachtrend" class="md-chart">REACH TREND</div>
                                 </li>
                             </ul>
                         </div>
@@ -158,20 +139,6 @@
                         <div class="md-card-toolbar">
                             <div class="md-card-toolbar-actions">
                                 <a class="btn waves-effect waves-light z-depth-0 amber lighten-4 tooltipped" data-position="top" data-delay="25" data-tooltip="Help"><i class="material-icons">help</i></a>
-                                <a class="btn waves-effect waves-light z-depth-0 green lighten-4 tooltipped" data-position="top" data-delay="25" data-tooltip="Minimize" data-uk-toggle="{target:'#post'}"><i class="material-icons md-icon">fullscreen</i></a>
-                            </div>
-                            <h2 class="md-card-toolbar-heading-text">POST</h2>
-                        </div>
-                        <div id="post" class="md-card-content">
-                            <div id="id-chartnya-disini" class="md-chart"></div>
-                        </div>
-                    </div>
-                </li>
-                <li class="uk-width-medium-1-4">
-                    <div class="md-card hoverable">
-                        <div class="md-card-toolbar">
-                            <div class="md-card-toolbar-actions">
-                                <a class="btn waves-effect waves-light z-depth-0 amber lighten-4 tooltipped" data-position="top" data-delay="25" data-tooltip="Help"><i class="material-icons">help</i></a>
                                 <a class="btn waves-effect waves-light z-depth-0 green lighten-4 tooltipped" data-position="top" data-delay="25" data-tooltip="Minimize" data-uk-toggle="{target:'#interaction'}"><i class="material-icons md-icon">fullscreen</i></a>
                             </div>
                             <h2 class="md-card-toolbar-heading-text">INTERACTIONS</h2>
@@ -186,16 +153,31 @@
                         <div class="md-card-toolbar">
                             <div class="md-card-toolbar-actions">
                                 <a class="btn waves-effect waves-light z-depth-0 amber lighten-4 tooltipped" data-position="top" data-delay="25" data-tooltip="Help"><i class="material-icons">help</i></a>
-                                <a class="btn waves-effect waves-light z-depth-0 green lighten-4 tooltipped" data-position="top" data-delay="25" data-tooltip="Minimize" data-uk-toggle="{target:'#unique'}"><i class="material-icons md-icon">fullscreen</i></a>
+                                <a class="btn waves-effect waves-light z-depth-0 green lighten-4 tooltipped" data-position="top" data-delay="25" data-tooltip="Minimize" data-uk-toggle="{target:'#viralreach'}"><i class="material-icons md-icon">fullscreen</i></a>
                             </div>
-                            <h2 class="md-card-toolbar-heading-text">UNIQUE USERS</h2>
+                            <h2 class="md-card-toolbar-heading-text">VIRAL REACH</h2>
                         </div>
-                        <div id="unique" class="md-card-content">
+                        <div id="viralreach" class="md-card-content">
                             <div id="id-chartnya-disini" class="md-chart"></div>
                         </div>
                     </div>
                 </li>
-                <li class="uk-width-medium-1-3">
+
+                <li class="uk-width-medium-1-4">
+                    <div class="md-card hoverable">
+                        <div class="md-card-toolbar">
+                            <div class="md-card-toolbar-actions">
+                                <a class="btn waves-effect waves-light z-depth-0 amber lighten-4 tooltipped" data-position="top" data-delay="25" data-tooltip="Help"><i class="material-icons">help</i></a>
+                                <a class="btn waves-effect waves-light z-depth-0 green lighten-4 tooltipped" data-position="top" data-delay="25" data-tooltip="Minimize" data-uk-toggle="{target:'#potreach'}"><i class="material-icons md-icon">fullscreen</i></a>
+                            </div>
+                            <h2 class="md-card-toolbar-heading-text">POTENTIAL REACH</h2>
+                        </div>
+                        <div id="potreach" class="md-card-content">
+                            <div id="id-chartnya-disini" class="md-chart"></div>
+                        </div>
+                    </div>
+                </li>
+                <li class="uk-width-medium-1-2">
                     <div class="md-card hoverable">
                         <div class="md-card-toolbar">
                             <div class="md-card-toolbar-actions">
@@ -209,7 +191,7 @@
                         </div>
                     </div>
                 </li>
-                <li class="uk-width-medium-1-3">
+                <li class="uk-width-medium-1-2">
                     <div class="md-card hoverable">
                         <div class="md-card-toolbar">
                             <div class="md-card-toolbar-actions">
@@ -220,20 +202,6 @@
                         </div>
                         <div id="ir" class="md-card-content">
                             <div id="id-chartnya-disini" class="md-chart"></div>
-                        </div>
-                    </div>
-                </li>
-                <li class="uk-width-medium-1-3">
-                    <div class="md-card hoverable">
-                        <div class="md-card-toolbar">
-                            <div class="md-card-toolbar-actions">
-                                <a class="btn waves-effect waves-light z-depth-0 amber lighten-4 tooltipped" data-position="top" data-delay="25" data-tooltip="Help"><i class="material-icons">help</i></a>
-                                <a class="btn waves-effect waves-light z-depth-0 green lighten-4 tooltipped" data-position="top" data-delay="25" data-tooltip="Minimize" data-uk-toggle="{target:'#mediashare'}"><i class="material-icons md-icon">fullscreen</i></a>
-                            </div>
-                            <h2 class="md-card-toolbar-heading-text">SHARE OF MEDIA</h2>
-                        </div>
-                        <div id="mediashare" class="md-card-content">
-                            <div id="share-media-container" class="md-chart"></div>
                         </div>
                     </div>
                 </li>

@@ -83,6 +83,41 @@ class ProjectController extends Controller
         return view('mediawave.project-detail', $data);
     }
 
+    public function detailTwitter($projectId)
+    {
+        $chart = $this->chartService->projectChart($projectId, '1,2,3,4,5,6,12');
+        $data['pageTitle'] = 'Twitter';
+        $data['project'] = $chart->project;
+
+        //var_dump($chart); exit;
+
+        $data['brandEquity'] = \GuzzleHttp\json_encode($chart->brandEquity);
+        $data['shareOfVoice'] = \GuzzleHttp\json_encode($chart->shareOfVoice);
+        $data['volumeTrending'] = \GuzzleHttp\json_encode($chart->volumeTrending);
+        $data['mediaDistribution'] = \GuzzleHttp\json_encode($chart->mediaDistribution);
+        $data['sentimentMediaDistribution'] = \GuzzleHttp\json_encode($chart->sentimentMediaDistribution);
+        $data['sentimentBrandDistributions'] = \GuzzleHttp\json_encode($chart->sentimentBrandDistributions);
+
+        $data['projectId'] = $projectId;
+
+        return view('mediawave.project-detail-twitter', $data);
+    }
+    public function reportAdd()
+    {
+        $data['pageTitle'] = 'Report';
+        return view('mediawave.report-add', $data);
+    }
+    public function reportView()
+    {
+        $data['pageTitle'] = 'Report';
+        return view('mediawave.report-view', $data);
+    }
+    public function profile()
+    {
+        $data['pageTitle'] = 'Profile';
+        return view('mediawave.profile', $data);
+    }
+
     public function edit($projectId)
     {
         $projectInfo = $this->projectService->projectInfo($projectId);
@@ -100,5 +135,6 @@ class ProjectController extends Controller
         $response = $this->projectService->updateProject($request->except(['_token']));
 
         return redirect('dashboard')->with(['message' => $response->msg]);
+
     }
 }

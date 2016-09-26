@@ -29,7 +29,7 @@
                     </div>
                 </div>
 
-                <div id="mode2" class="uk-panel uk-panel-box white">
+                <div id="mode2" class="uk-panel uk-panel-box white uk-margin-top">
                     <ul id="keywordadv" class="uk-list uk-list-line">
                         <li>
                             <h5>CREATE KEYWORDS</h5>

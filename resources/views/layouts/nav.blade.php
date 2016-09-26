@@ -33,17 +33,17 @@
                 </a>
             </li>
             <li>
-                <a href="{!! url('/create-project') !!}" name="topnav" class="tooltipped" data-position="bottom" data-delay="25" data-tooltip="New Project">
+                <a href="{!! url('/create-project') !!}" name="topnav" class="tooltipped" data-position="bottom" data-delay="25" data-tooltip="Create Project">
                     <i class="material-icons left">add_circle</i>New Project
                 </a>
             </li>
             <li>
-                <a href="report.php" name="topnav" class="tooltipped" data-position="bottom" data-delay="25" data-tooltip="Report">
+                <a href="{!! url('/report-add') !!}" name="topnav" class="tooltipped" data-position="bottom" data-delay="25" data-tooltip="Report">
                     <i class="material-icons left">assignment</i>Report
                 </a>
             </li>
             <li>
-                <a href="profile.php" name="topnav" class="tooltipped" data-position="bottom" data-delay="25" data-tooltip="Profile">
+                <a href="{!! url('/profile') !!}" name="topnav" class="tooltipped" data-position="bottom" data-delay="25" data-tooltip="Profile">
                     <i class="material-icons left">account_circle</i>Profile
                 </a>
             </li>

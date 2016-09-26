@@ -54,15 +54,19 @@
           setInterval(updateGradient,10);
 
           //Active Menu
-          var current_title = $(document).attr("title").replace(' - MediaWave Platform', '');
+          //var current_title = $(document).attr("title").replace(' - MediaWave Platform', '');
+          var el = $("h1.md-title-page").eq(0),
+          text = el.text();
+          var current_title = $.trim(text);
           $("a[name=topnav]").each(function() {
                var a = $(this).attr("data-tooltip");
+               //var b = $(this).attr("data-other");
                if (current_title.substring(0, a.length) === a) {
                     $(this).closest('li').addClass("active")
                }
-               else {
-                    //$(this).removeClass('active');
-               }
+               //else if (current_title.substring(0, b.length) === b) {
+                    //$(this).closest('li').addClass("active")
+               //}
           });
 
           //Modal
