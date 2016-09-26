@@ -28,11 +28,13 @@ Route::group(['middleware' => 'auth'], function () {
     Route::get('/project-management', 'ProjectController@index');
     Route::get('/create-project', 'ProjectController@add');
     Route::get('/create-project-ig', 'ProjectController@addig');
-    Route::post('/save-project', 'ProjectController@saveProject');
+    Route::post('/save-project', 'ProjectController@save');
     Route::get('/project-detail/{pid}', 'ProjectController@detail');
     Route::get('/project-detail-twitter/{pid}', 'ProjectController@detailTwitter');
     Route::get('/report-add', 'ProjectController@reportAdd');
     Route::get('/report-view', 'ProjectController@reportView');
+    Route::get('/edit-project/{pid}', 'ProjectController@edit');
+    Route::post('/update-project', 'ProjectController@update');
 
     Route::get('/chart-1/{pid}', 'ChartController@chartOne');
 });

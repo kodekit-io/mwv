@@ -972,4 +972,56 @@ class FakeResult
           ]
         }';
     }
+
+  public function projectInfo()
+  {
+      return '{
+                "status": "OK",
+                "code": 200,
+                "project": {
+                    "pid": "1841342492016",
+                    "pname": "Pilkada Kabupaten Bekasi"
+                },
+                "projectInfo": {
+                    "keywordList": [
+                        {
+                            "keyword": {
+                                "keywordId": "1",
+                                "keywordName": "Sa\'duddin AND Ahmad Dhani"
+                            },
+                            "color": "#E48701"
+                        },
+                        {
+                            "keyword": {
+                                "keywordId": "2",
+                                "keywordName": "Banjir OR Macet"
+                            },
+                            "color": "#E48701"
+                        }
+                    ],
+                    "topicList": [
+                        {
+                            "topicId": "1",
+                            "topicName": " Banjir OR Macet"
+                        },
+                        {
+                            "topicId": "2",
+                            "topicName": " Buruh AND PHK"
+                        }
+                    ],
+                    "noiseKeywordList": [
+                        {
+                            "noiseKeyId": "1",
+                            "noiseKeyName": " Republik Cinta"
+                        },
+                        {
+                            "noiseKeyId": "2",
+                            "noiseKeyName": "Dewa 19"
+                        }
+                    ],
+                    "positiveList": [],
+                    "negativeList": []
+                }
+            }';
+  }
 }

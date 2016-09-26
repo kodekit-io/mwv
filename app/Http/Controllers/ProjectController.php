@@ -51,7 +51,7 @@ class ProjectController extends Controller
         return view('mediawave.add-project-ig', $data);
     }
 
-    public function saveProject(Request $request)
+    public function save(Request $request)
     {
         $response = $this->projectService->addProject($request->except(['_token']));
         if ($response->status == 'OK') {
@@ -82,6 +82,7 @@ class ProjectController extends Controller
 
         return view('mediawave.project-detail', $data);
     }
+
     public function detailTwitter($projectId)
     {
         $chart = $this->chartService->projectChart($projectId, '1,2,3,4,5,6,12');
@@ -110,5 +111,25 @@ class ProjectController extends Controller
     {
         $data['pageTitle'] = 'View Report';
         return view('mediawave.report-view', $data);
+    }
+
+    public function edit($projectId)
+    {
+        $projectInfo = $this->projectService->projectInfo($projectId);
+        $data['project'] = $projectInfo->project;
+        $data['keywords'] = $projectInfo->projectInfo->keywordList;
+        $data['topics'] = $projectInfo->projectInfo->topicList;
+        $data['excludes'] = $projectInfo->projectInfo->noiseKeywordList;
+        $data['pageTitle'] = 'Edit Project';
+
+        return view('mediawave.edit-project', $data);
+    }
+
+    public function update(Request $request)
+    {
+        $response = $this->projectService->updateProject($request->except(['_token']));
+
+        return redirect('dashboard')->with(['message' => $response->msg]);
+
     }
 }
