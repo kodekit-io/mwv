@@ -54,7 +54,10 @@
           setInterval(updateGradient,10);
 
           //Active Menu
-          var current_title = $(document).attr("title").replace(' - MediaWave Platform', '');
+          //var current_title = $(document).attr("title").replace(' - MediaWave Platform', '');
+          var el = $("h1.md-title-page").eq(0),
+          //text = el.text();
+          var current_title = $.trim(el.text());
           $("a[name=topnav]").each(function() {
                var a = $(this).attr("data-tooltip");
                if (current_title.substring(0, a.length) === a) {

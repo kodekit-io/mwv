@@ -38,7 +38,7 @@
                 </a>
             </li>
             <li>
-                <a href="report.php" name="topnav" class="tooltipped" data-position="bottom" data-delay="25" data-tooltip="Report">
+                <a href="{!! url('/report-add') !!}" name="topnav" class="tooltipped" data-position="bottom" data-delay="25" data-tooltip="Report">
                     <i class="material-icons left">assignment</i>Report
                 </a>
             </li>
