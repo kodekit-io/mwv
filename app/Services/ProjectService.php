@@ -38,6 +38,21 @@ class ProjectService
         return $fakeProjects->projectList;
     }
 
+    public function projectInfo($projectId)
+    {
+        if ($this->apiMode == 'PRODUCTION') {
+            $params = [
+                'pid'   => $projectId
+            ];
+            $projectInfoApi = $this->apiService->post('project/get', $params);
+
+            return $projectInfoApi;
+        }
+
+        $fakeProjects = \GuzzleHttp\json_decode($this->fakeResult->projectInfo());
+        return $fakeProjects;
+    }
+
     public function addProject(array $inputs)
     {
         $projectName = $inputs['projectname'];
@@ -89,5 +104,67 @@ class ProjectService
         $addProjectResponse = $this->apiService->post('project/add', $params);
 
         return $addProjectResponse;
+    }
+
+    public function updateProject(array $inputs)
+    {
+        $oriKeywordsNumber = $inputs['keywords_number'];
+        $oriTopicsNumber = $inputs['topics_number'];
+        $oriExcludesNumber = $inputs['excludes_number'];
+
+        $keywords = $inputs['field_key'];
+        $topics = $inputs['field_topic'];
+        $excludes = $inputs['field_excld'];
+
+        $params['pname'] = $inputs['projectname'];
+        $params['pid'] = $inputs['project_id'];
+
+        if ($oriKeywordsNumber >= count($keywords)) {
+            for ($x = 1; $x <= $oriKeywordsNumber; $x++) {
+                if (isset($keywords[$x])) {
+                    $params['mo' . $x] = str_replace("'", "\\'", $keywords[$x]);
+                } else {
+                    $params['mo' . $x] = '';
+                }
+            }
+        } else {
+            foreach ($keywords as $id => $keyword) {
+                $params['mo' . $id] = str_replace("'", "\\'", $keyword);
+            }
+        }
+
+        if ($oriTopicsNumber >= count($topics)) {
+            for ($x = 1; $x <= $oriTopicsNumber; $x++) {
+                if (isset($topics[$x])) {
+                    $params['to' . $x] = str_replace("'", "\\'", $topics[$x]);
+                } else {
+                    $params['to' . $x] = '';
+                }
+
+            }
+        } else {
+            foreach ($topics as $id => $topic) {
+                $params['to' . $id] = str_replace("'", "\\'", $topic);
+            }
+        }
+
+        if ($oriExcludesNumber >= count($excludes)) {
+            for ($x = 1; $x <= $oriExcludesNumber; $x++) {
+                if (isset($excludes[$x])) {
+                    $params['no' . $x] = str_replace("'", "\\'", $excludes[$x]);
+                } else {
+                    $params['no' . $x] = '';
+                }
+            }
+        } else {
+            foreach ($excludes as $id => $exclude) {
+                $params['no' . $id] = str_replace("'", "\\'", $exclude);
+            }
+        }
+
+        $updateProjectResponse = $this->apiService->post('project/edit', $params);
+
+        return $updateProjectResponse;
+
     }
 }

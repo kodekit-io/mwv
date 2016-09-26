@@ -55,7 +55,7 @@
                 <div class="md-card hoverable">
                     <div class="md-card-toolbar">
                         <div class="md-card-toolbar-actions">
-                            <a href="#edit-{!! $project->pid !!}" class="btn waves-effect waves-light z-depth-0 cyan tooltipped modal-trigger" data-position="top" data-delay="25" data-tooltip="Edit Project"><i class="material-icons md-icon">mode_edit</i></a>
+                            <a href="{!! url('/edit-project/' . $project->pid)  !!}" class="btn waves-effect waves-light z-depth-0 cyan tooltipped modal-trigger" data-position="top" data-delay="25" data-tooltip="Edit Project"><i class="material-icons md-icon">mode_edit</i></a>
                             <a href="#delete-{!! $project->pid !!}" class="btn waves-effect waves-light z-depth-0 red darken-4 tooltipped modal-trigger" data-position="top" data-delay="25" data-tooltip="Delete Project"><i class="material-icons md-icon">delete</i></a>
                         </div>
                         <h2 class="md-card-toolbar-heading-text">{!! $project->pname !!}</h2>
