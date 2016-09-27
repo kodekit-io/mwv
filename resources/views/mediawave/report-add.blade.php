@@ -94,7 +94,6 @@
         						<option value="6">Video</option>
         					</select>
                         </div>
->>>>>>> 95b9162bd34f0f439470047b6c022882c5bfc1dc
                     </div>
                 </div>
             </div>
@@ -170,15 +169,8 @@
 
 @section('page-level-scripts')
     <script src="{!! asset('mediawave/js/components/datepicker.min.js') !!}"></script>
-<<<<<<< HEAD
-    <script src="{!! asset('mediawave/js/jquery.chained.js') !!}"></script>
-    <script>
-        $("#keyword").chained("#project");
-    </script>
-    <script src="{!! asset('js/report.js') !!}" type="text/javascript"></script>
-=======
+
     <script src="{!! asset('js/jquery-migrate.min.js') !!}"></script>
     <script src="{!! asset('js/jquery.chained.js') !!}"></script>
     <script src="{!! asset('js/report.js') !!}"></script>
->>>>>>> 95b9162bd34f0f439470047b6c022882c5bfc1dc
 @endsection
