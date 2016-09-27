@@ -30,10 +30,10 @@
             <div class="uk-width-medium-1-3">
                 <div class="md-card hoverable">
                     <div class="md-card-toolbar">
-                        <h2 class="md-card-toolbar-heading-text">REPORT OPTIONS</h2>
+                        <h2 class="md-card-toolbar-heading-text">REPORT PERIOD</h2>
                     </div>
                     <div class="md-card-content">
-                        Period from
+                        From
                         <div class="input-field md-daterange">
                             <input id="startdate" type="text" class="uk-datepicker" data-uk-datepicker="{pos:'bottom',format:'DD/MM/YY'}" placeholder="10/12/16">
                             <label for="startdate"><i class="material-icons prefix">date_range</i></label>
@@ -44,27 +44,57 @@
                             <label for="enddate"><i class="material-icons prefix">date_range</i></label>
                         </div>
                     </div>
+                    <div class="md-card-toolbar">
+                        <h2 class="md-card-toolbar-heading-text">CHOOSE PROJECT</h2>
+                    </div>
                     <div class="md-card-content">
-                        <select id="project" name="project">
-                            <option value="0" disabled selected>Select Projects</option>
-                            <option value="1715362982016">Gubernur DKI</option>
-                            <option value="1431242592016">New Pilgub DKI 2017</option>
-                        </select>
-                        <select id="keyword" name="keyword">
-                            <option value="1" class="1715362982016">Ahok - Djarot OR Basuki Tjahaja Purnama - Djarot Saiful Hidayat</option>
-                            <option value="2" class="1715362982016">Agus - Sylviana OR Agus Harimurti - Sylviana Murni</option>
-                            <option value="3" class="1431242592016">Anies - Sandiaga OR Anies Baswedan - Sandiaga Uno OR Anies - SandiUno</option>
-                            <option value="4" class="1431242592016">Sa\'duddin Ahmad Dhani OR PKS Gerindra</option>
-                        </select>
-                        <select id="reportMedia">
-    						<option value="1,2,3,4,5,6">All Media</option>
-    						<option value="1">Facebook</option>
-    						<option value="2">Twitter</option>
-    						<option value="3">Blog</option>
-    						<option value="4">News</option>
-    						<option value="5">Forum</option>
-    						<option value="6">Video</option>
-    					</select>
+                        <div class="select-field">
+                            <select id="reportProject" class="browser-default">
+                                <option value="-" disabled selected>Select Projects</option>
+                                <option value="1715362982016">Gubernur DKI</option>
+                                <option value="1431242592016">New Pilgub DKI 2017</option>
+                                <option value="1841342492016">Pilkada Kabupaten Bekasi</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="md-card-toolbar">
+                        <h2 class="md-card-toolbar-heading-text">CHOOSE KEYWORDS</h2>
+                    </div>
+                    <div class="md-card-content">
+                        <div class="select-field">
+                            <select id="reportKeyword" class="browser-default">
+                                <option value="1,2,3,4,5" class="1715362982016">All Keyword </option>
+                                <option value="1" class="1715362982016">Ahok</option>
+                                <option value="2" class="1715362982016">Emil</option>
+                                <option value="3" class="1715362982016">Risma</option>
+
+                                <option value="1,2,3,4,5" class="1431242592016">All Keyword </option>
+                                <option value="1" class="1431242592016">Ahok - Djarot OR Basuki Tjahaja Purnama - Djarot Saiful Hidayat</option>
+                                <option value="2" class="1431242592016">Agus - Sylviana OR Agus Harimurti - Sylviana Murni</option>
+                                <option value="3" class="1431242592016">Anies - Sandiaga OR Anies Baswedan - Sandiaga Uno OR Anies - SandiUno</option>
+
+                                <option value="1,2,3,4,5" class="1841342492016">All Keyword </option>
+                                <option value="1" class="1841342492016">Siudin - Ahmad</option>
+                                <option value="2" class="1841342492016">Jonru - Lulung</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="md-card-toolbar">
+                        <h2 class="md-card-toolbar-heading-text">CHOOSE MEDIA</h2>
+                    </div>
+                    <div class="md-card-content">
+                        <div class="select-field">
+                            <select id="reportMedia" class="browser-default">
+        						<option value="1,2,3,4,5,6">All Media</option>
+        						<option value="1">Facebook</option>
+        						<option value="2">Twitter</option>
+        						<option value="3">Blog</option>
+        						<option value="4">News</option>
+        						<option value="5">Forum</option>
+        						<option value="6">Video</option>
+        					</select>
+                        </div>
+>>>>>>> 95b9162bd34f0f439470047b6c022882c5bfc1dc
                     </div>
                 </div>
             </div>
@@ -74,7 +104,7 @@
                         <h2 class="md-card-toolbar-heading-text">CHOOSE CHART TO EXPORT</h2>
                     </div>
                     <div class="md-card-content">
-                        <ul class="uk-list">
+                        <ul class="uk-list uk-list-line">
                             <li class="uk-margin-bottom">
                                 <input type="checkbox" name="checkedAll" id="checkedAll" class="filled-in" />
                                 <label for="checkedAll" class="black-text">Select All</label>
@@ -140,9 +170,15 @@
 
 @section('page-level-scripts')
     <script src="{!! asset('mediawave/js/components/datepicker.min.js') !!}"></script>
+<<<<<<< HEAD
     <script src="{!! asset('mediawave/js/jquery.chained.js') !!}"></script>
     <script>
         $("#keyword").chained("#project");
     </script>
     <script src="{!! asset('js/report.js') !!}" type="text/javascript"></script>
+=======
+    <script src="{!! asset('js/jquery-migrate.min.js') !!}"></script>
+    <script src="{!! asset('js/jquery.chained.js') !!}"></script>
+    <script src="{!! asset('js/report.js') !!}"></script>
+>>>>>>> 95b9162bd34f0f439470047b6c022882c5bfc1dc
 @endsection

@@ -1,6 +1,7 @@
 $(function() {
-    $('select').material_select();
-    
+    //$('select').material_select();
+    $("#reportKeyword").chained("#reportProject");
+
     $("#checkedAll").change(function() {
         if (this.checked) {
             $(".checkSingle").each(function() {
