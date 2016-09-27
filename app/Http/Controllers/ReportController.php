@@ -23,8 +23,9 @@ class ReportController extends Controller
     public function reportAdd()
     {
         $data['pageTitle'] = 'Report';
-        // $projects = $this->projectService->projectListWithKeywords();
-        // var_dump($projects); exit;
+        $projectInfos = $this->projectService->projectListWithKeywords();
+        $data['projectSelect'] = $this->projectService->projectSelect($projectInfos, 'project', 'reportProject');
+        $data['keywordSelect'] = $this->projectService->keywordSelect($projectInfos, 'keyword', 'reportKeyword');
 
         return view('mediawave.report-add', $data);
     }

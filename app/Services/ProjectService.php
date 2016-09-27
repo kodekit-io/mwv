@@ -185,4 +185,31 @@ class ProjectService
         return $updateProjectResponse;
 
     }
+
+    public function projectSelect($projectInfos, $name, $id=null)
+    {
+        $select = '<select name="' . $name . '" id="' . $id . '" class="browser-default">';
+        foreach ($projectInfos as $projectInfo) {
+            $select .= '<option value="' . $projectInfo->project->pid . '">' . $projectInfo->project->pname . '</option>';
+        }
+        $select.= '</select>';
+
+        return $select;
+    }
+
+    public function keywordSelect($projectInfos, $name, $id = null)
+    {
+        $select = '<select name="' . $name . '" id="' . $id . '" class="browser-default">';
+        $select .= '<option value="">All Keyword</option>';
+        foreach ($projectInfos as $projectInfo) {
+            $project = $projectInfo->project;
+            $keywords = $projectInfo->projectInfo->keywordList;
+            foreach ($keywords as $keyword) {
+                $select .= '<option value="' . $keyword->keyword->keywordId . '" class="' . $project->pid . '">' . $keyword->keyword->keywordName . '</option>';
+            }
+        }
+        $select.= '</select>';
+
+        return $select;
+    }
 }

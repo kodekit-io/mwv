@@ -49,12 +49,7 @@
                     </div>
                     <div class="md-card-content">
                         <div class="select-field">
-                            <select id="reportProject" class="browser-default">
-                                <option value="-" disabled selected>Select Projects</option>
-                                <option value="1715362982016">Gubernur DKI</option>
-                                <option value="1431242592016">New Pilgub DKI 2017</option>
-                                <option value="1841342492016">Pilkada Kabupaten Bekasi</option>
-                            </select>
+                            {!! $projectSelect !!}
                         </div>
                     </div>
                     <div class="md-card-toolbar">
@@ -62,21 +57,7 @@
                     </div>
                     <div class="md-card-content">
                         <div class="select-field">
-                            <select id="reportKeyword" class="browser-default">
-                                <option value="1,2,3,4,5" class="1715362982016">All Keyword </option>
-                                <option value="1" class="1715362982016">Ahok</option>
-                                <option value="2" class="1715362982016">Emil</option>
-                                <option value="3" class="1715362982016">Risma</option>
-
-                                <option value="1,2,3,4,5" class="1431242592016">All Keyword </option>
-                                <option value="1" class="1431242592016">Ahok - Djarot OR Basuki Tjahaja Purnama - Djarot Saiful Hidayat</option>
-                                <option value="2" class="1431242592016">Agus - Sylviana OR Agus Harimurti - Sylviana Murni</option>
-                                <option value="3" class="1431242592016">Anies - Sandiaga OR Anies Baswedan - Sandiaga Uno OR Anies - SandiUno</option>
-
-                                <option value="1,2,3,4,5" class="1841342492016">All Keyword </option>
-                                <option value="1" class="1841342492016">Siudin - Ahmad</option>
-                                <option value="2" class="1841342492016">Jonru - Lulung</option>
-                            </select>
+                            {!! $keywordSelect !!}
                         </div>
                     </div>
                     <div class="md-card-toolbar">
