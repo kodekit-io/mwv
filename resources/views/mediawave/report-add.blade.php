@@ -45,17 +45,16 @@
                         </div>
                     </div>
                     <div class="md-card-content">
-                        <select id="reportProject">
-                            <option value="-" disabled selected>Select Projects</option>
+                        <select id="project" name="project">
+                            <option value="0" disabled selected>Select Projects</option>
                             <option value="1715362982016">Gubernur DKI</option>
                             <option value="1431242592016">New Pilgub DKI 2017</option>
-                            <option value="1841342492016">Pilkada Kabupaten Bekasi</option>
                         </select>
-                        <select id="reportKeyword">
-                            <option value="1,2,3,4,5">All Keyword </option>
-                            <option value="1">Ahok - Djarot OR Basuki Tjahaja Purnama - Djarot Saiful Hidayat</option>
-                            <option value="2">Agus - Sylviana OR Agus Harimurti - Sylviana Murni</option>
-                            <option value="3">Anies - Sandiaga OR Anies Baswedan - Sandiaga Uno OR Anies - SandiUno</option>
+                        <select id="keyword" name="keyword">
+                            <option value="1" class="1715362982016">Ahok - Djarot OR Basuki Tjahaja Purnama - Djarot Saiful Hidayat</option>
+                            <option value="2" class="1715362982016">Agus - Sylviana OR Agus Harimurti - Sylviana Murni</option>
+                            <option value="3" class="1431242592016">Anies - Sandiaga OR Anies Baswedan - Sandiaga Uno OR Anies - SandiUno</option>
+                            <option value="4" class="1431242592016">Sa\'duddin Ahmad Dhani OR PKS Gerindra</option>
                         </select>
                         <select id="reportMedia">
     						<option value="1,2,3,4,5,6">All Media</option>
@@ -81,47 +80,47 @@
                                 <label for="checkedAll" class="black-text">Select All</label>
                             </li>
                             <li>
-                                <input type="checkbox" name="id1" id="id1" value="1" class="filled-in checkSingle" />
+                                <input type="checkbox" name="widgets[]" id="id1" value="1" class="filled-in checkSingle" />
                                 <label for="id1" class="black-text">Brand Equity</label>
                             </li>
                             <li>
-                                <input type="checkbox" name="id2" id="id2" value="2" class="filled-in checkSingle" />
+                                <input type="checkbox" name="widgets[]" id="id2" value="2" class="filled-in checkSingle" />
                                 <label for="id2" class="black-text">Share of Voice</label>
                             </li>
                             <li>
-                                <input type="checkbox" name="id3" id="id3" value="3" class="filled-in checkSingle" />
+                                <input type="checkbox" name="widgets[]" id="id3" value="3" class="filled-in checkSingle" />
                                 <label for="id3" class="black-text">Volume Trending</label>
                             </li>
                             <li>
-                                <input type="checkbox" name="id4" id="id4" value="4" class="filled-in checkSingle" />
+                                <input type="checkbox" name="widgets[]" id="id4" value="4" class="filled-in checkSingle" />
                                 <label for="id4" class="black-text">Media Distribution</label>
                             </li>
                             <li>
-                                <input type="checkbox" name="id5" id="id5" value="5" class="filled-in checkSingle" />
+                                <input type="checkbox" name="widgets[]" id="id5" value="5" class="filled-in checkSingle" />
                                 <label for="id5" class="black-text">Sentiment Media Distribution</label>
                             </li>
                             <li>
-                                <input type="checkbox" name="id6" id="id6" value="6" class="filled-in checkSingle" />
+                                <input type="checkbox" name="widgets[]" id="id6" value="6" class="filled-in checkSingle" />
                                 <label for="id6" class="black-text">Topic Distribution</label>
                             </li>
                             <li>
-                                <input type="checkbox" name="id12" id="id12" value="12" class="filled-in checkSingle" />
+                                <input type="checkbox" name="widgets[]" id="id12" value="12" class="filled-in checkSingle" />
                                 <label for="id12" class="black-text">Sentiment Brand Distribution</label>
                             </li>
                             <li>
-                                <input type="checkbox" name="id8" id="id8"  value="8" class="filled-in checkSingle" />
+                                <input type="checkbox" name="widgets[]" id="id8"  value="8" class="filled-in checkSingle" />
                                 <label for="id8" class="black-text">Cloud</label>
                             </li>
                             <li>
-                                <input type="checkbox" name="id9" id="id9" value="9" class="filled-in checkSingle" />
+                                <input type="checkbox" name="widgets[]" id="id9" value="9" class="filled-in checkSingle" />
                                 <label for="id9" class="black-text">Media Per Brand Distribution</label>
                             </li>
                             <li>
-                                <input type="checkbox" name="idF" id="idF" value="F" class="filled-in checkSingle" />
+                                <input type="checkbox" name="widgets[]" id="idF" value="F" class="filled-in checkSingle" />
                                 <label for="idF" class="black-text">Media Details</label>
                             </li>
                             <li>
-                                <input type="checkbox" name="idE" id="idE"  value="E" class="filled-in checkSingle" />
+                                <input type="checkbox" name="widgets[]" id="idE"  value="E" class="filled-in checkSingle" />
                                 <label for="idE" class="black-text">Influencer</label>
                             </li>
                         </ul>
@@ -141,5 +140,9 @@
 
 @section('page-level-scripts')
     <script src="{!! asset('mediawave/js/components/datepicker.min.js') !!}"></script>
+    <script src="{!! asset('mediawave/js/jquery.chained.js') !!}"></script>
+    <script>
+        $("#keyword").chained("#project");
+    </script>
     <script src="{!! asset('js/report.js') !!}" type="text/javascript"></script>
 @endsection

@@ -31,13 +31,13 @@ Route::group(['middleware' => 'auth'], function () {
     Route::post('/save-project', 'ProjectController@save');
     Route::get('/project-detail/{pid}', 'ProjectController@detail');
     Route::get('/project-detail-twitter/{pid}', 'ProjectController@detailTwitter');
-    Route::get('/report-add', 'ProjectController@reportAdd');
-    Route::get('/report-view', 'ProjectController@reportView');
     Route::get('/edit-project/{pid}', 'ProjectController@edit');
     Route::get('/profile', 'ProjectController@profile');
     Route::post('/update-project', 'ProjectController@update');
-
     Route::get('/chart-1/{pid}', 'ChartController@chartOne');
+
+    Route::get('/report-add', 'ReportController@reportAdd');
+    Route::get('/report-view', 'ReportController@reportView');
 });
 
 Route::get('/datatable', function() {

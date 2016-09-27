@@ -38,6 +38,24 @@ class ProjectService
         return $fakeProjects->projectList;
     }
 
+    public function projectListWithKeywords()
+    {
+        if ($this->apiMode == 'PRODUCTION') {
+            $params = [
+                'uid' => \Auth::user()->id,
+                'key' => 1,
+                'top' => 0,
+                'nos' => 0
+            ];
+            $projectListApi = $this->apiService->post('project/listprojectinfo', $params);
+
+            return $projectListApi->dataProjectList;
+        }
+
+        $fakeProjects = \GuzzleHttp\json_decode($this->fakeResult->projectInfoWithKeywords());
+        return $fakeProjects->dataProjectList;
+    }
+
     public function projectInfo($projectId)
     {
         if ($this->apiMode == 'PRODUCTION') {
