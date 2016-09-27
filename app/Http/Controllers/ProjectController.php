@@ -66,7 +66,7 @@ class ProjectController extends Controller
     public function detail($projectId)
     {
         $chart = $this->chartService->projectChart($projectId, '1,2,3,4,5,6,12');
-        $data['pageTitle'] = 'Project Detail';
+        $data['pageTitle'] = 'All Media';
         $data['project'] = $chart->project;
 
         //var_dump($chart); exit;

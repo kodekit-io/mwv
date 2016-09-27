@@ -5,74 +5,28 @@
 @endsection
 
 @section('content')
-    <nav class="uk-navbar md-subnav gradient-fluenza darken">
-        <div class="md-head-container">
-            <ul class="uk-navbar-nav">
-                <li class="uk-active">
-                    <a href="{!! url('project-detail/' . $project->pid) !!}" name="subnav" class="tooltipped" data-position="bottom" data-delay="25" data-tooltip="All Media">
-                        <span class="uk-border-circle pink accent-4"><i class="material-icons left">work</i></span>
-                    </a>
-                </li>
-                <li>
-                    <a href="{!! url('project-detail-twitter/' . $project->pid) !!}" name="subnav" class="tooltipped" data-position="bottom" data-delay="25" data-tooltip="Twitter">
-                        <span class="uk-border-circle blue lighten-2"><i class="uk-icon-twitter"></i></span>
-                    </a>
-                </li>
-                <li>
-                    <a href="#" name="subnav" class="tooltipped" data-position="bottom" data-delay="25" data-tooltip="Facebook">
-                        <span class="uk-border-circle blue darken-4"><i class="uk-icon-facebook"></i></span>
-                    </a>
-                </li>
-                <li>
-                    <a href="#" name="subnav" class="tooltipped" data-position="bottom" data-delay="25" data-tooltip="Online Media">
-                        <span class="uk-border-circle cyan accent-4"><i class="material-icons">web</i></span>
-                    </a>
-                </li>
-                <li>
-                    <a href="#" name="subnav" class="tooltipped" data-position="bottom" data-delay="25" data-tooltip="Forum">
-                        <span class="uk-border-circle lime darken-4"><i class="material-icons">forum</i></span>
-                    </a>
-                </li>
-                <li>
-                    <a href="#" name="subnav" class="tooltipped" data-position="bottom" data-delay="25" data-tooltip="Video">
-                        <span class="uk-border-circle red darken-4"><i class="material-icons">videocam</i></span>
-                    </a>
-                </li>
-                <li>
-                    <a href="#" name="subnav" class="tooltipped" data-position="bottom" data-delay="25" data-tooltip="Blog">
-                        <span class="uk-border-circle orange darken-4"><i class="material-icons">rss_feed</i></span>
-                    </a>
-                </li>
-            </ul>
-            <div class="uk-navbar-flip">
-                <form>
-                    <div class="nav-wrapper md-search">
-                        <div class="input-field">
-                            <input id="search" type="search">
-                            <label for="search"><i class="material-icons">search</i></label>
-                            <i class="material-icons emptysearch">close</i>
-                        </div>
-                    </div>
-                </form>
-            </div>
-        </div>
-    </nav>
+@include('layouts.project-subnav')
     <main class="uk-width-1-1">
         <div class="md-container">
             <div class="md-card uk-width-1-1 md-keywords">
+                <div class="md-card-toolbar">
+                    <h1 class="md-card-toolbar-heading-text large proxima-nova-bold">
+                        Project Name: {!! $project->pname !!}
+                    </h1>
+                </div>
                 <form class="md-card-content">
                     <ul class="uk-subnav left">
                         <li class="">
                             <input type="checkbox" class="filled-in" id="key1" checked="checked" />
-                            <label for="key1">Lorem</label>
+                            <label for="key1">Keyword 1</label>
                         </li>
                         <li class="">
                             <input type="checkbox" class="filled-in" id="key2" checked="checked" />
-                            <label for="key2">ipsum</label>
+                            <label for="key2">Keyword 2</label>
                         </li>
                         <li class="">
                             <input type="checkbox" class="filled-in" id="key3" checked="checked" />
-                            <label for="key3">amet</label>
+                            <label for="key3">Keyword 3</label>
                         </li>
                     </ul>
 
@@ -85,7 +39,7 @@
                             <input id="enddate" type="text" class="uk-datepicker" data-uk-datepicker="{pos:'bottom',format:'DD/MM/YY'}" placeholder="17/12/16">
                             <label for="enddate"><i class="material-icons prefix">date_range</i></label>
                         </div>
-                        <button class="btn uk-margin-left z-depth-0" type="submit">UPDATE</button>
+                        <button class="btn pink darken-4 uk-margin-left z-depth-0" type="submit">UPDATE</button>
                     </div>
                 </form>
             </div>
@@ -300,12 +254,12 @@
                             <div class="row conv-wrap">
                                 <div class="col s12 uk-margin-bottom">
                                     <ul class="tabs conv-tabs">
-                                        <li class="tab col s3"><a class="active" href="#convtwiter">Twitter</a></li>
-                                        <li class="tab col s3"><a href="#convfacebook">Facebook</a></li>
-                                        <li class="tab col s3"><a href="#convnews">Online News</a></li>
-                                        <li class="tab col s3"><a href="#convforum">Forum</a></li>
-                                        <li class="tab col s3"><a href="#convvideo">Video</a></li>
-                                        <li class="tab col s3"><a href="#convblog">Blog</a></li>
+                                        <li class="tab col s3"><a class="active light-blue-text" href="#convtwiter"><i class="uk-icon-twitter"></i> Twitter</a></li>
+                                        <li class="tab col s3"><a class="blue-text text-darken-4" href="#convfacebook"><i class="uk-icon-facebook"></i> Facebook</a></li>
+                                        <li class="tab col s3"><a class="brown-text text-accent-4" href="#convnews"><i class="material-icons">web</i> Online News</a></li>
+                                        <li class="tab col s3"><a class="lime-text text-darken-4" href="#convforum"><i class="material-icons">forum</i> Forum</a></li>
+                                        <li class="tab col s3"><a class="red-text text-darken-4" href="#convvideo"><i class="material-icons">videocam</i> Video</a></li>
+                                        <li class="tab col s3"><a class="orange-text text-darken-4" href="#convblog"><i class="material-icons">rss_feed</i> Blog</a></li>
                                     </ul>
                                 </div>
                                 <div id="convtwiter" class="col s12">

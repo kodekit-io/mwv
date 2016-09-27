@@ -31,7 +31,7 @@ a.uk-button:visited {
 	text-decoration: none;
 }
 a {
-	color: #880e4f;
+	color: inherit;
 }
 ::-webkit-input-placeholder { color: #999; opacity: 1 !important; }
 :-moz-placeholder { color: #999;}
@@ -248,7 +248,11 @@ div.jqcloud span.w1 { color: #aab5f0; }
 	font-size: 0.8rem;
 	top: 60px;
 }
-
+input[type="checkbox"].filled-in:checked +label:after {
+  border-radius: 2px;
+  background-color: #880e4f;
+  border-color: #880e4f;
+}
 
 footer.page-footer {
 	padding-top: 0;
@@ -310,7 +314,18 @@ nav ul li.active {
 .tabs .indicator {
 	background-color: #222;
 }
-
+.tabs i {
+	display: inline;
+	padding: 0;
+	margin: 0;
+	height: inherit;
+	width: inherit;
+	line-height: normal !important;
+	font-size: 1.2rem !important;
+	vertical-align: middle;
+}
+.tabs i.material-icons {
+}
 /* MD */
 .md-container {
 	padding: 2em;
@@ -435,11 +450,13 @@ nav ul li.active {
 	overflow: hidden;
 	height: 48px;
 	line-height: 48px;
+	text-transform: uppercase;
+	color: #111;
 }
 
 .md-card .md-card-toolbar-heading-text.large {
-	font-size: 18px;
-	font-weight: 400;
+	font: 500 1.5em / 50px "proxima_novasemibold", sans-serif;
+	color: #880e4f;
 }
 .md-card .md-card-toolbar-heading-text .uk-subnav-pill>.uk-active>* {
 	background: none;

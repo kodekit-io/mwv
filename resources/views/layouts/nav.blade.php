@@ -22,27 +22,27 @@
         </ul>
 
         <ul class="right hide-on-med-and-down">
-            <li>
+            <li class="nav-dashboard">
                 <a href="{!! url('/dashboard') !!}" name="topnav" class="tooltipped" data-position="bottom" data-delay="25" data-tooltip="Dashboard">
                     <i class="material-icons left">dashboard</i>All Projects
                 </a>
             </li>
-            <li>
+            <li class="nav-socmed">
                 <a href="socmed-all.php" name="topnav" class="tooltipped" data-position="bottom" data-delay="25" data-tooltip="Social Media Page">
                     <i class="material-icons left">group</i>Socmed Page
                 </a>
             </li>
-            <li>
+            <li class="nav-newproject">
                 <a href="{!! url('/create-project') !!}" name="topnav" class="tooltipped" data-position="bottom" data-delay="25" data-tooltip="Create Project">
                     <i class="material-icons left">add_circle</i>New Project
                 </a>
             </li>
-            <li>
+            <li class="nav-report">
                 <a href="{!! url('/report-add') !!}" name="topnav" class="tooltipped" data-position="bottom" data-delay="25" data-tooltip="Report">
                     <i class="material-icons left">assignment</i>Report
                 </a>
             </li>
-            <li>
+            <li class="nav-profile">
                 <a href="{!! url('/profile') !!}" name="topnav" class="tooltipped" data-position="bottom" data-delay="25" data-tooltip="Profile">
                     <i class="material-icons left">account_circle</i>Profile
                 </a>
