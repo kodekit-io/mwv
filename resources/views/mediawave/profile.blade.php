@@ -2,94 +2,9 @@
 
 @section('content')
 
-<style>
-@font-face {
-	font-family: 'weather';
-	src: url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/93/artill_clean_icons-webfont.eot');
-	src: url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/93/artill_clean_icons-webfont.eot?#iefix') format('embedded-opentype'),
-         url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/93/artill_clean_icons-webfont.woff') format('woff'),
-         url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/93/artill_clean_icons-webfont.ttf') format('truetype'),
-         url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/93/artill_clean_icons-webfont.svg#artill_clean_weather_iconsRg') format('svg');
-	font-weight: normal;
-	font-style: normal;
-}
-.widget-weather {
-    height: 50px;
-}
-.widget-weather span {
-    line-height: 48px !important;
-    padding-left: 5px !important;
-}
-.widget-weather i {
-    display: inline-block !important;
-    font-size: 1em !important;
-}
-.widget-weather #weather {
-    display: inline-block;
-}
-.widget-weather #weather i {
-	font-family: 'weather';
-    font-size: 2em !important;
-    height: 48px;
-    line-height: 48px;
-}
-.widget-weather a.js-geolocation {
-    padding-left: 5px !important;
-    cursor: help !important;
-}
-.icon-0:before { content: ":"; }
-.icon-1:before { content: "p"; }
-.icon-2:before { content: "S"; }
-.icon-3:before { content: "Q"; }
-.icon-4:before { content: "S"; }
-.icon-5:before { content: "W"; }
-.icon-6:before { content: "W"; }
-.icon-7:before { content: "W"; }
-.icon-8:before { content: "W"; }
-.icon-9:before { content: "I"; }
-.icon-10:before { content: "W"; }
-.icon-11:before { content: "I"; }
-.icon-12:before { content: "I"; }
-.icon-13:before { content: "I"; }
-.icon-14:before { content: "I"; }
-.icon-15:before { content: "W"; }
-.icon-16:before { content: "I"; }
-.icon-17:before { content: "W"; }
-.icon-18:before { content: "U"; }
-.icon-19:before { content: "Z"; }
-.icon-20:before { content: "Z"; }
-.icon-21:before { content: "Z"; }
-.icon-22:before { content: "Z"; }
-.icon-23:before { content: "Z"; }
-.icon-24:before { content: "E"; }
-.icon-25:before { content: "E"; }
-.icon-26:before { content: "3"; }
-.icon-27:before { content: "a"; }
-.icon-28:before { content: "A"; }
-.icon-29:before { content: "a"; }
-.icon-30:before { content: "A"; }
-.icon-31:before { content: "6"; }
-.icon-32:before { content: "1"; }
-.icon-33:before { content: "6"; }
-.icon-34:before { content: "1"; }
-.icon-35:before { content: "W"; }
-.icon-36:before { content: "1"; }
-.icon-37:before { content: "S"; }
-.icon-38:before { content: "S"; }
-.icon-39:before { content: "S"; }
-.icon-40:before { content: "M"; }
-.icon-41:before { content: "W"; }
-.icon-42:before { content: "I"; }
-.icon-43:before { content: "W"; }
-.icon-44:before { content: "a"; }
-.icon-45:before { content: "S"; }
-.icon-46:before { content: "U"; }
-.icon-47:before { content: "S"; }
-
-</style>
 <nav class="uk-navbar md-subnav gradient-fluenza darken">
     <div class="md-head-container white-text">
-        <span class="">Hi Username!</span>
+        <div class="left">Hi <span class="appusername">Username</span>!</div>
         <div class="widget-weather right">
             <span class="today"><i class="uk-icon uk-icon-calendar"></i> <?php echo(date("j F Y")); ?> </span>
             <a class="js-geolocation" title="Your locations"><i class="uk-icon uk-icon-map-marker"></i></a>
@@ -98,11 +13,155 @@
     </div>
 </nav>
 
-<main class="">
+<main class="user">
     <div class="md-container">
-
+		<div class="uk-grid uk-grid-medium" data-uk-grid-margin>
+			<div class="uk-width-medium-1-5">
+				<div class="md-card">
+					<div class="profile-wrap gradient-four">
+						<div class="profile valign-wrapper">
+							<div class="valign uk-width-1-1 center-align">
+								<div class="gravatar uk-border-circle">
+									<img class="thumbnailUrl uk-border-circle"></img>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="md-card-content center-align">
+						<h6 class="appusername"></h6>
+						<div class="uk-text-small gravmail"></div>
+					</div>
+				</div>
+			</div>
+			<div class="uk-width-medium-4-5">
+				<div class="uk-grid uk-grid-small uk-grid-match" data-uk-grid-match="{target:'.md-card'}" data-uk-grid-margin>
+					<div class="uk-width-medium-1-2">
+						<div class="md-card">
+							<div class="md-card-toolbar">
+								<div class="md-card-toolbar-actions">
+		                            <a class="btn waves-effect waves-light z-depth-0 cyan tooltipped white-text" data-position="top" data-delay="25" data-tooltip="Edit Profile" onclick="editProfile()" data-uk-toggle="{target:'.saveProfile.uk-hidden'}"><i class="material-icons md-icon">mode_edit</i></a>
+		                            <a class="btn waves-effect waves-light z-depth-0 red darken-4 tooltipped white-text" data-position="top" data-delay="25" data-tooltip="Change Password" data-uk-toggle="{target:'.changePass'}"><i class="material-icons md-icon">lock</i></a>
+		                        </div>
+								<h2 class="md-card-toolbar-heading-text">USER PROFILE</h2>
+							</div>
+							<div class="md-card-content">
+								<form class="changeProfile">
+									<div class="row">
+										<div class="input-field col s12">
+											<input disabled value="Ujang Kampak" id="name" type="text">
+											<label for="name">Name</label>
+										</div>
+									</div>
+									<div class="row">
+										<div class="input-field col s12">
+											<input disabled value="oblak.gonong@cadas.net" id="email" type="email">
+											<label for="email">Email</label>
+										</div>
+									</div>
+									<div class="row">
+										<div class="input-field col s12">
+											<input disabled value="Cadas Enterprice Ltd." id="company" type="text">
+											<label for="company">Company</label>
+										</div>
+									</div>
+									<div class="row uk-text-center uk-margin-bottom saveProfile uk-hidden">
+										<button type="submit" class="btn amber darken-4 tooltipped" data-position="top" data-delay="25" data-tooltip="Save Profile">SAVE PROFILE</button>
+									</div>
+								</form>
+								<form class="changePass uk-hidden">
+									<h6 class="md-card-toolbar-heading-text" style="padding-left:0.75rem;">CHANGE PASSWORD</h6>
+									<div class="row">
+										<div class="input-field col s12">
+											<input value="" id="currentPass" type="password" class="validate">
+											<label for="currentPass">Current Password</label>
+										</div>
+									</div>
+									<div class="row">
+										<div class="input-field col s12">
+											<input value="" id="newPass" type="password" class="validate">
+											<label for="newPass">New Password</label>
+										</div>
+									</div>
+									<div class="row">
+										<div class="input-field col s12">
+											<input value="" id="newPassAgain" type="password" class="validate">
+											<label for="newPassAgain">Repeat New Password</label>
+										</div>
+									</div>
+									<div class="row uk-margin-bottom uk-text-center">
+										<button type="submit" class="btn amber darken-4 tooltipped" data-position="top" data-delay="25" data-tooltip="Save Password">SAVE PASSWORD</button>
+									</div>
+								</form>
+							</div>
+						</div>
+					</div>
+					<div class="uk-width-medium-1-2">
+						<div class="md-card">
+							<div class="md-card-toolbar">
+								<div class="md-card-toolbar-actions" style="position:relative;">
+									<div class="fixed-action-btn horizontal click-to-toggle">
+										<a class="btn amber darken-3 z-depth-0 tooltipped" data-position="top" data-delay="25" data-tooltip="Add more social media"><i class="material-icons">playlist_add</i></a>
+										<ul>
+											<li>
+												<a class="btn-floating z-depth-0 light-blue lighten-2 tooltipped" data-position="top" data-delay="25" data-tooltip="Add Twitter" onclick="addSocmed('twitter')"><i class="uk-icon-twitter"></i></a>
+											</li>
+											<li>
+												<a class="btn-floating z-depth-0 blue darken-3 tooltipped" data-position="top" data-delay="25" data-tooltip="Add Facebook" onclick="addSocmed('facebook')"><i class="uk-icon-facebook"></i></a>
+											</li>
+											<li>
+												<a class="btn-floating z-depth-0 red tooltipped" data-position="top" data-delay="25" data-tooltip="Add Youtube" onclick="addSocmed('youtube')"><i class="uk-icon-youtube"></i></a>
+											</li>
+											<li>
+												<a class="btn-floating z-depth-0 brown tooltipped" data-position="top" data-delay="25" data-tooltip="Add Instagram" onclick="addSocmed('instagram')"><i class="uk-icon-instagram"></i></a>
+											</li>
+										</ul>
+									</div>
+		                        </div>
+								<h2 class="md-card-toolbar-heading-text">SOCIAL MEDIA ACCOUNTS</h2>
+							</div>
+							<div class="md-card-content">
+								<form>
+									<div class="addsocmed">
+										<div class="row">
+											<div class="input-field col s12">
+												<i class="uk-icon-twitter-square prefix light-blue-text text-lighten-2"></i>
+												<input value="" id="Twitter[1][]" type="text">
+												<label for="Twitter[1][]">Twitter</label>
+											</div>
+										</div>
+										<div class="row">
+											<div class="input-field col s12">
+												<i class="uk-icon-facebook-square prefix blue-text text-darken-4"></i>
+												<input value="" id="Facebook[1][]" type="text">
+												<label for="Facebook[1][]">Facebook</label>
+											</div>
+										</div>
+										<div class="row">
+											<div class="input-field col s12">
+												<i class="uk-icon-youtube-square prefix red-text"></i>
+												<input value="" id="Youtube[1][]" type="text">
+												<label for="Youtube[1][]">Youtube</label>
+											</div>
+										</div>
+										<div class="row">
+											<div class="input-field col s12">
+												<i class="uk-icon-instagram prefix brown-text"></i>
+												<input value="" id="Instagram[1][]" type="text">
+												<label for="Instagram[1][]">Instagram</label>
+											</div>
+										</div>
+									</div>
+									<div class="row uk-margin-bottom uk-text-center">
+										<button type="submit" class="btn amber darken-4 tooltipped" data-position="top" data-delay="25" data-tooltip="Save Social Media">SAVE NOW</button>
+									</div>
+								</form>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
     </div>
-
 </main>
 @endsection
 

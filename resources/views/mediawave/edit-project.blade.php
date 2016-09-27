@@ -32,7 +32,7 @@
                 <div id="mode2" class="uk-panel uk-panel-box white uk-margin-top">
                     <ul id="keywordadv" class="uk-list uk-list-line">
                         <li>
-                            <h5>CREATE KEYWORDS</h5>
+                            <h5>EDIT KEYWORDS</h5>
                             <div class="wrap_advkeys">
                                 @if (count($keywords) > 0)
                                     <?php $x = 1; ?>
@@ -52,7 +52,7 @@
                             <a href="javascript:void(0);" class="uk-button btn blue z-depth-0 add_advkey uk-width-medium-1-5 uk-margin-bottom" title="Add Keyword">ADD MORE KEYWORD</a>
                         </li>
                         <li>
-                            <h5>CREATE TOPICS</h5>
+                            <h5>EDIT TOPICS</h5>
                             <div class="wrap_advtopics">
                                 @if(count($topics) > 0)
                                     <?php $x = 1; ?>
@@ -72,7 +72,7 @@
                             <a href="javascript:void(0);" class="uk-button btn blue z-depth-0 add_advtopic uk-width-medium-1-5 uk-margin-bottom" title="Add Topic">ADD MORE TOPIC</a>
                         </li>
                         <li>
-                            <h5>CREATE EXCLUDED TOPICS</h5>
+                            <h5>EDIT EXCLUDED TOPICS</h5>
                             <div class="wrap_advexclds">
                                 @if (count($excludes) > 0)
                                     <?php $x = 1; ?>
