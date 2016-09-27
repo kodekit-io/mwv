@@ -102,16 +102,7 @@ class ProjectController extends Controller
 
         return view('mediawave.project-detail-twitter', $data);
     }
-    public function reportAdd()
-    {
-        $data['pageTitle'] = 'Report';
-        return view('mediawave.report-add', $data);
-    }
-    public function reportView()
-    {
-        $data['pageTitle'] = 'Report';
-        return view('mediawave.report-view', $data);
-    }
+
     public function profile()
     {
         $data['pageTitle'] = 'Profile';
@@ -137,4 +128,6 @@ class ProjectController extends Controller
         return redirect('dashboard')->with(['message' => $response->msg]);
 
     }
+
+
 }
