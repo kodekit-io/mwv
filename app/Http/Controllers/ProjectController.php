@@ -102,29 +102,45 @@ class ProjectController extends Controller
 
         return view('mediawave.project-twitter', $data);
     }
-    public function detailFB()
+    public function detailFB($projectId)
     {
+        $chart = $this->chartService->projectChart($projectId, '1,2,3,4,5,6,12');
+
         $data['pageTitle'] = 'Facebook';
+        $data['project'] = $chart->project;
+
+        $data['brandEquity'] = \GuzzleHttp\json_encode($chart->brandEquity);
+        $data['shareOfVoice'] = \GuzzleHttp\json_encode($chart->shareOfVoice);
+        $data['volumeTrending'] = \GuzzleHttp\json_encode($chart->volumeTrending);
+        $data['mediaDistribution'] = \GuzzleHttp\json_encode($chart->mediaDistribution);
+        $data['sentimentMediaDistribution'] = \GuzzleHttp\json_encode($chart->sentimentMediaDistribution);
+        $data['sentimentBrandDistributions'] = \GuzzleHttp\json_encode($chart->sentimentBrandDistributions);
+
+        $data['projectId'] = $projectId;
         return view('mediawave.project-facebook', $data);
     }
-    public function detailNews()
+    public function detailNews($projectId)
     {
         $data['pageTitle'] = 'Online Media';
+        $data['projectId'] = $projectId;
         return view('mediawave.project-news', $data);
     }
-    public function detailForum()
+    public function detailForum($projectId)
     {
         $data['pageTitle'] = 'Forum';
+        $data['projectId'] = $projectId;
         return view('mediawave.project-forum', $data);
     }
-    public function detailVideo()
+    public function detailVideo($projectId)
     {
         $data['pageTitle'] = 'Video';
+        $data['projectId'] = $projectId;
         return view('mediawave.project-video', $data);
     }
-    public function detailBlog()
+    public function detailBlog($projectId)
     {
         $data['pageTitle'] = 'Blog';
+        $data['projectId'] = $projectId;
         return view('mediawave.project-blog', $data);
     }
 

@@ -38,6 +38,14 @@ a {
 ::-moz-placeholder {color: #999;}
 :-ms-input-placeholder {color: #999;}
 
+input[type="checkbox"] {
+     -webkit-appearance: none !important;
+     -moz-appearance: none !important;
+     -ms-appearance: none !important;
+     -o-appearance: none !important;
+     appearance: none !important;
+}
+
 h1,h2,h3,h4,h5,h6 {
 	font-family: "proxima_novasemibold", sans-serif;
 }
@@ -325,6 +333,7 @@ nav ul li.active {
 	vertical-align: middle;
 }
 .tabs i.material-icons {
+	font-size: 1.3rem !important;
 }
 /* MD */
 .md-container {
@@ -1329,6 +1338,10 @@ select {
 
 
 /*Data Table*/
+#conv table > *,
+#author table > * {
+	font: 300 12px/16px 'proxima_nova_rgregular';
+}
 .conv-wrap.row {
 	margin-bottom: 0;
 }
