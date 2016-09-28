@@ -22,7 +22,7 @@ class ReportController extends Controller
 
     public function add()
     {
-        $data['pageTitle'] = 'Report';
+        $data['pageTitle'] = 'Create Report';
         $projectInfos = $this->projectService->projectListWithKeywords();
         $data['projectSelect'] = $this->projectService->projectSelect($projectInfos, 'project', 'reportProject');
         $data['keywordSelect'] = $this->projectService->keywordSelect($projectInfos, 'keyword', 'reportKeyword');
@@ -37,7 +37,7 @@ class ReportController extends Controller
 
     public function view()
     {
-        $data['pageTitle'] = 'Report';
+        $data['pageTitle'] = 'View Report';
 
         return view('mediawave.report-view', $data);
     }
