@@ -88,7 +88,8 @@
 @endsection
 
 @section('page-level-scripts')
-    <script type="text/javascript" src="{{ asset('js/dashboard.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('js/dashboard_brand-equity.js') }}"></script>
+
     <script type="text/javascript" src="{{ asset('js/jquery.blockUI.js') }}"></script>
     <script>
         @foreach($projects as $project)
@@ -96,8 +97,6 @@
                     url : '{{ url('chart-1/' . $project->pid) }}',
                     beforeSend : function(xhr) {
                         $('#' + 'container-{!! $project->pid !!}').block({
-                            //message: '<span>Processing</span>',
-                            //css: { border: '3px solid #a00' }
                             message: '<img src="{!! asset('mediawave/img/spinner.gif') !!}">',
                             css: { border: 'none', zIndex: 100 },
                             overlayCSS: { backgroundColor: '#fff', zIndex: 100 }
