@@ -5,6 +5,25 @@ namespace App;
 
 class ReportFaker
 {
+
+    public function fakeCreate()
+    {
+        return '{
+                  "status": "OK",
+                  "code": 200,
+                  "msg": "Create report 350_2245362522013_10048.xlsx completed"
+                }';
+    }
+
+    public function fakeDelete()
+    {
+        return '{
+                  "status": "OK",
+                  "code": 200,
+                  "msg": "Delete report success"
+                }';
+    }
+
     public function fakeReports()
     {
         return '{

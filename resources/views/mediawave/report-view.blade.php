@@ -14,6 +14,9 @@
                 <h2 class="md-card-toolbar-heading-text">EXPORT REPORT</h2>
             </div>
             <div class="md-card-content">
+                @if (session()->has('message'))
+                    <span class="uk-alert">{!! session('message') !!}</span>
+                @endif
                 <table id="tblreportlist" class="uk-table uk-table-hover bordered">
                     <thead>
                         <tr>
@@ -51,6 +54,7 @@
                                 <a  class="chip hoverable black white-text tooltipped"
                                     data-position="top"
                                     data-delay="25"
+                                    href="{!! url('delete-report/' . $report->id) !!}"
                                     data-tooltip="Delete Forever"
                                     onclick="deleteReport(10049)">
                                     <i class="uk-icon uk-icon-trash-o"></i> DELETE
