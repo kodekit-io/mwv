@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\ProjectService;
+use App\ReportService;
 use Illuminate\Http\Request;
 
 use App\Http\Requests;
@@ -10,14 +11,17 @@ use App\Http\Requests;
 class ReportController extends Controller
 {
     private $projectService;
+    private $reportService;
 
     /**
      * ReportController constructor.
-     * @param $projectService
+     * @param ProjectService $projectService
+     * @param ReportService $reportService
      */
-    public function __construct(ProjectService $projectService)
+    public function __construct(ProjectService $projectService, ReportService $reportService)
     {
         $this->projectService = $projectService;
+        $this->reportService = $reportService;
     }
 
     public function add()
@@ -32,13 +36,23 @@ class ReportController extends Controller
 
     public function save(Request $request)
     {
-        var_dump($request->input()); exit;
+        $response = $this->reportService->createReport($request->except(['_token']));
+
+        if ($response->status == 'OK') {
+            return redirect('report-view')->with(['message' => $response->msg]);
+        } else {
+            return redirect('report-add')
+                ->withInput()
+                ->with(['message' => $response->msg]);
+        }
     }
 
     public function view()
     {
         $data['pageTitle'] = 'View Report';
-
+        $reports = $this->reportService->getReports();
+        $data['reports'] = $reports->data;
+        //var_dump($data['reports']); exit;
         return view('mediawave.report-view', $data);
     }
 

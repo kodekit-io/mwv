@@ -45,7 +45,7 @@ Route::group(['middleware' => 'auth'], function () {
 
     Route::get('/report-add', 'ReportController@add');
     Route::get('/report-view', 'ReportController@view');
-    Route::get('/report-save', 'ReportController@save');
+    Route::post('/report-save', 'ReportController@save');
 
     Route::get('/socmed-twitter', 'ProjectController@socmedTW');
     Route::get('/socmed-facebook', 'ProjectController@socmedFB');

@@ -19,12 +19,12 @@
                     </div>
                     <div class="md-card-content">
                         <div class="input-field">
-                            <input id="projectname" name="projectname" type="text" class="validate" required>
-                            <label for="projectname">Report Name</label>
+                            <input id="report_name" name="report_name" type="text" class="validate" required>
+                            <label for="report_name">Report Name</label>
                         </div>
                         <div class="input-field">
-                            <textarea id="projectobj" name="projectobj" class="validate materialize-textarea uk-margin-remove"></textarea>
-                            <label for="projectobj">Report Descriptions</label>
+                            <textarea id="report_desc" name="report_desc" class="validate materialize-textarea uk-margin-remove"></textarea>
+                            <label for="report_desc">Report Descriptions</label>
                         </div>
                     </div>
                 </div>
@@ -67,7 +67,7 @@
                     </div>
                     <div class="md-card-content">
                         <div class="select-field">
-                            <select id="reportMedia" class="browser-default">
+                            <select id="reportMedia" name="media" class="browser-default">
         						<option value="">All Media</option>
         						<option value="1">Facebook</option>
         						<option value="2">Twitter</option>
