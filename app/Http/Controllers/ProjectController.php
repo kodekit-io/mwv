@@ -83,7 +83,7 @@ class ProjectController extends Controller
         return view('mediawave.project-detail', $data);
     }
 
-    public function detailTwitter($projectId)
+    public function detailTW($projectId)
     {
         $chart = $this->chartService->projectChart($projectId, '1,2,3,4,5,6,12');
         $data['pageTitle'] = 'Twitter';
@@ -100,8 +100,34 @@ class ProjectController extends Controller
 
         $data['projectId'] = $projectId;
 
-        return view('mediawave.project-detail-twitter', $data);
+        return view('mediawave.project-twitter', $data);
     }
+    public function detailFB()
+    {
+        $data['pageTitle'] = 'Facebook';
+        return view('mediawave.project-facebook', $data);
+    }
+    public function detailNews()
+    {
+        $data['pageTitle'] = 'Online Media';
+        return view('mediawave.project-news', $data);
+    }
+    public function detailForum()
+    {
+        $data['pageTitle'] = 'Forum';
+        return view('mediawave.project-forum', $data);
+    }
+    public function detailVideo()
+    {
+        $data['pageTitle'] = 'Video';
+        return view('mediawave.project-video', $data);
+    }
+    public function detailBlog()
+    {
+        $data['pageTitle'] = 'Blog';
+        return view('mediawave.project-blog', $data);
+    }
+
 
     public function profile()
     {
@@ -129,5 +155,25 @@ class ProjectController extends Controller
 
     }
 
-
+    //SOCMED PAGE
+    public function socmedTW()
+    {
+        $data['pageTitle'] = 'Twitter';
+        return view('mediawave.socmed-twitter', $data);
+    }
+    public function socmedFB()
+    {
+        $data['pageTitle'] = 'Facebook';
+        return view('mediawave.socmed-facebook', $data);
+    }
+    public function socmedYT()
+    {
+        $data['pageTitle'] = 'Youtube';
+        return view('mediawave.socmed-youtube', $data);
+    }
+    public function socmedIG()
+    {
+        $data['pageTitle'] = 'Instagram';
+        return view('mediawave.socmed-instagram', $data);
+    }
 }

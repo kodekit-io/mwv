@@ -458,6 +458,10 @@ nav ul li.active {
 	font: 500 1.5em / 50px "proxima_novasemibold", sans-serif;
 	color: #880e4f;
 }
+.md-card .md-card-content .md-card-toolbar-heading-text.large {
+	height: 30px;
+	line-height: 35px;
+}
 .md-card .md-card-toolbar-heading-text .uk-subnav-pill>.uk-active>* {
 	background: none;
 	color: inherit;

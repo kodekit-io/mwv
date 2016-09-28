@@ -28,7 +28,7 @@
                 </a>
             </li>
             <li class="nav-socmed">
-                <a href="socmed-all.php" name="topnav" class="tooltipped" data-position="bottom" data-delay="25" data-tooltip="Social Media Page">
+                <a href="{!! url('/socmed-twitter') !!}" name="topnav" class="tooltipped" data-position="bottom" data-delay="25" data-tooltip="Social Media Page">
                     <i class="material-icons left">group</i>Socmed Page
                 </a>
             </li>

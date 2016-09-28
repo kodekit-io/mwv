@@ -58,8 +58,7 @@
         setInterval(updateGradient, 10);
 
         //Active
-        var pageTitle = $("h1.md-title-page").eq(0),
-        text = pageTitle.text();
+        var pageTitle = $("h1.md-title-page").eq(0), text = pageTitle.text();
         var current_title = $.trim(text);
         //Main Nav
         $("a[name=topnav]").each(function() {
@@ -80,11 +79,21 @@
         var b = "Create Instagram Project";
         var c = "Create Report";
         var d = "View Report";
+        var e = "Social Media Page";
         if (a==b) {
             $('li.nav-newproject').addClass("active");
         } else if ((a==c)||(a==d)) {
             $('li.nav-report').addClass("active");
         }
+        //socmed
+        var pageSocmed = $("h1.md-card-toolbar-heading-text").eq(0), stext = pageSocmed.text();
+        var socmedTitle = $.trim(stext);
+        $("a[name=topnav]").each(function() {
+            var a = $(this).attr("data-tooltip");
+            if (socmedTitle.substring(0, a.length) === a) {
+                $(this).closest('li').addClass("active");
+            }
+        });
 
 
         //Modal
