@@ -20,7 +20,7 @@ class ReportController extends Controller
         $this->projectService = $projectService;
     }
 
-    public function reportAdd()
+    public function add()
     {
         $data['pageTitle'] = 'Report';
         $projectInfos = $this->projectService->projectListWithKeywords();
@@ -30,7 +30,12 @@ class ReportController extends Controller
         return view('mediawave.report-add', $data);
     }
 
-    public function reportView()
+    public function save(Request $request)
+    {
+        var_dump($request->input()); exit;
+    }
+
+    public function view()
     {
         $data['pageTitle'] = 'Report';
 

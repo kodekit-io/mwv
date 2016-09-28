@@ -36,8 +36,9 @@ Route::group(['middleware' => 'auth'], function () {
     Route::post('/update-project', 'ProjectController@update');
     Route::get('/chart-1/{pid}', 'ChartController@chartOne');
 
-    Route::get('/report-add', 'ReportController@reportAdd');
-    Route::get('/report-view', 'ReportController@reportView');
+    Route::get('/report-add', 'ReportController@add');
+    Route::get('/reports', 'ReportController@list');
+    Route::post('/report-save', 'ReportController@save');
 });
 
 Route::get('/datatable', function() {
