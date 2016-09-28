@@ -281,22 +281,22 @@
     <script type="text/javascript" src="{{ asset('js/sentiment-brand-distribution.js') }}"></script>
     <!-- script type="text/javascript" src="{{ asset('js/jquery.blockUI.js') }}"></script -->
     <script>
-    $(document).ready(function (){
-       var table = $('#fbpost').DataTable({
-          'ajax': 'https://api.myjson.com/bins/1us28',
-          'columnDefs': [{
-             'targets': 'last',
-             'searchable':false,
-             'orderable':false,
-             'render': function (data, type, full, meta){
-                 return '<input type="checkbox" name="id[]" value="'
-                    + $('<div/>').text(data).html() + '">';
-             }
-          }],
-          'order': [0, 'asc']
-       });
+        $(document).ready(function (){
+           var table = $('#fbpost').DataTable({
+              'ajax': 'https://api.myjson.com/bins/1us28',
+              'columnDefs': [{
+                 'targets': 'last',
+                 'searchable':false,
+                 'orderable':false,
+                 'render': function (data, type, full, meta){
+                     return '<input type="checkbox" name="id[]" value="'
+                        + $('<div/>').text(data).html() + '">';
+                 }
+              }],
+              'order': [0, 'asc']
+           });
 
-    });
+        });
         brandChart('brand-equity-container', jQuery.parseJSON('{!! $brandEquity !!}'));
         // shareOfVoice('share-of-voice-container', jQuery.parseJSON('{!! $shareOfVoice !!}'));
         // shareMedia('share-media-container', jQuery.parseJSON('{!! $mediaDistribution !!}'));
