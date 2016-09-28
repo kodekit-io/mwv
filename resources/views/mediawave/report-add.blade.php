@@ -9,8 +9,9 @@
 </nav>
 <main class="">
     <div class="md-container">
-        <div class="uk-grid uk-grid-medium uk-grid-match" data-uk-grid-match="{target:'.md-card'}" data-uk-grid-margin>
         <form method="post" action="{!! url('report-save') !!}" >
+        <div class="uk-grid uk-grid-medium uk-grid-match" data-uk-grid-match="{target:'.md-card'}" data-uk-grid-margin>
+
             {!! csrf_field() !!}
             <div class="uk-width-medium-1-3">
                 <div class="md-card hoverable">
@@ -144,8 +145,9 @@
                     <button type="submit" class="btn amber darken-4 right tooltipped" data-position="top" data-delay="25" data-tooltip="Save Report Request">SAVE NOW</button>
                 </div>
             </div>
-        </form>
+
         </div>
+        </form>
     </div>
 
 </main>

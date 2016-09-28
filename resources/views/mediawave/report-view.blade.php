@@ -1,5 +1,9 @@
 @extends('layouts.mediawave')
 
+@section('page-level-styles')
+    <link rel="stylesheet" href="{!! asset('mediawave/css/dataTables.mw.css') !!}" />
+@endsection
+
 @section('content')
 <nav class="uk-navbar md-subnav gradient-fluenza darken">
     <ul class="uk-navbar-nav md-head-container">
@@ -71,6 +75,17 @@
 </main>
 @endsection
 
+@section('page-level-plugins')
+    <script src="{!! asset('mediawave/js/jquery.dataTables.min.js') !!}"></script>
+    <script src="{!! asset('mediawave/js/dataTables.mw.js') !!}"></script>
+@endsection
 @section('page-level-scripts')
     <script src="{!! asset('js/report.js') !!}" type="text/javascript"></script>
+    <script>
+    $(document).ready(function (){
+        var table = $('#tblreportlist').DataTable({
+            'order': [0, 'asc']
+        });
+    });
+    </script>
 @endsection

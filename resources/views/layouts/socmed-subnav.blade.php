@@ -20,7 +20,7 @@
             </li>
             <li>
                 <a href="{!! url('/socmed-instagram') !!}" name="subnav" class="tooltipped" data-position="bottom" data-delay="25" data-tooltip="Instagram">
-                    <span class="uk-border-circle orange darken-4"><i class="uk-icon-instagram"></i></span>
+                    <span class="uk-border-circle brown"><i class="uk-icon-instagram"></i></span>
                 </a>
             </li>
         </ul>
