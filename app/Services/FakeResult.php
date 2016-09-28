@@ -29,10 +29,10 @@ class FakeResult
         return $project->fakeProjectWithInfo();
     }
 
-    public function fakeReports()
+    public function report()
     {
         $chart = new ReportFaker();
-        return $chart->fakeReports();
+        return $chart;
     }
 
 

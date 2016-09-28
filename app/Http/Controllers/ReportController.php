@@ -56,4 +56,11 @@ class ReportController extends Controller
         return view('mediawave.report-view', $data);
     }
 
+    public function delete($reportId)
+    {
+        $response = $this->reportService->delete($reportId);
+
+        return redirect('report-view')->with(['message' => $response->msg]);
+    }
+
 }
