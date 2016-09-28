@@ -10,6 +10,8 @@
 <main class="">
     <div class="md-container">
         <div class="uk-grid uk-grid-medium uk-grid-match" data-uk-grid-match="{target:'.md-card'}" data-uk-grid-margin>
+        <form method="post" action="{!! url('report-save') !!}" >
+            {!! csrf_field() !!}
             <div class="uk-width-medium-1-3">
                 <div class="md-card hoverable">
                     <div class="md-card-toolbar">
@@ -17,12 +19,12 @@
                     </div>
                     <div class="md-card-content">
                         <div class="input-field">
-                            <input id="projectname" name="projectname" type="text" class="validate" required>
-                            <label for="projectname">Report Name</label>
+                            <input id="report_name" name="report_name" type="text" class="validate" required>
+                            <label for="report_name">Report Name</label>
                         </div>
                         <div class="input-field">
-                            <textarea id="projectobj" name="projectobj" class="validate materialize-textarea uk-margin-remove"></textarea>
-                            <label for="projectobj">Report Descriptions</label>
+                            <textarea id="report_desc" name="report_desc" class="validate materialize-textarea uk-margin-remove"></textarea>
+                            <label for="report_desc">Report Descriptions</label>
                         </div>
                     </div>
                 </div>
@@ -35,12 +37,12 @@
                     <div class="md-card-content">
                         From
                         <div class="input-field md-daterange">
-                            <input id="startdate" type="text" class="uk-datepicker" data-uk-datepicker="{pos:'bottom',format:'DD/MM/YY'}" placeholder="10/12/16">
+                            <input id="startdate" name="start_date" type="text" class="uk-datepicker" data-uk-datepicker="{pos:'bottom',format:'DD/MM/YY'}" placeholder="10/12/16">
                             <label for="startdate"><i class="material-icons prefix">date_range</i></label>
                         </div>
                         to
                         <div class="input-field md-daterange">
-                            <input id="enddate" type="text" class="uk-datepicker" data-uk-datepicker="{pos:'bottom',format:'DD/MM/YY'}" placeholder="17/12/16">
+                            <input id="enddate" name="end_date" type="text" class="uk-datepicker" data-uk-datepicker="{pos:'bottom',format:'DD/MM/YY'}" placeholder="17/12/16">
                             <label for="enddate"><i class="material-icons prefix">date_range</i></label>
                         </div>
                     </div>
@@ -65,8 +67,8 @@
                     </div>
                     <div class="md-card-content">
                         <div class="select-field">
-                            <select id="reportMedia" class="browser-default">
-        						<option value="1,2,3,4,5,6">All Media</option>
+                            <select id="reportMedia" name="media" class="browser-default">
+        						<option value="">All Media</option>
         						<option value="1">Facebook</option>
         						<option value="2">Twitter</option>
         						<option value="3">Blog</option>
@@ -142,6 +144,7 @@
                     <button type="submit" class="btn amber darken-4 right tooltipped" data-position="top" data-delay="25" data-tooltip="Save Report Request">SAVE NOW</button>
                 </div>
             </div>
+        </form>
         </div>
     </div>
 
