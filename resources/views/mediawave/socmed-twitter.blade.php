@@ -5,31 +5,30 @@
 @endsection
 
 @section('content')
-@include('layouts.project-subnav')
+@include('layouts.socmed-subnav')
     <main class="uk-width-1-1">
         <div class="md-container">
             <div class="md-card uk-width-1-1 md-keywords">
                 <div class="md-card-toolbar">
                     <h1 class="md-card-toolbar-heading-text large proxima-nova-bold">
-                        Project Name: {!! $project->pname !!}
+                        Social Media Page
                     </h1>
                 </div>
                 <form class="md-card-content">
                     <ul class="uk-subnav left">
                         <li class="">
                             <input type="checkbox" class="filled-in" id="key1" checked="checked" />
-                            <label for="key1">Keyword 1</label>
+                            <label for="key1">Twitter Account 1</label>
                         </li>
                         <li class="">
                             <input type="checkbox" class="filled-in" id="key2" checked="checked" />
-                            <label for="key2">Keyword 2</label>
+                            <label for="key2">Twitter Account 2</label>
                         </li>
                         <li class="">
                             <input type="checkbox" class="filled-in" id="key3" checked="checked" />
-                            <label for="key3">Keyword 3</label>
+                            <label for="key3">Twitter Account 3</label>
                         </li>
                     </ul>
-
                     <div class="nav-wrapper right">
                         <div class="input-field md-daterange">
                             <input id="startdate" type="text" class="uk-datepicker" data-uk-datepicker="{pos:'bottom',format:'DD/MM/YY'}" placeholder="10/12/16">
@@ -39,12 +38,26 @@
                             <input id="enddate" type="text" class="uk-datepicker" data-uk-datepicker="{pos:'bottom',format:'DD/MM/YY'}" placeholder="17/12/16">
                             <label for="enddate"><i class="material-icons prefix">date_range</i></label>
                         </div>
-                        <button class="btn uk-margin-left z-depth-0" type="submit">UPDATE</button>
+                        <button class="btn pink darken-4 uk-margin-left z-depth-0" type="submit">UPDATE</button>
                     </div>
                 </form>
             </div>
             <ul class="uk-grid uk-grid-medium" data-uk-grid data-uk-grid-margin>
-                <li class="uk-width-medium-1-1">
+                <li class="uk-width-medium-1-2">
+                    <div class="md-card hoverable">
+                        <div class="md-card-toolbar">
+                            <div class="md-card-toolbar-actions">
+                                <a class="btn waves-effect waves-light z-depth-0 amber lighten-4 tooltipped" data-position="top" data-delay="25" data-tooltip="Help"><i class="material-icons">help</i></a>
+                                <a class="btn waves-effect waves-light z-depth-0 green lighten-4 tooltipped" data-position="top" data-delay="25" data-tooltip="Minimize" data-uk-toggle="{target:'#brandequity'}"><i class="material-icons md-icon">fullscreen</i></a>
+                            </div>
+                            <h2 class="md-card-toolbar-heading-text">BRAND EQUITY</h2>
+                        </div>
+                        <div id="brandequity" class="md-card-content">
+                            <div id="brand-equity-container" class="md-chart"></div>
+                        </div>
+                    </div>
+                </li>
+                <li class="uk-width-medium-1-2">
                     <div class="md-card hoverable">
                         <div class="md-card-toolbar">
                             <div class="md-card-toolbar-actions">
@@ -54,21 +67,26 @@
                             <div class="md-card-toolbar-heading-text">
                                 <ul class="uk-subnav uk-subnav-pill" data-uk-switcher="{connect:'#trend ul'}">
                                     <li class="uk-active"><a>BUZZ TREND</a></li>
-                                    <li><a>USER TREND</a></li>
+                                    <li><a>POST TREND</a></li>
                                     <li><a>REACH TREND</a></li>
+                                    <li><a>INTERACTIONS</a></li>
                                 </ul>
                             </div>
+
                         </div>
                         <div id="trend" class="md-card-content">
                             <ul class="uk-switcher">
                                 <li>
-                                    <div id="buzztrend" class="md-chart">BUZZ TREND</div>
+                                    <div id="buzztrend" class="md-chart"></div>
                                 </li>
                                 <li>
-                                    <div id="usertrend" class="md-chart">USER TREND</div>
+                                    <div id="posttrend" class="md-chart"></div>
                                 </li>
                                 <li>
-                                    <div id="reachtrend" class="md-chart">REACH TREND</div>
+                                    <div id="reachtrend" class="md-chart"></div>
+                                </li>
+                                <li>
+                                    <div id="interacttrend" class="md-chart"></div>
                                 </li>
                             </ul>
                         </div>
@@ -93,6 +111,20 @@
                         <div class="md-card-toolbar">
                             <div class="md-card-toolbar-actions">
                                 <a class="btn waves-effect waves-light z-depth-0 amber lighten-4 tooltipped" data-position="top" data-delay="25" data-tooltip="Help"><i class="material-icons">help</i></a>
+                                <a class="btn waves-effect waves-light z-depth-0 green lighten-4 tooltipped" data-position="top" data-delay="25" data-tooltip="Minimize" data-uk-toggle="{target:'#post'}"><i class="material-icons md-icon">fullscreen</i></a>
+                            </div>
+                            <h2 class="md-card-toolbar-heading-text">POST</h2>
+                        </div>
+                        <div id="post" class="md-card-content">
+                            <div id="id-chartnya-disini" class="md-chart"></div>
+                        </div>
+                    </div>
+                </li>
+                <li class="uk-width-medium-1-4">
+                    <div class="md-card hoverable">
+                        <div class="md-card-toolbar">
+                            <div class="md-card-toolbar-actions">
+                                <a class="btn waves-effect waves-light z-depth-0 amber lighten-4 tooltipped" data-position="top" data-delay="25" data-tooltip="Help"><i class="material-icons">help</i></a>
                                 <a class="btn waves-effect waves-light z-depth-0 green lighten-4 tooltipped" data-position="top" data-delay="25" data-tooltip="Minimize" data-uk-toggle="{target:'#interaction'}"><i class="material-icons md-icon">fullscreen</i></a>
                             </div>
                             <h2 class="md-card-toolbar-heading-text">INTERACTIONS</h2>
@@ -107,31 +139,16 @@
                         <div class="md-card-toolbar">
                             <div class="md-card-toolbar-actions">
                                 <a class="btn waves-effect waves-light z-depth-0 amber lighten-4 tooltipped" data-position="top" data-delay="25" data-tooltip="Help"><i class="material-icons">help</i></a>
-                                <a class="btn waves-effect waves-light z-depth-0 green lighten-4 tooltipped" data-position="top" data-delay="25" data-tooltip="Minimize" data-uk-toggle="{target:'#viralreach'}"><i class="material-icons md-icon">fullscreen</i></a>
+                                <a class="btn waves-effect waves-light z-depth-0 green lighten-4 tooltipped" data-position="top" data-delay="25" data-tooltip="Minimize" data-uk-toggle="{target:'#unique'}"><i class="material-icons md-icon">fullscreen</i></a>
                             </div>
-                            <h2 class="md-card-toolbar-heading-text">VIRAL REACH</h2>
+                            <h2 class="md-card-toolbar-heading-text">UNIQUE USERS</h2>
                         </div>
-                        <div id="viralreach" class="md-card-content">
+                        <div id="unique" class="md-card-content">
                             <div id="id-chartnya-disini" class="md-chart"></div>
                         </div>
                     </div>
                 </li>
-
-                <li class="uk-width-medium-1-4">
-                    <div class="md-card hoverable">
-                        <div class="md-card-toolbar">
-                            <div class="md-card-toolbar-actions">
-                                <a class="btn waves-effect waves-light z-depth-0 amber lighten-4 tooltipped" data-position="top" data-delay="25" data-tooltip="Help"><i class="material-icons">help</i></a>
-                                <a class="btn waves-effect waves-light z-depth-0 green lighten-4 tooltipped" data-position="top" data-delay="25" data-tooltip="Minimize" data-uk-toggle="{target:'#potreach'}"><i class="material-icons md-icon">fullscreen</i></a>
-                            </div>
-                            <h2 class="md-card-toolbar-heading-text">POTENTIAL REACH</h2>
-                        </div>
-                        <div id="potreach" class="md-card-content">
-                            <div id="id-chartnya-disini" class="md-chart"></div>
-                        </div>
-                    </div>
-                </li>
-                <li class="uk-width-medium-1-2">
+                <li class="uk-width-medium-1-3">
                     <div class="md-card hoverable">
                         <div class="md-card-toolbar">
                             <div class="md-card-toolbar-actions">
@@ -145,7 +162,7 @@
                         </div>
                     </div>
                 </li>
-                <li class="uk-width-medium-1-2">
+                <li class="uk-width-medium-1-3">
                     <div class="md-card hoverable">
                         <div class="md-card-toolbar">
                             <div class="md-card-toolbar-actions">
@@ -156,6 +173,20 @@
                         </div>
                         <div id="ir" class="md-card-content">
                             <div id="id-chartnya-disini" class="md-chart"></div>
+                        </div>
+                    </div>
+                </li>
+                <li class="uk-width-medium-1-3">
+                    <div class="md-card hoverable">
+                        <div class="md-card-toolbar">
+                            <div class="md-card-toolbar-actions">
+                                <a class="btn waves-effect waves-light z-depth-0 amber lighten-4 tooltipped" data-position="top" data-delay="25" data-tooltip="Help"><i class="material-icons">help</i></a>
+                                <a class="btn waves-effect waves-light z-depth-0 green lighten-4 tooltipped" data-position="top" data-delay="25" data-tooltip="Minimize" data-uk-toggle="{target:'#mediashare'}"><i class="material-icons md-icon">fullscreen</i></a>
+                            </div>
+                            <h2 class="md-card-toolbar-heading-text">SHARE OF MEDIA</h2>
+                        </div>
+                        <div id="mediashare" class="md-card-content">
+                            <div id="share-media-container" class="md-chart"></div>
                         </div>
                     </div>
                 </li>
@@ -222,12 +253,12 @@
                             <div class="row conv-wrap">
                                 <div class="col s12 uk-margin-bottom">
                                     <ul class="tabs conv-tabs">
-                                        <li class="tab col s3"><a class="active" href="#convtwiter">Twitter</a></li>
-                                        <li class="tab col s3"><a href="#convfacebook">Facebook</a></li>
-                                        <li class="tab col s3"><a href="#convnews">Online News</a></li>
-                                        <li class="tab col s3"><a href="#convforum">Forum</a></li>
-                                        <li class="tab col s3"><a href="#convvideo">Video</a></li>
-                                        <li class="tab col s3"><a href="#convblog">Blog</a></li>
+                                        <li class="tab col s3"><a class="active light-blue-text" href="#convtwiter"><i class="uk-icon-twitter"></i> Twitter</a></li>
+                                        <li class="tab col s3"><a class="blue-text text-darken-4" href="#convfacebook"><i class="uk-icon-facebook"></i> Facebook</a></li>
+                                        <li class="tab col s3"><a class="brown-text text-accent-4" href="#convnews"><i class="material-icons">web</i> Online News</a></li>
+                                        <li class="tab col s3"><a class="lime-text text-darken-4" href="#convforum"><i class="material-icons">forum</i> Forum</a></li>
+                                        <li class="tab col s3"><a class="red-text text-darken-4" href="#convvideo"><i class="material-icons">videocam</i> Video</a></li>
+                                        <li class="tab col s3"><a class="orange-text text-darken-4" href="#convblog"><i class="material-icons">rss_feed</i> Blog</a></li>
                                     </ul>
                                 </div>
                                 <div id="convtwiter" class="col s12">
@@ -303,21 +334,6 @@
 @endsection
 
 @section('page-level-scripts')
-    <script type="text/javascript" src="{{ asset('js/project-detail.js') }}"></script>
-    <script type="text/javascript" src="{{ asset('js/sentiment-media-distribution.js') }}"></script>
-    <script type="text/javascript" src="{{ asset('js/sentiment-brand-distribution.js') }}"></script>
-    <!-- script type="text/javascript" src="{{ asset('js/jquery.blockUI.js') }}"></script -->
-    <script>
-        $(document).ready(function() {
-            $('#table_twitter').DataTable( {
-                "order": [[ 0, "desc" ]]
-            });
-        });
-        brandChart('brand-equity-container', jQuery.parseJSON('{!! $brandEquity !!}'));
-        // shareOfVoice('share-of-voice-container', jQuery.parseJSON('{!! $shareOfVoice !!}'));
-        // shareMedia('share-media-container', jQuery.parseJSON('{!! $mediaDistribution !!}'));
-        sentimentMediaDistribution('share-media-container', jQuery.parseJSON('{!! $sentimentMediaDistribution !!}'));
-        sentimentBrandDistribution('share-brand-container', jQuery.parseJSON('{!! $sentimentBrandDistributions !!}'));
-    </script>
+
 
 @endsection

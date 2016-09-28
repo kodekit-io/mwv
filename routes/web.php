@@ -29,8 +29,15 @@ Route::group(['middleware' => 'auth'], function () {
     Route::get('/create-project', 'ProjectController@add');
     Route::get('/create-project-ig', 'ProjectController@addig');
     Route::post('/save-project', 'ProjectController@save');
+
     Route::get('/project-detail/{pid}', 'ProjectController@detail');
-    Route::get('/project-detail-twitter/{pid}', 'ProjectController@detailTwitter');
+    Route::get('/project-twitter/{pid}', 'ProjectController@detailTW');
+    Route::get('/project-facebook/{pid}', 'ProjectController@detailFB');
+    Route::get('/project-news/{pid}', 'ProjectController@detailNews');
+    Route::get('/project-forum/{pid}', 'ProjectController@detailForum');
+    Route::get('/project-video/{pid}', 'ProjectController@detailVideo');
+    Route::get('/project-blog/{pid}', 'ProjectController@detailBlog');
+
     Route::get('/edit-project/{pid}', 'ProjectController@edit');
     Route::get('/profile', 'ProjectController@profile');
     Route::post('/update-project', 'ProjectController@update');
@@ -38,6 +45,11 @@ Route::group(['middleware' => 'auth'], function () {
 
     Route::get('/report-add', 'ReportController@reportAdd');
     Route::get('/report-view', 'ReportController@reportView');
+
+    Route::get('/socmed-twitter', 'ProjectController@socmedTW');
+    Route::get('/socmed-facebook', 'ProjectController@socmedFB');
+    Route::get('/socmed-youtube', 'ProjectController@socmedYT');
+    Route::get('/socmed-instagram', 'ProjectController@socmedIG');
 });
 
 Route::get('/datatable', function() {
