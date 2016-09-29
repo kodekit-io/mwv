@@ -87,8 +87,22 @@ class ChartService
             'pid' => $projectId,
             'widgetID' => 7,
             'StartDate' => $startDate,
-            'EndDate' => $endDate,
-            'sentiment' => '1,0,-1'
+            'EndDate' => $endDate
+        ];
+
+        return $this->getChart($params);
+    }
+
+    public function viewInfluencer($projectId, $startDate = null, $endDate = null)
+    {
+        $lastSevenDays = Carbon::today()->subDay(7)->format('Y-m-d');
+        $startDate = (!is_null($startDate)) ? $startDate : $lastSevenDays;
+        $endDate = (!is_null($endDate)) ? $endDate : date('Y-m-d');
+        $params = [
+            'pid' => $projectId,
+            'widgetID' => 'E',
+            'StartDate' => $startDate,
+            'EndDate' => $endDate
         ];
 
         return $this->getChart($params);

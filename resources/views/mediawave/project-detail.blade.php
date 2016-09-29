@@ -224,17 +224,25 @@
                             <h2 class="md-card-toolbar-heading-text">INFLUENCER</h2>
                         </div>
                         <div id="author" class="md-card-content conv-wrap">
-                            <?php //INFLUENCER/AUTHOR TABLE ?>
                             <table id="table_author" class="uk-table uk-table-striped uk-table-hover bordered" cellspacing="0" width="100%">
                                 <thead>
                                 <tr>
-                                    <th>Author</th>
-                                    <th>Popular</th>
-                                    <th>Active</th>
-                                    <th>Impact</th>
-                                    <th></th>
+                                    <th>Name</th>
+                                    <th>Score</th>
+                                    <th>Value</th>
+                                    <th>Link</th>
                                 </tr>
                                 </thead>
+                                <tbody>
+                                @foreach($viewInfluencers as $influencer)
+                                    <tr>
+                                        <td>{!! $influencer->name !!}</td>
+                                        <td>{!! $influencer->score !!}</td>
+                                        <td>{!! $influencer->value !!}</td>
+                                        <td><a href="{!! $influencer->url !!}" target="_blank">See Details</a></td>
+                                    </tr>
+                                @endforeach
+                                </tbody>
                             </table>
                         </div>
                    </div>

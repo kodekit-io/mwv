@@ -10,144 +10,9 @@ class ChartFaker
     {
         // wordcloud
         if ($widgetId == 7) {
-            return '{
-              "status": "OK",
-              "code": 200,
-              "startDate": "2016-08-01 00:00:00",
-              "endDate": "2016-08-31 23:59:59",
-              "mediaID": "1,2,3,4,5,6,9,10",
-              "brandID": "",
-              "topicID": "",
-              "sentiment": "1,0,-1",
-              "icapt": "",
-              "text": "",
-              "project": {
-                "pid": "95981932013",
-                "pname": "susu2"
-              },
-              "dataUnion": [
-                {
-                  "tag": "susu",
-                  "buzz": 1200,
-                  "link": "text=susu",
-                  "color": "#A5BC4E"
-                },
-                {
-                  "tag": "minum",
-                  "buzz": 800,
-                  "link": "text=minum",
-                  "color": "#A5BC4E"
-                },
-                {
-                  "tag": "milo",
-                  "buzz": 50,
-                  "link": "text=milo",
-                  "color": "#A5BC4E"
-                },
-                {
-                  "tag": "indomilk",
-                  "buzz": 300,
-                  "link": "text=indomilk",
-                  "color": "#A5BC4E"
-                },
-                {
-                  "tag": "harga",
-                  "buzz": 10,
-                  "link": "text=harga",
-                  "color": "#A5BC4E"
-                },
-                {
-                  "tag": "milku",
-                  "buzz": 250,
-                  "link": "text=milku",
-                  "color": "#E48701"
-                },
-                {
-                  "tag": "sobat",
-                  "buzz": 100,
-                  "link": "text=sobat",
-                  "color": "#E48701"
-                },
-                {
-                  "tag": "ultra",
-                  "buzz": 340,
-                  "link": "text=ultra",
-                  "color": "#A5BC4E"
-                },
-                {
-                  "tag": "milkupolis",
-                  "buzz": 91,
-                  "link": "text=milkupolis",
-                  "color": "#E48701"
-                },
-                {
-                  "tag": "hadiah",
-                  "buzz": 83,
-                  "link": "text=hadiah",
-                  "color": "#A5BC4E"
-                },
-                {
-                  "tag": "dancow",
-                  "buzz": 80,
-                  "link": "text=dancow",
-                  "color": "#A5BC4E"
-                },
-                {
-                  "tag": "gold",
-                  "buzz": 77,
-                  "link": "text=gold",
-                  "color": "#A5BC4E"
-                },
-                {
-                  "tag": "sachet",
-                  "buzz": 71,
-                  "link": "text=sachet",
-                  "color": "#A5BC4E"
-                },
-                {
-                  "tag": "bendera",
-                  "buzz": 70,
-                  "link": "text=bendera",
-                  "color": "#A5BC4E"
-                },
-                {
-                  "tag": "minyak",
-                  "buzz": 66,
-                  "link": "text=minyak",
-                  "color": "#A5BC4E"
-                },
-                {
-                  "tag": "kotak",
-                  "buzz": 61,
-                  "link": "text=kotak",
-                  "color": "#A5BC4E"
-                },
-                {
-                  "tag": "pembelian",
-                  "buzz": 61,
-                  "link": "text=pembelian",
-                  "color": "#A5BC4E"
-                },
-                {
-                  "tag": "goreng",
-                  "buzz": 61,
-                  "link": "text=goreng",
-                  "color": "#A5BC4E"
-                },
-                {
-                  "tag": "mulai",
-                  "buzz": 59,
-                  "link": "text=mulai",
-                  "color": "#A5BC4E"
-                },
-                {
-                  "tag": "promo",
-                  "buzz": 56,
-                  "link": "text=promo",
-                  "color": "#A5BC4E"
-                }
-              ]
-            }';
+            return $this->wordCloud();
+        } else if ($widgetId == 'E') {
+            return $this->viewInfluencer();
         } else {
             return '{
                   "status": "OK",
@@ -1094,5 +959,261 @@ class ChartFaker
                 }';
         }
 
+    }
+
+    private function wordCloud()
+    {
+        return '{
+              "status": "OK",
+              "code": 200,
+              "startDate": "2016-08-01 00:00:00",
+              "endDate": "2016-08-31 23:59:59",
+              "mediaID": "1,2,3,4,5,6,9,10",
+              "brandID": "",
+              "topicID": "",
+              "sentiment": "1,0,-1",
+              "icapt": "",
+              "text": "",
+              "project": {
+                "pid": "95981932013",
+                "pname": "susu2"
+              },
+              "dataUnion": [
+                {
+                  "tag": "susu",
+                  "buzz": 1200,
+                  "link": "text=susu",
+                  "color": "#A5BC4E"
+                },
+                {
+                  "tag": "minum",
+                  "buzz": 800,
+                  "link": "text=minum",
+                  "color": "#A5BC4E"
+                },
+                {
+                  "tag": "milo",
+                  "buzz": 50,
+                  "link": "text=milo",
+                  "color": "#A5BC4E"
+                },
+                {
+                  "tag": "indomilk",
+                  "buzz": 300,
+                  "link": "text=indomilk",
+                  "color": "#A5BC4E"
+                },
+                {
+                  "tag": "harga",
+                  "buzz": 10,
+                  "link": "text=harga",
+                  "color": "#A5BC4E"
+                },
+                {
+                  "tag": "milku",
+                  "buzz": 250,
+                  "link": "text=milku",
+                  "color": "#E48701"
+                },
+                {
+                  "tag": "sobat",
+                  "buzz": 100,
+                  "link": "text=sobat",
+                  "color": "#E48701"
+                },
+                {
+                  "tag": "ultra",
+                  "buzz": 340,
+                  "link": "text=ultra",
+                  "color": "#A5BC4E"
+                },
+                {
+                  "tag": "milkupolis",
+                  "buzz": 91,
+                  "link": "text=milkupolis",
+                  "color": "#E48701"
+                },
+                {
+                  "tag": "hadiah",
+                  "buzz": 83,
+                  "link": "text=hadiah",
+                  "color": "#A5BC4E"
+                },
+                {
+                  "tag": "dancow",
+                  "buzz": 80,
+                  "link": "text=dancow",
+                  "color": "#A5BC4E"
+                },
+                {
+                  "tag": "gold",
+                  "buzz": 77,
+                  "link": "text=gold",
+                  "color": "#A5BC4E"
+                },
+                {
+                  "tag": "sachet",
+                  "buzz": 71,
+                  "link": "text=sachet",
+                  "color": "#A5BC4E"
+                },
+                {
+                  "tag": "bendera",
+                  "buzz": 70,
+                  "link": "text=bendera",
+                  "color": "#A5BC4E"
+                },
+                {
+                  "tag": "minyak",
+                  "buzz": 66,
+                  "link": "text=minyak",
+                  "color": "#A5BC4E"
+                },
+                {
+                  "tag": "kotak",
+                  "buzz": 61,
+                  "link": "text=kotak",
+                  "color": "#A5BC4E"
+                },
+                {
+                  "tag": "pembelian",
+                  "buzz": 61,
+                  "link": "text=pembelian",
+                  "color": "#A5BC4E"
+                },
+                {
+                  "tag": "goreng",
+                  "buzz": 61,
+                  "link": "text=goreng",
+                  "color": "#A5BC4E"
+                },
+                {
+                  "tag": "mulai",
+                  "buzz": 59,
+                  "link": "text=mulai",
+                  "color": "#A5BC4E"
+                },
+                {
+                  "tag": "promo",
+                  "buzz": 56,
+                  "link": "text=promo",
+                  "color": "#A5BC4E"
+                }
+              ]
+            }';
+    }
+
+    private function viewInfluencer()
+    {
+        return '{
+              "status": "OK",
+              "code": 200,
+              "widgetID": "E",
+              "startDate": "2016-08-01 00:00:00",
+              "endDate": "2016-09-04 23:59:59",
+              "mediaID": "1",
+              "brandID": "1,2,3,4,5",
+              "topicID": "",
+              "sentiment": "1,0-1",
+              "icapt": "",
+              "text": "",
+              "project": {
+                "pid": "2253502522013",
+                "pname": "susu"
+              },
+              "influencer": {
+                "top10LikeStatus": {
+                  "groupName": "Top 10 Like (by Status)",
+                  "scoreTotal": 36,
+                  "data": [
+                    {
+                      "name": "Tabloid Nakita (1 post)",
+                      "score": 11,
+                      "value": 30.56,
+                      "link": "user=151954181525822",
+                      "url": "http://www.facebook.com/#!/profile.php?id=151954181525822"
+                    },
+                    {
+                      "name": "Tabloid Nakita (1 post)",
+                      "score": 9,
+                      "value": 25,
+                      "link": "user=151954181525822",
+                      "url": "http://www.facebook.com/#!/profile.php?id=151954181525822"
+                    },
+                    {
+                      "name": "Tabloid Nakita (2 post)",
+                      "score": 5,
+                      "value": 13.89,
+                      "link": "user=151954181525822",
+                      "url": "http://www.facebook.com/#!/profile.php?id=151954181525822"
+                    },
+                    {
+                      "name": "Septa Ria Chaidir (1 post)",
+                      "score": 2,
+                      "value": 5.56,
+                      "link": "user=498162013672089",
+                      "url": "http://www.facebook.com/#!/profile.php?id=498162013672089"
+                    },
+                    {
+                      "name": "Mazaya Sina (1 post)",
+                      "score": 2,
+                      "value": 5.56,
+                      "link": "user=1710244449265266",
+                      "url": "http://www.facebook.com/#!/profile.php?id=1710244449265266"
+                    },
+                    {
+                      "name": "Novia Omara (1 post)",
+                      "score": 2,
+                      "value": 5.56,
+                      "link": "user=1228654293831603",
+                      "url": "http://www.facebook.com/#!/profile.php?id=1228654293831603"
+                    },
+                    {
+                      "name": "Intan Febriani Tayang (1 post)",
+                      "score": 2,
+                      "value": 5.56,
+                      "link": "user=488779717998267",
+                      "url": "http://www.facebook.com/#!/profile.php?id=488779717998267"
+                    },
+                    {
+                      "name": "Corry Surjawan (2 post)",
+                      "score": 1,
+                      "value": 2.78,
+                      "link": "user=10204871576148190",
+                      "url": "http://www.facebook.com/#!/profile.php?id=10204871576148190"
+                    },
+                    {
+                      "name": "Yani Thamrin (1 post)",
+                      "score": 1,
+                      "value": 2.78,
+                      "link": "user=130203027420212",
+                      "url": "http://www.facebook.com/#!/profile.php?id=130203027420212"
+                    },
+                    {
+                      "name": "Hartono Tono (1 post)",
+                      "score": 1,
+                      "value": 2.78,
+                      "link": "user=316758748669478",
+                      "url": "http://www.facebook.com/#!/profile.php?id=316758748669478"
+                    }
+                  ]
+                },
+                "top10LikePhoto": {
+                  "groupName": "Top 10 Like (by Photo)",
+                  "scoreTotal": 0,
+                  "data": []
+                },
+                "top10LikeLink": {
+                  "groupName": "Top 10 Like (by Link)",
+                  "scoreTotal": 0,
+                  "data": []
+                },
+                "top10LikeVideo": {
+                  "groupName": "Top 10 Like (by Video)",
+                  "scoreTotal": 0,
+                  "data": []
+                }
+              }
+            }';
     }
 }
