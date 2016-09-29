@@ -190,15 +190,15 @@
                         </div>
                         <div id="authorwrap" class="md-card-content conv-wrap">
                             <?php //INFLUENCER/AUTHOR TABLE ?>
-                            <table id="table_author" class="uk-table uk-table-striped uk-table-hover bordered" cellspacing="0" width="100%">
+                            <table id="table_author" class="striped bordered highlight responsive-table">
                                 <thead>
-                                <tr>
-                                    <th>Author</th>
-                                    <th>Popular</th>
-                                    <th>Active</th>
-                                    <th>Impact</th>
-                                    <th></th>
-                                </tr>
+                                    <tr>
+                                        <th>Author</th>
+                                        <th>Popular</th>
+                                        <th>Active</th>
+                                        <th>Impact</th>
+                                        <th></th>
+                                    </tr>
                                 </thead>
                             </table>
                         </div>
@@ -216,18 +216,18 @@
                         </div>
                         <div id="convwrap" class="md-card-content conv-wrap">
                             <?php //POSTS ?>
-                            <table id="table_page" class="uk-table uk-table-striped uk-table-hover bordered" cellspacing="0" width="100%">
+                            <table id="table_page" class="striped bordered highlight responsive-table">
                                 <thead>
-                                <tr>
-                                    <th>Author</th>
-                                    <th>Posts</th>
-                                    <th>Comment</th>
-                                    <th>Like</th>
-                                    <th>Share</th>
-                                    <th>Media Type</th>
-                                    <th>Sentiment</th>
-                                    <th><input type="checkbox" class="" id="" /><label for="">Select All</label></th>
-                                </tr>
+                                    <tr>
+                                        <th>Author</th>
+                                        <th>Posts</th>
+                                        <th>Comment</th>
+                                        <th>Like</th>
+                                        <th>Share</th>
+                                        <th>Media Type</th>
+                                        <th>Sentiment</th>
+                                        <th><input type="checkbox" class="" id="selectall" /><label for="selectall">Select All</label></th>
+                                    </tr>
                                 </thead>
                             </table>
                         </div>

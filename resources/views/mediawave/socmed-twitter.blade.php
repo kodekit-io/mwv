@@ -194,7 +194,7 @@
                         </div>
                         <div id="author" class="md-card-content conv-wrap">
                             <?php //INFLUENCER/AUTHOR TABLE ?>
-                            <table id="table_author" class="uk-table uk-table-striped uk-table-hover bordered" cellspacing="0" width="100%">
+                            <table id="table_author" class="striped bordered highlight responsive-table">
                                 <thead>
                                 <tr>
                                     <th>Author</th>
@@ -221,16 +221,16 @@
 
                         <div id="convwrap" class="md-card-content">
                             <div class="row conv-wrap">
-                                <div class="col s12 uk-margin-bottom">
+                                <div class="col s12">
                                     <ul class="tabs conv-tabs">
                                         <li class="tab col s4"><a class="active" href="#convpost"> POST</a></li>
                                         <li class="tab col s4"><a href="#convhashtag"> HASHTAG</a></li>
                                         <li class="tab col s4"><a href="#convlinks"> LINKS</a></li>
                                     </ul>
                                 </div>
-                                <div id="convpost" class="col s12">
+                                <div id="convpost" class="">
                                     <?php //POST TABLE ?>
-                                    <table id="table_post" class="uk-table uk-table-striped uk-table-hover bordered" cellspacing="0" width="100%">
+                                    <table id="table_post" class="striped bordered highlight responsive-table">
                                         <thead>
                                             <tr>
                                                 <th>Author</th>
@@ -246,9 +246,9 @@
                                     </table>
                                 </div>
 
-                                <div id="convhashtag" class="col s12">
+                                <div id="convhashtag" class="">
                                     <?php //HASHTAG TABLE ?>
-                                    <table id="table_hashtag" class="uk-table uk-table-striped uk-table-hover bordered" cellspacing="0" width="100%">
+                                    <table id="table_hashtag" class="striped bordered highlight responsive-table">
                                         <thead>
                                             <tr>
                                                 <th>Author</th>
@@ -264,9 +264,9 @@
                                     </table>
                                 </div>
 
-                                <div id="convlinks" class="col s12">
+                                <div id="convlinks" class="">
                                     <?php //LINKS TABLE ?>
-                                    <table id="table_links" class="uk-table uk-table-striped uk-table-hover bordered" cellspacing="0" width="100%">
+                                    <table id="table_links"  class="striped bordered highlight responsive-table">
                                         <thead>
                                             <tr>
                                                 <th>Site</th>
