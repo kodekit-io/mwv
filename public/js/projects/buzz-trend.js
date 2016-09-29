@@ -1,4 +1,4 @@
-function projectBuzz($id, $data) {
+function buzzTrend($id, $data) {
     if ($data.dates.length === 0) {
         $content.html("<div class='center'>No data chart</div>");
     } else {
@@ -6,7 +6,7 @@ function projectBuzz($id, $data) {
         for (var i = 0; i < $data.chartData.length; i++) {
             $content[i] = { name: $data.chartData[i]['name'], data: $data.chartData[i]['value'] };
         }
-        console.log($content);
+        // console.log($content);
         var data = {
             content: $content,
             categories: $data.dates

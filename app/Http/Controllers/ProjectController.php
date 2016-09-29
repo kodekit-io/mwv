@@ -67,6 +67,9 @@ class ProjectController extends Controller
     public function detail($projectId)
     {
         $chart = $this->chartService->projectChart($projectId, '1,2,3,4,5,6,12,A');
+        $wordCloud = $this->chartService->wordCloud($projectId);
+        $viewInfluencer = $this->chartService->viewInfluencer($projectId);
+
         $data['pageTitle'] = 'All Media';
         $data['project'] = $chart->project;
 
@@ -78,6 +81,10 @@ class ProjectController extends Controller
         $data['sentimentMediaDistribution'] = \GuzzleHttp\json_encode($chart->sentimentMediaDistribution);
         $data['sentimentBrandDistributions'] = \GuzzleHttp\json_encode($chart->sentimentBrandDistributions);
         $data['projectBuzz'] = \GuzzleHttp\json_encode($chartData);
+        $data['wordCloud'] = \GuzzleHttp\json_encode($wordCloud->dataUnion);
+        $data['viewInfluencers'] = $viewInfluencer->influencer->top10LikeStatus->data;
+
+//        var_dump($data['viewInfluencer']); exit;
 
         $data['projectId'] = $projectId;
 

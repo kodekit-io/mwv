@@ -210,7 +210,7 @@
                             <h2 class="md-card-toolbar-heading-text">WORD CLOUDS</h2>
                         </div>
                         <div id="wordcloud" class="md-card-content">
-                            <div id="id-chartnya-disini" class="md-chart"></div>
+                            <div id="wordcloud-container" class="md-chart"></div>
                         </div>
                     </div>
                 </li>
@@ -224,17 +224,25 @@
                             <h2 class="md-card-toolbar-heading-text">INFLUENCER</h2>
                         </div>
                         <div id="author" class="md-card-content conv-wrap">
-                            <?php //INFLUENCER/AUTHOR TABLE ?>
                             <table id="table_author" class="uk-table uk-table-striped uk-table-hover bordered" cellspacing="0" width="100%">
                                 <thead>
                                 <tr>
-                                    <th>Author</th>
-                                    <th>Popular</th>
-                                    <th>Active</th>
-                                    <th>Impact</th>
-                                    <th></th>
+                                    <th>Name</th>
+                                    <th>Score</th>
+                                    <th>Value</th>
+                                    <th>Link</th>
                                 </tr>
                                 </thead>
+                                <tbody>
+                                @foreach($viewInfluencers as $influencer)
+                                    <tr>
+                                        <td>{!! $influencer->name !!}</td>
+                                        <td>{!! $influencer->score !!}</td>
+                                        <td>{!! $influencer->value !!}</td>
+                                        <td><a href="{!! $influencer->url !!}" target="_blank">See Details</a></td>
+                                    </tr>
+                                @endforeach
+                                </tbody>
                             </table>
                         </div>
                    </div>
@@ -381,7 +389,9 @@
     <script type="text/javascript" src="{{ asset('js/projects/project-detail.js') }}"></script>
     <script type="text/javascript" src="{{ asset('js/projects/sentiment-media-distribution.js') }}"></script>
     <script type="text/javascript" src="{{ asset('js/projects/sentiment-brand-distribution.js') }}"></script>
-    <script type="text/javascript" src="{{ asset('js/projects/project-buzz.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('js/projects/buzz-trend.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('js/projects/buzz-pie.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('js/projects/word-cloud.js') }}"></script>
     <!-- script type="text/javascript" src="{{ asset('js/jquery.blockUI.js') }}"></script -->
     <script>
         $(document).ready(function() {
@@ -408,11 +418,13 @@
             });
         });
         brandChart('brand-equity-container', jQuery.parseJSON('{!! $brandEquity !!}'));
-        projectBuzz('buzztrend', jQuery.parseJSON('{!! $projectBuzz !!}'));
+        buzzTrend('buzztrend', jQuery.parseJSON('{!! $projectBuzz !!}'));
+        buzzPie('buzz', jQuery.parseJSON('{!! $volumeTrending !!}'));
         // shareOfVoice('share-of-voice-container', jQuery.parseJSON('{!! $shareOfVoice !!}'));
         // shareMedia('share-media-container', jQuery.parseJSON('{!! $mediaDistribution !!}'));
         sentimentMediaDistribution('share-media-container', jQuery.parseJSON('{!! $sentimentMediaDistribution !!}'));
         sentimentBrandDistribution('share-brand-container', jQuery.parseJSON('{!! $sentimentBrandDistributions !!}'));
+        wordCloud('wordcloud-container', jQuery.parseJSON('{!! $wordCloud !!}'));
     </script>
 
 @endsection
