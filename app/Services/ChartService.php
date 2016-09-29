@@ -3,6 +3,8 @@
 namespace App;
 
 
+use Carbon\Carbon;
+
 class ChartService
 {
 
@@ -24,13 +26,16 @@ class ChartService
         $this->apiMode = config('services.mediawave.api_mode');
     }
 
-    public function projectChart($projectId, $chartIds)
+    public function projectChart($projectId, $chartIds, $startDate = null, $endDate = null)
     {
+        $lastSevenDays = Carbon::today()->subDay(7)->format('Y-m-d');
+        $startDate = (!is_null($startDate)) ? $startDate : $lastSevenDays;
+        $endDate = (!is_null($endDate)) ? $endDate : date('Y-m-d');
         $params = [
             'pid' => $projectId,
             'widgetID' => $chartIds,
-            'StartDate' => '2016-08-01',
-            'EndDate' => date('Y-m-d'),
+            'StartDate' => $startDate,
+            'EndDate' => $endDate,
             'sentiment' => '1,0,-1'
         ];
 
@@ -44,6 +49,46 @@ class ChartService
         }
         $fakeResult = $this->fakeResult->fakeChart($params['pid']);
         return \GuzzleHttp\json_decode($fakeResult);
+    }
+
+    public function getBuzzData($chartResult)
+    {
+        $dateRange = $this->getDateRange();
+        $viewTrends = $chartResult->viewTrend;
+        $arrData = [];
+        $x = 0;
+        foreach ($viewTrends as $viewTrend) {
+            $trendDates = $viewTrend->date;
+            $trendBuzz = $viewTrend->buzz;
+
+            foreach ($dateRange as $date) {
+                if (! in_array($date, $trendDates)) {
+                    $buzzValue = 0;
+                } else {
+                    $arrKey = array_keys($trendDates, $date);
+                    $buzzValue = $trendBuzz[$arrKey[0]];
+                }
+                $arrData[$x]['name'] = $viewTrend->keywordName;
+                $arrData[$x]['value'][] = $buzzValue;
+            }
+            $x++;
+        }
+        $result['dates'] = $dateRange;
+        $result['chartData'] = $arrData;
+        return $result;
+    }
+
+    private function getDateRange()
+    {
+        $arrDays = [];
+//        $now = Carbon::today();
+//        $loopDay = $now->copy()->subDays(7);
+        $loopDay = Carbon::createFromFormat('Y-m-d', '2016-08-21');
+        $now = Carbon::createFromFormat('Y-m-d', '2016-09-04');
+        for ($loopDay; $loopDay->lte($now); $loopDay->addDay()) {
+            $arrDays[] = $loopDay->format('Y-m-d');
+        }
+        return $arrDays;
     }
 
 }
