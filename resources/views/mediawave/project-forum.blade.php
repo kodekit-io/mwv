@@ -73,18 +73,50 @@
                     </div>
                 </li>
 
-                <li class="uk-width-medium-1-1">
-                    <?php //FORUM REACH PIE ?>
+                <li class="uk-width-medium-1-3">
+                    <?php //THREAD PIE ?>
                     <div class="md-card hoverable">
                         <div class="md-card-toolbar">
                             <div class="md-card-toolbar-actions">
                                 <a class="btn waves-effect waves-light z-depth-0 amber lighten-4 tooltipped" data-position="top" data-delay="25" data-tooltip="Help"><i class="material-icons">help</i></a>
                                 <a class="btn waves-effect waves-light z-depth-0 green lighten-4 tooltipped" data-position="top" data-delay="25" data-tooltip="Minimize" data-uk-toggle="{target:'#piewrap1'}"><i class="material-icons md-icon">fullscreen</i></a>
                             </div>
-                            <h2 class="md-card-toolbar-heading-text">FORUM REACH</h2>
+                            <h2 class="md-card-toolbar-heading-text">THREAD</h2>
                         </div>
                         <div id="piewrap1" class="md-card-content">
-                            <div id="id-chartnya-disini" class="md-chart"></div>
+                            <div id="id-chartnya-disini" class="md-chart">Pie Chart</div>
+                        </div>
+                    </div>
+                </li>
+
+                <li class="uk-width-medium-1-3">
+                    <?php //COMMENT PIE ?>
+                    <div class="md-card hoverable">
+                        <div class="md-card-toolbar">
+                            <div class="md-card-toolbar-actions">
+                                <a class="btn waves-effect waves-light z-depth-0 amber lighten-4 tooltipped" data-position="top" data-delay="25" data-tooltip="Help"><i class="material-icons">help</i></a>
+                                <a class="btn waves-effect waves-light z-depth-0 green lighten-4 tooltipped" data-position="top" data-delay="25" data-tooltip="Minimize" data-uk-toggle="{target:'#piewrap2'}"><i class="material-icons md-icon">fullscreen</i></a>
+                            </div>
+                            <h2 class="md-card-toolbar-heading-text">COMMENTS</h2>
+                        </div>
+                        <div id="piewrap2" class="md-card-content">
+                            <div id="id-chartnya-disini" class="md-chart">Pie Chart</div>
+                        </div>
+                    </div>
+                </li>
+
+                <li class="uk-width-medium-1-3">
+                    <?php //FORUM REACH PIE ?>
+                    <div class="md-card hoverable">
+                        <div class="md-card-toolbar">
+                            <div class="md-card-toolbar-actions">
+                                <a class="btn waves-effect waves-light z-depth-0 amber lighten-4 tooltipped" data-position="top" data-delay="25" data-tooltip="Help"><i class="material-icons">help</i></a>
+                                <a class="btn waves-effect waves-light z-depth-0 green lighten-4 tooltipped" data-position="top" data-delay="25" data-tooltip="Minimize" data-uk-toggle="{target:'#piewrap3'}"><i class="material-icons md-icon">fullscreen</i></a>
+                            </div>
+                            <h2 class="md-card-toolbar-heading-text">FORUM REACH</h2>
+                        </div>
+                        <div id="piewrap3" class="md-card-content">
+                            <div id="id-chartnya-disini" class="md-chart">Pie Chart</div>
                         </div>
                     </div>
                 </li>
@@ -100,7 +132,7 @@
                             <h2 class="md-card-toolbar-heading-text">FORUM SENTIMENT</h2>
                         </div>
                         <div id="sentimentwrap" class="md-card-content">
-                            <div id="share-brand-container" class="md-chart"></div>
+                            <div id="share-brand-container" class="md-chart">Bar Chart</div>
                         </div>
                     </div>
                 </li>

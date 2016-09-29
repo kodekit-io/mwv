@@ -88,7 +88,7 @@
                             <h2 class="md-card-toolbar-heading-text">RATING</h2>
                         </div>
                         <div id="barwrap1" class="md-card-content">
-                            <div id="" class="md-chart"></div>
+                            <div id="" class="md-chart">Bar Chart</div>
                         </div>
                     </div>
                 </li>
@@ -104,7 +104,7 @@
                             <h2 class="md-card-toolbar-heading-text">VIEW COUNT</h2>
                         </div>
                         <div id="barwrap2" class="md-card-content">
-                            <div id="id-chartnya-disini" class="md-chart"></div>
+                            <div id="id-chartnya-disini" class="md-chart">Bar Chart</div>
                         </div>
                     </div>
                 </li>
@@ -117,10 +117,10 @@
                                 <a class="btn waves-effect waves-light z-depth-0 amber lighten-4 tooltipped" data-position="top" data-delay="25" data-tooltip="Help"><i class="material-icons">help</i></a>
                                 <a class="btn waves-effect waves-light z-depth-0 green lighten-4 tooltipped" data-position="top" data-delay="25" data-tooltip="Minimize" data-uk-toggle="{target:'#barwrap3'}"><i class="material-icons md-icon">fullscreen</i></a>
                             </div>
-                            <h2 class="md-card-toolbar-heading-text">COMMENT BAR</h2>
+                            <h2 class="md-card-toolbar-heading-text">COMMENTS</h2>
                         </div>
                         <div id="barwrap3" class="md-card-content">
-                            <div id="id-chartnya-disini" class="md-chart"></div>
+                            <div id="id-chartnya-disini" class="md-chart">Bar Chart</div>
                         </div>
                     </div>
                 </li>

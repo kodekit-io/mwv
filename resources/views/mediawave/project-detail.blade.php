@@ -82,13 +82,13 @@
                                     <div id="buzztrend" class="md-chart"></div>
                                 </li>
                                 <li>
-                                    <div id="posttrend" class="md-chart"></div>
+                                    <div id="posttrend" class="md-chart">Line Chart</div>
                                 </li>
                                 <li>
-                                    <div id="reachtrend" class="md-chart"></div>
+                                    <div id="reachtrend" class="md-chart">Line Chart</div>
                                 </li>
                                 <li>
-                                    <div id="interacttrend" class="md-chart"></div>
+                                    <div id="interacttrend" class="md-chart">Line Chart</div>
                                 </li>
                             </ul>
                         </div>
@@ -105,7 +105,7 @@
                             <h2 class="md-card-toolbar-heading-text">BUZZ</h2>
                         </div>
                         <div id="buzz" class="md-card-content">
-                            <div id="id-chartnya-disini" class="md-chart"></div>
+                            <div id="id-chartnya-disini" class="md-chart">Pie Chart</div>
                         </div>
                     </div>
                 </li>
@@ -120,7 +120,7 @@
                             <h2 class="md-card-toolbar-heading-text">POST</h2>
                         </div>
                         <div id="post" class="md-card-content">
-                            <div id="id-chartnya-disini" class="md-chart"></div>
+                            <div id="id-chartnya-disini" class="md-chart">Pie Chart</div>
                         </div>
                     </div>
                 </li>
@@ -135,7 +135,7 @@
                             <h2 class="md-card-toolbar-heading-text">INTERACTIONS</h2>
                         </div>
                         <div id="interaction" class="md-card-content">
-                            <div id="id-chartnya-disini" class="md-chart"></div>
+                            <div id="id-chartnya-disini" class="md-chart">Pie Chart</div>
                         </div>
                     </div>
                 </li>
@@ -150,7 +150,7 @@
                             <h2 class="md-card-toolbar-heading-text">UNIQUE USERS</h2>
                         </div>
                         <div id="unique" class="md-card-content">
-                            <div id="id-chartnya-disini" class="md-chart"></div>
+                            <div id="id-chartnya-disini" class="md-chart">Pie Chart</div>
                         </div>
                     </div>
                 </li>
@@ -165,7 +165,7 @@
                             <h2 class="md-card-toolbar-heading-text">SENTIMENT</h2>
                         </div>
                         <div id="sentiment" class="md-card-content">
-                            <div id="share-brand-container" class="md-chart"></div>
+                            <div id="share-brand-container" class="md-chart">Bar Chart</div>
                         </div>
                     </div>
                 </li>
@@ -180,7 +180,7 @@
                             <h2 class="md-card-toolbar-heading-text">INTERACTION RATE</h2>
                         </div>
                         <div id="ir" class="md-card-content">
-                            <div id="id-chartnya-disini" class="md-chart"></div>
+                            <div id="id-chartnya-disini" class="md-chart">Bar Chart</div>
                         </div>
                     </div>
                 </li>
@@ -195,7 +195,7 @@
                             <h2 class="md-card-toolbar-heading-text">SHARE OF MEDIA</h2>
                         </div>
                         <div id="mediashare" class="md-card-content">
-                            <div id="share-media-container" class="md-chart"></div>
+                            <div id="share-media-container" class="md-chart">Bar Chart</div>
                         </div>
                     </div>
                 </li>

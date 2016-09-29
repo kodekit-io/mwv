@@ -80,7 +80,7 @@
                             <h2 class="md-card-toolbar-heading-text">ARTICLE POST</h2>
                         </div>
                         <div id="post" class="md-card-content">
-                            <div id="id-chartnya-disini" class="md-chart"></div>
+                            <div id="id-chartnya-disini" class="md-chart">Pie Chart</div>
                         </div>
                     </div>
                 </li>
@@ -96,7 +96,7 @@
                             <h2 class="md-card-toolbar-heading-text">ARTICLE COMMENTS</h2>
                         </div>
                         <div id="comments" class="md-card-content">
-                            <div id="id-chartnya-disini" class="md-chart"></div>
+                            <div id="id-chartnya-disini" class="md-chart">Pie Chart</div>
                         </div>
                     </div>
                 </li>
@@ -112,7 +112,7 @@
                             <h2 class="md-card-toolbar-heading-text">MEDIA REACH</h2>
                         </div>
                         <div id="mediareach" class="md-card-content">
-                            <div id="id-chartnya-disini" class="md-chart"></div>
+                            <div id="id-chartnya-disini" class="md-chart">Pie Chart</div>
                         </div>
                     </div>
                 </li>
@@ -128,7 +128,7 @@
                             <h2 class="md-card-toolbar-heading-text">MEDIA SENTIMENT</h2>
                         </div>
                         <div id="msentiment" class="md-card-content">
-                            <div id="id-chartnya-disini" class="md-chart"></div>
+                            <div id="id-chartnya-disini" class="md-chart">Bar Chart</div>
                         </div>
                     </div>
                 </li>
