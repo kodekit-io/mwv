@@ -26,7 +26,10 @@ function createProjectBuzzChart(data, id) {
             text: null
         },
         xAxis: {
-            categories: data.categories
+            categories: data.categories,
+            labels: {
+                enabled: false
+            }
         },
         yAxis: {
             title: {
@@ -44,7 +47,7 @@ function createProjectBuzzChart(data, id) {
         legend: {
             layout: 'horizontal',
             align: 'center',
-            verticalAlign: 'top',
+            verticalAlign: 'bottom',
             borderWidth: 0
         },
         series: data.content
