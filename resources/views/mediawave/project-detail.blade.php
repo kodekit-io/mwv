@@ -224,7 +224,7 @@
                             <h2 class="md-card-toolbar-heading-text">INFLUENCER</h2>
                         </div>
                         <div id="author" class="md-card-content conv-wrap">
-                            <table id="table_author" class="uk-table uk-table-striped uk-table-hover bordered" cellspacing="0" width="100%">
+                            <table id="table_author" class="striped bordered highlight responsive-table">
                                 <thead>
                                 <tr>
                                     <th>Name</th>
@@ -240,7 +240,7 @@
                                         <td>{!! $influencer->name !!}</td>
                                         <td>{!! $influencer->score !!}</td>
                                         <td>{!! $influencer->value !!}</td>
-                                        <td><a href="{!! $influencer->url !!}" target="_blank">See Details</a></td>
+                                        <td><a href="{!! $influencer->url !!}" class="uk-button uk-button-mini uk-button-success" target="_blank">See Details</a></td>
                                     </tr>
                                 @endforeach
                                 @endif
@@ -260,7 +260,7 @@
                         </div>
                         <div id="conv" class="md-card-content">
                             <div class="row conv-wrap">
-                                <div class="col s12 uk-margin-bottom">
+                                <div class="col s12">
                                     <ul class="tabs conv-tabs">
                                         <li class="tab col s3"><a class="active light-blue-text" href="#convtwiter"><i class="uk-icon-twitter"></i> Twitter</a></li>
                                         <li class="tab col s3"><a class="blue-text text-darken-4" href="#convfacebook"><i class="uk-icon-facebook"></i> Facebook</a></li>
@@ -270,9 +270,9 @@
                                         <li class="tab col s3"><a class="orange-text text-darken-4" href="#convblog"><i class="material-icons">rss_feed</i> Blog</a></li>
                                     </ul>
                                 </div>
-                                <div id="convtwiter" class="col s12">
+                                <div id="convtwiter" class="">
                                     <?php //TWITTER TABLE ?>
-                                    <table id="table_twitter" class="uk-table uk-table-striped uk-table-hover bordered" cellspacing="0" width="100%">
+                                    <table id="table_twitter" class="striped bordered highlight responsive-table">
                                         <thead>
                                         <tr>
                                             <th>Author</th>
@@ -281,14 +281,14 @@
                                             <th>Interaction</th>
                                             <th>Viral Reach</th>
                                             <th>Sentiment</th>
-                                            <th></th>
+                                            <th><input type="checkbox" class="" id="selectall" /><label for="selectall">Select All</label></th>
                                         </tr>
                                         </thead>
                                     </table>
                                 </div>
-                                <div id="convfacebook" class="col s12">
+                                <div id="convfacebook" class="">
                                     <?php //FB TABLE ?>
-                                    <table id="table_facebook" class="uk-table uk-table-striped uk-table-hover bordered" cellspacing="0" width="100%">
+                                    <table id="table_facebook" class="striped bordered highlight responsive-table">
                                         <thead>
                                         <tr>
                                             <th>Page</th>
@@ -301,9 +301,9 @@
                                         </thead>
                                     </table>
                                 </div>
-                                <div id="convnews" class="col s12">
+                                <div id="convnews" class="">
                                     <?php //NEWS TABLE ?>
-                                    <table id="table_news" class="uk-table uk-table-striped uk-table-hover bordered" cellspacing="0" width="100%">
+                                    <table id="table_news" class="striped bordered highlight responsive-table">
                                         <thead>
                                         <tr>
                                             <th>Media</th>
@@ -318,9 +318,9 @@
                                         </thead>
                                     </table>
                                 </div>
-                                <div id="convforum" class="col s12">
+                                <div id="convforum" class="">
                                     <?php //FORUM TABLE ?>
-                                    <table id="table_forum" class="uk-table uk-table-striped uk-table-hover bordered" cellspacing="0" width="100%">
+                                    <table id="table_forum" class="striped bordered highlight responsive-table">
                                         <thead>
                                         <tr>
                                             <th>Forum</th>
@@ -333,9 +333,9 @@
                                         </thead>
                                     </table>
                                 </div>
-                                <div id="convvideo" class="col s12">
+                                <div id="convvideo" class="">
                                     <?php //VIDEO TABLE ?>
-                                    <table id="table_video" class="uk-table uk-table-striped uk-table-hover bordered" cellspacing="0" width="100%">
+                                    <table id="table_video" class="striped bordered highlight responsive-table">
                                         <thead>
                                         <tr>
                                             <th>Author</th>
@@ -348,9 +348,9 @@
                                         </thead>
                                     </table>
                                 </div>
-                                <div id="convblog" class="col s12">
+                                <div id="convblog" class="">
                                     <?php //BLOG TABLE ?>
-                                    <table id="table_blog" class="uk-table uk-table-striped uk-table-hover bordered" cellspacing="0" width="100%">
+                                    <table id="table_blog" class="striped bordered highlight responsive-table">
                                         <thead>
                                         <tr>
                                             <th>Authors</th>

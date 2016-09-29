@@ -5,31 +5,30 @@
 @endsection
 
 @section('content')
-@include('layouts.project-subnav')
+@include('layouts.socmed-subnav')
     <main class="uk-width-1-1">
         <div class="md-container">
             <div class="md-card uk-width-1-1 md-keywords">
                 <div class="md-card-toolbar">
                     <h1 class="md-card-toolbar-heading-text large proxima-nova-bold">
-                        Project Name: {!! $project->pname !!}
+                        Social Media Page
                     </h1>
                 </div>
                 <form class="md-card-content">
                     <ul class="uk-subnav left">
                         <li class="">
                             <input type="checkbox" class="filled-in" id="key1" checked="checked" />
-                            <label for="key1">Keyword 1</label>
+                            <label for="key1">Facebook 1</label>
                         </li>
                         <li class="">
                             <input type="checkbox" class="filled-in" id="key2" checked="checked" />
-                            <label for="key2">Keyword 2</label>
+                            <label for="key2">Facebook 2</label>
                         </li>
                         <li class="">
                             <input type="checkbox" class="filled-in" id="key3" checked="checked" />
-                            <label for="key3">Keyword 3</label>
+                            <label for="key3">Facebook 3</label>
                         </li>
                     </ul>
-
                     <div class="nav-wrapper right">
                         <div class="input-field md-daterange">
                             <input id="startdate" type="text" class="uk-datepicker" data-uk-datepicker="{pos:'bottom',format:'DD/MM/YY'}" placeholder="10/12/16">
@@ -163,6 +162,7 @@
                         </div>
                     </div>
                 </li>
+
                 <li class="uk-width-medium-1-1">
                     <?php //WORDS CLOUD ?>
                     <div class="md-card hoverable">
@@ -178,6 +178,7 @@
                         </div>
                     </div>
                 </li>
+
                 <li class="uk-width-medium-1-1">
                     <div class="md-card hoverable">
                         <div class="md-card-toolbar">
@@ -191,18 +192,19 @@
                             <?php //INFLUENCER/AUTHOR TABLE ?>
                             <table id="table_author" class="striped bordered highlight responsive-table">
                                 <thead>
-                                <tr>
-                                    <th>Author</th>
-                                    <th>Popular</th>
-                                    <th>Active</th>
-                                    <th>Impact</th>
-                                    <th></th>
-                                </tr>
+                                    <tr>
+                                        <th>Author</th>
+                                        <th>Popular</th>
+                                        <th>Active</th>
+                                        <th>Impact</th>
+                                        <th></th>
+                                    </tr>
                                 </thead>
                             </table>
                         </div>
                    </div>
                 </li>
+
                 <li class="uk-width-medium-1-1">
                     <div class="md-card hoverable">
                         <div class="md-card-toolbar">
@@ -216,16 +218,16 @@
                             <?php //POSTS ?>
                             <table id="table_page" class="striped bordered highlight responsive-table">
                                 <thead>
-                                <tr>
-                                    <th>Author</th>
-                                    <th>Posts</th>
-                                    <th>Comment</th>
-                                    <th>Like</th>
-                                    <th>Share</th>
-                                    <th>Media Type</th>
-                                    <th>Sentiment</th>
-                                    <th><input type="checkbox" class="" id="" /><label for="">Select All</label></th>
-                                </tr>
+                                    <tr>
+                                        <th>Author</th>
+                                        <th>Posts</th>
+                                        <th>Comment</th>
+                                        <th>Like</th>
+                                        <th>Share</th>
+                                        <th>Media Type</th>
+                                        <th>Sentiment</th>
+                                        <th><input type="checkbox" class="" id="selectall" /><label for="selectall">Select All</label></th>
+                                    </tr>
                                 </thead>
                             </table>
                         </div>
@@ -254,15 +256,15 @@
 
 @section('page-level-scripts')
 
-    <script>
-        $(document).ready(function() {
-            $('#table_author').DataTable( {
-                "order": [[ 0, "desc" ]]
-            });
-            $('#table_page').DataTable( {
-                "order": [[ 0, "desc" ]]
-            });
+<script>
+    $(document).ready(function() {
+        $('#table_author').DataTable( {
+            "order": [[ 0, "desc" ]]
         });
-    </script>
+        $('#table_page').DataTable( {
+            "order": [[ 0, "desc" ]]
+        });
+    });
+</script>
 
 @endsection

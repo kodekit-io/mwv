@@ -152,7 +152,7 @@
                         </div>
                         <div id="convwrap" class="md-card-content conv-wrap">
                             <?php //POSTS ?>
-                            <table id="table_vid" class="uk-table uk-table-striped uk-table-hover bordered" cellspacing="0" width="100%">
+                            <table id="table_vid" class="striped bordered highlight responsive-table">
                                 <thead>
                                 <tr>
                                     <th>Author</th>
@@ -191,12 +191,12 @@
 
 @section('page-level-scripts')
 
-    <script>
-        $(document).ready(function() {
-            $('#table_vid').DataTable( {
-                "order": [[ 0, "desc" ]]
-            });
+<script>
+    $(document).ready(function() {
+        $('#table_vid').DataTable( {
+            "order": [[ 0, "desc" ]]
         });
-    </script>
+    });
+</script>
 
 @endsection

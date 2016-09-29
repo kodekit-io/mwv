@@ -164,7 +164,7 @@
                         </div>
                         <div id="authorwrap" class="md-card-content conv-wrap">
                             <?php //INFLUENCER/AUTHOR TABLE ?>
-                            <table id="table_author" class="uk-table uk-table-striped uk-table-hover bordered" cellspacing="0" width="100%">
+                            <table id="table_author" class="striped bordered highlight responsive-table">
                                 <thead>
                                 <tr>
                                     <th>Author</th>
@@ -190,7 +190,7 @@
                         </div>
                         <div id="convwrap" class="md-card-content conv-wrap">
                             <?php //THREAD TABLE ?>
-                            <table id="table_thread" class="uk-table uk-table-striped uk-table-hover bordered" cellspacing="0" width="100%">
+                            <table id="table_thread" class="striped bordered highlight responsive-table">
                                 <thead>
                                 <tr>
                                     <th>Forum</th>
