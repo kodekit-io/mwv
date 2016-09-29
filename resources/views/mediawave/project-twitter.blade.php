@@ -192,7 +192,7 @@
                         </div>
                         <div id="author" class="md-card-content conv-wrap">
                             <?php //INFLUENCER/AUTHOR TABLE ?>
-                            <table id="table_author" class="uk-table uk-table-striped uk-table-hover bordered" cellspacing="0" width="100%">
+                            <table id="table_author" class="striped bordered highlight responsive-table">
                                 <thead>
                                 <tr>
                                     <th>Author</th>
@@ -226,7 +226,7 @@
                                 <li>
                                     <div id="convposts" class="col s12">
                                         <?php //POSTS ?>
-                                        <table id="table_posts" class="uk-table uk-table-striped uk-table-hover bordered" cellspacing="0" width="100%">
+                                        <table id="table_posts" class="striped bordered highlight responsive-table">
                                             <thead>
                                             <tr>
                                                 <th>Author</th>
@@ -245,7 +245,7 @@
                                 <li>
                                     <div id="convhashtags" class="col s12">
                                         <?php //HASHTAG  ?>
-                                        <table id="table_hashtag" class="uk-table uk-table-striped uk-table-hover bordered" cellspacing="0" width="100%">
+                                        <table id="table_hashtag" class="striped bordered highlight responsive-table">
                                             <thead>
                                             <tr>
                                                 <th>Author</th>
@@ -264,7 +264,7 @@
                                 <li>
                                     <div id="convlinks" class="col s12">
                                         <?php //LINKS ?>
-                                        <table id="table_links" class="uk-table uk-table-striped uk-table-hover bordered" cellspacing="0" width="100%">
+                                        <table id="table_links"  class="striped bordered highlight responsive-table">
                                             <thead>
                                             <tr>
                                                 <th>Site</th>
