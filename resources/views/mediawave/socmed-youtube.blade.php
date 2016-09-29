@@ -5,31 +5,30 @@
 @endsection
 
 @section('content')
-@include('layouts.project-subnav')
+@include('layouts.socmed-subnav')
     <main class="uk-width-1-1">
         <div class="md-container">
             <div class="md-card uk-width-1-1 md-keywords">
                 <div class="md-card-toolbar">
                     <h1 class="md-card-toolbar-heading-text large proxima-nova-bold">
-                        Project Name: {!! $project->pname !!}
+                        Social Media Page
                     </h1>
                 </div>
                 <form class="md-card-content">
                     <ul class="uk-subnav left">
                         <li class="">
                             <input type="checkbox" class="filled-in" id="key1" checked="checked" />
-                            <label for="key1">Keyword 1</label>
+                            <label for="key1">Account 1</label>
                         </li>
                         <li class="">
                             <input type="checkbox" class="filled-in" id="key2" checked="checked" />
-                            <label for="key2">Keyword 2</label>
+                            <label for="key2">Account 2</label>
                         </li>
                         <li class="">
                             <input type="checkbox" class="filled-in" id="key3" checked="checked" />
-                            <label for="key3">Keyword 3</label>
+                            <label for="key3">Account 3</label>
                         </li>
                     </ul>
-
                     <div class="nav-wrapper right">
                         <div class="input-field md-daterange">
                             <input id="startdate" type="text" class="uk-datepicker" data-uk-datepicker="{pos:'bottom',format:'DD/MM/YY'}" placeholder="10/12/16">
@@ -43,7 +42,6 @@
                     </div>
                 </form>
             </div>
-
             <ul class="uk-grid uk-grid-medium" data-uk-grid data-uk-grid-margin>
                 <li class="uk-width-medium-1-1">
                     <div class="md-card hoverable">
@@ -166,7 +164,6 @@
                             </table>
                         </div>
                     </div>
-
                 </li>
             </ul>
         </div>

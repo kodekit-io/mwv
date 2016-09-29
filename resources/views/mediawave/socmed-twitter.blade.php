@@ -43,21 +43,7 @@
                 </form>
             </div>
             <ul class="uk-grid uk-grid-medium" data-uk-grid data-uk-grid-margin>
-                <li class="uk-width-medium-1-2">
-                    <div class="md-card hoverable">
-                        <div class="md-card-toolbar">
-                            <div class="md-card-toolbar-actions">
-                                <a class="btn waves-effect waves-light z-depth-0 amber lighten-4 tooltipped" data-position="top" data-delay="25" data-tooltip="Help"><i class="material-icons">help</i></a>
-                                <a class="btn waves-effect waves-light z-depth-0 green lighten-4 tooltipped" data-position="top" data-delay="25" data-tooltip="Minimize" data-uk-toggle="{target:'#brandequity'}"><i class="material-icons md-icon">fullscreen</i></a>
-                            </div>
-                            <h2 class="md-card-toolbar-heading-text">BRAND EQUITY</h2>
-                        </div>
-                        <div id="brandequity" class="md-card-content">
-                            <div id="brand-equity-container" class="md-chart"></div>
-                        </div>
-                    </div>
-                </li>
-                <li class="uk-width-medium-1-2">
+                <li class="uk-width-medium-1-1">
                     <div class="md-card hoverable">
                         <div class="md-card-toolbar">
                             <div class="md-card-toolbar-actions">
@@ -65,145 +51,138 @@
                                 <a class="btn waves-effect waves-light z-depth-0 green lighten-4 tooltipped" data-position="top" data-delay="25" data-tooltip="Minimize" data-uk-toggle="{target:'#trend'}"><i class="material-icons md-icon">fullscreen</i></a>
                             </div>
                             <div class="md-card-toolbar-heading-text">
-                                <ul class="uk-subnav uk-subnav-pill" data-uk-switcher="{connect:'#trend ul'}">
-                                    <li class="uk-active"><a>BUZZ TREND</a></li>
-                                    <li><a>POST TREND</a></li>
+                                <ul class="uk-subnav uk-subnav-pill" data-uk-switcher="{connect:'#trendwrap ul'}">
+                                    <li class="uk-active"><a>POST TREND</a></li>
+                                    <li><a>USER TREND</a></li>
                                     <li><a>REACH TREND</a></li>
-                                    <li><a>INTERACTIONS</a></li>
                                 </ul>
                             </div>
-
                         </div>
-                        <div id="trend" class="md-card-content">
+                        <?php //TREND ?>
+                        <div id="trendwrap" class="md-card-content">
                             <ul class="uk-switcher">
                                 <li>
-                                    <div id="buzztrend" class="md-chart"></div>
+                                    <div id="posttrend" class="md-chart">Post Trend</div>
                                 </li>
                                 <li>
-                                    <div id="posttrend" class="md-chart"></div>
+                                    <div id="usertrend" class="md-chart">User Trend</div>
                                 </li>
                                 <li>
-                                    <div id="reachtrend" class="md-chart"></div>
-                                </li>
-                                <li>
-                                    <div id="interacttrend" class="md-chart"></div>
+                                    <div id="reachtrend" class="md-chart">Reach Trend</div>
                                 </li>
                             </ul>
                         </div>
                     </div>
                 </li>
                 <li class="uk-width-medium-1-4">
+                    <?php //POST PIE ?>
                     <div class="md-card hoverable">
                         <div class="md-card-toolbar">
                             <div class="md-card-toolbar-actions">
                                 <a class="btn waves-effect waves-light z-depth-0 amber lighten-4 tooltipped" data-position="top" data-delay="25" data-tooltip="Help"><i class="material-icons">help</i></a>
-                                <a class="btn waves-effect waves-light z-depth-0 green lighten-4 tooltipped" data-position="top" data-delay="25" data-tooltip="Minimize" data-uk-toggle="{target:'#buzz'}"><i class="material-icons md-icon">fullscreen</i></a>
-                            </div>
-                            <h2 class="md-card-toolbar-heading-text">BUZZ</h2>
-                        </div>
-                        <div id="buzz" class="md-card-content">
-                            <div id="id-chartnya-disini" class="md-chart"></div>
-                        </div>
-                    </div>
-                </li>
-                <li class="uk-width-medium-1-4">
-                    <div class="md-card hoverable">
-                        <div class="md-card-toolbar">
-                            <div class="md-card-toolbar-actions">
-                                <a class="btn waves-effect waves-light z-depth-0 amber lighten-4 tooltipped" data-position="top" data-delay="25" data-tooltip="Help"><i class="material-icons">help</i></a>
-                                <a class="btn waves-effect waves-light z-depth-0 green lighten-4 tooltipped" data-position="top" data-delay="25" data-tooltip="Minimize" data-uk-toggle="{target:'#post'}"><i class="material-icons md-icon">fullscreen</i></a>
+                                <a class="btn waves-effect waves-light z-depth-0 green lighten-4 tooltipped" data-position="top" data-delay="25" data-tooltip="Minimize" data-uk-toggle="{target:'#piewrap1'}"><i class="material-icons md-icon">fullscreen</i></a>
                             </div>
                             <h2 class="md-card-toolbar-heading-text">POST</h2>
                         </div>
-                        <div id="post" class="md-card-content">
-                            <div id="id-chartnya-disini" class="md-chart"></div>
+                        <div id="piewrap1" class="md-card-content">
+                            <div id="id-chartnya-disini" class="md-chart">Pie</div>
                         </div>
                     </div>
                 </li>
                 <li class="uk-width-medium-1-4">
+                    <?php //INTERACTION PIE ?>
                     <div class="md-card hoverable">
                         <div class="md-card-toolbar">
                             <div class="md-card-toolbar-actions">
                                 <a class="btn waves-effect waves-light z-depth-0 amber lighten-4 tooltipped" data-position="top" data-delay="25" data-tooltip="Help"><i class="material-icons">help</i></a>
-                                <a class="btn waves-effect waves-light z-depth-0 green lighten-4 tooltipped" data-position="top" data-delay="25" data-tooltip="Minimize" data-uk-toggle="{target:'#interaction'}"><i class="material-icons md-icon">fullscreen</i></a>
+                                <a class="btn waves-effect waves-light z-depth-0 green lighten-4 tooltipped" data-position="top" data-delay="25" data-tooltip="Minimize" data-uk-toggle="{target:'#piewrap2'}"><i class="material-icons md-icon">fullscreen</i></a>
                             </div>
-                            <h2 class="md-card-toolbar-heading-text">INTERACTIONS</h2>
+                            <h2 class="md-card-toolbar-heading-text">INTERACTION</h2>
                         </div>
-                        <div id="interaction" class="md-card-content">
-                            <div id="id-chartnya-disini" class="md-chart"></div>
+                        <div id="piewrap2" class="md-card-content">
+                            <div id="id-chartnya-disini" class="md-chart">Pie</div>
                         </div>
                     </div>
                 </li>
                 <li class="uk-width-medium-1-4">
+                    <?php //VIRAL REACH PIE ?>
                     <div class="md-card hoverable">
                         <div class="md-card-toolbar">
                             <div class="md-card-toolbar-actions">
                                 <a class="btn waves-effect waves-light z-depth-0 amber lighten-4 tooltipped" data-position="top" data-delay="25" data-tooltip="Help"><i class="material-icons">help</i></a>
-                                <a class="btn waves-effect waves-light z-depth-0 green lighten-4 tooltipped" data-position="top" data-delay="25" data-tooltip="Minimize" data-uk-toggle="{target:'#unique'}"><i class="material-icons md-icon">fullscreen</i></a>
+                                <a class="btn waves-effect waves-light z-depth-0 green lighten-4 tooltipped" data-position="top" data-delay="25" data-tooltip="Minimize" data-uk-toggle="{target:'#piewrap3'}"><i class="material-icons md-icon">fullscreen</i></a>
                             </div>
-                            <h2 class="md-card-toolbar-heading-text">UNIQUE USERS</h2>
+                            <h2 class="md-card-toolbar-heading-text">VIRAL REACH</h2>
                         </div>
-                        <div id="unique" class="md-card-content">
-                            <div id="id-chartnya-disini" class="md-chart"></div>
+                        <div id="piewrap3" class="md-card-content">
+                            <div id="id-chartnya-disini" class="md-chart">Pie</div>
                         </div>
                     </div>
                 </li>
-                <li class="uk-width-medium-1-3">
+                <li class="uk-width-medium-1-4">
+                    <?php //POTENTIAL REACH PIE ?>
                     <div class="md-card hoverable">
                         <div class="md-card-toolbar">
                             <div class="md-card-toolbar-actions">
                                 <a class="btn waves-effect waves-light z-depth-0 amber lighten-4 tooltipped" data-position="top" data-delay="25" data-tooltip="Help"><i class="material-icons">help</i></a>
-                                <a class="btn waves-effect waves-light z-depth-0 green lighten-4 tooltipped" data-position="top" data-delay="25" data-tooltip="Minimize" data-uk-toggle="{target:'#sentiment'}"><i class="material-icons md-icon">fullscreen</i></a>
+                                <a class="btn waves-effect waves-light z-depth-0 green lighten-4 tooltipped" data-position="top" data-delay="25" data-tooltip="Minimize" data-uk-toggle="{target:'#piewrap4'}"><i class="material-icons md-icon">fullscreen</i></a>
+                            </div>
+                            <h2 class="md-card-toolbar-heading-text">POTENTIAL REACH</h2>
+                        </div>
+                        <div id="piewrap4" class="md-card-content">
+                            <div id="id-chartnya-disini" class="md-chart">Pie</div>
+                        </div>
+                    </div>
+                </li>
+
+                <li class="uk-width-medium-1-2">
+                    <?php //SENTIMENT BAR ?>
+                    <div class="md-card hoverable">
+                        <div class="md-card-toolbar">
+                            <div class="md-card-toolbar-actions">
+                                <a class="btn waves-effect waves-light z-depth-0 amber lighten-4 tooltipped" data-position="top" data-delay="25" data-tooltip="Help"><i class="material-icons">help</i></a>
+                                <a class="btn waves-effect waves-light z-depth-0 green lighten-4 tooltipped" data-position="top" data-delay="25" data-tooltip="Minimize" data-uk-toggle="{target:'#barwrap1'}"><i class="material-icons md-icon">fullscreen</i></a>
                             </div>
                             <h2 class="md-card-toolbar-heading-text">SENTIMENT</h2>
                         </div>
-                        <div id="sentiment" class="md-card-content">
-                            <div id="share-brand-container" class="md-chart"></div>
+                        <div id="barwrap1" class="md-card-content">
+                            <div id="share-brand-container" class="md-chart">Sentiment Bar</div>
                         </div>
                     </div>
                 </li>
-                <li class="uk-width-medium-1-3">
+
+                <li class="uk-width-medium-1-2">
+                    <?php //INTERACTION RATE BAR ?>
                     <div class="md-card hoverable">
                         <div class="md-card-toolbar">
                             <div class="md-card-toolbar-actions">
                                 <a class="btn waves-effect waves-light z-depth-0 amber lighten-4 tooltipped" data-position="top" data-delay="25" data-tooltip="Help"><i class="material-icons">help</i></a>
-                                <a class="btn waves-effect waves-light z-depth-0 green lighten-4 tooltipped" data-position="top" data-delay="25" data-tooltip="Minimize" data-uk-toggle="{target:'#ir'}"><i class="material-icons md-icon">fullscreen</i></a>
+                                <a class="btn waves-effect waves-light z-depth-0 green lighten-4 tooltipped" data-position="top" data-delay="25" data-tooltip="Minimize" data-uk-toggle="{target:'#barwrap2'}"><i class="material-icons md-icon">fullscreen</i></a>
                             </div>
                             <h2 class="md-card-toolbar-heading-text">INTERACTION RATE</h2>
                         </div>
-                        <div id="ir" class="md-card-content">
-                            <div id="id-chartnya-disini" class="md-chart"></div>
+                        <div id="barwrap2" class="md-card-content">
+                            <div id="share-brand-container" class="md-chart">INTERACTION RATE Bar</div>
                         </div>
                     </div>
                 </li>
-                <li class="uk-width-medium-1-3">
-                    <div class="md-card hoverable">
-                        <div class="md-card-toolbar">
-                            <div class="md-card-toolbar-actions">
-                                <a class="btn waves-effect waves-light z-depth-0 amber lighten-4 tooltipped" data-position="top" data-delay="25" data-tooltip="Help"><i class="material-icons">help</i></a>
-                                <a class="btn waves-effect waves-light z-depth-0 green lighten-4 tooltipped" data-position="top" data-delay="25" data-tooltip="Minimize" data-uk-toggle="{target:'#mediashare'}"><i class="material-icons md-icon">fullscreen</i></a>
-                            </div>
-                            <h2 class="md-card-toolbar-heading-text">SHARE OF MEDIA</h2>
-                        </div>
-                        <div id="mediashare" class="md-card-content">
-                            <div id="share-media-container" class="md-chart"></div>
-                        </div>
-                    </div>
-                </li>
+
                 <li class="uk-width-medium-1-1">
+                    <?php //WORDS CLOUD ?>
                     <div class="md-card hoverable">
                         <div class="md-card-toolbar">
                             <div class="md-card-toolbar-actions">
                                 <a class="btn waves-effect waves-light z-depth-0 amber lighten-4 tooltipped" data-position="top" data-delay="25" data-tooltip="Help"><i class="material-icons">help</i></a>
-                                <a class="btn waves-effect waves-light z-depth-0 green lighten-4 tooltipped" data-position="top" data-delay="25" data-tooltip="Minimize" data-uk-toggle="{target:'#wordcloud'}"><i class="material-icons md-icon">fullscreen</i></a>
+                                <a class="btn waves-effect waves-light z-depth-0 green lighten-4 tooltipped" data-position="top" data-delay="25" data-tooltip="Minimize" data-uk-toggle="{target:'#wordcloudwrap'}"><i class="material-icons md-icon">fullscreen</i></a>
                             </div>
                             <h2 class="md-card-toolbar-heading-text">WORD CLOUDS</h2>
                         </div>
-                        <div id="wordcloud" class="md-card-content">
+                        <div id="wordcloudwrap" class="md-card-content">
                             <div id="id-chartnya-disini" class="md-chart"></div>
                         </div>
                     </div>
                 </li>
+
                 <li class="uk-width-medium-1-1">
                     <div class="md-card hoverable">
                         <div class="md-card-toolbar">
@@ -213,104 +192,98 @@
                             </div>
                             <h2 class="md-card-toolbar-heading-text">INFLUENCER</h2>
                         </div>
-                        <div id="author" class="md-card-content">
-                             <div id="tabel-container" class="uk-width-1-1">
-                                 <?php //AUTHOR ?>
-                                 <table id="" class="uk-table uk-table-striped uk-table-hover bordered" cellspacing="0" width="100%">
-                                     <thead>
-                                     <tr>
-                                         <th>Author</th>
-                                         <th>Popular</th>
-                                         <th>Active</th>
-                                         <th>Impact</th>
-                                         <th></th>
-                                     </tr>
-                                     </thead>
-                                     <tbody>
-                                     <tr>
-                                         <td></td>
-                                         <td></td>
-                                         <td></td>
-                                         <td></td>
-                                         <td></td>
-                                     </tr>
-                                     </tbody>
-                                 </table>
-                             </div>
+                        <div id="author" class="md-card-content conv-wrap">
+                            <?php //INFLUENCER/AUTHOR TABLE ?>
+                            <table id="table_author" class="uk-table uk-table-striped uk-table-hover bordered" cellspacing="0" width="100%">
+                                <thead>
+                                <tr>
+                                    <th>Author</th>
+                                    <th>Popular</th>
+                                    <th>Active</th>
+                                    <th>Impact</th>
+                                    <th></th>
+                                </tr>
+                                </thead>
+                            </table>
                         </div>
                    </div>
                 </li>
+
                 <li class="uk-width-medium-1-1">
                     <div class="md-card hoverable">
                         <div class="md-card-toolbar">
                             <div class="md-card-toolbar-actions">
                                 <a class="btn waves-effect waves-light z-depth-0 amber lighten-4 tooltipped" data-position="top" data-delay="25" data-tooltip="Help"><i class="material-icons">help</i></a>
-                                <a class="btn waves-effect waves-light z-depth-0 green lighten-4 tooltipped" data-position="top" data-delay="25" data-tooltip="Minimize" data-uk-toggle="{target:'#conv'}"><i class="material-icons md-icon">fullscreen</i></a>
+                                <a class="btn waves-effect waves-light z-depth-0 green lighten-4 tooltipped" data-position="top" data-delay="25" data-tooltip="Minimize" data-uk-toggle="{target:'#convwrap'}"><i class="material-icons md-icon">fullscreen</i></a>
                             </div>
                             <h2 class="md-card-toolbar-heading-text">CONVERSATIONS</h2>
                         </div>
-                        <div id="conv" class="md-card-content">
+
+                        <div id="convwrap" class="md-card-content">
                             <div class="row conv-wrap">
                                 <div class="col s12 uk-margin-bottom">
                                     <ul class="tabs conv-tabs">
-                                        <li class="tab col s3"><a class="active light-blue-text" href="#convtwiter"><i class="uk-icon-twitter"></i> Twitter</a></li>
-                                        <li class="tab col s3"><a class="blue-text text-darken-4" href="#convfacebook"><i class="uk-icon-facebook"></i> Facebook</a></li>
-                                        <li class="tab col s3"><a class="brown-text text-accent-4" href="#convnews"><i class="material-icons">web</i> Online News</a></li>
-                                        <li class="tab col s3"><a class="lime-text text-darken-4" href="#convforum"><i class="material-icons">forum</i> Forum</a></li>
-                                        <li class="tab col s3"><a class="red-text text-darken-4" href="#convvideo"><i class="material-icons">videocam</i> Video</a></li>
-                                        <li class="tab col s3"><a class="orange-text text-darken-4" href="#convblog"><i class="material-icons">rss_feed</i> Blog</a></li>
+                                        <li class="tab col s4"><a class="active" href="#convpost"> POST</a></li>
+                                        <li class="tab col s4"><a href="#convhashtag"> HASHTAG</a></li>
+                                        <li class="tab col s4"><a href="#convlinks"> LINKS</a></li>
                                     </ul>
                                 </div>
-                                <div id="convtwiter" class="col s12">
-                                    <?php //TWITTER ?>
-                                    <table id="table_twitter" class="uk-table uk-table-striped uk-table-hover bordered" cellspacing="0" width="100%">
+                                <div id="convpost" class="col s12">
+                                    <?php //POST TABLE ?>
+                                    <table id="table_post" class="uk-table uk-table-striped uk-table-hover bordered" cellspacing="0" width="100%">
                                         <thead>
-                                        <tr>
-                                            <th>Post Date</th>
-                                            <th>Author</th>
-                                            <th>Content</th>
-                                            <th>Interaction</th>
-                                            <th>Sentiment</th>
-                                            <th></th>
-                                        </tr>
+                                            <tr>
+                                                <th>Author</th>
+                                                <th>Post</th>
+                                                <th>Original Reach</th>
+                                                <th>Interaction</th>
+                                                <th>Viral Reach</th>
+                                                <th>Viral Score</th>
+                                                <th>Sentiment</th>
+                                                <th></th>
+                                            </tr>
                                         </thead>
-                                        <tbody>
-                                        <tr>
-                                            <td>21/09/2016 17:02:06</td>
-                                            <td>joniiskandar729</td>
-                                            <td><a href="http://twitter.com/joniiskandar729/status/778534761450967041" target="_blank">Tak Kecewa ke Ahok yang Pilih Djarot, Heru: Semoga Bisa Atasi Macet Jakarta</a></td>
-                                            <td>547</td>
-                                            <td>Netral</td>
-                                            <td></td>
-                                        </tr>
-                                        <tr>
-                                            <td>21/09/2016 17:52:20</td>
-                                            <td>nongandah</td>
-                                            <td><a href="http://twitter.com/nongandah/status/778547405520121856" target="_blank">Ngga, kan mengikuti himbauan Ahok utk mengikuti live streaming FBnya aja spy ngga bikin macet</a></td>
-                                            <td>752</td>
-                                            <td>Negative</td>
-                                            <td></td>
-                                        </tr>
-                                        <tr>
-                                            <td>21/09/2016 18:01:06</td>
-                                            <td>snhadi</td>
-                                            <td><a href="http://twitter.com/snhadi/status/778549702958559232" target="_blank">Reklamasi jakarta..lanjut! Penggusuran..lanjut! Banjir..lanjut! Sumber waras..mandek! Ahok..kira2 lanjut/mandek? Tunggu kejutan mlm ini..</a></td>
-                                            <td>122</td>
-                                            <td>Positive</td>
-                                            <td></td>
-                                        </tr>
-                                        </tbody>
                                     </table>
                                 </div>
-                                <div id="convfacebook" class="col s12">Facebook</div>
-                                <div id="convnews" class="col s12">Online News</div>
-                                <div id="convforum" class="col s12">Forum</div>
-                                <div id="convvideo" class="col s12">Video</div>
-                                <div id="convblog" class="col s12">Blog</div>
+
+                                <div id="convhashtag" class="col s12">
+                                    <?php //HASHTAG TABLE ?>
+                                    <table id="table_hashtag" class="uk-table uk-table-striped uk-table-hover bordered" cellspacing="0" width="100%">
+                                        <thead>
+                                            <tr>
+                                                <th>Author</th>
+                                                <th>Post</th>
+                                                <th>Original Reach</th>
+                                                <th>Interaction</th>
+                                                <th>Viral Reach</th>
+                                                <th>Viral Score</th>
+                                                <th>Sentiment</th>
+                                                <th></th>
+                                            </tr>
+                                        </thead>
+                                    </table>
+                                </div>
+
+                                <div id="convlinks" class="col s12">
+                                    <?php //LINKS TABLE ?>
+                                    <table id="table_links" class="uk-table uk-table-striped uk-table-hover bordered" cellspacing="0" width="100%">
+                                        <thead>
+                                            <tr>
+                                                <th>Site</th>
+                                                <th>Title</th>
+                                                <th>Original Reach</th>
+                                                <th>Interaction</th>
+                                                <th>Viral Reach</th>
+                                                <th>Viral Score</th>
+                                                <th>Sentiment</th>
+                                                <th></th>
+                                            </tr>
+                                        </thead>
+                                    </table>
+                                </div>
                             </div>
                         </div>
                     </div>
-
                 </li>
             </ul>
         </div>
@@ -335,5 +308,21 @@
 
 @section('page-level-scripts')
 
+    <script>
+        $(document).ready(function() {
+            $('#table_author').DataTable( {
+                "order": [[ 0, "desc" ]]
+            });
+            $('#table_post').DataTable( {
+                "order": [[ 0, "desc" ]]
+            });
+            $('#table_hashtag').DataTable( {
+                "order": [[ 0, "desc" ]]
+            });
+            $('#table_links').DataTable( {
+                "order": [[ 0, "desc" ]]
+            });
+        });
+    </script>
 
 @endsection
