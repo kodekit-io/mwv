@@ -75,6 +75,7 @@
                             </div>
 
                         </div>
+                        <?php //TRENDS ?>
                         <div id="trend" class="md-card-content">
                             <ul class="uk-switcher">
                                 <li>
@@ -94,6 +95,7 @@
                     </div>
                 </li>
                 <li class="uk-width-medium-1-4">
+                    <?php //BUZZ PIE ?>
                     <div class="md-card hoverable">
                         <div class="md-card-toolbar">
                             <div class="md-card-toolbar-actions">
@@ -108,6 +110,7 @@
                     </div>
                 </li>
                 <li class="uk-width-medium-1-4">
+                    <?php //POST PIE ?>
                     <div class="md-card hoverable">
                         <div class="md-card-toolbar">
                             <div class="md-card-toolbar-actions">
@@ -122,6 +125,7 @@
                     </div>
                 </li>
                 <li class="uk-width-medium-1-4">
+                    <?php //INTERACTIONS PIE ?>
                     <div class="md-card hoverable">
                         <div class="md-card-toolbar">
                             <div class="md-card-toolbar-actions">
@@ -136,6 +140,7 @@
                     </div>
                 </li>
                 <li class="uk-width-medium-1-4">
+                    <?php //UNIQUE USERS PIE ?>
                     <div class="md-card hoverable">
                         <div class="md-card-toolbar">
                             <div class="md-card-toolbar-actions">
@@ -150,6 +155,7 @@
                     </div>
                 </li>
                 <li class="uk-width-medium-1-3">
+                    <?php //SENTIMENT BAR ?>
                     <div class="md-card hoverable">
                         <div class="md-card-toolbar">
                             <div class="md-card-toolbar-actions">
@@ -164,6 +170,7 @@
                     </div>
                 </li>
                 <li class="uk-width-medium-1-3">
+                    <?php //INTERACTION RATE BAR (with mid-range) ?>
                     <div class="md-card hoverable">
                         <div class="md-card-toolbar">
                             <div class="md-card-toolbar-actions">
@@ -178,6 +185,7 @@
                     </div>
                 </li>
                 <li class="uk-width-medium-1-3">
+                    <?php //SHARE OF MEDIA BAR ?>
                     <div class="md-card hoverable">
                         <div class="md-card-toolbar">
                             <div class="md-card-toolbar-actions">
@@ -192,6 +200,7 @@
                     </div>
                 </li>
                 <li class="uk-width-medium-1-1">
+                    <?php //WORDS CLOUD ?>
                     <div class="md-card hoverable">
                         <div class="md-card-toolbar">
                             <div class="md-card-toolbar-actions">
@@ -214,30 +223,19 @@
                             </div>
                             <h2 class="md-card-toolbar-heading-text">INFLUENCER</h2>
                         </div>
-                        <div id="author" class="md-card-content">
-                             <div id="tabel-container" class="uk-width-1-1">
-                                 <?php //AUTHOR ?>
-                                 <table id="" class="uk-table uk-table-striped uk-table-hover bordered" cellspacing="0" width="100%">
-                                     <thead>
-                                     <tr>
-                                         <th>Author</th>
-                                         <th>Popular</th>
-                                         <th>Active</th>
-                                         <th>Impact</th>
-                                         <th></th>
-                                     </tr>
-                                     </thead>
-                                     <tbody>
-                                     <tr>
-                                         <td></td>
-                                         <td></td>
-                                         <td></td>
-                                         <td></td>
-                                         <td></td>
-                                     </tr>
-                                     </tbody>
-                                 </table>
-                             </div>
+                        <div id="author" class="md-card-content conv-wrap">
+                            <?php //INFLUENCER/AUTHOR TABLE ?>
+                            <table id="table_author" class="uk-table uk-table-striped uk-table-hover bordered" cellspacing="0" width="100%">
+                                <thead>
+                                <tr>
+                                    <th>Author</th>
+                                    <th>Popular</th>
+                                    <th>Active</th>
+                                    <th>Impact</th>
+                                    <th></th>
+                                </tr>
+                                </thead>
+                            </table>
                         </div>
                    </div>
                 </li>
@@ -263,51 +261,96 @@
                                     </ul>
                                 </div>
                                 <div id="convtwiter" class="col s12">
-                                    <?php //TWITTER ?>
+                                    <?php //TWITTER TABLE ?>
                                     <table id="table_twitter" class="uk-table uk-table-striped uk-table-hover bordered" cellspacing="0" width="100%">
                                         <thead>
                                         <tr>
-                                            <th>Post Date</th>
                                             <th>Author</th>
-                                            <th>Content</th>
+                                            <th>Post</th>
+                                            <th>Name</th>
                                             <th>Interaction</th>
+                                            <th>Viral Reach</th>
                                             <th>Sentiment</th>
                                             <th></th>
                                         </tr>
                                         </thead>
-                                        <tbody>
-                                        <tr>
-                                            <td>21/09/2016 17:02:06</td>
-                                            <td>joniiskandar729</td>
-                                            <td><a href="http://twitter.com/joniiskandar729/status/778534761450967041" target="_blank">Tak Kecewa ke Ahok yang Pilih Djarot, Heru: Semoga Bisa Atasi Macet Jakarta</a></td>
-                                            <td>547</td>
-                                            <td>Netral</td>
-                                            <td></td>
-                                        </tr>
-                                        <tr>
-                                            <td>21/09/2016 17:52:20</td>
-                                            <td>nongandah</td>
-                                            <td><a href="http://twitter.com/nongandah/status/778547405520121856" target="_blank">Ngga, kan mengikuti himbauan Ahok utk mengikuti live streaming FBnya aja spy ngga bikin macet</a></td>
-                                            <td>752</td>
-                                            <td>Negative</td>
-                                            <td></td>
-                                        </tr>
-                                        <tr>
-                                            <td>21/09/2016 18:01:06</td>
-                                            <td>snhadi</td>
-                                            <td><a href="http://twitter.com/snhadi/status/778549702958559232" target="_blank">Reklamasi jakarta..lanjut! Penggusuran..lanjut! Banjir..lanjut! Sumber waras..mandek! Ahok..kira2 lanjut/mandek? Tunggu kejutan mlm ini..</a></td>
-                                            <td>122</td>
-                                            <td>Positive</td>
-                                            <td></td>
-                                        </tr>
-                                        </tbody>
                                     </table>
                                 </div>
-                                <div id="convfacebook" class="col s12">Facebook</div>
-                                <div id="convnews" class="col s12">Online News</div>
-                                <div id="convforum" class="col s12">Forum</div>
-                                <div id="convvideo" class="col s12">Video</div>
-                                <div id="convblog" class="col s12">Blog</div>
+                                <div id="convfacebook" class="col s12">
+                                    <?php //FB TABLE ?>
+                                    <table id="table_facebook" class="uk-table uk-table-striped uk-table-hover bordered" cellspacing="0" width="100%">
+                                        <thead>
+                                        <tr>
+                                            <th>Page</th>
+                                            <th>Post</th>
+                                            <th>Comment</th>
+                                            <th>Media Type</th>
+                                            <th>Sentiment</th>
+                                            <th></th>
+                                        </tr>
+                                        </thead>
+                                    </table>
+                                </div>
+                                <div id="convnews" class="col s12">
+                                    <?php //NEWS TABLE ?>
+                                    <table id="table_news" class="uk-table uk-table-striped uk-table-hover bordered" cellspacing="0" width="100%">
+                                        <thead>
+                                        <tr>
+                                            <th>Media</th>
+                                            <th>Title</th>
+                                            <th>Density</th>
+                                            <th>Reach</th>
+                                            <th>Comments</th>
+                                            <th>Summary</th>
+                                            <th>Sentiment</th>
+                                            <th></th>
+                                        </tr>
+                                        </thead>
+                                    </table>
+                                </div>
+                                <div id="convforum" class="col s12">
+                                    <?php //FORUM TABLE ?>
+                                    <table id="table_forum" class="uk-table uk-table-striped uk-table-hover bordered" cellspacing="0" width="100%">
+                                        <thead>
+                                        <tr>
+                                            <th>Forum</th>
+                                            <th>Thread Title</th>
+                                            <th>Post Count</th>
+                                            <th>Thread Starter</th>
+                                            <th>Sentiment</th>
+                                            <th></th>
+                                        </tr>
+                                        </thead>
+                                    </table>
+                                </div>
+                                <div id="convvideo" class="col s12">
+                                    <?php //VIDEO TABLE ?>
+                                    <table id="table_video" class="uk-table uk-table-striped uk-table-hover bordered" cellspacing="0" width="100%">
+                                        <thead>
+                                        <tr>
+                                            <th>Author</th>
+                                            <th>Posts</th>
+                                            <th>Likes</th>
+                                            <th>Comments</th>
+                                            <th>Potential Reach</th>
+                                            <th></th>
+                                        </tr>
+                                        </thead>
+                                    </table>
+                                </div>
+                                <div id="convblog" class="col s12">
+                                    <?php //BLOG TABLE ?>
+                                    <table id="table_blog" class="uk-table uk-table-striped uk-table-hover bordered" cellspacing="0" width="100%">
+                                        <thead>
+                                        <tr>
+                                            <th>Authors</th>
+                                            <th>Title</th>
+                                            <th>Summary</th>
+                                            <th></th>
+                                        </tr>
+                                        </thead>
+                                    </table>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -342,7 +385,25 @@
     <!-- script type="text/javascript" src="{{ asset('js/jquery.blockUI.js') }}"></script -->
     <script>
         $(document).ready(function() {
+            $('#table_author').DataTable( {
+                "order": [[ 0, "desc" ]]
+            });
             $('#table_twitter').DataTable( {
+                "order": [[ 0, "desc" ]]
+            });
+            $('#table_facebook').DataTable( {
+                "order": [[ 0, "desc" ]]
+            });
+            $('#table_news').DataTable( {
+                "order": [[ 0, "desc" ]]
+            });
+            $('#table_forum').DataTable( {
+                "order": [[ 0, "desc" ]]
+            });
+            $('#table_video').DataTable( {
+                "order": [[ 0, "desc" ]]
+            });
+            $('#table_blog').DataTable( {
                 "order": [[ 0, "desc" ]]
             });
         });

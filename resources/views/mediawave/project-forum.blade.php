@@ -43,6 +43,7 @@
                     </div>
                 </form>
             </div>
+
             <ul class="uk-grid uk-grid-medium" data-uk-grid data-uk-grid-margin>
                 <li class="uk-width-medium-1-1">
                     <div class="md-card hoverable">
@@ -53,7 +54,8 @@
                             </div>
                             <div class="md-card-toolbar-heading-text">
                                 <ul class="uk-subnav uk-subnav-pill" data-uk-switcher="{connect:'#trendwrap ul'}">
-                                    <li class="uk-active"><a>Daily Activity</a></li>
+                                    <li class="uk-active"><a>THREAD TREND</a></li>
+                                    <li><a>COMMENT TREND</a></li>
                                 </ul>
                             </div>
                         </div>
@@ -61,22 +63,25 @@
                         <div id="trendwrap" class="md-card-content">
                             <ul class="uk-switcher">
                                 <li>
-                                    <div id="buzztrend" class="md-chart">Daily Activity TREND</div>
+                                    <div id="thredtrend" class="md-chart">Thread TREND</div>
+                                </li>
+                                <li>
+                                    <div id="commnettrend" class="md-chart">Comments TREND</div>
                                 </li>
                             </ul>
                         </div>
                     </div>
                 </li>
 
-                <li class="uk-width-medium-1-4">
-                    <?php //POST PIE ?>
+                <li class="uk-width-medium-1-1">
+                    <?php //FORUM REACH PIE ?>
                     <div class="md-card hoverable">
                         <div class="md-card-toolbar">
                             <div class="md-card-toolbar-actions">
                                 <a class="btn waves-effect waves-light z-depth-0 amber lighten-4 tooltipped" data-position="top" data-delay="25" data-tooltip="Help"><i class="material-icons">help</i></a>
                                 <a class="btn waves-effect waves-light z-depth-0 green lighten-4 tooltipped" data-position="top" data-delay="25" data-tooltip="Minimize" data-uk-toggle="{target:'#piewrap1'}"><i class="material-icons md-icon">fullscreen</i></a>
                             </div>
-                            <h2 class="md-card-toolbar-heading-text">POST</h2>
+                            <h2 class="md-card-toolbar-heading-text">FORUM REACH</h2>
                         </div>
                         <div id="piewrap1" class="md-card-content">
                             <div id="id-chartnya-disini" class="md-chart"></div>
@@ -84,100 +89,38 @@
                     </div>
                 </li>
 
-                <li class="uk-width-medium-1-4">
-                    <?php //COMMENTS PIE ?>
+                <li class="uk-width-medium-1-1">
+                    <?php //FORUM SENTIMENT BAR ?>
                     <div class="md-card hoverable">
                         <div class="md-card-toolbar">
                             <div class="md-card-toolbar-actions">
                                 <a class="btn waves-effect waves-light z-depth-0 amber lighten-4 tooltipped" data-position="top" data-delay="25" data-tooltip="Help"><i class="material-icons">help</i></a>
-                                <a class="btn waves-effect waves-light z-depth-0 green lighten-4 tooltipped" data-position="top" data-delay="25" data-tooltip="Minimize" data-uk-toggle="{target:'#piewrap2'}"><i class="material-icons md-icon">fullscreen</i></a>
+                                <a class="btn waves-effect waves-light z-depth-0 green lighten-4 tooltipped" data-position="top" data-delay="25" data-tooltip="Minimize" data-uk-toggle="{target:'#sentimentwrap'}"><i class="material-icons md-icon">fullscreen</i></a>
                             </div>
-                            <h2 class="md-card-toolbar-heading-text">COMMENTS</h2>
+                            <h2 class="md-card-toolbar-heading-text">FORUM SENTIMENT</h2>
                         </div>
-                        <div id="piewrap2" class="md-card-content">
-                            <div id="id-chartnya-disini" class="md-chart"></div>
-                        </div>
-                    </div>
-                </li>
-
-                <li class="uk-width-medium-1-4">
-                    <?php //LIKE PIE ?>
-                    <div class="md-card hoverable">
-                        <div class="md-card-toolbar">
-                            <div class="md-card-toolbar-actions">
-                                <a class="btn waves-effect waves-light z-depth-0 amber lighten-4 tooltipped" data-position="top" data-delay="25" data-tooltip="Help"><i class="material-icons">help</i></a>
-                                <a class="btn waves-effect waves-light z-depth-0 green lighten-4 tooltipped" data-position="top" data-delay="25" data-tooltip="Minimize" data-uk-toggle="{target:'#piewrap3'}"><i class="material-icons md-icon">fullscreen</i></a>
-                            </div>
-                            <h2 class="md-card-toolbar-heading-text">LIKES</h2>
-                        </div>
-                        <div id="piewrap3" class="md-card-content">
-                            <div id="id-chartnya-disini" class="md-chart"></div>
-                        </div>
-                    </div>
-                </li>
-
-                <li class="uk-width-medium-1-4">
-                    <?php //SHARE PIE ?>
-                    <div class="md-card hoverable">
-                        <div class="md-card-toolbar">
-                            <div class="md-card-toolbar-actions">
-                                <a class="btn waves-effect waves-light z-depth-0 amber lighten-4 tooltipped" data-position="top" data-delay="25" data-tooltip="Help"><i class="material-icons">help</i></a>
-                                <a class="btn waves-effect waves-light z-depth-0 green lighten-4 tooltipped" data-position="top" data-delay="25" data-tooltip="Minimize" data-uk-toggle="{target:'#piewrap4'}"><i class="material-icons md-icon">fullscreen</i></a>
-                            </div>
-                            <h2 class="md-card-toolbar-heading-text">SHARE</h2>
-                        </div>
-                        <div id="piewrap4" class="md-card-content">
-                            <div id="id-chartnya-disini" class="md-chart"></div>
-                        </div>
-                    </div>
-                </li>
-
-                <li class="uk-width-medium-1-2">
-                    <?php //SENTIMENT BAR ?>
-                    <div class="md-card hoverable">
-                        <div class="md-card-toolbar">
-                            <div class="md-card-toolbar-actions">
-                                <a class="btn waves-effect waves-light z-depth-0 amber lighten-4 tooltipped" data-position="top" data-delay="25" data-tooltip="Help"><i class="material-icons">help</i></a>
-                                <a class="btn waves-effect waves-light z-depth-0 green lighten-4 tooltipped" data-position="top" data-delay="25" data-tooltip="Minimize" data-uk-toggle="{target:'#barwrap1'}"><i class="material-icons md-icon">fullscreen</i></a>
-                            </div>
-                            <h2 class="md-card-toolbar-heading-text">SENTIMENT</h2>
-                        </div>
-                        <div id="barwrap1" class="md-card-content">
+                        <div id="sentimentwrap" class="md-card-content">
                             <div id="share-brand-container" class="md-chart"></div>
                         </div>
                     </div>
                 </li>
 
-                <li class="uk-width-medium-1-2">
-                    <?php //COMMENT INTERACTIONS BAR ?>
-                    <div class="md-card hoverable">
-                        <div class="md-card-toolbar">
-                            <div class="md-card-toolbar-actions">
-                                <a class="btn waves-effect waves-light z-depth-0 amber lighten-4 tooltipped" data-position="top" data-delay="25" data-tooltip="Help"><i class="material-icons">help</i></a>
-                                <a class="btn waves-effect waves-light z-depth-0 green lighten-4 tooltipped" data-position="top" data-delay="25" data-tooltip="Minimize" data-uk-toggle="{target:'#barwrap2'}"><i class="material-icons md-icon">fullscreen</i></a>
-                            </div>
-                            <h2 class="md-card-toolbar-heading-text">COMMENT INTERACTION</h2>
-                        </div>
-                        <div id="barwrap2" class="md-card-content">
-                            <div id="id-chartnya-disini" class="md-chart"></div>
-                        </div>
-                    </div>
-                </li>
                 <li class="uk-width-medium-1-1">
                     <?php //WORDS CLOUD ?>
                     <div class="md-card hoverable">
                         <div class="md-card-toolbar">
                             <div class="md-card-toolbar-actions">
                                 <a class="btn waves-effect waves-light z-depth-0 amber lighten-4 tooltipped" data-position="top" data-delay="25" data-tooltip="Help"><i class="material-icons">help</i></a>
-                                <a class="btn waves-effect waves-light z-depth-0 green lighten-4 tooltipped" data-position="top" data-delay="25" data-tooltip="Minimize" data-uk-toggle="{target:'#wordcloud'}"><i class="material-icons md-icon">fullscreen</i></a>
+                                <a class="btn waves-effect waves-light z-depth-0 green lighten-4 tooltipped" data-position="top" data-delay="25" data-tooltip="Minimize" data-uk-toggle="{target:'#cloudwrap'}"><i class="material-icons md-icon">fullscreen</i></a>
                             </div>
                             <h2 class="md-card-toolbar-heading-text">WORD CLOUDS</h2>
                         </div>
-                        <div id="wordcloud" class="md-card-content">
+                        <div id="cloudwrap" class="md-card-content">
                             <div id="id-chartnya-disini" class="md-chart"></div>
                         </div>
                     </div>
                 </li>
+
                 <li class="uk-width-medium-1-1">
                     <div class="md-card hoverable">
                         <div class="md-card-toolbar">
@@ -203,6 +146,7 @@
                         </div>
                    </div>
                 </li>
+
                 <li class="uk-width-medium-1-1">
                     <div class="md-card hoverable">
                         <div class="md-card-toolbar">
@@ -210,19 +154,17 @@
                                 <a class="btn waves-effect waves-light z-depth-0 amber lighten-4 tooltipped" data-position="top" data-delay="25" data-tooltip="Help"><i class="material-icons">help</i></a>
                                 <a class="btn waves-effect waves-light z-depth-0 green lighten-4 tooltipped" data-position="top" data-delay="25" data-tooltip="Minimize" data-uk-toggle="{target:'#convwrap'}"><i class="material-icons md-icon">fullscreen</i></a>
                             </div>
-                            <h2 class="md-card-toolbar-heading-text">PUBLIC PAGE</h2>
+                            <h2 class="md-card-toolbar-heading-text">THREAD</h2>
                         </div>
                         <div id="convwrap" class="md-card-content conv-wrap">
-                            <?php //POSTS ?>
-                            <table id="table_page" class="uk-table uk-table-striped uk-table-hover bordered" cellspacing="0" width="100%">
+                            <?php //THREAD TABLE ?>
+                            <table id="table_thread" class="uk-table uk-table-striped uk-table-hover bordered" cellspacing="0" width="100%">
                                 <thead>
                                 <tr>
-                                    <th>Author</th>
-                                    <th>Posts</th>
-                                    <th>Comment</th>
-                                    <th>Like</th>
-                                    <th>Share</th>
-                                    <th>Media Type</th>
+                                    <th>Forum</th>
+                                    <th>Thread Title</th>
+                                    <th>Post Count</th>
+                                    <th>Thread Starter</th>
                                     <th>Sentiment</th>
                                     <th><input type="checkbox" class="" id="" /><label for="">Select All</label></th>
                                 </tr>
@@ -260,7 +202,7 @@
             $('#table_author').DataTable( {
                 "order": [[ 0, "desc" ]]
             });
-            $('#table_page').DataTable( {
+            $('#table_thread').DataTable( {
                 "order": [[ 0, "desc" ]]
             });
         });

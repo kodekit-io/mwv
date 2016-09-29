@@ -1338,12 +1338,8 @@ select {
 
 
 /*Data Table*/
-#conv table > *,
-#author table > * {
+.conv-wrap table > * {
 	font: 300 12px/16px 'proxima_nova_rgregular';
-}
-.conv-wrap.row {
-	margin-bottom: 0;
 }
 .conv-wrap .uk-grid + .uk-grid {
 	margin-top: 10px;
