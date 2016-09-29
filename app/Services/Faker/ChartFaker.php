@@ -6,9 +6,150 @@ namespace App;
 class ChartFaker
 {
 
-    public function fakeChart($projectId)
+    public function fakeChart($widgetId)
     {
-        return '{
+        // wordcloud
+        if ($widgetId == 7) {
+            return '{
+              "status": "OK",
+              "code": 200,
+              "startDate": "2016-08-01 00:00:00",
+              "endDate": "2016-08-31 23:59:59",
+              "mediaID": "1,2,3,4,5,6,9,10",
+              "brandID": "",
+              "topicID": "",
+              "sentiment": "1,0,-1",
+              "icapt": "",
+              "text": "",
+              "project": {
+                "pid": "95981932013",
+                "pname": "susu2"
+              },
+              "dataUnion": [
+                {
+                  "tag": "susu",
+                  "buzz": 1200,
+                  "link": "text=susu",
+                  "color": "#A5BC4E"
+                },
+                {
+                  "tag": "minum",
+                  "buzz": 800,
+                  "link": "text=minum",
+                  "color": "#A5BC4E"
+                },
+                {
+                  "tag": "milo",
+                  "buzz": 50,
+                  "link": "text=milo",
+                  "color": "#A5BC4E"
+                },
+                {
+                  "tag": "indomilk",
+                  "buzz": 300,
+                  "link": "text=indomilk",
+                  "color": "#A5BC4E"
+                },
+                {
+                  "tag": "harga",
+                  "buzz": 10,
+                  "link": "text=harga",
+                  "color": "#A5BC4E"
+                },
+                {
+                  "tag": "milku",
+                  "buzz": 250,
+                  "link": "text=milku",
+                  "color": "#E48701"
+                },
+                {
+                  "tag": "sobat",
+                  "buzz": 100,
+                  "link": "text=sobat",
+                  "color": "#E48701"
+                },
+                {
+                  "tag": "ultra",
+                  "buzz": 340,
+                  "link": "text=ultra",
+                  "color": "#A5BC4E"
+                },
+                {
+                  "tag": "milkupolis",
+                  "buzz": 91,
+                  "link": "text=milkupolis",
+                  "color": "#E48701"
+                },
+                {
+                  "tag": "hadiah",
+                  "buzz": 83,
+                  "link": "text=hadiah",
+                  "color": "#A5BC4E"
+                },
+                {
+                  "tag": "dancow",
+                  "buzz": 80,
+                  "link": "text=dancow",
+                  "color": "#A5BC4E"
+                },
+                {
+                  "tag": "gold",
+                  "buzz": 77,
+                  "link": "text=gold",
+                  "color": "#A5BC4E"
+                },
+                {
+                  "tag": "sachet",
+                  "buzz": 71,
+                  "link": "text=sachet",
+                  "color": "#A5BC4E"
+                },
+                {
+                  "tag": "bendera",
+                  "buzz": 70,
+                  "link": "text=bendera",
+                  "color": "#A5BC4E"
+                },
+                {
+                  "tag": "minyak",
+                  "buzz": 66,
+                  "link": "text=minyak",
+                  "color": "#A5BC4E"
+                },
+                {
+                  "tag": "kotak",
+                  "buzz": 61,
+                  "link": "text=kotak",
+                  "color": "#A5BC4E"
+                },
+                {
+                  "tag": "pembelian",
+                  "buzz": 61,
+                  "link": "text=pembelian",
+                  "color": "#A5BC4E"
+                },
+                {
+                  "tag": "goreng",
+                  "buzz": 61,
+                  "link": "text=goreng",
+                  "color": "#A5BC4E"
+                },
+                {
+                  "tag": "mulai",
+                  "buzz": 59,
+                  "link": "text=mulai",
+                  "color": "#A5BC4E"
+                },
+                {
+                  "tag": "promo",
+                  "buzz": 56,
+                  "link": "text=promo",
+                  "color": "#A5BC4E"
+                }
+              ]
+            }';
+        } else {
+            return '{
                   "status": "OK",
                   "code": 200,
                   "widgetID": "1,2,3,4,5,6,9,10,11,12,13,A,B",
@@ -951,5 +1092,7 @@ class ChartFaker
                   ],
                   "keywordNames": null
                 }';
+        }
+
     }
 }

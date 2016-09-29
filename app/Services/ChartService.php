@@ -47,7 +47,7 @@ class ChartService
         if ($this->apiMode == 'PRODUCTION') {
             return $this->apiService->post('dashboard/analytics/charts', $params, true);
         }
-        $fakeResult = $this->fakeResult->fakeChart($params['pid']);
+        $fakeResult = $this->fakeResult->fakeChart($params['widgetID']);
         return \GuzzleHttp\json_decode($fakeResult);
     }
 
@@ -78,6 +78,22 @@ class ChartService
         return $result;
     }
 
+    public function wordCloud($projectId, $startDate = null, $endDate = null)
+    {
+        $lastSevenDays = Carbon::today()->subDay(7)->format('Y-m-d');
+        $startDate = (!is_null($startDate)) ? $startDate : $lastSevenDays;
+        $endDate = (!is_null($endDate)) ? $endDate : date('Y-m-d');
+        $params = [
+            'pid' => $projectId,
+            'widgetID' => 7,
+            'StartDate' => $startDate,
+            'EndDate' => $endDate,
+            'sentiment' => '1,0,-1'
+        ];
+
+        return $this->getChart($params);
+    }
+
     private function getDateRange()
     {
         $arrDays = [];
@@ -90,5 +106,7 @@ class ChartService
         }
         return $arrDays;
     }
+
+
 
 }
