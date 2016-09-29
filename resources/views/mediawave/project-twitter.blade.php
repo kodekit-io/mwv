@@ -86,7 +86,7 @@
                             <h2 class="md-card-toolbar-heading-text">BUZZ</h2>
                         </div>
                         <div id="buzz" class="md-card-content">
-                            <div id="id-chartnya-disini" class="md-chart"></div>
+                            <div id="id-chartnya-disini" class="md-chart">Pie Chart</div>
                         </div>
                     </div>
                 </li>
@@ -101,7 +101,7 @@
                             <h2 class="md-card-toolbar-heading-text">INTERACTIONS</h2>
                         </div>
                         <div id="interaction" class="md-card-content">
-                            <div id="id-chartnya-disini" class="md-chart"></div>
+                            <div id="id-chartnya-disini" class="md-chart">Pie Chart</div>
                         </div>
                     </div>
                 </li>
@@ -116,7 +116,7 @@
                             <h2 class="md-card-toolbar-heading-text">VIRAL REACH</h2>
                         </div>
                         <div id="viralreach" class="md-card-content">
-                            <div id="id-chartnya-disini" class="md-chart"></div>
+                            <div id="id-chartnya-disini" class="md-chart">Pie Chart</div>
                         </div>
                     </div>
                 </li>
@@ -132,7 +132,7 @@
                             <h2 class="md-card-toolbar-heading-text">POTENTIAL REACH</h2>
                         </div>
                         <div id="potreach" class="md-card-content">
-                            <div id="id-chartnya-disini" class="md-chart"></div>
+                            <div id="id-chartnya-disini" class="md-chart">Pie Chart</div>
                         </div>
                     </div>
                 </li>
@@ -147,7 +147,7 @@
                             <h2 class="md-card-toolbar-heading-text">SENTIMENT</h2>
                         </div>
                         <div id="sentiment" class="md-card-content">
-                            <div id="share-brand-container" class="md-chart"></div>
+                            <div id="share-brand-container" class="md-chart">Bar Chart</div>
                         </div>
                     </div>
                 </li>
@@ -162,7 +162,7 @@
                             <h2 class="md-card-toolbar-heading-text">INTERACTION RATE</h2>
                         </div>
                         <div id="ir" class="md-card-content">
-                            <div id="id-chartnya-disini" class="md-chart"></div>
+                            <div id="id-chartnya-disini" class="md-chart">Bar Chart</div>
                         </div>
                     </div>
                 </li>
