@@ -105,7 +105,7 @@
                             <h2 class="md-card-toolbar-heading-text">BUZZ</h2>
                         </div>
                         <div id="buzz" class="md-card-content">
-                            <div id="id-chartnya-disini" class="md-chart">Pie Chart</div>
+                            <div id="buzz-container" class="md-chart">Pie Chart</div>
                         </div>
                     </div>
                 </li>
@@ -421,9 +421,8 @@
         });
         brandChart('brand-equity-container', jQuery.parseJSON('{!! $brandEquity !!}'));
         buzzTrend('buzztrend', jQuery.parseJSON('{!! $projectBuzz !!}'));
-        buzzPie('buzz', jQuery.parseJSON('{!! $volumeTrending !!}'));
+        buzzPie('buzz-container', jQuery.parseJSON('{!! $mediaDistribution !!}'));
         // shareOfVoice('share-of-voice-container', jQuery.parseJSON('{!! $shareOfVoice !!}'));
-        // shareMedia('share-media-container', jQuery.parseJSON('{!! $mediaDistribution !!}'));
         sentimentMediaDistribution('share-media-container', jQuery.parseJSON('{!! $sentimentMediaDistribution !!}'));
         sentimentBrandDistribution('share-brand-container', jQuery.parseJSON('{!! $sentimentBrandDistributions !!}'));
         wordCloud('wordcloud-container', jQuery.parseJSON('{!! $wordCloud !!}'));
