@@ -82,7 +82,7 @@ class ProjectController extends Controller
         $data['sentimentBrandDistributions'] = \GuzzleHttp\json_encode($chart->sentimentBrandDistributions);
         $data['projectBuzz'] = \GuzzleHttp\json_encode($chartData);
         $data['wordCloud'] = \GuzzleHttp\json_encode($wordCloud->dataUnion);
-        $data['viewInfluencers'] = $viewInfluencer->influencer->top10LikeStatus->data;
+        $data['viewInfluencers'] = $viewInfluencer->influencer;
 
 //        var_dump($data['viewInfluencer']); exit;
 

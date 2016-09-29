@@ -105,7 +105,7 @@
                             <h2 class="md-card-toolbar-heading-text">BUZZ</h2>
                         </div>
                         <div id="buzz" class="md-card-content">
-                            <div id="id-chartnya-disini" class="md-chart">Pie Chart</div>
+                            <div id="buzz-container" class="md-chart">Pie Chart</div>
                         </div>
                     </div>
                 </li>
@@ -234,7 +234,8 @@
                                 </tr>
                                 </thead>
                                 <tbody>
-                                @foreach($viewInfluencers as $influencer)
+                                @if (count($viewInfluencers) > 0)
+                                @foreach($viewInfluencers->top10LikeStatus->data as $influencer)
                                     <tr>
                                         <td>{!! $influencer->name !!}</td>
                                         <td>{!! $influencer->score !!}</td>
@@ -242,6 +243,7 @@
                                         <td><a href="{!! $influencer->url !!}" class="uk-button uk-button-mini uk-button-success" target="_blank">See Details</a></td>
                                     </tr>
                                 @endforeach
+                                @endif
                                 </tbody>
                             </table>
                         </div>
@@ -419,9 +421,8 @@
         });
         brandChart('brand-equity-container', jQuery.parseJSON('{!! $brandEquity !!}'));
         buzzTrend('buzztrend', jQuery.parseJSON('{!! $projectBuzz !!}'));
-        buzzPie('buzz', jQuery.parseJSON('{!! $volumeTrending !!}'));
+        buzzPie('buzz-container', jQuery.parseJSON('{!! $mediaDistribution !!}'));
         // shareOfVoice('share-of-voice-container', jQuery.parseJSON('{!! $shareOfVoice !!}'));
-        // shareMedia('share-media-container', jQuery.parseJSON('{!! $mediaDistribution !!}'));
         sentimentMediaDistribution('share-media-container', jQuery.parseJSON('{!! $sentimentMediaDistribution !!}'));
         sentimentBrandDistribution('share-brand-container', jQuery.parseJSON('{!! $sentimentBrandDistributions !!}'));
         wordCloud('wordcloud-container', jQuery.parseJSON('{!! $wordCloud !!}'));
