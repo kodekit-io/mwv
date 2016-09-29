@@ -234,7 +234,8 @@
                                 </tr>
                                 </thead>
                                 <tbody>
-                                @foreach($viewInfluencers as $influencer)
+                                @if (count($viewInfluencers) > 0)
+                                @foreach($viewInfluencers->top10LikeStatus->data as $influencer)
                                     <tr>
                                         <td>{!! $influencer->name !!}</td>
                                         <td>{!! $influencer->score !!}</td>
@@ -242,6 +243,7 @@
                                         <td><a href="{!! $influencer->url !!}" target="_blank">See Details</a></td>
                                     </tr>
                                 @endforeach
+                                @endif
                                 </tbody>
                             </table>
                         </div>
