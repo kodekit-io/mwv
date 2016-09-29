@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\ApiService;
 use App\ChartService;
 use App\ProjectService;
+use Carbon\Carbon;
 use Illuminate\Http\Request;
 
 use App\Http\Requests;
@@ -65,18 +66,18 @@ class ProjectController extends Controller
 
     public function detail($projectId)
     {
-        $chart = $this->chartService->projectChart($projectId, '1,2,3,4,5,6,12');
+        $chart = $this->chartService->projectChart($projectId, '1,2,3,4,5,6,12,A');
         $data['pageTitle'] = 'All Media';
         $data['project'] = $chart->project;
 
-        //var_dump($chart); exit;
-
+        $chartData = $this->chartService->getBuzzData($chart);
         $data['brandEquity'] = \GuzzleHttp\json_encode($chart->brandEquity);
         $data['shareOfVoice'] = \GuzzleHttp\json_encode($chart->shareOfVoice);
         $data['volumeTrending'] = \GuzzleHttp\json_encode($chart->volumeTrending);
         $data['mediaDistribution'] = \GuzzleHttp\json_encode($chart->mediaDistribution);
         $data['sentimentMediaDistribution'] = \GuzzleHttp\json_encode($chart->sentimentMediaDistribution);
         $data['sentimentBrandDistributions'] = \GuzzleHttp\json_encode($chart->sentimentBrandDistributions);
+        $data['projectBuzz'] = \GuzzleHttp\json_encode($chartData);
 
         $data['projectId'] = $projectId;
 
@@ -85,7 +86,7 @@ class ProjectController extends Controller
 
     public function detailTW($projectId)
     {
-        $chart = $this->chartService->projectChart($projectId, '1,2,3,4,5,6,12');
+        $chart = $this->chartService->projectChart($projectId, '1,2,3,4,5,6,12,14');
         $data['pageTitle'] = 'Twitter';
         $data['project'] = $chart->project;
 
@@ -192,4 +193,5 @@ class ProjectController extends Controller
         $data['pageTitle'] = 'Instagram';
         return view('mediawave.socmed-instagram', $data);
     }
+
 }
