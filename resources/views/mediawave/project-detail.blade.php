@@ -272,13 +272,16 @@
                                     <table id="table_twitter" class="striped bordered highlight responsive-table">
                                         <thead>
                                         <tr>
-                                            <!--th>Author</th>
-                                            <th>Post</th-->
-                                            <th>Name</th>
+                                            <th>Date</th>
+                                            <th>Author</th>
                                             <th>Post</th>
-                                            <!--th>Viral Reach</th-->
+                                            <th>Original Reach</th>
+                                            <th>Viral Reach</th>
+                                            <th>Engagements</th>
+                                            <th>Viral Score</th>
                                             <th>Sentiment</th>
-                                            <!--th><input type="checkbox" class="" id="selectall" /><label for="selectall">Select All</label></th-->
+                                            <th>Link</th>
+                                            <th><input type="checkbox" class="" id="selectall" /><label for="selectall">Select All</label></th>
                                         </tr>
                                         </thead>
                                     </table>
@@ -399,19 +402,26 @@
                 "order": [[ 0, "desc" ]]
             });
             $('#table_twitter').DataTable( {
-                "processing": true,
-                "serverSide": true,
+                //"processing": true,
+                //"serverSide": true,
                 "searching": false,
-                "info": false,
+                //"info": false,
                 "ajax": {
-                    "url": '{!! url('conversation') !!}',
+                    "url": 'http://localhost/~oglab/DashboardOutput/Twitter-conv.json',
                     "data": {
                         "project_id": '{!! $project->pid !!}',
                         "source": 'twitter',
                         "start_date": '{!! $startDate !!}',
                         "end_date": '{!! $endDate !!}'
                     }
-                }
+                },
+                "columnDefs": [
+                    {
+                        "targets": [ 8 ],
+                        "visible": false,
+                        "searchable": false
+                    }
+                ]
             });
             $('#table_facebook').DataTable( {
                 "order": [[ 0, "desc" ]]
