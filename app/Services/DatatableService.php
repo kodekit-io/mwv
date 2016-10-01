@@ -31,13 +31,38 @@ class DatatableService
         return $out;
     }
 
-    public function generateOutput($data, $columns, $totalRow, $currentPage = 0, $offset = 25)
+    public function generateOutput($data, $media, $totalRow, $currentPage = 0, $offset = 25)
     {
+        $columns = $this->getColumnsByMedia($media);
         return [
             "draw"            => $currentPage,
             "recordsTotal"    => intval( $totalRow ),
             "recordsFiltered" => intval( $totalRow ),
             "data"            => $this->parse($columns, $data)
+        ];
+    }
+
+    private function getColumnsByMedia($media)
+    {
+        $handlerName = $media . 'Columns';
+        return $this->$handlerName();
+    }
+
+    private function twitterColumns()
+    {
+        return [
+            ['db' => 'screeName', 'dt' => '0'],
+            ['db' => 'text', 'dt' => '1'],
+            ['db' => 'sentimentId', 'dt' => '2']
+        ];
+    }
+
+    private function videoColumns()
+    {
+        return [
+            ['db' => 'author', 'dt' => '0'],
+            ['db' => 'videoTitle', 'dt' => '1'],
+            ['db' => 'sentimentId', 'dt' => '2']
         ];
     }
 

@@ -142,14 +142,8 @@ class ProjectController extends Controller
         $totalPage = $conversation->totalPage;
         $datatable = new DatatableService();
         $totalRow = ($totalPage * $rpp) - 1;
-        // Log::warning('start ==> ' . $start . ', rpp ==> ' . $rpp . ', page ==> ' . $page . ', totalRow ==> ' . $totalRow);
 
-        $columns = [
-            ['db' => 'screeName', 'dt' => '0'],
-            ['db' => 'text', 'dt' => '1'],
-            ['db' => 'sentimentId', 'dt' => '2']
-        ];
-        $return = $datatable->generateOutput($data, $columns, $totalRow);
+        $return = $datatable->generateOutput($data, $media, $totalRow);
 
         echo json_encode($return);
     }
