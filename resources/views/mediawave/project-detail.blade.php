@@ -401,6 +401,8 @@
             $('#table_twitter').DataTable( {
                 "processing": true,
                 "serverSide": true,
+                "searching": false,
+                "info": false,
                 "ajax": {
                     "url": '{!! url('conversation') !!}',
                     "data": {
