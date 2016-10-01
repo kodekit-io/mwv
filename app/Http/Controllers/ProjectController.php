@@ -134,13 +134,15 @@ class ProjectController extends Controller
         $endDate = $request->input('end_date');
         $endDate = Carbon::createFromFormat('d/m/y', $endDate)->format("Y-m-d");
         $page = ($start/$rpp) + 1;
+        $search = $request->input('search');
+        $search = ( $search['value'] != '' ? $search['value'] : '' );
 
-        $conversation = $this->chartService->getConversation($projectId, $media, $page, $rpp, '', $startDate, $endDate);
+        $conversation = $this->chartService->getConversation($projectId, $media, $page, $rpp, $search, '', $startDate, $endDate);
         $data = $conversation->message;
         $totalPage = $conversation->totalPage;
         $datatable = new DatatableService();
         $totalRow = ($totalPage * $rpp) - 1;
-        Log::warning('start ==> ' . $start . ', rpp ==> ' . $rpp . ', page ==> ' . $page . ', totalRow ==> ' . $totalRow);
+        // Log::warning('start ==> ' . $start . ', rpp ==> ' . $rpp . ', page ==> ' . $page . ', totalRow ==> ' . $totalRow);
 
         $columns = [
             ['db' => 'screeName', 'dt' => '0'],
