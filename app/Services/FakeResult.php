@@ -5,10 +5,10 @@ namespace App;
 
 class FakeResult
 {
-    public function fakeChart($widgetId)
+    public function fakeChart($widgetId, $projectId = null)
     {
         $chart = new ChartFaker();
-        return $chart->fakeChart($widgetId);
+        return $chart->fakeChart($widgetId, $projectId);
     }
 
     public function fakeProjects()

@@ -18,6 +18,58 @@ class ProjectFaker
             {
               "pid": "2253502522013",
               "pname": "susu"
+            },
+            {
+              "pid": "111561522016",
+              "pname": "Campaign Chitato"
+            },
+            {
+              "pid": "133641222016",
+              "pname": "Campaign Indomilk"
+            },
+            {
+              "pid": "1411102712016",
+              "pname": "Chitato Indomie Goreng"
+            },
+            {
+              "pid": "231152522013",
+              "pname": "General Indofood1"
+            },
+            {
+              "pid": "232532522013",
+              "pname": "General Indofood2"
+            },
+            {
+              "pid": "142421942013",
+              "pname": "general Indofood3"
+            },
+            {
+              "pid": "125859762016",
+              "pname": "hashtag CurhatIchiOcha"
+            },
+            {
+              "pid": "13416492014",
+              "pname": "Journal Nutrition"
+            },
+            {
+              "pid": "1394314102014",
+              "pname": "Kopi Cafela"
+            },
+            {
+              "pid": "2245362522013",
+              "pname": "Mie"
+            },
+            {
+              "pid": "103951832013",
+              "pname": "mie competitor"
+            },
+            {
+              "pid": "1133462522015",
+              "pname": "Mie Instan di TV One"
+            },
+            {
+              "pid": "133142782014",
+              "pname": "Mie Instant"
             }
           ]
         }';

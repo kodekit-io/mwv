@@ -47,7 +47,7 @@ class ChartService
         if ($this->apiMode == 'PRODUCTION') {
             return $this->apiService->post('dashboard/analytics/charts', $params, true);
         }
-        $fakeResult = $this->fakeResult->fakeChart($params['widgetID']);
+        $fakeResult = $this->fakeResult->fakeChart($params['widgetID'], $params['pid']);
         return \GuzzleHttp\json_decode($fakeResult);
     }
 

@@ -1,7 +1,7 @@
 function buzzPie($id, $data) {
     // console.log($data);
     if ($data.length === 0) {
-        $('#' + $id).html("<div class='center'>No data chart</div>");
+        $('#' + $id).html("<div class='center'>No Data</div>");
     } else {
         var $content = [];
         for (var i = 0; i < $data.length; i++) {
@@ -14,7 +14,7 @@ function buzzPie($id, $data) {
 }
 
 function createBuzzPieChart(dataSet, id) {
-    console.log(dataSet);
+    // console.log(dataSet);
     $('#'+id).highcharts({
         chart: {
             plotBackgroundColor: null,

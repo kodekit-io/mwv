@@ -1,6 +1,6 @@
 function brandChart($id, $data) {
     if ($data.length === 0) {
-        $content.html("<div class='center'>No data chart</div>");
+        $('#'+$id).html("<div class='center'>No Data</div>");
     } else {
         var $content = [];
 
