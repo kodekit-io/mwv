@@ -136,9 +136,23 @@ class ProjectController extends Controller
         $endDate = Carbon::createFromFormat('d/m/y', $endDate)->format("Y-m-d");
         $page = ($start/$rpp) + 1;
         $search = $request->input('search');
-        $search = ( $search['value'] != '' ? $search['value'] : '' );
+        $searchClause = ( $search['value'] != '' ? $search['value'] : '' );
+        $orderClause = '';
+        if ($request->has('order')) {
+//            $columns = ['screeName', 'text', 'sentimentId'];
+            $order = $request->input('order')[0];
+//            Log::warning('order ==> ' .  json_encode($order));
+            $column = $order['column'];
+            $dir = $order['dir'];
+//            Log::warning('col ==> '. $column.', dir ==> ' . $dir);
+//            $orderClause = $columns[$column] . ' ' . $dir;
+            if ($column == 2) {
+                $orderClause = 'sentiment ' . $dir;
+            }
+        }
+        // Log::warning('order by ==> ' . json_encode($order));
 
-        $conversation = $this->chartService->getConversation($projectId, $media, $page, $rpp, $search, '', $startDate, $endDate);
+        $conversation = $this->chartService->getConversation($projectId, $media, $page, $rpp, $searchClause, $orderClause, '', $startDate, $endDate);
         $data = $conversation->message;
         $totalPage = $conversation->totalPage;
         $datatable = new DatatableService();
