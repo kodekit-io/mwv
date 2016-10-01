@@ -340,10 +340,10 @@
                                         <tr>
                                             <th>Author</th>
                                             <th>Posts</th>
-                                            <th>Likes</th>
+                                            <!--th>Likes</th>
                                             <th>Comments</th>
-                                            <th>Potential Reach</th>
-                                            <th></th>
+                                            <th>Potential Reach</th-->
+                                            <th>Sentiment</th>
                                         </tr>
                                         </thead>
                                     </table>
@@ -433,7 +433,19 @@
                 "order": [[ 0, "desc" ]]
             });
             $('#table_video').DataTable( {
-                "order": [[ 0, "desc" ]]
+                "processing": true,
+                "serverSide": true,
+                "searching": false,
+                "info": false,
+                "ajax": {
+                    "url": '{!! url('conversation') !!}',
+                    "data": {
+                        "project_id": '{!! $project->pid !!}',
+                        "source": 'video',
+                        "start_date": '{!! $startDate !!}',
+                        "end_date": '{!! $endDate !!}'
+                    }
+                }
             });
             $('#table_blog').DataTable( {
                 "order": [[ 0, "desc" ]]

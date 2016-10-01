@@ -115,7 +115,7 @@ class ChartService
 //        return $result;
     }
 
-    public function getConversation($projectId, $media, $page = 1, $rpp = 10, $text = '', $keywords = '', $startDate = '', $endDate = '')
+    public function getConversation($projectId, $media, $page = 1, $rpp = 10, $text = '', $order = '', $keywords = '', $startDate = '', $endDate = '')
     {
         $mediaId = $this->getMediaByName($media);
         $params = [
@@ -127,6 +127,7 @@ class ChartService
             'currpage' => $page,
             'rpp' => $rpp,
             'text' => $text,
+            'order' => $order,
             'mediaID' => $mediaId
         ];
 

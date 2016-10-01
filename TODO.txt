@@ -1,2 +1,10 @@
--- Filtering on view details (keywoard and start-end date)
--- View Detail ==> Post Trend Chart
+-- Filtering on view details (keywoard and start-end date) (DONE)
+-- Conversation
+---- Twitter (DONE)
+---- Facebook (NO API sample)
+---- News (NO API sample)
+---- Forum  (NO API sample)
+---- Video (DONE)
+---- Blog (NO API sample)
+-- View Detail ==> Post Trend Chart (Invalid json result) to be confirmed
+-- Generate PDF report

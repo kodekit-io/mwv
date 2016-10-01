@@ -114,7 +114,8 @@ class ProjectController extends Controller
         $data['sentimentBrandDistributions'] = \GuzzleHttp\json_encode($chart->sentimentBrandDistributions);
         $data['projectBuzzTrend'] = \GuzzleHttp\json_encode($buzzTrendData);
         //$data['projectPostTrend'] = \GuzzleHttp\json_encode($postTrendData);
-        $data['wordCloud'] = \GuzzleHttp\json_encode($wordCloud->dataUnion);
+        $dataUnion = ( isset($wordCloud->dataUnion) ? $wordCloud->dataUnion : '' );
+        $data['wordCloud'] = \GuzzleHttp\json_encode($dataUnion);
         $data['viewInfluencers'] = $viewInfluencer->influencer;
         // $data['viewMediaDetail'] - $viewMediaDetail->mediaDetail;
 
@@ -135,29 +136,66 @@ class ProjectController extends Controller
         $endDate = Carbon::createFromFormat('d/m/y', $endDate)->format("Y-m-d");
         $page = ($start/$rpp) + 1;
         $search = $request->input('search');
-        $search = ( $search['value'] != '' ? $search['value'] : '' );
+        $searchClause = ( $search['value'] != '' ? $search['value'] : '' );
+        $orderClause = '';
+        if ($request->has('order')) {
+//            $columns = ['screeName', 'text', 'sentimentId'];
+            $order = $request->input('order')[0];
+//            Log::warning('order ==> ' .  json_encode($order));
+            $column = $order['column'];
+            $dir = $order['dir'];
+//            Log::warning('col ==> '. $column.', dir ==> ' . $dir);
+//            $orderClause = $columns[$column] . ' ' . $dir;
+            if ($column == 2) {
+                $orderClause = 'sentiment ' . $dir;
+            }
+        }
+        // Log::warning('order by ==> ' . json_encode($order));
 
-        $conversation = $this->chartService->getConversation($projectId, $media, $page, $rpp, $search, '', $startDate, $endDate);
+        $conversation = $this->chartService->getConversation($projectId, $media, $page, $rpp, $searchClause, $orderClause, '', $startDate, $endDate);
         $data = $conversation->message;
         $totalPage = $conversation->totalPage;
         $datatable = new DatatableService();
         $totalRow = ($totalPage * $rpp) - 1;
-        // Log::warning('start ==> ' . $start . ', rpp ==> ' . $rpp . ', page ==> ' . $page . ', totalRow ==> ' . $totalRow);
 
-        $columns = [
-            ['db' => 'screeName', 'dt' => '0'],
-            ['db' => 'text', 'dt' => '1'],
-            ['db' => 'sentimentId', 'dt' => '2']
-        ];
-        $return = $datatable->generateOutput($data, $columns, $totalRow);
+        $return = $datatable->generateOutput($data, $media, $totalRow);
 
         echo json_encode($return);
     }
 
-    public function detailTW($projectId)
+    public function detailTW(Request $request, $projectId)
     {
+        $brands = '';
+        $last7DaysRange = $this->chartService->getLastSevenDaysRange();
+        $startDate = $last7DaysRange['startDate'];
+        $endDate = $last7DaysRange['endDate'];
+        if ($request->has('filter')) {
+            // var_dump($request->input());
+            $startDate = $request->input('start_date');
+            $endDate = $request->input('end_date');
+            $startDate = ( $startDate != '' ) ? Carbon::createFromFormat('d/m/y', $startDate)->format('Y-m-d') : null;
+            $endDate = ( $endDate != '' ) ? Carbon::createFromFormat('d/m/y', $endDate)->format('Y-m-d') : null;
+            $brands = ( $request->has('keywords') ? implode(',', $request->input('keywords')) : '' );
+        }
+
+        $profiles = $this->projectService->projectInfo($projectId);
+        $chart = $this->chartService->projectChart($projectId, '1,2,3,4,5,6,12,A', $brands, $startDate, $endDate);
+        $keywords = [];
+        if (count($profiles->projectInfo->keywordList) > 0) {
+            $keywordLists = $profiles->projectInfo->keywordList;
+            foreach ($keywordLists as $keywordList) {
+                $keywordId = $keywordList->keyword->keywordId;
+                $keywordName = $keywordList->keyword->keywordName;
+                $keywords[$keywordId]['value'] = $keywordName;
+                $keywords[$keywordId]['selected'] = $this->isKeywordSelected($keywordId, $request);
+            }
+        }
+
         $data['pageTitle'] = 'Twitter';
-        $chart = $this->chartService->projectChart($projectId, '1,2,3,4,5,6,12');
+        $data['project'] = $chart->project;
+        $data['keywords'] = $keywords;
+        $data['startDate'] = Carbon::createFromFormat('Y-m-d', $startDate)->format('d/m/y');
+        $data['endDate'] = Carbon::createFromFormat('Y-m-d', $endDate)->format('d/m/y');;
         $data['project'] = $chart->project;
         $data['projectId'] = $projectId;
         return view('mediawave.project-twitter', $data);
