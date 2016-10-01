@@ -13,6 +13,8 @@ class ChartFaker
             return $this->wordCloud();
         } else if ($widgetId == 'E') {
             return $this->viewInfluencer();
+        } else if ($widgetId == 'F') {
+            return $this->viewMediaDetail();
         } else {
             if ($projectId == '111561522016') {
                 return '{
@@ -1267,5 +1269,207 @@ class ChartFaker
                 }
               }
             }';
+    }
+
+    private function viewMediaDetail()
+    {
+        return '{
+                  "status": "OK",
+                  "code": 200,
+                  "widgetID": "F",
+                  "startDate": "2016-08-01 00:00:00",
+                  "endDate": "2016-09-04 23:59:59",
+                  "mediaID": "2",
+                  "brandID": "1,2,3,4,5",
+                  "topicID": "",
+                  "sentiment": "1,0-1",
+                  "icapt": "",
+                  "text": "",
+                  "project": {
+                    "pid": "2253502522013",
+                    "pname": "susu"
+                  },
+                  "mediaDetail": {
+                    "totalPost": {
+                      "groupName": "Number of Post",
+                      "scoreTotal": 3557,
+                      "data": [
+                        {
+                          "name": "All Day",
+                          "score": 3557,
+                          "value": 100,
+                          "link": ""
+                        },
+                        {
+                          "name": "Sunday",
+                          "score": 446,
+                          "value": 12.54,
+                          "link": "day=0"
+                        },
+                        {
+                          "name": "Monday",
+                          "score": 480,
+                          "value": 13.49,
+                          "link": "day=1"
+                        },
+                        {
+                          "name": "Tuesday",
+                          "score": 714,
+                          "value": 20.07,
+                          "link": "day=2"
+                        },
+                        {
+                          "name": "Wednesday",
+                          "score": 532,
+                          "value": 14.96,
+                          "link": "day=3"
+                        },
+                        {
+                          "name": "Thursday",
+                          "score": 471,
+                          "value": 13.24,
+                          "link": "day=4"
+                        },
+                        {
+                          "name": "Friday",
+                          "score": 354,
+                          "value": 9.95,
+                          "link": "day=5"
+                        },
+                        {
+                          "name": "Saturday",
+                          "score": 560,
+                          "value": 15.74,
+                          "link": "day=6"
+                        }
+                      ]
+                    },
+                    "uniquePost": {
+                      "groupName": "Unique User",
+                      "scoreTotal": 2958,
+                      "data": [
+                        {
+                          "name": "All Day",
+                          "score": 2958,
+                          "value": 100,
+                          "link": ""
+                        },
+                        {
+                          "name": "Sunday",
+                          "score": 375,
+                          "value": 12.68,
+                          "link": "day=0"
+                        },
+                        {
+                          "name": "Monday",
+                          "score": 377,
+                          "value": 12.75,
+                          "link": "day=1"
+                        },
+                        {
+                          "name": "Tuesday",
+                          "score": 597,
+                          "value": 20.18,
+                          "link": "day=2"
+                        },
+                        {
+                          "name": "Wednesday",
+                          "score": 446,
+                          "value": 15.08,
+                          "link": "day=3"
+                        },
+                        {
+                          "name": "Thursday",
+                          "score": 409,
+                          "value": 13.83,
+                          "link": "day=4"
+                        },
+                        {
+                          "name": "Friday",
+                          "score": 304,
+                          "value": 10.28,
+                          "link": "day=5"
+                        },
+                        {
+                          "name": "Saturday",
+                          "score": 450,
+                          "value": 15.21,
+                          "link": "day=6"
+                        }
+                      ]
+                    },
+                    "top10Source": {
+                      "groupName": "Top 10 Source",
+                      "scoreTotal": 3041,
+                      "data": [
+                        {
+                          "name": "Twitter for Android",
+                          "score": 1634,
+                          "value": 53.73,
+                          "link": "source=Twitter for Android"
+                        },
+                        {
+                          "name": "Twitter for iPhone",
+                          "score": 369,
+                          "value": 12.13,
+                          "link": "source=Twitter for iPhone"
+                        },
+                        {
+                          "name": "Twitter Web Client",
+                          "score": 260,
+                          "value": 8.55,
+                          "link": "source=Twitter Web Client"
+                        },
+                        {
+                          "name": "Buzz Viral Apps",
+                          "score": 143,
+                          "value": 4.7,
+                          "link": "source=Buzz Viral Apps"
+                        },
+                        {
+                          "name": "Path",
+                          "score": 123,
+                          "value": 4.04,
+                          "link": "source=Path"
+                        },
+                        {
+                          "name": "Buzz Media Inf",
+                          "score": 118,
+                          "value": 3.88,
+                          "link": "source=Buzz Media Inf"
+                        },
+                        {
+                          "name": "TweetDeck",
+                          "score": 115,
+                          "value": 3.78,
+                          "link": "source=TweetDeck"
+                        },
+                        {
+                          "name": "Mobile Web",
+                          "score": 101,
+                          "value": 3.32,
+                          "link": "source=Mobile Web"
+                        },
+                        {
+                          "name": "Mobile Web (M2)",
+                          "score": 93,
+                          "value": 3.06,
+                          "link": "source=Mobile Web (M2)"
+                        },
+                        {
+                          "name": "IFTTT",
+                          "score": 85,
+                          "value": 2.8,
+                          "link": "source=IFTTT"
+                        }
+                      ]
+                    },
+                    "top10City": {
+                      "groupName": "Top 10 City",
+                      "scoreTotal": 0,
+                      "data": []
+                    }
+                  }
+                }';
     }
 }

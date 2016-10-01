@@ -26,7 +26,7 @@ class ChartService
         $this->apiMode = config('services.mediawave.api_mode');
     }
 
-    public function projectChart($projectId, $chartIds, $keywords = '', $startDate = null, $endDate = null)
+    public function projectChart($projectId, $chartIds, $keywords = '', $startDate = '', $endDate = '')
     {
         $params = [
             'pid' => $projectId,
@@ -51,7 +51,7 @@ class ChartService
         return \GuzzleHttp\json_decode($fakeResult);
     }
 
-    public function getBuzzData($chartResult, $startDate, $endDate)
+    public function getBuzzTrendData($chartResult, $startDate = '', $endDate = '')
     {
         $dateRange = $this->getDateRange('2016-08-21', '2016-09-04');
         if ($this->apiMode == 'PRODUCTION') {
@@ -81,7 +81,40 @@ class ChartService
         return $result;
     }
 
-    public function wordCloud($projectId, $keywords = '', $startDate = null, $endDate = null)
+    public function getPostTrendData($chartResult)
+    {
+        $mediaDetails = $chartResult->mediaDetail;
+        if (isset($mediaDetails->totalPost->data)) {
+            foreach ($mediaDetails->totalPost->data as $post) {
+                var_dump($post);
+            }
+            exit;
+        }
+        return [];
+//        $arrData = [];
+//        $x = 0;
+//        foreach ($mediaDetails as $mediaDetail) {
+//            $trendDates = $viewTrend->date;
+//            $trendBuzz = $viewTrend->buzz;
+//
+//            foreach ($dateRange as $date) {
+//                if (! in_array($date, $trendDates)) {
+//                    $buzzValue = 0;
+//                } else {
+//                    $arrKey = array_keys($trendDates, $date);
+//                    $buzzValue = $trendBuzz[$arrKey[0]];
+//                }
+//                $arrData[$x]['name'] = $viewTrend->keywordName;
+//                $arrData[$x]['value'][] = $buzzValue;
+//            }
+//            $x++;
+//        }
+//        $result['dates'] = $dateRange;
+//        $result['chartData'] = $arrData;
+//        return $result;
+    }
+
+    public function wordCloud($projectId, $keywords = '', $startDate = '', $endDate = '')
     {
         $params = [
             'pid' => $projectId,
@@ -94,11 +127,24 @@ class ChartService
         return $this->getChart($params);
     }
 
-    public function viewInfluencer($projectId, $keywords = '', $startDate = null, $endDate = null)
+    public function viewInfluencer($projectId, $keywords = '', $startDate = '', $endDate = '')
     {
         $params = [
             'pid' => $projectId,
             'widgetID' => 'E',
+            'StartDate' => $startDate,
+            'EndDate' => $endDate,
+            'brandID' => $keywords
+        ];
+
+        return $this->getChart($params);
+    }
+
+    public function viewMediaDetail($projectId, $keywords = '', $startDate = '', $endDate = '')
+    {
+        $params = [
+            'pid' => $projectId,
+            'widgetID' => 'F',
             'StartDate' => $startDate,
             'EndDate' => $endDate,
             'brandID' => $keywords

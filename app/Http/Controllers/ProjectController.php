@@ -83,6 +83,7 @@ class ProjectController extends Controller
         $chart = $this->chartService->projectChart($projectId, '1,2,3,4,5,6,12,A', $brands, $startDate, $endDate);
         $wordCloud = $this->chartService->wordCloud($projectId, $brands, $startDate, $endDate);
         $viewInfluencer = $this->chartService->viewInfluencer($projectId, $brands, $startDate, $endDate);
+        $viewMediaDetail = $this->chartService->viewMediaDetail($projectId, $brands, $startDate, $endDate);
 
         $keywords = [];
         if (count($profiles->projectInfo->keywordList) > 0) {
@@ -101,22 +102,58 @@ class ProjectController extends Controller
         $data['startDate'] = Carbon::createFromFormat('Y-m-d', $startDate)->format('d/m/y');
         $data['endDate'] = Carbon::createFromFormat('Y-m-d', $endDate)->format('d/m/y');;
 
-        $chartData = $this->chartService->getBuzzData($chart, $startDate, $endDate);
+        $buzzTrendData = $this->chartService->getBuzzTrendData($chart, $startDate, $endDate);
+        // $postTrendData = $this->chartService->getPostTrendData($viewMediaDetail);
         $data['brandEquity'] = \GuzzleHttp\json_encode($chart->brandEquity);
         $data['shareOfVoice'] = \GuzzleHttp\json_encode($chart->shareOfVoice);
         $data['volumeTrending'] = \GuzzleHttp\json_encode($chart->volumeTrending);
         $data['mediaDistribution'] = \GuzzleHttp\json_encode($chart->mediaDistribution);
         $data['sentimentMediaDistribution'] = \GuzzleHttp\json_encode($chart->sentimentMediaDistribution);
         $data['sentimentBrandDistributions'] = \GuzzleHttp\json_encode($chart->sentimentBrandDistributions);
-        $data['projectBuzz'] = \GuzzleHttp\json_encode($chartData);
+        $data['projectBuzzTrend'] = \GuzzleHttp\json_encode($buzzTrendData);
+        //$data['projectPostTrend'] = \GuzzleHttp\json_encode($postTrendData);
         $data['wordCloud'] = \GuzzleHttp\json_encode($wordCloud->dataUnion);
         $data['viewInfluencers'] = $viewInfluencer->influencer;
-
-//        var_dump($data['viewInfluencer']); exit;
+        // $data['viewMediaDetail'] - $viewMediaDetail->mediaDetail;
 
         $data['projectId'] = $projectId;
 
         return view('mediawave.project-detail', $data);
+    }
+
+    public function conversation($source)
+    {
+        return '{
+                "draw": 1,
+                "recordsTotal": 57,
+                "recordsFiltered": 57,
+                "data": [
+                    [
+                        "Angelica",
+                        "Ramos",
+                        "System Architect",
+                        "London",
+                        "9th Oct 09",
+                        "$2,875"
+                    ],
+                    [
+                        "Ashton",
+                        "Cox",
+                        "Technical Author",
+                        "San Francisco",
+                        "12th Jan 09",
+                        "$4,800"
+                    ],
+                    [
+                        "Ashton",
+                        "Cox",
+                        "Technical Author",
+                        "San Francisco",
+                        "12th Jan 09",
+                        "$4,800"
+                    ]
+                ]
+            }';
     }
 
     public function detailTW($projectId)
