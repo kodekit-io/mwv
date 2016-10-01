@@ -55,6 +55,7 @@ Route::group(['middleware' => 'auth'], function () {
     Route::get('/socmed-facebook', 'ProjectController@socmedFB');
     Route::get('/socmed-youtube', 'ProjectController@socmedYT');
     Route::get('/socmed-instagram', 'ProjectController@socmedIG');
+
 });
 
 Route::get('/datatable', function() {
