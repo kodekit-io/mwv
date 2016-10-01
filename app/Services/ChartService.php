@@ -26,18 +26,18 @@ class ChartService
         $this->apiMode = config('services.mediawave.api_mode');
     }
 
-    public function projectChart($projectId, $chartIds, $startDate = null, $endDate = null)
+    public function projectChart($projectId, $chartIds, $keywords = '', $startDate = null, $endDate = null)
     {
-        $lastSevenDays = Carbon::today()->subDay(7)->format('Y-m-d');
-        $startDate = (!is_null($startDate)) ? $startDate : $lastSevenDays;
-        $endDate = (!is_null($endDate)) ? $endDate : date('Y-m-d');
         $params = [
             'pid' => $projectId,
             'widgetID' => $chartIds,
             'StartDate' => $startDate,
             'EndDate' => $endDate,
-            'sentiment' => '1,0,-1'
+            'sentiment' => '1,0,-1',
+            'brandID' => $keywords
         ];
+
+        //var_dump($params);
 
         return $this->getChart($params);
     }
@@ -51,9 +51,12 @@ class ChartService
         return \GuzzleHttp\json_decode($fakeResult);
     }
 
-    public function getBuzzData($chartResult)
+    public function getBuzzData($chartResult, $startDate, $endDate)
     {
-        $dateRange = $this->getDateRange();
+        $dateRange = $this->getDateRange('2016-08-21', '2016-09-04');
+        if ($this->apiMode == 'PRODUCTION') {
+            $dateRange = $this->getDateRange($startDate, $endDate);
+        }
         $viewTrends = $chartResult->viewTrend;
         $arrData = [];
         $x = 0;
@@ -78,47 +81,54 @@ class ChartService
         return $result;
     }
 
-    public function wordCloud($projectId, $startDate = null, $endDate = null)
+    public function wordCloud($projectId, $keywords = '', $startDate = null, $endDate = null)
     {
-        $lastSevenDays = Carbon::today()->subDay(7)->format('Y-m-d');
-        $startDate = (!is_null($startDate)) ? $startDate : $lastSevenDays;
-        $endDate = (!is_null($endDate)) ? $endDate : date('Y-m-d');
         $params = [
             'pid' => $projectId,
             'widgetID' => 7,
             'StartDate' => $startDate,
-            'EndDate' => $endDate
+            'EndDate' => $endDate,
+            'brandID' => $keywords
         ];
 
         return $this->getChart($params);
     }
 
-    public function viewInfluencer($projectId, $startDate = null, $endDate = null)
+    public function viewInfluencer($projectId, $keywords = '', $startDate = null, $endDate = null)
     {
-        $lastSevenDays = Carbon::today()->subDay(7)->format('Y-m-d');
-        $startDate = (!is_null($startDate)) ? $startDate : $lastSevenDays;
-        $endDate = (!is_null($endDate)) ? $endDate : date('Y-m-d');
         $params = [
             'pid' => $projectId,
             'widgetID' => 'E',
             'StartDate' => $startDate,
-            'EndDate' => $endDate
+            'EndDate' => $endDate,
+            'brandID' => $keywords
         ];
 
         return $this->getChart($params);
     }
 
-    private function getDateRange()
+    private function getDateRange($startDate, $endDate)
     {
         $arrDays = [];
 //        $now = Carbon::today();
 //        $loopDay = $now->copy()->subDays(7);
-        $loopDay = Carbon::createFromFormat('Y-m-d', '2016-08-21');
-        $now = Carbon::createFromFormat('Y-m-d', '2016-09-04');
+        $loopDay = Carbon::createFromFormat('Y-m-d', $startDate);
+        $now = Carbon::createFromFormat('Y-m-d', $endDate);
         for ($loopDay; $loopDay->lte($now); $loopDay->addDay()) {
             $arrDays[] = $loopDay->format('Y-m-d');
         }
         return $arrDays;
+    }
+
+    public function getLastSevenDaysRange()
+    {
+        $lastSevenDays = Carbon::today()->subDay(7)->format('Y-m-d');
+        $startDate = $lastSevenDays;
+        $endDate = date('Y-m-d');
+        return [
+            'startDate' => $startDate,
+            'endDate' => $endDate
+        ];
     }
 
 

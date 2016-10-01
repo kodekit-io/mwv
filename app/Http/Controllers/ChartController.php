@@ -20,7 +20,10 @@ class ChartController extends Controller
 
     public function chartOne($projectId)
     {
-        $chart = $this->chartService->projectChart($projectId, '1');
+        $dateRange = $this->chartService->getLastSevenDaysRange();
+        $startDate = $dateRange['startDate'];
+        $endDate = $dateRange['endDate'];
+        $chart = $this->chartService->projectChart($projectId, '1', '', $startDate, $endDate);
         return \GuzzleHttp\json_encode($chart->brandEquity);
     }
 }
