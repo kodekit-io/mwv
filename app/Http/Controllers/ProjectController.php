@@ -4,11 +4,13 @@ namespace App\Http\Controllers;
 
 use App\ApiService;
 use App\ChartService;
+use App\DatatableService;
 use App\ProjectService;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
 
 use App\Http\Requests;
+use Illuminate\Support\Facades\Log;
 
 class ProjectController extends Controller
 {
@@ -83,7 +85,7 @@ class ProjectController extends Controller
         $chart = $this->chartService->projectChart($projectId, '1,2,3,4,5,6,12,A', $brands, $startDate, $endDate);
         $wordCloud = $this->chartService->wordCloud($projectId, $brands, $startDate, $endDate);
         $viewInfluencer = $this->chartService->viewInfluencer($projectId, $brands, $startDate, $endDate);
-        $viewMediaDetail = $this->chartService->viewMediaDetail($projectId, $brands, $startDate, $endDate);
+        // $viewMediaDetail = $this->chartService->viewMediaDetail($projectId, $brands, $startDate, $endDate);
 
         $keywords = [];
         if (count($profiles->projectInfo->keywordList) > 0) {
@@ -121,39 +123,33 @@ class ProjectController extends Controller
         return view('mediawave.project-detail', $data);
     }
 
-    public function conversation($source)
+    public function conversation(Request $request)
     {
-        return '{
-                "draw": 1,
-                "recordsTotal": 57,
-                "recordsFiltered": 57,
-                "data": [
-                    [
-                        "Angelica",
-                        "Ramos",
-                        "System Architect",
-                        "London",
-                        "9th Oct 09",
-                        "$2,875"
-                    ],
-                    [
-                        "Ashton",
-                        "Cox",
-                        "Technical Author",
-                        "San Francisco",
-                        "12th Jan 09",
-                        "$4,800"
-                    ],
-                    [
-                        "Ashton",
-                        "Cox",
-                        "Technical Author",
-                        "San Francisco",
-                        "12th Jan 09",
-                        "$4,800"
-                    ]
-                ]
-            }';
+        $projectId = $request->input('project_id');
+        $start = $request->input('start');
+        $rpp = $request->input('length');
+        $media = $request->input('source');
+        $startDate = $request->input('start_date');
+        $startDate = Carbon::createFromFormat('d/m/y', $startDate)->format("Y-m-d");
+        $endDate = $request->input('end_date');
+        $endDate = Carbon::createFromFormat('d/m/y', $endDate)->format("Y-m-d");
+        $page = ($start/$rpp) + 1;
+
+        $conversation = $this->chartService->getConversation($projectId, $media, $page, $rpp, '', $startDate, $endDate);
+        $data = $conversation->message;
+        $totalPage = $conversation->totalPage;
+        $datatable = new DatatableService();
+        $totalRow = ($totalPage * $rpp) - 1;
+        Log::warning('start ==> ' . $start . ', rpp ==> ' . $rpp . ', page ==> ' . $page . ', totalRow ==> ' . $totalRow);
+
+        $columns = [
+            ['db' => 'screeName', 'dt' => '0'],
+            ['db' => 'text', 'dt' => '1'],
+            ['db' => 'sentimentId', 'dt' => '2']
+        ];
+        $return = $datatable->generateOutput($data, $columns, $totalRow);
+
+        echo json_encode($return);
     }
 
     public function detailTW($projectId)

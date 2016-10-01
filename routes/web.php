@@ -32,7 +32,8 @@ Route::group(['middleware' => 'auth'], function () {
 
     Route::get('/project-detail/{pid}', 'ProjectController@detail');
     Route::post('/project-detail/{pid}', 'ProjectController@detail');
-    Route::get('/conversation/{source}', 'ProjectController@conversation');
+    Route::get('/conversation', 'ProjectController@conversation');
+
     Route::get('/project-twitter/{pid}', 'ProjectController@detailTW');
     Route::get('/project-facebook/{pid}', 'ProjectController@detailFB');
     Route::get('/project-news/{pid}', 'ProjectController@detailNews');

@@ -6,8 +6,9 @@ namespace App;
 class ChartFaker
 {
 
-    public function fakeChart($widgetId, $projectId = null)
+    public function fakeChart($widgetId, $params = null)
     {
+        $projectId = (! is_null($params) ? $params['pid'] : null);
         // wordcloud
         if ($widgetId == 7) {
             return $this->wordCloud();
@@ -15,6 +16,9 @@ class ChartFaker
             return $this->viewInfluencer();
         } else if ($widgetId == 'F') {
             return $this->viewMediaDetail();
+        } else if ($widgetId == 'C') {
+            $conversationFaker = new ConversationFaker();
+            return $conversationFaker->fakeConversation($params['mediaID']);
         } else {
             if ($projectId == '111561522016') {
                 return '{
