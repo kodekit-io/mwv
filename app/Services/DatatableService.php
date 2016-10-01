@@ -14,13 +14,12 @@ class DatatableService
             $row = [];
             for ( $j=0, $jen=count($columns) ; $j<$jen ; $j++ ) {
                 $column = $columns[$j];
-
+                $colName = $column['db'];
                 // Is there a formatter?
                 if ( isset( $column['formatter'] ) ) {
-                    $row[ $column['dt'] ] = $column['formatter']( $data->$column['db'], $data );
+                    $row[ $column['dt'] ] = $column['formatter']( $data->$colName, $data );
                 }
                 else {
-                    $colName = $columns[$j]['db'];
                     $row[ $column['dt'] ] = $data->$colName;
                 }
             }
@@ -53,7 +52,13 @@ class DatatableService
         return [
             ['db' => 'screeName', 'dt' => '0'],
             ['db' => 'text', 'dt' => '1'],
-            ['db' => 'sentimentId', 'dt' => '2']
+            [
+                'db' => 'sentimentId',
+                'dt' => '2',
+                'formatter' => function( $d, $row ) {
+                    return $this->getSentimentById($d);
+                }
+            ]
         ];
     }
 
@@ -62,8 +67,25 @@ class DatatableService
         return [
             ['db' => 'author', 'dt' => '0'],
             ['db' => 'videoTitle', 'dt' => '1'],
-            ['db' => 'sentimentId', 'dt' => '2']
+            [
+                'db' => 'sentimentId',
+                'dt' => '2',
+                'formatter' => function( $d, $row ) {
+                    return $this->getSentimentById($d);
+                }
+            ]
         ];
+    }
+
+    private function getSentimentById($id)
+    {
+        $arrSentiment = [
+            '1' => 'Positive',
+            '0' => 'Neutral',
+            '-1' => 'Negative'
+        ];
+
+        return $arrSentiment[$id];
     }
 
 }
