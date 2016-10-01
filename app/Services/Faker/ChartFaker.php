@@ -6,7 +6,7 @@ namespace App;
 class ChartFaker
 {
 
-    public function fakeChart($widgetId)
+    public function fakeChart($widgetId, $projectId = null)
     {
         // wordcloud
         if ($widgetId == 7) {
@@ -14,7 +14,58 @@ class ChartFaker
         } else if ($widgetId == 'E') {
             return $this->viewInfluencer();
         } else {
-            return '{
+            if ($projectId == '111561522016') {
+                return '{
+                    "status": "OK",
+                    "code": 200,
+                    "widgetID": "1,2,3,4,5,6,9,10,11,12,13,A,B",
+                    "startDate": "2016-06-01 00:00:00",
+                    "endDate": "2016-07-30 23:59:59",
+                    "mediaID": "1,2,3,4",
+                    "brandID": "",
+                    "topicID": "",
+                    "sentiment": "",
+                    "icapt": "",
+                    "text": "",
+                    "project": {
+                        "pid": "1431242592016",
+                        "pname": "New Pilgub DKI 2017"
+                    },
+                    "brandEquity": [
+                    ],
+                    "shareOfVoice": [
+                    ],
+                    "volumeTrending": [
+                    ],
+                    "mediaDistribution": [
+                    ],
+                    "sentimentMediaDistribution": [
+                    ],
+                    "topicDistributions": [
+                    ],
+                    "brandPerMediaDistribution": [
+                    ],
+                    "mediaPerBrandDistribution": [
+                    ],
+                    "brandPerTopicDistribution": [
+                    ],
+                    "sentimentBrandDistributions": [
+                    ],
+                    "sentimentPerTopicDistributions": [
+                    ],
+                    "viewTrend": [
+                    ],
+                    "viewSentimentTrend": [
+                    ],
+                    "keywordName": [
+                        " Ahok - Djarot",
+                        " Agus - Sylviana",
+                        " Anies - Sandiaga"
+                    ],
+                    "keywordNames": null
+                }';
+            } else  {
+                return '{
                   "status": "OK",
                   "code": 200,
                   "widgetID": "1,2,3,4,5,6,9,10,11,12,13,A,B",
@@ -957,6 +1008,7 @@ class ChartFaker
                   ],
                   "keywordNames": null
                 }';
+            }
         }
 
     }

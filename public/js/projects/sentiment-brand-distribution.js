@@ -56,9 +56,9 @@ function sentimentBrandDistribution($id, $data) {
         ];
         // console.log("content : ",$content);
 
-        chartSentimentBrand($id, $content,null,$buzzName);
+        chartSentimentBrand($id, $content, null, $buzzName);
     }else{
-        chartSentimentBrand(false,"no data");
+        chartSentimentBrand($id, false, "No Data");
     }
 }
 
