@@ -1,7 +1,10 @@
 function brandChart($id, $data) {
+
     if ($data.length === 0) {
         $('#' + $id).html("<div class='center'>No data chart</div>");
+        $('#' + 'btnview-{!! $project->pid !!}').block();
     } else {
+
         var $content = [];
 
         var $netsen = 0,
