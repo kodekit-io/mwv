@@ -69,7 +69,7 @@
     }
 </script>
 <div class="fixed-action-btn" style="bottom: 5px; right: 5px;">
-    <form id="screenshot" method="POST" enctype="multipart/form-data" action="screenshot.php">
+    <form id="screenshot" method="post" action="{!! url('scshotsend') !!}" >
         <input type="hidden" name="img_screenshot" id="img_screenshot" value="" />
         <a class="btn-floating tooltipped" data-position="left" data-delay="25" data-tooltip="Take a Screenshot" onclick="capture();">
             <i class="material-icons">camera_enhance</i>
