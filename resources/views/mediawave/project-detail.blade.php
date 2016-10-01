@@ -14,32 +14,29 @@
                         Project Name: {!! $project->pname !!}
                     </h1>
                 </div>
-                <form class="md-card-content">
+                <form class="md-card-content" action="{!! url('project-detail/' . $project->pid) !!}" method="POST">
+                    {{ csrf_field() }}
+                    @if (count($keywords) > 0)
                     <ul class="uk-subnav left">
+                        @foreach($keywords as $key => $keywords)
                         <li class="">
-                            <input type="checkbox" class="filled-in" id="key1" checked="checked" />
-                            <label for="key1">Keyword 1</label>
+                            <input type="checkbox" name="keywords[]" value="{!! $key !!}" class="filled-in" id="{!! $key !!}" {!! $keywords['selected'] !!}  />
+                            <label for="{!! $key !!}">{!! $keywords['value'] !!}</label>
                         </li>
-                        <li class="">
-                            <input type="checkbox" class="filled-in" id="key2" checked="checked" />
-                            <label for="key2">Keyword 2</label>
-                        </li>
-                        <li class="">
-                            <input type="checkbox" class="filled-in" id="key3" checked="checked" />
-                            <label for="key3">Keyword 3</label>
-                        </li>
+                       @endforeach
                     </ul>
+                    @endif
 
                     <div class="nav-wrapper right">
                         <div class="input-field md-daterange">
-                            <input id="startdate" type="text" class="uk-datepicker" data-uk-datepicker="{pos:'bottom',format:'DD/MM/YY'}" placeholder="10/12/16">
+                            <input id="startdate" name="start_date" type="text" class="uk-datepicker" data-uk-datepicker="{pos:'bottom',format:'DD/MM/YY'}" placeholder="10/12/16" value="{!! $startDate !!}">
                             <label for="startdate"><i class="material-icons prefix">date_range</i></label>
                         </div> -
                         <div class="input-field md-daterange">
-                            <input id="enddate" type="text" class="uk-datepicker" data-uk-datepicker="{pos:'bottom',format:'DD/MM/YY'}" placeholder="17/12/16">
+                            <input id="enddate" name="end_date" type="text" class="uk-datepicker" data-uk-datepicker="{pos:'bottom',format:'DD/MM/YY'}" placeholder="17/12/16" value="{!! $endDate !!}">
                             <label for="enddate"><i class="material-icons prefix">date_range</i></label>
                         </div>
-                        <button class="btn pink darken-4 uk-margin-left z-depth-0" type="submit">UPDATE</button>
+                        <button class="btn pink darken-4 uk-margin-left z-depth-0" name="filter" value="1" type="submit">UPDATE</button>
                     </div>
                 </form>
             </div>

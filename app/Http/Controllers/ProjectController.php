@@ -64,16 +64,44 @@ class ProjectController extends Controller
         }
     }
 
-    public function detail($projectId)
+    public function detail(Request $request, $projectId)
     {
-        $chart = $this->chartService->projectChart($projectId, '1,2,3,4,5,6,12,A');
-        $wordCloud = $this->chartService->wordCloud($projectId);
-        $viewInfluencer = $this->chartService->viewInfluencer($projectId);
+        $brands = '';
+        $last7DaysRange = $this->chartService->getLastSevenDaysRange();
+        $startDate = $last7DaysRange['startDate'];
+        $endDate = $last7DaysRange['endDate'];
+        if ($request->has('filter')) {
+            // var_dump($request->input());
+            $startDate = $request->input('start_date');
+            $endDate = $request->input('end_date');
+            $startDate = ( $startDate != '' ) ? Carbon::createFromFormat('d/m/y', $startDate)->format('Y-m-d') : null;
+            $endDate = ( $endDate != '' ) ? Carbon::createFromFormat('d/m/y', $endDate)->format('Y-m-d') : null;
+            $brands = ( $request->has('keywords') ? implode(',', $request->input('keywords')) : '' );
+        }
+
+        $profiles = $this->projectService->projectInfo($projectId);
+        $chart = $this->chartService->projectChart($projectId, '1,2,3,4,5,6,12,A', $brands, $startDate, $endDate);
+        $wordCloud = $this->chartService->wordCloud($projectId, $brands, $startDate, $endDate);
+        $viewInfluencer = $this->chartService->viewInfluencer($projectId, $brands, $startDate, $endDate);
+
+        $keywords = [];
+        if (count($profiles->projectInfo->keywordList) > 0) {
+            $keywordLists = $profiles->projectInfo->keywordList;
+            foreach ($keywordLists as $keywordList) {
+                $keywordId = $keywordList->keyword->keywordId;
+                $keywordName = $keywordList->keyword->keywordName;
+                $keywords[$keywordId]['value'] = $keywordName;
+                $keywords[$keywordId]['selected'] = $this->isKeywordSelected($keywordId, $request);
+            }
+        }
 
         $data['pageTitle'] = 'All Media';
         $data['project'] = $chart->project;
+        $data['keywords'] = $keywords;
+        $data['startDate'] = Carbon::createFromFormat('Y-m-d', $startDate)->format('d/m/y');
+        $data['endDate'] = Carbon::createFromFormat('Y-m-d', $endDate)->format('d/m/y');;
 
-        $chartData = $this->chartService->getBuzzData($chart);
+        $chartData = $this->chartService->getBuzzData($chart, $startDate, $endDate);
         $data['brandEquity'] = \GuzzleHttp\json_encode($chart->brandEquity);
         $data['shareOfVoice'] = \GuzzleHttp\json_encode($chart->shareOfVoice);
         $data['volumeTrending'] = \GuzzleHttp\json_encode($chart->volumeTrending);
@@ -185,6 +213,19 @@ class ProjectController extends Controller
     {
         $data['pageTitle'] = 'Instagram';
         return view('mediawave.socmed-instagram', $data);
+    }
+
+    private function isKeywordSelected($keywordId, $request)
+    {
+        $select = '';
+        if ($request->has('keywords')) {
+            if (in_array($keywordId, $request->input('keywords'))) {
+                $select = 'checked';
+            }
+        } else {
+            $select = 'checked';
+        }
+        return $select;
     }
 
 }

@@ -31,6 +31,7 @@ Route::group(['middleware' => 'auth'], function () {
     Route::post('/save-project', 'ProjectController@save');
 
     Route::get('/project-detail/{pid}', 'ProjectController@detail');
+    Route::post('/project-detail/{pid}', 'ProjectController@detail');
     Route::get('/project-twitter/{pid}', 'ProjectController@detailTW');
     Route::get('/project-facebook/{pid}', 'ProjectController@detailFB');
     Route::get('/project-news/{pid}', 'ProjectController@detailNews');
