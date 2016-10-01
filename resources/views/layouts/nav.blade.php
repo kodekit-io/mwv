@@ -3,24 +3,25 @@
         <a href="{!! url('/dashboard') !!}" title="MediaWave" class="left">
             <img class="md-logo-head" src="{!! asset('mediawave/img/logo-white.png') !!}" alt="MediaWave" />
         </a>
-        <h1 class="md-title-page left">
-            <?php
-            if (isset($projectName)) {
-                echo '<a data-activates="projectlist" class="dropdown-button truncate">';
-                echo $pageTitle;
-                echo '<i class="material-icons right">arrow_drop_down</i></a>';
-            } else {
-                echo $pageTitle;
-            }
-            ?>
-        </h1>
+        <h1 class="md-title-page left">{!! $pageTitle !!}</h1>
+        <?php
+        /*
+        if (isset($projectName)) {
+            echo '<a data-activates="projectlist" class="dropdown-button truncate">';
+            echo $pageTitle;
+            echo '<i class="material-icons right">arrow_drop_down</i></a>';
+        } else {
+            echo $pageTitle;
+        }
+
         <!-- Projectlist -->
         <ul id="projectlist" class="dropdown-content">
-            <li><a href="#!">Project Name 1</a></li>
-            <li><a href="#!">Project Name 2</a></li>
-            <li><a href="#!">Project Name 3</a></li>
+            @foreach($projects as $project)
+            <li><a href="{!! url('project-detail/' . $project->pid) !!}">{!! $project->pname !!}</a></li>
+            @endforeach
         </ul>
-
+        */
+        ?>
         <ul class="right hide-on-med-and-down">
             <li class="nav-dashboard">
                 <a href="{!! url('/dashboard') !!}" name="topnav" class="tooltipped" data-position="bottom" data-delay="25" data-tooltip="Dashboard">
