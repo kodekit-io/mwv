@@ -223,7 +223,7 @@ class ProjectController extends Controller
         return view('mediawave.socmed-instagram', $data);
     }
 
-<<<<<<< HEAD
+
     public function scshot()
     {
         $data['pageTitle'] = 'Screenshot';
@@ -240,7 +240,7 @@ class ProjectController extends Controller
 
         }
     }
-=======
+
     private function isKeywordSelected($keywordId, $request)
     {
         $select = '';
@@ -254,5 +254,4 @@ class ProjectController extends Controller
         return $select;
     }
 
->>>>>>> Pashamahardika/master
 }
