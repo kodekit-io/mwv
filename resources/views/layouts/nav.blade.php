@@ -7,9 +7,7 @@
         <?php
         /*
         if (isset($projectName)) {
-            echo '<a data-activates="projectlist" class="dropdown-button truncate">';
-            echo $pageTitle;
-            echo '<i class="material-icons right">arrow_drop_down</i></a>';
+            echo '<a data-activates="projectlist" class="dropdown-button truncate"> $pageTitle <i class="material-icons right">arrow_drop_down</i></a>';
         } else {
             echo $pageTitle;
         }

@@ -138,6 +138,14 @@ class ProjectController extends Controller
         $data['projectId'] = $projectId;        return view('mediawave.project-blog', $data);
     }
 
+    public function detailIG($projectId)
+    {
+        $data['pageTitle'] = 'Instagram';
+        $chart = $this->chartService->projectChart($projectId, '1,2,3,4,5,6,12');
+        $data['project'] = $chart->project;
+        $data['projectId'] = $projectId;        return view('mediawave.project-ig', $data);
+    }
+
 
     public function profile()
     {
