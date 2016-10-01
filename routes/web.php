@@ -56,8 +56,6 @@ Route::group(['middleware' => 'auth'], function () {
     Route::get('/socmed-youtube', 'ProjectController@socmedYT');
     Route::get('/socmed-instagram', 'ProjectController@socmedIG');
 
-    Route::get('/screenshot', 'ProjectController@scshot');
-    Route::post('/scshotsend', 'ProjectController@scshotsend');
 });
 
 Route::get('/datatable', function() {

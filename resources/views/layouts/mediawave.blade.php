@@ -62,19 +62,18 @@
             letterRendering: true,
             background: '#E6E6E6',
             onrendered: function (canvas) {
-                $('#img_screenshot').val(canvas.toDataURL("image/png"));
-                document.getElementById("screenshot").submit();
+                var a = document.createElement('a');
+                a.href = canvas.toDataURL("image/jpeg").replace("image/jpeg", "image/octet-stream");
+                a.download = 'mediawave-platform.jpg';
+                a.click();
             }
         });
     }
 </script>
 <div class="fixed-action-btn" style="bottom: 5px; right: 5px;">
-    <form id="screenshot" method="post" action="{!! url('scshotsend') !!}" >
-        <input type="hidden" name="img_screenshot" id="img_screenshot" value="" />
-        <a class="btn-floating tooltipped" data-position="left" data-delay="25" data-tooltip="Take a Screenshot" onclick="capture();">
-            <i class="material-icons">camera_enhance</i>
-        </a>
-    </form>
+    <a class="btn-floating tooltipped" data-position="left" data-delay="25" data-tooltip="Take a Screenshot" onclick="capture();">
+        <i class="material-icons">camera_enhance</i>
+    </a>
 </div>
 
 @section('page-level-scripts')

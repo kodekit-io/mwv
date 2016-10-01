@@ -223,24 +223,6 @@ class ProjectController extends Controller
         return view('mediawave.socmed-instagram', $data);
     }
 
-
-    public function scshot()
-    {
-        $data['pageTitle'] = 'Screenshot';
-        return view('mediawave.screenshot', $data);
-    }
-
-    public function scshotsend(Request $request)
-    {
-        $response = $this->reportService->createReport($request->except(['_token']));
-
-        if ($response->status == 'OK') {
-            return redirect('screenshot')->with(['message' => $response->msg]);
-        } else {
-
-        }
-    }
-
     private function isKeywordSelected($keywordId, $request)
     {
         $select = '';
@@ -253,5 +235,6 @@ class ProjectController extends Controller
         }
         return $select;
     }
+
 
 }
