@@ -39,6 +39,8 @@ Route::group(['middleware' => 'auth'], function () {
     Route::get('/project-video/{pid}', 'ProjectController@detailVideo');
     Route::get('/project-blog/{pid}', 'ProjectController@detailBlog');
 
+    Route::get('/project-ig/{pid}', 'ProjectController@detailIG');
+
     Route::get('/edit-project/{pid}', 'ProjectController@edit');
     Route::get('/profile', 'ProjectController@profile');
     Route::post('/update-project', 'ProjectController@update');
