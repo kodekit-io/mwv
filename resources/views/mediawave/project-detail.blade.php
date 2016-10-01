@@ -272,13 +272,13 @@
                                     <table id="table_twitter" class="striped bordered highlight responsive-table">
                                         <thead>
                                         <tr>
-                                            <th>Author</th>
-                                            <th>Post</th>
+                                            <!--th>Author</th>
+                                            <th>Post</th-->
                                             <th>Name</th>
-                                            <th>Interaction</th>
-                                            <th>Viral Reach</th>
+                                            <th>Post</th>
+                                            <!--th>Viral Reach</th-->
                                             <th>Sentiment</th>
-                                            <th><input type="checkbox" class="" id="selectall" /><label for="selectall">Select All</label></th>
+                                            <!--th><input type="checkbox" class="" id="selectall" /><label for="selectall">Select All</label></th-->
                                         </tr>
                                         </thead>
                                     </table>
@@ -399,8 +399,17 @@
                 "order": [[ 0, "desc" ]]
             });
             $('#table_twitter').DataTable( {
-                serverSide: true,
-                ajax: '{!! url('conversation/twitter') !!}'
+                "processing": true,
+                "serverSide": true,
+                "ajax": {
+                    "url": '{!! url('conversation') !!}',
+                    "data": {
+                        "project_id": '{!! $project->pid !!}',
+                        "source": 'twitter',
+                        "start_date": '{!! $startDate !!}',
+                        "end_date": '{!! $endDate !!}'
+                    }
+                }
             });
             $('#table_facebook').DataTable( {
                 "order": [[ 0, "desc" ]]

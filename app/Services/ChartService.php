@@ -4,6 +4,7 @@ namespace App;
 
 
 use Carbon\Carbon;
+use Illuminate\Support\Facades\Log;
 
 class ChartService
 {
@@ -47,7 +48,7 @@ class ChartService
         if ($this->apiMode == 'PRODUCTION') {
             return $this->apiService->post('dashboard/analytics/charts', $params, true);
         }
-        $fakeResult = $this->fakeResult->fakeChart($params['widgetID'], $params['pid']);
+        $fakeResult = $this->fakeResult->fakeChart($params['widgetID'], $params);
         return \GuzzleHttp\json_decode($fakeResult);
     }
 
@@ -114,6 +115,27 @@ class ChartService
 //        return $result;
     }
 
+    public function getConversation($projectId, $media, $page = 1, $rpp = 10, $keywords = '', $startDate = '', $endDate = '')
+    {
+        $mediaId = $this->getMediaByName($media);
+        $params = [
+            'pid' => $projectId,
+            'widgetID' => 'C',
+            'StartDate' => $startDate,
+            'EndDate' => $endDate,
+            'brandID' => $keywords,
+            'currpage' => $page,
+            'rpp' => $rpp,
+            'mediaID' => $mediaId
+        ];
+
+        Log::warning('param ' . json_encode($params));
+
+        // var_dump($params);
+
+        return $this->getChart($params);
+    }
+
     public function wordCloud($projectId, $keywords = '', $startDate = '', $endDate = '')
     {
         $params = [
@@ -177,6 +199,19 @@ class ChartService
         ];
     }
 
+    public function getMediaByName($name)
+    {
+        $arrMedia = [
+             'facebook' => '1',
+             'twitter' => '2',
+             'blog' => '3',
+             'news' => '4',
+             'video' => '5',
+             'forum' => '9'
+        ];
+
+        return $arrMedia[$name];
+    }
 
 
 }
