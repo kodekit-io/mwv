@@ -1675,8 +1675,11 @@ select {
 
 .conv-wrap table {
 	border-top: 1px solid #ccc;
+	width: 100% !important;
 }
-
+.conv-wrap .dt-buttons {
+	visibility: hidden !important;
+}
 .conv-tabs {
 	border-bottom: 1px solid #ccc;
 }

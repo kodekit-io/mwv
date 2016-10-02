@@ -2,6 +2,7 @@
 
 @section('page-level-styles')
     <link rel="stylesheet" href="{!! asset('mediawave/css/dataTables.mw.css') !!}" />
+    <link rel="stylesheet" href="{!! asset('mediawave/css/buttons.dataTables.min.css') !!}" />
 @endsection
 
 @section('content')
@@ -270,17 +271,20 @@
                                 <div id="convtwiter" class="">
                                     <?php //TWITTER TABLE ?>
                                     <table id="table_twitter" class="striped bordered highlight responsive-table">
-                                        <thead>
-                                        <tr>
-                                            <!--th>Author</th>
-                                            <th>Post</th-->
-                                            <th>Name</th>
-                                            <th>Post</th>
-                                            <!--th>Viral Reach</th-->
-                                            <th>Sentiment</th>
-                                            <!--th><input type="checkbox" class="" id="selectall" /><label for="selectall">Select All</label></th-->
-                                        </tr>
-                                        </thead>
+                                        <!--<thead>
+                                            <tr>
+                                                <th>Date</th>
+                                                <th>Author</th>
+                                                <th>Post</th>
+                                                <th>Original Reach</th>
+                                                <th>Viral Reach</th>
+                                                <th>Engagements</th>
+                                                <th>Viral Score</th>
+                                                <th>Sentiment</th>
+                                                <th>Link</th>
+                                                <th><input type="checkbox" class="" id="selectall" /><label for="selectall">Select All</label></th>
+                                            </tr>
+                                        </thead>-->
                                     </table>
                                 </div>
                                 <div id="convfacebook" class="">
@@ -337,9 +341,9 @@
                                         <tr>
                                             <th>Author</th>
                                             <th>Posts</th>
-                                            <!--th>Likes</th>
+                                            <th>Likes</th>
                                             <th>Comments</th>
-                                            <th>Potential Reach</th-->
+                                            <th>Potential Reach</th>
                                             <th>Sentiment</th>
                                         </tr>
                                         </thead>
@@ -380,7 +384,8 @@
     <script src="{!! asset('mediawave/js/jquery.plugin.html2canvas.js') !!}"></script>
     <script src="{!! asset('mediawave/js/jqcloud.min.js') !!}"></script>
     <script src="{!! asset('mediawave/js/jquery.dataTables.min.js') !!}"></script>
-    <script src="{!! asset('mediawave/js/dataTables.select.min.js') !!}"></script>
+    <script src="{!! asset('mediawave/js/dataTables.buttons.min.js') !!}"></script>
+    <script src="{!! asset('mediawave/js/buttons.colVis.min.js') !!}"></script>
     <script src="{!! asset('mediawave/js/dataTables.mw.js') !!}"></script>
 @endsection
 
@@ -399,19 +404,34 @@
                 "order": [[ 0, "desc" ]]
             });
             $('#table_twitter').DataTable( {
-                "processing": true,
-                "serverSide": true,
-                "searching": false,
-                "info": false,
+                //"processing": true,
+                //"serverSide": true,
+                //"searching": false,
+                //"info": false,
                 "ajax": {
-                    "url": '{!! url('conversation') !!}',
+                    "url": "{{ asset('mediawave/jsontest/conv-twitter.json') }}",
                     "data": {
                         "project_id": '{!! $project->pid !!}',
                         "source": 'twitter',
                         "start_date": '{!! $startDate !!}',
                         "end_date": '{!! $endDate !!}'
                     }
-                }
+                },
+                "columns": [
+                    { title: "Date" },
+                    { title: "Author" },
+                    { title: "Post" },
+                    { title: "Original Reach" },
+                    { title: "Viral Reach" },
+                    { title: "Interactions" },
+                    { title: "Viral Score" },
+                    { title: "Sentiment" },
+                    { title: "Link" },
+                ],
+                "columnDefs": [{
+                    "visible": false,
+                    "targets": [0, -1]
+                }]
             });
             $('#table_facebook').DataTable( {
                 "order": [[ 0, "desc" ]]
@@ -423,7 +443,7 @@
                 "order": [[ 0, "desc" ]]
             });
             $('#table_video').DataTable( {
-                "processing": true,
+/*                "processing": true,
                 "serverSide": true,
                 "searching": false,
                 "info": false,
@@ -435,7 +455,7 @@
                         "start_date": '{!! $startDate !!}',
                         "end_date": '{!! $endDate !!}'
                     }
-                }
+                }*/
             });
             $('#table_blog').DataTable( {
                 "order": [[ 0, "desc" ]]
