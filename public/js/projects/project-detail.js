@@ -42,6 +42,7 @@ function brandChart($id, $data) {
                         Buzz: $buzz
                     }
                 ],
+                name: [$keywordName],
                 color: $color
             };
         } //end of for
