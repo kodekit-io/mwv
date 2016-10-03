@@ -103,7 +103,7 @@
                             <h2 class="md-card-toolbar-heading-text">BUZZ</h2>
                         </div>
                         <div id="buzz" class="md-card-content">
-                            <div id="buzz-container" class="md-chart">Pie Chart</div>
+                            <div id="buzzpie" class="md-chart">Pie Chart</div>
                         </div>
                     </div>
                 </li>
@@ -118,7 +118,7 @@
                             <h2 class="md-card-toolbar-heading-text">POST</h2>
                         </div>
                         <div id="post" class="md-card-content">
-                            <div id="id-chartnya-disini" class="md-chart">Pie Chart</div>
+                            <div id="postpie" class="md-chart">Pie Chart</div>
                         </div>
                     </div>
                 </li>
@@ -133,7 +133,7 @@
                             <h2 class="md-card-toolbar-heading-text">INTERACTIONS</h2>
                         </div>
                         <div id="interaction" class="md-card-content">
-                            <div id="id-chartnya-disini" class="md-chart">Pie Chart</div>
+                            <div id="interactionpie" class="md-chart">Pie Chart</div>
                         </div>
                     </div>
                 </li>
@@ -148,7 +148,7 @@
                             <h2 class="md-card-toolbar-heading-text">UNIQUE USERS</h2>
                         </div>
                         <div id="unique" class="md-card-content">
-                            <div id="id-chartnya-disini" class="md-chart">Pie Chart</div>
+                            <div id="authorpie" class="md-chart">Pie Chart</div>
                         </div>
                     </div>
                 </li>
@@ -163,7 +163,7 @@
                             <h2 class="md-card-toolbar-heading-text">SENTIMENT</h2>
                         </div>
                         <div id="sentiment" class="md-card-content">
-                            <div id="share-brand-container" class="md-chart">Bar Chart</div>
+                            <div id="sentimentbar" class="md-chart">Bar Chart</div>
                         </div>
                     </div>
                 </li>
@@ -178,7 +178,7 @@
                             <h2 class="md-card-toolbar-heading-text">INTERACTION RATE</h2>
                         </div>
                         <div id="ir" class="md-card-content">
-                            <div id="id-chartnya-disini" class="md-chart">Bar Chart</div>
+                            <div id="interactionbar" class="md-chart">Bar Chart</div>
                         </div>
                     </div>
                 </li>
@@ -193,7 +193,7 @@
                             <h2 class="md-card-toolbar-heading-text">SHARE OF MEDIA</h2>
                         </div>
                         <div id="mediashare" class="md-card-content">
-                            <div id="share-media-container" class="md-chart">Bar Chart</div>
+                            <div id="shareofmediabar" class="md-chart">Bar Chart</div>
                         </div>
                     </div>
                 </li>
@@ -238,7 +238,7 @@
                                         <td>{!! $influencer->name !!}</td>
                                         <td>{!! $influencer->score !!}</td>
                                         <td>{!! $influencer->value !!}</td>
-                                        <td><a href="{!! $influencer->url !!}" class="uk-button uk-button-mini uk-button-success" target="_blank">See Details</a></td>
+                                        <td><a href="{!! $influencer->url !!}" class="uk-button uk-button-mini uk-button-success white-text" target="_blank">See Details</a></td>
                                     </tr>
                                 @endforeach
                                 @endif
@@ -271,34 +271,36 @@
                                 <div id="convtwiter" class="">
                                     <?php //TWITTER TABLE ?>
                                     <table id="table_twitter" class="striped bordered highlight responsive-table">
-                                        <!--<thead>
+                                        <thead>
                                             <tr>
                                                 <th>Date</th>
                                                 <th>Author</th>
                                                 <th>Post</th>
                                                 <th>Original Reach</th>
                                                 <th>Viral Reach</th>
-                                                <th>Engagements</th>
+                                                <th>Interactions</th>
                                                 <th>Viral Score</th>
                                                 <th>Sentiment</th>
                                                 <th>Link</th>
-                                                <th><input type="checkbox" class="" id="selectall" /><label for="selectall">Select All</label></th>
+                                                <th></th>
                                             </tr>
-                                        </thead>-->
+                                        </thead>
                                     </table>
                                 </div>
                                 <div id="convfacebook" class="">
                                     <?php //FB TABLE ?>
                                     <table id="table_facebook" class="striped bordered highlight responsive-table">
                                         <thead>
-                                        <tr>
-                                            <th>Page</th>
-                                            <th>Post</th>
-                                            <th>Comment</th>
-                                            <th>Media Type</th>
-                                            <th>Sentiment</th>
-                                            <th></th>
-                                        </tr>
+                                            <tr>
+                                                <th>Date</th>
+                                                <th>Author</th>
+                                                <th>Post</th>
+                                                <th>Comments</th>
+                                                <th>Likes</th>
+                                                <th>Shares</th>
+                                                <th>Media Type</th>
+                                                <th>Sentiment</th>
+                                            </tr>
                                         </thead>
                                     </table>
                                 </div>
@@ -306,7 +308,17 @@
                                     <?php //NEWS TABLE ?>
                                     <table id="table_news" class="striped bordered highlight responsive-table">
                                         <thead>
-                                        <tr>
+                                            <tr>
+                                                <th>Date</th>
+                                                <th>Media</th>
+                                                <th>Title</th>
+                                                <th>Url</th>
+                                                <th>Comments</th>
+                                                <th>Summary</th>
+                                                <th>Sentiment</th>
+                                                <th>Reach</th>
+                                            </tr>
+                                        <!--<tr>
                                             <th>Media</th>
                                             <th>Title</th>
                                             <th>Density</th>
@@ -315,7 +327,7 @@
                                             <th>Summary</th>
                                             <th>Sentiment</th>
                                             <th></th>
-                                        </tr>
+                                        </tr>-->
                                         </thead>
                                     </table>
                                 </div>
@@ -384,8 +396,6 @@
     <script src="{!! asset('mediawave/js/jquery.plugin.html2canvas.js') !!}"></script>
     <script src="{!! asset('mediawave/js/jqcloud.min.js') !!}"></script>
     <script src="{!! asset('mediawave/js/jquery.dataTables.min.js') !!}"></script>
-    <script src="{!! asset('mediawave/js/dataTables.buttons.min.js') !!}"></script>
-    <script src="{!! asset('mediawave/js/buttons.colVis.min.js') !!}"></script>
     <script src="{!! asset('mediawave/js/dataTables.mw.js') !!}"></script>
 @endsection
 
@@ -398,6 +408,7 @@
     <script type="text/javascript" src="{{ asset('js/projects/buzz-pie.js') }}"></script>
     <script type="text/javascript" src="{{ asset('js/projects/word-cloud.js') }}"></script>
     <!-- script type="text/javascript" src="{{ asset('js/jquery.blockUI.js') }}"></script -->
+    <script type="text/javascript" src="{{ asset('js/projects/allchart-testing.js') }}"></script>
     <script>
         $(document).ready(function() {
             $('#table_author').DataTable( {
@@ -418,32 +429,90 @@
                     }
                 },
                 "columns": [
-                    { title: "Date" },
-                    { title: "Author" },
-                    { title: "Post" },
-                    { title: "Original Reach" },
-                    { title: "Viral Reach" },
-                    { title: "Interactions" },
-                    { title: "Viral Score" },
-                    { title: "Sentiment" },
-                    { title: "Link" },
+                    { "data": "Date" },
+                    { "data": "Author" },
+                    { "data": "Post" },
+                    { "data": "Original Reach" },
+                    { "data": "Viral Reach" },
+                    { "data": "Interactions" },
+                    { "data": "Viral Score" },
+                    { "data": "Sentiment" },
+                    { "data": "Link" },
+                    {
+                        "data": null,
+                        "defaultContent": "",
+                        "className": "namaclass",
+                        "orderable": false
+                    }
                 ],
                 "columnDefs": [{
                     "visible": false,
-                    "targets": [0, -1]
+                    "targets": [0, 8]
+                }],
+            });
+            /*$('#table_twitter').on('click', 'tr', function (e) {
+                e.preventDefault();
+                var rowIndex =  $(this).find('td:eq(6)').text();
+                alert(rowIndex);
+            });*/
+
+            $('#table_facebook').DataTable( {
+                "ajax": {
+                    "url": "{{ asset('mediawave/jsontest/conv-fb.json') }}",
+                    "data": {
+                        "project_id": '{!! $project->pid !!}',
+                        "source": 'facebook',
+                        "start_date": '{!! $startDate !!}',
+                        "end_date": '{!! $endDate !!}'
+                    }
+                },
+                "columns": [
+                    { "data": "Date" },
+                    { "data": "Author" },
+                    { "data": "Post" },
+                    { "data": "Comments" },
+                    { "data": "Likes" },
+                    { "data": "Shares" },
+                    { "data": "Media Type" },
+                    { "data": "Sentiment" },
+                ],
+                "columnDefs": [{
+                    "visible": false,
+                    "targets": [0, 4, 5]
                 }]
             });
-            $('#table_facebook').DataTable( {
-                "order": [[ 0, "desc" ]]
-            });
+
             $('#table_news').DataTable( {
-                "order": [[ 0, "desc" ]]
+                "ajax": {
+                    "url": "{{ asset('mediawave/jsontest/conv-news.json') }}",
+                    "data": {
+                        "project_id": '{!! $project->pid !!}',
+                        "source": 'news',
+                        "start_date": '{!! $startDate !!}',
+                        "end_date": '{!! $endDate !!}'
+                    }
+                },
+                "columns": [
+                    { "data": "Date" },
+                    { "data": "Media" },
+                    { "data": "Title" },
+                    { "data": "Url" },
+                    { "data": "Comments" },
+                    { "data": "Summary" },
+                    { "data": "Sentiment" },
+                    { "data": "Reach" },
+                ],
+                "columnDefs": [{
+                    "visible": false,
+                    "targets": [0, 3]
+                }]
             });
             $('#table_forum').DataTable( {
                 "order": [[ 0, "desc" ]]
             });
             $('#table_video').DataTable( {
-/*                "processing": true,
+                /*
+                "processing": true,
                 "serverSide": true,
                 "searching": false,
                 "info": false,
@@ -463,12 +532,21 @@
         });
         brandChart('brand-equity-container', jQuery.parseJSON('{!! $brandEquity !!}'));
         buzzTrend('buzztrend', jQuery.parseJSON('{!! $projectBuzzTrend !!}'));
-        {{--postTrend('posttrend', jQuery.parseJSON('{!! $projectPostTrend !!}'));--}}
-        buzzPie('buzz-container', jQuery.parseJSON('{!! $mediaDistribution !!}'));
+        //{{--postTrend('posttrend', jQuery.parseJSON('{!! $projectPostTrend !!}'));--}}
+        //buzzPie('buzz-container', jQuery.parseJSON('{!! $mediaDistribution !!}'));
         // shareOfVoice('share-of-voice-container', jQuery.parseJSON('{!! $shareOfVoice !!}'));
-        sentimentMediaDistribution('share-media-container', jQuery.parseJSON('{!! $sentimentMediaDistribution !!}'));
-        sentimentBrandDistribution('share-brand-container', jQuery.parseJSON('{!! $sentimentBrandDistributions !!}'));
+        //sentimentMediaDistribution('share-media-container', jQuery.parseJSON('{!! $sentimentMediaDistribution !!}'));
+        //sentimentBrandDistribution('share-brand-container', jQuery.parseJSON('{!! $sentimentBrandDistributions !!}'));
         wordCloud('wordcloud-container', jQuery.parseJSON('{!! $wordCloud !!}'));
+
+
+        buzzpie("buzzpie");
+        postpie("postpie");
+        interactionpie("interactionpie");
+        authorpie("authorpie");
+        sentimentbar("sentimentbar");
+        interactionbar("interactionbar");
+        shareofmediabar("shareofmediabar");
     </script>
 
 @endsection
