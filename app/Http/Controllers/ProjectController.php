@@ -119,8 +119,6 @@ class ProjectController extends Controller
         $data['viewInfluencers'] = $viewInfluencer->influencer;
         // $data['viewMediaDetail'] - $viewMediaDetail->mediaDetail;
 
-        $data['brandPerMediaDistribution'] = \GuzzleHttp\json_encode($chart->brandPerMediaDistribution);
-
         $data['projectId'] = $projectId;
 
         return view('mediawave.project-detail', $data);

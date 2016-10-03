@@ -112,7 +112,7 @@ function postpie(id) {
             }
         },
         series: [{
-            name: 'Buzz',
+            name: 'Post',
             colorByPoint: true,
             data: [{
                 name: 'Indomilk',
@@ -244,7 +244,7 @@ function authorpie(id) {
             }
         },
         series: [{
-            name: 'Interactions',
+            name: 'Unique User',
             colorByPoint: true,
             data: [{
                 name: 'Indomilk',
