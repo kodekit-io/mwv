@@ -45,10 +45,15 @@ function createProjectBuzzChart(data, id) {
             valueSuffix: ' Buzz'
         },
         legend: {
-            layout: 'horizontal',
-            align: 'center',
-            verticalAlign: 'bottom',
-            borderWidth: 0
+            y: 15,
+            backgroundColor: '#eeeeee',
+            padding: 10,
+            itemMarginTop: 0,
+            itemMarginBottom: 5,
+            itemDistance: 10,
+            itemStyle: {
+                fontWeight: 'normal'
+            }
         },
         series: data.content
     });
