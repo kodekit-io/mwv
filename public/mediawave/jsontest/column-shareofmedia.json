@@ -1,0 +1,28 @@
+{
+    "data": [
+        ["Indomilk", 65119.6],
+        ["Frisian Flag", 65119.6],
+        ["Milo", 103118.6],
+        ["Dancow", 78349.6]
+    ],
+    "name": "Twitter",
+    "color": "#63cef2",
+}, {
+    "data": [
+        ["Indomilk", 3570.5],
+        ["Frisian Flag", 50128.38],
+        ["Milo", 50128.38],
+        ["Dancow", 5281.22]
+    ],
+    "name": "Facebook",
+    "color": "#507bbf",
+}, {
+    "data": [
+        ["Indomilk", 10140.84],
+        ["Frisian Flag", 21445.04],
+        ["Milo", 21445.04],
+        ["Dancow", 12957.77]
+    ],
+    "name": "Video",
+    "color": "#f35951",
+}
