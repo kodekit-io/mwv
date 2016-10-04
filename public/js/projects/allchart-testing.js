@@ -367,7 +367,13 @@ function interactionbar(id) {
         yAxis: {
             title: {
                 text: null
-            }
+            },
+            /*plotLines: [{
+                color: 'red',
+                value: '1',
+                width: '1',
+                zIndex: 1
+            }]*/
         },
         plotOptions: {
             column: {
@@ -484,3 +490,124 @@ function shareofmediabar(id) {
         ]
     });
 }
+/*function interactiontrend(id) {
+    var $chartinteractiontrend = new Highcharts.Chart({
+        chart: {
+            renderTo: id,
+            type: 'spline'
+        },
+        title: {
+            text: null
+        },
+        credits: {
+            enabled: false
+        },
+        tooltip: {
+            //pointFormat: '{series.name}: <b>{point.y}</b> ({point.percentage:.1f}%)<br/>'
+            headerFormat: '<b>{series.name}</b><br>',
+            pointFormat: '{point.x:%e %b}: {point.y:.2f} m'
+        },
+        xAxis: {
+            type: 'datetime',
+            dateTimeLabelFormats: {
+                day: '%d/%m'
+            },
+            labels: {
+                rotation: 0,
+                style: {
+                    fontSize: '.75em'
+                }
+            }
+        },
+        yAxis: {
+            title: {
+                text: null
+            }
+        },
+        plotOptions: {
+            column: {
+                stacking: 'normal',
+                dataLabels: {
+                    enabled: false
+                }
+            }
+        },
+        legend: {
+            y: 15,
+            backgroundColor: '#eeeeee',
+            padding: 10,
+            itemMarginTop: 0,
+            itemMarginBottom: 5,
+            itemDistance: 10,
+            itemStyle: {
+                fontWeight: 'normal'
+            }
+        },
+        series: [{
+            name: 'Indomilk',
+            data: [
+                [Date.UTC(2016, 8, 1), 0],
+                [Date.UTC(2016, 8, 2), 0.28],
+                [Date.UTC(2016, 8, 3), 0.25],
+                [Date.UTC(2016, 8, 4), 0.2],
+                [Date.UTC(2016, 8, 5), 0.28],
+                [Date.UTC(2016, 8, 6), 0.28],
+                [Date.UTC(2016, 8, 7), 0.47],
+                [Date.UTC(2016, 8, 8), 0.79],
+                [Date.UTC(2016, 8, 9), 0.72],
+                [Date.UTC(2016, 8, 10), 1.02],
+                [Date.UTC(2016, 8, 11), 1.12],
+                [Date.UTC(2016, 8, 12), 1.2],
+                [Date.UTC(2016, 8, 13), 1.18],
+                [Date.UTC(2016, 8, 14), 1.19],
+                [Date.UTC(2016, 8, 15), 1.85],
+                [Date.UTC(2016, 8, 16), 2.22],
+                [Date.UTC(2016, 8, 17), 1.15],
+                [Date.UTC(2016, 8, 18), 0]
+            ]
+        }, {
+            name: 'Frisian Flag',
+            data: [
+                [Date.UTC(2016, 8, 1), 0],
+                [Date.UTC(2016, 8, 2), 0.4],
+                [Date.UTC(2016, 8, 3), 0.25],
+                [Date.UTC(2016, 8, 4), 1.66],
+                [Date.UTC(2016, 8, 5), 1.8],
+                [Date.UTC(2016, 8, 6), 1.76],
+                [Date.UTC(2016, 8, 7), 2.62],
+                [Date.UTC(2016, 8, 8), 2.41],
+                [Date.UTC(2016, 8, 9), 2.05],
+                [Date.UTC(2016, 8, 10), 1.7],
+                [Date.UTC(2016, 8, 11), 1.1],
+                [Date.UTC(2016, 8, 12), 0]
+            ]
+        }, {
+            name: 'Milo',
+            data: [
+                [Date.UTC(2016, 8, 1), 0],
+                [Date.UTC(2016, 8, 2), 0.25],
+                [Date.UTC(2016, 8, 3), 1.41],
+                [Date.UTC(2016, 8, 4), 1.64],
+                [Date.UTC(2016, 8, 5), 1.6],
+                [Date.UTC(2016, 8, 6), 2.55],
+                [Date.UTC(2016, 8, 7), 2.62],
+                [Date.UTC(2016, 8, 8), 2.5],
+                [Date.UTC(2016, 8, 9), 2.42],
+                [Date.UTC(2016, 8, 10), 2.74],
+                [Date.UTC(2016, 8, 11), 2.62],
+                [Date.UTC(2016, 8, 12), 2.6],
+                [Date.UTC(2016, 8, 13), 2.81],
+                [Date.UTC(2016, 8, 14), 2.63],
+                [Date.UTC(2016, 8, 15), 2.77],
+                [Date.UTC(2016, 8, 16), 2.68],
+                [Date.UTC(2016, 8, 17), 2.56],
+                [Date.UTC(2016, 8, 18), 2.39],
+                [Date.UTC(2016, 8, 19), 2.3],
+                [Date.UTC(2016, 8, 20), 2],
+                [Date.UTC(2016, 8, 21), 1.85],
+                [Date.UTC(2016, 8, 22), 1.49],
+                [Date.UTC(2016, 8, 23), 1.08]
+            ]
+        }]
+    });
+}*/

@@ -1,0 +1,25 @@
+{
+    "data": [
+        {
+            "keywordID": "1",
+            "keywordName": "Indomilk",
+            "color": "#",
+            "rating": 50
+        },{
+            "keywordID": "2",
+            "keywordName": "Frisian Flag",
+            "color": "#",
+            "rating": 40
+        },{
+            "keywordID": "3",
+            "keywordName": "Dancow",
+            "color": "#",
+            "rating": 30
+        },{
+            "keywordID": "4",
+            "keywordName": "Milo",
+            "color": "#",
+            "rating": 20
+        }
+    ]
+}
