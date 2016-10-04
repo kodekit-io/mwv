@@ -99,13 +99,13 @@ class ProjectController extends Controller
             }
         }
 
-        $postTrend = File::get(public_path('mediawave/jsontest/post-trend.json'));
+        $postTrend = File::get(public_path('mediawave/jsontest/trend-post.json'));
         $postTrend = \GuzzleHttp\json_decode($postTrend);
         $data['postTrend'] = \GuzzleHttp\json_encode($postTrend);
-        $reachTrend = File::get(public_path('mediawave/jsontest/reach-trend.json'));
+        $reachTrend = File::get(public_path('mediawave/jsontest/trend-reach.json'));
         $reachTrend = \GuzzleHttp\json_decode($reachTrend);
         $data['reachTrend'] = \GuzzleHttp\json_encode($reachTrend);
-        $interactionTrend = File::get(public_path('mediawave/jsontest/interaction-trend.json'));
+        $interactionTrend = File::get(public_path('mediawave/jsontest/trend-interaction.json'));
         $interactionTrend = \GuzzleHttp\json_decode($interactionTrend);
         $data['interactionTrend'] = \GuzzleHttp\json_encode($interactionTrend);
         $data['pageTitle'] = 'All Media';
