@@ -86,7 +86,7 @@
                                     <div id="reachtrend" class="md-chart">Line Chart</div>
                                 </li>
                                 <li>
-                                    <div id="interacttrend" class="md-chart">Line Chart</div>
+                                    <div id="interactiontrend" class="md-chart">Line Chart</div>
                                 </li>
                             </ul>
                         </div>
