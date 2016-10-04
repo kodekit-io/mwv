@@ -10,6 +10,7 @@ use Carbon\Carbon;
 use Illuminate\Http\Request;
 
 use App\Http\Requests;
+use Illuminate\Support\Facades\File;
 use Illuminate\Support\Facades\Log;
 
 class ProjectController extends Controller
@@ -98,6 +99,15 @@ class ProjectController extends Controller
             }
         }
 
+        $postTrend = File::get(public_path('mediawave/jsontest/post-trend.json'));
+        $postTrend = \GuzzleHttp\json_decode($postTrend);
+        $data['postTrend'] = \GuzzleHttp\json_encode($postTrend);
+        $reachTrend = File::get(public_path('mediawave/jsontest/reach-trend.json'));
+        $reachTrend = \GuzzleHttp\json_decode($reachTrend);
+        $data['reachTrend'] = \GuzzleHttp\json_encode($reachTrend);
+        $interactionTrend = File::get(public_path('mediawave/jsontest/interaction-trend.json'));
+        $interactionTrend = \GuzzleHttp\json_decode($interactionTrend);
+        $data['interactionTrend'] = \GuzzleHttp\json_encode($interactionTrend);
         $data['pageTitle'] = 'All Media';
         $data['project'] = $chart->project;
         $data['keywords'] = $keywords;

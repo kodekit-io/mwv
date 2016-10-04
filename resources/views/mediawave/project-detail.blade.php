@@ -403,8 +403,12 @@
     <script type="text/javascript" src="{{ asset('js/projects/project-detail.js') }}"></script>
     <script type="text/javascript" src="{{ asset('js/projects/sentiment-media-distribution.js') }}"></script>
     <script type="text/javascript" src="{{ asset('js/projects/sentiment-brand-distribution.js') }}"></script>
+
     <script type="text/javascript" src="{{ asset('js/projects/buzz-trend.js') }}"></script>
-    {{--<script type="text/javascript" src="{{ asset('js/projects/post-trend.js') }}"></script>--}}
+    <script type="text/javascript" src="{{ asset('js/projects/post-trend.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('js/projects/reach-trend.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('js/projects/interaction-trend.js') }}"></script>
+
     <script type="text/javascript" src="{{ asset('js/projects/buzz-pie.js') }}"></script>
     <script type="text/javascript" src="{{ asset('js/projects/word-cloud.js') }}"></script>
     <!-- script type="text/javascript" src="{{ asset('js/jquery.blockUI.js') }}"></script -->
@@ -532,7 +536,9 @@
         });
         brandChart('brand-equity-container', jQuery.parseJSON('{!! $brandEquity !!}'));
         buzzTrend('buzztrend', jQuery.parseJSON('{!! $projectBuzzTrend !!}'));
-        //{{--postTrend('posttrend', jQuery.parseJSON('{!! $projectPostTrend !!}'));--}}
+        postTrend('posttrend', jQuery.parseJSON('{!! $postTrend !!}'));
+        reachTrend('reachtrend', jQuery.parseJSON('{!! $reachTrend !!}'));
+        interactionTrend('interacttrend', jQuery.parseJSON('{!! $interactionTrend !!}'));
         //buzzPie('buzz-container', jQuery.parseJSON('{!! $mediaDistribution !!}'));
         // shareOfVoice('share-of-voice-container', jQuery.parseJSON('{!! $shareOfVoice !!}'));
         //sentimentMediaDistribution('share-media-container', jQuery.parseJSON('{!! $sentimentMediaDistribution !!}'));

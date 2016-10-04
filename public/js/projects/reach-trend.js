@@ -1,4 +1,4 @@
-function postTrend($id, $data) {
+function reachTrend($id, $data) {
     console.log($data);
     if ($data.length === 0) {
         $('#'+$id).html("<div class='center'>No data chart</div>");
@@ -17,7 +17,7 @@ function postTrend($id, $data) {
     }
 }
 
-function createPostTrend(data, id) {
+function createReachTrend(data, id) {
     $('#' + id).highcharts({
         title: {
             text: null

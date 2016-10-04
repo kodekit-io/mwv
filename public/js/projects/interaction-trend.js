@@ -1,4 +1,4 @@
-function postTrend($id, $data) {
+function interactionTrend($id, $data) {
     console.log($data);
     if ($data.length === 0) {
         $('#'+$id).html("<div class='center'>No data chart</div>");
@@ -13,11 +13,11 @@ function postTrend($id, $data) {
             categories: $dates
         };
 
-        createPostTrend(data, $id);
+        createInteractionTrend(data, $id);
     }
 }
 
-function createPostTrend(data, id) {
+function createInteractionTrend(data, id) {
     $('#' + id).highcharts({
         title: {
             text: null
