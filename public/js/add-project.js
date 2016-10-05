@@ -6,7 +6,7 @@ $(function(){
              <ul class="uk-grid uk-grid-small uk-grid-width-medium-1-4 key-op-'+k+'"> \
                   <li> \
                        <label class="label_key"><i class="material-icons">label</i></label> \
-                       <input type="text" name="field_key['+k+'][]" value="" placeholder="Write keyword here" /> \
+                       <input type="text" data-key-group="'+k+'" name="field_key['+k+'][]" value="" placeholder="Write keyword here" /> \
                   </li> \
              </ul> \
              <a class="dropdown-button uk-button teal darken-4 white-text" data-activates="dropkey-'+k+'" title="Add Form"><i class="uk-icon uk-icon-plus-square"></i> Add Form</a> \
@@ -72,6 +72,7 @@ $(function(){
           </div>';
        $('.wrap_advkeys').append(fieldKey);
      });
+
      //Advanced topic repeater
      $('.add_advtopic').click(function(){
         var t = $(".advtopic").length + 1;
@@ -127,6 +128,7 @@ $(function(){
 //keyword
 function addKey(id, type) {
     var wrapper = $('.key-op-' + id);
+    var keyOpNum = $('.key-op-' + id + ' li').length + 1;
     var label = '';
     switch (type) {
         case 'and':
@@ -139,9 +141,9 @@ function addKey(id, type) {
             label = 'NOT';
             break;
     }
-    console.log(label);
+    // console.log(label);
     var removeForm = '<a href="javascript:void(0);" class="uk-button uk-button-mini red accent-2 remove_form" onclick="deleteKey(this)" title="Delete This"><i class="uk-icon uk-icon-close"></i></a>';
-    var fieldForm = '<li class="input_'+label+'"><label>'+label+'</label><input class="field-key" type="text" name="field_key['+id+'][]" data-prefix="'+label+'" value=""/>'+removeForm+'</li>';
+    var fieldForm = '<li class="input_'+label+'"><label>'+label+'</label><input class="field-key" data-key-group="'+id+'" type="text" name="field_key['+id+'][]" data-prefix="'+label+'" value=""/>'+removeForm+'</li>';
     $(wrapper).append(fieldForm);
 }
 
@@ -219,4 +221,19 @@ function removeExcld(el) {
 
 function removeAdvExcld(el) {
     $(el).closest('div.advexcld').remove();
+}
+
+function previewQuery() {
+    var group = 1;
+    var output = '<h3>Keywords</h3><br>';
+    $('input[name^="field_key"]').each(function() {
+        var dataGroup = $(this).attr('data-key-group');
+        var keyword = $(this).val();
+        if (dataGroup != group) {
+            output += '<br>';
+        }
+        output += '&nbsp;' + keyword
+        group = dataGroup;
+    });
+    $('.modal-content').html(output);
 }

@@ -61,7 +61,7 @@
                                          <ul class="uk-grid uk-grid-small uk-grid-width-medium-1-4 key-op-1">
                                             <li>
                                                 <label class="label_key"><i class="material-icons">label</i></label>
-                                                <input type="text" name="field_key[1][]" value="" placeholder="Write keyword here" />
+                                                <input type="text" data-key-group="1" name="field_key[1][]" value="" placeholder="Write keyword here" />
                                             </li>
                                         </ul>
                                         <a href="javascript:void(0);" class="dropdown-button uk-button teal darken-4 white-text" data-activates="dropkey-1" title="Add Form"><i class="uk-icon uk-icon-plus-square"></i> Add Form</a>
@@ -126,7 +126,7 @@
                                  <div class="uk-panel uk-panel-box uk-margin-top">
                                     <a class="btn white black-text left prevstep tooltipped" data-position="top" data-delay="25" data-tooltip="Prev Step: Topics" data-uk-switcher-item="1">BACK</a>
                                     <button type="submit" class="btn amber darken-4 right uk-margin-left nextstep tooltipped" data-position="top" data-delay="25" data-tooltip="Save Query">SAVE NOW</button>
-                                    <a href="#previewquery" class="modal-trigger btn white black-text right uk-margin-left tooltipped" data-position="top" data-delay="25" data-tooltip="Preview All Query">PREVIEW QUERY</a>
+                                    <a href="#previewquery" class="modal-trigger btn white black-text right uk-margin-left tooltipped" data-position="top" data-delay="25" data-tooltip="Preview All Query" onclick="previewQuery()">PREVIEW QUERY</a>
                                  </div>
                             </li>
                         </ul>
