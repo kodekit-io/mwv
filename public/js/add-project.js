@@ -228,11 +228,17 @@ function previewQuery() {
     var output = '<h3>Keywords</h3><br>';
     $('input[name^="field_key"]').each(function() {
         var dataGroup = $(this).attr('data-key-group');
+        var action = '';
         var keyword = $(this).val();
         if (dataGroup != group) {
             output += '<br>';
         }
-        output += '&nbsp;' + keyword
+        if ($(this).attr('data-prefix') == null) {
+            action = '';
+        } else {
+            action += $(this).attr('data-prefix') + '&nbsp;';
+        }
+        output += '&nbsp;' + action + keyword
         group = dataGroup;
     });
     $('.modal-content').html(output);
