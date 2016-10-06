@@ -1,4 +1,4 @@
-{
+[{
     "data": [
         ["Indomilk", 6511],
         ["Frisian Flag", 4511],
@@ -6,8 +6,9 @@
         ["Dancow", 7834]
     ],
     "name": "Positive",
-    "color": "#009688",
-}, {
+    "color": "#009688"
+},
+{
     "data": [
         ["Indomilk", 570],
         ["Frisian Flag", 128],
@@ -15,7 +16,7 @@
         ["Dancow", 581]
     ],
     "name": "Neutral",
-    "color": "#b0bec5",
+    "color": "#b0bec5"
 }, {
     "data": [
         ["Indomilk", 1140],
@@ -24,5 +25,5 @@
         ["Dancow", 1257]
     ],
     "name": "Negative",
-    "color": "#f44336",
-}
+    "color": "#f44336"
+}]
