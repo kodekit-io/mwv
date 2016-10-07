@@ -17,27 +17,30 @@
                 </div>
                 <form class="md-card-content" action="{!! url('project-detail/' . $project->pid) !!}" method="POST">
                     {{ csrf_field() }}
-                    @if (count($keywords) > 0)
-                    <ul class="uk-subnav left">
-                        @foreach($keywords as $key => $keywords)
-                        <li class="">
-                            <input type="checkbox" name="keywords[]" value="{!! $key !!}" class="filled-in" id="{!! $key !!}" {!! $keywords['selected'] !!}  />
-                            <label for="{!! $key !!}">{!! $keywords['value'] !!}</label>
-                        </li>
-                       @endforeach
-                    </ul>
-                    @endif
-
-                    <div class="nav-wrapper right">
-                        <div class="input-field md-daterange">
-                            <input id="startdate" name="start_date" type="text" class="uk-datepicker" data-uk-datepicker="{pos:'bottom',format:'DD/MM/YY'}" placeholder="10/12/16" value="{!! $startDate !!}">
-                            <label for="startdate"><i class="material-icons prefix">date_range</i></label>
-                        </div> -
-                        <div class="input-field md-daterange">
-                            <input id="enddate" name="end_date" type="text" class="uk-datepicker" data-uk-datepicker="{pos:'bottom',format:'DD/MM/YY'}" placeholder="17/12/16" value="{!! $endDate !!}">
-                            <label for="enddate"><i class="material-icons prefix">date_range</i></label>
+                    <div class="uk-grid uk-grid-medium" data-uk-grid data-uk-grid-margin>
+                        <div class="uk-width-medium-2-3 uk-width-small-1-1">
+                            @if (count($keywords) > 0)
+                            <ul class="uk-subnav">
+                                @foreach($keywords as $key => $keywords)
+                                <li class="">
+                                    <input type="checkbox" name="keywords[]" value="{!! $key !!}" class="filled-in" id="{!! $key !!}" {!! $keywords['selected'] !!}  />
+                                    <label for="{!! $key !!}">{!! $keywords['value'] !!}</label>
+                                </li>
+                               @endforeach
+                            </ul>
+                            @endif
                         </div>
-                        <button class="btn pink darken-4 uk-margin-left z-depth-0" name="filter" value="1" type="submit">UPDATE</button>
+                        <div class="nav-wrapper uk-width-medium-1-3 uk-width-small-1-1">
+                            <div class="input-field md-daterange">
+                                <input id="startdate" name="start_date" type="text" class="uk-datepicker" data-uk-datepicker="{pos:'bottom',format:'DD/MM/YY'}" placeholder="10/12/16" value="{!! $startDate !!}">
+                                <label for="startdate"><i class="material-icons prefix">date_range</i></label>
+                            </div> -
+                            <div class="input-field md-daterange">
+                                <input id="enddate" name="end_date" type="text" class="uk-datepicker" data-uk-datepicker="{pos:'bottom',format:'DD/MM/YY'}" placeholder="17/12/16" value="{!! $endDate !!}">
+                                <label for="enddate"><i class="material-icons prefix">date_range</i></label>
+                            </div>
+                            <button class="btn pink darken-4 uk-align-right z-depth-0" name="filter" value="1" type="submit">UPDATE</button>
+                        </div>
                     </div>
                 </form>
             </div>
@@ -64,7 +67,7 @@
                                 <a class="btn waves-effect waves-light z-depth-0 green lighten-4 tooltipped" data-position="top" data-delay="25" data-tooltip="Minimize" data-uk-toggle="{target:'#trend'}"><i class="material-icons md-icon">fullscreen</i></a>
                             </div>
                             <div class="md-card-toolbar-heading-text">
-                                <ul class="uk-subnav uk-subnav-pill" data-uk-switcher="{connect:'#trend ul'}">
+                                <ul class="uk-subnav uk-subnav-pill uk-hidden-small" data-uk-switcher="{connect:'#trend ul'}">
                                     <li class="uk-active"><a>BUZZ TREND</a></li>
                                     <li><a>POST TREND</a></li>
                                     <li><a>REACH TREND</a></li>

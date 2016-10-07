@@ -172,7 +172,7 @@
 
             <div id="previewquery" class="modal modal-fixed-footer">
                  <div class="modal-content">
-                    <h4>Your queries :</h4>
+                    <div class="previewquery"></div>
                  </div>
                  <div class="modal-footer">
                     <a class="modal-action modal-close waves-effect waves-light btn z-depth-0">CLOSE</a>

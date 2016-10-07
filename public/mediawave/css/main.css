@@ -1683,3 +1683,38 @@ select {
 .conv-tabs {
 	border-bottom: 1px solid #ccc;
 }
+
+/**/
+.side-nav li>a>i, .side-nav li>a>[class^="mdi-"], .side-nav li>a>[class*="mdi-"], .side-nav li>a>i.material-icons {
+	clear: both;
+}
+.side-nav li {
+	line-height: 50px;
+	height: 50px;
+	border-bottom: 1px solid #eee;
+}
+.side-nav li a {
+	color: #000 !important;
+	line-height: 50px;
+	height: 50px;
+}
+@media only screen and (max-width: 768px) {
+	.uk-navbar-nav>li>a {
+		padding: 0 0.15em;
+	}
+	.md-title-page {
+		font-size: 1.3em;
+		margin: 0;
+		padding: 0 0 0 0.5em;
+	}
+	.md-subnav li a {
+		max-width: 120px;
+		overflow: hidden;
+	}
+	.md-daterange {
+		margin-bottom: 10px;
+	}
+	.md-card-toolbar-heading-text, .md-card-toolbar-heading-text > * {
+		font-size: 1em !important;
+	}
+}

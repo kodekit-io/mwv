@@ -24,7 +24,7 @@
                 </a>
             </li>
         </ul>
-        <div class="uk-navbar-flip">
+        <div class="uk-navbar-flip uk-hidden">
             <form>
                 <div class="nav-wrapper md-search">
                     <div class="input-field">

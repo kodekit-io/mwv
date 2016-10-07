@@ -66,7 +66,7 @@
                     <div class="md-card-content">
                         <div id="container-{{ $project->pid }}" class="sum-project"></div>
                         <div class="center-align">
-                            <a id="btnview-{{ $project->pid }}" href="{!! url('project-detail/' . $project->pid) !!}" class="waves-effect waves-light btn center-align z-depth-0 deep-orange white-text" title="View Project"><i class="material-icons left">visibility</i> VIEW PROJECT</a>
+                            <a id="" href="{!! url('project-detail/' . $project->pid) !!}" class="waves-effect waves-light btn center-align z-depth-0 deep-orange white-text" title="View Project"><i class="material-icons left">visibility</i> VIEW PROJECT</a>
                         </div>
                     </div>
                 </div>
@@ -89,7 +89,6 @@
 
 @section('page-level-scripts')
     <script type="text/javascript" src="{{ asset('js/dashboard_brand-equity.js') }}"></script>
-
     <script type="text/javascript" src="{{ asset('js/jquery.blockUI.js') }}"></script>
     <script>
         @foreach($projects as $project)
@@ -101,15 +100,9 @@
                             css: { border: 'none', zIndex: 100 },
                             overlayCSS: { backgroundColor: '#fff', zIndex: 100 }
                         });
-                        $('#' + 'btnview-{!! $project->pid !!}').block({
-                            message: '',
-                            css: { border: 'none', zIndex: 100 },
-                            overlayCSS: { backgroundColor: '#fff', opacity: 1, zIndex: 100 }
-                        });
                     },
                     complete : function(xhr, status) {
                         $('#' + 'container-{!! $project->pid !!}').unblock();
-                        $('#' + 'btnview-{!! $project->pid !!}').unblock();
                     },
                     success : function(result) {
                         brandChart('container-{!! $project->pid !!}', jQuery.parseJSON(result));
