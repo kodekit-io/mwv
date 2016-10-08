@@ -30,57 +30,102 @@ class ChartController extends Controller
         return \GuzzleHttp\json_encode($chart->brandEquity);
     }
 
-    public function brandEquityData($projectId)
+    public function brandEquityData()
     {
-        $chart = $this->projectChartService->brandEquity($projectId);
+        $chart = $this->projectChartService->brandEquity();
         return \GuzzleHttp\json_encode($chart->brandEquity);
     }
 
-    public function buzzTrendData($projectId)
+    public function buzzTrendData()
     {
-        $chart = $this->projectChartService->buzzTrend($projectId);
+        $chart = $this->projectChartService->buzzTrend();
         return \GuzzleHttp\json_encode($chart);
     }
 
-    public function postTrendData($projectId)
+    public function postTrendData()
     {
-        $chart = $this->projectChartService->postTrend($projectId);
+        $chart = $this->projectChartService->postTrend();
         return \GuzzleHttp\json_encode($chart);
     }
 
-    public function reachTrendData($projectId)
+    public function reachTrendData()
     {
-        $chart = $this->projectChartService->reachTrend($projectId);
+        $chart = $this->projectChartService->reachTrend();
         return \GuzzleHttp\json_encode($chart);
     }
 
-    public function interactionTrendData($projectId)
+    public function interactionTrendData()
     {
-        $chart = $this->projectChartService->interactionTrend($projectId);
+        $chart = $this->projectChartService->interactionTrend();
         return \GuzzleHttp\json_encode($chart);
     }
 
-    public function buzzPieData($projectId)
+    public function buzzPieData()
     {
-        $chart = $this->projectChartService->buzzPie($projectId);
+        $chart = $this->projectChartService->buzzPie();
         return \GuzzleHttp\json_encode($chart);
     }
 
-    public function postPieData($projectId)
+    public function postPieData()
     {
-        $chart = $this->projectChartService->postPie($projectId);
+        $chart = $this->projectChartService->postPie();
         return \GuzzleHttp\json_encode($chart);
     }
 
-    public function interactionPieData($projectId)
+    public function interactionPieData()
     {
-        $chart = $this->projectChartService->interactionPie($projectId);
+        $chart = $this->projectChartService->interactionPie();
         return \GuzzleHttp\json_encode($chart);
     }
 
-    public function uniqueUserPieData($projectId)
+    public function uniqueUserPieData()
     {
-        $chart = $this->projectChartService->uniqueUserPie($projectId);
+        $chart = $this->projectChartService->uniqueUserPie();
+        return \GuzzleHttp\json_encode($chart);
+    }
+
+    public function sentimentBarData()
+    {
+        $chart = $this->projectChartService->sentimentBar();
+        var_dump($chart); exit;
+        return \GuzzleHttp\json_encode($chart);
+    }
+
+    public function interactionBarData()
+    {
+        $chart = $this->projectChartService->interactionBar();
+        return \GuzzleHttp\json_encode($chart);
+    }
+
+    public function shareOfMediaBarData()
+    {
+        $chart = $this->projectChartService->shareOfMediaBar();
+        var_dump($chart->getContents()); exit;
+        // echo \GuzzleHttp\json_encode($chart); exit;
+        return \GuzzleHttp\json_encode($chart);
+    }
+
+    public function convoTwitterData()
+    {
+        $chart = $this->projectChartService->convoData(2);
+        return \GuzzleHttp\json_encode($chart);
+    }
+
+    public function convoFacebookData()
+    {
+        $chart = $this->projectChartService->convoData(1);
+        return \GuzzleHttp\json_encode($chart);
+    }
+
+    public function convoNewsData()
+    {
+        $chart = $this->projectChartService->convoData(4);
+        return \GuzzleHttp\json_encode($chart);
+    }
+
+    public function convoForumData()
+    {
+        $chart = $this->projectChartService->convoData(6);
         return \GuzzleHttp\json_encode($chart);
     }
 

@@ -22,63 +22,63 @@ class ProjectChartService
         return $this->apiService->postDummy($url, $params, true);
     }
 
-    public function brandEquity($projectId, $keywords = '', $startDate = '', $endDate = '')
+    public function brandEquity($projectId = '', $keywords = '', $startDate = '', $endDate = '')
     {
         $params = $this->generateParams($projectId, $keywords, $startDate, $endDate);
 
         return $this->getChart('project/brandequity', $params);
     }
 
-    public function buzzTrend($projectId, $keywords = '', $startDate = '', $endDate = '')
+    public function buzzTrend($projectId = '', $keywords = '', $startDate = '', $endDate = '')
     {
         $params = $this->generateParams($projectId, $keywords, $startDate, $endDate);
 
         return $this->getChart('project/1/8/buzztrend', $params);
     }
 
-    public function postTrend($projectId, $keywords = '', $startDate = '', $endDate = '')
+    public function postTrend($projectId = '', $keywords = '', $startDate = '', $endDate = '')
     {
         $params = $this->generateParams($projectId, $keywords, $startDate, $endDate);
 
         return $this->getChart('project/1/8/posttrend', $params);
     }
 
-    public function reachTrend($projectId, $keywords = '', $startDate = '', $endDate = '')
+    public function reachTrend($projectId = '', $keywords = '', $startDate = '', $endDate = '')
     {
         $params = $this->generateParams($projectId, $keywords, $startDate, $endDate);
 
-        return $this->getChart('project/1/reachtrend', $params);
+        return $this->getChart('project/1/8/reachtrend', $params);
     }
 
-    public function interactionTrend($projectId, $keywords = '', $startDate = '', $endDate = '')
+    public function interactionTrend($projectId = '', $keywords = '', $startDate = '', $endDate = '')
     {
         $params = $this->generateParams($projectId, $keywords, $startDate, $endDate);
 
         return $this->getChart('project/1/8/interactiontrend', $params);
     }
 
-    public function buzzPie($projectId, $keywords = '', $startDate = '', $endDate = '')
+    public function buzzPie($projectId = '', $keywords = '', $startDate = '', $endDate = '')
     {
         $params = $this->generateParams($projectId, $keywords, $startDate, $endDate);
 
         return $this->getChart('project/1/8/buzz', $params);
     }
 
-    public function interactionPie($projectId, $keywords = '', $startDate = '', $endDate = '')
+    public function interactionPie($projectId = '', $keywords = '', $startDate = '', $endDate = '')
     {
         $params = $this->generateParams($projectId, $keywords, $startDate, $endDate);
 
         return $this->getChart('project/1/8/interaction', $params);
     }
 
-    public function postPie($projectId, $keywords = '', $startDate = '', $endDate = '')
+    public function postPie($projectId = '', $keywords = '', $startDate = '', $endDate = '')
     {
         $params = $this->generateParams($projectId, $keywords, $startDate, $endDate);
 
         return $this->getChart('project/1/8/post', $params);
     }
 
-    public function uniqueUserPie($projectId, $keywords = '', $startDate = '', $endDate = '')
+    public function uniqueUserPie($projectId = '', $keywords = '', $startDate = '', $endDate = '')
     {
         $params = $this->generateParams($projectId, $keywords, $startDate, $endDate);
 
@@ -94,5 +94,33 @@ class ProjectChartService
             'sentiment' => '1,0,-1',
             'brandID' => $keywords
         ];
+    }
+
+    public function sentimentBar($projectId = '', $keywords = '', $startDate = '', $endDate = '')
+    {
+        $params = $this->generateParams($projectId, $keywords, $startDate, $endDate);
+
+        return $this->getChart('project/1/8/interactionrate', $params);
+    }
+
+    public function interactionBar($projectId = '', $keywords = '', $startDate = '', $endDate = '')
+    {
+        $params = $this->generateParams($projectId, $keywords, $startDate, $endDate);
+
+        return $this->getChart('project/1/8/interactionrate', $params);
+    }
+
+    public function shareOfMediaBar($projectId = '', $keywords = '', $startDate = '', $endDate = '')
+    {
+        $params = $this->generateParams($projectId, $keywords, $startDate, $endDate);
+
+        return $this->apiService->postDirectDummy('project/shareofmedia', $params);
+    }
+
+    public function convoData($source, $projectId = '', $keywords = '', $startDate = '', $endDate = '')
+    {
+        $params = $this->generateParams($projectId, $keywords, $startDate, $endDate);
+
+        return $this->getChart('project/1/'.$source.'/convo', $params);
     }
 }

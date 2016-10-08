@@ -7,13 +7,10 @@ function wordCloud($id, $data) {
             words[i] = {text: $data[i].tag, weight: $data[i].buzz};
         }
 
-        // console.log(words);
-
         $('#' + $id).jQCloud(words, {
             autoResize: true,
             //shape: 'rectangular'
         });
     }
-
 }
 

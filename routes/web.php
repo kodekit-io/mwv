@@ -30,16 +30,25 @@ Route::group(['middleware' => 'auth'], function () {
     Route::get('/create-project-ig', 'ProjectController@addig');
     Route::post('/save-project', 'ProjectController@save');
 
-    Route::get('/project/{id}/chart-data/brand-equity', 'ChartController@brandEquityData');
-    Route::get('/project/{id}/chart-data/buzz-trend', 'ChartController@buzzTrendData');
-    Route::get('/project/{id}/chart-data/post-trend', 'ChartController@postTrendData');
-    Route::get('/project/{id}/chart-data/reach-trend', 'ChartController@reachTrendData');
-    Route::get('/project/{id}/chart-data/interaction-trend', 'ChartController@interactionTrendData');
+    Route::get('/project/chart-data/brand-equity', 'ChartController@brandEquityData');
+    Route::get('/project/chart-data/buzz-trend', 'ChartController@buzzTrendData');
+    Route::get('/project/chart-data/post-trend', 'ChartController@postTrendData');
+    Route::get('/project/chart-data/reach-trend', 'ChartController@reachTrendData');
+    Route::get('/project/chart-data/interaction-trend', 'ChartController@interactionTrendData');
 
-    Route::get('/project/{id}/chart-data/buzz-pie', 'ChartController@buzzPieData');
-    Route::get('/project/{id}/chart-data/post-pie', 'ChartController@postPieData');
-    Route::get('/project/{id}/chart-data/interaction-pie', 'ChartController@interactionPieData');
-    Route::get('/project/{id}/chart-data/unique-user-pie', 'ChartController@uniqueUserPieData');
+    Route::get('/project/chart-data/buzz-pie', 'ChartController@buzzPieData');
+    Route::get('/project/chart-data/post-pie', 'ChartController@postPieData');
+    Route::get('/project/chart-data/interaction-pie', 'ChartController@interactionPieData');
+    Route::get('/project/chart-data/unique-user-pie', 'ChartController@uniqueUserPieData');
+
+    Route::get('/project/chart-data/interaction-bar', 'ChartController@interactionBarData');
+    Route::get('/project/chart-data/share-of-media-bar', 'ChartController@shareOfMediaBarData');
+
+    Route::get('/project/chart-data/convo-twitter', 'ChartController@convoTwitterData');
+    Route::get('/project/chart-data/convo-facebook', 'ChartController@convoFacebookData');
+    Route::get('/project/chart-data/convo-news', 'ChartController@convoNewsData');
+    Route::get('/project/chart-data/convo-forum', 'ChartController@convoForumData');
+
 
     Route::get('/project-detail/{pid}', 'ProjectController@detail');
     Route::post('/project-detail/{pid}', 'ProjectController@detail');

@@ -32,6 +32,7 @@ class ApiService
         }
         $apiUrl = $this->apiDummyUrl . $url;
         Log::warning($apiUrl);
+
         $response = $this->client->post($apiUrl, [
             'form_params' => $params
         ]);
@@ -39,6 +40,20 @@ class ApiService
         $parsedResponse = $this->parseResponse($response);
 
         return $parsedResponse;
+    }
+
+    public function postDirectDummy($url, $params, $withToken = true)
+    {
+        if ($withToken) {
+            $params['auth_token'] = session('api_token');
+        }
+        $apiUrl = $this->apiDummyUrl . $url;
+
+        $response = $this->client->post($apiUrl, [
+            'form_params' => $params
+        ]);
+
+        return $response->getBody();
     }
 
     public function post($url, $params, $withToken=true)
@@ -60,6 +75,7 @@ class ApiService
     private function parseResponse($response)
     {
         $body = $response->getBody();
+
         $response = \GuzzleHttp\json_decode($body);
 
         // check api session, throw exception when expired
