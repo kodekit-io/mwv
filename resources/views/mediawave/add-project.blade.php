@@ -85,7 +85,7 @@
                                           <ul class="uk-grid uk-grid-small uk-grid-width-medium-1-4 topic-op-1">
                                              <li>
                                                  <label class="label_topic"><i class="material-icons">label</i></label>
-                                                 <input type="text" name="field_topic[1][]" value="" placeholder="Write topic here" />
+                                                 <input type="text" name="field_topic[1][]" data-topic-group="1" value="" placeholder="Write topic here" />
                                              </li>
                                          </ul>
                                          <a href="javascript:void(0);" class="dropdown-button uk-button teal darken-4 white-text" data-activates="droptopic-1" title="Add Form"><i class="uk-icon uk-icon-plus-square"></i> Add Form</a>
@@ -110,7 +110,7 @@
                                           <ul class="uk-grid uk-grid-small uk-grid-width-medium-1-4 excld-op-1">
                                              <li>
                                                  <label class="label_excld"><i class="material-icons">label</i></label>
-                                                 <input type="text" name="field_excld[1][]" value="" placeholder="Write exclude here" />
+                                                 <input type="text" name="field_excld[1][]" data-excld-group="1" value="" placeholder="Write exclude here" />
                                              </li>
                                          </ul>
                                          <a href="javascript:void(0);" class="dropdown-button uk-button teal darken-4 white-text" data-activates="dropexcld-1" title="Add Form"><i class="uk-icon uk-icon-plus-square"></i> Add Form</a>
@@ -137,7 +137,7 @@
                                 <h5>CREATE KEYWORDS</h5>
                                 <div class="wrap_advkeys">
                                      <div class="advkey">
-                                          <textarea id="key-1" name="field_key[1][]" class="materialize-textarea uk-margin-small-bottom"></textarea>
+                                          <textarea id="key-1" name="adv_field_key[1]" class="materialize-textarea uk-margin-small-bottom"></textarea>
                                      </div>
                                 </div>
                                 <a href="javascript:void(0);" class="uk-button btn blue z-depth-0 add_advkey uk-width-medium-1-5 uk-margin-bottom" title="Add Keyword">ADD MORE KEYWORD</a>
@@ -146,7 +146,7 @@
                                   <h5>CREATE TOPICS</h5>
                                   <div class="wrap_advtopics">
                                        <div class="advtopic">
-                                            <textarea id="topic-1" name="field_topic[1][]" class="materialize-textarea uk-margin-small-bottom"></textarea>
+                                            <textarea id="topic-1" name="adv_field_topic[1]" class="materialize-textarea uk-margin-small-bottom"></textarea>
                                        </div>
                                   </div>
                                   <a href="javascript:void(0);" class="uk-button btn blue z-depth-0 add_advtopic uk-width-medium-1-5 uk-margin-bottom" title="Add Topic">ADD MORE TOPIC</a>
@@ -155,14 +155,14 @@
                                   <h5>CREATE EXCLUDED TOPICS</h5>
                                   <div class="wrap_advexclds">
                                        <div class="advexcld">
-                                            <textarea id="excld-1" name="field_excld[1][]" class="materialize-textarea uk-margin-small-bottom"></textarea>
+                                            <textarea id="excld-1" name="adv_field_excld[1]" class="materialize-textarea uk-margin-small-bottom"></textarea>
                                        </div>
                                   </div>
                                   <a href="javascript:void(0);" class="uk-button btn blue z-depth-0 add_advexcld uk-width-medium-1-5 uk-margin-bottom" title="Add Exclude">ADD MORE EXCLUDE</a>
 
                                   <div class="uk-panel uk-panel-box uk-margin-top">
                                     <button type="submit" class="btn amber darken-4 right uk-margin-left nextstep tooltipped" data-position="top" data-delay="25" data-tooltip="Save Query">SAVE NOW</button>
-                                    <a href="#previewquery" class="modal-trigger btn white black-text right uk-margin-left tooltipped" data-position="top" data-delay="25" data-tooltip="Preview All Query">PREVIEW QUERY</a>
+                                    <a href="#previewquery" class="modal-trigger btn white black-text right uk-margin-left tooltipped" data-position="top" data-delay="25" data-tooltip="Preview All Query" onclick="previewAdavancedQuery()">PREVIEW QUERY</a>
                                   </div>
                             </li>
                          </ul>

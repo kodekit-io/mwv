@@ -27,7 +27,7 @@ $(function(){
              <ul class="uk-grid uk-grid-small uk-grid-width-medium-1-4 topic-op-'+t+'"> \
                   <li> \
                        <label class="label_topic"><i class="material-icons">label</i></label> \
-                       <input type="text" name="field_topic['+t+'][]" value="" placeholder="Write topic here" /> \
+                       <input type="text" data-topic-group="'+t+'" name="field_topic['+t+'][]" value="" placeholder="Write topic here" /> \
                   </li> \
              </ul> \
              <a class="dropdown-button uk-button teal darken-4 white-text" data-activates="droptopic-'+t+'" title="Add Form"><i class="uk-icon uk-icon-plus-square"></i> Add Form</a> \
@@ -48,7 +48,7 @@ $(function(){
              <ul class="uk-grid uk-grid-small uk-grid-width-medium-1-4 excld-op-'+e+'"> \
                   <li> \
                        <label class="label_excld"><i class="material-icons">label</i></label> \
-                       <input type="text" name="field_excld['+e+'][]" value="" placeholder="Write exclude here" /> \
+                       <input type="text" data-excld-group="'+e+'" name="field_excld['+e+'][]" value="" placeholder="Write exclude here" /> \
                   </li> \
              </ul> \
              <a class="dropdown-button uk-button teal darken-4 white-text" data-activates="dropexcld-'+e+'" title="Add Form"><i class="uk-icon uk-icon-plus-square"></i> Add Form</a> \
@@ -67,7 +67,7 @@ $(function(){
      $('.add_advkey').click(function(){
         var k = $(".advkey").length + 1;
         var fieldKey = '<div class="advkey"> \
-               <textarea id="key-'+k+'" name="field_key['+k+'][]" class="materialize-textarea uk-margin-small-bottom"></textarea> \
+               <textarea id="key-'+k+'" name="adv_field_key['+k+']" class="materialize-textarea uk-margin-small-bottom"></textarea> \
                <a href="javascript:void(0);" class="uk-button uk-button-mini red accent-2 remove_form" onclick="removeAdvKey(this)" title="Delete This"><i class="uk-icon uk-icon-close"></i></a> \
           </div>';
        $('.wrap_advkeys').append(fieldKey);
@@ -77,7 +77,7 @@ $(function(){
      $('.add_advtopic').click(function(){
         var t = $(".advtopic").length + 1;
         var fieldTopic = '<div class="advtopic"> \
-               <textarea id="topic-'+t+'" name="field_topic['+t+'][]" class="materialize-textarea uk-margin-small-bottom"></textarea> \
+               <textarea id="topic-'+t+'" name="adv_field_topic['+t+']" class="materialize-textarea uk-margin-small-bottom"></textarea> \
                <a href="javascript:void(0);" class="uk-button uk-button-mini red accent-2 remove_form" onclick="removeAdvTopic(this)" title="Delete This"><i class="uk-icon uk-icon-close"></i></a> \
           </div>';
        $('.wrap_advtopics').append(fieldTopic);
@@ -86,7 +86,7 @@ $(function(){
      $('.add_advexcld').click(function(){
         var e = $(".advexcld").length + 1;
         var fieldExcld = '<div class="advexcld"> \
-               <textarea id="excld-'+e+'" name="field_excld['+e+'][]" class="materialize-textarea uk-margin-small-bottom"></textarea> \
+               <textarea id="excld-'+e+'" name="adv_field_excld['+e+']" class="materialize-textarea uk-margin-small-bottom"></textarea> \
                <a href="javascript:void(0);" class="uk-button uk-button-mini red accent-2 remove_form" onclick="removeAdvExcld(this)" title="Delete This"><i class="uk-icon uk-icon-close"></i></a> \
           </div>';
        $('.wrap_advexclds').append(fieldExcld);
@@ -162,6 +162,7 @@ function removeAdvKey(el) {
 //topic
 function addTopic(id, type) {
     var wrapper = $('.topic-op-' + id);
+    var topicOpNum = $('.topic-op-' + id + ' li').length + 1;
     var label = '';
     switch (type) {
         case 'and':
@@ -174,9 +175,9 @@ function addTopic(id, type) {
             label = 'NOT';
             break;
     }
-    console.log(label);
+    //console.log(label);
     var removeForm = '<a href="javascript:void(0);" class="uk-button uk-button-mini red accent-2 remove_form" onclick="deleteTopic(this)" title="Delete This"><i class="uk-icon uk-icon-close"></i></a>';
-    var fieldForm = '<li class="input_'+label+'"><label>'+label+'</label><input class="field-topic" type="text" name="field_topic['+id+'][]" data-prefix="'+label+'" value=""/>'+removeForm+'</li>';
+    var fieldForm = '<li class="input_'+label+'"><label>'+label+'</label><input class="field-topic" data-topic-group="'+id+'" type="text" name="field_topic['+id+'][]" data-prefix="'+label+'" value=""/>'+removeForm+'</li>';
     $(wrapper).append(fieldForm);
 }
 
@@ -205,9 +206,9 @@ function addExcld(id, type) {
             label = 'NOT';
             break;
     }
-    console.log(label);
+    //console.log(label);
     var removeForm = '<a href="javascript:void(0);" class="uk-button uk-button-mini red accent-2 remove_form" onclick="deleteExcld(this)" title="Delete This"><i class="uk-icon uk-icon-close"></i></a>';
-    var fieldForm = '<li class="input_'+label+'"><label>'+label+'</label><input class="field-excld" type="text" name="field_excld['+id+'][]" data-prefix="'+label+'" value=""/>'+removeForm+'</li>';
+    var fieldForm = '<li class="input_'+label+'"><label>'+label+'</label><input class="field-excld" data-excld-group="'+id+'" type="text" name="field_excld['+id+'][]" data-prefix="'+label+'" value=""/>'+removeForm+'</li>';
     $(wrapper).append(fieldForm);
 }
 
@@ -223,7 +224,48 @@ function removeAdvExcld(el) {
     $(el).closest('div.advexcld').remove();
 }
 
+function previewAdavancedQuery() {
+    // keywords
+    var output = '<h6>Keywords</h6>';
+    var x = 1;
+    $('textarea[name^="adv_field_key"]').each(function() {
+        var keyword = $(this).val();
+        if (x > 1) {
+            output += '<br>';
+        }
+        output += keyword;
+        x++;
+    });
+
+    // topic
+    output += '<br><br><h6>Topic</h6>';
+    var x = 1;
+    $('textarea[name^="adv_field_topic"]').each(function() {
+        var keyword = $(this).val();
+        if (x > 1) {
+            output += '<br>';
+        }
+        output += keyword;
+        x++;
+    });
+
+    // exclude
+    output += '<br><br><h6>Exclude</h6>';
+    var x = 1;
+    $('textarea[name^="adv_field_excld"]').each(function() {
+        var keyword = $(this).val();
+        if (x > 1) {
+            output += '<br>';
+        }
+        output += keyword;
+        x++;
+    });
+
+    $('.previewquery').html(output);
+}
+
 function previewQuery() {
+    // keyword
     var group = 1;
     var output = '<h6>Keywords</h6>';
     $('input[name^="field_key"]').each(function() {
@@ -241,5 +283,44 @@ function previewQuery() {
         output += '&nbsp;' + action + keyword
         group = dataGroup;
     });
+
+    // topic
+    var topicGroup = 1;
+    output += '<br><br><h6>Topic</h6>';
+    $('input[name^="field_topic"]').each(function() {
+        var dataGroup = $(this).attr('data-topic-group');
+        var action = '';
+        var topic = $(this).val();
+        if (dataGroup != topicGroup) {
+            output += '<br>';
+        }
+        if ($(this).attr('data-prefix') == null) {
+            action = '';
+        } else {
+            action += $(this).attr('data-prefix') + '&nbsp;';
+        }
+        output += '&nbsp;' + action + topic
+        topicGroup = dataGroup;
+    });
+
+    // topic
+    var excldGroup = 1;
+    output += '<br><br><h6>Exclude</h6>';
+    $('input[name^="field_excld"]').each(function() {
+        var dataGroup = $(this).attr('data-excld-group');
+        var action = '';
+        var excld = $(this).val();
+        if (dataGroup != excldGroup) {
+            output += '<br>';
+        }
+        if ($(this).attr('data-prefix') == null) {
+            action = '';
+        } else {
+            action += $(this).attr('data-prefix') + '&nbsp;';
+        }
+        output += '&nbsp;' + action + excld
+        excldGroup = dataGroup;
+    });
+
     $('.previewquery').html(output);
 }
