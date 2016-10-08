@@ -36,11 +36,6 @@ class ProjectController extends Controller
     public function index()
     {
         $data['projects'] = $this->projectService->projectList();
-//        $project1 = new \stdClass();
-//        $project1->pname = 'Project 1';
-//        $projects[] = $project1;
-//        $data['projects'] = $projects;
-//        var_dump($data['projects']);
         return view('project-list', $data);
     }
 

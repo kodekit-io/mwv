@@ -74,46 +74,61 @@ class ProjectService
     public function addProject(array $inputs)
     {
         $projectName = $inputs['projectname'];
-
-        $keywords = $inputs['field_key'];
-        $topics = $inputs['field_topic'];
-        $excludes = $inputs['field_excld'];
-
+        $mode = $inputs['form_mode'];
         $params = [
             'uid' => \Auth::user()->id,
             'pname' => $projectName
         ];
 
-        if (count($keywords) > 0) {
-            foreach ($keywords as $key => $keyword) {
-                $words = '';
-                foreach ($keyword as $word) {
-                    $w = ( $word == '' ? $word : ' ' . $word );
-                    $words .= str_replace("'", "\\'", $w);
-                }
-                $params['mo' . $key] = $words;
-            }
-        }
+        if ($mode == 'advanced') {
+            $keywords = $inputs['adv_field_key'];
+            $topics = $inputs['adv_field_topic'];
+            $excludes = $inputs['adv_field_excld'];
 
-        if (count($topics) > 0) {
-            foreach ($topics as $key => $topic) {
-                $words = '';
-                foreach ($topic as $word) {
-                    $w = ( $word == '' ? $word : ' ' . $word );
-                    $words .= str_replace("'", "\\'", $w);
+            if (count($keywords) > 0) {
+                foreach ($keywords as $key => $keyword) {
+                    $words = $this->validateInput($keyword);
+                    $params['mo' . $key] = $words;
                 }
-                $params['to' . $key] = $words;
             }
-        }
 
-        if (count($excludes) > 0) {
-            foreach ($excludes as $key => $exclude) {
-                $words = '';
-                foreach ($exclude as $word) {
-                    $w = ( $word == '' ? $word : ' ' . $word );
-                    $words .= str_replace("'", "\\'", $w);
+            if (count($topics) > 0) {
+                foreach ($topics as $key => $topic) {
+                    $words = $this->validateInput($topic);
+                    $params['to' . $key] = $words;
                 }
-                $params['no' . $key] = $words;
+            }
+
+            if (count($excludes) > 0) {
+                foreach ($excludes as $key => $exclude) {
+                    $words = $this->validateInput($exclude);
+                    $params['no' . $key] = $words;
+                }
+            }
+        } else {
+            $keywords = $inputs['field_key'];
+            $topics = $inputs['field_topic'];
+            $excludes = $inputs['field_excld'];
+
+            if (count($keywords) > 0) {
+                foreach ($keywords as $key => $keyword) {
+                    $words = $this->generateWords($keyword);
+                    $params['mo' . $key] = $words;
+                }
+            }
+
+            if (count($topics) > 0) {
+                foreach ($topics as $key => $topic) {
+                    $words = $this->generateWords($keyword);
+                    $params['to' . $key] = $words;
+                }
+            }
+
+            if (count($excludes) > 0) {
+                foreach ($excludes as $key => $exclude) {
+                    $words = $this->generateWords($keyword);
+                    $params['no' . $key] = $words;
+                }
             }
         }
 
@@ -212,4 +227,20 @@ class ProjectService
 
         return $select;
     }
+
+    private function generateWords($keyword)
+    {
+        $words = '';
+        foreach ($keyword as $word) {
+            $w = ( $word == '' ? $word : ' ' . $word );
+            $words .= $this->validateInput($w);
+        }
+        return $words;
+    }
+
+    private function validateInput($w)
+    {
+        return str_replace("'", "\\'", $w);
+    }
+
 }
