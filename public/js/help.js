@@ -10,7 +10,7 @@ function introAdd(){
         /* Done button label in tooltip box */
         doneLabel: 'Done',
         /* Default tooltip box position */
-        //tooltipPosition: 'bottom',
+        tooltipPosition: 'auto',
         /* Next CSS class for tooltip boxes */
         tooltipClass: '',
         /* Close introduction when pressing Escape button? */
