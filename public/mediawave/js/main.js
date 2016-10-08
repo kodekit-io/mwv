@@ -153,10 +153,17 @@
         });
 
         //Step Keyword
-        $(".md-steps li.uk-active").prevAll().addClass("md-active");
-        $(".md-steps li").on("click", function() {
-            $(".md-steps li").removeClass("uk-active").prevAll().removeClass("md-active");
-            $(this).addClass("uk-active").prevAll().addClass("md-active");
+        $("a.step8").click(function(){
+            $("a.switchtopic")[0].click();
+        });
+        $("a.step12").click(function(){
+            $("a.switchexcld")[0].click();
+        });
+        $("a.backtopic").click(function(){
+            $("a.switchkeyword")[0].click();
+        });
+        $("a.backexcld").click(function(){
+            $("a.switchtopic")[0].click();
         });
 
     }); // end of document ready

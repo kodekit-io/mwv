@@ -18,7 +18,8 @@
                             <h2 class="md-card-toolbar-heading-text">How To Create New Project?</h2>
                         </div>
                         <div class="md-card-content">
-                            <a class="btn btn-large btn-success" href="javascript:void(0);" onclick="introAdd();">Show me how</a>
+                            <p>A step by step guide to create a Project, just click the button below and follow the instructions.</p>
+                            <a class="btn btn-success blue" href="javascript:void(0);" onclick="introAdd();">Show me how</a>
                         </div>
                     </div>
                 </div>
@@ -48,9 +49,9 @@
                 <div class="md-card-content">
                     <div id="mode1">
                         <ul class="uk-grid uk-grid-collapse uk-grid-width-1-3 uk-text-center md-steps uk-margin-top uk-margin-bottom" data-uk-switcher="{connect:'#keywordsteps'}">
-                            <li class="uk-active"><a href="#"><span class="uk-border-circle">1</span>Keyword</a></li>
-                            <li class=""><a href="#"><span class="uk-border-circle">2</span>Topic</a></li>
-                            <li class=""><a href="#"><span class="uk-border-circle">3</span>Topic Not Include</a></li>
+                            <li class="uk-active"><a href="#" class="switchkeyword"><span class="uk-border-circle">1</span>Keyword</a></li>
+                            <li class=""><a href="#" class="switchtopic"><span class="uk-border-circle">2</span>Topic</a></li>
+                            <li class=""><a href="#" class="switchexcld"><span class="uk-border-circle">3</span>Topic Not Include</a></li>
                         </ul>
 
                         <ul id="keywordsteps" class="uk-switcher">
@@ -75,20 +76,20 @@
                                 <a href="javascript:void(0);" class="uk-button btn blue z-depth-0 add_key uk-width-medium-1-5 step7" title="Add Keyword">ADD MORE KEYWORD</a>
 
                                 <div class="uk-panel uk-panel-box uk-margin-top">
-                                    <a class="btn amber darken-4 right uk-margin-left nextstep tooltipped step8" data-position="top" data-delay="25" data-tooltip="Next Step: Create Topics" data-uk-switcher-item="1">NEXT STEP</a>
+                                    <a class="btn amber darken-4 right uk-margin-left nextstep tooltipped step8" data-position="top" data-delay="25" data-tooltip="Next Step: Create Topics">NEXT STEP</a>
                                 </div>
                             </li>
                             <li>
                                  <h5>CREATE TOPICS</h5>
                                  <div class="wrap_topics">
                                      <div id="topic-1" class="topic uk-panel uk-panel-box uk-margin-bottom">
-                                          <ul class="uk-grid uk-grid-small uk-grid-width-medium-1-4 topic-op-1">
+                                          <ul class="uk-grid uk-grid-small uk-grid-width-medium-1-4 topic-op-1 step9">
                                              <li>
                                                  <label class="label_topic"><i class="material-icons">label</i></label>
                                                  <input type="text" name="field_topic[1][]" data-topic-group="1" value="" placeholder="Write topic here" />
                                              </li>
                                          </ul>
-                                         <a href="javascript:void(0);" class="dropdown-button uk-button teal darken-4 white-text" data-activates="droptopic-1" title="Add Form"><i class="uk-icon uk-icon-plus-square"></i> Add Form</a>
+                                         <a href="javascript:void(0);" class="dropdown-button uk-button teal darken-4 white-text step10" data-activates="droptopic-1" title="Add Form"><i class="uk-icon uk-icon-plus-square"></i> Add Form</a>
                                          <ul id="droptopic-1" class="dropdown-content">
                                             <li><a href="javascript:void(0);" class="add_and" onclick="addTopic(1, 'and')"> AND</a></li>
                                             <li><a href="javascript:void(0);" class="add_or" onclick="addTopic(1, 'or')"> OR</a></li>
@@ -96,24 +97,24 @@
                                          </ul>
                                      </div>
                                  </div>
-                                 <a href="javascript:void(0);" class="uk-button btn blue z-depth-0 add_topic uk-width-medium-1-5" title="Add Topic">ADD MORE TOPIC</a>
+                                 <a href="javascript:void(0);" class="uk-button btn blue z-depth-0 add_topic uk-width-medium-1-5 step11" title="Add Topic">ADD MORE TOPIC</a>
 
                                  <div class="uk-panel uk-panel-box uk-margin-top">
-                                    <a class="btn white black-text left prevstep tooltipped" data-position="top" data-delay="25" data-tooltip="Prev Step: Keywords" data-uk-switcher-item="0">BACK</a>
-                                    <a class="btn amber darken-4 right uk-margin-left nextstep tooltipped" data-position="top" data-delay="25" data-tooltip="Next Step: Create Excluded Topics" data-uk-switcher-item="2">NEXT STEP</a>
+                                    <a class="btn white black-text left prevstep tooltipped backtopic" data-position="top" data-delay="25" data-tooltip="Prev Step: Keywords">BACK</a>
+                                    <a class="btn amber darken-4 right uk-margin-left nextstep tooltipped step12" data-position="top" data-delay="25" data-tooltip="Next Step: Create Excluded Topics">NEXT STEP</a>
                                  </div>
                             </li>
                             <li>
                                  <h5>CREATE EXCLUDED TOPICS</h5>
                                  <div class="wrap_exclds">
                                      <div id="topic-1" class="excld uk-panel uk-panel-box uk-margin-bottom">
-                                          <ul class="uk-grid uk-grid-small uk-grid-width-medium-1-4 excld-op-1">
+                                          <ul class="uk-grid uk-grid-small uk-grid-width-medium-1-4 excld-op-1 step13">
                                              <li>
                                                  <label class="label_excld"><i class="material-icons">label</i></label>
                                                  <input type="text" name="field_excld[1][]" data-excld-group="1" value="" placeholder="Write exclude here" />
                                              </li>
                                          </ul>
-                                         <a href="javascript:void(0);" class="dropdown-button uk-button teal darken-4 white-text" data-activates="dropexcld-1" title="Add Form"><i class="uk-icon uk-icon-plus-square"></i> Add Form</a>
+                                         <a href="javascript:void(0);" class="dropdown-button uk-button teal darken-4 white-text step14" data-activates="dropexcld-1" title="Add Form"><i class="uk-icon uk-icon-plus-square"></i> Add Form</a>
                                          <ul id="dropexcld-1" class="dropdown-content">
                                             <li><a href="javascript:void(0);" class="add_and" onclick="addExcld(1, 'and')"> AND</a></li>
                                             <li><a href="javascript:void(0);" class="add_or" onclick="addExcld(1, 'or')"> OR</a></li>
@@ -121,12 +122,12 @@
                                          </ul>
                                      </div>
                                  </div>
-                                 <a href="javascript:void(0);" class="uk-button btn blue z-depth-0 add_excld uk-width-medium-1-5" title="Add Exclude">ADD MORE EXCLUDE</a>
+                                 <a href="javascript:void(0);" class="uk-button btn blue z-depth-0 add_excld uk-width-medium-1-5 step15" title="Add Exclude">ADD MORE EXCLUDE</a>
 
                                  <div class="uk-panel uk-panel-box uk-margin-top">
-                                    <a class="btn white black-text left prevstep tooltipped" data-position="top" data-delay="25" data-tooltip="Prev Step: Topics" data-uk-switcher-item="1">BACK</a>
-                                    <button type="submit" class="btn amber darken-4 right uk-margin-left nextstep tooltipped" data-position="top" data-delay="25" name="form_mode" value="regular" data-tooltip="Save Query">SAVE NOW</button>
-                                    <a href="#previewquery" class="modal-trigger btn white black-text right uk-margin-left tooltipped" data-position="top" data-delay="25" data-tooltip="Preview All Query" onclick="previewQuery()">PREVIEW QUERY</a>
+                                    <a class="btn white black-text left prevstep tooltipped backexcld" data-position="top" data-delay="25" data-tooltip="Prev Step: Topics">BACK</a>
+                                    <button type="submit" class="btn amber darken-4 right uk-margin-left nextstep tooltipped step17" data-position="top" data-delay="25" name="form_mode" value="regular" data-tooltip="Save Query">SAVE NOW</button>
+                                    <a href="#previewquery" class="modal-trigger btn white black-text right uk-margin-left tooltipped step16" data-position="top" data-delay="25" data-tooltip="Preview All Query" onclick="previewQuery()">PREVIEW QUERY</a>
                                  </div>
                             </li>
                         </ul>
