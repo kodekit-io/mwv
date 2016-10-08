@@ -18,21 +18,21 @@
                             <h2 class="md-card-toolbar-heading-text">How To Create New Project?</h2>
                         </div>
                         <div class="md-card-content">
-                            Hendrerit ornare eu ullamcorper dignissim elit inceptos scelerisque dolor a tellus non nam aenean condimentum vestibulum a ad himenaeos nisl mi scelerisque at gravida facilisi. Morbi posuere adipiscing ac platea integer maecenas mus eget nisl sem a bibendum in elit ultrices ultricies vestibulum himenaeos lobortis venenatis arcu inceptos adipiscing a vestibulum. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate.
+                            <a class="btn btn-large btn-success" href="javascript:void(0);" onclick="introAdd();">Show me how</a>
                         </div>
                     </div>
                 </div>
                 <div class="uk-width-medium-1-2 uk-pull-1-2">
-                    <div class="md-card">
+                    <div class="md-card step1">
                         <div class="md-card-toolbar">
                             <h2 class="md-card-toolbar-heading-text">PROJECT INFORMATION</h2>
                         </div>
                         <div class="md-card-content">
-                            <div class="input-field">
-                                <input id="projectname" name="projectname" type="text" class="validate" required>
+                            <div class="input-field step2">
+                                <input id="projectname" name="projectname" type="text" class="validate uk-margin-remove" required>
                                 <label for="projectname">Project Name (required)</label>
                             </div>
-                            <div class="input-field">
+                            <div class="input-field step3">
                                 <textarea id="projectobj" name="projectobj" class="validate materialize-textarea uk-margin-remove"></textarea>
                                 <label for="projectobj">Project Objective</label>
                             </div>
@@ -41,7 +41,7 @@
                 </div>
             </div>
             <div class="md-card">
-                <ul class="tabs uk-margin-top">
+                <ul class="tabs uk-margin-top step4">
                     <li class="tab"><a class="active" href="#mode1">STEP BY STEP</a></li>
                     <li class="tab"><a href="#mode2">ADVANCED</a></li>
                 </ul>
@@ -58,13 +58,13 @@
                                 <h5>CREATE KEYWORDS</h5>
                                 <div class="wrap_keys">
                                     <div id="key-1" class="key uk-panel uk-panel-box uk-margin-bottom">
-                                         <ul class="uk-grid uk-grid-small uk-grid-width-medium-1-4 key-op-1">
+                                         <ul class="uk-grid uk-grid-small uk-grid-width-medium-1-4 key-op-1 step5">
                                             <li>
                                                 <label class="label_key"><i class="material-icons">label</i></label>
                                                 <input type="text" data-key-group="1" name="field_key[1][]" value="" placeholder="Write keyword here" />
                                             </li>
                                         </ul>
-                                        <a href="javascript:void(0);" class="dropdown-button uk-button teal darken-4 white-text" data-activates="dropkey-1" title="Add Form"><i class="uk-icon uk-icon-plus-square"></i> Add Form</a>
+                                        <a href="javascript:void(0);" class="dropdown-button uk-button teal darken-4 white-text step6" data-activates="dropkey-1" title="Add Form"><i class="uk-icon uk-icon-plus-square"></i> Add Form</a>
                                         <ul id="dropkey-1" class="dropdown-content">
                                            <li><a href="javascript:void(0);" class="add_and" onclick="addKey(1, 'and')"> AND</a></li>
                                            <li><a href="javascript:void(0);" class="add_or" onclick="addKey(1, 'or')"> OR</a></li>
@@ -72,10 +72,10 @@
                                         </ul>
                                     </div>
                                 </div>
-                                <a href="javascript:void(0);" class="uk-button btn blue z-depth-0 add_key uk-width-medium-1-5" title="Add Keyword">ADD MORE KEYWORD</a>
+                                <a href="javascript:void(0);" class="uk-button btn blue z-depth-0 add_key uk-width-medium-1-5 step7" title="Add Keyword">ADD MORE KEYWORD</a>
 
                                 <div class="uk-panel uk-panel-box uk-margin-top">
-                                    <a class="btn amber darken-4 right uk-margin-left nextstep tooltipped" data-position="top" data-delay="25" data-tooltip="Next Step: Create Topics" data-uk-switcher-item="1">NEXT STEP</a>
+                                    <a class="btn amber darken-4 right uk-margin-left nextstep tooltipped step8" data-position="top" data-delay="25" data-tooltip="Next Step: Create Topics" data-uk-switcher-item="1">NEXT STEP</a>
                                 </div>
                             </li>
                             <li>
@@ -186,4 +186,5 @@
 
 @section('page-level-scripts')
     <script src="{!! asset('js/add-project.js') !!}" type="text/javascript"></script>
+    <script src="{!! asset('js/help.js') !!}" type="text/javascript"></script>
 @endsection

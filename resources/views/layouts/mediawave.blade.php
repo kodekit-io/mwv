@@ -16,6 +16,7 @@
     <link rel="stylesheet" href="{!! asset('mediawave/css/components/datepicker.min.css') !!}" />
     <link rel="stylesheet" href="{!! asset('mediawave/css/materialize.min.css') !!}" />
     <link rel="stylesheet" href="{!! asset('mediawave/css/main.css') !!}" />
+    <link rel="stylesheet" href="{!! asset('mediawave/css/intro.js.css') !!}" />
 
     @section('page-level-styles')
     @show
@@ -49,6 +50,7 @@
 <script src="{!! asset('mediawave/js/html2canvas.js') !!}"></script>
 <script src="{!! asset('mediawave/js/html2canvas.svg.js') !!}"></script>
 <script src="{!! asset('mediawave/js/jquery.plugin.html2canvas.js') !!}"></script>
+<script src="{!! asset('mediawave/js/intro.min.js') !!}"></script>
 
 @section('page-level-plugins')
 @show
