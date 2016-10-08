@@ -1,21 +1,21 @@
 $.ajax({
-    url : ajaxUrl + '/project/chart-data/buzz-pie',
+    url : ajaxUrl + '/project/chart-data/post-pie',
     beforeSend : function(xhr) {
-        $('#buzzpie').block({
+        $('#postpie').block({
             message: '<img src="' + ajaxUrl + '/mediawave/img/spinner.gif">',
             css: { border: 'none', zIndex: 100 },
             overlayCSS: { backgroundColor: '#fff', zIndex: 100 }
         });
     },
     complete : function(xhr, status) {
-        $('#buzzpie').unblock();
+        $('#postpie').unblock();
     },
     success : function(result) {
-        buzzPieChart('buzzpie', jQuery.parseJSON(result));
+        postPieChart('postpie', jQuery.parseJSON(result));
     }
 });
 
-function buzzPieChart($id, $data) {
+function postPieChart($id, $data) {
     $data = $data.data;
     if ($data.length === 0) {
         $('#' + $id).html("<div class='center'>No Data</div>");
@@ -23,14 +23,14 @@ function buzzPieChart($id, $data) {
         var $content = [];
         for (var i = 0; i < $data.length; i++) {
             $keywordname = $data[i].keywordName;
-            $buzz = $data[i].buzz;
+            $buzz = $data[i].post;
             $content[i] = {name: $keywordname, y: $buzz};
         }
-        createBuzzPieChart($content, $id);
+        createPostPie($content, $id);
     }
 }
 
-function createBuzzPieChart(dataSet, id) {
+function createPostPie(dataSet, id) {
     $('#'+id).highcharts({
         chart: {
             plotBackgroundColor: null,

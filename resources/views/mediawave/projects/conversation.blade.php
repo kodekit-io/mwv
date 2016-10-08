@@ -33,6 +33,7 @@
         </div>
     </div>
 </li>
+
 <li class="uk-width-medium-1-1">
     <div class="md-card hoverable">
         <div class="md-card-toolbar">
@@ -112,11 +113,15 @@
                     <table id="table_forum" class="striped bordered highlight responsive-table">
                         <thead>
                         <tr>
-                            <th>Forum</th>
-                            <th>Thread Title</th>
-                            <th>Post Count</th>
-                            <th>Thread Starter</th>
+                            <th>Date</th>
+                            <th>Author</th>
+                            <th>Post</th>
+                            <th>Original Reach</th>
+                            <th>Viral Reach</th>
+                            <th>Interactions</th>
+                            <th>Viral Score</th>
                             <th>Sentiment</th>
+                            <th>Link</th>
                             <th></th>
                         </tr>
                         </thead>

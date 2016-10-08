@@ -1,5 +1,5 @@
 $.ajax({
-    url : ajaxUrl + '/project/' + projectId + '/chart-data/reach-trend',
+    url : ajaxUrl + '/project/chart-data/reach-trend',
     beforeSend : function(xhr) {
         $('#reachtrend').block({
             message: '<img src="' + ajaxUrl + '/mediawave/img/spinner.gif">',

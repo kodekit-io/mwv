@@ -1,4 +1,22 @@
-function sentimentBrandDistribution($id, $data) {
+$.ajax({
+    url : ajaxUrl + '/project/chart-data/sentiment-bar',
+    beforeSend : function(xhr) {
+        $('#sentimentbar').block({
+            message: '<img src="' + ajaxUrl + '/mediawave/img/spinner.gif">',
+            css: { border: 'none', zIndex: 100 },
+            overlayCSS: { backgroundColor: '#fff', zIndex: 100 }
+        });
+    },
+    complete : function(xhr, status) {
+        $('#sentimentbar').unblock();
+    },
+    success : function(result) {
+        sentimentBarChart('sentimentbar', jQuery.parseJSON(result));
+    }
+});
+
+function sentimentBarChart($id, $data) {
+    // console.log($data);
     if($data.length > 0){
         var $buzzName = [];
         var $buzzPos = [],$buzzNet = [],$buzzNeg = [];
@@ -56,13 +74,13 @@ function sentimentBrandDistribution($id, $data) {
         ];
         // console.log("content : ",$content);
 
-        chartSentimentBrand($id, $content, null, $buzzName);
+        chartSentimentBar($id, $content, null, $buzzName);
     }else{
-        chartSentimentBrand($id, false, "No Data");
+        chartSentimentBar($id, false, "No Data");
     }
 }
 
-function chartSentimentBrand(id, dataSet, statmsg, cat) {
+function chartSentimentBar(id, dataSet, statmsg, cat) {
     if(dataSet === false){
         jQuery("#" + id).html("<div class='center'>"+statmsg+"</div>");
     }else{

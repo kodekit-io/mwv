@@ -1,5 +1,5 @@
 $.ajax({
-    url : ajaxUrl + '/project/' + projectId + '/chart-data/brand-equity',
+    url : ajaxUrl + '/project/chart-data/brand-equity',
     beforeSend : function(xhr) {
         $('#brand-equity-container').block({
             message: '<img src="' + ajaxUrl + '/mediawave/img/spinner.gif">',

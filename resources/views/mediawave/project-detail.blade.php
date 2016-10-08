@@ -78,14 +78,36 @@
 
 @section('page-level-scripts')
     <script type="text/javascript" src="{{ asset('js/jquery.blockUI.js') }}"></script>
+
     <script type="text/javascript">
         var ajaxUrl = '{!! url('/') !!}';
         var csrfToken = '{!! csrf_token() !!}';
         var projectId = '{!! $project->pid !!}';
     </script>
+
     <script src="{!! asset('js/projects/brand-equity.js') !!}"></script>
     <script src="{!! asset('js/projects/buzz-trend.js') !!}"></script>
     <script src="{!! asset('js/projects/post-trend.js') !!}"></script>
     <script src="{!! asset('js/projects/reach-trend.js') !!}"></script>
     <script src="{!! asset('js/projects/interaction-trend.js') !!}"></script>
+
+    <script src="{!! asset('js/projects/buzz-pie.js') !!}"></script>
+    <script src="{!! asset('js/projects/post-pie.js') !!}"></script>
+    <script src="{!! asset('js/projects/interaction-pie.js') !!}"></script>
+    <script src="{!! asset('js/projects/unique-user-pie.js') !!}"></script>
+
+    <script src="{!! asset('js/projects/interaction-bar.js') !!}"></script>
+    {{--<script src="{!! asset('js/projects/share-of-media-bar.js') !!}"></script>--}}
+
+    <script src="{!! asset('js/projects/word-cloud.js') !!}"></script>
+
+    <script src="{!! asset('js/projects/convo-twitter.js') !!}"></script>
+    <script src="{!! asset('js/projects/convo-facebook.js') !!}"></script>
+    <script src="{!! asset('js/projects/convo-news.js') !!}"></script>
+    <script src="{!! asset('js/projects/convo-forum.js') !!}"></script>
+
+    <script type="text/javascript">
+        wordCloud('wordcloud-container', jQuery.parseJSON('{!! $wordCloud !!}'));
+    </script>
+
 @endsection
