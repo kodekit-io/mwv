@@ -125,14 +125,14 @@
 
                                  <div class="uk-panel uk-panel-box uk-margin-top">
                                     <a class="btn white black-text left prevstep tooltipped" data-position="top" data-delay="25" data-tooltip="Prev Step: Topics" data-uk-switcher-item="1">BACK</a>
-                                    <button type="submit" class="btn amber darken-4 right uk-margin-left nextstep tooltipped" data-position="top" data-delay="25" data-tooltip="Save Query">SAVE NOW</button>
+                                    <button type="submit" class="btn amber darken-4 right uk-margin-left nextstep tooltipped" data-position="top" data-delay="25" name="form_mode" value="regular" data-tooltip="Save Query">SAVE NOW</button>
                                     <a href="#previewquery" class="modal-trigger btn white black-text right uk-margin-left tooltipped" data-position="top" data-delay="25" data-tooltip="Preview All Query" onclick="previewQuery()">PREVIEW QUERY</a>
                                  </div>
                             </li>
                         </ul>
                     </div>
                     <div id="mode2">
-                         <ul id="keywordadv" class="uk-list uk-list-line">
+                        <ul id="keywordadv" class="uk-list uk-list-line">
                             <li>
                                 <h5>CREATE KEYWORDS</h5>
                                 <div class="wrap_advkeys">
@@ -161,7 +161,7 @@
                                   <a href="javascript:void(0);" class="uk-button btn blue z-depth-0 add_advexcld uk-width-medium-1-5 uk-margin-bottom" title="Add Exclude">ADD MORE EXCLUDE</a>
 
                                   <div class="uk-panel uk-panel-box uk-margin-top">
-                                    <button type="submit" class="btn amber darken-4 right uk-margin-left nextstep tooltipped" data-position="top" data-delay="25" data-tooltip="Save Query">SAVE NOW</button>
+                                    <button type="submit" class="btn amber darken-4 right uk-margin-left nextstep tooltipped" data-position="top" data-delay="25" name="form_mode" value="advanced" data-tooltip="Save Query">SAVE NOW</button>
                                     <a href="#previewquery" class="modal-trigger btn white black-text right uk-margin-left tooltipped" data-position="top" data-delay="25" data-tooltip="Preview All Query" onclick="previewAdavancedQuery()">PREVIEW QUERY</a>
                                   </div>
                             </li>

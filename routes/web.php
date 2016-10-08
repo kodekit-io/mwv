@@ -30,6 +30,12 @@ Route::group(['middleware' => 'auth'], function () {
     Route::get('/create-project-ig', 'ProjectController@addig');
     Route::post('/save-project', 'ProjectController@save');
 
+    Route::get('/project/{id}/chart-data/brand-equity', 'ChartController@brandEquityData');
+    Route::get('/project/{id}/chart-data/buzz-trend', 'ChartController@buzzTrendData');
+    Route::get('/project/{id}/chart-data/post-trend', 'ChartController@postTrendData');
+    Route::get('/project/{id}/chart-data/reach-trend', 'ChartController@reachTrendData');
+    Route::get('/project/{id}/chart-data/interaction-trend', 'ChartController@interactionTrendData');
+
     Route::get('/project-detail/{pid}', 'ProjectController@detail');
     Route::post('/project-detail/{pid}', 'ProjectController@detail');
     Route::get('/conversation', 'ProjectController@conversation');
