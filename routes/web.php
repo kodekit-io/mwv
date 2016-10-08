@@ -36,6 +36,11 @@ Route::group(['middleware' => 'auth'], function () {
     Route::get('/project/{id}/chart-data/reach-trend', 'ChartController@reachTrendData');
     Route::get('/project/{id}/chart-data/interaction-trend', 'ChartController@interactionTrendData');
 
+    Route::get('/project/{id}/chart-data/buzz-pie', 'ChartController@buzzPieData');
+    Route::get('/project/{id}/chart-data/post-pie', 'ChartController@postPieData');
+    Route::get('/project/{id}/chart-data/interaction-pie', 'ChartController@interactionPieData');
+    Route::get('/project/{id}/chart-data/unique-user-pie', 'ChartController@uniqueUserPieData');
+
     Route::get('/project-detail/{pid}', 'ProjectController@detail');
     Route::post('/project-detail/{pid}', 'ProjectController@detail');
     Route::get('/conversation', 'ProjectController@conversation');

@@ -1,21 +1,21 @@
 $.ajax({
-    url : ajaxUrl + '/project/' + projectId + '/chart-data/buzz-pie',
+    url : ajaxUrl + '/project/' + projectId + '/chart-data/unique-user-pie',
     beforeSend : function(xhr) {
-        $('#buzzpie').block({
+        $('#authorpie').block({
             message: '<img src="' + ajaxUrl + '/mediawave/img/spinner.gif">',
             css: { border: 'none', zIndex: 100 },
             overlayCSS: { backgroundColor: '#fff', zIndex: 100 }
         });
     },
     complete : function(xhr, status) {
-        $('#buzzpie').unblock();
+        $('#authorpie').unblock();
     },
     success : function(result) {
-        buzzPieChart('buzzpie', jQuery.parseJSON(result));
+        uniqueUserPieChart('authorpie', jQuery.parseJSON(result));
     }
 });
 
-function buzzPieChart($id, $data) {
+function uniqueUserPieChart($id, $data) {
     $data = $data.data;
     if ($data.length === 0) {
         $('#' + $id).html("<div class='center'>No Data</div>");
@@ -23,14 +23,14 @@ function buzzPieChart($id, $data) {
         var $content = [];
         for (var i = 0; i < $data.length; i++) {
             $keywordname = $data[i].keywordName;
-            $buzz = $data[i].buzz;
+            $buzz = $data[i].author;
             $content[i] = {name: $keywordname, y: $buzz};
         }
-        createBuzzPieChart($content, $id);
+        createUniqueUserPie($content, $id);
     }
 }
 
-function createBuzzPieChart(dataSet, id) {
+function createUniqueUserPie(dataSet, id) {
     $('#'+id).highcharts({
         chart: {
             plotBackgroundColor: null,

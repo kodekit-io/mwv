@@ -59,4 +59,30 @@ class ChartController extends Controller
         $chart = $this->projectChartService->interactionTrend($projectId);
         return \GuzzleHttp\json_encode($chart);
     }
+
+    public function buzzPieData($projectId)
+    {
+        $chart = $this->projectChartService->buzzPie($projectId);
+        return \GuzzleHttp\json_encode($chart);
+    }
+
+    public function postPieData($projectId)
+    {
+        $chart = $this->projectChartService->postPie($projectId);
+        return \GuzzleHttp\json_encode($chart);
+    }
+
+    public function interactionPieData($projectId)
+    {
+        $chart = $this->projectChartService->interactionPie($projectId);
+        return \GuzzleHttp\json_encode($chart);
+    }
+
+    public function uniqueUserPieData($projectId)
+    {
+        $chart = $this->projectChartService->uniqueUserPie($projectId);
+        return \GuzzleHttp\json_encode($chart);
+    }
+
+
 }

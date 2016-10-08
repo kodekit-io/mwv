@@ -88,4 +88,9 @@
     <script src="{!! asset('js/projects/post-trend.js') !!}"></script>
     <script src="{!! asset('js/projects/reach-trend.js') !!}"></script>
     <script src="{!! asset('js/projects/interaction-trend.js') !!}"></script>
+
+    <script src="{!! asset('js/projects/buzz-pie.js') !!}"></script>
+    <script src="{!! asset('js/projects/post-pie.js') !!}"></script>
+    <script src="{!! asset('js/projects/interaction-pie.js') !!}"></script>
+    <script src="{!! asset('js/projects/unique-user-pie.js') !!}"></script>
 @endsection
