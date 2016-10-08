@@ -1,23 +1,39 @@
-function postTrend($id, $data) {
-    console.log($data);
+$.ajax({
+    url : ajaxUrl + '/project/' + projectId + '/chart-data/post-trend',
+    beforeSend : function(xhr) {
+        $('#posttrend').block({
+            message: '<img src="' + ajaxUrl + '/mediawave/img/spinner.gif">',
+            css: { border: 'none', zIndex: 100 },
+            overlayCSS: { backgroundColor: '#fff', zIndex: 100 }
+        });
+    },
+    complete : function(xhr, status) {
+        $('#posttrend').unblock();
+    },
+    success : function(result) {
+        postTrendChart('posttrend', jQuery.parseJSON(result));
+    }
+});
+
+function postTrendChart($id, $data) {
     if ($data.length === 0) {
         $('#'+$id).html("<div class='center'>No data chart</div>");
     } else {
         $dates = $data.dates;
         $content = [];
         for (var i = 0; i < $data.data.length; i++) {
-            $content[i] = { name: $data.data[i]['keywordName'], data: $data.data[i]['post'] };
+            $content[i] = { name: $data.data[i].keywordName, data: $data.data[i].post };
         }
-        var data = {
+        var chartData = {
             content: $content,
             categories: $dates
         };
 
-        createPostTrend(data, $id);
+        createPostTrend(chartData, $id);
     }
 }
 
-function createPostTrend(data, id) {
+function createPostTrend(chartData, id) {
     $('#' + id).highcharts({
         title: {
             text: null
@@ -26,7 +42,7 @@ function createPostTrend(data, id) {
             text: null
         },
         xAxis: {
-            categories: data.categories,
+            categories: chartData.categories,
             labels: {
                 formatter: function() {
                     //return(this.value.substring(0,10) + "...");
@@ -40,7 +56,7 @@ function createPostTrend(data, id) {
         },
         yAxis: {
             title: {
-                text: 'Buzz'
+                text: 'Post'
             },
             plotLines: [{
                 value: 0,
@@ -49,7 +65,7 @@ function createPostTrend(data, id) {
             }]
         },
         tooltip: {
-            valueSuffix: ' Buzz'
+            valueSuffix: ' Post'
         },
         legend: {
             y: 15,
@@ -62,6 +78,6 @@ function createPostTrend(data, id) {
                 fontWeight: 'normal'
             }
         },
-        series: data.content
+        series: chartData.content
     });
 }

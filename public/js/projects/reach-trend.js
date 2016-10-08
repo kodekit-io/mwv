@@ -1,19 +1,36 @@
-function reachTrend($id, $data) {
-    console.log($data);
+$.ajax({
+    url : ajaxUrl + '/project/' + projectId + '/chart-data/reach-trend',
+    beforeSend : function(xhr) {
+        $('#reachtrend').block({
+            message: '<img src="' + ajaxUrl + '/mediawave/img/spinner.gif">',
+            css: { border: 'none', zIndex: 100 },
+            overlayCSS: { backgroundColor: '#fff', zIndex: 100 }
+        });
+    },
+    complete : function(xhr, status) {
+        $('#reachtrend').unblock();
+    },
+    success : function(result) {
+        // console.log(result);
+        reachTrendChart('reachtrend', jQuery.parseJSON(result));
+    }
+});
+
+function reachTrendChart($id, $data) {
     if ($data.length === 0) {
         $('#'+$id).html("<div class='center'>No data chart</div>");
     } else {
         $dates = $data.dates;
         $content = [];
         for (var i = 0; i < $data.data.length; i++) {
-            $content[i] = { name: $data.data[i]['keywordName'], data: $data.data[i]['post'] };
+            $content[i] = { name: $data.data[i].keywordName, data: $data.data[i].post };
         }
         var data = {
             content: $content,
             categories: $dates
         };
 
-        createPostTrend(data, $id);
+        createReachTrend(data, $id);
     }
 }
 
@@ -40,7 +57,7 @@ function createReachTrend(data, id) {
         },
         yAxis: {
             title: {
-                text: 'Buzz'
+                text: 'Reach'
             },
             plotLines: [{
                 value: 0,
@@ -49,7 +66,7 @@ function createReachTrend(data, id) {
             }]
         },
         tooltip: {
-            valueSuffix: ' Buzz'
+            valueSuffix: ' Reach'
         },
         legend: {
             y: 15,

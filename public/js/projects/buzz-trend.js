@@ -1,23 +1,39 @@
+$.ajax({
+    url : ajaxUrl + '/project/' + projectId + '/chart-data/buzz-trend',
+    beforeSend : function(xhr) {
+        $('#buzztrend').block({
+            message: '<img src="' + ajaxUrl + '/mediawave/img/spinner.gif">',
+            css: { border: 'none', zIndex: 100 },
+            overlayCSS: { backgroundColor: '#fff', zIndex: 100 }
+        });
+    },
+    complete : function(xhr, status) {
+        $('#buzztrend').unblock();
+    },
+    success : function(result) {
+        buzzTrend('buzztrend', jQuery.parseJSON(result));
+    }
+});
+
 function buzzTrend($id, $data) {
     if ($data.dates.length === 0) {
         $content.html("<div class='center'>No data chart</div>");
     } else {
         var $content = [];
-        for (var i = 0; i < $data.chartData.length; i++) {
-            $content[i] = { name: $data.chartData[i]['name'], data: $data.chartData[i]['value'] };
+        for (var i = 0; i < $data.data.length; i++) {
+            $content[i] = { name: $data.data[i].keywordName, data: $data.data[i].buzz };
         }
-        // console.log($content);
-        var data = {
+        var chartData = {
             content: $content,
             categories: $data.dates
         };
 
-        createProjectBuzzChart(data, $id);
+        createProjectBuzzChart(chartData, $id);
     }
 }
 
 
-function createProjectBuzzChart(data, id) {
+function createProjectBuzzChart(chartData, id) {
     $('#' + id).highcharts({
         title: {
             text: null
@@ -26,7 +42,7 @@ function createProjectBuzzChart(data, id) {
             text: null
         },
         xAxis: {
-            categories: data.categories,
+            categories: chartData.categories,
             labels: {
                 formatter: function() {
                     //return(this.value.substring(0,10) + "...");
@@ -62,6 +78,6 @@ function createProjectBuzzChart(data, id) {
                 fontWeight: 'normal'
             }
         },
-        series: data.content
+        series: chartData.content
     });
 }

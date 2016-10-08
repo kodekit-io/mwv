@@ -1,12 +1,29 @@
-function interactionTrend($id, $data) {
-    console.log($data);
+$.ajax({
+    url : ajaxUrl + '/project/' + projectId + '/chart-data/interaction-trend',
+    beforeSend : function(xhr) {
+        $('#interacttrend').block({
+            message: '<img src="' + ajaxUrl + '/mediawave/img/spinner.gif">',
+            css: { border: 'none', zIndex: 100 },
+            overlayCSS: { backgroundColor: '#fff', zIndex: 100 }
+        });
+    },
+    complete : function(xhr, status) {
+        $('#interacttrend').unblock();
+    },
+    success : function(result) {
+        // console.log(result);
+        interactionTrendChart('interacttrend', jQuery.parseJSON(result));
+    }
+});
+
+function interactionTrendChart($id, $data) {
     if ($data.length === 0) {
         $('#'+$id).html("<div class='center'>No data chart</div>");
     } else {
         $dates = $data.dates;
         $content = [];
         for (var i = 0; i < $data.data.length; i++) {
-            $content[i] = { name: $data.data[i]['keywordName'], data: $data.data[i]['post'] };
+            $content[i] = { name: $data.data[i].keywordName, data: $data.data[i].post };
         }
         var data = {
             content: $content,
@@ -40,7 +57,7 @@ function createInteractionTrend(data, id) {
         },
         yAxis: {
             title: {
-                text: 'Buzz'
+                text: 'Interaction'
             },
             plotLines: [{
                 value: 0,
@@ -49,7 +66,7 @@ function createInteractionTrend(data, id) {
             }]
         },
         tooltip: {
-            valueSuffix: ' Buzz'
+            valueSuffix: ' Interaction'
         },
         legend: {
             y: 15,

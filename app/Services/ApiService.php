@@ -8,6 +8,7 @@ use GuzzleHttp\Psr7\Response;
 class ApiService
 {
     protected $apiBaseUrl;
+    protected $apiDummyUrl;
     protected $client;
 
     private $apiMode;
@@ -18,8 +19,24 @@ class ApiService
     public function __construct()
     {
         $this->apiBaseUrl = config('services.mediawave.api_base_url');
+        $this->apiDummyUrl = config('services.mediawave.api_dummy_url');
         $this->client = new Client();
         $this->apiMode = config('services.mediawave.api_mode');
+    }
+
+    public function postDummy($url, $params, $withToken = true)
+    {
+        if ($withToken) {
+            $params['auth_token'] = session('api_token');
+        }
+        $apiUrl = $this->apiDummyUrl . $url;
+        $response = $this->client->post($apiUrl, [
+            'form_params' => $params
+        ]);
+
+        $parsedResponse = $this->parseResponse($response);
+
+        return $parsedResponse;
     }
 
     public function post($url, $params, $withToken=true)
@@ -44,10 +61,12 @@ class ApiService
         $response = \GuzzleHttp\json_decode($body);
 
         // check api session, throw exception when expired
-        if ($response->status == 'KO' && $response->code == 205) {
-            \Auth::logout();
-            session()->forget('userAttributes');
-            return redirect('/')->withErrors(['session_expired' => $response->msg]);
+        if (isset($response->status)) {
+            if ($response->status == 'KO' && $response->code == 205) {
+                \Auth::logout();
+                session()->forget('userAttributes');
+                return redirect('/')->withErrors(['session_expired' => $response->msg]);
+            }
         }
 
         return $response;
