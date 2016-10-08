@@ -19,11 +19,11 @@ function shareOfMediaBarChart($id, $data) {
     if ($data.length === 0) {
         $('#' + $id).html("<div class='center'>No Data</div>");
     } else {
-        shareOfMediaBarChart($id, $data);
+        shareOfMediaBarOptions($id, $data);
     }
 }
 
-function shareOfMediaBarChart(id, dataSet, cat) {
+function shareOfMediaBarOptions(id, dataSet, cat) {
     jQuery("#" + id).highcharts({
         chart: {
             type: 'column',

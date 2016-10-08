@@ -42,9 +42,10 @@ function createBuzzPieChart(dataSet, id) {
             text: null
         },
         tooltip: {
-            pointFormat: '{series.name}: <b>{point.percentage:.1f}%</b>'
+            //pointFormat: '{series.name}: <b>{point.percentage:.1f}%</b>'
+            pointFormat: 'Total Buzz: <b>{point.y}</b> ({point.percentage:.1f}%)<br/>'
         },
-        plotOptions: {
+        /*plotOptions: {
             pie: {
                 allowPointSelect: true,
                 cursor: 'pointer',
@@ -52,6 +53,35 @@ function createBuzzPieChart(dataSet, id) {
                     enabled: false
                 },
                 showInLegend: true
+            }
+        },*/
+        plotOptions: {
+            pie: {
+                allowPointSelect: true,
+                dataLabels: {
+                    enabled: true,
+                    formatter: function() {
+                        return Math.round(this.percentage*100)/100 + ' %';
+                    },
+                    distance: -25,
+                    color:'white',
+                    style: {
+                        fontSize: 11,
+                        fontWeight: 'normal'
+                    }
+                },
+                showInLegend: true
+            }
+        },
+        legend: {
+            y: 15,
+            backgroundColor: '#eeeeee',
+            padding: 10,
+            itemMarginTop: 0,
+            itemMarginBottom: 5,
+            itemDistance: 10,
+            itemStyle: {
+                fontWeight: 'normal'
             }
         },
         series: [{

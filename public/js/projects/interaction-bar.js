@@ -11,11 +11,11 @@ $.ajax({
         $('#interactionbar').unblock();
     },
     success : function(result) {
-        sentimentBarChart('interactionbar', jQuery.parseJSON(result));
+        interactionBar('interactionbar', jQuery.parseJSON(result));
     }
 });
 
-function sentimentBarChart($id, $data) {
+function interactionBar($id, $data) {
     $data = $data['interaction rate'];
     if ($data.length === 0) {
         $('#' + $id).html("<div class='center'>No Data</div>");
@@ -23,16 +23,27 @@ function sentimentBarChart($id, $data) {
         var $content = [];
         for (var i = 0; i < $data.length; i++) {
             $keywordname = $data[i].name;
+            $keyword = $data[i].data[0][0];
             $interaction = $data[i].data[0][1];
-            $content[i] = {name: $keywordname, y: $interaction};
+            //$content[i] = {name: $keywordname, y: $interaction};
+            $content[i] = {name: $keywordname, data: [[$keyword, $interaction]]};
         }
 
-        chartSentimentBar($id, $content);
+        interactionBarOptions($id, $content);
     }
 }
 
-function chartSentimentBar(id, dataSet, cat) {
+function interactionBarOptions(id, dataSet, cat) {
     jQuery("#" + id).highcharts({
+        chart: {
+            //renderTo: id,
+            type: 'column',
+            events: {
+                click: function() {
+                    hideCtxMenu();
+                }
+            }
+        },
         title: {
             text: null
         },
@@ -40,7 +51,7 @@ function chartSentimentBar(id, dataSet, cat) {
             enabled: false
         },
         tooltip: {
-            pointFormat: '{series.name}: <b>{point.y}</b>'
+            pointFormat: 'Interaction Rate: <b>{point.y}</b>'
         },
         xAxis: {
             type: "category"
@@ -57,7 +68,7 @@ function chartSentimentBar(id, dataSet, cat) {
                 }
             },
             series: {
-                pointWidth: 40
+                pointWidth: 30
             }
         },
         legend: {
@@ -71,7 +82,7 @@ function chartSentimentBar(id, dataSet, cat) {
                 fontWeight: 'normal'
             }
         },
-        series: [{
+        /*series: [{
             name: 'Buzz',
             colorByPoint: true,
             data: dataSet
@@ -88,6 +99,7 @@ function chartSentimentBar(id, dataSet, cat) {
             //    name: 'Milo',
             //    y: 777
             //}]
-        }]
+        }]*/
+        series:dataSet
     });
 }
