@@ -85,6 +85,10 @@
         } else if ((a==c)||(a==d)) {
             $('li.nav-report').addClass("active");
         }
+        if ((document.documentElement.clientWidth < 768) && (current_title==="Create Instagram Project" || current_title==="Create Project")) {
+            $("h1.md-title-page").hide();
+            $(".md-subnav li a").addClass('truncate');
+        }
         //socmed
         var pageSocmed = $("h1.md-card-toolbar-heading-text").eq(0), stext = pageSocmed.text();
         var socmedTitle = $.trim(stext);
@@ -103,6 +107,13 @@
         $('.dropdown-button').dropdown({
             belowOrigin: true
         });
+
+        //Sidenav
+        $('.button-collapse').sideNav({
+            menuWidth: 220,
+            edge: 'right'
+        });
+        $('.collapsible').collapsible();
 
         //search
         $('.emptysearch').click(function() {

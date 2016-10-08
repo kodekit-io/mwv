@@ -225,7 +225,7 @@ function removeAdvExcld(el) {
 
 function previewQuery() {
     var group = 1;
-    var output = '<h3>Keywords</h3><br>';
+    var output = '<h6>Keywords</h6>';
     $('input[name^="field_key"]').each(function() {
         var dataGroup = $(this).attr('data-key-group');
         var action = '';
@@ -241,5 +241,5 @@ function previewQuery() {
         output += '&nbsp;' + action + keyword
         group = dataGroup;
     });
-    $('.modal-content').html(output);
+    $('.previewquery').html(output);
 }
