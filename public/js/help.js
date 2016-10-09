@@ -1,24 +1,17 @@
 function introAdd(){
     var intro = introJs();
     intro.setOptions({
-        /* Next button label in tooltip box */
         nextLabel: 'Next &rarr;',
-        /* Previous button label in tooltip box */
         prevLabel: '&larr; Back',
-        /* Skip button label in tooltip box */
         skipLabel: 'Exit',
-        /* Done button label in tooltip box */
         doneLabel: 'Done',
-        /* Default tooltip box position */
         tooltipPosition: 'auto',
-        /* Next CSS class for tooltip boxes */
         tooltipClass: '',
-        /* Close introduction when pressing Escape button? */
         exitOnEsc: true,
-        /* Close introduction when clicking on overlay layer? */
-        exitOnOverlayClick: false,
-        /* Show step numbers in introduction? */
+        exitOnOverlayClick: true,
         showStepNumbers: true,
+        showProgress: false,
+        showBullets: false,
         steps: [
             {
                 element: ".step1",
@@ -53,9 +46,70 @@ function introAdd(){
             },
             {
                 element: ".step8",
-                intro: "When you ready with your keywords, go to Next Step (Create Topics)",
+                intro: "When you ready with your keywords, go to Next Step",
+            },
+            {
+                element: ".step9 li input",
+                intro: "Write your first topic here",
+            },
+            {
+                element: ".step10",
+                intro: "Add aditional form for your topic. You can choose operation 'AND', 'OR', 'NOT' from dropdown button",
+            },
+            {
+                element: ".step11",
+                intro: "Add more topic here, repeat the steps for more topic as needed",
+            },
+            {
+                element: ".step12",
+                intro: "When you ready with your topics, go to Next Step",
+            },
+            {
+                element: ".step13 li input",
+                intro: "Write your excluded topic here",
+            },
+            {
+                element: ".step14",
+                intro: "Add aditional form for your exclude. You can choose operation 'AND', 'OR', 'NOT' from dropdown button",
+            },
+            {
+                element: ".step15",
+                intro: "Add more exclude here, repeat the steps for more",
+            },
+            {
+                element: ".step16",
+                intro: "Preview your keywords, topics and excludes before save",
+            },
+            {
+                element: ".step17",
+                intro: "Don't forget to save your project.",
             }
         ]
     });
+
+    intro.oncomplete(function() {
+        $("a.switchkeyword")[0].click();
+    });
+    intro.onexit(function(){
+        $("a.switchkeyword")[0].click();
+    });
+    intro.onchange(function(targetElement) {});
+    intro.onafterchange(function(targetElement) {
+        //console.log(intro._currentStep);
+        var current = intro._currentStep;
+        console.log(current);
+        if (current===6) {
+            $("a.switchkeyword")[0].click();
+        } else if (current===7) {
+            $("a.switchtopic")[0].click();
+        } else if (current===10) {
+            $("a.switchtopic")[0].click();
+        } else if (current===11) {
+            $("a.switchexcld")[0].click();
+        }
+    });
+    intro.onbeforechange(function(targetElement) {});
     intro.start();
+
+    $("a.switchkeyword")[0].click();
 }

@@ -41,6 +41,7 @@ Route::group(['middleware' => 'auth'], function () {
     Route::get('/project/chart-data/interaction-pie', 'ChartController@interactionPieData');
     Route::get('/project/chart-data/unique-user-pie', 'ChartController@uniqueUserPieData');
 
+    Route::get('/project/chart-data/sentiment-bar', 'ChartController@sentimentBarData');
     Route::get('/project/chart-data/interaction-bar', 'ChartController@interactionBarData');
     Route::get('/project/chart-data/share-of-media-bar', 'ChartController@shareOfMediaBarData');
 
