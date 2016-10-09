@@ -96,9 +96,9 @@
     <script src="{!! asset('js/projects/interaction-pie.js') !!}"></script>
     <script src="{!! asset('js/projects/unique-user-pie.js') !!}"></script>
 
-    {{--<script src="{!! asset('js/projects/sentiment-bar.js') !!}"></script>--}}
+    <script src="{!! asset('js/projects/sentiment-bar.js') !!}"></script>
     <script src="{!! asset('js/projects/interaction-bar.js') !!}"></script>
-    {{--<script src="{!! asset('js/projects/share-of-media-bar.js') !!}"></script>--}}
+    <script src="{!! asset('js/projects/share-of-media-bar.js') !!}"></script>
 
     <script src="{!! asset('js/projects/word-cloud.js') !!}"></script>
 

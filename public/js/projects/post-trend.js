@@ -67,17 +67,6 @@ function createPostTrend(chartData, id) {
         tooltip: {
             valueSuffix: ' Post'
         },
-        legend: {
-            y: 15,
-            backgroundColor: '#eeeeee',
-            padding: 10,
-            itemMarginTop: 0,
-            itemMarginBottom: 5,
-            itemDistance: 10,
-            itemStyle: {
-                fontWeight: 'normal'
-            }
-        },
         series: chartData.content
     });
 }

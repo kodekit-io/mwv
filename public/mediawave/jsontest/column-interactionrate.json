@@ -1,13 +1,15 @@
 {
-    "name": "Indomilk",
-    "data": [["Indomilk",0.83]]
-}, {
-    "name": "Frisian Flag",
-    "data": [["Frisian Flag",1.03]]
-}, {
-    "name": "Dancow",
-    "data": [["Dancow",0.68]]
-}, {
-    "name": "Milo",
-    "data": [["Milo",0.77]]
+    "interactionrate": [{
+        "name": "Indomilk",
+        "data": 0.83
+    }, {
+        "name": "Frisian Flag",
+        "data": 1.03
+    }, {
+        "name": "Dancow",
+        "data": 0.68
+    }, {
+        "name": "Milo",
+        "data": 0.77
+    }]
 }
