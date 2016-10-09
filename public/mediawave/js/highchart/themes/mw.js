@@ -1,22 +1,14 @@
 Highcharts.theme = {
-	colors: ["#f45b5b", "#8085e9", "#8d4654", "#7798BF", "#aaeeee", "#ff0066", "#eeaaee",
-		"#55BF3B", "#DF5353", "#7798BF", "#aaeeee"],
+	colors: ["#FF5A5E", "#00bcd4", "#FDB45C", "#4D5360", "#949FB1", "#81d4fa", "#FF6384", "#69f0ae", "#ff8a65", "#4fc3f7"],
 	chart: {
 		backgroundColor: null,
-		style: {
-			font: '"proxima_nova_rgregular", Helvetica, Arial, sans-serif'
-		}
+
 	},
 	title: {
-		style: {
-			font: '1.2em "proxima_nova_condensedSBd", Helvetica, Arial, sans-serif',
-			textTransform: 'uppercase'
-		}
+
 	},
 	subtitle: {
-		style: {
-			font: '"proxima_nova_rgregular", Helvetica, Arial, sans-serif'
-		}
+
 	},
 	tooltip: {
 		borderWidth: 0,
@@ -28,37 +20,35 @@ Highcharts.theme = {
 	},
 	xAxis: {
 		labels: {
-			style: {
-				font: '"proxima_nova_rgregular", Helvetica, Arial, sans-serif'
-			}
+
 		},
 		title: {
-			style: {
-				font: '"proxima_nova_rgregular", Helvetica, Arial, sans-serif'
 
-			}
 		}
 	},
 	yAxis: {
 		labels: {
-			style: {
-				font: '"proxima_nova_rgregular", Helvetica, Arial, sans-serif'
-			}
+
 		},
 		title: {
-			style: {
-				font: '"proxima_nova_rgregular", Helvetica, Arial, sans-serif'
-			}
+
 		}
 	},
 	legend: {
+		y: 15,
+		backgroundColor: '#eeeeee',
+		padding: 8,
+		itemMarginTop: 0,
+		itemMarginBottom: 5,
 		itemStyle: {
-			font: '"proxima_nova_rgregular", Helvetica, Arial, sans-serif'
+			fontWeight: 'normal',
+			fontSize: '12px',
+			lineHeight: '14px'
 		}
 	},
 	labels: {
 		style: {
-			font: '"proxima_nova_rgregular", Helvetica, Arial, sans-serif'
+			fontFamily: 'proxima_nova_rgregular, Helvetica, Arial, sans-serif'
 		}
 	}
 };

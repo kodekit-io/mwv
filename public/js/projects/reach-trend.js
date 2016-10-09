@@ -68,17 +68,6 @@ function createReachTrend(data, id) {
         tooltip: {
             valueSuffix: ' Reach'
         },
-        legend: {
-            y: 15,
-            backgroundColor: '#eeeeee',
-            padding: 10,
-            itemMarginTop: 0,
-            itemMarginBottom: 5,
-            itemDistance: 10,
-            itemStyle: {
-                fontWeight: 'normal'
-            }
-        },
         series: data.content
     });
 }

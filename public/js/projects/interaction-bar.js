@@ -1,5 +1,6 @@
 $.ajax({
-    url : ajaxUrl + '/project/chart-data/interaction-bar',
+    //url : ajaxUrl + '/project/chart-data/interaction-bar',
+    url : ajaxUrl + "/mediawave/jsontest/column-interactionrate.json",
     beforeSend : function(xhr) {
         $('#interactionbar').block({
             message: '<img src="' + ajaxUrl + '/mediawave/img/spinner.gif">',
@@ -11,22 +12,21 @@ $.ajax({
         $('#interactionbar').unblock();
     },
     success : function(result) {
-        interactionBar('interactionbar', jQuery.parseJSON(result));
+        interactionBar('interactionbar', result);
     }
 });
 
 function interactionBar($id, $data) {
-    $data = $data['interaction rate'];
+    $data = $data['interactionrate'];
     if ($data.length === 0) {
         $('#' + $id).html("<div class='center'>No Data</div>");
     } else {
         var $content = [];
         for (var i = 0; i < $data.length; i++) {
-            $keywordname = $data[i].name;
-            $keyword = $data[i].data[0][0];
-            $interaction = $data[i].data[0][1];
+            $x = $data[i].name;
+            $y = $data[i].data;
             //$content[i] = {name: $keywordname, y: $interaction};
-            $content[i] = {name: $keywordname, data: [[$keyword, $interaction]]};
+            $content[i] = {name: $x, data: [[$x,$y]]};
         }
 
         interactionBarOptions($id, $content);
@@ -54,52 +54,37 @@ function interactionBarOptions(id, dataSet, cat) {
             pointFormat: 'Interaction Rate: <b>{point.y}</b>'
         },
         xAxis: {
-            type: "category"
+            type: "category",
+            labels: {
+                formatter: function() {
+                    return(this.value.substring(0,15) + " ");
+                },
+                rotation: 0
+            }
         },
         yAxis: {
             title: {
                 text: null
-            }
+            },
+            plotLines: [{
+                value: 0.75,
+                color: 'red',
+                dashStyle: 'shortdash',
+                width: 1
+            }]
         },
         plotOptions: {
             column: {
+                stacking: 'normal',
                 dataLabels: {
-                    enabled: true
+                    enabled: true,
+                    style: {
+                        fontWeight: 'normal'
+                    }
                 }
             },
-            series: {
-                pointWidth: 30
-            }
         },
-        legend: {
-            y: 15,
-            backgroundColor: '#eeeeee',
-            padding: 10,
-            itemMarginTop: 0,
-            itemMarginBottom: 5,
-            itemDistance: 10,
-            itemStyle: {
-                fontWeight: 'normal'
-            }
-        },
-        /*series: [{
-            name: 'Buzz',
-            colorByPoint: true,
-            data: dataSet
-            //data: [{
-            //    name: 'Indomilk',
-            //    y: 4033
-            //}, {
-            //    name: 'Frisian Flag',
-            //    y: 3003,
-            //}, {
-            //    name: 'Dancow',
-            //    y: 1538
-            //}, {
-            //    name: 'Milo',
-            //    y: 777
-            //}]
-        }]*/
+
         series:dataSet
     });
 }

@@ -1314,8 +1314,9 @@ select {
 }
 
 .md-chart {
-	height: 250px;
+	height: 275px;
 	width: 100% !important;
+	margin-top: -0.5em;
 }
 
 .uk-switcher > li {
@@ -1328,6 +1329,11 @@ select {
 	height: auto;
 }
 
+/*Highcharts*/
+.highcharts-legend-item rect {
+	width: 14px !important;
+	height: 14px !important;
+}
 
 /*Weather widget*/
 @font-face {
