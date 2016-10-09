@@ -1,15 +1,15 @@
 {
     "interactionrate": [{
         "name": "Indomilk",
-        "data": 0.83
+        "data": 0.50
     }, {
         "name": "Frisian Flag",
-        "data": 1.03
+        "data": 1.50
     }, {
         "name": "Dancow",
-        "data": 0.68
+        "data": 0.75
     }, {
         "name": "Milo",
-        "data": 0.77
+        "data": 1.25
     }]
 }

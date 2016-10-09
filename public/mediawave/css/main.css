@@ -1316,8 +1316,8 @@ select {
 .md-chart {
 	height: 275px;
 	width: 100% !important;
-	margin-top: -0.5em;
 }
+
 
 .uk-switcher > li {
 	display: block !important;
@@ -1330,9 +1330,17 @@ select {
 }
 
 /*Highcharts*/
+.highcharts-container {
+	width:100% !important;
+	height:100% !important;
+}
 .highcharts-legend-item rect {
 	width: 14px !important;
 	height: 14px !important;
+}
+
+.jqcloud span {
+	cursor: crosshair;
 }
 
 /*Weather widget*/
@@ -1722,5 +1730,8 @@ select {
 	}
 	.md-card-toolbar-heading-text, .md-card-toolbar-heading-text > * {
 		font-size: 1em !important;
+	}
+	.js-geolocation, #weather {
+		display: none !important;
 	}
 }

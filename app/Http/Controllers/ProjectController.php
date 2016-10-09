@@ -205,51 +205,228 @@ class ProjectController extends Controller
         $data['projectId'] = $projectId;
         return view('mediawave.project-twitter', $data);
     }
-    public function detailFB($projectId)
+    public function detailFB(Request $request, $projectId)
     {
+        $brands = '';
+        $last7DaysRange = $this->chartService->getLastSevenDaysRange();
+        $startDate = $last7DaysRange['startDate'];
+        $endDate = $last7DaysRange['endDate'];
+        if ($request->has('filter')) {
+            // var_dump($request->input());
+            $startDate = $request->input('start_date');
+            $endDate = $request->input('end_date');
+            $startDate = ( $startDate != '' ) ? Carbon::createFromFormat('d/m/y', $startDate)->format('Y-m-d') : null;
+            $endDate = ( $endDate != '' ) ? Carbon::createFromFormat('d/m/y', $endDate)->format('Y-m-d') : null;
+            $brands = ( $request->has('keywords') ? implode(',', $request->input('keywords')) : '' );
+        }
+
+        $profiles = $this->projectService->projectInfo($projectId);
+        $chart = $this->chartService->projectChart($projectId, '1,2,3,4,5,6,12,A', $brands, $startDate, $endDate);
+        $keywords = [];
+        if (count($profiles->projectInfo->keywordList) > 0) {
+            $keywordLists = $profiles->projectInfo->keywordList;
+            foreach ($keywordLists as $keywordList) {
+                $keywordId = $keywordList->keyword->keywordId;
+                $keywordName = $keywordList->keyword->keywordName;
+                $keywords[$keywordId]['value'] = $keywordName;
+                $keywords[$keywordId]['selected'] = $this->isKeywordSelected($keywordId, $request);
+            }
+        }
+
         $data['pageTitle'] = 'Facebook';
-        $chart = $this->chartService->projectChart($projectId, '1,2,3,4,5,6,12');
+        $data['project'] = $chart->project;
+        $data['keywords'] = $keywords;
+        $data['startDate'] = Carbon::createFromFormat('Y-m-d', $startDate)->format('d/m/y');
+        $data['endDate'] = Carbon::createFromFormat('Y-m-d', $endDate)->format('d/m/y');;
         $data['project'] = $chart->project;
         $data['projectId'] = $projectId;
         return view('mediawave.project-facebook', $data);
     }
-    public function detailNews($projectId)
+    public function detailNews(Request $request, $projectId)
     {
+        $brands = '';
+        $last7DaysRange = $this->chartService->getLastSevenDaysRange();
+        $startDate = $last7DaysRange['startDate'];
+        $endDate = $last7DaysRange['endDate'];
+        if ($request->has('filter')) {
+            // var_dump($request->input());
+            $startDate = $request->input('start_date');
+            $endDate = $request->input('end_date');
+            $startDate = ( $startDate != '' ) ? Carbon::createFromFormat('d/m/y', $startDate)->format('Y-m-d') : null;
+            $endDate = ( $endDate != '' ) ? Carbon::createFromFormat('d/m/y', $endDate)->format('Y-m-d') : null;
+            $brands = ( $request->has('keywords') ? implode(',', $request->input('keywords')) : '' );
+        }
+
+        $profiles = $this->projectService->projectInfo($projectId);
+        $chart = $this->chartService->projectChart($projectId, '1,2,3,4,5,6,12,A', $brands, $startDate, $endDate);
+        $keywords = [];
+        if (count($profiles->projectInfo->keywordList) > 0) {
+            $keywordLists = $profiles->projectInfo->keywordList;
+            foreach ($keywordLists as $keywordList) {
+                $keywordId = $keywordList->keyword->keywordId;
+                $keywordName = $keywordList->keyword->keywordName;
+                $keywords[$keywordId]['value'] = $keywordName;
+                $keywords[$keywordId]['selected'] = $this->isKeywordSelected($keywordId, $request);
+            }
+        }
+
         $data['pageTitle'] = 'Online Media';
-        $chart = $this->chartService->projectChart($projectId, '1,2,3,4,5,6,12');
+        $data['project'] = $chart->project;
+        $data['keywords'] = $keywords;
+        $data['startDate'] = Carbon::createFromFormat('Y-m-d', $startDate)->format('d/m/y');
+        $data['endDate'] = Carbon::createFromFormat('Y-m-d', $endDate)->format('d/m/y');;
         $data['project'] = $chart->project;
         $data['projectId'] = $projectId;
         return view('mediawave.project-news', $data);
     }
-    public function detailForum($projectId)
+    public function detailForum(Request $request, $projectId)
     {
+        $brands = '';
+        $last7DaysRange = $this->chartService->getLastSevenDaysRange();
+        $startDate = $last7DaysRange['startDate'];
+        $endDate = $last7DaysRange['endDate'];
+        if ($request->has('filter')) {
+            // var_dump($request->input());
+            $startDate = $request->input('start_date');
+            $endDate = $request->input('end_date');
+            $startDate = ( $startDate != '' ) ? Carbon::createFromFormat('d/m/y', $startDate)->format('Y-m-d') : null;
+            $endDate = ( $endDate != '' ) ? Carbon::createFromFormat('d/m/y', $endDate)->format('Y-m-d') : null;
+            $brands = ( $request->has('keywords') ? implode(',', $request->input('keywords')) : '' );
+        }
+
+        $profiles = $this->projectService->projectInfo($projectId);
+        $chart = $this->chartService->projectChart($projectId, '1,2,3,4,5,6,12,A', $brands, $startDate, $endDate);
+        $keywords = [];
+        if (count($profiles->projectInfo->keywordList) > 0) {
+            $keywordLists = $profiles->projectInfo->keywordList;
+            foreach ($keywordLists as $keywordList) {
+                $keywordId = $keywordList->keyword->keywordId;
+                $keywordName = $keywordList->keyword->keywordName;
+                $keywords[$keywordId]['value'] = $keywordName;
+                $keywords[$keywordId]['selected'] = $this->isKeywordSelected($keywordId, $request);
+            }
+        }
+
         $data['pageTitle'] = 'Forum';
-        $chart = $this->chartService->projectChart($projectId, '1,2,3,4,5,6,12');
+        $data['project'] = $chart->project;
+        $data['keywords'] = $keywords;
+        $data['startDate'] = Carbon::createFromFormat('Y-m-d', $startDate)->format('d/m/y');
+        $data['endDate'] = Carbon::createFromFormat('Y-m-d', $endDate)->format('d/m/y');;
         $data['project'] = $chart->project;
         $data['projectId'] = $projectId;
         return view('mediawave.project-forum', $data);
     }
-    public function detailVideo($projectId)
+    public function detailVideo(Request $request, $projectId)
     {
+        $brands = '';
+        $last7DaysRange = $this->chartService->getLastSevenDaysRange();
+        $startDate = $last7DaysRange['startDate'];
+        $endDate = $last7DaysRange['endDate'];
+        if ($request->has('filter')) {
+            // var_dump($request->input());
+            $startDate = $request->input('start_date');
+            $endDate = $request->input('end_date');
+            $startDate = ( $startDate != '' ) ? Carbon::createFromFormat('d/m/y', $startDate)->format('Y-m-d') : null;
+            $endDate = ( $endDate != '' ) ? Carbon::createFromFormat('d/m/y', $endDate)->format('Y-m-d') : null;
+            $brands = ( $request->has('keywords') ? implode(',', $request->input('keywords')) : '' );
+        }
+
+        $profiles = $this->projectService->projectInfo($projectId);
+        $chart = $this->chartService->projectChart($projectId, '1,2,3,4,5,6,12,A', $brands, $startDate, $endDate);
+        $keywords = [];
+        if (count($profiles->projectInfo->keywordList) > 0) {
+            $keywordLists = $profiles->projectInfo->keywordList;
+            foreach ($keywordLists as $keywordList) {
+                $keywordId = $keywordList->keyword->keywordId;
+                $keywordName = $keywordList->keyword->keywordName;
+                $keywords[$keywordId]['value'] = $keywordName;
+                $keywords[$keywordId]['selected'] = $this->isKeywordSelected($keywordId, $request);
+            }
+        }
+
         $data['pageTitle'] = 'Video';
-        $chart = $this->chartService->projectChart($projectId, '1,2,3,4,5,6,12');
         $data['project'] = $chart->project;
-        $data['projectId'] = $projectId;        return view('mediawave.project-video', $data);
+        $data['keywords'] = $keywords;
+        $data['startDate'] = Carbon::createFromFormat('Y-m-d', $startDate)->format('d/m/y');
+        $data['endDate'] = Carbon::createFromFormat('Y-m-d', $endDate)->format('d/m/y');;
+        $data['project'] = $chart->project;
+        $data['projectId'] = $projectId;
+        return view('mediawave.project-video', $data);
     }
-    public function detailBlog($projectId)
+    public function detailBlog(Request $request, $projectId)
     {
+        $brands = '';
+        $last7DaysRange = $this->chartService->getLastSevenDaysRange();
+        $startDate = $last7DaysRange['startDate'];
+        $endDate = $last7DaysRange['endDate'];
+        if ($request->has('filter')) {
+            // var_dump($request->input());
+            $startDate = $request->input('start_date');
+            $endDate = $request->input('end_date');
+            $startDate = ( $startDate != '' ) ? Carbon::createFromFormat('d/m/y', $startDate)->format('Y-m-d') : null;
+            $endDate = ( $endDate != '' ) ? Carbon::createFromFormat('d/m/y', $endDate)->format('Y-m-d') : null;
+            $brands = ( $request->has('keywords') ? implode(',', $request->input('keywords')) : '' );
+        }
+
+        $profiles = $this->projectService->projectInfo($projectId);
+        $chart = $this->chartService->projectChart($projectId, '1,2,3,4,5,6,12,A', $brands, $startDate, $endDate);
+        $keywords = [];
+        if (count($profiles->projectInfo->keywordList) > 0) {
+            $keywordLists = $profiles->projectInfo->keywordList;
+            foreach ($keywordLists as $keywordList) {
+                $keywordId = $keywordList->keyword->keywordId;
+                $keywordName = $keywordList->keyword->keywordName;
+                $keywords[$keywordId]['value'] = $keywordName;
+                $keywords[$keywordId]['selected'] = $this->isKeywordSelected($keywordId, $request);
+            }
+        }
+
         $data['pageTitle'] = 'Blog';
-        $chart = $this->chartService->projectChart($projectId, '1,2,3,4,5,6,12');
         $data['project'] = $chart->project;
-        $data['projectId'] = $projectId;        return view('mediawave.project-blog', $data);
+        $data['keywords'] = $keywords;
+        $data['startDate'] = Carbon::createFromFormat('Y-m-d', $startDate)->format('d/m/y');
+        $data['endDate'] = Carbon::createFromFormat('Y-m-d', $endDate)->format('d/m/y');;
+        $data['project'] = $chart->project;
+        $data['projectId'] = $projectId;
+        return view('mediawave.project-blog', $data);
     }
 
-    public function detailIG($projectId)
+    public function detailIG(Request $request, $projectId)
     {
+        $brands = '';
+        $last7DaysRange = $this->chartService->getLastSevenDaysRange();
+        $startDate = $last7DaysRange['startDate'];
+        $endDate = $last7DaysRange['endDate'];
+        if ($request->has('filter')) {
+            // var_dump($request->input());
+            $startDate = $request->input('start_date');
+            $endDate = $request->input('end_date');
+            $startDate = ( $startDate != '' ) ? Carbon::createFromFormat('d/m/y', $startDate)->format('Y-m-d') : null;
+            $endDate = ( $endDate != '' ) ? Carbon::createFromFormat('d/m/y', $endDate)->format('Y-m-d') : null;
+            $brands = ( $request->has('keywords') ? implode(',', $request->input('keywords')) : '' );
+        }
+
+        $profiles = $this->projectService->projectInfo($projectId);
+        $chart = $this->chartService->projectChart($projectId, '1,2,3,4,5,6,12,A', $brands, $startDate, $endDate);
+        $keywords = [];
+        if (count($profiles->projectInfo->keywordList) > 0) {
+            $keywordLists = $profiles->projectInfo->keywordList;
+            foreach ($keywordLists as $keywordList) {
+                $keywordId = $keywordList->keyword->keywordId;
+                $keywordName = $keywordList->keyword->keywordName;
+                $keywords[$keywordId]['value'] = $keywordName;
+                $keywords[$keywordId]['selected'] = $this->isKeywordSelected($keywordId, $request);
+            }
+        }
+
         $data['pageTitle'] = 'Instagram';
-        $chart = $this->chartService->projectChart($projectId, '1,2,3,4,5,6,12');
         $data['project'] = $chart->project;
-        $data['projectId'] = $projectId;        return view('mediawave.project-ig', $data);
+        $data['keywords'] = $keywords;
+        $data['startDate'] = Carbon::createFromFormat('Y-m-d', $startDate)->format('d/m/y');
+        $data['endDate'] = Carbon::createFromFormat('Y-m-d', $endDate)->format('d/m/y');;
+        $data['project'] = $chart->project;
+        $data['projectId'] = $projectId;
+        return view('mediawave.project-ig', $data);
     }
 
 
@@ -280,24 +457,152 @@ class ProjectController extends Controller
     }
 
     //SOCMED PAGE
-    public function socmedTW()
+    public function socmedTW(Request $request, $projectId)
     {
+        $brands = '';
+        $last7DaysRange = $this->chartService->getLastSevenDaysRange();
+        $startDate = $last7DaysRange['startDate'];
+        $endDate = $last7DaysRange['endDate'];
+        if ($request->has('filter')) {
+            // var_dump($request->input());
+            $startDate = $request->input('start_date');
+            $endDate = $request->input('end_date');
+            $startDate = ( $startDate != '' ) ? Carbon::createFromFormat('d/m/y', $startDate)->format('Y-m-d') : null;
+            $endDate = ( $endDate != '' ) ? Carbon::createFromFormat('d/m/y', $endDate)->format('Y-m-d') : null;
+            $brands = ( $request->has('keywords') ? implode(',', $request->input('keywords')) : '' );
+        }
+
+        $profiles = $this->projectService->projectInfo($projectId);
+        $chart = $this->chartService->projectChart($projectId, '1,2,3,4,5,6,12,A', $brands, $startDate, $endDate);
+        $keywords = [];
+        if (count($profiles->projectInfo->keywordList) > 0) {
+            $keywordLists = $profiles->projectInfo->keywordList;
+            foreach ($keywordLists as $keywordList) {
+                $keywordId = $keywordList->keyword->keywordId;
+                $keywordName = $keywordList->keyword->keywordName;
+                $keywords[$keywordId]['value'] = $keywordName;
+                $keywords[$keywordId]['selected'] = $this->isKeywordSelected($keywordId, $request);
+            }
+        }
+
         $data['pageTitle'] = 'Twitter';
+        $data['project'] = $chart->project;
+        $data['keywords'] = $keywords;
+        $data['startDate'] = Carbon::createFromFormat('Y-m-d', $startDate)->format('d/m/y');
+        $data['endDate'] = Carbon::createFromFormat('Y-m-d', $endDate)->format('d/m/y');;
+        $data['project'] = $chart->project;
+        $data['projectId'] = $projectId;
         return view('mediawave.socmed-twitter', $data);
     }
-    public function socmedFB()
+    public function socmedFB(Request $request, $projectId)
     {
+        $brands = '';
+        $last7DaysRange = $this->chartService->getLastSevenDaysRange();
+        $startDate = $last7DaysRange['startDate'];
+        $endDate = $last7DaysRange['endDate'];
+        if ($request->has('filter')) {
+            // var_dump($request->input());
+            $startDate = $request->input('start_date');
+            $endDate = $request->input('end_date');
+            $startDate = ( $startDate != '' ) ? Carbon::createFromFormat('d/m/y', $startDate)->format('Y-m-d') : null;
+            $endDate = ( $endDate != '' ) ? Carbon::createFromFormat('d/m/y', $endDate)->format('Y-m-d') : null;
+            $brands = ( $request->has('keywords') ? implode(',', $request->input('keywords')) : '' );
+        }
+
+        $profiles = $this->projectService->projectInfo($projectId);
+        $chart = $this->chartService->projectChart($projectId, '1,2,3,4,5,6,12,A', $brands, $startDate, $endDate);
+        $keywords = [];
+        if (count($profiles->projectInfo->keywordList) > 0) {
+            $keywordLists = $profiles->projectInfo->keywordList;
+            foreach ($keywordLists as $keywordList) {
+                $keywordId = $keywordList->keyword->keywordId;
+                $keywordName = $keywordList->keyword->keywordName;
+                $keywords[$keywordId]['value'] = $keywordName;
+                $keywords[$keywordId]['selected'] = $this->isKeywordSelected($keywordId, $request);
+            }
+        }
+
         $data['pageTitle'] = 'Facebook';
+        $data['project'] = $chart->project;
+        $data['keywords'] = $keywords;
+        $data['startDate'] = Carbon::createFromFormat('Y-m-d', $startDate)->format('d/m/y');
+        $data['endDate'] = Carbon::createFromFormat('Y-m-d', $endDate)->format('d/m/y');;
+        $data['project'] = $chart->project;
+        $data['projectId'] = $projectId;
         return view('mediawave.socmed-facebook', $data);
     }
-    public function socmedYT()
+    public function socmedYT(Request $request, $projectId)
     {
+        $brands = '';
+        $last7DaysRange = $this->chartService->getLastSevenDaysRange();
+        $startDate = $last7DaysRange['startDate'];
+        $endDate = $last7DaysRange['endDate'];
+        if ($request->has('filter')) {
+            // var_dump($request->input());
+            $startDate = $request->input('start_date');
+            $endDate = $request->input('end_date');
+            $startDate = ( $startDate != '' ) ? Carbon::createFromFormat('d/m/y', $startDate)->format('Y-m-d') : null;
+            $endDate = ( $endDate != '' ) ? Carbon::createFromFormat('d/m/y', $endDate)->format('Y-m-d') : null;
+            $brands = ( $request->has('keywords') ? implode(',', $request->input('keywords')) : '' );
+        }
+
+        $profiles = $this->projectService->projectInfo($projectId);
+        $chart = $this->chartService->projectChart($projectId, '1,2,3,4,5,6,12,A', $brands, $startDate, $endDate);
+        $keywords = [];
+        if (count($profiles->projectInfo->keywordList) > 0) {
+            $keywordLists = $profiles->projectInfo->keywordList;
+            foreach ($keywordLists as $keywordList) {
+                $keywordId = $keywordList->keyword->keywordId;
+                $keywordName = $keywordList->keyword->keywordName;
+                $keywords[$keywordId]['value'] = $keywordName;
+                $keywords[$keywordId]['selected'] = $this->isKeywordSelected($keywordId, $request);
+            }
+        }
+
         $data['pageTitle'] = 'Youtube';
+        $data['project'] = $chart->project;
+        $data['keywords'] = $keywords;
+        $data['startDate'] = Carbon::createFromFormat('Y-m-d', $startDate)->format('d/m/y');
+        $data['endDate'] = Carbon::createFromFormat('Y-m-d', $endDate)->format('d/m/y');;
+        $data['project'] = $chart->project;
+        $data['projectId'] = $projectId;
         return view('mediawave.socmed-youtube', $data);
     }
-    public function socmedIG()
+    public function socmedIG(Request $request, $projectId)
     {
+        $brands = '';
+        $last7DaysRange = $this->chartService->getLastSevenDaysRange();
+        $startDate = $last7DaysRange['startDate'];
+        $endDate = $last7DaysRange['endDate'];
+        if ($request->has('filter')) {
+            // var_dump($request->input());
+            $startDate = $request->input('start_date');
+            $endDate = $request->input('end_date');
+            $startDate = ( $startDate != '' ) ? Carbon::createFromFormat('d/m/y', $startDate)->format('Y-m-d') : null;
+            $endDate = ( $endDate != '' ) ? Carbon::createFromFormat('d/m/y', $endDate)->format('Y-m-d') : null;
+            $brands = ( $request->has('keywords') ? implode(',', $request->input('keywords')) : '' );
+        }
+
+        $profiles = $this->projectService->projectInfo($projectId);
+        $chart = $this->chartService->projectChart($projectId, '1,2,3,4,5,6,12,A', $brands, $startDate, $endDate);
+        $keywords = [];
+        if (count($profiles->projectInfo->keywordList) > 0) {
+            $keywordLists = $profiles->projectInfo->keywordList;
+            foreach ($keywordLists as $keywordList) {
+                $keywordId = $keywordList->keyword->keywordId;
+                $keywordName = $keywordList->keyword->keywordName;
+                $keywords[$keywordId]['value'] = $keywordName;
+                $keywords[$keywordId]['selected'] = $this->isKeywordSelected($keywordId, $request);
+            }
+        }
+
         $data['pageTitle'] = 'Instagram';
+        $data['project'] = $chart->project;
+        $data['keywords'] = $keywords;
+        $data['startDate'] = Carbon::createFromFormat('Y-m-d', $startDate)->format('d/m/y');
+        $data['endDate'] = Carbon::createFromFormat('Y-m-d', $endDate)->format('d/m/y');;
+        $data['project'] = $chart->project;
+        $data['projectId'] = $projectId;
         return view('mediawave.socmed-instagram', $data);
     }
 

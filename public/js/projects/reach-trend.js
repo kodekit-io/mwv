@@ -36,6 +36,9 @@ function reachTrendChart($id, $data) {
 
 function createReachTrend(data, id) {
     $('#' + id).highcharts({
+        chart: {
+            type: 'spline',
+        },
         title: {
             text: null
         },

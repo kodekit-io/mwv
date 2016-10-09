@@ -7,8 +7,8 @@
         <div class="left">Hi <span class="appusername">Username</span>!</div>
         <div class="widget-weather right">
             <span class="today"><i class="uk-icon uk-icon-calendar"></i> <?php echo(date("j F Y")); ?> </span>
-            <a class="js-geolocation uk-hidden-small" title="Your locations"><i class="uk-icon uk-icon-map-marker"></i></a>
-            <div id="weather uk-hidden-small"></div>
+            <a class="js-geolocation" title="Your locations"><i class="uk-icon uk-icon-map-marker"></i></a>
+            <div id="weather"></div>
         </div>
     </div>
 </nav>
