@@ -100,7 +100,7 @@ class ProjectChartService
     {
         $params = $this->generateParams($projectId, $keywords, $startDate, $endDate);
 
-        return $this->getChart('project/1/8/interactionrate', $params);
+        return $this->getChart('project/1/8/sentiment', $params);
     }
 
     public function interactionBar($projectId = '', $keywords = '', $startDate = '', $endDate = '')
@@ -114,7 +114,7 @@ class ProjectChartService
     {
         $params = $this->generateParams($projectId, $keywords, $startDate, $endDate);
 
-        return $this->apiService->postDirectDummy('project/shareofmedia', $params);
+        return $this->getChart('project/shareofmedia', $params);
     }
 
     public function convoData($source, $projectId = '', $keywords = '', $startDate = '', $endDate = '')

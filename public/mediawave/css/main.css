@@ -23,18 +23,17 @@ main {
 	flex: 1 0 auto;
 }
 
-a:hover,
-a.btn:hover,
-a.uk-button:hover,
+a,
 a:visited,
 a.btn:visited,
 a.uk-button:visited {
-	color: inherit;
 	text-decoration: none;
 }
-
-a {
+a:hover,
+a.btn:hover,
+a.uk-button:hover {
 	color: inherit;
+	text-decoration: none;
 }
 
 ::-webkit-input-placeholder {

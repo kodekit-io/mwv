@@ -127,8 +127,9 @@ function chartSentimentBar(id, dataSet, statmsg, cat) {
     }
 }*/
 $.ajax({
-    //url : ajaxUrl + '/project/chart-data/sentiment-bar',
-    url : ajaxUrl + "/mediawave/jsontest/column-sentiment.json",
+    url : ajaxUrl + '/project/chart-data/sentiment-bar',
+    //url : ajaxUrl + "/mediawave/jsontest/column-sentiment.json",
+    //url : 'http://103.28.15.104:8821/dummy_api/project/1/8/sentiment',
     beforeSend : function(xhr) {
         $('#sentimentbar').block({
             message: '<img src="' + ajaxUrl + '/mediawave/img/spinner.gif">',
@@ -141,7 +142,7 @@ $.ajax({
         $('#sentimentbar').unblock();
     },
     success : function(result) {
-        sentimentBar('sentimentbar', result);
+        sentimentBar('sentimentbar', jQuery.parseJSON(result));
 
     }
 

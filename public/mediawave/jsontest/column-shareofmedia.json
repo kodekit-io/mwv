@@ -1,59 +1,57 @@
 {
-    "shareOfMedia": [
-        {
-            "data": [
-                ["Indomilk", 65119.6],
-                ["Frisian Flag", 65119.6],
-                ["Milo", 103118.6],
-                ["Dancow", 78349.6]
-            ],
-            "name": "Twitter",
-            "color": "#4fc3f7"
-        }, {
-            "data": [
-                ["Indomilk", 3570.5],
-                ["Frisian Flag", 50128.38],
-                ["Milo", 50128.38],
-                ["Dancow", 5281.22]
-            ],
-            "name": "Facebook",
-            "color": "#0D47A1"
-        }, {
-            "data": [
-                ["Indomilk", 100.84],
-                ["Frisian Flag", 245.04],
-                ["Milo", 215.04],
-                ["Dancow", 157.77]
-            ],
-            "name": "News",
-            "color": "#795548"
-        }, {
-            "data": [
-                ["Indomilk", 140.84],
-                ["Frisian Flag", 215.04],
-                ["Milo", 245.04],
-                ["Dancow", 157.77]
-            ],
-            "name": "Forum",
-            "color": "#827717"
-        }, {
-            "data": [
-                ["Indomilk", 10140.84],
-                ["Frisian Flag", 21445.04],
-                ["Milo", 21445.04],
-                ["Dancow", 12957.77]
-            ],
-            "name": "Video",
-            "color": "#B71C1C"
-        }, {
-            "data": [
-                ["Indomilk", 100.84],
-                ["Frisian Flag", 245.04],
-                ["Milo", 214.04],
-                ["Dancow", 157.77]
-            ],
-            "name": "Blog",
-            "color": "#e65100"
-        }
-    ]
+    "shareOfMedia": [{
+        "data": [
+            ["Indomilk", 65119.6],
+            ["Frisian Flag", 65119.6],
+            ["Milo", 103118.6],
+            ["Dancow", 78349.6]
+        ],
+        "name": "Twitter",
+        "color": "#4fc3f7"
+    }, {
+        "data": [
+            ["Indomilk", 3570.5],
+            ["Frisian Flag", 50128.38],
+            ["Milo", 50128.38],
+            ["Dancow", 5281.22]
+        ],
+        "name": "Facebook",
+        "color": "#0D47A1"
+    }, {
+        "data": [
+            ["Indomilk", 100.84],
+            ["Frisian Flag", 245.04],
+            ["Milo", 215.04],
+            ["Dancow", 157.77]
+        ],
+        "name": "News",
+        "color": "#795548"
+    }, {
+        "data": [
+            ["Indomilk", 140.84],
+            ["Frisian Flag", 215.04],
+            ["Milo", 245.04],
+            ["Dancow", 157.77]
+        ],
+        "name": "Forum",
+        "color": "#827717"
+    }, {
+        "data": [
+            ["Indomilk", 10140.84],
+            ["Frisian Flag", 21445.04],
+            ["Milo", 21445.04],
+            ["Dancow", 12957.77]
+        ],
+        "name": "Video",
+        "color": "#B71C1C"
+    }, {
+        "data": [
+            ["Indomilk", 100.84],
+            ["Frisian Flag", 245.04],
+            ["Milo", 214.04],
+            ["Dancow", 157.77]
+        ],
+        "name": "Blog",
+        "color": "#e65100"
+    }]
 }

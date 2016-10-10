@@ -74,8 +74,9 @@ function shareOfMediaBarOptions(id, dataSet, cat) {
 }
 */
 $.ajax({
-    //url : ajaxUrl + '/project/chart-data/share-of-media-bar',
-    url : ajaxUrl + "/mediawave/jsontest/column-shareofmedia.json",
+    url : ajaxUrl + '/project/chart-data/share-of-media-bar',
+    //url : ajaxUrl + "/mediawave/jsontest/column-shareofmedia.json",
+    //url : 'http://103.28.15.104:8821/dummy_api/project/shareofmedia',
     beforeSend : function(xhr) {
         $('#shareofmediabar').block({
             message: '<img src="' + ajaxUrl + '/mediawave/img/spinner.gif">',
@@ -88,8 +89,7 @@ $.ajax({
         $('#shareofmediabar').unblock();
     },
     success : function(result) {
-        shareofmediabar('shareofmediabar', result);
-
+        shareofmediabar('shareofmediabar', jQuery.parseJSON(result));
     }
 
 });
