@@ -35,6 +35,9 @@ function postTrendChart($id, $data) {
 
 function createPostTrend(chartData, id) {
     $('#' + id).highcharts({
+        chart: {
+            type: 'spline',
+        },
         title: {
             text: null
         },

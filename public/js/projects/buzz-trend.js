@@ -35,6 +35,9 @@ function buzzTrend($id, $data) {
 
 function createProjectBuzzChart(chartData, id) {
     $('#' + id).highcharts({
+        chart: {
+            type: 'spline',
+        },
         title: {
             text: null
         },

@@ -14,31 +14,32 @@
                         Social Media Page
                     </h1>
                 </div>
-                <form class="md-card-content">
-                    <ul class="uk-subnav left">
-                        <li class="">
-                            <input type="checkbox" class="filled-in" id="key1" checked="checked" />
-                            <label for="key1">IG Account 1</label>
-                        </li>
-                        <li class="">
-                            <input type="checkbox" class="filled-in" id="key2" checked="checked" />
-                            <label for="key2">IG Account 2</label>
-                        </li>
-                        <li class="">
-                            <input type="checkbox" class="filled-in" id="key3" checked="checked" />
-                            <label for="key3">IG Account 3</label>
-                        </li>
-                    </ul>
-                    <div class="nav-wrapper right">
-                        <div class="input-field md-daterange">
-                            <input id="startdate" type="text" class="uk-datepicker" data-uk-datepicker="{pos:'bottom',format:'DD/MM/YY'}" placeholder="10/12/16">
-                            <label for="startdate"><i class="material-icons prefix">date_range</i></label>
-                        </div> -
-                        <div class="input-field md-daterange">
-                            <input id="enddate" type="text" class="uk-datepicker" data-uk-datepicker="{pos:'bottom',format:'DD/MM/YY'}" placeholder="17/12/16">
-                            <label for="enddate"><i class="material-icons prefix">date_range</i></label>
+                <form class="md-card-content" action="{!! url('project-detail/' . $project->pid) !!}" method="POST">
+                    {{ csrf_field() }}
+                    <div class="uk-grid uk-grid-medium" data-uk-grid data-uk-grid-margin>
+                        <div class="uk-width-medium-2-3 uk-width-small-1-1">
+                            @if (count($keywords) > 0)
+                            <ul class="uk-subnav">
+                                @foreach($keywords as $key => $keywords)
+                                <li class="">
+                                    <input type="checkbox" name="keywords[]" value="{!! $key !!}" class="filled-in" id="{!! $key !!}" {!! $keywords['selected'] !!}  />
+                                    <label for="{!! $key !!}">{!! $keywords['value'] !!}</label>
+                                </li>
+                               @endforeach
+                            </ul>
+                            @endif
                         </div>
-                        <button class="btn pink darken-4 uk-margin-left z-depth-0" type="submit">UPDATE</button>
+                        <div class="nav-wrapper uk-width-medium-1-3 uk-width-small-1-1">
+                            <div class="input-field md-daterange">
+                                <input id="startdate" name="start_date" type="text" class="uk-datepicker" data-uk-datepicker="{pos:'bottom',format:'DD/MM/YY'}" placeholder="10/12/16" value="{!! $startDate !!}">
+                                <label for="startdate"><i class="material-icons prefix">date_range</i></label>
+                            </div> -
+                            <div class="input-field md-daterange">
+                                <input id="enddate" name="end_date" type="text" class="uk-datepicker" data-uk-datepicker="{pos:'bottom',format:'DD/MM/YY'}" placeholder="17/12/16" value="{!! $endDate !!}">
+                                <label for="enddate"><i class="material-icons prefix">date_range</i></label>
+                            </div>
+                            <button class="btn pink darken-4 uk-align-right z-depth-0" name="filter" value="1" type="submit">UPDATE</button>
+                        </div>
                     </div>
                 </form>
             </div>

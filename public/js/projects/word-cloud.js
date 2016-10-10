@@ -9,8 +9,16 @@ function wordCloud($id, $data) {
 
         $('#' + $id).jQCloud(words, {
             autoResize: true,
+            fontSize: {
+                from: 0.1,
+                to: 0.01
+            },
             //shape: 'rectangular'
         });
     }
 }
-
+$(document).ready(function() {
+    $('.jqcloud').on('click','span',function(){
+        $(this).hide();
+    });
+});

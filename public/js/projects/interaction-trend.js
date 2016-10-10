@@ -36,6 +36,9 @@ function interactionTrendChart($id, $data) {
 
 function createInteractionTrend(data, id) {
     $('#' + id).highcharts({
+        chart: {
+            type: 'spline',
+        },
         title: {
             text: null
         },

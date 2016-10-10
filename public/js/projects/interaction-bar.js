@@ -22,27 +22,29 @@ function interactionBar($id, $data) {
         $('#' + $id).html("<div class='center'>No Data</div>");
     } else {
         var $content = [];
+        var $dataSum = 0;
         for (var i = 0; i < $data.length; i++) {
             $x = $data[i].name;
             $y = $data[i].data;
-            //$content[i] = {name: $keywordname, y: $interaction};
-            $content[i] = {name: $x, data: [[$x,$y]]};
+            $length = $data.length;
+            $dataSum += $data[i].data;
+
+            $content[i] = {name: $x, data: [[$x,$y]] };
+            $mean = $dataSum / $length;
         }
 
-        interactionBarOptions($id, $content);
+        //console.log($mean);
+        interactionBarOptions($id, $content, $mean);
     }
+
 }
 
-function interactionBarOptions(id, dataSet, cat) {
+function interactionBarOptions(id, dataSet, mean) {
+
     jQuery("#" + id).highcharts({
         chart: {
             //renderTo: id,
             type: 'column',
-            events: {
-                click: function() {
-                    hideCtxMenu();
-                }
-            }
         },
         title: {
             text: null
@@ -67,10 +69,11 @@ function interactionBarOptions(id, dataSet, cat) {
                 text: null
             },
             plotLines: [{
-                value: 0.75,
+                value: mean,
                 color: 'red',
                 dashStyle: 'shortdash',
-                width: 1
+                width: 1,
+                zIndex: 2
             }]
         },
         plotOptions: {

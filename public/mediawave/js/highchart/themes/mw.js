@@ -2,7 +2,9 @@ Highcharts.theme = {
 	colors: ["#FF5A5E", "#00bcd4", "#FDB45C", "#4D5360", "#949FB1", "#81d4fa", "#FF6384", "#69f0ae", "#ff8a65", "#4fc3f7"],
 	chart: {
 		backgroundColor: null,
-
+		style: {
+			fontFamily: 'proxima_nova_rgregular, Helvetica, Arial, sans-serif'
+		}
 	},
 	title: {
 
@@ -47,9 +49,7 @@ Highcharts.theme = {
 		}
 	},
 	labels: {
-		style: {
-			fontFamily: 'proxima_nova_rgregular, Helvetica, Arial, sans-serif'
-		}
+
 	}
 };
 
