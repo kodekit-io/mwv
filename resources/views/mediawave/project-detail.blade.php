@@ -83,9 +83,14 @@
         var ajaxUrl = '{!! url('/') !!}';
         var csrfToken = '{!! csrf_token() !!}';
         var projectId = '{!! $project->pid !!}';
+        var mediaId = 8;
+        var keywords = '{!! $keywords !!}';
+        var startDate = '{!! $startDate !!}';
+        var endDate = '{!! $endDate !!}';
     </script>
 
     <script src="{!! asset('js/projects/brand-equity.js') !!}"></script>
+
     <script src="{!! asset('js/projects/buzz-trend.js') !!}"></script>
     <script src="{!! asset('js/projects/post-trend.js') !!}"></script>
     <script src="{!! asset('js/projects/reach-trend.js') !!}"></script>

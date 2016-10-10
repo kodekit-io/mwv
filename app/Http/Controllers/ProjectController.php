@@ -103,6 +103,7 @@ class ProjectController extends Controller
         $interactionTrend = File::get(public_path('mediawave/jsontest/trend-interaction.json'));
         $interactionTrend = \GuzzleHttp\json_decode($interactionTrend);
         $data['interactionTrend'] = \GuzzleHttp\json_encode($interactionTrend);
+
         $data['pageTitle'] = 'All Media';
         $data['project'] = $chart->project;
         $data['keywords'] = $keywords;

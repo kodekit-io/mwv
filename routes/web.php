@@ -31,7 +31,8 @@ Route::group(['middleware' => 'auth'], function () {
     Route::post('/save-project', 'ProjectController@save');
 
     Route::get('/project/chart-data/brand-equity', 'ChartController@brandEquityData');
-    Route::get('/project/chart-data/buzz-trend', 'ChartController@buzzTrendData');
+
+    Route::get('/project/chart-data/buzz-trend/{mediaId}', 'ChartController@buzzTrendData');
     Route::get('/project/chart-data/post-trend', 'ChartController@postTrendData');
     Route::get('/project/chart-data/reach-trend', 'ChartController@reachTrendData');
     Route::get('/project/chart-data/interaction-trend', 'ChartController@interactionTrendData');
