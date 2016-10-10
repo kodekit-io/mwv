@@ -47,7 +47,9 @@ class ProjectTwitterController extends Controller
         }
 
         $profiles = $this->projectService->projectInfo($projectId);
-        $chart = $this->chartService->projectChart($projectId, '1,2,3,4,5,6,12,A', $brands, $startDate, $endDate);
+        $wordCloud = $this->chartService->wordCloud($projectId, '', $brands, $startDate, $endDate);
+        $viewInfluencer = $this->chartService->viewInfluencer($projectId, '', $brands, $startDate, $endDate);
+
         $keywords = [];
         if (count($profiles->projectInfo->keywordList) > 0) {
             $keywordLists = $profiles->projectInfo->keywordList;
@@ -60,12 +62,16 @@ class ProjectTwitterController extends Controller
         }
 
         $data['pageTitle'] = 'Twitter';
-        $data['project'] = $chart->project;
+        $data['project'] = $profiles->project;
         $data['keywords'] = $keywords;
         $data['startDate'] = Carbon::createFromFormat('Y-m-d', $startDate)->format('d/m/y');
-        $data['endDate'] = Carbon::createFromFormat('Y-m-d', $endDate)->format('d/m/y');;
-        $data['project'] = $chart->project;
+        $data['endDate'] = Carbon::createFromFormat('Y-m-d', $endDate)->format('d/m/y');
         $data['projectId'] = $projectId;
+
+        $dataUnion = ( isset($wordCloud->dataUnion) ? $wordCloud->dataUnion : '' );
+        $data['wordCloud'] = \GuzzleHttp\json_encode($dataUnion);
+
+        $data['viewInfluencers'] = $viewInfluencer->influencer;
 
         return view('mediawave.project-twitter', $data);
     }

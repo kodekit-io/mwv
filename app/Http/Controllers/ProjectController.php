@@ -82,8 +82,8 @@ class ProjectController extends Controller
 
         $profiles = $this->projectService->projectInfo($projectId);
         $chart = $this->chartService->projectChart($projectId, '1,2,3,4,5,6,12,A', $brands, $startDate, $endDate);
-        $wordCloud = $this->chartService->wordCloud($projectId, $brands, $startDate, $endDate);
-        $viewInfluencer = $this->chartService->viewInfluencer($projectId, $brands, $startDate, $endDate);
+        $wordCloud = $this->chartService->wordCloud($projectId, '', $brands, $startDate, $endDate);
+        $viewInfluencer = $this->chartService->viewInfluencer($projectId, '', $brands, $startDate, $endDate);
         // $viewMediaDetail = $this->chartService->viewMediaDetail($projectId, $brands, $startDate, $endDate);
 
         $keywords = [];

@@ -138,27 +138,29 @@ class ChartService
         return $this->getChart($params);
     }
 
-    public function wordCloud($projectId, $keywords = '', $startDate = '', $endDate = '')
+    public function wordCloud($projectId, $mediaId = '', $keywords = '', $startDate = '', $endDate = '')
     {
         $params = [
             'pid' => $projectId,
             'widgetID' => 7,
             'StartDate' => $startDate,
             'EndDate' => $endDate,
-            'brandID' => $keywords
+            'brandID' => $keywords,
+            'mediaID' => $mediaId
         ];
 
         return $this->getChart($params);
     }
 
-    public function viewInfluencer($projectId, $keywords = '', $startDate = '', $endDate = '')
+    public function viewInfluencer($projectId, $mediaId = '', $keywords = '', $startDate = '', $endDate = '')
     {
         $params = [
             'pid' => $projectId,
             'widgetID' => 'E',
             'StartDate' => $startDate,
             'EndDate' => $endDate,
-            'brandID' => $keywords
+            'brandID' => $keywords,
+            'mediaID' => $mediaId
         ];
 
         return $this->getChart($params);
