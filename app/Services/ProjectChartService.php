@@ -29,11 +29,11 @@ class ProjectChartService
         return $this->getChart('project/brandequity', $params);
     }
 
-    public function buzzTrend($projectId = '', $keywords = '', $startDate = '', $endDate = '')
+    public function buzzTrend($mediaId, $projectId = '', $keywords = '', $startDate = '', $endDate = '')
     {
         $params = $this->generateParams($projectId, $keywords, $startDate, $endDate);
 
-        return $this->getChart('project/1/8/buzztrend', $params);
+        return $this->getChart('project/1/'.$mediaId.'/buzztrend', $params);
     }
 
     public function postTrend($projectId = '', $keywords = '', $startDate = '', $endDate = '')
@@ -43,11 +43,11 @@ class ProjectChartService
         return $this->getChart('project/1/8/posttrend', $params);
     }
 
-    public function reachTrend($projectId = '', $keywords = '', $startDate = '', $endDate = '')
+    public function reachTrend($mediaId, $projectId = '', $keywords = '', $startDate = '', $endDate = '')
     {
         $params = $this->generateParams($projectId, $keywords, $startDate, $endDate);
 
-        return $this->getChart('project/1/8/reachtrend', $params);
+        return $this->getChart('project/1/'.$mediaId.'/reachtrend', $params);
     }
 
     public function interactionTrend($projectId = '', $keywords = '', $startDate = '', $endDate = '')
@@ -57,18 +57,18 @@ class ProjectChartService
         return $this->getChart('project/1/8/interactiontrend', $params);
     }
 
-    public function buzzPie($projectId = '', $keywords = '', $startDate = '', $endDate = '')
+    public function buzzPie($mediaId, $projectId = '', $keywords = '', $startDate = '', $endDate = '')
     {
         $params = $this->generateParams($projectId, $keywords, $startDate, $endDate);
 
-        return $this->getChart('project/1/8/buzz', $params);
+        return $this->getChart('project/1/'. $mediaId .'/buzz', $params);
     }
 
-    public function interactionPie($projectId = '', $keywords = '', $startDate = '', $endDate = '')
+    public function interactionPie($mediaId, $projectId = '', $keywords = '', $startDate = '', $endDate = '')
     {
         $params = $this->generateParams($projectId, $keywords, $startDate, $endDate);
 
-        return $this->getChart('project/1/8/interaction', $params);
+        return $this->getChart('project/1/'. $mediaId .'/interaction', $params);
     }
 
     public function postPie($projectId = '', $keywords = '', $startDate = '', $endDate = '')
@@ -122,5 +122,26 @@ class ProjectChartService
         $params = $this->generateParams($projectId, $keywords, $startDate, $endDate);
 
         return $this->getChart('project/1/'.$source.'/convo', $params);
+    }
+
+    public function userTrend($projectId = '', $keywords = '', $startDate = '', $endDate = '')
+    {
+        $params = $this->generateParams($projectId, $keywords, $startDate, $endDate);
+
+        return $this->getChart('project/1/usertrend', $params);
+    }
+
+    public function viralPie($projectId = '', $keywords = '', $startDate = '', $endDate = '')
+    {
+        $params = $this->generateParams($projectId, $keywords, $startDate, $endDate);
+
+        return $this->getChart('project/1/viralreach', $params);
+    }
+
+    public function potentialPie($mediaId, $projectId = '', $keywords = '', $startDate = '', $endDate = '')
+    {
+        $params = $this->generateParams($projectId, $keywords, $startDate, $endDate);
+
+        return $this->getChart('project/1/'. $mediaId .'/potentialreach', $params);
     }
 }

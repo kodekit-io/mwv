@@ -84,7 +84,6 @@
         var csrfToken = '{!! csrf_token() !!}';
         var projectId = '{!! $project->pid !!}';
         var mediaId = 8;
-        var keywords = '{!! $keywords !!}';
         var startDate = '{!! $startDate !!}';
         var endDate = '{!! $endDate !!}';
     </script>

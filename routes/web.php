@@ -32,15 +32,20 @@ Route::group(['middleware' => 'auth'], function () {
 
     Route::get('/project/chart-data/brand-equity', 'ChartController@brandEquityData');
 
+    // Reusable chart
+    Route::get('/project/chart-data/reach-trend/{mediaId}', 'ChartController@reachTrendData');
     Route::get('/project/chart-data/buzz-trend/{mediaId}', 'ChartController@buzzTrendData');
-    Route::get('/project/chart-data/post-trend', 'ChartController@postTrendData');
-    Route::get('/project/chart-data/reach-trend', 'ChartController@reachTrendData');
-    Route::get('/project/chart-data/interaction-trend', 'ChartController@interactionTrendData');
+    Route::get('/project/chart-data/buzz-pie/{mediaId}', 'ChartController@buzzPieData');
+    Route::get('/project/chart-data/interaction-pie/{mediaId}', 'ChartController@interactionPieData');
+    Route::get('/project/chart-data/potential-pie/{mediaId}', 'ChartController@potentialPieData');
 
-    Route::get('/project/chart-data/buzz-pie', 'ChartController@buzzPieData');
+    Route::get('/project/chart-data/post-trend', 'ChartController@postTrendData');
+    Route::get('/project/chart-data/interaction-trend', 'ChartController@interactionTrendData');
+    Route::get('/project/chart-data/user-trend', 'ChartController@userTrend');
+
     Route::get('/project/chart-data/post-pie', 'ChartController@postPieData');
-    Route::get('/project/chart-data/interaction-pie', 'ChartController@interactionPieData');
     Route::get('/project/chart-data/unique-user-pie', 'ChartController@uniqueUserPieData');
+    Route::get('/project/chart-data/viral-pie', 'ChartController@viralPieData');
 
     Route::get('/project/chart-data/sentiment-bar', 'ChartController@sentimentBarData');
     Route::get('/project/chart-data/interaction-bar', 'ChartController@interactionBarData');
@@ -56,7 +61,7 @@ Route::group(['middleware' => 'auth'], function () {
     Route::post('/project-detail/{pid}', 'ProjectController@detail');
     Route::get('/conversation', 'ProjectController@conversation');
 
-    Route::get('/project-twitter/{pid}', 'ProjectController@detailTW');
+    Route::get('/project-twitter/{pid}', 'ProjectTwitterController@detail');
     Route::get('/project-facebook/{pid}', 'ProjectController@detailFB');
     Route::get('/project-news/{pid}', 'ProjectController@detailNews');
     Route::get('/project-forum/{pid}', 'ProjectController@detailForum');

@@ -1,21 +1,21 @@
 $.ajax({
-    url : ajaxUrl + '/project/chart-data/interaction-pie/' + mediaId,
+    url : ajaxUrl + '/project/chart-data/potential-pie/' + mediaId,
     beforeSend : function(xhr) {
-        $('#interactionpie').block({
+        $('#potentialpie').block({
             message: '<img src="' + ajaxUrl + '/mediawave/img/spinner.gif">',
             css: { border: 'none', zIndex: 100 },
             overlayCSS: { backgroundColor: '#fff', zIndex: 100 }
         });
     },
     complete : function(xhr, status) {
-        $('#interactionpie').unblock();
+        $('#potentialpie').unblock();
     },
     success : function(result) {
-        interactionPieChart('interactionpie', jQuery.parseJSON(result));
+        potentialPieChart('potentialpie', jQuery.parseJSON(result));
     }
 });
 
-function interactionPieChart($id, $data) {
+function potentialPieChart($id, $data) {
     $data = $data.data;
     if ($data.length === 0) {
         $('#' + $id).html("<div class='center'>No Data</div>");
@@ -23,14 +23,14 @@ function interactionPieChart($id, $data) {
         var $content = [];
         for (var i = 0; i < $data.length; i++) {
             $keywordname = $data[i].keywordName;
-            $buzz = $data[i].interaction;
+            $buzz = $data[i].preach;
             $content[i] = {name: $keywordname, y: $buzz};
         }
-        createInteractionPie($content, $id);
+        createPotentialPie($content, $id);
     }
 }
 
-function createInteractionPie(dataSet, id) {
+function createPotentialPie(dataSet, id) {
     $('#'+id).highcharts({
         chart: {
             plotBackgroundColor: null,
@@ -45,16 +45,6 @@ function createInteractionPie(dataSet, id) {
             //pointFormat: '{series.name}: <b>{point.percentage:.1f}%</b>'
             pointFormat: 'Interactions: <b>{point.y}</b> ({point.percentage:.1f}%)<br/>'
         },
-        /*plotOptions: {
-            pie: {
-                allowPointSelect: true,
-                cursor: 'pointer',
-                dataLabels: {
-                    enabled: false
-                },
-                showInLegend: true
-            }
-        },*/
         plotOptions: {
             pie: {
                 allowPointSelect: true,

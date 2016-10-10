@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\ApiService;
 use App\ChartService;
 use App\DatatableService;
+use App\KeywordSelected;
 use App\ProjectService;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
@@ -15,6 +16,8 @@ use Illuminate\Support\Facades\Log;
 
 class ProjectController extends Controller
 {
+
+    use KeywordSelected;
 
     private $projectService;
     /**
@@ -605,19 +608,6 @@ class ProjectController extends Controller
         $data['project'] = $chart->project;
         $data['projectId'] = $projectId;
         return view('mediawave.socmed-instagram', $data);
-    }
-
-    private function isKeywordSelected($keywordId, $request)
-    {
-        $select = '';
-        if ($request->has('keywords')) {
-            if (in_array($keywordId, $request->input('keywords'))) {
-                $select = 'checked';
-            }
-        } else {
-            $select = 'checked';
-        }
-        return $select;
     }
 
 

@@ -44,98 +44,11 @@
                 </form>
             </div>
             <ul class="uk-grid uk-grid-medium" data-uk-grid data-uk-grid-margin>
-                <li class="uk-width-medium-1-1">
-                    <div class="md-card hoverable">
-                        <div class="md-card-toolbar">
-                            <div class="md-card-toolbar-actions">
-                                <a class="btn waves-effect waves-light z-depth-0 amber lighten-4 tooltipped" data-position="top" data-delay="25" data-tooltip="Help"><i class="material-icons">help</i></a>
-                                <a class="btn waves-effect waves-light z-depth-0 green lighten-4 tooltipped" data-position="top" data-delay="25" data-tooltip="Minimize" data-uk-toggle="{target:'#trend'}"><i class="material-icons md-icon">fullscreen</i></a>
-                            </div>
-                            <div class="md-card-toolbar-heading-text">
-                                <ul class="uk-subnav uk-subnav-pill" data-uk-switcher="{connect:'#trend ul'}">
-                                    <li class="uk-active"><a>BUZZ TREND</a></li>
-                                    <li><a>USER TREND</a></li>
-                                    <li><a>REACH TREND</a></li>
-                                </ul>
-                            </div>
-                        </div>
-                        <?php //TRENDS ?>
-                        <div id="trend" class="md-card-content">
-                            <ul class="uk-switcher">
-                                <li>
-                                    <div id="buzztrend" class="md-chart">BUZZ TREND</div>
-                                </li>
-                                <li>
-                                    <div id="usertrend" class="md-chart">USER TREND</div>
-                                </li>
-                                <li>
-                                    <div id="reachtrend" class="md-chart">REACH TREND</div>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                </li>
-                <li class="uk-width-medium-1-4">
-                    <?php //BUZZ PIE ?>
-                    <div class="md-card hoverable">
-                        <div class="md-card-toolbar">
-                            <div class="md-card-toolbar-actions">
-                                <a class="btn waves-effect waves-light z-depth-0 amber lighten-4 tooltipped" data-position="top" data-delay="25" data-tooltip="Help"><i class="material-icons">help</i></a>
-                                <a class="btn waves-effect waves-light z-depth-0 green lighten-4 tooltipped" data-position="top" data-delay="25" data-tooltip="Minimize" data-uk-toggle="{target:'#buzz'}"><i class="material-icons md-icon">fullscreen</i></a>
-                            </div>
-                            <h2 class="md-card-toolbar-heading-text">BUZZ</h2>
-                        </div>
-                        <div id="buzz" class="md-card-content">
-                            <div id="id-chartnya-disini" class="md-chart">Pie Chart</div>
-                        </div>
-                    </div>
-                </li>
-                <li class="uk-width-medium-1-4">
-                    <?php //INTERACTIONS PIE ?>
-                    <div class="md-card hoverable">
-                        <div class="md-card-toolbar">
-                            <div class="md-card-toolbar-actions">
-                                <a class="btn waves-effect waves-light z-depth-0 amber lighten-4 tooltipped" data-position="top" data-delay="25" data-tooltip="Help"><i class="material-icons">help</i></a>
-                                <a class="btn waves-effect waves-light z-depth-0 green lighten-4 tooltipped" data-position="top" data-delay="25" data-tooltip="Minimize" data-uk-toggle="{target:'#interaction'}"><i class="material-icons md-icon">fullscreen</i></a>
-                            </div>
-                            <h2 class="md-card-toolbar-heading-text">INTERACTIONS</h2>
-                        </div>
-                        <div id="interaction" class="md-card-content">
-                            <div id="id-chartnya-disini" class="md-chart">Pie Chart</div>
-                        </div>
-                    </div>
-                </li>
-                <li class="uk-width-medium-1-4">
-                    <?php //VIRAL REACH PIE ?>
-                    <div class="md-card hoverable">
-                        <div class="md-card-toolbar">
-                            <div class="md-card-toolbar-actions">
-                                <a class="btn waves-effect waves-light z-depth-0 amber lighten-4 tooltipped" data-position="top" data-delay="25" data-tooltip="Help"><i class="material-icons">help</i></a>
-                                <a class="btn waves-effect waves-light z-depth-0 green lighten-4 tooltipped" data-position="top" data-delay="25" data-tooltip="Minimize" data-uk-toggle="{target:'#viralreach'}"><i class="material-icons md-icon">fullscreen</i></a>
-                            </div>
-                            <h2 class="md-card-toolbar-heading-text">VIRAL REACH</h2>
-                        </div>
-                        <div id="viralreach" class="md-card-content">
-                            <div id="id-chartnya-disini" class="md-chart">Pie Chart</div>
-                        </div>
-                    </div>
-                </li>
 
-                <li class="uk-width-medium-1-4">
-                    <?php //POTENTIAL REACH PIE ?>
-                    <div class="md-card hoverable">
-                        <div class="md-card-toolbar">
-                            <div class="md-card-toolbar-actions">
-                                <a class="btn waves-effect waves-light z-depth-0 amber lighten-4 tooltipped" data-position="top" data-delay="25" data-tooltip="Help"><i class="material-icons">help</i></a>
-                                <a class="btn waves-effect waves-light z-depth-0 green lighten-4 tooltipped" data-position="top" data-delay="25" data-tooltip="Minimize" data-uk-toggle="{target:'#potreach'}"><i class="material-icons md-icon">fullscreen</i></a>
-                            </div>
-                            <h2 class="md-card-toolbar-heading-text">POTENTIAL REACH</h2>
-                        </div>
-                        <div id="potreach" class="md-card-content">
-                            <div id="id-chartnya-disini" class="md-chart">Pie Chart</div>
-                        </div>
-                    </div>
-                </li>
+                @include('mediawave.project-twitters.trend')
+
+                @include('mediawave.project-twitters.pie')
+
                 <li class="uk-width-medium-1-2">
                     <?php //SENTIMENT BAR ?>
                     <div class="md-card hoverable">
@@ -308,8 +221,25 @@
 @endsection
 
 @section('page-level-scripts')
+    <script type="text/javascript" src="{{ asset('js/jquery.blockUI.js') }}"></script>
+    <script type="text/javascript">
+        var ajaxUrl = '{!! url('/') !!}';
+        var csrfToken = '{!! csrf_token() !!}';
+        var projectId = '{!! $project->pid !!}';
+        var mediaId = 2;
+        var startDate = '{!! $startDate !!}';
+        var endDate = '{!! $endDate !!}';
+    </script>
+    <script src="{!! asset('js/projects/buzz-trend.js') !!}"></script>
+    <script src="{!! asset('js/projects/user-trend.js') !!}"></script>
+    <script src="{!! asset('js/projects/reach-trend.js') !!}"></script>
 
+    <script src="{!! asset('js/projects/buzz-pie.js') !!}"></script>
+    <script src="{!! asset('js/projects/interaction-pie.js') !!}"></script>
+    <script src="{!! asset('js/projects/viral-pie.js') !!}"></script>
+    <script src="{!! asset('js/projects/potential-pie.js') !!}"></script>
     <script>
+
         $(document).ready(function() {
             $('#table_author').DataTable( {
                 "order": [[ 0, "desc" ]]

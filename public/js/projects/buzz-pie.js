@@ -1,5 +1,5 @@
 $.ajax({
-    url : ajaxUrl + '/project/chart-data/buzz-pie',
+    url : ajaxUrl + '/project/chart-data/buzz-pie/' + mediaId,
     beforeSend : function(xhr) {
         $('#buzzpie').block({
             message: '<img src="' + ajaxUrl + '/mediawave/img/spinner.gif">',

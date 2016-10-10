@@ -1,40 +1,39 @@
 $.ajax({
-    url : ajaxUrl + '/project/chart-data/reach-trend/' + mediaId,
+    url : ajaxUrl + '/project/chart-data/user-trend/',
     beforeSend : function(xhr) {
-        $('#reachtrend').block({
+        $('#usertrend').block({
             message: '<img src="' + ajaxUrl + '/mediawave/img/spinner.gif">',
             css: { border: 'none', zIndex: 100 },
             overlayCSS: { backgroundColor: '#fff', zIndex: 100 }
         });
     },
     complete : function(xhr, status) {
-        $('#reachtrend').unblock();
+        $('#usertrend').unblock();
     },
     success : function(result) {
-        // console.log(result);
-        reachTrendChart('reachtrend', jQuery.parseJSON(result));
+        userTrend('usertrend', jQuery.parseJSON(result));
     }
 });
 
-function reachTrendChart($id, $data) {
-    if ($data.length === 0) {
-        $('#'+$id).html("<div class='center'>No data chart</div>");
+function userTrend($id, $data) {
+    if ($data.dates.length === 0) {
+        $content.html("<div class='center'>No data chart</div>");
     } else {
-        $dates = $data.dates;
-        $content = [];
+        var $content = [];
         for (var i = 0; i < $data.data.length; i++) {
-            $content[i] = { name: $data.data[i].keywordName, data: $data.data[i].post };
+            $content[i] = { name: $data.data[i].keywordName, data: $data.data[i].user };
         }
-        var data = {
+        var chartData = {
             content: $content,
-            categories: $dates
+            categories: $data.dates
         };
 
-        createReachTrend(data, $id);
+        createUserTrendChart(chartData, $id);
     }
 }
 
-function createReachTrend(data, id) {
+
+function createUserTrendChart(chartData, id) {
     $('#' + id).highcharts({
         chart: {
             type: 'spline',
@@ -46,7 +45,7 @@ function createReachTrend(data, id) {
             text: null
         },
         xAxis: {
-            categories: data.categories,
+            categories: chartData.categories,
             labels: {
                 formatter: function() {
                     //return(this.value.substring(0,10) + "...");
@@ -60,7 +59,7 @@ function createReachTrend(data, id) {
         },
         yAxis: {
             title: {
-                text: 'Reach'
+                text: 'User'
             },
             plotLines: [{
                 value: 0,
@@ -69,8 +68,8 @@ function createReachTrend(data, id) {
             }]
         },
         tooltip: {
-            valueSuffix: ' Reach'
+            valueSuffix: ' User'
         },
-        series: data.content
+        series: chartData.content
     });
 }
