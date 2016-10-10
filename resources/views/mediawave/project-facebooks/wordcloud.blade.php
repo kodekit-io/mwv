@@ -9,7 +9,7 @@
             <h2 class="md-card-toolbar-heading-text">WORD CLOUDS</h2>
         </div>
         <div id="wordcloud" class="md-card-content">
-            <div id="id-chartnya-disini" class="md-chart"></div>
+            <div id="wordcloud-container" class="md-chart"></div>
         </div>
     </div>
 </li>

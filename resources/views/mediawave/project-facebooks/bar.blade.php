@@ -9,7 +9,7 @@
             <h2 class="md-card-toolbar-heading-text">SENTIMENT</h2>
         </div>
         <div id="barwrap1" class="md-card-content">
-            <div id="share-brand-container" class="md-chart">Bar Chart</div>
+            <div id="sentimentbar" class="md-chart">Bar Chart</div>
         </div>
     </div>
 </li>
@@ -25,7 +25,7 @@
             <h2 class="md-card-toolbar-heading-text">COMMENT INTERACTION</h2>
         </div>
         <div id="barwrap2" class="md-card-content">
-            <div id="id-chartnya-disini" class="md-chart">Bar Chart</div>
+            <div id="commentbar" class="md-chart">Bar Chart</div>
         </div>
     </div>
 </li>

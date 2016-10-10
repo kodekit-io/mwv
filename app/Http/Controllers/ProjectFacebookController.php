@@ -46,7 +46,7 @@ class ProjectFacebookController extends Controller
         }
 
         $profiles = $this->projectService->projectInfo($projectId);
-        $wordCloud = $this->chartService->wordCloud($projectId, '', $brands, $startDate, $endDate);
+        $wordCloud = $this->chartService->wordCloud($projectId, 1, $brands, $startDate, $endDate);
         $viewInfluencer = $this->chartService->viewInfluencer($projectId, '', $brands, $startDate, $endDate);
 
         $keywords = [];

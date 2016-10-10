@@ -165,4 +165,11 @@ class ProjectChartService
 
         return $this->getChart('project/1/'. $mediaId .'/share', $params);
     }
+
+    public function commentBar($projectId = '', $keywords = '', $startDate = '', $endDate = '')
+    {
+        $params = $this->generateParams($projectId, $keywords, $startDate, $endDate);
+
+        return $this->getChart('project/1/commentinteraction', $params);
+    }
 }

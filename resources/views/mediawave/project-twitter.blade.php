@@ -105,6 +105,7 @@
     <script src="{!! asset('js/projects/convo-twitter.js') !!}"></script>
 
     <script type="text/javascript">
+        $('#table_author').DataTable();
         wordCloud('wordcloud-container', jQuery.parseJSON('{!! $wordCloud !!}'));
     </script>
 

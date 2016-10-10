@@ -140,6 +140,12 @@ class ChartController extends Controller
         return \GuzzleHttp\json_encode($chart);
     }
 
+    public function commentBarData()
+    {
+        $chart = $this->projectChartService->commentBar();
+        return \GuzzleHttp\json_encode($chart);
+    }
+
     public function convoTwitterData()
     {
         $chart = $this->projectChartService->convoData(2);

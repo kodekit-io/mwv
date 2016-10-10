@@ -16,7 +16,6 @@
                     <th>Popular</th>
                     <th>Active</th>
                     <th>Impact</th>
-                    <th></th>
                 </tr>
                 </thead>
                 <tbody>

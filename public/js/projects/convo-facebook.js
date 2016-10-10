@@ -8,14 +8,31 @@ $('#table_facebook').DataTable( {
         }
     },
     "columns": [
-        { "data": "Date" },
         { "data": "Author" },
         { "data": "Post" },
         { "data": "Comments" },
         { "data": "Likes" },
         { "data": "Shares" },
         { "data": "Media Type" },
-        { "data": "Sentiment" },
+        {
+            "data": null,
+            "render": function ( data ) {
+                var sentiment = data["Sentiment"];
+                //var c = "";
+                switch (sentiment) {
+                    case 'positive':
+                        c = 'teal white-text uk-button uk-button-mini';
+                        break;
+                    case 'neutral':
+                        c = 'blue-grey lighten-3 white-text uk-button uk-button-mini';
+                        break;
+                    case 'negative':
+                        c = 'red white-text uk-button uk-button-mini';
+                        break;
+                }
+                return '<span class="'+c+'">'+sentiment+'</span>';
+            }
+        },
     ],
     "columnDefs": [{
         "visible": false,

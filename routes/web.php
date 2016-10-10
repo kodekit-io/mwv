@@ -53,6 +53,7 @@ Route::group(['middleware' => 'auth'], function () {
     Route::get('/project/chart-data/like-pie', 'ChartController@likePieData');
 
     Route::get('/project/chart-data/share-of-media-bar', 'ChartController@shareOfMediaBarData');
+    Route::get('/project/chart-data/comment-bar', 'ChartController@commentBarData');
 
     Route::get('/project/chart-data/convo-twitter', 'ChartController@convoTwitterData');
     Route::get('/project/chart-data/convo-facebook', 'ChartController@convoFacebookData');

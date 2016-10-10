@@ -16,9 +16,18 @@
                     <th>Popular</th>
                     <th>Active</th>
                     <th>Impact</th>
-                    <th></th>
                 </tr>
                 </thead>
+                @if (count($viewInfluencers) > 0)
+                    @foreach($viewInfluencers->top10LikeStatus->data as $influencer)
+                        <tr>
+                            <td>{!! $influencer->name !!}</td>
+                            <td>{!! $influencer->score !!}</td>
+                            <td>{!! $influencer->value !!}</td>
+                            <td><a href="{!! $influencer->url !!}" class="uk-button uk-button-mini uk-button-success white-text" target="_blank">See Details</a></td>
+                        </tr>
+                    @endforeach
+                @endif
             </table>
         </div>
     </div>
@@ -34,7 +43,7 @@
         </div>
         <div id="convwrap" class="md-card-content conv-wrap">
             <?php //POSTS ?>
-            <table id="table_page" class="striped bordered highlight responsive-table">
+            <table id="table_facebook" class="striped bordered highlight responsive-table">
                 <thead>
                 <tr>
                     <th>Author</th>
@@ -44,7 +53,7 @@
                     <th>Share</th>
                     <th>Media Type</th>
                     <th>Sentiment</th>
-                    <th><input type="checkbox" class="" id="" /><label for="">Select All</label></th>
+                    {{--<th><input type="checkbox" class="" id="" /><label for="">Select All</label></th>--}}
                 </tr>
                 </thead>
             </table>

@@ -114,8 +114,19 @@
     <script src="{!! asset('js/projects/comment-pie.js') !!}"></script>
     <script src="{!! asset('js/projects/like-pie.js') !!}"></script>
     <script src="{!! asset('js/projects/share-pie.js') !!}"></script>
-    <script>
 
+    <script src="{!! asset('js/projects/sentiment-bar.js') !!}"></script>
+    <script src="{!! asset('js/projects/comment-bar.js') !!}"></script>
+
+    <script src="{!! asset('js/projects/word-cloud.js') !!}"></script>
+
+    <script src="{!! asset('js/projects/convo-facebook.js') !!}"></script>
+
+    <script type="text/javascript">
+        $('#table_author').DataTable( {
+            "order": [[ 0, "desc" ]]
+        });
+        wordCloud('wordcloud-container', jQuery.parseJSON('{!! $wordCloud !!}'));
     </script>
 
 @endsection
