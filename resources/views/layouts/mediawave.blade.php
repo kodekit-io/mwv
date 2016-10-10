@@ -14,6 +14,7 @@
     <!--<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i" />-->
     <link rel="stylesheet" href="{!! asset('mediawave/css/uikit.min.css') !!}" />
     <link rel="stylesheet" href="{!! asset('mediawave/css/components/datepicker.min.css') !!}" />
+    <link rel="stylesheet" href="{!! asset('mediawave/css/components/tooltip.min.css') !!}" />
     <link rel="stylesheet" href="{!! asset('mediawave/css/materialize.min.css') !!}" />
     <link rel="stylesheet" href="{!! asset('mediawave/css/main.css') !!}" />
     <link rel="stylesheet" href="{!! asset('mediawave/css/intro.js.css') !!}" />
@@ -45,6 +46,7 @@
 <!-- link all the scripts -->
 <script src="{!! asset('mediawave/js/jquery.min.js') !!}"></script>
 <script src="{!! asset('mediawave/js/uikit.min.js') !!}"></script>
+<script src="{!! asset('mediawave/js/components/tooltip.min.js') !!}"></script>
 <script src="{!! asset('mediawave/js/materialize.min.js') !!}"></script>
 <script src="{!! asset('mediawave/js/jquery.validate.min.js') !!}"></script>
 <script src="{!! asset('mediawave/js/html2canvas.js') !!}"></script>
