@@ -71,11 +71,11 @@ class ProjectChartService
         return $this->getChart('project/1/'. $mediaId .'/interaction', $params);
     }
 
-    public function postPie($projectId = '', $keywords = '', $startDate = '', $endDate = '')
+    public function postPie($mediaId, $projectId = '', $keywords = '', $startDate = '', $endDate = '')
     {
         $params = $this->generateParams($projectId, $keywords, $startDate, $endDate);
 
-        return $this->getChart('project/1/8/post', $params);
+        return $this->getChart('project/1/' . $mediaId .'/post', $params);
     }
 
     public function uniqueUserPie($projectId = '', $keywords = '', $startDate = '', $endDate = '')
@@ -143,5 +143,26 @@ class ProjectChartService
         $params = $this->generateParams($projectId, $keywords, $startDate, $endDate);
 
         return $this->getChart('project/1/'. $mediaId .'/potentialreach', $params);
+    }
+
+    public function commentPie($mediaId, $projectId = '', $keywords = '', $startDate = '', $endDate = '')
+    {
+        $params = $this->generateParams($projectId, $keywords, $startDate, $endDate);
+
+        return $this->getChart('project/1/'. $mediaId .'/comment', $params);
+    }
+
+    public function likePie($projectId = '', $keywords = '', $startDate = '', $endDate = '')
+    {
+        $params = $this->generateParams($projectId, $keywords, $startDate, $endDate);
+
+        return $this->getChart('project/1/like', $params);
+    }
+
+    public function sharePie($mediaId, $projectId = '', $keywords = '', $startDate = '', $endDate = '')
+    {
+        $params = $this->generateParams($projectId, $keywords, $startDate, $endDate);
+
+        return $this->getChart('project/1/'. $mediaId .'/share', $params);
     }
 }

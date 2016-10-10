@@ -40,14 +40,17 @@ Route::group(['middleware' => 'auth'], function () {
     Route::get('/project/chart-data/potential-pie/{mediaId}', 'ChartController@potentialPieData');
     Route::get('/project/chart-data/sentiment-bar/{mediaId}', 'ChartController@sentimentBarData');
     Route::get('/project/chart-data/interaction-bar/{mediaId}', 'ChartController@interactionBarData');
+    Route::get('/project/chart-data/post-pie/{mediaId}', 'ChartController@postPieData');
+    Route::get('/project/chart-data/comment-pie/{mediaId}', 'ChartController@commentPieData');
+    Route::get('/project/chart-data/share-pie/{mediaId}', 'ChartController@sharePieData');
 
     Route::get('/project/chart-data/post-trend', 'ChartController@postTrendData');
     Route::get('/project/chart-data/interaction-trend', 'ChartController@interactionTrendData');
     Route::get('/project/chart-data/user-trend', 'ChartController@userTrend');
 
-    Route::get('/project/chart-data/post-pie', 'ChartController@postPieData');
     Route::get('/project/chart-data/unique-user-pie', 'ChartController@uniqueUserPieData');
     Route::get('/project/chart-data/viral-pie', 'ChartController@viralPieData');
+    Route::get('/project/chart-data/like-pie', 'ChartController@likePieData');
 
     Route::get('/project/chart-data/share-of-media-bar', 'ChartController@shareOfMediaBarData');
 
@@ -62,7 +65,7 @@ Route::group(['middleware' => 'auth'], function () {
     Route::get('/conversation', 'ProjectController@conversation');
 
     Route::get('/project-twitter/{pid}', 'ProjectTwitterController@detail');
-    Route::get('/project-facebook/{pid}', 'ProjectController@detailFB');
+    Route::get('/project-facebook/{pid}', 'ProjectFacebookController@detail');
     Route::get('/project-news/{pid}', 'ProjectController@detailNews');
     Route::get('/project-forum/{pid}', 'ProjectController@detailForum');
     Route::get('/project-video/{pid}', 'ProjectController@detailVideo');

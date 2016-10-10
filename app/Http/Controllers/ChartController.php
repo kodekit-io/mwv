@@ -72,9 +72,9 @@ class ChartController extends Controller
         return \GuzzleHttp\json_encode($chart);
     }
 
-    public function postPieData()
+    public function postPieData($mediaId)
     {
-        $chart = $this->projectChartService->postPie();
+        $chart = $this->projectChartService->postPie($mediaId);
         return \GuzzleHttp\json_encode($chart);
     }
 
@@ -99,6 +99,24 @@ class ChartController extends Controller
     public function potentialPieData($mediaId)
     {
         $chart = $this->projectChartService->potentialPie($mediaId);
+        return \GuzzleHttp\json_encode($chart);
+    }
+
+    public function commentPieData($mediaId)
+    {
+        $chart = $this->projectChartService->commentPie($mediaId);
+        return \GuzzleHttp\json_encode($chart);
+    }
+
+    public function likePieData()
+    {
+        $chart = $this->projectChartService->likePie();
+        return \GuzzleHttp\json_encode($chart);
+    }
+
+    public function sharePieData($mediaId)
+    {
+        $chart = $this->projectChartService->sharePie($mediaId);
         return \GuzzleHttp\json_encode($chart);
     }
 
