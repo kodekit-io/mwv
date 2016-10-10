@@ -54,86 +54,9 @@
                 @include('mediawave.project-twitters.wordcloud')
 
                 @include('mediawave.project-twitters.influencer')
-                <li class="uk-width-medium-1-1">
-                    <div class="md-card hoverable">
-                        <div class="md-card-toolbar">
-                            <div class="md-card-toolbar-actions">
-                                <a class="btn waves-effect waves-light z-depth-0 amber lighten-4 tooltipped" data-position="top" data-delay="25" data-tooltip="Help"><i class="material-icons">help</i></a>
-                                <a class="btn waves-effect waves-light z-depth-0 green lighten-4 tooltipped" data-position="top" data-delay="25" data-tooltip="Minimize" data-uk-toggle="{target:'#conv'}"><i class="material-icons md-icon">fullscreen</i></a>
-                            </div>
-                            <div class="md-card-toolbar-heading-text">
-                                <ul class="uk-subnav uk-subnav-pill" data-uk-switcher="{connect:'#convwrap ul'}">
-                                    <li class="uk-active"><a class="active" href="#convposts">Posts</a></li>
-                                    <li><a href="#convhashtags">Hashtags</a></li>
-                                    <li><a href="#convlinks">Links</a></li>
-                                </ul>
-                            </div>
-                        </div>
-                        <div id="convwrap" class="md-card-content conv-wrap">
-                            <ul class="uk-switcher">
-                                <li>
-                                    <div id="convposts" class="col s12">
-                                        <?php //POSTS ?>
-                                        <table id="table_posts" class="striped bordered highlight responsive-table">
-                                            <thead>
-                                            <tr>
-                                                <th>Author</th>
-                                                <th>Posts</th>
-                                                <th>Original Reach</th>
-                                                <th>Viral Reach</th>
-                                                <th>Interactions</th>
-                                                <th>Viral Score</th>
-                                                <th>Sentiment</th>
-                                                <th><input type="checkbox" class="" id="" /><label for="">Select All</label></th>
-                                            </tr>
-                                            </thead>
-                                        </table>
-                                    </div>
-                                </li>
-                                <li>
-                                    <div id="convhashtags" class="col s12">
-                                        <?php //HASHTAG  ?>
-                                        <table id="table_hashtag" class="striped bordered highlight responsive-table">
-                                            <thead>
-                                            <tr>
-                                                <th>Author</th>
-                                                <th>Posts</th>
-                                                <th>Original Reach</th>
-                                                <th>Viral Reach</th>
-                                                <th>Interactions</th>
-                                                <th>Viral Score</th>
-                                                <th>Sentiment</th>
-                                                <th><input type="checkbox" class="" id="" /><label for="">Select All</label></th>
-                                            </tr>
-                                            </thead>
-                                        </table>
-                                    </div>
-                                </li>
-                                <li>
-                                    <div id="convlinks" class="col s12">
-                                        <?php //LINKS ?>
-                                        <table id="table_links"  class="striped bordered highlight responsive-table">
-                                            <thead>
-                                            <tr>
-                                                <th>Site</th>
-                                                <th>Title</th>
-                                                <th>Original Reach</th>
-                                                <th>Viral Reach</th>
-                                                <th>Interactions</th>
-                                                <th>Viral Score</th>
-                                                <th>Sentiment</th>
-                                                <th><input type="checkbox" class="" id="" /><label for="">Select All</label></th>
-                                            </tr>
-                                            </thead>
-                                        </table>
-                                    </div>
-                                </li>
-                            </ul>
 
-                        </div>
-                    </div>
+                @include('mediawave.project-twitters.conversation')
 
-                </li>
             </ul>
         </div>
     </main>
@@ -178,25 +101,11 @@
     <script src="{!! asset('js/projects/interaction-bar.js') !!}"></script>
 
     <script src="{!! asset('js/projects/word-cloud.js') !!}"></script>
+
+    <script src="{!! asset('js/projects/convo-twitter.js') !!}"></script>
+
     <script type="text/javascript">
         wordCloud('wordcloud-container', jQuery.parseJSON('{!! $wordCloud !!}'));
-    </script>
-    <script>
-
-        $(document).ready(function() {
-            $('#table_author').DataTable( {
-                "order": [[ 0, "desc" ]]
-            });
-            $('#table_posts').DataTable( {
-                "order": [[ 0, "desc" ]]
-            });
-            $('#table_hashtag').DataTable( {
-                "order": [[ 0, "desc" ]]
-            });
-            $('#table_links').DataTable( {
-                "order": [[ 0, "desc" ]]
-            });
-        });
     </script>
 
 @endsection

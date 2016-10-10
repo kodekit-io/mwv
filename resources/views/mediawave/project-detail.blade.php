@@ -112,6 +112,9 @@
     <script src="{!! asset('js/projects/convo-forum.js') !!}"></script>
 
     <script type="text/javascript">
+        $('#table_author').DataTable( {
+            "order": [[ 0, "desc" ]]
+        });
         wordCloud('wordcloud-container', jQuery.parseJSON('{!! $wordCloud !!}'));
     </script>
 

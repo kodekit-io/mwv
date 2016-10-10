@@ -1,6 +1,4 @@
-$('#table_author').DataTable( {
-    "order": [[ 0, "desc" ]]
-});
+
 var table_twitter = $('#table_twitter').DataTable( {
     //"processing": true,
     //"serverSide": true,
