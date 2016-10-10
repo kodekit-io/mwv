@@ -1,6 +1,5 @@
 $.ajax({
-    url : ajaxUrl + '/project/chart-data/interaction-bar',
-    //url : ajaxUrl + "/mediawave/jsontest/column-interactionrate.json",
+    url : ajaxUrl + '/project/chart-data/interaction-bar/' + mediaId,
     beforeSend : function(xhr) {
         $('#interactionbar').block({
             message: '<img src="' + ajaxUrl + '/mediawave/img/spinner.gif">',

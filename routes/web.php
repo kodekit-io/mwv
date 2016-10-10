@@ -38,6 +38,8 @@ Route::group(['middleware' => 'auth'], function () {
     Route::get('/project/chart-data/buzz-pie/{mediaId}', 'ChartController@buzzPieData');
     Route::get('/project/chart-data/interaction-pie/{mediaId}', 'ChartController@interactionPieData');
     Route::get('/project/chart-data/potential-pie/{mediaId}', 'ChartController@potentialPieData');
+    Route::get('/project/chart-data/sentiment-bar/{mediaId}', 'ChartController@sentimentBarData');
+    Route::get('/project/chart-data/interaction-bar/{mediaId}', 'ChartController@interactionBarData');
 
     Route::get('/project/chart-data/post-trend', 'ChartController@postTrendData');
     Route::get('/project/chart-data/interaction-trend', 'ChartController@interactionTrendData');
@@ -47,8 +49,6 @@ Route::group(['middleware' => 'auth'], function () {
     Route::get('/project/chart-data/unique-user-pie', 'ChartController@uniqueUserPieData');
     Route::get('/project/chart-data/viral-pie', 'ChartController@viralPieData');
 
-    Route::get('/project/chart-data/sentiment-bar', 'ChartController@sentimentBarData');
-    Route::get('/project/chart-data/interaction-bar', 'ChartController@interactionBarData');
     Route::get('/project/chart-data/share-of-media-bar', 'ChartController@shareOfMediaBarData');
 
     Route::get('/project/chart-data/convo-twitter', 'ChartController@convoTwitterData');

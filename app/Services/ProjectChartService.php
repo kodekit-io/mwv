@@ -96,18 +96,18 @@ class ProjectChartService
         ];
     }
 
-    public function sentimentBar($projectId = '', $keywords = '', $startDate = '', $endDate = '')
+    public function sentimentBar($mediaId, $projectId = '', $keywords = '', $startDate = '', $endDate = '')
     {
         $params = $this->generateParams($projectId, $keywords, $startDate, $endDate);
 
-        return $this->getChart('project/1/8/sentiment', $params);
+        return $this->getChart('project/1/'. $mediaId .'/sentiment', $params);
     }
 
-    public function interactionBar($projectId = '', $keywords = '', $startDate = '', $endDate = '')
+    public function interactionBar($mediaId, $projectId = '', $keywords = '', $startDate = '', $endDate = '')
     {
         $params = $this->generateParams($projectId, $keywords, $startDate, $endDate);
 
-        return $this->getChart('project/1/8/interactionrate', $params);
+        return $this->getChart('project/1/'. $mediaId .'/interactionrate', $params);
     }
 
     public function shareOfMediaBar($projectId = '', $keywords = '', $startDate = '', $endDate = '')

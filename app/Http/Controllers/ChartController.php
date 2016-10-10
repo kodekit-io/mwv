@@ -102,16 +102,15 @@ class ChartController extends Controller
         return \GuzzleHttp\json_encode($chart);
     }
 
-    public function sentimentBarData()
+    public function sentimentBarData($mediaId)
     {
-        $chart = $this->projectChartService->sentimentBar();
-        //var_dump($chart); exit;
+        $chart = $this->projectChartService->sentimentBar($mediaId);
         return \GuzzleHttp\json_encode($chart);
     }
 
-    public function interactionBarData()
+    public function interactionBarData($mediaId)
     {
-        $chart = $this->projectChartService->interactionBar();
+        $chart = $this->projectChartService->interactionBar($mediaId);
         return \GuzzleHttp\json_encode($chart);
     }
 
