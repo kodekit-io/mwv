@@ -71,7 +71,7 @@
                         <div class="md-card-content">
                             <div id="container-{{ $project->pid }}" class="sum-project"></div>
                             <div class="center-align">
-                                <a id="" href="{!! url('project-detail/' . $project->pid) !!}" class="waves-effect waves-light btn center-align z-depth-0 deep-orange white-text" title="View Project"><i class="material-icons left">visibility</i> VIEW PROJECT</a>
+                                <a id="" href="{!! url('project-detail/' . $project->pid) !!}" class="waves-effect waves-light btn center-align z-depth-0 deep-orange" title="View Project"><i class="material-icons left">equalizer</i> VIEW PROJECT</a>
                             </div>
                         </div>
                     </div>

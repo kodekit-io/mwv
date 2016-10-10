@@ -1,6 +1,6 @@
 $.ajax({
-    //url : ajaxUrl + '/project/chart-data/interaction-bar',
-    url : ajaxUrl + "/mediawave/jsontest/column-interactionrate.json",
+    url : ajaxUrl + '/project/chart-data/interaction-bar',
+    //url : ajaxUrl + "/mediawave/jsontest/column-interactionrate.json",
     beforeSend : function(xhr) {
         $('#interactionbar').block({
             message: '<img src="' + ajaxUrl + '/mediawave/img/spinner.gif">',
@@ -12,7 +12,7 @@ $.ajax({
         $('#interactionbar').unblock();
     },
     success : function(result) {
-        interactionBar('interactionbar', result);
+        interactionBar('interactionbar', jQuery.parseJSON(result));
     }
 });
 

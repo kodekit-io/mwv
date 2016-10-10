@@ -7,7 +7,11 @@ Highcharts.theme = {
 		}
 	},
 	title: {
-
+		style: {
+			fontSize: '1em',
+			fontWeight: 'normal',
+			textTransform: 'uppercase'
+		}
 	},
 	subtitle: {
 

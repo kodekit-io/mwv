@@ -45,6 +45,7 @@ function brandChart($id, $data) {
                         Buzz: $buzz
                     }
                 ],
+                name: [$keywordName],
                 color: $color
             };
         } //end of for
@@ -53,16 +54,19 @@ function brandChart($id, $data) {
 }
 
 function showEquityChart($id, $data) {
+    var w = $('.uk-grid div').width();
+    //console.log(w);
     $('#' + $id).highcharts({
 
         chart: {
             type: 'bubble',
             plotBorderWidth: 1,
-            zoomType: 'xy'
+            height: 200,
+            width: w - 50
         },
 
         legend: {
-            enabled: false
+            enabled: true
         },
 
         //title: {

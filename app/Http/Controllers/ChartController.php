@@ -87,7 +87,7 @@ class ChartController extends Controller
     public function sentimentBarData()
     {
         $chart = $this->projectChartService->sentimentBar();
-        var_dump($chart); exit;
+        //var_dump($chart); exit;
         return \GuzzleHttp\json_encode($chart);
     }
 
@@ -100,7 +100,7 @@ class ChartController extends Controller
     public function shareOfMediaBarData()
     {
         $chart = $this->projectChartService->shareOfMediaBar();
-        var_dump($chart->getContents()); exit;
+        //var_dump($chart->getContents()); exit;
         // echo \GuzzleHttp\json_encode($chart); exit;
         return \GuzzleHttp\json_encode($chart);
     }
