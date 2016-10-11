@@ -60,7 +60,7 @@ class ChartController extends Controller
         return \GuzzleHttp\json_encode($chart);
     }
 
-    public function userTrend()
+    public function userTrendData()
     {
         $chart = $this->projectChartService->userTrend();
         return \GuzzleHttp\json_encode($chart);
@@ -197,6 +197,18 @@ class ChartController extends Controller
     public function commentTrendData($mediaId)
     {
         $chart = $this->projectChartService->commentTrend($mediaId);
+        return \GuzzleHttp\json_encode($chart);
+    }
+
+    public function ratingPieData()
+    {
+        $chart = $this->projectChartService->ratingPie();
+        return \GuzzleHttp\json_encode($chart);
+    }
+
+    public function viewTrendData()
+    {
+        $chart = $this->projectChartService->viewTrend();
         return \GuzzleHttp\json_encode($chart);
     }
 

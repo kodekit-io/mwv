@@ -9,7 +9,7 @@
         </div>
         <div id="authorwrap" class="md-card-content conv-wrap">
             <?php //INFLUENCER/AUTHOR TABLE ?>
-            <table id="table_author" class="striped bordered highlight responsive-table">
+            <table id="table_author" class="uk-table uk-table-striped uk-table-hover bordered" cellspacing="0" width="100%">
                 <thead>
                 <tr>
                     <th>Author</th>
@@ -40,17 +40,16 @@
                 <a class="btn waves-effect waves-light z-depth-0 amber lighten-4 tooltipped" data-position="top" data-delay="25" data-tooltip="Help"><i class="material-icons">help</i></a>
                 <a class="btn waves-effect waves-light z-depth-0 green lighten-4 tooltipped" data-position="top" data-delay="25" data-tooltip="Minimize" data-uk-toggle="{target:'#convwrap'}"><i class="material-icons md-icon">fullscreen</i></a>
             </div>
-            <h2 class="md-card-toolbar-heading-text">THREAD</h2>
+            <h2 class="md-card-toolbar-heading-text">BLOG POSTS</h2>
         </div>
         <div id="convwrap" class="md-card-content conv-wrap">
-            <?php //THREAD TABLE ?>
-            <table id="table_thread" class="striped bordered highlight responsive-table">
+            <?php //POSTS ?>
+            <table id="table_post" class="uk-table uk-table-striped uk-table-hover bordered" cellspacing="0" width="100%">
                 <thead>
                 <tr>
-                    <th>Forum</th>
-                    <th>Thread Title</th>
-                    <th>Post Count</th>
-                    <th>Thread Starter</th>
+                    <th>Author</th>
+                    <th>Title</th>
+                    <th>Summary</th>
                     <th>Sentiment</th>
                     <th><input type="checkbox" class="" id="" /><label for="">Select All</label></th>
                 </tr>
