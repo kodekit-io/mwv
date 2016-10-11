@@ -170,5 +170,23 @@ class ChartController extends Controller
         return \GuzzleHttp\json_encode($chart);
     }
 
+    public function convoVideoData()
+    {
+        $chart = $this->projectChartService->convoData(5);
+        return \GuzzleHttp\json_encode($chart);
+    }
+
+    public function convoBlogData()
+    {
+        $chart = $this->projectChartService->convoData(3);
+        return \GuzzleHttp\json_encode($chart);
+    }
+
+    public function convoInstagramData()
+    {
+        $chart = $this->projectChartService->convoData(7);
+        return \GuzzleHttp\json_encode($chart);
+    }
+
 
 }

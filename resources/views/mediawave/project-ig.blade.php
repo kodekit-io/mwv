@@ -199,12 +199,14 @@
                             <table id="table_ig" class="striped bordered highlight responsive-table">
                                 <thead>
                                 <tr>
+                                    <th>Date</th>
                                     <th>Author</th>
-                                    <th>Posts</th>
-                                    <th>Comment</th>
-                                    <th>Like</th>
+                                    <th>Post</th>
+                                    <th>Likes</th>
+                                    <th>Comments</th>
                                     <th>Potential Reach</th>
-                                    <!--<th><input type="checkbox" class="" id="" /><label for="">Select All</label></th>-->
+                                    <th>Post Url</th>
+                                    <th>Image Url</th>
                                 </tr>
                                 </thead>
                             </table>
@@ -234,14 +236,16 @@
 
 @section('page-level-scripts')
 
+<script src="{!! asset('js/projects/convo-ig.js') !!}"></script>
+
 <script>
     $(document).ready(function() {
-        $('#table_author').DataTable( {
+        /*$('#table_author').DataTable( {
             "order": [[ 0, "desc" ]]
         });
         $('#table_ig').DataTable( {
             "order": [[ 0, "desc" ]]
-        });
+        });*/
     });
 </script>
 

@@ -59,6 +59,9 @@ Route::group(['middleware' => 'auth'], function () {
     Route::get('/project/chart-data/convo-facebook', 'ChartController@convoFacebookData');
     Route::get('/project/chart-data/convo-news', 'ChartController@convoNewsData');
     Route::get('/project/chart-data/convo-forum', 'ChartController@convoForumData');
+    Route::get('/project/chart-data/convo-video', 'ChartController@convoVideoData');
+    Route::get('/project/chart-data/convo-blog', 'ChartController@convoBlogData');
+    Route::get('/project/chart-data/convo-instagram', 'ChartController@convoInstagramData');
 
 
     Route::get('/project-detail/{pid}', 'ProjectController@detail');

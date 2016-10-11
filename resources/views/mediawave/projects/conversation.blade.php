@@ -43,7 +43,7 @@
             </div>
             <h2 class="md-card-toolbar-heading-text">CONVERSATIONS</h2>
         </div>
-        <div id="conv" class="md-card-content">
+        <div id="conv" class="md-card-content convo-all">
             <div class="row conv-wrap">
                 <div class="col s12">
                     <ul class="tabs conv-tabs">
@@ -69,7 +69,6 @@
                             <th>Viral Score</th>
                             <th>Sentiment</th>
                             <th>Link</th>
-                            <th></th>
                         </tr>
                         </thead>
                     </table>
@@ -80,13 +79,15 @@
                         <thead>
                         <tr>
                             <th>Date</th>
-                            <th>Author</th>
+                            <th>Page</th>
                             <th>Post</th>
                             <th>Comments</th>
                             <th>Likes</th>
                             <th>Shares</th>
                             <th>Media Type</th>
                             <th>Sentiment</th>
+                            <th>Page Link</th>
+                            <th>Post Link</th>
                         </tr>
                         </thead>
                     </table>
@@ -99,11 +100,12 @@
                             <th>Date</th>
                             <th>Media</th>
                             <th>Title</th>
-                            <th>Url</th>
-                            <th>Comments</th>
                             <th>Summary</th>
-                            <th>Sentiment</th>
+                            <th>Comments</th>
                             <th>Reach</th>
+                            <th>Sentiment</th>
+                            <th>Media Url</th>
+                            <th>Url</th>
                         </tr>
                         </thead>
                     </table>
@@ -114,15 +116,12 @@
                         <thead>
                         <tr>
                             <th>Date</th>
-                            <th>Author</th>
-                            <th>Post</th>
-                            <th>Original Reach</th>
-                            <th>Viral Reach</th>
-                            <th>Interactions</th>
-                            <th>Viral Score</th>
+                            <th>Forum</th>
+                            <th>Thread Starter</th>
+                            <th>Thread Title</th>
+                            <th>Replies</th>
                             <th>Sentiment</th>
-                            <th>Link</th>
-                            <th></th>
+                            <th>Url</th>
                         </tr>
                         </thead>
                     </table>
@@ -132,12 +131,14 @@
                     <table id="table_video" class="striped bordered highlight responsive-table">
                         <thead>
                         <tr>
+                            <th>Date</th>
                             <th>Author</th>
-                            <th>Posts</th>
+                            <th>Post</th>
                             <th>Likes</th>
                             <th>Comments</th>
-                            <th>Potential Reach</th>
-                            <th>Sentiment</th>
+                            <th>View</th>
+                            <th>Author Url</th>
+                            <th>Post Url</th>
                         </tr>
                         </thead>
                     </table>
@@ -147,10 +148,12 @@
                     <table id="table_blog" class="striped bordered highlight responsive-table">
                         <thead>
                         <tr>
-                            <th>Authors</th>
+                            <th>Date</th>
+                            <th>Author</th>
                             <th>Title</th>
                             <th>Summary</th>
-                            <th></th>
+                            <th>Author Url</th>
+                            <th>Url</th>
                         </tr>
                         </thead>
                     </table>
