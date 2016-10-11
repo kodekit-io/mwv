@@ -198,7 +198,7 @@ class ProjectChartService
     {
         $params = $this->generateParams($projectId, $keywords, $startDate, $endDate);
 
-        return $this->getChart('project/1/rating', $params);
+        return $this->getChart('project/1/viewtrend', $params);
     }
 
     public function countBar($projectId = '', $keywords = '', $startDate = '', $endDate = '')
