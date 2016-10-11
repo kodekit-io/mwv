@@ -188,5 +188,15 @@ class ChartController extends Controller
         return \GuzzleHttp\json_encode($chart);
     }
 
+    /**
+     * @param $mediaId
+     * @return string
+     */
+    public function reachPieData($mediaId)
+    {
+        $chart = $this->projectChartService->reachData($mediaId);
+        return \GuzzleHttp\json_encode($chart);
+    }
+
 
 }

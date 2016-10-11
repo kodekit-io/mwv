@@ -43,6 +43,7 @@ Route::group(['middleware' => 'auth'], function () {
     Route::get('/project/chart-data/post-pie/{mediaId}', 'ChartController@postPieData');
     Route::get('/project/chart-data/comment-pie/{mediaId}', 'ChartController@commentPieData');
     Route::get('/project/chart-data/share-pie/{mediaId}', 'ChartController@sharePieData');
+    Route::get('/project/chart-data/reach-pie/{mediaId}', 'ChartController@reachPieData');
 
     Route::get('/project/chart-data/post-trend', 'ChartController@postTrendData');
     Route::get('/project/chart-data/interaction-trend', 'ChartController@interactionTrendData');
@@ -70,7 +71,7 @@ Route::group(['middleware' => 'auth'], function () {
 
     Route::get('/project-twitter/{pid}', 'ProjectTwitterController@detail');
     Route::get('/project-facebook/{pid}', 'ProjectFacebookController@detail');
-    Route::get('/project-news/{pid}', 'ProjectController@detailNews');
+    Route::get('/project-news/{pid}', 'ProjectNewsController@detail');
     Route::get('/project-forum/{pid}', 'ProjectController@detailForum');
     Route::get('/project-video/{pid}', 'ProjectController@detailVideo');
     Route::get('/project-blog/{pid}', 'ProjectController@detailBlog');
