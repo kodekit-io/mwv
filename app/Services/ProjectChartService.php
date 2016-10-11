@@ -22,22 +22,6 @@ class ProjectChartService
         return $this->apiService->postDummy($url, $params, true);
     }
 
-
-
-    public function buzzTrend($mediaId, $projectId = '', $keywords = '', $startDate = '', $endDate = '')
-    {
-        $params = $this->generateParams($projectId, $keywords, $startDate, $endDate);
-
-        return $this->getChart('project/1/'.$mediaId.'/buzztrend', $params);
-    }
-
-    public function reachTrend($mediaId, $projectId = '', $keywords = '', $startDate = '', $endDate = '')
-    {
-        $params = $this->generateParams($projectId, $keywords, $startDate, $endDate);
-
-        return $this->getChart('project/1/'.$mediaId.'/reachtrend', $params);
-    }
-
     public function postTrend($projectId = '', $keywords = '', $startDate = '', $endDate = '')
     {
         $params = $this->generateParams($projectId, $keywords, $startDate, $endDate);
@@ -52,81 +36,69 @@ class ProjectChartService
         return $this->getChart('project/1/8/interactiontrend', $params);
     }
 
+    public function buzzTrend($mediaId, $projectId = '', $keywords = '', $startDate = '', $endDate = '')
+    {
+        return $this->getChartWithMedia('buzztrend', $mediaId, $projectId, $keywords, $startDate, $endDate);
+    }
+
+    public function reachTrend($mediaId, $projectId = '', $keywords = '', $startDate = '', $endDate = '')
+    {
+        return $this->getChartWithMedia('reachtrend', $mediaId, $projectId, $keywords, $startDate, $endDate);
+    }
+
     public function buzzPie($mediaId, $projectId = '', $keywords = '', $startDate = '', $endDate = '')
     {
-        $params = $this->generateParams($projectId, $keywords, $startDate, $endDate);
-
-        return $this->getChart('project/1/'. $mediaId .'/buzz', $params);
+        return $this->getChartWithMedia('buzz', $mediaId, $projectId, $keywords, $startDate, $endDate);
     }
 
     public function interactionPie($mediaId, $projectId = '', $keywords = '', $startDate = '', $endDate = '')
     {
-        $params = $this->generateParams($projectId, $keywords, $startDate, $endDate);
-
-        return $this->getChart('project/1/'. $mediaId .'/interaction', $params);
+        return $this->getChartWithMedia('interaction', $mediaId, $projectId, $keywords, $startDate, $endDate);
     }
 
     public function postPie($mediaId, $projectId = '', $keywords = '', $startDate = '', $endDate = '')
     {
-        $params = $this->generateParams($projectId, $keywords, $startDate, $endDate);
-
-        return $this->getChart('project/1/' . $mediaId .'/post', $params);
+        return $this->getChartWithMedia('post', $mediaId, $projectId, $keywords, $startDate, $endDate);
     }
 
     public function sentimentBar($mediaId, $projectId = '', $keywords = '', $startDate = '', $endDate = '')
     {
-        $params = $this->generateParams($projectId, $keywords, $startDate, $endDate);
-
-        return $this->getChart('project/1/'. $mediaId .'/sentiment', $params);
+        return $this->getChartWithMedia('sentiment', $mediaId, $projectId, $keywords, $startDate, $endDate);
     }
 
     public function interactionBar($mediaId, $projectId = '', $keywords = '', $startDate = '', $endDate = '')
     {
-        $params = $this->generateParams($projectId, $keywords, $startDate, $endDate);
-
-        return $this->getChart('project/1/'. $mediaId .'/interactionrate', $params);
+        return $this->getChartWithMedia('interactionrate', $mediaId, $projectId, $keywords, $startDate, $endDate);
     }
 
-    public function convoData($source, $projectId = '', $keywords = '', $startDate = '', $endDate = '')
+    public function convoData($mediaId, $projectId = '', $keywords = '', $startDate = '', $endDate = '')
     {
-        $params = $this->generateParams($projectId, $keywords, $startDate, $endDate);
-
-        return $this->getChart('project/1/'.$source.'/convo', $params);
+        return $this->getChartWithMedia('convo', $mediaId, $projectId, $keywords, $startDate, $endDate);
     }
 
     public function potentialPie($mediaId, $projectId = '', $keywords = '', $startDate = '', $endDate = '')
     {
-        $params = $this->generateParams($projectId, $keywords, $startDate, $endDate);
-
-        return $this->getChart('project/1/'. $mediaId .'/potentialreach', $params);
+        return $this->getChartWithMedia('potentialreach', $mediaId, $projectId, $keywords, $startDate, $endDate);
     }
 
     public function commentPie($mediaId, $projectId = '', $keywords = '', $startDate = '', $endDate = '')
     {
-        $params = $this->generateParams($projectId, $keywords, $startDate, $endDate);
-
-        return $this->getChart('project/1/'. $mediaId .'/comment', $params);
+        return $this->getChartWithMedia('comment', $mediaId, $projectId, $keywords, $startDate, $endDate);
     }
 
     public function sharePie($mediaId, $projectId = '', $keywords = '', $startDate = '', $endDate = '')
     {
-        $params = $this->generateParams($projectId, $keywords, $startDate, $endDate);
-
-        return $this->getChart('project/1/'. $mediaId .'/share', $params);
+        return $this->getChartWithMedia('share', $mediaId, $projectId, $keywords, $startDate, $endDate);
     }
 
     public function reachPie($mediaId, $projectId = '', $keywords = '', $startDate = '', $endDate = '')
     {
-        $params = $this->generateParams($projectId, $keywords, $startDate, $endDate);
-
-        return $this->getChart('project/1/'. $mediaId .'/reach', $params);
+        return $this->getChartWithMedia('reach', $mediaId, $projectId, $keywords, $startDate, $endDate);
     }
 
     public function commentTrend($mediaId, $projectId = '', $keywords = '', $startDate = '', $endDate = '')
     {
-        $params = $this->generateParams($projectId, $keywords, $startDate, $endDate);
-
-        return $this->getChart('project/1/'. $mediaId .'/commenttrend', $params);
+        return $this->getChartWithMedia('commenttrend', $mediaId, $projectId, $keywords, $startDate, $endDate);
     }
 
     public function brandEquity($projectId = '', $keywords = '', $startDate = '', $endDate = '')
@@ -201,5 +173,12 @@ class ProjectChartService
         $params = $this->generateParams($projectId, $keywords, $startDate, $endDate);
 
         return $this->getChart('project/1/' . $action, $params);
+    }
+
+    private function getChartWithMedia($action, $mediaId, $projectId = '', $keywords = '', $startDate = '', $endDate = '')
+    {
+        $params = $this->generateParams($projectId, $keywords, $startDate, $endDate);
+
+        return $this->getChart('project/1/'. $mediaId .'/'. $action, $params);
     }
 }
