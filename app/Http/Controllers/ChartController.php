@@ -200,15 +200,21 @@ class ChartController extends Controller
         return \GuzzleHttp\json_encode($chart);
     }
 
-    public function ratingPieData()
+    public function ratingBarData()
     {
-        $chart = $this->projectChartService->ratingPie();
+        $chart = $this->projectChartService->ratingBar();
         return \GuzzleHttp\json_encode($chart);
     }
 
     public function viewTrendData()
     {
         $chart = $this->projectChartService->viewTrend();
+        return \GuzzleHttp\json_encode($chart);
+    }
+
+    public function countBarData()
+    {
+        $chart = $this->projectChartService->countBar();
         return \GuzzleHttp\json_encode($chart);
     }
 

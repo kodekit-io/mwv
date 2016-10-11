@@ -1,5 +1,5 @@
 $.ajax({
-    url : ajaxUrl + '/project/chart-data/comment-bar/' + mediaId,
+    url : ajaxUrl + '/project/chart-data/comment-pie/' + mediaId,
     beforeSend : function(xhr) {
         $('#commentbar').block({
             message: '<img src="' + ajaxUrl + '/mediawave/img/spinner.gif">',
@@ -16,17 +16,18 @@ $.ajax({
 });
 
 function commentBar($id, $data) {
-    $data = $data['interactionrate'];
+    console.log($data['data']);
+    $data = $data['data'];
     if ($data.length === 0) {
         $('#' + $id).html("<div class='center'>No Data</div>");
     } else {
         var $content = [];
         var $dataSum = 0;
         for (var i = 0; i < $data.length; i++) {
-            $x = $data[i].name;
-            $y = $data[i].data;
+            $x = $data[i].keywordName;
+            $y = $data[i].comment;
             $length = $data.length;
-            $dataSum += $data[i].data;
+            $dataSum += $data[i].comment;
 
             $content[i] = {name: $x, data: [[$x,$y]] };
             $mean = $dataSum / $length;
