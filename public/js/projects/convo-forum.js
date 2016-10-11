@@ -1,6 +1,7 @@
 $('#table_forum').DataTable( {
     "ajax": {
-        "url": ajaxUrl + '/project/chart-data/convo-forum',
+        //"url": ajaxUrl + '/project/chart-data/convo-forum',
+        "url": ajaxUrl + "/mediawave/jsontest/convo-forum.json",
         "data": {
             "project_id": projectId
             //"start_date": '{!! $startDate !!}',
@@ -9,23 +10,44 @@ $('#table_forum').DataTable( {
     },
     "columns": [
         { "data": "Date" },
-        { "data": "Author" },
-        { "data": "Post" },
-        { "data": "Original Reach" },
-        { "data": "Viral Reach" },
-        { "data": "Interactions" },
-        { "data": "Viral Score" },
-        { "data": "Sentiment" },
-        { "data": "Link" },
+        { "data": "Forum" },
+        { "data": "Thread Starter" },
+        //{ "data": "Thread Title" },
         {
             "data": null,
-            "defaultContent": "",
-            "className": "namaclass",
-            "orderable": false
-        }
+            "render": function ( data ) {
+                var post = data["Thread Title"];
+                var postrim = post.substring(0,100) + "...";
+                var plink = data["Url"];
+                return '<a href="'+plink+'" target="_blank" data-uk-tooltip title="'+post+'" class="uk-link">'+postrim+'</a>';
+            }
+        },
+        { "data": "Replies" },
+        //{ "data": "Sentiment" },
+        {
+            "data": null,
+            "render": function ( data ) {
+                var sentiment = data["Sentiment"];
+                //var c = "";
+                switch (sentiment) {
+                    case 'positive':
+                        c = 'teal white-text uk-button uk-button-mini';
+                        break;
+                    case 'neutral':
+                        c = 'blue-grey lighten-3 white-text uk-button uk-button-mini';
+                        break;
+                    case 'negative':
+                        c = 'red white-text uk-button uk-button-mini';
+                        break;
+                }
+                return '<span class="'+c+'">'+sentiment+'</span>';
+            }
+        },
+        { "data": "Url" }
     ],
     "columnDefs": [{
         "visible": false,
-        "targets": [0, 4, 5]
-    }]
+        "targets": [6]
+    }],
+    "order": [[ 0, "desc" ]]
 });

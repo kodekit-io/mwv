@@ -27,7 +27,7 @@ var table_twitter = $('#table_twitter').DataTable( {
             "data": null,
             "render": function ( data ) {
                 var post = data["Post"];
-                var postrim = post.substring(0,50) + "...";
+                var postrim = post.substring(0,100) + "...";
                 var link = data["Link"];
                 return '<a href="'+link+'" target="_blank" data-uk-tooltip title="'+post+'" class="uk-link">'+postrim+'</a>';
             }
@@ -56,16 +56,11 @@ var table_twitter = $('#table_twitter').DataTable( {
                 return '<span class="'+c+'">'+sentiment+'</span>';
             }
         },
-        { "data": "Link" },
-        {
-            "data": null,
-            "defaultContent": "",
-            "className": "namaclass",
-            "orderable": false
-        }
+        { "data": "Link" }
     ],
     "columnDefs": [{
         "visible": false,
-        "targets": [0, 8]
+        "targets": [3, 6, 8]
     }],
+    "order": [[ 0, "desc" ]]
 });

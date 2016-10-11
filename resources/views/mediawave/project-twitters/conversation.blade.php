@@ -5,6 +5,8 @@
                 <a class="btn waves-effect waves-light z-depth-0 amber lighten-4 tooltipped" data-position="top" data-delay="25" data-tooltip="Help"><i class="material-icons">help</i></a>
                 <a class="btn waves-effect waves-light z-depth-0 green lighten-4 tooltipped" data-position="top" data-delay="25" data-tooltip="Minimize" data-uk-toggle="{target:'#conv'}"><i class="material-icons md-icon">fullscreen</i></a>
             </div>
+            <h2 class="md-card-toolbar-heading-text">TWITTER CONVERSATIONS</h2>
+            <?php /*
             <div class="md-card-toolbar-heading-text">
                 <ul class="uk-subnav uk-subnav-pill" data-uk-switcher="{connect:'#convwrap ul'}">
                     <li class="uk-active"><a class="active" href="#convposts">Posts</a></li>
@@ -12,8 +14,26 @@
                     <li><a href="#convlinks">Links</a></li>
                 </ul>
             </div>
+            */ ?>
         </div>
         <div id="convwrap" class="md-card-content conv-wrap">
+            <?php //TWITTER TABLE ?>
+            <table id="table_twitter" class="striped bordered highlight responsive-table">
+                <thead>
+                <tr>
+                    <th>Date</th>
+                    <th>Author</th>
+                    <th>Post</th>
+                    <th>Original Reach</th>
+                    <th>Viral Reach</th>
+                    <th>Interactions</th>
+                    <th>Viral Score</th>
+                    <th>Sentiment</th>
+                    <th>Link</th>
+                </tr>
+                </thead>
+            </table>
+            <?php /*
             <ul class="uk-switcher">
                 <li>
                     <div id="convposts" class="col s12">
@@ -75,7 +95,7 @@
                     </div>
                 </li>
             </ul>
-
+            */ ?>
         </div>
     </div>
 
