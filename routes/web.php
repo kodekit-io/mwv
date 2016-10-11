@@ -35,6 +35,7 @@ Route::group(['middleware' => 'auth'], function () {
     // Reusable chart
     Route::get('/project/chart-data/reach-trend/{mediaId}', 'ChartController@reachTrendData');
     Route::get('/project/chart-data/buzz-trend/{mediaId}', 'ChartController@buzzTrendData');
+    Route::get('/project/chart-data/comment-trend/{mediaId}', 'ChartController@commentTrendData');
     Route::get('/project/chart-data/buzz-pie/{mediaId}', 'ChartController@buzzPieData');
     Route::get('/project/chart-data/interaction-pie/{mediaId}', 'ChartController@interactionPieData');
     Route::get('/project/chart-data/potential-pie/{mediaId}', 'ChartController@potentialPieData');
@@ -43,14 +44,17 @@ Route::group(['middleware' => 'auth'], function () {
     Route::get('/project/chart-data/post-pie/{mediaId}', 'ChartController@postPieData');
     Route::get('/project/chart-data/comment-pie/{mediaId}', 'ChartController@commentPieData');
     Route::get('/project/chart-data/share-pie/{mediaId}', 'ChartController@sharePieData');
+    Route::get('/project/chart-data/reach-pie/{mediaId}', 'ChartController@reachPieData');
 
     Route::get('/project/chart-data/post-trend', 'ChartController@postTrendData');
     Route::get('/project/chart-data/interaction-trend', 'ChartController@interactionTrendData');
-    Route::get('/project/chart-data/user-trend', 'ChartController@userTrend');
+    Route::get('/project/chart-data/user-trend', 'ChartController@userTrendData');
+    Route::get('/project/chart-data/view-trend', 'ChartController@viewTrendData');
 
     Route::get('/project/chart-data/unique-user-pie', 'ChartController@uniqueUserPieData');
     Route::get('/project/chart-data/viral-pie', 'ChartController@viralPieData');
     Route::get('/project/chart-data/like-pie', 'ChartController@likePieData');
+    Route::get('/project/chart-data/rating-pie', 'ChartController@ratingPieData');
 
     Route::get('/project/chart-data/share-of-media-bar', 'ChartController@shareOfMediaBarData');
     Route::get('/project/chart-data/comment-bar', 'ChartController@commentBarData');
@@ -70,10 +74,10 @@ Route::group(['middleware' => 'auth'], function () {
 
     Route::get('/project-twitter/{pid}', 'ProjectTwitterController@detail');
     Route::get('/project-facebook/{pid}', 'ProjectFacebookController@detail');
-    Route::get('/project-news/{pid}', 'ProjectController@detailNews');
-    Route::get('/project-forum/{pid}', 'ProjectController@detailForum');
-    Route::get('/project-video/{pid}', 'ProjectController@detailVideo');
-    Route::get('/project-blog/{pid}', 'ProjectController@detailBlog');
+    Route::get('/project-news/{pid}', 'ProjectNewsController@detail');
+    Route::get('/project-forum/{pid}', 'ProjectForumController@detail');
+    Route::get('/project-video/{pid}', 'ProjectVideoController@detail');
+    Route::get('/project-blog/{pid}', 'ProjectBlogController@detail');
 
     Route::get('/project-ig/{pid}', 'ProjectController@detailIG');
 

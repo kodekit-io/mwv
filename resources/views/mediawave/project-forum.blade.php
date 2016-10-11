@@ -45,167 +45,15 @@
             </div>
 
             <ul class="uk-grid uk-grid-medium" data-uk-grid data-uk-grid-margin>
-                <li class="uk-width-medium-1-1">
-                    <div class="md-card hoverable">
-                        <div class="md-card-toolbar">
-                            <div class="md-card-toolbar-actions">
-                                <a class="btn waves-effect waves-light z-depth-0 amber lighten-4 tooltipped" data-position="top" data-delay="25" data-tooltip="Help"><i class="material-icons">help</i></a>
-                                <a class="btn waves-effect waves-light z-depth-0 green lighten-4 tooltipped" data-position="top" data-delay="25" data-tooltip="Minimize" data-uk-toggle="{target:'#trendwrap'}"><i class="material-icons md-icon">fullscreen</i></a>
-                            </div>
-                            <div class="md-card-toolbar-heading-text">
-                                <ul class="uk-subnav uk-subnav-pill" data-uk-switcher="{connect:'#trendwrap ul'}">
-                                    <li class="uk-active"><a>THREAD TREND</a></li>
-                                    <li><a>COMMENT TREND</a></li>
-                                </ul>
-                            </div>
-                        </div>
-                        <?php //TRENDS ?>
-                        <div id="trendwrap" class="md-card-content">
-                            <ul class="uk-switcher">
-                                <li>
-                                    <div id="thredtrend" class="md-chart">Thread TREND</div>
-                                </li>
-                                <li>
-                                    <div id="commnettrend" class="md-chart">Comments TREND</div>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                </li>
 
-                <li class="uk-width-medium-1-3">
-                    <?php //THREAD PIE ?>
-                    <div class="md-card hoverable">
-                        <div class="md-card-toolbar">
-                            <div class="md-card-toolbar-actions">
-                                <a class="btn waves-effect waves-light z-depth-0 amber lighten-4 tooltipped" data-position="top" data-delay="25" data-tooltip="Help"><i class="material-icons">help</i></a>
-                                <a class="btn waves-effect waves-light z-depth-0 green lighten-4 tooltipped" data-position="top" data-delay="25" data-tooltip="Minimize" data-uk-toggle="{target:'#piewrap1'}"><i class="material-icons md-icon">fullscreen</i></a>
-                            </div>
-                            <h2 class="md-card-toolbar-heading-text">THREAD</h2>
-                        </div>
-                        <div id="piewrap1" class="md-card-content">
-                            <div id="id-chartnya-disini" class="md-chart">Pie Chart</div>
-                        </div>
-                    </div>
-                </li>
+                @include('mediawave.project-forum.trend')
 
-                <li class="uk-width-medium-1-3">
-                    <?php //COMMENT PIE ?>
-                    <div class="md-card hoverable">
-                        <div class="md-card-toolbar">
-                            <div class="md-card-toolbar-actions">
-                                <a class="btn waves-effect waves-light z-depth-0 amber lighten-4 tooltipped" data-position="top" data-delay="25" data-tooltip="Help"><i class="material-icons">help</i></a>
-                                <a class="btn waves-effect waves-light z-depth-0 green lighten-4 tooltipped" data-position="top" data-delay="25" data-tooltip="Minimize" data-uk-toggle="{target:'#piewrap2'}"><i class="material-icons md-icon">fullscreen</i></a>
-                            </div>
-                            <h2 class="md-card-toolbar-heading-text">COMMENTS</h2>
-                        </div>
-                        <div id="piewrap2" class="md-card-content">
-                            <div id="id-chartnya-disini" class="md-chart">Pie Chart</div>
-                        </div>
-                    </div>
-                </li>
+                @include('mediawave.project-forum.pie')
 
-                <li class="uk-width-medium-1-3">
-                    <?php //FORUM REACH PIE ?>
-                    <div class="md-card hoverable">
-                        <div class="md-card-toolbar">
-                            <div class="md-card-toolbar-actions">
-                                <a class="btn waves-effect waves-light z-depth-0 amber lighten-4 tooltipped" data-position="top" data-delay="25" data-tooltip="Help"><i class="material-icons">help</i></a>
-                                <a class="btn waves-effect waves-light z-depth-0 green lighten-4 tooltipped" data-position="top" data-delay="25" data-tooltip="Minimize" data-uk-toggle="{target:'#piewrap3'}"><i class="material-icons md-icon">fullscreen</i></a>
-                            </div>
-                            <h2 class="md-card-toolbar-heading-text">FORUM REACH</h2>
-                        </div>
-                        <div id="piewrap3" class="md-card-content">
-                            <div id="id-chartnya-disini" class="md-chart">Pie Chart</div>
-                        </div>
-                    </div>
-                </li>
+                @include('mediawave.project-forum.bar-wordcloud')
 
-                <li class="uk-width-medium-1-1">
-                    <?php //FORUM SENTIMENT BAR ?>
-                    <div class="md-card hoverable">
-                        <div class="md-card-toolbar">
-                            <div class="md-card-toolbar-actions">
-                                <a class="btn waves-effect waves-light z-depth-0 amber lighten-4 tooltipped" data-position="top" data-delay="25" data-tooltip="Help"><i class="material-icons">help</i></a>
-                                <a class="btn waves-effect waves-light z-depth-0 green lighten-4 tooltipped" data-position="top" data-delay="25" data-tooltip="Minimize" data-uk-toggle="{target:'#sentimentwrap'}"><i class="material-icons md-icon">fullscreen</i></a>
-                            </div>
-                            <h2 class="md-card-toolbar-heading-text">FORUM SENTIMENT</h2>
-                        </div>
-                        <div id="sentimentwrap" class="md-card-content">
-                            <div id="share-brand-container" class="md-chart">Bar Chart</div>
-                        </div>
-                    </div>
-                </li>
+                @include('mediawave.project-forum.conversation')
 
-                <li class="uk-width-medium-1-1">
-                    <?php //WORDS CLOUD ?>
-                    <div class="md-card hoverable">
-                        <div class="md-card-toolbar">
-                            <div class="md-card-toolbar-actions">
-                                <a class="btn waves-effect waves-light z-depth-0 amber lighten-4 tooltipped" data-position="top" data-delay="25" data-tooltip="Help"><i class="material-icons">help</i></a>
-                                <a class="btn waves-effect waves-light z-depth-0 green lighten-4 tooltipped" data-position="top" data-delay="25" data-tooltip="Minimize" data-uk-toggle="{target:'#cloudwrap'}"><i class="material-icons md-icon">fullscreen</i></a>
-                            </div>
-                            <h2 class="md-card-toolbar-heading-text">WORD CLOUDS</h2>
-                        </div>
-                        <div id="cloudwrap" class="md-card-content">
-                            <div id="id-chartnya-disini" class="md-chart"></div>
-                        </div>
-                    </div>
-                </li>
-
-                <li class="uk-width-medium-1-1">
-                    <div class="md-card hoverable">
-                        <div class="md-card-toolbar">
-                            <div class="md-card-toolbar-actions">
-                                <a class="btn waves-effect waves-light z-depth-0 amber lighten-4 tooltipped" data-position="top" data-delay="25" data-tooltip="Help"><i class="material-icons">help</i></a>
-                                <a class="btn waves-effect waves-light z-depth-0 green lighten-4 tooltipped" data-position="top" data-delay="25" data-tooltip="Minimize" data-uk-toggle="{target:'#authorwrap'}"><i class="material-icons md-icon">fullscreen</i></a>
-                            </div>
-                            <h2 class="md-card-toolbar-heading-text">INFLUENCER</h2>
-                        </div>
-                        <div id="authorwrap" class="md-card-content conv-wrap">
-                            <?php //INFLUENCER/AUTHOR TABLE ?>
-                            <table id="table_author" class="striped bordered highlight responsive-table">
-                                <thead>
-                                <tr>
-                                    <th>Author</th>
-                                    <th>Popular</th>
-                                    <th>Active</th>
-                                    <th>Impact</th>
-                                    <th></th>
-                                </tr>
-                                </thead>
-                            </table>
-                        </div>
-                   </div>
-                </li>
-
-                <li class="uk-width-medium-1-1">
-                    <div class="md-card hoverable">
-                        <div class="md-card-toolbar">
-                            <div class="md-card-toolbar-actions">
-                                <a class="btn waves-effect waves-light z-depth-0 amber lighten-4 tooltipped" data-position="top" data-delay="25" data-tooltip="Help"><i class="material-icons">help</i></a>
-                                <a class="btn waves-effect waves-light z-depth-0 green lighten-4 tooltipped" data-position="top" data-delay="25" data-tooltip="Minimize" data-uk-toggle="{target:'#convwrap'}"><i class="material-icons md-icon">fullscreen</i></a>
-                            </div>
-                            <h2 class="md-card-toolbar-heading-text">THREAD</h2>
-                        </div>
-                        <div id="convwrap" class="md-card-content conv-wrap">
-                            <?php //THREAD TABLE ?>
-                            <table id="table_thread" class="striped bordered highlight responsive-table">
-                                <thead>
-                                <tr>
-                                    <th>Forum</th>
-                                    <th>Thread Title</th>
-                                    <th>Post Count</th>
-                                    <th>Thread Starter</th>
-                                    <th>Sentiment</th>
-                                    <th><input type="checkbox" class="" id="" /><label for="">Select All</label></th>
-                                </tr>
-                                </thead>
-                            </table>
-                        </div>
-                    </div>
-
-                </li>
             </ul>
         </div>
     </main>
@@ -228,7 +76,22 @@
 @endsection
 
 @section('page-level-scripts')
-
+    <script type="text/javascript" src="{{ asset('js/jquery.blockUI.js') }}"></script>
+    <script type="text/javascript">
+        var ajaxUrl = '{!! url('/') !!}';
+        var csrfToken = '{!! csrf_token() !!}';
+        var projectId = '{!! $project->pid !!}';
+        var mediaId = 6;
+        var startDate = '{!! $startDate !!}';
+        var endDate = '{!! $endDate !!}';
+    </script>
+    <script src="{!! asset('js/projects/post-trend.js') !!}"></script>
+    <script src="{!! asset('js/projects/comment-trend.js') !!}"></script>
+    <script src="{!! asset('js/projects/post-pie.js') !!}"></script>
+    <script src="{!! asset('js/projects/comment-pie.js') !!}"></script>
+    <script src="{!! asset('js/projects/reach-pie.js') !!}"></script>
+    <script src="{!! asset('js/projects/sentiment-bar.js') !!}"></script>
+    <script src="{!! asset('js/projects/word-cloud.js') !!}"></script>
     <script>
         $(document).ready(function() {
             $('#table_author').DataTable( {
@@ -238,6 +101,7 @@
                 "order": [[ 0, "desc" ]]
             });
         });
+        wordCloud('wordcloud-container', jQuery.parseJSON('{!! $wordCloud !!}'));
     </script>
 
 @endsection
