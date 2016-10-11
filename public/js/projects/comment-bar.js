@@ -1,5 +1,5 @@
 $.ajax({
-    url : ajaxUrl + '/project/chart-data/comment-bar/' + mediaId,
+    url : ajaxUrl + '/project/chart-data/comment-bar/',
     beforeSend : function(xhr) {
         $('#commentbar').block({
             message: '<img src="' + ajaxUrl + '/mediawave/img/spinner.gif">',
