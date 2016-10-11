@@ -54,10 +54,11 @@ Route::group(['middleware' => 'auth'], function () {
     Route::get('/project/chart-data/unique-user-pie', 'ChartController@uniqueUserPieData');
     Route::get('/project/chart-data/viral-pie', 'ChartController@viralPieData');
     Route::get('/project/chart-data/like-pie', 'ChartController@likePieData');
-    Route::get('/project/chart-data/rating-pie', 'ChartController@ratingPieData');
 
     Route::get('/project/chart-data/share-of-media-bar', 'ChartController@shareOfMediaBarData');
     Route::get('/project/chart-data/comment-bar', 'ChartController@commentBarData');
+    Route::get('/project/chart-data/rating-bar', 'ChartController@ratingBarData');
+    Route::get('/project/chart-data/count-bar', 'ChartController@countBarData');
 
     Route::get('/project/chart-data/convo-twitter', 'ChartController@convoTwitterData');
     Route::get('/project/chart-data/convo-facebook', 'ChartController@convoFacebookData');

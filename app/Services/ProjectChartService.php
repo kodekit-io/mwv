@@ -187,7 +187,7 @@ class ProjectChartService
         return $this->getChart('project/1/'. $mediaId .'/commenttrend', $params);
     }
 
-    public function ratingPie($projectId = '', $keywords = '', $startDate = '', $endDate = '')
+    public function ratingBar($projectId = '', $keywords = '', $startDate = '', $endDate = '')
     {
         $params = $this->generateParams($projectId, $keywords, $startDate, $endDate);
 
@@ -198,6 +198,13 @@ class ProjectChartService
     {
         $params = $this->generateParams($projectId, $keywords, $startDate, $endDate);
 
-        return $this->getChart('project/1/viewtrend', $params);
+        return $this->getChart('project/1/rating', $params);
+    }
+
+    public function countBar($projectId = '', $keywords = '', $startDate = '', $endDate = '')
+    {
+        $params = $this->generateParams($projectId, $keywords, $startDate, $endDate);
+
+        return $this->getChart('project/1/viewcount', $params);
     }
 }

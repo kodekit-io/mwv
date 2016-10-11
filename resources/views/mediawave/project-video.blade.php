@@ -86,7 +86,12 @@
     <script src="{!! asset('js/projects/post-trend.js') !!}"></script>
     <script src="{!! asset('js/projects/comment-trend.js') !!}"></script>
     <script src="{!! asset('js/projects/view-trend.js') !!}"></script>
+    <script src="{!! asset('js/projects/rating-bar.js') !!}"></script>
+    <script src="{!! asset('js/projects/count-bar.js') !!}"></script>
+    <script src="{!! asset('js/projects/video-comment-bar.js') !!}"></script>
+    <script src="{!! asset('js/projects/word-cloud.js') !!}"></script>
     <script>
+        wordCloud('wordcloud-container', jQuery.parseJSON('{!! $wordCloud !!}'));
         $(document).ready(function() {
             $('#table_vid').DataTable( {
                 "order": [[ 0, "desc" ]]
