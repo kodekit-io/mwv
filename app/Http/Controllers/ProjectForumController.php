@@ -9,7 +9,7 @@ use Illuminate\Http\Request;
 use Carbon\Carbon;
 use App\Http\Requests;
 
-class ProjectNewsController extends Controller
+class ProjectForumController extends Controller
 {
     use KeywordSelected;
 
@@ -42,8 +42,8 @@ class ProjectNewsController extends Controller
         }
 
         $profiles = $this->projectService->projectInfo($projectId);
-        $wordCloud = $this->chartService->wordCloud($projectId, 4, $brands, $startDate, $endDate);
-        $viewInfluencer = $this->chartService->viewInfluencer($projectId, 4, $brands, $startDate, $endDate);
+        $wordCloud = $this->chartService->wordCloud($projectId, 9, $brands, $startDate, $endDate);
+        $viewInfluencer = $this->chartService->viewInfluencer($projectId, 9, $brands, $startDate, $endDate);
 
         $keywords = [];
         if (count($profiles->projectInfo->keywordList) > 0) {
@@ -56,7 +56,7 @@ class ProjectNewsController extends Controller
             }
         }
 
-        $data['pageTitle'] = 'Online Media';
+        $data['pageTitle'] = 'Forum';
         $data['project'] = $profiles->project;
         $data['keywords'] = $keywords;
         $data['startDate'] = Carbon::createFromFormat('Y-m-d', $startDate)->format('d/m/y');
@@ -68,6 +68,6 @@ class ProjectNewsController extends Controller
 
         $data['viewInfluencers'] = $viewInfluencer->influencer;
 
-        return view('mediawave.project-news', $data);
+        return view('mediawave.project-forum', $data);
     }
 }

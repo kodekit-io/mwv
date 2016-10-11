@@ -173,10 +173,17 @@ class ProjectChartService
         return $this->getChart('project/1/commentinteraction', $params);
     }
 
-    public function reachData($mediaId, $projectId = '', $keywords = '', $startDate = '', $endDate = '')
+    public function reachPie($mediaId, $projectId = '', $keywords = '', $startDate = '', $endDate = '')
     {
         $params = $this->generateParams($projectId, $keywords, $startDate, $endDate);
 
         return $this->getChart('project/1/'. $mediaId .'/reach', $params);
+    }
+
+    public function commentTrend($mediaId, $projectId = '', $keywords = '', $startDate = '', $endDate = '')
+    {
+        $params = $this->generateParams($projectId, $keywords, $startDate, $endDate);
+
+        return $this->getChart('project/1/'. $mediaId .'/commenttrend', $params);
     }
 }
