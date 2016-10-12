@@ -1,7 +1,7 @@
 $('#table_forum').DataTable( {
     "ajax": {
-        //"url": ajaxUrl + '/project/chart-data/convo-forum',
-        "url": ajaxUrl + "/mediawave/jsontest/convo-forum.json",
+        "url": ajaxUrl + '/project/chart-data/convo-forum',
+        //"url": ajaxUrl + "/mediawave/jsontest/convo-forum.json",
         "data": {
             "project_id": projectId
             //"start_date": '{!! $startDate !!}',
