@@ -35,7 +35,7 @@
                     <tbody>
                         @foreach($reports as $report)
                         <tr>
-                            <td>1</td>
+                            <td>{!! $loop->iteration !!}</td>
                             <td>{!! $report->name !!}</td>
                             <td>{!! $report->summary !!}</td>
                             <td>{!! $report->startDate !!}</td>
