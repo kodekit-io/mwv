@@ -1,7 +1,7 @@
 $('#table_facebook').DataTable( {
     "ajax": {
-        //"url": ajaxUrl + '/project/chart-data/convo-facebook',
-        "url": ajaxUrl + "/mediawave/jsontest/convo-fb.json",
+        "url": ajaxUrl + '/project/chart-data/convo-facebook',
+        //"url": ajaxUrl + "/mediawave/jsontest/convo-fb.json",
         "data": {
             "project_id": projectId
             //"start_date": '{!! $startDate !!}',
