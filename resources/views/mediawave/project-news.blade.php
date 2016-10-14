@@ -89,6 +89,7 @@
     <script src="{!! asset('js/projects/reach-pie.js') !!}"></script>
     <script src="{!! asset('js/projects/sentiment-bar.js') !!}"></script>
     <script src="{!! asset('js/projects/word-cloud.js') !!}"></script>
+	<script src="{!! asset('js/projects/convo-news.js') !!}"></script>
     <script>
         $(document).ready(function() {
             $('#table_article').DataTable( {
