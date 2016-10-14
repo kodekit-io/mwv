@@ -90,6 +90,7 @@
     <script src="{!! asset('js/projects/count-bar.js') !!}"></script>
     <script src="{!! asset('js/projects/video-comment-bar.js') !!}"></script>
     <script src="{!! asset('js/projects/word-cloud.js') !!}"></script>
+	<script src="{!! asset('js/projects/convo-video.js') !!}"></script>
     <script>
         wordCloud('wordcloud-container', jQuery.parseJSON('{!! $wordCloud !!}'));
         $(document).ready(function() {
@@ -100,4 +101,3 @@
     </script>
 
 @endsection
-

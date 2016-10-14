@@ -90,6 +90,7 @@
     <script src="{!! asset('js/projects/reach-pie.js') !!}"></script>
     <script src="{!! asset('js/projects/sentiment-bar.js') !!}"></script>
     <script src="{!! asset('js/projects/word-cloud.js') !!}"></script>
+	<script src="{!! asset('js/projects/convo-blog.js') !!}"></script>
 
     <script>
         wordCloud('wordcloud-container', jQuery.parseJSON('{!! $wordCloud !!}'));

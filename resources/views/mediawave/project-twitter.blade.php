@@ -101,7 +101,6 @@
     <script src="{!! asset('js/projects/interaction-bar.js') !!}"></script>
 
     <script src="{!! asset('js/projects/word-cloud.js') !!}"></script>
-
     <script src="{!! asset('js/projects/convo-twitter.js') !!}"></script>
 
     <script type="text/javascript">

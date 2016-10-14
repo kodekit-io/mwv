@@ -43,19 +43,20 @@
             <h2 class="md-card-toolbar-heading-text">THREAD</h2>
         </div>
         <div id="convwrap" class="md-card-content conv-wrap">
-            <?php //THREAD TABLE ?>
-            <table id="table_thread" class="striped bordered highlight responsive-table">
-                <thead>
-                <tr>
-                    <th>Forum</th>
-                    <th>Thread Title</th>
-                    <th>Post Count</th>
-                    <th>Thread Starter</th>
-                    <th>Sentiment</th>
-                    <th><input type="checkbox" class="" id="" /><label for="">Select All</label></th>
-                </tr>
-                </thead>
-            </table>
+			<?php //FORUM TABLE ?>
+			<table id="table_forum" class="striped bordered highlight responsive-table">
+				<thead>
+				<tr>
+					<th>Date</th>
+					<th>Forum</th>
+					<th>Thread Starter</th>
+					<th>Thread Title</th>
+					<th>Replies</th>
+					<th>Sentiment</th>
+					<th>Url</th>
+				</tr>
+				</thead>
+			</table>
         </div>
     </div>
 

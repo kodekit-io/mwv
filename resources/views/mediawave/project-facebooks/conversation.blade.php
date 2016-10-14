@@ -42,21 +42,23 @@
             <h2 class="md-card-toolbar-heading-text">PUBLIC PAGE</h2>
         </div>
         <div id="convwrap" class="md-card-content conv-wrap">
-            <?php //POSTS ?>
-            <table id="table_facebook" class="striped bordered highlight responsive-table">
-                <thead>
-                <tr>
-                    <th>Author</th>
-                    <th>Posts</th>
-                    <th>Comment</th>
-                    <th>Like</th>
-                    <th>Share</th>
-                    <th>Media Type</th>
-                    <th>Sentiment</th>
-                    {{--<th><input type="checkbox" class="" id="" /><label for="">Select All</label></th>--}}
-                </tr>
-                </thead>
-            </table>
+			<?php //FB TABLE ?>
+			<table id="table_facebook" class="striped bordered highlight responsive-table">
+				<thead>
+				<tr>
+					<th>Date</th>
+					<th>Page</th>
+					<th>Post</th>
+					<th>Comments</th>
+					<th>Likes</th>
+					<th>Shares</th>
+					<th>Media Type</th>
+					<th>Sentiment</th>
+					<th>Page Link</th>
+					<th>Post Link</th>
+				</tr>
+				</thead>
+			</table>
         </div>
     </div>
 </li>
