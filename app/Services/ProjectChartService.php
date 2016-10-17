@@ -3,18 +3,23 @@
 namespace App;
 
 
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Log;
+
 class ProjectChartService
 {
 
     protected $apiService;
+    protected $request;
 
     /**
      * ProjectChartService constructor.
      * @param $apiService
      */
-    public function __construct(ApiService $apiService)
+    public function __construct(Request $request, ApiService $apiService)
     {
         $this->apiService = $apiService;
+        $this->request = $request;
     }
 
     private function getChart($url, $params)
@@ -36,6 +41,28 @@ class ProjectChartService
         return $this->getChart('project/1/8/interactiontrend', $params);
     }
 
+    public function brandEquity($projectId = '', $keywords = '', $startDate = '', $endDate = '')
+    {
+        $params = $this->generateParams($projectId, $keywords, $startDate, $endDate);
+
+        return $this->getChart('project/brandequity', $params);
+    }
+
+    public function uniqueUserPie($projectId = '', $keywords = '', $startDate = '', $endDate = '')
+    {
+        $params = $this->generateParams($projectId, $keywords, $startDate, $endDate);
+
+        return $this->getChart('project/uniqueuser', $params);
+    }
+
+    public function shareOfMediaBar($projectId = '', $keywords = '', $startDate = '', $endDate = '')
+    {
+        $params = $this->generateParams($projectId, $keywords, $startDate, $endDate);
+
+        return $this->getChart('project/shareofmedia', $params);
+    }
+
+    // chart with media
     public function buzzTrend($mediaId, $projectId = '', $keywords = '', $startDate = '', $endDate = '')
     {
         return $this->getChartWithMedia('buzztrend', $mediaId, $projectId, $keywords, $startDate, $endDate);
@@ -101,27 +128,7 @@ class ProjectChartService
         return $this->getChartWithMedia('commenttrend', $mediaId, $projectId, $keywords, $startDate, $endDate);
     }
 
-    public function brandEquity($projectId = '', $keywords = '', $startDate = '', $endDate = '')
-    {
-        $params = $this->generateParams($projectId, $keywords, $startDate, $endDate);
-
-        return $this->getChart('project/brandequity', $params);
-    }
-
-    public function uniqueUserPie($projectId = '', $keywords = '', $startDate = '', $endDate = '')
-    {
-        $params = $this->generateParams($projectId, $keywords, $startDate, $endDate);
-
-        return $this->getChart('project/uniqueuser', $params);
-    }
-
-    public function shareOfMediaBar($projectId = '', $keywords = '', $startDate = '', $endDate = '')
-    {
-        $params = $this->generateParams($projectId, $keywords, $startDate, $endDate);
-
-        return $this->getChart('project/shareofmedia', $params);
-    }
-
+    //chart without media
     public function userTrend($projectId = '', $keywords = '', $startDate = '', $endDate = '')
     {
         return $this->getChartWithoutMedia('usertrend', $projectId, $keywords, $startDate, $endDate);
@@ -159,6 +166,11 @@ class ProjectChartService
 
     public function generateParams($projectId, $keywords = '', $startDate = '', $endDate = '')
     {
+        $projectId = $projectId == '' ? ( $this->request->has('projectId') ? $this->request->input('projectId') : '') : $projectId;
+        $keywords = $keywords == '' ? ( $this->request->has('keywords') ? $this->request->input('keywords') : '') : $keywords;
+        $startDate = $startDate == '' ? ( $this->request->has('startDate') ? $this->request->input('startDate') : '') : $startDate;
+        $endDate = $endDate == '' ? ( $this->request->has('endDate') ? $this->request->input('endDate') : '') : $endDate;
+
         return [
             'pid' => $projectId,
             'StartDate' => $startDate,
@@ -172,12 +184,16 @@ class ProjectChartService
     {
         $params = $this->generateParams($projectId, $keywords, $startDate, $endDate);
 
+        Log::warning($action . '==>' . json_encode($params));
+
         return $this->getChart('project/1/' . $action, $params);
     }
 
     private function getChartWithMedia($action, $mediaId, $projectId = '', $keywords = '', $startDate = '', $endDate = '')
     {
         $params = $this->generateParams($projectId, $keywords, $startDate, $endDate);
+
+        Log::warning($action . '==>' . json_encode($params));
 
         return $this->getChart('project/1/'. $mediaId .'/'. $action, $params);
     }
