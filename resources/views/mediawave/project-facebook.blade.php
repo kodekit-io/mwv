@@ -93,9 +93,8 @@
 
     <script src="{!! asset('js/projects/sentiment-bar.js') !!}"></script>
     <script src="{!! asset('js/projects/comment-bar.js') !!}"></script>
-
+	
     <script src="{!! asset('js/projects/word-cloud.js') !!}"></script>
-
     <script src="{!! asset('js/projects/convo-facebook.js') !!}"></script>
 
     <script type="text/javascript">

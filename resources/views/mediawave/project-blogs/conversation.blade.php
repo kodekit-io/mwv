@@ -43,18 +43,19 @@
             <h2 class="md-card-toolbar-heading-text">BLOG POSTS</h2>
         </div>
         <div id="convwrap" class="md-card-content conv-wrap">
-            <?php //POSTS ?>
-            <table id="table_post" class="uk-table uk-table-striped uk-table-hover bordered" cellspacing="0" width="100%">
-                <thead>
-                <tr>
-                    <th>Author</th>
-                    <th>Title</th>
-                    <th>Summary</th>
-                    <th>Sentiment</th>
-                    <th><input type="checkbox" class="" id="" /><label for="">Select All</label></th>
-                </tr>
-                </thead>
-            </table>
+			<?php //BLOG TABLE ?>
+			<table id="table_blog" class="striped bordered highlight responsive-table">
+				<thead>
+				<tr>
+					<th>Date</th>
+					<th>Author</th>
+					<th>Title</th>
+					<th>Summary</th>
+					<th>Author Url</th>
+					<th>Url</th>
+				</tr>
+				</thead>
+			</table>
         </div>
     </div>
 
