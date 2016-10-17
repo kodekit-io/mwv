@@ -4,6 +4,7 @@ namespace App;
 
 
 use Carbon\Carbon;
+use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Log;
 
 class ChartService
@@ -20,7 +21,7 @@ class ChartService
      * Chart constructor.
      * @param $apiService
      */
-    public function __construct(ApiService $apiService, FakeResult $fakeResult)
+    public function __construct(ApiService $apiService, FakeResult $fakeResult, ProjectService $projectService)
     {
         $this->apiService = $apiService;
         $this->fakeResult = $fakeResult;
@@ -216,6 +217,5 @@ class ChartService
 
         return $arrMedia[$name];
     }
-
 
 }

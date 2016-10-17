@@ -1,5 +1,11 @@
 $.ajax({
     url : ajaxUrl + '/project/chart-data/potential-pie/' + mediaId,
+    data : {
+        projectId: projectId,
+        keywords: brands,
+        startDate: startDate,
+        endDate: endDate
+    },
     beforeSend : function(xhr) {
         $('#potentialpie').block({
             message: '<img src="' + ajaxUrl + '/mediawave/img/spinner.gif">',

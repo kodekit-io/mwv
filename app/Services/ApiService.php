@@ -31,7 +31,7 @@ class ApiService
             $params['auth_token'] = session('api_token');
         }
         $apiUrl = $this->apiDummyUrl . $url;
-        Log::warning($apiUrl);
+        // Log::warning($apiUrl);
 
         $response = $this->client->post($apiUrl, [
             'form_params' => $params
