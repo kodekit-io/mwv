@@ -37,15 +37,18 @@ $('#table_facebook').DataTable( {
             "data": null,
             "render": function ( data ) {
                 var sentiment = data["Sentiment"];
-                var c = "";
+                //var c = "";
                 switch (sentiment) {
                     case 'positive':
+					case 'Positif':
                         c = 'teal white-text uk-button uk-button-mini';
                         break;
                     case 'neutral':
+					case 'Netral':
                         c = 'blue-grey lighten-3 white-text uk-button uk-button-mini';
                         break;
                     case 'negative':
+					case 'Negatif':
                         c = 'red white-text uk-button uk-button-mini';
                         break;
                 }
