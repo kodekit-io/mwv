@@ -2,23 +2,24 @@ $('#table_facebook').DataTable( {
     "ajax": {
         "url": ajaxUrl + '/project/chart-data/convo-facebook',
         //"url": ajaxUrl + "/mediawave/jsontest/convo-fb.json",
-        "data": {
-            "project_id": projectId
-            //"start_date": '{!! $startDate !!}',
-            //"end_date": '{!! $endDate !!}'
+        "data" : {
+            "projectId": projectId,
+            "keywords": brands,
+            "startDate": startDate,
+            "endDate": endDate
         }
     },
     "columns": [
         { "data": "Date" },
-        //{ "data": "Author" },
-        {
-            "data": null,
-            "render": function ( data ) {
-                var page = data["Author"];
-                var link = data["Author Link"];
-                return '<a href="'+link+'" target="_blank" data-uk-tooltip title="'+page+'" class="uk-link">'+page+'</a>';
-            }
-        },
+        { "data": "Author" },
+        //{
+        //    "data": null,
+        //    "render": function ( data ) {
+        //        var page = data["Author"];
+        //        var link = data["Author Link"];
+        //        return '<a href="'+link+'" target="_blank" data-uk-tooltip title="'+page+'" class="uk-link">'+page+'</a>';
+        //    }
+        //},
         //{ "data": "Post" },
         {
             "data": null,
@@ -58,12 +59,12 @@ $('#table_facebook').DataTable( {
                 return '<span class="'+c+'">'+sentiment+'</span>';
             }
         },
-        { "data": "Author Link" },
+        //{ "data": "Author Link" },
         { "data": "Post Link" }
     ],
     "columnDefs": [{
         "visible": false,
-        "targets": [8, 9]
+        "targets": [8]
     }],
     "order": [[ 0, "desc" ]]
 });

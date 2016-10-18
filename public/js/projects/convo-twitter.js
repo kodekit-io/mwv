@@ -11,18 +11,18 @@ var table_twitter = $('#table_twitter').DataTable( {
             "keywords": brands,
             "startDate": startDate,
             "endDate": endDate
-        },
+        }
     },
     "columns": [
         { "data": "Date" },
-        //{ "data": "Author" },
-        {
-            "data": null,
-            "render": function ( data ) {
-                var user = data["Author"];
-                return '<a href="https://twitter.com/'+user+'" target="_blank" data-uk-tooltip title="'+user+'" class="uk-link">'+user+'</a>';
-            }
-        },
+        { "data": "Author" },
+        //{
+        //    "data": null,
+        //    "render": function ( data ) {
+        //        var user = data["Author"];
+        //        return '<a href="https://twitter.com/'+user+'" target="_blank" data-uk-tooltip title="'+user+'" class="uk-link">'+user+'</a>';
+        //    }
+        //},
         //{ "data": "Post" },
         {
             "data": null,

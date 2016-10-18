@@ -86,7 +86,7 @@
                             <th>Shares</th>
                             <th>Media Type</th>
                             <th>Sentiment</th>
-                            <th>Page Link</th>
+                            {{--<th>Page Link</th>--}}
                             <th>Post Link</th>
                         </tr>
                         </thead>

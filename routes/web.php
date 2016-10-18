@@ -69,16 +69,15 @@ Route::group(['middleware' => 'auth'], function () {
     Route::get('/project/chart-data/convo-instagram', 'ChartController@convoInstagramData');
 
 
-    Route::get('/project-detail/{pid}', 'ProjectController@detail');
-    Route::post('/project-detail/{pid}', 'ProjectController@detail');
-    Route::get('/conversation', 'ProjectController@conversation');
-
+    Route::any('/project-detail/{pid}', 'ProjectController@detail');
     Route::any('/project-twitter/{pid}', 'ProjectTwitterController@detail');
     Route::any('/project-facebook/{pid}', 'ProjectFacebookController@detail');
     Route::any('/project-news/{pid}', 'ProjectNewsController@detail');
     Route::any('/project-forum/{pid}', 'ProjectForumController@detail');
     Route::any('/project-video/{pid}', 'ProjectVideoController@detail');
     Route::any('/project-blog/{pid}', 'ProjectBlogController@detail');
+
+    Route::get('/conversation', 'ProjectController@conversation');
 
     Route::get('/project-ig/{pid}', 'ProjectController@detailIG');
 

@@ -1,5 +1,11 @@
 $.ajax({
     url : ajaxUrl + '/project/chart-data/post-trend',
+    data : {
+        projectId: projectId,
+        keywords: brands,
+        startDate: startDate,
+        endDate: endDate
+    },
     beforeSend : function(xhr) {
         $('#posttrend').block({
             message: '<img src="' + ajaxUrl + '/mediawave/img/spinner.gif">',
