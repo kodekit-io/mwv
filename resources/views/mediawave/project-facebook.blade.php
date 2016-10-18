@@ -14,7 +14,7 @@
                         Project Name: {!! $project->pname !!}
                     </h1>
                 </div>
-                <form class="md-card-content" action="{!! url('project-detail/' . $project->pid) !!}" method="POST">
+                <form class="md-card-content" action="{!! url('project-facebook/' . $project->pid) !!}" method="POST">
                     {{ csrf_field() }}
                     <div class="uk-grid uk-grid-medium" data-uk-grid data-uk-grid-margin>
                         <div class="uk-width-medium-2-3 uk-width-small-1-1">
@@ -31,11 +31,11 @@
                         </div>
                         <div class="nav-wrapper uk-width-medium-1-3 uk-width-small-1-1">
                             <div class="input-field md-daterange">
-                                <input id="startdate" name="start_date" type="text" class="uk-datepicker" data-uk-datepicker="{pos:'bottom',format:'DD/MM/YY'}" placeholder="10/12/16" value="{!! $startDate !!}">
+                                <input id="startdate" name="start_date" type="text" class="uk-datepicker" data-uk-datepicker="{pos:'bottom',format:'DD/MM/YY'}" placeholder="10/12/16" value="{!! $shownStartDate !!}">
                                 <label for="startdate"><i class="material-icons prefix">date_range</i></label>
                             </div> -
                             <div class="input-field md-daterange">
-                                <input id="enddate" name="end_date" type="text" class="uk-datepicker" data-uk-datepicker="{pos:'bottom',format:'DD/MM/YY'}" placeholder="17/12/16" value="{!! $endDate !!}">
+                                <input id="enddate" name="end_date" type="text" class="uk-datepicker" data-uk-datepicker="{pos:'bottom',format:'DD/MM/YY'}" placeholder="17/12/16" value="{!! $shownEndDate !!}">
                                 <label for="enddate"><i class="material-icons prefix">date_range</i></label>
                             </div>
                             <button class="btn pink darken-4 uk-align-right z-depth-0" name="filter" value="1" type="submit">UPDATE</button>
@@ -84,6 +84,7 @@
         var mediaId = 1;
         var startDate = '{!! $startDate !!}';
         var endDate = '{!! $endDate !!}';
+        var brands = '{!! $brands !!}';
     </script>
     <script src="{!! asset('js/projects/post-trend.js') !!}"></script>
     <script src="{!! asset('js/projects/post-pie.js') !!}"></script>

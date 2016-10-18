@@ -2,7 +2,14 @@
     <div class="md-card hoverable">
         <div class="md-card-toolbar">
             <div class="md-card-toolbar-actions">
-                <a class="btn waves-effect waves-light z-depth-0 amber lighten-4 tooltipped" data-position="top" data-delay="25" data-tooltip="Help"><i class="material-icons">help</i></a>
+                <a class="btn waves-effect waves-light z-depth-0 amber lighten-4"  data-uk-tooltip title="asdf
+                a
+                sdf
+                asdf
+                as
+                df
+                asdf
+                asdfasdfkasldfjasdf asdfasdf asdfasdf asdf asd fas dfas dfa sdfasdf asdf asdf asdf"><i class="material-icons">help</i></a>
                 <a class="btn waves-effect waves-light z-depth-0 green lighten-4 tooltipped" data-position="top" data-delay="25" data-tooltip="Minimize" data-uk-toggle="{target:'#trend'}"><i class="material-icons md-icon">fullscreen</i></a>
             </div>
             <div class="md-card-toolbar-heading-text">
