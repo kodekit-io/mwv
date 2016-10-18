@@ -93,6 +93,9 @@ function showEquityChart($id, $data) {
             labels: {
                 format: '{value}'
             },
+			min: 0,
+			max: 4000,
+            tickInterval: 500,
         },
         yAxis: {
             startOnTick: false,
@@ -103,7 +106,9 @@ function showEquityChart($id, $data) {
             labels: {
                 format: '{value}'
             },
-            maxPadding: 0.2,
+            min: 0,
+            tickInterval: 0.1,
+            lineWidth: 1,
         },
         tooltip: {
             useHTML: true,
@@ -129,6 +134,10 @@ function showEquityChart($id, $data) {
                         color: '#000'
                     }
                 }
+            },
+            bubble:{
+                minSize:'20%',
+                maxSize:'40%'
             }
         },
         series: $data

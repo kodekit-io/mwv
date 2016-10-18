@@ -89,21 +89,9 @@ function showEquityChart($id, $data) {
             labels: {
                 format: '{value}'
             },
-            //plotLines: [{
-            //    color: 'black',
-            //    dashStyle: 'dot',
-            //    width: 2,
-            //    value: 65,
-            //    label: {
-            //        rotation: 0,
-            //        y: 15,
-            //        style: {
-            //            fontStyle: 'italic'
-            //        },
-            //        text: 'Safe fat intake 65g/day'
-            //    },
-            //    zIndex: 3
-            //}]
+			min: 0,
+            tickInterval: 500,
+			lineWidth: 1,
         },
 
         yAxis: {
@@ -115,36 +103,10 @@ function showEquityChart($id, $data) {
             labels: {
                 format: '{value}'
             },
-            maxPadding: 0.2,
-            //plotLines: [{
-            //    color: 'black',
-            //    dashStyle: 'dot',
-            //    width: 2,
-            //    value: 50,
-            //    label: {
-            //        align: 'right',
-            //        style: {
-            //            fontStyle: 'italic'
-            //        },
-            //        text: 'Safe sugar intake 50g/day',
-            //        x: -10
-            //    },
-            //    zIndex: 3
-            //}]
+			min: 0,
+			tickInterval: 0.1,
+			lineWidth: 1,
         },
-
-        //tooltip: {
-        //    useHTML: true,
-        //    headerFormat: '<table><caption>{point.key}</caption>',
-        //    pointFormat: '<tr><td style="color: {series.color}">Net Sentiment</td><td style="text-align: right"><b>{point.x}</b></td></tr>' +
-        //    '<tr><td style="color: {series.color}">Sim Score</td><td style="text-align: right"><b>{point.y}</b></td></tr>' +
-        //    '<tr><td style="color: {series.color}">Unique User</td><td style="text-align: right"><b>{point.z}</b></td></tr>' +
-        //    '<tr><td style="color: {series.color}">Buzz Size</td><td style="text-align: right"><b>{point.Buzz}</b></td></tr>' +
-        //    '<tr><td style="color: {series.color}">Brand Favourable Talkability</td><td style="text-align: right"><b>{point.BrandFavourableTalkability}</b></td></tr>' +
-        //    '<tr><td style="color: {series.color}">Earned Media Share</td><td style="text-align: right"><b>{point.EarnedMediaShare}</b></td></tr>' +
-        //    '<tr><td style="color: {series.color}">Net Brand Reputation</td><td style="text-align: right"><b>{point.NetBrandReputation}</b></td></tr>',
-        //    footerFormat: '</table>',
-        //},
 
         tooltip: {
             useHTML: true,
@@ -171,6 +133,10 @@ function showEquityChart($id, $data) {
                         color: '#000'
                     }
                 }
+            },
+            bubble:{
+                minSize:'20%',
+                maxSize:'40%'
             }
         },
 
