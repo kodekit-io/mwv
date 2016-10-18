@@ -2,10 +2,11 @@ $('#table_blog').DataTable( {
     "ajax": {
         "url": ajaxUrl + '/project/chart-data/convo-blog',
         //"url": ajaxUrl + "/mediawave/jsontest/convo-blog.json",
-        "data": {
-            "project_id": projectId
-            //"start_date": '{!! $startDate !!}',
-            //"end_date": '{!! $endDate !!}'
+        "data" : {
+            "projectId": projectId,
+            "keywords": brands,
+            "startDate": startDate,
+            "endDate": endDate
         }
     },
     "columns": [

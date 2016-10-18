@@ -1,5 +1,11 @@
 $.ajax({
     url : ajaxUrl + '/project/chart-data/unique-user-pie',
+    data : {
+        projectId: projectId,
+        keywords: brands,
+        startDate: startDate,
+        endDate: endDate
+    },
     beforeSend : function(xhr) {
         $('#authorpie').block({
             message: '<img src="' + ajaxUrl + '/mediawave/img/spinner.gif">',

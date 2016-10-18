@@ -69,68 +69,8 @@ class ProjectController extends Controller
 
     public function detail(Request $request, $projectId)
     {
-        $brands = '';
-        $last7DaysRange = $this->chartService->getLastSevenDaysRange();
-        $startDate = $last7DaysRange['startDate'];
-        $endDate = $last7DaysRange['endDate'];
-        if ($request->has('filter')) {
-            // var_dump($request->input());
-            $startDate = $request->input('start_date');
-            $endDate = $request->input('end_date');
-            $startDate = ( $startDate != '' ) ? Carbon::createFromFormat('d/m/y', $startDate)->format('Y-m-d') : null;
-            $endDate = ( $endDate != '' ) ? Carbon::createFromFormat('d/m/y', $endDate)->format('Y-m-d') : null;
-            $brands = ( $request->has('keywords') ? implode(',', $request->input('keywords')) : '' );
-        }
-
-        $profiles = $this->projectService->projectInfo($projectId);
-        $chart = $this->chartService->projectChart($projectId, '1,2,3,4,5,6,12,A', $brands, $startDate, $endDate);
-        $wordCloud = $this->chartService->wordCloud($projectId, '', $brands, $startDate, $endDate);
-        $viewInfluencer = $this->chartService->viewInfluencer($projectId, '', $brands, $startDate, $endDate);
-        // $viewMediaDetail = $this->chartService->viewMediaDetail($projectId, $brands, $startDate, $endDate);
-
-        $keywords = [];
-        if (count($profiles->projectInfo->keywordList) > 0) {
-            $keywordLists = $profiles->projectInfo->keywordList;
-            foreach ($keywordLists as $keywordList) {
-                $keywordId = $keywordList->keyword->keywordId;
-                $keywordName = $keywordList->keyword->keywordName;
-                $keywords[$keywordId]['value'] = $keywordName;
-                $keywords[$keywordId]['selected'] = $this->isKeywordSelected($keywordId, $request);
-            }
-        }
-
-        $postTrend = File::get(public_path('mediawave/jsontest/trend-post.json'));
-        $postTrend = \GuzzleHttp\json_decode($postTrend);
-        $data['postTrend'] = \GuzzleHttp\json_encode($postTrend);
-        $reachTrend = File::get(public_path('mediawave/jsontest/trend-reach.json'));
-        $reachTrend = \GuzzleHttp\json_decode($reachTrend);
-        $data['reachTrend'] = \GuzzleHttp\json_encode($reachTrend);
-        $interactionTrend = File::get(public_path('mediawave/jsontest/trend-interaction.json'));
-        $interactionTrend = \GuzzleHttp\json_decode($interactionTrend);
-        $data['interactionTrend'] = \GuzzleHttp\json_encode($interactionTrend);
-
+        $data = $this->parseRequest($request, $projectId);
         $data['pageTitle'] = 'All Media';
-        $data['project'] = $chart->project;
-        $data['keywords'] = $keywords;
-        $data['startDate'] = Carbon::createFromFormat('Y-m-d', $startDate)->format('d/m/y');
-        $data['endDate'] = Carbon::createFromFormat('Y-m-d', $endDate)->format('d/m/y');;
-
-        $buzzTrendData = $this->chartService->getBuzzTrendData($chart, $startDate, $endDate);
-        // $postTrendData = $this->chartService->getPostTrendData($viewMediaDetail);
-        $data['brandEquity'] = \GuzzleHttp\json_encode($chart->brandEquity);
-        $data['shareOfVoice'] = \GuzzleHttp\json_encode($chart->shareOfVoice);
-        $data['volumeTrending'] = \GuzzleHttp\json_encode($chart->volumeTrending);
-        $data['mediaDistribution'] = \GuzzleHttp\json_encode($chart->mediaDistribution);
-        $data['sentimentMediaDistribution'] = \GuzzleHttp\json_encode($chart->sentimentMediaDistribution);
-        $data['sentimentBrandDistributions'] = \GuzzleHttp\json_encode($chart->sentimentBrandDistributions);
-        $data['projectBuzzTrend'] = \GuzzleHttp\json_encode($buzzTrendData);
-        //$data['projectPostTrend'] = \GuzzleHttp\json_encode($postTrendData);
-        $dataUnion = ( isset($wordCloud->dataUnion) ? $wordCloud->dataUnion : '' );
-        $data['wordCloud'] = \GuzzleHttp\json_encode($dataUnion);
-        $data['viewInfluencers'] = $viewInfluencer->influencer;
-        // $data['viewMediaDetail'] - $viewMediaDetail->mediaDetail;
-
-        $data['projectId'] = $projectId;
 
         return view('mediawave.project-detail', $data);
     }
