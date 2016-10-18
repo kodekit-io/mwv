@@ -74,11 +74,11 @@ Route::group(['middleware' => 'auth'], function () {
     Route::get('/conversation', 'ProjectController@conversation');
 
     Route::any('/project-twitter/{pid}', 'ProjectTwitterController@detail');
-    Route::get('/project-facebook/{pid}', 'ProjectFacebookController@detail');
-    Route::get('/project-news/{pid}', 'ProjectNewsController@detail');
-    Route::get('/project-forum/{pid}', 'ProjectForumController@detail');
-    Route::get('/project-video/{pid}', 'ProjectVideoController@detail');
-    Route::get('/project-blog/{pid}', 'ProjectBlogController@detail');
+    Route::any('/project-facebook/{pid}', 'ProjectFacebookController@detail');
+    Route::any('/project-news/{pid}', 'ProjectNewsController@detail');
+    Route::any('/project-forum/{pid}', 'ProjectForumController@detail');
+    Route::any('/project-video/{pid}', 'ProjectVideoController@detail');
+    Route::any('/project-blog/{pid}', 'ProjectBlogController@detail');
 
     Route::get('/project-ig/{pid}', 'ProjectController@detailIG');
 

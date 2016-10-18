@@ -6,6 +6,7 @@ use App\ApiService;
 use App\ChartService;
 use App\DatatableService;
 use App\KeywordSelected;
+use App\ProjectRequestParser;
 use App\ProjectService;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
@@ -18,6 +19,7 @@ class ProjectController extends Controller
 {
 
     use KeywordSelected;
+    use ProjectRequestParser;
 
     private $projectService;
     /**

@@ -184,7 +184,7 @@ class ProjectChartService
     {
         $params = $this->generateParams($projectId, $keywords, $startDate, $endDate);
 
-        Log::warning($action . '==>' . json_encode($params));
+        // Log::warning($action . '==>' . json_encode($params));
 
         return $this->getChart('project/1/' . $action, $params);
     }
@@ -193,7 +193,7 @@ class ProjectChartService
     {
         $params = $this->generateParams($projectId, $keywords, $startDate, $endDate);
 
-        Log::warning($action . '==>' . json_encode($params));
+        // Log::warning($action . '==>' . json_encode($params));
 
         return $this->getChart('project/1/'. $mediaId .'/'. $action, $params);
     }
