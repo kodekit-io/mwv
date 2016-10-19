@@ -115,10 +115,15 @@
     <script src="{!! asset('js/projects/convo-blog.js') !!}"></script>
 
     <script type="text/javascript">
+	/*
         $('#table_author').DataTable( {
             "order": [[ 0, "desc" ]]
         });
         wordCloud('wordcloud-container', jQuery.parseJSON('{!! $wordCloud !!}'));
+	*/
+
+	wordCloud('wordcloud-container','http://103.28.15.104:8821/dummy_api/project/1/wordcloud');
+
     </script>
 
 @endsection
