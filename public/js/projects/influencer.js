@@ -40,10 +40,10 @@ function influencerTable($id,$url) {
 			            { title: "Value" },
 			            //{ title: "Link" },
 						{
-				            "title": "Link",
-				            "render": function ( data ) {
-				                var link = data[3];
-				                return '<a href="'+link+'" target="_blank" data-uk-tooltip title="See Details" class="uk-button uk-button-primary">See Details</a>';
+				            data: null,
+				            render: function ( data ) {
+				                var postlink = data[3];
+				                return '<a href="'+postlink+'" target="_blank" data-uk-tooltip title="See Details" class="uk-button uk-button-primary">See Details</a>';
 				            }
 				        },
 			        ],
