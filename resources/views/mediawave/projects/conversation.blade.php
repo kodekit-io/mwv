@@ -2,12 +2,15 @@
     <div class="md-card hoverable">
         <div class="md-card-toolbar">
             <div class="md-card-toolbar-actions">
-                <a class="btn waves-effect waves-light z-depth-0 amber lighten-4 tooltipped" data-position="top" data-delay="25" data-tooltip="Help"><i class="material-icons">help</i></a>
-                <a class="btn waves-effect waves-light z-depth-0 green lighten-4 tooltipped" data-position="top" data-delay="25" data-tooltip="Minimize" data-uk-toggle="{target:'#author'}"><i class="material-icons md-icon">fullscreen</i></a>
+                <a class="btn waves-effect waves-light z-depth-0 amber lighten-4 " data-uk-tooltip title="{{ config('tooltips.influencer') }}"><i class="material-icons">help</i></a>
+                <a class="btn waves-effect waves-light z-depth-0 green lighten-4 " data-uk-tooltip title="Minimize" data-uk-toggle="{target:'#author'}"><i class="material-icons md-icon">fullscreen</i></a>
             </div>
             <h2 class="md-card-toolbar-heading-text">INFLUENCER</h2>
         </div>
         <div id="author" class="md-card-content conv-wrap">
+			<table id="influencerTable" class="striped bordered highlight responsive-table">
+			</table>
+			<?php /*
             <table id="table_author" class="striped bordered highlight responsive-table">
                 <thead>
                 <tr>
@@ -30,6 +33,8 @@
                 @endif
                 </tbody>
             </table>
+			*/
+			?>
         </div>
     </div>
 </li>
@@ -38,8 +43,8 @@
     <div class="md-card hoverable">
         <div class="md-card-toolbar">
             <div class="md-card-toolbar-actions">
-                <a class="btn waves-effect waves-light z-depth-0 amber lighten-4 tooltipped" data-position="top" data-delay="25" data-tooltip="Help"><i class="material-icons">help</i></a>
-                <a class="btn waves-effect waves-light z-depth-0 green lighten-4 tooltipped" data-position="top" data-delay="25" data-tooltip="Minimize" data-uk-toggle="{target:'#conv'}"><i class="material-icons md-icon">fullscreen</i></a>
+                <a class="btn waves-effect waves-light z-depth-0 amber lighten-4 " data-uk-tooltip title="{{ config('tooltips.convotable') }}"><i class="material-icons">help</i></a>
+                <a class="btn waves-effect waves-light z-depth-0 green lighten-4 " data-uk-tooltip title="Minimize" data-uk-toggle="{target:'#conv'}"><i class="material-icons md-icon">fullscreen</i></a>
             </div>
             <h2 class="md-card-toolbar-heading-text">CONVERSATIONS</h2>
         </div>

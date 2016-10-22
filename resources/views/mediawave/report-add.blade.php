@@ -141,7 +141,7 @@
                 </div>
                 <div class="uk-width-medium-1-1">
                     <div class="uk-panel uk-panel-box">
-                        <button type="submit" class="btn amber darken-4 right tooltipped" data-position="top" data-delay="25" data-tooltip="Save Report Request">SAVE NOW</button>
+                        <button type="submit" class="btn amber darken-4 right" data-uk-tooltip title="Save Report Request">SAVE NOW</button>
                     </div>
                 </div>
             </div>
