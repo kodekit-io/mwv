@@ -73,8 +73,8 @@
                         </li>
                     </ul>
                     <div class="uk-panel uk-panel-box">
-                        <button type="submit" class="btn amber darken-4 right uk-margin-left nextstep tooltipped" data-position="top" data-delay="25" data-tooltip="Save Query">SAVE NOW</button>
-                        <a href="#previewquery" class="modal-trigger btn white black-text right uk-margin-left tooltipped" data-position="top" data-delay="25" data-tooltip="Preview All Query">PREVIEW QUERY</a>
+                        <button type="submit" class="btn amber darken-4 right uk-margin-left nextstep" data-uk-tooltip title="Save Query">SAVE NOW</button>
+                        <a href="#previewquery" class="modal-trigger btn white black-text right uk-margin-left" data-uk-tooltip title="Preview All Query">PREVIEW QUERY</a>
                     </div>
                     <div id="previewquery" class="modal modal-fixed-footer">
                          <div class="modal-content">

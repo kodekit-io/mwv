@@ -1,4 +1,3 @@
-/*
 function wordCloud($id, $data) {
     if ($data.length === 0) {
         $('#' + $id).html("<div class='center'>No data chart</div>");
@@ -16,10 +15,14 @@ function wordCloud($id, $data) {
             },
             //shape: 'rectangular'
         });
+		$('#' + $id).on('click','span',function(){
+			$(this).hide();
+		});
     }
 }
-*/
-function wordCloud($id,$url) {
+
+
+function wordCloudTemporary($id,$url) {
 
 	$.ajax({
 		//url : ajaxUrl + '/project/chart-data/comment-pie/' + mediaId,

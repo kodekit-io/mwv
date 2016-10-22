@@ -1,6 +1,24 @@
 <?php
 return [
-    'all-media' => [
-        'brand-equity' => 'This is brand equity chart<br>you can see the dotted area for the value'
-    ]
+    'brand-equity' => 'Value that a company generates from a product with a recognizable name, when compared to a generic equivalent',
+	'trend-chart' => 'Trend activities day by day',
+	'buzz-pie' => 'Total buzz percentage',
+	'post-pie' => 'Total posts percentage',
+	'interaction-pie' => 'Total interactions percentage',
+	'user-pie' => 'Total unique users percentage',
+	'reach-pie' => 'Reach',
+	'vreach-pie' => 'Viral reach',
+	'potreach-pie' => 'Potential reach',
+	'comment-pie' => 'Comments',
+	'like-pie' => 'Howmany likes',
+	'share-pie' => 'Howmany shares',
+	'sentiment-bar' => 'Sentiment',
+	'interactions-bar' => 'Interactions',
+	'shareofmedia-bar' => 'Share of media',
+	'videorating-bar' => 'Rating of the video',
+	'videocount-bar' => 'Video count',
+	'comment-bar' => 'Comment',
+	'wordclouds' => 'Word clouds',
+	'influencer' => 'Top user',
+	'convotable' => 'Conversations media',
 ];

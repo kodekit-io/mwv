@@ -106,6 +106,7 @@
     <script src="{!! asset('js/projects/share-of-media-bar.js') !!}"></script>
 
     <script src="{!! asset('js/projects/word-cloud.js') !!}"></script>
+	<script src="{!! asset('js/projects/influencer.js') !!}"></script>
 
     <script src="{!! asset('js/projects/convo-twitter.js') !!}"></script>
     <script src="{!! asset('js/projects/convo-facebook.js') !!}"></script>
@@ -122,8 +123,8 @@
         wordCloud('wordcloud-container', jQuery.parseJSON('{!! $wordCloud !!}'));
 	*/
 
-	wordCloud('wordcloud-container','http://103.28.15.104:8821/dummy_api/project/1/wordcloud');
-
+	wordCloudTemporary('wordcloud-container','http://103.28.15.104:8821/dummy_api/project/1/wordcloud');
+	influencerTable('influencerTable','http://103.28.15.104:8821/dummy_api/project/1/influencer');
     </script>
 
 @endsection
