@@ -39,8 +39,8 @@
 						<div class="md-card">
 							<div class="md-card-toolbar">
 								<div class="md-card-toolbar-actions">
-		                            <a class="btn waves-effect waves-light z-depth-0 cyan tooltipped white-text" data-uk-tooltip title="Edit Profile" onclick="editProfile()" data-uk-toggle="{target:'.saveProfile.uk-hidden'}"><i class="material-icons md-icon">mode_edit</i></a>
-		                            <a class="btn waves-effect waves-light z-depth-0 red darken-4 tooltipped white-text" data-uk-tooltip title="Change Password" data-uk-toggle="{target:'.changePass'}"><i class="material-icons md-icon">lock</i></a>
+		                            <a class="btn waves-effect waves-light z-depth-0 cyan white-text" data-uk-tooltip title="Edit Profile" onclick="editProfile()" data-uk-toggle="{target:'.saveProfile.uk-hidden'}"><i class="material-icons md-icon">mode_edit</i></a>
+		                            <a class="btn waves-effect waves-light z-depth-0 red darken-4 white-text" data-uk-tooltip title="Change Password" data-uk-toggle="{target:'.changePass'}"><i class="material-icons md-icon">lock</i></a>
 		                        </div>
 								<h2 class="md-card-toolbar-heading-text">USER PROFILE</h2>
 							</div>
@@ -100,7 +100,7 @@
 							<div class="md-card-toolbar">
 								<div class="md-card-toolbar-actions" style="position:relative;">
 									<div class="fixed-action-btn horizontal click-to-toggle">
-										<a class="btn amber darken-3 z-depth-0" data-uk-tooltip title="Add more social media"><i class="material-icons">playlist_add</i></a>
+										<a class="btn amber darken-3 z-depth-0" data-uk-tooltip="{pos:'top-right'}" title="Add more social media"><i class="material-icons">playlist_add</i></a>
 										<ul>
 											<li>
 												<a class="btn-floating z-depth-0 light-blue lighten-2" data-uk-tooltip title="Add Twitter" onclick="addSocmed('twitter')"><i class="uk-icon-twitter"></i></a>
