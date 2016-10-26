@@ -111,7 +111,7 @@ $(function() {
     var useremail = $('.user #email').val();
     $('.gravatar').gravatar(useremail);
     $('.gravmail').html(useremail);
-    $('.appusername').html('USERNAME');
+    //$('.appusername').html('USERNAME');
 
 });
 function editProfile(e) {

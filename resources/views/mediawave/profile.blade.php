@@ -28,8 +28,8 @@
 						</div>
 					</div>
 					<div class="md-card-content center-align">
-						<h6 class="appusername"></h6>
-						<div class="uk-text-small gravmail"></div>
+						<h6 class="appusername">{!! $userProfile->userName !!}</h6>
+						<div class="uk-text-small gravmail">{!! $userProfile->email !!}</div>
 					</div>
 				</div>
 			</div>
@@ -48,19 +48,19 @@
 								<form class="changeProfile">
 									<div class="row">
 										<div class="input-field col s12">
-											<input disabled value="Ujang Kampak" id="name" type="text">
+											<input disabled value="{!! $userProfile->userName !!}" id="name" type="text">
 											<label for="name">Name</label>
 										</div>
 									</div>
 									<div class="row">
 										<div class="input-field col s12">
-											<input disabled value="oblak.gonong@cadas.net" id="email" type="email">
+											<input disabled value="{!! $userProfile->email !!}" id="email" type="email">
 											<label for="email">Email</label>
 										</div>
 									</div>
 									<div class="row">
 										<div class="input-field col s12">
-											<input disabled value="Cadas Enterprice Ltd." id="company" type="text">
+											<input disabled value="{!! $userProfile->company !!}" id="company" type="text">
 											<label for="company">Company</label>
 										</div>
 									</div>
@@ -102,6 +102,7 @@
 									<div class="fixed-action-btn horizontal click-to-toggle">
 										<a class="btn amber darken-3 z-depth-0 tooltipped" data-position="top" data-delay="25" data-tooltip="Add more social media"><i class="material-icons">playlist_add</i></a>
 										<ul>
+											@foreach($socmeds as $socmed)
 											<li>
 												<a class="btn-floating z-depth-0 light-blue lighten-2 tooltipped" data-position="top" data-delay="25" data-tooltip="Add Twitter" onclick="addSocmed('twitter')"><i class="uk-icon-twitter"></i></a>
 											</li>
@@ -114,6 +115,7 @@
 											<li>
 												<a class="btn-floating z-depth-0 brown tooltipped" data-position="top" data-delay="25" data-tooltip="Add Instagram" onclick="addSocmed('instagram')"><i class="uk-icon-instagram"></i></a>
 											</li>
+                                            @endforeach
 										</ul>
 									</div>
 		                        </div>

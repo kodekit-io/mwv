@@ -14,20 +14,20 @@
                         Social Media Page
                     </h1>
                 </div>
-                <form class="md-card-content" action="{!! url('project-detail/' . $project->pid) !!}" method="POST">
+                <form class="md-card-content" action="{!! url('project-detail/') !!}" method="POST">
                     {{ csrf_field() }}
                     <div class="uk-grid uk-grid-medium" data-uk-grid data-uk-grid-margin>
                         <div class="uk-width-medium-2-3 uk-width-small-1-1">
-                            @if (count($keywords) > 0)
-                            <ul class="uk-subnav">
-                                @foreach($keywords as $key => $keywords)
-                                <li class="">
-                                    <input type="checkbox" name="keywords[]" value="{!! $key !!}" class="filled-in" id="{!! $key !!}" {!! $keywords['selected'] !!}  />
-                                    <label for="{!! $key !!}">{!! $keywords['value'] !!}</label>
-                                </li>
-                               @endforeach
-                            </ul>
-                            @endif
+                            {{--@if (count($keywords) > 0)--}}
+                            {{--<ul class="uk-subnav">--}}
+                                {{--@foreach($keywords as $key => $keywords)--}}
+                                {{--<li class="">--}}
+                                    {{--<input type="checkbox" name="keywords[]" value="{!! $key !!}" class="filled-in" id="{!! $key !!}" {!! $keywords['selected'] !!}  />--}}
+                                    {{--<label for="{!! $key !!}">{!! $keywords['value'] !!}</label>--}}
+                                {{--</li>--}}
+                                {{--@endforeach--}}
+                            {{--</ul>--}}
+                            {{--@endif--}}
                         </div>
                         <div class="nav-wrapper uk-width-medium-1-3 uk-width-small-1-1">
                             <div class="input-field md-daterange">

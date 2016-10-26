@@ -82,7 +82,7 @@ Route::group(['middleware' => 'auth'], function () {
     Route::get('/project-ig/{pid}', 'ProjectController@detailIG');
 
     Route::get('/edit-project/{pid}', 'ProjectController@edit');
-    Route::get('/profile', 'ProjectController@profile');
+    Route::get('/profile', 'ProfileController@profile');
     Route::post('/update-project', 'ProjectController@update');
     Route::get('/chart-1/{pid}', 'ChartController@chartOne');
 
@@ -91,10 +91,10 @@ Route::group(['middleware' => 'auth'], function () {
     Route::post('/report-save', 'ReportController@save');
     Route::get('/delete-report/{id}', 'ReportController@delete');
 
-    Route::get('/socmed-twitter', 'ProjectController@socmedTW');
-    Route::get('/socmed-facebook', 'ProjectController@socmedFB');
-    Route::get('/socmed-youtube', 'ProjectController@socmedYT');
-    Route::get('/socmed-instagram', 'ProjectController@socmedIG');
+    Route::get('/socmed-twitter', 'SocialMediaController@twitter');
+    Route::get('/socmed-facebook', 'SocialMediaController@facebook');
+    Route::get('/socmed-youtube', 'SocialMediaController@youtube');
+    Route::get('/socmed-instagram', 'SocialMediaController@instagram');
 
 });
 
