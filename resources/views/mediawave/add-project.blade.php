@@ -76,7 +76,7 @@
                                 <a href="javascript:void(0);" class="uk-button btn blue z-depth-0 add_key uk-width-medium-1-5 step7" title="Add Keyword">ADD MORE KEYWORD</a>
 
                                 <div class="uk-panel uk-panel-box uk-margin-top">
-                                    <a class="btn amber darken-4 right uk-margin-left nextstep tooltipped step8" data-position="top" data-delay="25" data-tooltip="Next Step: Create Topics">NEXT STEP</a>
+                                    <a class="btn amber darken-4 right uk-margin-left nextstep tooltipped step8" data-uk-tooltip title="Next Step: Create Topics">NEXT STEP</a>
                                 </div>
                             </li>
                             <li>
@@ -100,8 +100,8 @@
                                  <a href="javascript:void(0);" class="uk-button btn blue z-depth-0 add_topic uk-width-medium-1-5 step11" title="Add Topic">ADD MORE TOPIC</a>
 
                                  <div class="uk-panel uk-panel-box uk-margin-top">
-                                    <a class="btn white black-text left prevstep tooltipped backtopic" data-position="top" data-delay="25" data-tooltip="Prev Step: Keywords">BACK</a>
-                                    <a class="btn amber darken-4 right uk-margin-left nextstep tooltipped step12" data-position="top" data-delay="25" data-tooltip="Next Step: Create Excluded Topics">NEXT STEP</a>
+                                    <a class="btn white black-text left prevstep tooltipped backtopic" data-uk-tooltip title="Prev Step: Keywords">BACK</a>
+                                    <a class="btn amber darken-4 right uk-margin-left nextstep tooltipped step12" data-uk-tooltip title="Next Step: Create Excluded Topics">NEXT STEP</a>
                                  </div>
                             </li>
                             <li>
@@ -125,9 +125,9 @@
                                  <a href="javascript:void(0);" class="uk-button btn blue z-depth-0 add_excld uk-width-medium-1-5 step15" title="Add Exclude">ADD MORE EXCLUDE</a>
 
                                  <div class="uk-panel uk-panel-box uk-margin-top">
-                                    <a class="btn white black-text left prevstep tooltipped backexcld" data-position="top" data-delay="25" data-tooltip="Prev Step: Topics">BACK</a>
+                                    <a class="btn white black-text left prevstep tooltipped backexcld" data-uk-tooltip title="Prev Step: Topics">BACK</a>
                                     <button type="submit" class="btn amber darken-4 right uk-margin-left nextstep tooltipped step17" data-position="top" data-delay="25" name="form_mode" value="regular" data-tooltip="Save Query">SAVE NOW</button>
-                                    <a href="#previewquery" class="modal-trigger btn white black-text right uk-margin-left tooltipped step16" data-position="top" data-delay="25" data-tooltip="Preview All Query" onclick="previewQuery()">PREVIEW QUERY</a>
+                                    <a href="#previewquery" class="modal-trigger btn white black-text right uk-margin-left tooltipped step16" data-uk-tooltip title="Preview All Query" onclick="previewQuery()">PREVIEW QUERY</a>
                                  </div>
                             </li>
                         </ul>
@@ -163,7 +163,7 @@
 
                                   <div class="uk-panel uk-panel-box uk-margin-top">
                                     <button type="submit" class="btn amber darken-4 right uk-margin-left nextstep tooltipped" data-position="top" data-delay="25" name="form_mode" value="advanced" data-tooltip="Save Query">SAVE NOW</button>
-                                    <a href="#previewquery" class="modal-trigger btn white black-text right uk-margin-left tooltipped" data-position="top" data-delay="25" data-tooltip="Preview All Query" onclick="previewAdavancedQuery()">PREVIEW QUERY</a>
+                                    <a href="#previewquery" class="modal-trigger btn white black-text right uk-margin-left" data-uk-tooltip title="Preview All Query" onclick="previewAdavancedQuery()">PREVIEW QUERY</a>
                                   </div>
                             </li>
                          </ul>

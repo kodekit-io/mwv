@@ -102,8 +102,8 @@
                                 <a href="javascript:void(0);" class="uk-button btn blue z-depth-0 add_advexcld uk-width-medium-1-5 uk-margin-bottom" title="Add Exclude">ADD MORE EXCLUDE</a>
 
                                 <div class="uk-panel uk-panel-box uk-margin-top">
-                                    <button type="submit" class="btn amber darken-4 right uk-margin-left nextstep tooltipped" data-position="top" data-delay="25" data-tooltip="Save Query">SAVE NOW</button>
-                                    <a href="#previewquery" class="modal-trigger btn white black-text right uk-margin-left tooltipped" data-position="top" data-delay="25" data-tooltip="Preview All Query">PREVIEW QUERY</a>
+                                    <button type="submit" class="btn amber darken-4 right uk-margin-left nextstep" data-uk-tooltip title="Save Query">SAVE NOW</button>
+                                    <a href="#previewquery" class="modal-trigger btn white black-text right uk-margin-left" data-uk-tooltip title="Preview All Query">PREVIEW QUERY</a>
                                 </div>
                             </li>
                         </ul>

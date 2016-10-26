@@ -39,8 +39,8 @@
 						<div class="md-card">
 							<div class="md-card-toolbar">
 								<div class="md-card-toolbar-actions">
-		                            <a class="btn waves-effect waves-light z-depth-0 cyan tooltipped white-text" data-position="top" data-delay="25" data-tooltip="Edit Profile" onclick="editProfile()" data-uk-toggle="{target:'.saveProfile.uk-hidden'}"><i class="material-icons md-icon">mode_edit</i></a>
-		                            <a class="btn waves-effect waves-light z-depth-0 red darken-4 tooltipped white-text" data-position="top" data-delay="25" data-tooltip="Change Password" data-uk-toggle="{target:'.changePass'}"><i class="material-icons md-icon">lock</i></a>
+		                            <a class="btn waves-effect waves-light z-depth-0 cyan tooltipped white-text" data-uk-tooltip title="Edit Profile" onclick="editProfile()" data-uk-toggle="{target:'.saveProfile.uk-hidden'}"><i class="material-icons md-icon">mode_edit</i></a>
+		                            <a class="btn waves-effect waves-light z-depth-0 red darken-4 tooltipped white-text" data-uk-tooltip title="Change Password" data-uk-toggle="{target:'.changePass'}"><i class="material-icons md-icon">lock</i></a>
 		                        </div>
 								<h2 class="md-card-toolbar-heading-text">USER PROFILE</h2>
 							</div>
@@ -65,7 +65,7 @@
 										</div>
 									</div>
 									<div class="row uk-text-center uk-margin-bottom saveProfile uk-hidden">
-										<button type="submit" class="btn amber darken-4 tooltipped" data-position="top" data-delay="25" data-tooltip="Save Profile">SAVE PROFILE</button>
+										<button type="submit" class="btn amber darken-4" data-uk-tooltip title="Save Profile">SAVE PROFILE</button>
 									</div>
 								</form>
 								<form class="changePass uk-hidden">
@@ -89,7 +89,7 @@
 										</div>
 									</div>
 									<div class="row uk-margin-bottom uk-text-center">
-										<button type="submit" class="btn amber darken-4 tooltipped" data-position="top" data-delay="25" data-tooltip="Save Password">SAVE PASSWORD</button>
+										<button type="submit" class="btn amber darken-4" data-uk-tooltip title="Save Password">SAVE PASSWORD</button>
 									</div>
 								</form>
 							</div>
@@ -100,20 +100,20 @@
 							<div class="md-card-toolbar">
 								<div class="md-card-toolbar-actions" style="position:relative;">
 									<div class="fixed-action-btn horizontal click-to-toggle">
-										<a class="btn amber darken-3 z-depth-0 tooltipped" data-position="top" data-delay="25" data-tooltip="Add more social media"><i class="material-icons">playlist_add</i></a>
+										<a class="btn amber darken-3 z-depth-0" data-uk-tooltip title="Add more social media"><i class="material-icons">playlist_add</i></a>
 										<ul>
 											@foreach($socmeds as $socmed)
 											<li>
-												<a class="btn-floating z-depth-0 light-blue lighten-2 tooltipped" data-position="top" data-delay="25" data-tooltip="Add Twitter" onclick="addSocmed('twitter')"><i class="uk-icon-twitter"></i></a>
+												<a class="btn-floating z-depth-0 light-blue lighten-2" data-uk-tooltip title="Add Twitter" onclick="addSocmed('twitter')"><i class="uk-icon-twitter"></i></a>
 											</li>
 											<li>
-												<a class="btn-floating z-depth-0 blue darken-3 tooltipped" data-position="top" data-delay="25" data-tooltip="Add Facebook" onclick="addSocmed('facebook')"><i class="uk-icon-facebook"></i></a>
+												<a class="btn-floating z-depth-0 blue darken-3" data-uk-tooltip title="Add Facebook" onclick="addSocmed('facebook')"><i class="uk-icon-facebook"></i></a>
 											</li>
 											<li>
-												<a class="btn-floating z-depth-0 red tooltipped" data-position="top" data-delay="25" data-tooltip="Add Youtube" onclick="addSocmed('youtube')"><i class="uk-icon-youtube"></i></a>
+												<a class="btn-floating z-depth-0 red" data-uk-tooltip title="Add Youtube" onclick="addSocmed('youtube')"><i class="uk-icon-youtube"></i></a>
 											</li>
 											<li>
-												<a class="btn-floating z-depth-0 brown tooltipped" data-position="top" data-delay="25" data-tooltip="Add Instagram" onclick="addSocmed('instagram')"><i class="uk-icon-instagram"></i></a>
+												<a class="btn-floating z-depth-0 brown" data-uk-tooltip title="Add Instagram" onclick="addSocmed('instagram')"><i class="uk-icon-instagram"></i></a>
 											</li>
                                             @endforeach
 										</ul>
@@ -154,7 +154,7 @@
 										</div>
 									</div>
 									<div class="row uk-margin-bottom uk-text-center">
-										<button type="submit" class="btn amber darken-4 tooltipped" data-position="top" data-delay="25" data-tooltip="Save Social Media">SAVE NOW</button>
+										<button type="submit" class="btn amber darken-4" data-uk-tooltip title="Save Social Media">SAVE NOW</button>
 									</div>
 								</form>
 							</div>

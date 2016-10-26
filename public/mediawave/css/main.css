@@ -174,7 +174,7 @@ h6 {
 /* layout */
 div.jqcloud {
 	overflow: hidden;
-	position: relative;
+	position: relative !important;
 }
 
 div.jqcloud span {
