@@ -1,27 +1,26 @@
 $.ajax({
-    url : ajaxUrl + '/project/chart-data/comment-pie/' + mediaId,
+    url : ajaxUrl + '/project/chart-data/buzz-pie/' + mediaId + '/' + type,
     data : {
-        projectId: projectId,
         keywords: brands,
         startDate: startDate,
         endDate: endDate
     },
     beforeSend : function(xhr) {
-        $('#commentpie').block({
+        $('#buzzpie').block({
             message: '<img src="' + ajaxUrl + '/mediawave/img/spinner.gif">',
             css: { border: 'none', zIndex: 100 },
             overlayCSS: { backgroundColor: '#fff', zIndex: 100 }
         });
     },
     complete : function(xhr, status) {
-        $('#commentpie').unblock();
+        $('#buzzpie').unblock();
     },
     success : function(result) {
-        commentPieChart('commentpie', jQuery.parseJSON(result));
+        buzzPieChart('buzzpie', jQuery.parseJSON(result));
     }
 });
 
-function commentPieChart($id, $data) {
+function buzzPieChart($id, $data) {
     $data = $data.data;
     if ($data.length === 0) {
         $('#' + $id).html("<div class='center'>No Data</div>");
@@ -29,14 +28,14 @@ function commentPieChart($id, $data) {
         var $content = [];
         for (var i = 0; i < $data.length; i++) {
             $keywordname = $data[i].keywordName;
-            $buzz = $data[i].comment;
+            $buzz = $data[i].buzz;
             $content[i] = {name: $keywordname, y: $buzz};
         }
-        createCommentPieChart($content, $id);
+        createBuzzPieChart($content, $id);
     }
 }
 
-function createCommentPieChart(dataSet, id) {
+function createBuzzPieChart(dataSet, id) {
     $('#'+id).highcharts({
         chart: {
             plotBackgroundColor: null,
@@ -49,18 +48,18 @@ function createCommentPieChart(dataSet, id) {
         },
         tooltip: {
             //pointFormat: '{series.name}: <b>{point.percentage:.1f}%</b>'
-            pointFormat: 'Total Post: <b>{point.y}</b> ({point.percentage:.1f}%)<br/>'
+            pointFormat: 'Total Buzz: <b>{point.y}</b> ({point.percentage:.1f}%)<br/>'
         },
         /*plotOptions: {
-         pie: {
-         allowPointSelect: true,
-         cursor: 'pointer',
-         dataLabels: {
-         enabled: false
-         },
-         showInLegend: true
-         }
-         },*/
+            pie: {
+                allowPointSelect: true,
+                cursor: 'pointer',
+                dataLabels: {
+                    enabled: false
+                },
+                showInLegend: true
+            }
+        },*/
         plotOptions: {
             pie: {
                 allowPointSelect: true,

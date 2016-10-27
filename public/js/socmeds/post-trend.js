@@ -1,45 +1,44 @@
 $.ajax({
-    url : ajaxUrl + '/project/chart-data/comment-trend/' + mediaId,
+    url : ajaxUrl + '/project/chart-data/post-trend/' + mediaId + '/' + type,
     data : {
-        projectId: projectId,
         keywords: brands,
         startDate: startDate,
         endDate: endDate
     },
     beforeSend : function(xhr) {
-        $('#commenttrend').block({
+        $('#posttrend').block({
             message: '<img src="' + ajaxUrl + '/mediawave/img/spinner.gif">',
             css: { border: 'none', zIndex: 100 },
             overlayCSS: { backgroundColor: '#fff', zIndex: 100 }
         });
     },
     complete : function(xhr, status) {
-        $('#commenttrend').unblock();
+        $('#posttrend').unblock();
     },
     success : function(result) {
-        commentTrendChart('commenttrend', jQuery.parseJSON(result));
+        postTrendChart('posttrend', jQuery.parseJSON(result));
     }
 });
 
-function commentTrendChart($id, $data) {
+function postTrendChart($id, $data) {
     if ($data.length === 0) {
         $('#'+$id).html("<div class='center'>No data chart</div>");
     } else {
         $dates = $data.dates;
         $content = [];
         for (var i = 0; i < $data.data.length; i++) {
-            $content[i] = { name: $data.data[i].keywordName, data: $data.data[i].comment };
+            $content[i] = { name: $data.data[i].keywordName, data: $data.data[i].post };
         }
         var chartData = {
             content: $content,
             categories: $dates
         };
 
-        createCommentTrend(chartData, $id);
+        createPostTrend(chartData, $id);
     }
 }
 
-function createCommentTrend(chartData, id) {
+function createPostTrend(chartData, id) {
     $('#' + id).highcharts({
         chart: {
             type: 'spline',

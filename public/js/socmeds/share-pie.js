@@ -1,27 +1,26 @@
 $.ajax({
-    url : ajaxUrl + '/project/chart-data/comment-pie/' + mediaId,
+    url : ajaxUrl + '/project/chart-data/share-pie/' + mediaId + '/' + type,
     data : {
-        projectId: projectId,
         keywords: brands,
         startDate: startDate,
         endDate: endDate
     },
     beforeSend : function(xhr) {
-        $('#commentpie').block({
+        $('#sharepie').block({
             message: '<img src="' + ajaxUrl + '/mediawave/img/spinner.gif">',
             css: { border: 'none', zIndex: 100 },
             overlayCSS: { backgroundColor: '#fff', zIndex: 100 }
         });
     },
     complete : function(xhr, status) {
-        $('#commentpie').unblock();
+        $('#sharepie').unblock();
     },
     success : function(result) {
-        commentPieChart('commentpie', jQuery.parseJSON(result));
+        sharePieChart('sharepie', jQuery.parseJSON(result));
     }
 });
 
-function commentPieChart($id, $data) {
+function sharePieChart($id, $data) {
     $data = $data.data;
     if ($data.length === 0) {
         $('#' + $id).html("<div class='center'>No Data</div>");
@@ -29,14 +28,14 @@ function commentPieChart($id, $data) {
         var $content = [];
         for (var i = 0; i < $data.length; i++) {
             $keywordname = $data[i].keywordName;
-            $buzz = $data[i].comment;
+            $buzz = $data[i].share;
             $content[i] = {name: $keywordname, y: $buzz};
         }
-        createCommentPieChart($content, $id);
+        createSharePieChart($content, $id);
     }
 }
 
-function createCommentPieChart(dataSet, id) {
+function createSharePieChart(dataSet, id) {
     $('#'+id).highcharts({
         chart: {
             plotBackgroundColor: null,
@@ -51,16 +50,6 @@ function createCommentPieChart(dataSet, id) {
             //pointFormat: '{series.name}: <b>{point.percentage:.1f}%</b>'
             pointFormat: 'Total Post: <b>{point.y}</b> ({point.percentage:.1f}%)<br/>'
         },
-        /*plotOptions: {
-         pie: {
-         allowPointSelect: true,
-         cursor: 'pointer',
-         dataLabels: {
-         enabled: false
-         },
-         showInLegend: true
-         }
-         },*/
         plotOptions: {
             pie: {
                 allowPointSelect: true,

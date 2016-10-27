@@ -35,4 +35,14 @@ class ProfileService
 
         return $profile;
     }
+
+    public function getMediaAccounts()
+    {
+        $params = [
+            'id_login'  => \Auth::user()->id
+        ];
+
+        $result = $this->apiService->postDummy('project/sosmedpageinfo', $params);
+        return $result->projectInfo;
+    }
 }

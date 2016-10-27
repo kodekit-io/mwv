@@ -1,27 +1,26 @@
 $.ajax({
-    url : ajaxUrl + '/project/chart-data/comment-pie/' + mediaId,
+    url : ajaxUrl + '/project/chart-data/reach-pie/' + mediaId + '/' + type,
     data : {
-        projectId: projectId,
         keywords: brands,
         startDate: startDate,
         endDate: endDate
     },
     beforeSend : function(xhr) {
-        $('#commentpie').block({
+        $('#reachpie').block({
             message: '<img src="' + ajaxUrl + '/mediawave/img/spinner.gif">',
             css: { border: 'none', zIndex: 100 },
             overlayCSS: { backgroundColor: '#fff', zIndex: 100 }
         });
     },
     complete : function(xhr, status) {
-        $('#commentpie').unblock();
+        $('#reachpie').unblock();
     },
     success : function(result) {
-        commentPieChart('commentpie', jQuery.parseJSON(result));
+        reachPieChart('reachpie', jQuery.parseJSON(result));
     }
 });
 
-function commentPieChart($id, $data) {
+function reachPieChart($id, $data) {
     $data = $data.data;
     if ($data.length === 0) {
         $('#' + $id).html("<div class='center'>No Data</div>");
@@ -29,14 +28,14 @@ function commentPieChart($id, $data) {
         var $content = [];
         for (var i = 0; i < $data.length; i++) {
             $keywordname = $data[i].keywordName;
-            $buzz = $data[i].comment;
+            $buzz = $data[i].reach;
             $content[i] = {name: $keywordname, y: $buzz};
         }
-        createCommentPieChart($content, $id);
+        createReachPieChart($content, $id);
     }
 }
 
-function createCommentPieChart(dataSet, id) {
+function createReachPieChart(dataSet, id) {
     $('#'+id).highcharts({
         chart: {
             plotBackgroundColor: null,

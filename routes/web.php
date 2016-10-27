@@ -33,32 +33,32 @@ Route::group(['middleware' => 'auth'], function () {
     Route::get('/project/chart-data/brand-equity', 'ChartController@brandEquityData');
 
     // Reusable chart
-    Route::get('/project/chart-data/reach-trend/{mediaId}', 'ChartController@reachTrendData');
+    Route::get('/project/chart-data/post-trend/{mediaId}/{type?}', 'ChartController@postTrendData');
+    Route::get('/project/chart-data/reach-trend/{mediaId}/{type?}', 'ChartController@reachTrendData');
     Route::get('/project/chart-data/buzz-trend/{mediaId}', 'ChartController@buzzTrendData');
-    Route::get('/project/chart-data/comment-trend/{mediaId}', 'ChartController@commentTrendData');
-    Route::get('/project/chart-data/buzz-pie/{mediaId}', 'ChartController@buzzPieData');
-    Route::get('/project/chart-data/interaction-pie/{mediaId}', 'ChartController@interactionPieData');
-    Route::get('/project/chart-data/potential-pie/{mediaId}', 'ChartController@potentialPieData');
-    Route::get('/project/chart-data/sentiment-bar/{mediaId}', 'ChartController@sentimentBarData');
-    Route::get('/project/chart-data/interaction-bar/{mediaId}', 'ChartController@interactionBarData');
-    Route::get('/project/chart-data/post-pie/{mediaId}', 'ChartController@postPieData');
-    Route::get('/project/chart-data/comment-pie/{mediaId}', 'ChartController@commentPieData');
-    Route::get('/project/chart-data/share-pie/{mediaId}', 'ChartController@sharePieData');
-    Route::get('/project/chart-data/reach-pie/{mediaId}', 'ChartController@reachPieData');
+    Route::get('/project/chart-data/comment-trend/{mediaId}/{type?}', 'ChartController@commentTrendData');
+    Route::get('/project/chart-data/interaction-trend/{media}/{type?}', 'ChartController@interactionTrendData');
+    Route::get('/project/chart-data/buzz-pie/{mediaId}/{type?}', 'ChartController@buzzPieData');
+    Route::get('/project/chart-data/interaction-pie/{mediaId}/{type?}', 'ChartController@interactionPieData');
+    Route::get('/project/chart-data/potential-pie/{mediaId}/{type?}', 'ChartController@potentialPieData');
+    Route::get('/project/chart-data/sentiment-bar/{mediaId}/{type?}', 'ChartController@sentimentBarData');
+    Route::get('/project/chart-data/interaction-bar/{mediaId}/{type?}', 'ChartController@interactionBarData');
+    Route::get('/project/chart-data/post-pie/{mediaId}/{type?}', 'ChartController@postPieData');
+    Route::get('/project/chart-data/comment-pie/{mediaId}/{type?}', 'ChartController@commentPieData');
+    Route::get('/project/chart-data/share-pie/{mediaId}/{type?}', 'ChartController@sharePieData');
+    Route::get('/project/chart-data/reach-pie/{mediaId}/{type?}', 'ChartController@reachPieData');
 
-    Route::get('/project/chart-data/post-trend', 'ChartController@postTrendData');
-    Route::get('/project/chart-data/interaction-trend', 'ChartController@interactionTrendData');
-    Route::get('/project/chart-data/user-trend', 'ChartController@userTrendData');
-    Route::get('/project/chart-data/view-trend', 'ChartController@viewTrendData');
+    Route::get('/project/chart-data/user-trend/{type?}', 'ChartController@userTrendData');
+    Route::get('/project/chart-data/view-trend/{type?}', 'ChartController@viewTrendData');
 
     Route::get('/project/chart-data/unique-user-pie', 'ChartController@uniqueUserPieData');
-    Route::get('/project/chart-data/viral-pie', 'ChartController@viralPieData');
-    Route::get('/project/chart-data/like-pie', 'ChartController@likePieData');
+    Route::get('/project/chart-data/viral-pie/{type?}', 'ChartController@viralPieData');
+    Route::get('/project/chart-data/like-pie/{type?}', 'ChartController@likePieData');
 
     Route::get('/project/chart-data/share-of-media-bar', 'ChartController@shareOfMediaBarData');
-    Route::get('/project/chart-data/comment-bar', 'ChartController@commentBarData');
-    Route::get('/project/chart-data/rating-bar', 'ChartController@ratingBarData');
-    Route::get('/project/chart-data/count-bar', 'ChartController@countBarData');
+    Route::get('/project/chart-data/comment-bar/{type?}', 'ChartController@commentBarData');
+    Route::get('/project/chart-data/rating-bar/{type?}', 'ChartController@ratingBarData');
+    Route::get('/project/chart-data/count-bar/{type?}', 'ChartController@countBarData');
 
     Route::get('/project/chart-data/convo-twitter', 'ChartController@convoTwitterData');
     Route::get('/project/chart-data/convo-facebook', 'ChartController@convoFacebookData');
@@ -91,10 +91,10 @@ Route::group(['middleware' => 'auth'], function () {
     Route::post('/report-save', 'ReportController@save');
     Route::get('/delete-report/{id}', 'ReportController@delete');
 
-    Route::get('/socmed-twitter', 'SocialMediaController@twitter');
-    Route::get('/socmed-facebook', 'SocialMediaController@facebook');
-    Route::get('/socmed-youtube', 'SocialMediaController@youtube');
-    Route::get('/socmed-instagram', 'SocialMediaController@instagram');
+    Route::any('/socmed-twitter', 'SocialMediaController@twitter');
+    Route::any('/socmed-facebook', 'SocialMediaController@facebook');
+    Route::any('/socmed-youtube', 'SocialMediaController@youtube');
+    Route::any('/socmed-instagram', 'SocialMediaController@instagram');
 
 });
 

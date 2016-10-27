@@ -1,45 +1,44 @@
 $.ajax({
-    url : ajaxUrl + '/project/chart-data/comment-trend/' + mediaId,
+    url : ajaxUrl + '/project/chart-data/user-trend/' + type,
     data : {
-        projectId: projectId,
         keywords: brands,
         startDate: startDate,
         endDate: endDate
     },
     beforeSend : function(xhr) {
-        $('#commenttrend').block({
+        $('#usertrend').block({
             message: '<img src="' + ajaxUrl + '/mediawave/img/spinner.gif">',
             css: { border: 'none', zIndex: 100 },
             overlayCSS: { backgroundColor: '#fff', zIndex: 100 }
         });
     },
     complete : function(xhr, status) {
-        $('#commenttrend').unblock();
+        $('#usertrend').unblock();
     },
     success : function(result) {
-        commentTrendChart('commenttrend', jQuery.parseJSON(result));
+        userTrend('usertrend', jQuery.parseJSON(result));
     }
 });
 
-function commentTrendChart($id, $data) {
-    if ($data.length === 0) {
-        $('#'+$id).html("<div class='center'>No data chart</div>");
+function userTrend($id, $data) {
+    if ($data.dates.length === 0) {
+        $content.html("<div class='center'>No data chart</div>");
     } else {
-        $dates = $data.dates;
-        $content = [];
+        var $content = [];
         for (var i = 0; i < $data.data.length; i++) {
-            $content[i] = { name: $data.data[i].keywordName, data: $data.data[i].comment };
+            $content[i] = { name: $data.data[i].keywordName, data: $data.data[i].user };
         }
         var chartData = {
             content: $content,
-            categories: $dates
+            categories: $data.dates
         };
 
-        createCommentTrend(chartData, $id);
+        createUserTrendChart(chartData, $id);
     }
 }
 
-function createCommentTrend(chartData, id) {
+
+function createUserTrendChart(chartData, id) {
     $('#' + id).highcharts({
         chart: {
             type: 'spline',
@@ -65,7 +64,7 @@ function createCommentTrend(chartData, id) {
         },
         yAxis: {
             title: {
-                text: 'Post'
+                text: 'User'
             },
             plotLines: [{
                 value: 0,
@@ -74,7 +73,7 @@ function createCommentTrend(chartData, id) {
             }]
         },
         tooltip: {
-            valueSuffix: ' Post'
+            valueSuffix: ' User'
         },
         series: chartData.content
     });

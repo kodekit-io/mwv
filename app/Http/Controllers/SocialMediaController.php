@@ -3,6 +3,10 @@
 namespace App\Http\Controllers;
 
 use App\ChartService;
+use App\KeywordSelected;
+use App\ProfileService;
+use App\ProjectService;
+use App\SocmedRequestParser;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
 
@@ -10,55 +14,59 @@ use App\Http\Requests;
 
 class SocialMediaController extends Controller
 {
+    use KeywordSelected;
+    use SocmedRequestParser;
+
     /**
-     * @var ChartService
+     * @var ProfileService
      */
-    private $chartService;
+    private $profileService;
+    /**
+     * @var ProjectService
+     */
+    private $projectService;
 
     /**
      * SocialMediaController constructor.
-     * @param ChartService $chartService
+     * @param ProjectService $projectService
+     * @param ProfileService $profileService
      */
-    public function __construct(ChartService $chartService)
+    public function __construct(ProjectService $projectService, ProfileService $profileService)
     {
-        $this->chartService = $chartService;
+        $this->profileService = $profileService;
+        $this->projectService = $projectService;
     }
 
     public function twitter(Request $request)
     {
-        $brands = '';
-        $last7DaysRange = $this->chartService->getLastSevenDaysRange();
-        $startDate = $last7DaysRange['startDate'];
-        $endDate = $last7DaysRange['endDate'];
-        if ($request->has('filter')) {
-            $startDate = $request->input('start_date');
-            $endDate = $request->input('end_date');
-            $startDate = ( $startDate != '' ) ? Carbon::createFromFormat('d/m/y', $startDate)->format('Y-m-d') : null;
-            $endDate = ( $endDate != '' ) ? Carbon::createFromFormat('d/m/y', $endDate)->format('Y-m-d') : null;
-            $brands = ( $request->has('keywords') ? implode(',', $request->input('keywords')) : '' );
-        }
-
+        $data = $this->parseRequest($request);
         $data['pageTitle'] = 'Twitter';
-        $data['startDate'] = Carbon::createFromFormat('Y-m-d', $startDate)->format('d/m/y');
-        $data['endDate'] = Carbon::createFromFormat('Y-m-d', $endDate)->format('d/m/y');;
 
         return view('mediawave.socmed-twitter', $data);
     }
 
-    public function facebook()
+    public function facebook(Request $request)
     {
+        $data = $this->parseRequest($request);
+        $data['pageTitle'] = 'Facebook';
 
+        return view('mediawave.socmed-facebook', $data);
     }
 
-    public function youtube()
+    public function youtube(Request $request)
     {
+        $data = $this->parseRequest($request);
+        $data['pageTitle'] = 'Youtube';
 
+        return view('mediawave.socmed-youtube', $data);
     }
 
-    public function instagram()
+    public function instagram(Request $request)
     {
+        $data = $this->parseRequest($request);
+        $data['pageTitle'] = 'Instagram';
 
+        return view('mediawave.socmed-instagram', $data);
     }
-
 
 }

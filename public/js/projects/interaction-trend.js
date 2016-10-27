@@ -1,5 +1,5 @@
 $.ajax({
-    url : ajaxUrl + '/project/chart-data/interaction-trend',
+    url : ajaxUrl + '/project/chart-data/interaction-trend/' + mediaId,
     data : {
         projectId: projectId,
         keywords: brands,

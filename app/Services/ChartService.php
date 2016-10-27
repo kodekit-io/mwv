@@ -9,6 +9,7 @@ use Illuminate\Support\Facades\Log;
 
 class ChartService
 {
+    use LastSevenDays;
 
     protected $apiService;
     /**
@@ -132,8 +133,6 @@ class ChartService
             'mediaID' => $mediaId
         ];
 
-        Log::warning('param ' . json_encode($params));
-
         // var_dump($params);
 
         return $this->getChart($params);
@@ -191,17 +190,6 @@ class ChartService
             $arrDays[] = $loopDay->format('Y-m-d');
         }
         return $arrDays;
-    }
-
-    public function getLastSevenDaysRange()
-    {
-        $lastSevenDays = Carbon::today()->subDay(7)->format('Y-m-d');
-        $startDate = $lastSevenDays;
-        $endDate = date('Y-m-d');
-        return [
-            'startDate' => $startDate,
-            'endDate' => $endDate
-        ];
     }
 
     public function getMediaByName($name)
