@@ -1,7 +1,6 @@
 $.ajax({
-    url : ajaxUrl + '/project/chart-data/comment-pie/' + mediaId,
+    url : ajaxUrl + '/project/chart-data/comment-pie/' + mediaId + '/' + type,
     data : {
-        projectId: projectId,
         keywords: brands,
         startDate: startDate,
         endDate: endDate

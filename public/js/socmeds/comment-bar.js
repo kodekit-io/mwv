@@ -1,7 +1,6 @@
 $.ajax({
-    url : ajaxUrl + '/project/chart-data/comment-bar/',
+    url : ajaxUrl + '/project/chart-data/comment-bar/' + type,
     data : {
-        projectId: projectId,
         keywords: brands,
         startDate: startDate,
         endDate: endDate

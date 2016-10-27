@@ -1,45 +1,45 @@
 $.ajax({
-    url : ajaxUrl + '/project/chart-data/comment-trend/' + mediaId,
+    url : ajaxUrl + '/project/chart-data/interaction-trend/' + mediaId + '/' + type,
     data : {
-        projectId: projectId,
         keywords: brands,
         startDate: startDate,
         endDate: endDate
     },
     beforeSend : function(xhr) {
-        $('#commenttrend').block({
+        $('#interacttrend').block({
             message: '<img src="' + ajaxUrl + '/mediawave/img/spinner.gif">',
             css: { border: 'none', zIndex: 100 },
             overlayCSS: { backgroundColor: '#fff', zIndex: 100 }
         });
     },
     complete : function(xhr, status) {
-        $('#commenttrend').unblock();
+        $('#interacttrend').unblock();
     },
     success : function(result) {
-        commentTrendChart('commenttrend', jQuery.parseJSON(result));
+        // console.log(result);
+        interactionTrendChart('interacttrend', jQuery.parseJSON(result));
     }
 });
 
-function commentTrendChart($id, $data) {
+function interactionTrendChart($id, $data) {
     if ($data.length === 0) {
         $('#'+$id).html("<div class='center'>No data chart</div>");
     } else {
         $dates = $data.dates;
         $content = [];
         for (var i = 0; i < $data.data.length; i++) {
-            $content[i] = { name: $data.data[i].keywordName, data: $data.data[i].comment };
+            $content[i] = { name: $data.data[i].keywordName, data: $data.data[i].post };
         }
-        var chartData = {
+        var data = {
             content: $content,
             categories: $dates
         };
 
-        createCommentTrend(chartData, $id);
+        createInteractionTrend(data, $id);
     }
 }
 
-function createCommentTrend(chartData, id) {
+function createInteractionTrend(data, id) {
     $('#' + id).highcharts({
         chart: {
             type: 'spline',
@@ -51,7 +51,7 @@ function createCommentTrend(chartData, id) {
             text: null
         },
         xAxis: {
-            categories: chartData.categories,
+            categories: data.categories,
             labels: {
                 formatter: function() {
                     //return(this.value.substring(0,10) + "...");
@@ -65,7 +65,7 @@ function createCommentTrend(chartData, id) {
         },
         yAxis: {
             title: {
-                text: 'Post'
+                text: 'Interaction'
             },
             plotLines: [{
                 value: 0,
@@ -74,8 +74,8 @@ function createCommentTrend(chartData, id) {
             }]
         },
         tooltip: {
-            valueSuffix: ' Post'
+            valueSuffix: ' Interaction'
         },
-        series: chartData.content
+        series: data.content
     });
 }

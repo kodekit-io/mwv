@@ -42,45 +42,45 @@ class ChartController extends Controller
         return \GuzzleHttp\json_encode($chart);
     }
 
-    public function postTrendData()
+    public function postTrendData($mediaId, $type = 1)
     {
-        $chart = $this->projectChartService->postTrend();
+        $chart = $this->projectChartService->postTrend($mediaId, $type);
         return \GuzzleHttp\json_encode($chart);
     }
 
-    public function reachTrendData($mediaId)
+    public function reachTrendData($mediaId, $type = 1)
     {
-        $chart = $this->projectChartService->reachTrend($mediaId);
+        $chart = $this->projectChartService->reachTrend($mediaId, $type);
         return \GuzzleHttp\json_encode($chart);
     }
 
-    public function interactionTrendData()
+    public function interactionTrendData($mediaId, $type = 1)
     {
-        $chart = $this->projectChartService->interactionTrend();
+        $chart = $this->projectChartService->interactionTrend($mediaId, $type);
         return \GuzzleHttp\json_encode($chart);
     }
 
-    public function userTrendData()
+    public function userTrendData($type = 1)
     {
-        $chart = $this->projectChartService->userTrend();
+        $chart = $this->projectChartService->userTrend($type);
         return \GuzzleHttp\json_encode($chart);
     }
 
-    public function buzzPieData($mediaId)
+    public function buzzPieData($mediaId, $type = 1)
     {
-        $chart = $this->projectChartService->buzzPie($mediaId);
+        $chart = $this->projectChartService->buzzPie($mediaId, $type);
         return \GuzzleHttp\json_encode($chart);
     }
 
-    public function postPieData($mediaId)
+    public function postPieData($mediaId, $type = 1)
     {
-        $chart = $this->projectChartService->postPie($mediaId);
+        $chart = $this->projectChartService->postPie($mediaId, $type);
         return \GuzzleHttp\json_encode($chart);
     }
 
-    public function interactionPieData($mediaId)
+    public function interactionPieData($mediaId, $type = 1)
     {
-        $chart = $this->projectChartService->interactionPie($mediaId);
+        $chart = $this->projectChartService->interactionPie($mediaId, $type);
         return \GuzzleHttp\json_encode($chart);
     }
 
@@ -90,45 +90,45 @@ class ChartController extends Controller
         return \GuzzleHttp\json_encode($chart);
     }
 
-    public function viralPieData()
+    public function viralPieData($type = 1)
     {
-        $chart = $this->projectChartService->viralPie();
+        $chart = $this->projectChartService->viralPie($type);
         return \GuzzleHttp\json_encode($chart);
     }
 
-    public function potentialPieData($mediaId)
+    public function potentialPieData($mediaId, $type = 1)
     {
-        $chart = $this->projectChartService->potentialPie($mediaId);
+        $chart = $this->projectChartService->potentialPie($mediaId, $type);
         return \GuzzleHttp\json_encode($chart);
     }
 
-    public function commentPieData($mediaId)
+    public function commentPieData($mediaId, $type = 1)
     {
-        $chart = $this->projectChartService->commentPie($mediaId);
+        $chart = $this->projectChartService->commentPie($mediaId, $type);
         return \GuzzleHttp\json_encode($chart);
     }
 
-    public function likePieData()
+    public function likePieData($type = 1)
     {
-        $chart = $this->projectChartService->likePie();
+        $chart = $this->projectChartService->likePie($type);
         return \GuzzleHttp\json_encode($chart);
     }
 
-    public function sharePieData($mediaId)
+    public function sharePieData($mediaId, $type = 1)
     {
-        $chart = $this->projectChartService->sharePie($mediaId);
+        $chart = $this->projectChartService->sharePie($mediaId, $type);
         return \GuzzleHttp\json_encode($chart);
     }
 
-    public function sentimentBarData($mediaId)
+    public function sentimentBarData($mediaId, $type = 1)
     {
-        $chart = $this->projectChartService->sentimentBar($mediaId);
+        $chart = $this->projectChartService->sentimentBar($mediaId, $type);
         return \GuzzleHttp\json_encode($chart);
     }
 
-    public function interactionBarData($mediaId)
+    public function interactionBarData($mediaId, $type = 1)
     {
-        $chart = $this->projectChartService->interactionBar($mediaId);
+        $chart = $this->projectChartService->interactionBar($mediaId, $type);
         return \GuzzleHttp\json_encode($chart);
     }
 
@@ -140,9 +140,9 @@ class ChartController extends Controller
         return \GuzzleHttp\json_encode($chart);
     }
 
-    public function commentBarData()
+    public function commentBarData($type = 1)
     {
-        $chart = $this->projectChartService->commentBar();
+        $chart = $this->projectChartService->commentBar($type);
         return \GuzzleHttp\json_encode($chart);
     }
 
@@ -188,27 +188,27 @@ class ChartController extends Controller
         return \GuzzleHttp\json_encode($chart);
     }
 
-    public function reachPieData($mediaId)
+    public function reachPieData($mediaId, $type = 1)
     {
-        $chart = $this->projectChartService->reachPie($mediaId);
+        $chart = $this->projectChartService->reachPie($mediaId, $type);
         return \GuzzleHttp\json_encode($chart);
     }
 
-    public function commentTrendData($mediaId)
+    public function commentTrendData($mediaId, $type = 1)
     {
-        $chart = $this->projectChartService->commentTrend($mediaId);
+        $chart = $this->projectChartService->commentTrend($mediaId, $type);
         return \GuzzleHttp\json_encode($chart);
     }
 
-    public function ratingBarData()
+    public function ratingBarData($type = 1)
     {
-        $chart = $this->projectChartService->ratingBar();
+        $chart = $this->projectChartService->ratingBar($type);
         return \GuzzleHttp\json_encode($chart);
     }
 
-    public function viewTrendData()
+    public function viewTrendData($type = 1)
     {
-        $chart = $this->projectChartService->viewTrend();
+        $chart = $this->projectChartService->viewTrend($type);
         return \GuzzleHttp\json_encode($chart);
     }
 

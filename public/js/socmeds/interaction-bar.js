@@ -1,27 +1,26 @@
 $.ajax({
-    url : ajaxUrl + '/project/chart-data/comment-bar/',
+    url : ajaxUrl + '/project/chart-data/interaction-bar/' + mediaId + '/' + type,
     data : {
-        projectId: projectId,
         keywords: brands,
         startDate: startDate,
         endDate: endDate
     },
     beforeSend : function(xhr) {
-        $('#commentbar').block({
+        $('#interactionbar').block({
             message: '<img src="' + ajaxUrl + '/mediawave/img/spinner.gif">',
             css: { border: 'none', zIndex: 100 },
             overlayCSS: { backgroundColor: '#fff', zIndex: 100 }
         });
     },
     complete : function(xhr, status) {
-        $('#commentbar').unblock();
+        $('#interactionbar').unblock();
     },
     success : function(result) {
-        commentBar('commentbar', jQuery.parseJSON(result));
+        interactionBar('interactionbar', jQuery.parseJSON(result));
     }
 });
 
-function commentBar($id, $data) {
+function interactionBar($id, $data) {
     $data = $data['interactionrate'];
     if ($data.length === 0) {
         $('#' + $id).html("<div class='center'>No Data</div>");
@@ -39,12 +38,12 @@ function commentBar($id, $data) {
         }
 
         //console.log($mean);
-        createCommentBar($id, $content, $mean);
+        interactionBarOptions($id, $content, $mean);
     }
 
 }
 
-function createCommentBar(id, dataSet, mean) {
+function interactionBarOptions(id, dataSet, mean) {
 
     jQuery("#" + id).highcharts({
         chart: {

@@ -1,50 +1,50 @@
 $.ajax({
-    url : ajaxUrl + '/project/chart-data/comment-bar/',
+    url : ajaxUrl + '/project/chart-data/rating-bar/' + type,
     data : {
-        projectId: projectId,
         keywords: brands,
         startDate: startDate,
         endDate: endDate
     },
     beforeSend : function(xhr) {
-        $('#commentbar').block({
+        $('#ratingbar').block({
             message: '<img src="' + ajaxUrl + '/mediawave/img/spinner.gif">',
             css: { border: 'none', zIndex: 100 },
             overlayCSS: { backgroundColor: '#fff', zIndex: 100 }
         });
     },
     complete : function(xhr, status) {
-        $('#commentbar').unblock();
+        $('#ratingbar').unblock();
     },
     success : function(result) {
-        commentBar('commentbar', jQuery.parseJSON(result));
+        ratingBar('ratingbar', jQuery.parseJSON(result));
     }
 });
 
-function commentBar($id, $data) {
-    $data = $data['interactionrate'];
+function ratingBar($id, $data) {
+    console.log($data['data']);
+    $data = $data['data'];
     if ($data.length === 0) {
         $('#' + $id).html("<div class='center'>No Data</div>");
     } else {
         var $content = [];
         var $dataSum = 0;
         for (var i = 0; i < $data.length; i++) {
-            $x = $data[i].name;
-            $y = $data[i].data;
+            $x = $data[i].keywordName;
+            $y = $data[i].rating;
             $length = $data.length;
-            $dataSum += $data[i].data;
+            $dataSum += $data[i].rating;
 
             $content[i] = {name: $x, data: [[$x,$y]] };
             $mean = $dataSum / $length;
         }
 
         //console.log($mean);
-        createCommentBar($id, $content, $mean);
+        createRatingBar($id, $content, $mean);
     }
 
 }
 
-function createCommentBar(id, dataSet, mean) {
+function createRatingBar(id, dataSet, mean) {
 
     jQuery("#" + id).highcharts({
         chart: {

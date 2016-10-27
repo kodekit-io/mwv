@@ -14,7 +14,7 @@
                         Social Media Page
                     </h1>
                 </div>
-                <form class="md-card-content" action="{!! url('project-detail/' . $project->pid) !!}" method="POST">
+                <form class="md-card-content" action="{!! url('socmed-facebook') !!}" method="POST">
                     {{ csrf_field() }}
                     <div class="uk-grid uk-grid-medium" data-uk-grid data-uk-grid-margin>
                         <div class="uk-width-medium-2-3 uk-width-small-1-1">
@@ -31,11 +31,11 @@
                         </div>
                         <div class="nav-wrapper uk-width-medium-1-3 uk-width-small-1-1">
                             <div class="input-field md-daterange">
-                                <input id="startdate" name="start_date" type="text" class="uk-datepicker" data-uk-datepicker="{pos:'bottom',format:'DD/MM/YY'}" placeholder="10/12/16" value="{!! $startDate !!}">
+                                <input id="startdate" name="start_date" type="text" class="uk-datepicker" data-uk-datepicker="{pos:'bottom',format:'DD/MM/YY'}" placeholder="10/12/16" value="{!! $shownStartDate !!}">
                                 <label for="startdate"><i class="material-icons prefix">date_range</i></label>
                             </div> -
                             <div class="input-field md-daterange">
-                                <input id="enddate" name="end_date" type="text" class="uk-datepicker" data-uk-datepicker="{pos:'bottom',format:'DD/MM/YY'}" placeholder="17/12/16" value="{!! $endDate !!}">
+                                <input id="enddate" name="end_date" type="text" class="uk-datepicker" data-uk-datepicker="{pos:'bottom',format:'DD/MM/YY'}" placeholder="17/12/16" value="{!! $shownEndDate !!}">
                                 <label for="enddate"><i class="material-icons prefix">date_range</i></label>
                             </div>
                             <button class="btn pink darken-4 uk-align-right z-depth-0" name="filter" value="1" type="submit">UPDATE</button>
@@ -44,196 +44,15 @@
                 </form>
             </div>
             <ul class="uk-grid uk-grid-medium" data-uk-grid data-uk-grid-margin>
-                <li class="uk-width-medium-1-1">
-                    <div class="md-card hoverable">
-                        <div class="md-card-toolbar">
-                            <div class="md-card-toolbar-actions">
-                                <a class="btn waves-effect waves-light z-depth-0 amber lighten-4" data-uk-tooltip title="Help"><i class="material-icons">help</i></a>
-                                <a class="btn waves-effect waves-light z-depth-0 green lighten-4" data-uk-tooltip title="Minimize" data-uk-toggle="{target:'#trendwrap'}"><i class="material-icons md-icon">fullscreen</i></a>
-                            </div>
-                            <div class="md-card-toolbar-heading-text">
-                                <ul class="uk-subnav uk-subnav-pill" data-uk-switcher="{connect:'#trendwrap ul'}">
-                                    <li class="uk-active"><a>Daily Activity</a></li>
-                                </ul>
-                            </div>
-                        </div>
-                        <?php //TRENDS ?>
-                        <div id="trendwrap" class="md-card-content">
-                            <ul class="uk-switcher">
-                                <li>
-                                    <div id="buzztrend" class="md-chart">Daily Activity TREND</div>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                </li>
 
-                <li class="uk-width-medium-1-4">
-                    <?php //POST PIE ?>
-                    <div class="md-card hoverable">
-                        <div class="md-card-toolbar">
-                            <div class="md-card-toolbar-actions">
-                                <a class="btn waves-effect waves-light z-depth-0 amber lighten-4" data-uk-tooltip title="Help"><i class="material-icons">help</i></a>
-                                <a class="btn waves-effect waves-light z-depth-0 green lighten-4" data-uk-tooltip title="Minimize" data-uk-toggle="{target:'#piewrap1'}"><i class="material-icons md-icon">fullscreen</i></a>
-                            </div>
-                            <h2 class="md-card-toolbar-heading-text">POST</h2>
-                        </div>
-                        <div id="piewrap1" class="md-card-content">
-                            <div id="id-chartnya-disini" class="md-chart">Pie Chart</div>
-                        </div>
-                    </div>
-                </li>
+                @include('mediawave.socmed-facebooks.trend-pie')
 
-                <li class="uk-width-medium-1-4">
-                    <?php //COMMENTS PIE ?>
-                    <div class="md-card hoverable">
-                        <div class="md-card-toolbar">
-                            <div class="md-card-toolbar-actions">
-                                <a class="btn waves-effect waves-light z-depth-0 amber lighten-4" data-uk-tooltip title="Help"><i class="material-icons">help</i></a>
-                                <a class="btn waves-effect waves-light z-depth-0 green lighten-4" data-uk-tooltip title="Minimize" data-uk-toggle="{target:'#piewrap2'}"><i class="material-icons md-icon">fullscreen</i></a>
-                            </div>
-                            <h2 class="md-card-toolbar-heading-text">COMMENTS</h2>
-                        </div>
-                        <div id="piewrap2" class="md-card-content">
-                            <div id="id-chartnya-disini" class="md-chart">Pie Chart</div>
-                        </div>
-                    </div>
-                </li>
+                @include('mediawave.socmed-facebooks.bar')
 
-                <li class="uk-width-medium-1-4">
-                    <?php //LIKE PIE ?>
-                    <div class="md-card hoverable">
-                        <div class="md-card-toolbar">
-                            <div class="md-card-toolbar-actions">
-                                <a class="btn waves-effect waves-light z-depth-0 amber lighten-4" data-uk-tooltip title="Help"><i class="material-icons">help</i></a>
-                                <a class="btn waves-effect waves-light z-depth-0 green lighten-4" data-uk-tooltip title="Minimize" data-uk-toggle="{target:'#piewrap3'}"><i class="material-icons md-icon">fullscreen</i></a>
-                            </div>
-                            <h2 class="md-card-toolbar-heading-text">LIKES</h2>
-                        </div>
-                        <div id="piewrap3" class="md-card-content">
-                            <div id="id-chartnya-disini" class="md-chart">Pie Chart</div>
-                        </div>
-                    </div>
-                </li>
+                @include('mediawave.socmed-facebooks.wordcloud-influencer')
 
-                <li class="uk-width-medium-1-4">
-                    <?php //SHARE PIE ?>
-                    <div class="md-card hoverable">
-                        <div class="md-card-toolbar">
-                            <div class="md-card-toolbar-actions">
-                                <a class="btn waves-effect waves-light z-depth-0 amber lighten-4" data-uk-tooltip title="Help"><i class="material-icons">help</i></a>
-                                <a class="btn waves-effect waves-light z-depth-0 green lighten-4" data-uk-tooltip title="Minimize" data-uk-toggle="{target:'#piewrap4'}"><i class="material-icons md-icon">fullscreen</i></a>
-                            </div>
-                            <h2 class="md-card-toolbar-heading-text">SHARE</h2>
-                        </div>
-                        <div id="piewrap4" class="md-card-content">
-                            <div id="id-chartnya-disini" class="md-chart">Pie Chart</div>
-                        </div>
-                    </div>
-                </li>
+                @include('mediawave.socmed-facebooks.conversation')
 
-                <li class="uk-width-medium-1-2">
-                    <?php //SENTIMENT BAR ?>
-                    <div class="md-card hoverable">
-                        <div class="md-card-toolbar">
-                            <div class="md-card-toolbar-actions">
-                                <a class="btn waves-effect waves-light z-depth-0 amber lighten-4" data-uk-tooltip title="Help"><i class="material-icons">help</i></a>
-                                <a class="btn waves-effect waves-light z-depth-0 green lighten-4" data-uk-tooltip title="Minimize" data-uk-toggle="{target:'#barwrap1'}"><i class="material-icons md-icon">fullscreen</i></a>
-                            </div>
-                            <h2 class="md-card-toolbar-heading-text">SENTIMENT</h2>
-                        </div>
-                        <div id="barwrap1" class="md-card-content">
-                            <div id="share-brand-container" class="md-chart">Bar Chart</div>
-                        </div>
-                    </div>
-                </li>
-
-                <li class="uk-width-medium-1-2">
-                    <?php //COMMENT INTERACTIONS BAR ?>
-                    <div class="md-card hoverable">
-                        <div class="md-card-toolbar">
-                            <div class="md-card-toolbar-actions">
-                                <a class="btn waves-effect waves-light z-depth-0 amber lighten-4" data-uk-tooltip title="Help"><i class="material-icons">help</i></a>
-                                <a class="btn waves-effect waves-light z-depth-0 green lighten-4" data-uk-tooltip title="Minimize" data-uk-toggle="{target:'#barwrap2'}"><i class="material-icons md-icon">fullscreen</i></a>
-                            </div>
-                            <h2 class="md-card-toolbar-heading-text">COMMENT INTERACTION</h2>
-                        </div>
-                        <div id="barwrap2" class="md-card-content">
-                            <div id="id-chartnya-disini" class="md-chart">Bar Chart</div>
-                        </div>
-                    </div>
-                </li>
-
-                <li class="uk-width-medium-1-1">
-                    <?php //WORDS CLOUD ?>
-                    <div class="md-card hoverable">
-                        <div class="md-card-toolbar">
-                            <div class="md-card-toolbar-actions">
-                                <a class="btn waves-effect waves-light z-depth-0 amber lighten-4" data-uk-tooltip title="Help"><i class="material-icons">help</i></a>
-                                <a class="btn waves-effect waves-light z-depth-0 green lighten-4" data-uk-tooltip title="Minimize" data-uk-toggle="{target:'#wordcloud'}"><i class="material-icons md-icon">fullscreen</i></a>
-                            </div>
-                            <h2 class="md-card-toolbar-heading-text">WORD CLOUDS</h2>
-                        </div>
-                        <div id="wordcloud" class="md-card-content">
-                            <div id="id-chartnya-disini" class="md-chart"></div>
-                        </div>
-                    </div>
-                </li>
-
-                <li class="uk-width-medium-1-1">
-                    <div class="md-card hoverable">
-                        <div class="md-card-toolbar">
-                            <div class="md-card-toolbar-actions">
-                                <a class="btn waves-effect waves-light z-depth-0 amber lighten-4" data-uk-tooltip title="Help"><i class="material-icons">help</i></a>
-                                <a class="btn waves-effect waves-light z-depth-0 green lighten-4" data-uk-tooltip title="Minimize" data-uk-toggle="{target:'#authorwrap'}"><i class="material-icons md-icon">fullscreen</i></a>
-                            </div>
-                            <h2 class="md-card-toolbar-heading-text">INFLUENCER</h2>
-                        </div>
-                        <div id="authorwrap" class="md-card-content conv-wrap">
-                            <?php //INFLUENCER/AUTHOR TABLE ?>
-                            <table id="table_author" class="striped bordered highlight responsive-table">
-                                <thead>
-                                    <tr>
-                                        <th>Author</th>
-                                        <th>Popular</th>
-                                        <th>Active</th>
-                                        <th>Impact</th>
-                                        <th></th>
-                                    </tr>
-                                </thead>
-                            </table>
-                        </div>
-                   </div>
-                </li>
-
-                <li class="uk-width-medium-1-1">
-                    <div class="md-card hoverable">
-                        <div class="md-card-toolbar">
-                            <div class="md-card-toolbar-actions">
-                                <a class="btn waves-effect waves-light z-depth-0 amber lighten-4" data-uk-tooltip title="Help"><i class="material-icons">help</i></a>
-                                <a class="btn waves-effect waves-light z-depth-0 green lighten-4" data-uk-tooltip title="Minimize" data-uk-toggle="{target:'#convwrap'}"><i class="material-icons md-icon">fullscreen</i></a>
-                            </div>
-                            <h2 class="md-card-toolbar-heading-text">PUBLIC PAGE</h2>
-                        </div>
-                        <div id="convwrap" class="md-card-content conv-wrap">
-                            <?php //POSTS ?>
-                            <table id="table_page" class="striped bordered highlight responsive-table">
-                                <thead>
-                                    <tr>
-                                        <th>Author</th>
-                                        <th>Posts</th>
-                                        <th>Comment</th>
-                                        <th>Like</th>
-                                        <th>Share</th>
-                                        <th>Media Type</th>
-                                        <th>Sentiment</th>
-                                        <th><input type="checkbox" class="" id="selectall" /><label for="selectall">Select All</label></th>
-                                    </tr>
-                                </thead>
-                            </table>
-                        </div>
-                    </div>
-                </li>
             </ul>
         </div>
     </main>
@@ -256,16 +75,33 @@
 @endsection
 
 @section('page-level-scripts')
+    <script type="text/javascript" src="{{ asset('js/jquery.blockUI.js') }}"></script>
+    <script type="text/javascript">
+        var ajaxUrl = '{!! url('/') !!}';
+        var csrfToken = '{!! csrf_token() !!}';
+        var mediaId = 1;
+        var type = 2;
+        var startDate = '{!! $startDate !!}';
+        var endDate = '{!! $endDate !!}';
+        var brands = '{!! $brands !!}';
+    </script>
+    <script src="{!! asset('js/socmeds/post-trend.js') !!}"></script>
+    <script src="{!! asset('js/socmeds/post-pie.js') !!}"></script>
+    <script src="{!! asset('js/socmeds/comment-pie.js') !!}"></script>
+    <script src="{!! asset('js/socmeds/like-pie.js') !!}"></script>
+    <script src="{!! asset('js/socmeds/share-pie.js') !!}"></script>
+    <script src="{!! asset('js/socmeds/sentiment-bar.js') !!}"></script>
+    <script src="{!! asset('js/socmeds/comment-bar.js') !!}"></script>
 
-<script>
-    $(document).ready(function() {
-        $('#table_author').DataTable( {
-            "order": [[ 0, "desc" ]]
+    <script>
+        $(document).ready(function() {
+            $('#table_author').DataTable( {
+                "order": [[ 0, "desc" ]]
+            });
+            $('#table_page').DataTable( {
+                "order": [[ 0, "desc" ]]
+            });
         });
-        $('#table_page').DataTable( {
-            "order": [[ 0, "desc" ]]
-        });
-    });
 </script>
 
 @endsection

@@ -4,6 +4,7 @@ namespace App;
 
 class ProjectService
 {
+    use LastSevenDays;
 
     protected $apiService;
     /**
