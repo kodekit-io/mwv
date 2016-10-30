@@ -61,7 +61,7 @@
 	<script src="{!! asset('js/projects/convo-news.js') !!}"></script>
     <script>
         $(document).ready(function() {
-            //wordCloud('wordcloud-container', jQuery.parseJSON('{!! $wordCloud !!}'));
+            //wordCloud('wordcloud-container', jQuery.parseJSON('{{--!! $wordCloud !!--}}'));
             wordCloudTemporary('wordcloud-container','http://103.28.15.104:8821/dummy_api/project/1/'+mediaId+'/wordcloud');
             influencerTable('top10News','http://103.28.15.104:8821/dummy_api/project/1/'+mediaId+'/influencer');
         });

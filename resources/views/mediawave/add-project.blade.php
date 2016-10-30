@@ -76,10 +76,8 @@
                                     </div>
                                 </div>
                                 <a href="javascript:void(0);" class="uk-button btn blue z-depth-0 add_key uk-width-medium-1-5 step7" title="Add Keyword">ADD MORE KEYWORD</a>
-
-                                <div class="uk-panel uk-panel-box uk-margin-top">
-                                    <a class="btn amber darken-4 right uk-margin-left nextstep step8" data-uk-tooltip title="Next Step: Create Topics">NEXT STEP</a>
-                                </div>
+                                <hr>
+                                <a class="btn cyan right z-depth-0 nextstep step8" data-uk-tooltip title="Next Step: Create Topics">NEXT STEP <i class="material-icons right">keyboard_arrow_right</i></a>
                             </li>
                             <li>
                                  <h5>CREATE TOPICS</h5>
@@ -101,10 +99,9 @@
                                  </div>
                                  <a href="javascript:void(0);" class="uk-button btn blue z-depth-0 add_topic uk-width-medium-1-5 step11" title="Add Topic">ADD MORE TOPIC</a>
 
-                                 <div class="uk-panel uk-panel-box uk-margin-top">
-                                    <a class="btn white black-text left prevstep backtopic" data-uk-tooltip title="Prev Step: Keywords">BACK</a>
-                                    <a class="btn amber darken-4 right uk-margin-left nextstep step12" data-uk-tooltip title="Next Step: Create Excluded Topics">NEXT STEP</a>
-                                 </div>
+                                 <hr>
+                                 <a class="btn grey z-depth-0 prevstep backtopic" data-uk-tooltip title="Prev Step: Keywords"><i class="material-icons left">keyboard_arrow_left</i> BACK</a>
+                                 <a class="btn cyan right z-depth-0 nextstep step12" data-uk-tooltip title="Next Step: Create Excluded Topics">NEXT STEP <i class="material-icons right">keyboard_arrow_right</i></a>
                             </li>
                             <li>
                                  <h5>CREATE EXCLUDED TOPICS</h5>
@@ -126,28 +123,14 @@
                                  </div>
                                  <a href="javascript:void(0);" class="uk-button btn blue z-depth-0 add_excld uk-width-medium-1-5 step15" title="Add Exclude">ADD MORE EXCLUDE</a>
 
-                                 <div class="uk-panel uk-panel-box uk-margin-top">
-                                    <a class="btn white black-text left prevstep backexcld" data-uk-tooltip title="Prev Step: Topics">BACK</a>
-                                    <ul class="uk-subnav right">
-                                        <li>
-                                            <a href="#previewquery" class="modal-trigger btn white black-text uk-margin-left step16" data-uk-tooltip title="Preview All Query" onclick="previewQuery()">PREVIEW QUERY</a>
-                                        </li>
-                                        <li>
-                                            <button type="submit" class="btn amber darken-4 uk-margin-left nextstep step17" name="form_mode" value="regular" data-uk-tooltip title="Save Query">SAVE NOW</button>
-                                        </li>
-                                        <li>
-                                            <span style="line-height:36px">OR</span>
-                                        </li>
-                                        <li>
-                                            <a href="#addIG" class="btn brown darken-4" data-uk-tooltip title="Create Instagram" data-uk-toggle="{target:'#addIG'}">CREATE INSTAGRAM</a>
-                                        </li>
-                                    </ul>
-                                 </div>
+                                 <hr>
+                                 <a class="btn grey z-depth-0 prevstep backexcld" data-uk-tooltip title="Prev Step: Topics"><i class="material-icons left">keyboard_arrow_left</i> BACK</a>
+                                 <a href="#previewquery" class="modal-trigger btn cyan z-depth-0 right step16" data-uk-tooltip title="Preview All Query" onclick="previewQuery()">PREVIEW QUERY</a>
                             </li>
                         </ul>
                     </div>
                     <div id="mode2">
-                        <ul id="keywordadv" class="uk-list uk-list-line">
+                        <ul id="keywordadv" class="uk-list uk-list-line uk-margin-bottom-remove">
                             <li>
                                 <h5>CREATE KEYWORDS</h5>
                                 <div class="wrap_advkeys">
@@ -175,22 +158,8 @@
                                   </div>
                                   <a href="javascript:void(0);" class="uk-button btn blue z-depth-0 add_advexcld uk-width-medium-1-5 uk-margin-bottom" title="Add Exclude">ADD MORE EXCLUDE</a>
 
-                                  <div class="uk-panel uk-panel-box uk-margin-top">
-                                      <ul class="uk-subnav right">
-                                          <li>
-                                              <a href="#previewquery" class="modal-trigger btn white black-text right uk-margin-left" data-uk-tooltip title="Preview All Query" onclick="previewAdavancedQuery()">PREVIEW QUERY</a>
-                                          </li>
-                                          <li>
-                                             <button type="submit" class="btn amber darken-4 right uk-margin-left nextstep" data-uk-tooltip title="Save Query">SAVE NOW!</button>
-                                          </li>
-                                          <li>
-                                              <span style="line-height:36px">OR</span>
-                                          </li>
-                                          <li>
-                                              <a href="#addIG" class="btn brown darken-4" data-uk-tooltip title="Create Instagram" data-uk-toggle="{target:'#addIG'}">CREATE INSTAGRAM</a>
-                                          </li>
-                                      </ul>
-                                  </div>
+                                  <hr>
+                                  <a href="#previewquery" class="modal-trigger btn cyan z-depth-0 right" data-uk-tooltip title="Preview All Query" onclick="previewAdavancedQuery()">PREVIEW QUERY</a>
                             </li>
                          </ul>
                     </div>
@@ -198,12 +167,15 @@
             </div>
 
             <?php //add ig  ?>
-            <div class="md-card uk-hidden" id="addIG">
+            <div class="md-card" id="addIG">
                 <div class="md-card-toolbar">
+                    <div class="md-card-toolbar-actions">
+                        <a class="btn waves-effect waves-light z-depth-0 green lighten-4" data-uk-tooltip title="Hide Instagram" data-uk-toggle="{target:'#addIG .md-card-content'}"><i class="material-icons md-icon">visibility_off</i></a>
+                    </div>
                     <h2 class="md-card-toolbar-heading-text">INSTAGRAM</h2>
                 </div>
                 <div class="md-card-content">
-                    <ul id="hashtags" class="uk-list uk-list-line">
+                    <ul id="hashtags" class="uk-list uk-list-line uk-margin-bottom-remove">
                        <li>
                            <h5>HASHTAG</h5>
                            <p>Write hashtag with prefix '#' then hit ENTER to add more hashtags.</p>
@@ -233,13 +205,14 @@
                              </div>
                         </li>
                     </ul>
-                    <div class="uk-panel uk-panel-box">
-                        <button type="submit" class="btn amber darken-4 right uk-margin-left nextstep" data-uk-tooltip title="Save Query">SAVE NOW</button>
-                        <a href="#previewquery" class="modal-trigger btn white black-text right uk-margin-left" data-uk-tooltip title="Preview Instagram Query">PREVIEW</a>
-                    </div>
+
                 </div>
             </div>
-
+            <div class="md-card">
+                <div class="md-card-content uk-text-right">
+                    <button type="submit" class="btn amber darken-4 z-depth-0" data-uk-tooltip title="Save Query">SAVE NOW</button>
+                </div>
+            </div>
 
             <div id="previewquery" class="modal modal-fixed-footer">
                  <div class="modal-content">

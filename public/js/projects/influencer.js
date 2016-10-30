@@ -618,11 +618,12 @@ function top10Forum(id,result) {
 		var $content = [];
 		for (i = 0; i < $data.length; i++) {
 			$user= $data[i].user;
-			$alexa= $data[i].alexa;
+			$alexa= $data[i]['alexa(ID)'];
 			$popularity= $data[i].popularity;
-			$content[i] = [ $user, $popularity ];
+			$content[i] = [ $user, $alexa, $popularity ];
+			//console.log( $alexa );
 		}
-		//console.log( $content );
+
 		$('#' + id).DataTable( {
 			processing: true,
 			paging: false,
@@ -631,6 +632,7 @@ function top10Forum(id,result) {
 			data: $content,
 			columns: [
 				{ title: "Forum" },
+				{ title: "Rating" },
 				{ title: "Popularity" },
 			],
 			/*columnDefs: [{

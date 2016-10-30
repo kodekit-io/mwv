@@ -26,6 +26,17 @@ $(function() {
           </div>';
         $('.wrap_advexclds').append(fieldExcld);
     });
+
+    //INSTAGRAM
+    $(".chips-hashtag").material_chip();
+    $(".chips-excldhashtag").material_chip();
+    $(".chips-user").material_chip();
+    $(".chips-exclduser").material_chip();
+
+    var htag = $(".wrap_hashtag .chips").material_chip('data');
+    $('.wrap_hashtag  .chips').on('chip.add', function(e, chip){
+         console.log(htag);
+    });
 });
 
 function removeAdvKey(el) {

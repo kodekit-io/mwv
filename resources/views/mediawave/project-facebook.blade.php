@@ -67,7 +67,7 @@
     <script src="{!! asset('js/projects/convo-facebook.js') !!}"></script>
 
     <script type="text/javascript">
-        //wordCloud('wordcloud-container', jQuery.parseJSON('{!! $wordCloud !!}'));
+        //wordCloud('wordcloud-container', jQuery.parseJSON('{{--!! $wordCloud !!--}}'));
         wordCloudTemporary('wordcloud-container','http://103.28.15.104:8821/dummy_api/project/1/'+mediaId+'/wordcloud');
         influencerTable('top10LikeStatusFB','http://103.28.15.104:8821/dummy_api/project/1/'+mediaId+'/influencer');
         influencerTable('top10LikePhotoFB','http://103.28.15.104:8821/dummy_api/project/1/'+mediaId+'/influencer');

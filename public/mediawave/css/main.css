@@ -291,6 +291,9 @@ div.jqcloud span.w1 {
 }
 
 /* Materialize */
+.btn {
+	padding: 0 1rem;
+}
 .input-field label {
 	color: #000;
 	left: 0;
