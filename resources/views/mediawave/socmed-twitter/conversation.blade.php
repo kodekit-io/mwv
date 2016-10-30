@@ -9,21 +9,7 @@
         </div>
         <div id="convtwiter" class="md-card-content">
             <?php //TWITTER TABLE ?>
-            <table id="table_twitter" class="striped bordered highlight responsive-table">
-                <thead>
-                <tr>
-                    <th>Date</th>
-                    <th>Author</th>
-                    <th>Post</th>
-                    <th>Original Reach</th>
-                    <th>Viral Reach</th>
-                    <th>Interactions</th>
-                    <th>Viral Score</th>
-                    <th>Sentiment</th>
-                    <th>Link</th>
-                </tr>
-                </thead>
-            </table>
+            <table id="table_twitter" class="striped bordered highlight responsive-table"></table>
         </div>
     </div>
 

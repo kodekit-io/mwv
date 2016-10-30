@@ -8,6 +8,7 @@ var table_twitter = $('#table_twitter').DataTable( {
         "url": ajaxUrl + '/project/chart-data/convo-twitter',
         "data" : {
             "projectId": projectId,
+            "mediaId": mediaId,
             "keywords": brands,
             "startDate": startDate,
             "endDate": endDate
@@ -42,7 +43,7 @@ var table_twitter = $('#table_twitter').DataTable( {
             "data": null,
             "render": function ( data ) {
                 var sentiment = data["Sentiment"];
-                //var c = "";
+                var c = "";
 				switch (sentiment) {
                     case 'positive':
 					case 'Positif':

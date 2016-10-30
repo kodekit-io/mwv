@@ -9,7 +9,7 @@
             <h2 class="md-card-toolbar-heading-text">WORD CLOUDS</h2>
         </div>
         <div id="wordcloudwrap" class="md-card-content">
-            <div id="id-chartnya-disini" class="md-chart"></div>
+            <div id="wordcloud-container" class="md-chart"></div>
         </div>
     </div>
 </li>
@@ -21,21 +21,20 @@
                 <a class="btn waves-effect waves-light z-depth-0 amber lighten-4" data-uk-tooltip title="Help"><i class="material-icons">help</i></a>
                 <a class="btn waves-effect waves-light z-depth-0 green lighten-4" data-uk-tooltip title="Minimize" data-uk-toggle="{target:'#author'}"><i class="material-icons md-icon">fullscreen</i></a>
             </div>
-            <h2 class="md-card-toolbar-heading-text">INFLUENCER</h2>
+            <div class="md-card-toolbar-heading-text">
+                <ul class="uk-subnav uk-subnav-pill" data-uk-switcher="{connect:'#author ul'}">
+                    <li class="uk-active"><a>TOP 10 INSTAGRAMERS</a></li>
+                </ul>
+            </div>
         </div>
         <div id="author" class="md-card-content conv-wrap">
             <?php //INFLUENCER/AUTHOR TABLE ?>
-            <table id="table_author" class="striped bordered highlight responsive-table">
-                <thead>
-                <tr>
-                    <th>Author</th>
-                    <th>Popular</th>
-                    <th>Active</th>
-                    <th>Impact</th>
-                    <th></th>
-                </tr>
-                </thead>
-            </table>
+            <ul class="uk-switcher">
+                <li>
+                    <table id="top10IG" class="striped bordered highlight responsive-table"></table>
+                </li>
+            </ul>
+
         </div>
     </div>
 </li>

@@ -5,36 +5,10 @@
                 <a class="btn waves-effect waves-light z-depth-0 amber lighten-4 " data-uk-tooltip title="{{ config('tooltips.influencer') }}"><i class="material-icons">help</i></a>
                 <a class="btn waves-effect waves-light z-depth-0 green lighten-4 " data-uk-tooltip title="Minimize" data-uk-toggle="{target:'#author'}"><i class="material-icons md-icon">fullscreen</i></a>
             </div>
-            <h2 class="md-card-toolbar-heading-text">INFLUENCER</h2>
+            <h2 class="md-card-toolbar-heading-text">TOP 10 STATUS INFLUENCER</h2>
         </div>
         <div id="author" class="md-card-content conv-wrap">
-			<table id="influencerTable" class="striped bordered highlight responsive-table">
-			</table>
-			<?php /*
-            <table id="table_author" class="striped bordered highlight responsive-table">
-                <thead>
-                <tr>
-                    <th>Name</th>
-                    <th>Score</th>
-                    <th>Value</th>
-                    <th>Link</th>
-                </tr>
-                </thead>
-                <tbody>
-                @if (count($viewInfluencers) > 0)
-                    @foreach($viewInfluencers->top10LikeStatus->data as $influencer)
-                        <tr>
-                            <td>{!! $influencer->name !!}</td>
-                            <td>{!! $influencer->score !!}</td>
-                            <td>{!! $influencer->value !!}</td>
-                            <td><a href="{!! $influencer->url !!}" class="uk-button uk-button-mini uk-button-success white-text" target="_blank">See Details</a></td>
-                        </tr>
-                    @endforeach
-                @endif
-                </tbody>
-            </table>
-			*/
-			?>
+			<table id="top10LikeStatus" class="striped bordered highlight responsive-table"></table>
         </div>
     </div>
 </li>
@@ -58,6 +32,7 @@
                         <li class="tab col s3"><a class="lime-text text-darken-4" href="#convforum"><i class="material-icons">forum</i> Forum</a></li>
                         <li class="tab col s3"><a class="red-text text-darken-4" href="#convvideo"><i class="material-icons">videocam</i> Video</a></li>
                         <li class="tab col s3"><a class="orange-text text-darken-4" href="#convblog"><i class="material-icons">rss_feed</i> Blog</a></li>
+                        <li class="tab col s3"><a class="brown-text text-darken-4" href="#convig"><i class="uk-icon-instagram"></i> Instagram</a></li>
                     </ul>
                 </div>
                 <div id="convtwiter" class="">
@@ -159,6 +134,22 @@
                             <th>Summary</th>
                             <th>Author Url</th>
                             <th>Url</th>
+                        </tr>
+                        </thead>
+                    </table>
+                </div>
+                <div id="convig" class="">
+                    <?php //IG TABLE ?>
+                    <table id="table_ig" class="striped bordered highlight responsive-table">
+                        <thead>
+                        <tr>
+                            <th>Date</th>
+                            <th>Author</th>
+                            <th>Post</th>
+                            <th>Likes</th>
+                            <th>Comments</th>
+                            <th>Author Url</th>
+                            <th>Post Url</th>
                         </tr>
                         </thead>
                     </table>

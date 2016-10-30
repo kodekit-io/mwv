@@ -69,7 +69,7 @@
         });
         //Sub Nav
         $("a[name=subnav]").each(function() {
-            var b = $(this).attr("data-tooltip");
+            var b = $(this).attr("title");
             if (current_title.substring(0, b.length) === b) {
                 $(this).closest('li').addClass("uk-active");
             }

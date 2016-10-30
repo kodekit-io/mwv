@@ -79,7 +79,7 @@ Route::group(['middleware' => 'auth'], function () {
 
     Route::get('/conversation', 'ProjectController@conversation');
 
-    Route::get('/project-ig/{pid}', 'ProjectController@detailIG');
+    Route::get('/project-ig/{pid}', 'ProjectIGController@detail');
 
     Route::get('/edit-project/{pid}', 'ProjectController@edit');
     Route::get('/profile', 'ProfileController@profile');

@@ -15,9 +15,6 @@ function influencerTable($id,$url) {
 		success : function(result) {
 
 			switch ($id) {
-				case 'top10LikeStatus':
-					top10LikeStatus($id,result);
-					break;
 				case 'top10LikeStatusFB':
 					top10LikeStatusFB($id,result);
 					break;
@@ -39,17 +36,8 @@ function influencerTable($id,$url) {
 				case 'top10ByImpactTW':
 					top10ByImpactTW($id,result);
 					break;
-				case 'top10News':
-					top10News($id,result);
-					break;
-				case 'top10Blog':
-					top10Blog($id,result);
-					break;
 				case 'top10Vid':
 					top10Vid($id,result);
-					break;
-				case 'top10Forum':
-					top10Forum($id,result);
 					break;
 				case 'top10IG':
 					top10IG($id,result);
@@ -57,49 +45,6 @@ function influencerTable($id,$url) {
 			}
 		}
 	});
-}
-function top10LikeStatus(id,result) {
-	$data = result.influencer.top10LikeStatus.data;
-	//console.log($data);
-	if ($data.length === 0) {
-		$('#' + id).html("<div class='center'>No data chart</div>");
-	} else {
-		var $content = [];
-		for (i = 0; i < $data.length; i++) {
-			$name= $data[i].name;
-			$score= $data[i].score;
-			$value= $data[i].value;
-			$link= $data[i].link;
-			$content[i] = [ $name, $score, $value, $link ];
-		}
-		//console.log( $content );
-		$('#' + id).DataTable( {
-			processing: true,
-			paging: false,
-			searching: false,
-			info: false,
-			data: $content,
-			columns: [
-				{ title: "Name" },
-				{ title: "Score" },
-				{ title: "Value" },
-				//{ title: "Link" },
-				{
-					data: null,
-					render: function ( data ) {
-						var postlink = data[3];
-						return '<a href="'+postlink+'" target="_blank" data-uk-tooltip title="See Details" class="uk-button uk-button-primary">See Details</a>';
-					}
-				},
-			],
-			/*columnDefs: [{
-				visible: false,
-				targets: [3]
-			}],*/
-			order: [[ 1, "desc" ]]
-		});
-		$('#' + id + '_wrapper .bottom-row').hide();
-	}
 }
 
 function top10LikeStatusFB(id,result) {
@@ -409,130 +354,6 @@ function top10ByImpactTW(id,result) {
 	}
 }
 
-function top10News(id,result) {
-	$data = result.influencer.top10.data;
-	//console.log($data);
-	if ($data.length === 0) {
-		$('#' + id).html("<div class='center'>No data chart</div>");
-	} else {
-		var $content = [];
-		for (i = 0; i < $data.length; i++) {
-			$name= $data[i].name;
-			$score= $data[i].score;
-			$value= $data[i].value;
-			$link= $data[i].link;
-			$url= $data[i].url;
-			$popularity= $data[i].popularity;
-			$content[i] = [ $name, $score, $value, $link, $url, $popularity ];
-		}
-		//console.log( $content );
-		$('#' + id).DataTable( {
-			processing: true,
-			paging: false,
-			searching: false,
-			info: false,
-			data: $content,
-			columns: [
-				//{ title: "Media" },
-				{
-					data: null,
-					title: "Media",
-					render: function ( data ) {
-						var media = data[0];
-						var postlink = data[4];
-						return '<a href="'+postlink+'" target="_blank" data-uk-tooltip title="See Details" class="uk-link">'+media+'</a>';
-					}
-				},
-				{ title: "Score" },
-				{ title: "Value" },
-				{
-					data: null,
-					title: "Popularity",
-					render: function ( data ) {
-						var p = data[5];
-						return p;
-					}
-				},
-				{
-					data: null,
-					render: function ( data ) {
-						var postlink = data[3];
-						return '<a href="'+postlink+'" target="_blank" data-uk-tooltip title="See Details" class="uk-button uk-button-primary">See Details</a>';
-					}
-				},
-			],
-			/*columnDefs: [{
-				visible: false,
-				targets: [3]
-			}],*/
-			order: [[ 1, "desc" ]]
-		});
-		$('#' + id + '_wrapper .bottom-row').hide();
-	}
-}
-
-function top10Blog(id,result) {
-	$data = result.influencer.top10.data;
-	//console.log($data);
-	if ($data.length === 0) {
-		$('#' + id).html("<div class='center'>No data chart</div>");
-	} else {
-		var $content = [];
-		for (i = 0; i < $data.length; i++) {
-			$name= $data[i].name;
-			$score= $data[i].score;
-			$value= $data[i].value;
-			$link= $data[i].link;
-			$url= $data[i].url;
-			$popularity= $data[i].popularity;
-			$content[i] = [ $name, $score, $value, $link, $url, $popularity ];
-		}
-		//console.log( $content );
-		$('#' + id).DataTable( {
-			processing: true,
-			paging: false,
-			searching: false,
-			info: false,
-			data: $content,
-			columns: [
-				//{ title: "Media" },
-				{
-					data: null,
-					title: "Blog",
-					render: function ( data ) {
-						var media = data[0];
-						var postlink = data[4];
-						return '<a href="'+postlink+'" target="_blank" data-uk-tooltip title="See Details" class="uk-link">'+media+'</a>';
-					}
-				},
-				{ title: "Score" },
-				{ title: "Value" },
-				{
-					data: null,
-					title: "Popularity",
-					render: function ( data ) {
-						var p = data[5];
-						return p;
-					}
-				},
-				{
-					data: null,
-					render: function ( data ) {
-						var postlink = data[3];
-						return '<a href="'+postlink+'" target="_blank" data-uk-tooltip title="See Details" class="uk-button uk-button-primary">See Details</a>';
-					}
-				},
-			],
-			/*columnDefs: [{
-				visible: false,
-				targets: [3]
-			}],*/
-			order: [[ 1, "desc" ]]
-		});
-		$('#' + id + '_wrapper .bottom-row').hide();
-	}
-}
-
 function top10Vid(id,result) {
 	$data = result.influencer.top10ByRate.data;
 	//console.log($data);
@@ -604,40 +425,6 @@ function top10Vid(id,result) {
 				targets: [3]
 			}],*/
 			order: [[ 2, "desc" ]]
-		});
-		$('#' + id + '_wrapper .bottom-row').hide();
-	}
-}
-
-function top10Forum(id,result) {
-	$data = result.influencer.top10.data;
-	//console.log($data);
-	if ($data.length === 0) {
-		$('#' + id).html("<div class='center'>No data chart</div>");
-	} else {
-		var $content = [];
-		for (i = 0; i < $data.length; i++) {
-			$user= $data[i].user;
-			$alexa= $data[i].alexa;
-			$popularity= $data[i].popularity;
-			$content[i] = [ $user, $popularity ];
-		}
-		//console.log( $content );
-		$('#' + id).DataTable( {
-			processing: true,
-			paging: false,
-			searching: false,
-			info: false,
-			data: $content,
-			columns: [
-				{ title: "Forum" },
-				{ title: "Popularity" },
-			],
-			/*columnDefs: [{
-				visible: false,
-				targets: [3]
-			}],*/
-			order: [[ 1, "desc" ]]
 		});
 		$('#' + id + '_wrapper .bottom-row').hide();
 	}

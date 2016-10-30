@@ -38,7 +38,7 @@ $('#table_facebook').DataTable( {
             "data": null,
             "render": function ( data ) {
                 var sentiment = data["Sentiment"];
-                var c = "";
+                //var c = "";
 				switch (sentiment) {
                     case 'positive':
 					case 'Positif':

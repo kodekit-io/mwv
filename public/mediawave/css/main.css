@@ -378,7 +378,11 @@ nav, .navbar-fixed {
 nav ul li.active {
 	background-color: rgba(0, 0, 0, 0.25);
 }
-
+nav ul a {
+	display: inline-block;
+	padding: 0 10px;
+	min-width: 30px;
+}
 #projectlist.dropdown-content {
 	top: 50px !important;
 	background-color: #000;
@@ -952,21 +956,30 @@ nav.md-subnav i {
 	text-align: center;
 }
 
-.md-subnav .uk-navbar-nav li a span {
+.md-subnav .uk-navbar-nav li a span.uk-border-circle {
 	display: inline-block;
 	width: 30px;
 	height: 30px;
 	text-align: center;
-	margin: 10px auto;
+	margin: 10px 0;
+	float: left;
 }
 
-.md-subnav .uk-navbar-nav li a span i {
+.md-subnav .uk-navbar-nav li a span.uk-border-circle i {
 	width: 30px;
 	height: 30px;
 	line-height: 30px;
 	text-align: center;
 	font-size: 1.2em;
 	display: block !important;
+}
+
+.md-subnav .uk-navbar-nav li a span.uk-border-circle + span {
+	display: inline-block;
+	height: 30px;
+	line-height: 30px;
+	padding: 0;
+	margin: 0 0 0 5px;
 }
 
 .md-subnav .nav-wrapper {
@@ -987,38 +1000,48 @@ nav .nav-wrapper i {
 }
 
 .md-search {
-	width: 350px;
+	width: auto;
 }
 
 .md-search input[type=search] {
 	height: 30px;
 	line-height: 30px;
-	background: rgba(255, 255, 255, 0.1);
-	margin: 10px 0 0;
+	background: rgba(0, 0, 0, 0.05);
+	margin: 0;
 	padding-left: 2rem;
-	padding-right: 2rem;
-	width: calc(100% - 4rem);
+	width: 205px;
 	color: #fff;
 }
-
-.md-search .input-field,
-.md-search i {
+.md-search input[type=search]:focus {
+	background: rgba(0, 0, 0, 0.05);
+	border-bottom: 1px solid #000;
+}
+.md-search.input-field {
 	height: 30px !important;
 	line-height: 30px !important;
+	margin: 0;
+	position: relative;
+}
+.md-search label {
+	height: 30px !important;
+	line-height: 30px !important;
+	margin: 0;
+	position: absolute;
+	top:0;
+	left: 0 !important;
+	width: 30px;
+	text-align: center;
+}
+.md-search label.active {
+	-webkit-transform: translateY(0);
+	transform: translateY(0);
+}
+.md-search label i {
+	height: 30px !important;
+	line-height: 30px !important;
+	text-align: center;
 }
 
-.md-search .input-field input[type=search]+label {
-	left: 0.25rem;
-}
-
-.md-search .input-field input[type=search] ~ .material-icons {
-	right: 0;
-}
-
-.md-search i.emptysearch {
-	font-size: 1.5em !important;
-	right: 1em;
-}
 
 .md-keywords .md-card-content {
 	position: relative;
@@ -1031,9 +1054,7 @@ nav .nav-wrapper i {
 }
 
 .md-keywords .uk-subnav {
-	width: calc(100% - 360px);
-	margin-bottom: 0;
-	margin-top: -5px;
+
 }
 
 .md-keywords .uk-subnav li [type="checkbox"]+label {
