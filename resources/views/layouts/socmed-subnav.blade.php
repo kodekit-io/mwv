@@ -4,23 +4,27 @@
         <ul class="uk-navbar-nav">
 
             <li>
-                <a href="{!! url('/socmed-twitter') !!}" name="subnav" class="tooltipped" data-position="bottom" data-delay="25" data-tooltip="Twitter">
+                <a href="{!! url('/socmed-twitter') !!}" name="subnav" data-uk-tooltip title="Twitter">
                     <span class="uk-border-circle light-blue lighten-2"><i class="uk-icon-twitter"></i></span>
+                    <span class="uk-hidden-small">Twitter</span>
                 </a>
             </li>
             <li>
-                <a href="{!! url('/socmed-facebook') !!}" name="subnav" class="tooltipped" data-position="bottom" data-delay="25" data-tooltip="Facebook">
+                <a href="{!! url('/socmed-facebook') !!}" name="subnav" data-uk-tooltip title="Facebook">
                     <span class="uk-border-circle blue darken-4"><i class="uk-icon-facebook"></i></span>
+                    <span class="uk-hidden-small">Facebook</span>
                 </a>
             </li>
             <li>
-                <a href="{!! url('/socmed-youtube') !!}" name="subnav" class="tooltipped" data-position="bottom" data-delay="25" data-tooltip="Youtube">
+                <a href="{!! url('/socmed-youtube') !!}" name="subnav" data-uk-tooltip title="Youtube">
                     <span class="uk-border-circle red darken-4"><i class="uk-icon-youtube-play"></i></span>
+                    <span class="uk-hidden-small">Youtube</span>
                 </a>
             </li>
             <li>
-                <a href="{!! url('/socmed-instagram') !!}" name="subnav" class="tooltipped" data-position="bottom" data-delay="25" data-tooltip="Instagram">
+                <a href="{!! url('/socmed-instagram') !!}" name="subnav" data-uk-tooltip title="Instagram">
                     <span class="uk-border-circle brown"><i class="uk-icon-instagram"></i></span>
+                    <span class="uk-hidden-small">Instagram</span>
                 </a>
             </li>
         </ul>

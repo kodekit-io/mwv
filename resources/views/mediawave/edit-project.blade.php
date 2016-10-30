@@ -109,6 +109,56 @@
                         </ul>
                     </div>
                 </div>
+
+                <div class="md-card">
+                    <div class="md-card-toolbar">
+                        <h2 class="md-card-toolbar-heading-text">INSTAGRAM</h2>
+                    </div>
+                    <div class="md-card-content">
+                        <ul id="hashtags" class="uk-list uk-list-line">
+                           <li>
+                               <h5>HASHTAG</h5>
+                               <p>Write hashtag with prefix '#' then hit ENTER to add more hashtags.</p>
+                               <div class="wrap_hashtag">
+                                    <div class="chips-hashtag"></div>
+                               </div>
+                           </li>
+                           <li>
+                                 <h5>EXCLUDE HASHTAG</h5>
+                                 <p>Write hashtag with prefix '#' then hit ENTER to add more hashtags.</p>
+                                 <div class="wrap_excldhashtag">
+                                      <div class="chips-excldhashtag"></div>
+                                 </div>
+                           </li>
+                           <li>
+                                 <h5>USER</h5>
+                                 <p>Write user with prefix '@' then hit ENTER to add more users.</p>
+                                 <div class="wrap_user">
+                                      <div class="chips-user"></div>
+                                 </div>
+                           </li>
+                           <li>
+                                 <h5>EXCLUDE USER</h5>
+                                 <p>Write user with prefix '@' then hit ENTER to add more users.</p>
+                                 <div class="wrap_exclduser">
+                                      <div class="chips-exclduser"></div>
+                                 </div>
+                            </li>
+                        </ul>
+                        <div class="uk-panel uk-panel-box">
+                            <button type="submit" class="btn amber darken-4 right uk-margin-left nextstep" data-uk-tooltip title="Save Query">SAVE NOW</button>
+                            <a href="#previewquery" class="modal-trigger btn white black-text right uk-margin-left" data-uk-tooltip title="Preview All Query">PREVIEW QUERY</a>
+                        </div>
+                        <div id="previewquery" class="modal modal-fixed-footer">
+                             <div class="modal-content">
+                                <h4>Your queries :</h4>
+                             </div>
+                             <div class="modal-footer">
+                                <a class="modal-action modal-close waves-effect waves-light btn z-depth-0">CLOSE</a>
+                             </div>
+                        </div>
+                    </div>
+                </div>
             </form>
         </div>
 

@@ -1,12 +1,14 @@
 @extends('layouts.mediawave')
 
 @section('content')
+<?php /*
 <nav class="uk-navbar md-subnav gradient-fluenza darken">
     <ul class="uk-navbar-nav md-head-container">
         <li class="uk-active"><a href="{!! url('/create-project') !!}">Create Project</a></li>
         <li><a href="{!! url('/create-project-ig') !!}">Create Instagram Project</a></li>
     </ul>
 </nav>
+*/ ?>
 <main class="">
     <div class="md-container">
         <form action="{!! url('save-project') !!}" method="post" name="project-form" class="project-form">
@@ -126,8 +128,20 @@
 
                                  <div class="uk-panel uk-panel-box uk-margin-top">
                                     <a class="btn white black-text left prevstep backexcld" data-uk-tooltip title="Prev Step: Topics">BACK</a>
-                                    <button type="submit" class="btn amber darken-4 right uk-margin-left nextstep step17" name="form_mode" value="regular" data-uk-tooltip title="Save Query">SAVE NOW</button>
-                                    <a href="#previewquery" class="modal-trigger btn white black-text right uk-margin-left step16" data-uk-tooltip title="Preview All Query" onclick="previewQuery()">PREVIEW QUERY</a>
+                                    <ul class="uk-subnav right">
+                                        <li>
+                                            <a href="#previewquery" class="modal-trigger btn white black-text uk-margin-left step16" data-uk-tooltip title="Preview All Query" onclick="previewQuery()">PREVIEW QUERY</a>
+                                        </li>
+                                        <li>
+                                            <button type="submit" class="btn amber darken-4 uk-margin-left nextstep step17" name="form_mode" value="regular" data-uk-tooltip title="Save Query">SAVE NOW</button>
+                                        </li>
+                                        <li>
+                                            <span style="line-height:36px">OR</span>
+                                        </li>
+                                        <li>
+                                            <a href="#addIG" class="btn brown darken-4" data-uk-tooltip title="Create Instagram" data-uk-toggle="{target:'#addIG'}">CREATE INSTAGRAM</a>
+                                        </li>
+                                    </ul>
                                  </div>
                             </li>
                         </ul>
@@ -162,14 +176,70 @@
                                   <a href="javascript:void(0);" class="uk-button btn blue z-depth-0 add_advexcld uk-width-medium-1-5 uk-margin-bottom" title="Add Exclude">ADD MORE EXCLUDE</a>
 
                                   <div class="uk-panel uk-panel-box uk-margin-top">
-                                    <button type="submit" class="btn amber darken-4 right uk-margin-left nextstep tooltipped" data-position="top" data-delay="25" name="form_mode" value="advanced" data-tooltip="Save Query">SAVE NOW</button>
-                                    <a href="#previewquery" class="modal-trigger btn white black-text right uk-margin-left" data-uk-tooltip title="Preview All Query" onclick="previewAdavancedQuery()">PREVIEW QUERY</a>
+                                      <ul class="uk-subnav right">
+                                          <li>
+                                              <a href="#previewquery" class="modal-trigger btn white black-text right uk-margin-left" data-uk-tooltip title="Preview All Query" onclick="previewAdavancedQuery()">PREVIEW QUERY</a>
+                                          </li>
+                                          <li>
+                                             <button type="submit" class="btn amber darken-4 right uk-margin-left nextstep" data-uk-tooltip title="Save Query">SAVE NOW!</button>
+                                          </li>
+                                          <li>
+                                              <span style="line-height:36px">OR</span>
+                                          </li>
+                                          <li>
+                                              <a href="#addIG" class="btn brown darken-4" data-uk-tooltip title="Create Instagram" data-uk-toggle="{target:'#addIG'}">CREATE INSTAGRAM</a>
+                                          </li>
+                                      </ul>
                                   </div>
                             </li>
                          </ul>
                     </div>
                 </div>
             </div>
+
+            <?php //add ig  ?>
+            <div class="md-card uk-hidden" id="addIG">
+                <div class="md-card-toolbar">
+                    <h2 class="md-card-toolbar-heading-text">INSTAGRAM</h2>
+                </div>
+                <div class="md-card-content">
+                    <ul id="hashtags" class="uk-list uk-list-line">
+                       <li>
+                           <h5>HASHTAG</h5>
+                           <p>Write hashtag with prefix '#' then hit ENTER to add more hashtags.</p>
+                           <div class="wrap_hashtag">
+                                <div class="chips-hashtag"></div>
+                           </div>
+                       </li>
+                       <li>
+                             <h5>EXCLUDE HASHTAG</h5>
+                             <p>Write hashtag with prefix '#' then hit ENTER to add more hashtags.</p>
+                             <div class="wrap_excldhashtag">
+                                  <div class="chips-excldhashtag"></div>
+                             </div>
+                       </li>
+                       <li>
+                             <h5>USER</h5>
+                             <p>Write user with prefix '@' then hit ENTER to add more users.</p>
+                             <div class="wrap_user">
+                                  <div class="chips-user"></div>
+                             </div>
+                       </li>
+                       <li>
+                             <h5>EXCLUDE USER</h5>
+                             <p>Write user with prefix '@' then hit ENTER to add more users.</p>
+                             <div class="wrap_exclduser">
+                                  <div class="chips-exclduser"></div>
+                             </div>
+                        </li>
+                    </ul>
+                    <div class="uk-panel uk-panel-box">
+                        <button type="submit" class="btn amber darken-4 right uk-margin-left nextstep" data-uk-tooltip title="Save Query">SAVE NOW</button>
+                        <a href="#previewquery" class="modal-trigger btn white black-text right uk-margin-left" data-uk-tooltip title="Preview Instagram Query">PREVIEW</a>
+                    </div>
+                </div>
+            </div>
+
 
             <div id="previewquery" class="modal modal-fixed-footer">
                  <div class="modal-content">

@@ -1,41 +1,47 @@
-$('#table_facebook').DataTable( {
+
+var table_twitter = $('#table_twitter').DataTable( {
+    //"processing": true,
+    //"serverSide": true,
+    //"searching": false,
+    //"info": false,
     "ajax": {
-        "url": ajaxUrl + '/project/chart-data/convo-facebook',
-        //"url": ajaxUrl + "/mediawave/jsontest/convo-fb.json",
+        "url": ajaxUrl + '/project/chart-data/convo-twitter',
         "data" : {
-            "projectId": projectId,
+            //"projectId": projectId,
             "keywords": brands,
             "startDate": startDate,
             "endDate": endDate
         }
     },
     "columns": [
-        { "data": "Date" },
-        { "data": "Author" },
+        { "data": "Date", "title": "Date" },
+        { "data": "Author", "title": "Author" },
         //{
         //    "data": null,
         //    "render": function ( data ) {
-        //        var page = data["Author"];
-        //        var link = data["Author Link"];
-        //        return '<a href="'+link+'" target="_blank" data-uk-tooltip title="'+page+'" class="uk-link">'+page+'</a>';
+        //        var user = data["Author"];
+        //        return '<a href="https://twitter.com/'+user+'" target="_blank" data-uk-tooltip title="'+user+'" class="uk-link">'+user+'</a>';
         //    }
         //},
         //{ "data": "Post" },
         {
             "data": null,
+            "title": "Post",
             "render": function ( data ) {
                 var post = data["Post"];
                 var postrim = post.substring(0,100) + "...";
-                var plink = data["Post Link"];
-                return '<a href="'+plink+'" target="_blank" data-uk-tooltip title="'+post+'" class="uk-link">'+postrim+'</a>';
+                var link = data["Link"];
+                return '<a href="'+link+'" target="_blank" data-uk-tooltip title="'+post+'" class="uk-link">'+postrim+'</a>';
             }
         },
-        { "data": "Comments" },
-        { "data": "Likes" },
-        { "data": "Shares" },
-        { "data": "Media Type" },
+        { "data": "Original Reach", "title": "Original Reach", },
+        { "data": "Viral Reach", "title": "Viral Reach", },
+        { "data": "Interactions", "title": "Interactions", },
+        { "data": "Viral Score", "title": "Viral Score", },
+        //{ "data": "Sentiment" },
         {
             "data": null,
+            "title": "Sentiment",
             "render": function ( data ) {
                 var sentiment = data["Sentiment"];
                 var c = "";
@@ -59,12 +65,11 @@ $('#table_facebook').DataTable( {
                 return '<span class="'+c+'">'+sentiment+'</span>';
             }
         },
-        //{ "data": "Author Link" },
-        { "data": "Post Link" }
+        { "data": "Link" }
     ],
     "columnDefs": [{
         "visible": false,
-        "targets": [8]
+        "targets": [3, 6, 8]
     }],
     "order": [[ 0, "desc" ]]
 });

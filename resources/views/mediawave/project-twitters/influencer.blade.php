@@ -5,32 +5,27 @@
                 <a class="btn waves-effect waves-light z-depth-0 amber lighten-4" data-uk-tooltip title="{{ config('tooltips.influencer') }}"><i class="material-icons">help</i></a>
                 <a class="btn waves-effect waves-light z-depth-0 green lighten-4" data-uk-tooltip title="Minimize" data-uk-toggle="{target:'#author'}"><i class="material-icons md-icon">fullscreen</i></a>
             </div>
-            <h2 class="md-card-toolbar-heading-text">INFLUENCER</h2>
+            <div class="md-card-toolbar-heading-text">
+                <ul class="uk-subnav uk-subnav-pill" data-uk-switcher="{connect:'#authorwrap ul'}">
+                    <li class="uk-active"><a>TOP REACH</a></li>
+                    <li><a>TOP POST</a></li>
+                    <li><a>TOP IMPACT</a></li>
+                </ul>
+            </div>
         </div>
-        <div id="author" class="md-card-content conv-wrap">
+        <div id="authorwrap" class="md-card-content conv-wrap">
             <?php //INFLUENCER/AUTHOR TABLE ?>
-            <table id="table_author" class="striped bordered highlight responsive-table">
-                <thead>
-                <tr>
-                    <th>Author</th>
-                    <th>Popular</th>
-                    <th>Active</th>
-                    <th>Impact</th>
-                </tr>
-                </thead>
-                <tbody>
-                @if (count($viewInfluencers) > 0)
-                    @foreach($viewInfluencers->top10LikeStatus->data as $influencer)
-                        <tr>
-                            <td>{!! $influencer->name !!}</td>
-                            <td>{!! $influencer->score !!}</td>
-                            <td>{!! $influencer->value !!}</td>
-                            <td><a href="{!! $influencer->url !!}" class="uk-button uk-button-mini uk-button-success white-text" target="_blank">See Details</a></td>
-                        </tr>
-                    @endforeach
-                @endif
-                </tbody>
-            </table>
+            <ul class="uk-switcher">
+                <li>
+                    <table id="top10ByReachTW" class="striped bordered highlight responsive-table"></table>
+                </li>
+                <li>
+                    <table id="top10ByNumberTW" class="striped bordered highlight responsive-table"></table>
+                </li>
+                <li>
+                    <table id="top10ByImpactTW" class="striped bordered highlight responsive-table"></table>
+                </li>
+            </ul>
         </div>
     </div>
 </li>
