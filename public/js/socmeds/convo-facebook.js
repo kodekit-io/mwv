@@ -3,7 +3,7 @@ $('#table_facebook').DataTable( {
         "url": ajaxUrl + '/project/chart-data/convo-facebook',
         //"url": ajaxUrl + "/mediawave/jsontest/convo-fb.json",
         "data" : {
-            "projectId": projectId,
+            //"projectId": projectId,
             "keywords": brands,
             "startDate": startDate,
             "endDate": endDate

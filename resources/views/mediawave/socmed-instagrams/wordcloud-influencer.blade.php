@@ -23,9 +23,7 @@
             </div>
             <div class="md-card-toolbar-heading-text">
                 <ul class="uk-subnav uk-subnav-pill" data-uk-switcher="{connect:'#author ul'}">
-                    <li class="uk-active"><a>TOP REACH INFLUENCER</a></li>
-                    <li><a>TOP POST INFLUENCER</a></li>
-                    <li><a>TOP IMPACT INFLUENCER</a></li>
+                    <li class="uk-active"><a>TOP 10 INSTAGRAMERS</a></li>
                 </ul>
             </div>
         </div>
@@ -33,13 +31,7 @@
             <?php //INFLUENCER/AUTHOR TABLE ?>
             <ul class="uk-switcher">
                 <li>
-                    <table id="topreach" class="striped bordered highlight responsive-table"></table>
-                </li>
-                <li>
-                    <table id="toppost" class="striped bordered highlight responsive-table"></table>
-                </li>
-                <li>
-                    <table id="topimpact" class="striped bordered highlight responsive-table"></table>
+                    <table id="top10IG" class="striped bordered highlight responsive-table"></table>
                 </li>
             </ul>
 

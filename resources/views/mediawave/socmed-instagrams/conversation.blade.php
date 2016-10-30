@@ -9,18 +9,7 @@
         </div>
         <div id="convwrap" class="md-card-content conv-wrap">
             <?php //POSTS ?>
-            <table id="table_ig" class="striped bordered highlight responsive-table">
-                <thead>
-                <tr>
-                    <th>Author</th>
-                    <th>Posts</th>
-                    <th>Comment</th>
-                    <th>Like</th>
-                    <th>Potential Reach</th>
-                    <th><input type="checkbox" class="" id="" /><label for="">Select All</label></th>
-                </tr>
-                </thead>
-            </table>
+            <table id="table_ig" class="striped bordered highlight responsive-table"></table>
         </div>
     </div>
 </li>

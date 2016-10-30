@@ -56,11 +56,13 @@
     <script src="{!! asset('js/socmeds/comment-bar.js') !!}"></script>
 
     <script src="{!! asset('js/socmeds/word-cloud.js') !!}"></script>
-    <script src="{!! asset('js/socmeds/convo-video.js') !!}"></script>
-
+    <script src="{!! asset('js/socmeds/influencer.js') !!}"></script>
+	<script src="{!! asset('js/socmeds/convo-video.js') !!}"></script>
     <script>
+        //wordCloud('wordcloud-container', jQuery.parseJSON('{--!! $wordCloud !!--}'));
         $(document).ready(function() {
             wordCloudTemporary('wordcloud-container','http://103.28.15.104:8821/dummy_api/project/'+type+'/'+mediaId+'/wordcloud');
+            influencerTable('top10Vid','http://103.28.15.104:8821/dummy_api/project/'+type+'/'+mediaId+'/influencer');
         });
     </script>
 
