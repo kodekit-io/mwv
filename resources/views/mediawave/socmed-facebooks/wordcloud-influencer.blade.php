@@ -18,31 +18,34 @@
     <div class="md-card hoverable">
         <div class="md-card-toolbar">
             <div class="md-card-toolbar-actions">
-                <a class="btn waves-effect waves-light z-depth-0 amber lighten-4" data-uk-tooltip title="Help"><i class="material-icons">help</i></a>
-                <a class="btn waves-effect waves-light z-depth-0 green lighten-4" data-uk-tooltip title="Minimize" data-uk-toggle="{target:'#author'}"><i class="material-icons md-icon">fullscreen</i></a>
+                <a class="btn waves-effect waves-light z-depth-0 amber lighten-4" data-uk-tooltip title="{{ config('tooltips.influencer') }}"><i class="material-icons">help</i></a>
+                <a class="btn waves-effect waves-light z-depth-0 green lighten-4" data-uk-tooltip title="Minimize" data-uk-toggle="{target:'#authorwrap'}"><i class="material-icons md-icon">fullscreen</i></a>
             </div>
             <div class="md-card-toolbar-heading-text">
-                <ul class="uk-subnav uk-subnav-pill" data-uk-switcher="{connect:'#author ul'}">
-                    <li class="uk-active"><a>TOP REACH INFLUENCER</a></li>
-                    <li><a>TOP POST INFLUENCER</a></li>
-                    <li><a>TOP IMPACT INFLUENCER</a></li>
+                <ul class="uk-subnav uk-subnav-pill" data-uk-switcher="{connect:'#authorwrap ul'}">
+                    <li class="uk-active"><a>TOP LIKE STATUS</a></li>
+                    <li><a>TOP LIKE PHOTO</a></li>
+                    <li><a>TOP LIKE LINK</a></li>
+                    <li><a>TOP LIKE VIDEO</a></li>
                 </ul>
             </div>
         </div>
-        <div id="author" class="md-card-content conv-wrap">
+        <div id="authorwrap" class="md-card-content conv-wrap">
             <?php //INFLUENCER/AUTHOR TABLE ?>
             <ul class="uk-switcher">
                 <li>
-                    <table id="topreach" class="striped bordered highlight responsive-table"></table>
+                    <table id="top10LikeStatusFB" class="striped bordered highlight responsive-table"></table>
                 </li>
                 <li>
-                    <table id="toppost" class="striped bordered highlight responsive-table"></table>
+                    <table id="top10LikePhotoFB" class="striped bordered highlight responsive-table"></table>
                 </li>
                 <li>
-                    <table id="topimpact" class="striped bordered highlight responsive-table"></table>
+                    <table id="top10LikeLinkFB" class="striped bordered highlight responsive-table"></table>
+                </li>
+                <li>
+                    <table id="top10LikeVideoFB" class="striped bordered highlight responsive-table"></table>
                 </li>
             </ul>
-
         </div>
     </div>
 </li>

@@ -3,7 +3,7 @@ $('#table_video').DataTable( {
         "url": ajaxUrl + '/project/chart-data/convo-video',
         //"url": ajaxUrl + "/mediawave/jsontest/convo-video.json",
         "data" : {
-            "projectId": projectId,
+            //"projectId": projectId,
             "keywords": brands,
             "startDate": startDate,
             "endDate": endDate

@@ -42,7 +42,7 @@
             </div>
             <h2 class="md-card-toolbar-heading-text">PUBLIC PAGE</h2>
         </div>
-        <div id="convfacebook" class="">
+        <div id="convfacebook" class="md-card-content">
             <?php //FB TABLE ?>
             <table id="table_facebook" class="striped bordered highlight responsive-table">
                 <thead>

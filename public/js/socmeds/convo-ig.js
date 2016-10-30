@@ -3,9 +3,10 @@ $('#table_ig').DataTable( {
         "url": ajaxUrl + '/project/chart-data/convo-ig',
         //"url": ajaxUrl + "/mediawave/jsontest/convo-ig.json",
         "data": {
-            "project_id": projectId
-            //"start_date": '{!! $startDate !!}',
-            //"end_date": '{!! $endDate !!}'
+            //"project_id": projectId
+            "keywords": brands,
+            "start_date": '{!! $startDate !!}',
+            "end_date": '{!! $endDate !!}'
         }
     },
     "columns": [
@@ -25,10 +26,10 @@ $('#table_ig').DataTable( {
                 var w = $(".ig-img").width();
                 $(".ig-img").css("height", w);
                 var post = data["Post"];
-                //var postrim = post.substring(0,100) + "...";
+                var postrim = post.substring(0,100) + "...";
                 var plink = data["Post Url"];
                 var img = data["Image Url"];
-                return '<a href="'+plink+'" target="_blank" data-uk-tooltip title="'+post+'" class="row"><span class="col s3 ig-img uk-responsive-width" style="background-image:url('+img+')"></span><span class="col s9 uk-link">'+post+'</span></a>';
+                return '<a href="'+plink+'" target="_blank" data-uk-tooltip="{pos:\'top-left\'}" title="'+postrim+'" class="row"><span class="col s3 ig-img uk-responsive-width" style="background-image:url('+img+')"></span><span class="col s9 uk-link">'+post+'</span></a>';
             }
         },
         { "data": "Likes" },
