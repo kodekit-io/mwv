@@ -27,7 +27,7 @@
                     <div id="interacttrend" class="md-chart">interaction TREND</div>
                 </li>
                 <li>
-                    <div id="reachtrend" class="md-chart">potential reach TREND</div>
+                    <div id="potentialreachtrend" class="md-chart">potential reach TREND</div>
                 </li>
             </ul>
         </div>

@@ -1,5 +1,5 @@
 $.ajax({
-    url : ajaxUrl + '/project/chart-data/reach-trend/' + mediaId,
+    url : ajaxUrl + '/project/chart-data/potential-reach-trend/',
     data : {
         projectId: projectId,
         keywords: brands,
@@ -8,18 +8,18 @@ $.ajax({
         search: search
     },
     beforeSend : function(xhr) {
-        $('#reachtrend').block({
+        $('#potentialreachtrend').block({
             message: '<img src="' + ajaxUrl + '/mediawave/img/spinner.gif">',
             css: { border: 'none', zIndex: 100 },
             overlayCSS: { backgroundColor: '#fff', zIndex: 100 }
         });
     },
     complete : function(xhr, status) {
-        $('#reachtrend').unblock();
+        $('#potentialreachtrend').unblock();
     },
     success : function(result) {
         // console.log(result);
-        reachTrendChart('reachtrend', jQuery.parseJSON(result));
+        reachTrendChart('potentialreachtrend', jQuery.parseJSON(result));
     }
 });
 
@@ -30,7 +30,7 @@ function reachTrendChart($id, $data) {
         $dates = $data.dates;
         $content = [];
         for (var i = 0; i < $data.data.length; i++) {
-            $content[i] = { name: $data.data[i].keywordName, data: $data.data[i].post };
+            $content[i] = { name: $data.data[i].keywordName, data: $data.data[i].potreach };
         }
         var data = {
             content: $content,

@@ -13,12 +13,14 @@ trait ProjectRequestParser
         $last7DaysRange = $this->chartService->getLastSevenDaysRange();
         $startDate = $last7DaysRange['startDate'];
         $endDate = $last7DaysRange['endDate'];
+        $shownSearch = '';
         if ($request->has('filter')) {
             $startDate = $request->input('start_date');
             $endDate = $request->input('end_date');
             $startDate = ( $startDate != '' ) ? Carbon::createFromFormat('d/m/y', $startDate)->format('Y-m-d') : null;
             $endDate = ( $endDate != '' ) ? Carbon::createFromFormat('d/m/y', $endDate)->format('Y-m-d') : null;
             $brands = ( $request->has('keywords') ? implode(',', $request->input('keywords')) : '' );
+            $shownSearch = $request->has('search') ? $request->input('search') : '';
         }
 
         $profiles = $this->projectService->projectInfo($projectId);
@@ -36,6 +38,7 @@ trait ProjectRequestParser
             }
         }
 
+        $data['shownSearch'] = $shownSearch;
         $data['brands'] = $brands;
         $data['project'] = $profiles->project;
         $data['keywords'] = $keywords;

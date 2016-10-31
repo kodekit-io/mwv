@@ -1,5 +1,12 @@
 $.ajax({
     url : ajaxUrl + '/project/chart-data/comment-pie/' + mediaId,
+    data : {
+        projectId: projectId,
+        keywords: brands,
+        startDate: startDate,
+        endDate: endDate,
+        search: search
+    },
     beforeSend : function(xhr) {
         $('#commentbar').block({
             message: '<img src="' + ajaxUrl + '/mediawave/img/spinner.gif">',

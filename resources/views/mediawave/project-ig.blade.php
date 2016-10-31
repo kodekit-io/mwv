@@ -53,11 +53,12 @@
         var startDate = '{!! $startDate !!}';
         var endDate = '{!! $endDate !!}';
         var brands = '{!! $brands !!}';
+        var search = '{!! $shownSearch !!}';
     </script>
     <script src="{!! asset('js/projects/post-trend.js') !!}"></script>
     <script src="{!! asset('js/projects/comment-trend.js') !!}"></script>
     <script src="{!! asset('js/projects/interaction-trend.js') !!}"></script>
-    <script src="{!! asset('js/projects/reach-trend.js') !!}"></script>
+    <script src="{!! asset('js/projects/potential-trend.js') !!}"></script>
     <script src="{!! asset('js/projects/post-pie.js') !!}"></script>
     <script src="{!! asset('js/projects/reach-pie.js') !!}"></script>
     <script src="{!! asset('js/projects/sentiment-bar.js') !!}"></script>
