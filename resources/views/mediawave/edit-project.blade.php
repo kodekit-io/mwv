@@ -16,7 +16,7 @@
                                 <h2 class="md-card-toolbar-heading-text">How To Edit Project?</h2>
                             </div>
                             <div class="md-card-content">
-                                Hendrerit ornare eu ullamcorper dignissim elit inceptos scelerisque dolor a tellus non nam aenean condimentum vestibulum a ad himenaeos nisl mi scelerisque at gravida facilisi. Morbi posuere adipiscing ac platea integer maecenas mus eget nisl sem a bibendum in elit ultrices ultricies vestibulum himenaeos lobortis venenatis arcu inceptos adipiscing a vestibulum. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate.
+
                             </div>
                         </div>
                     </div>
@@ -40,7 +40,7 @@
                 </div>
                 <div class="md-card">
                     <div class="md-card-content">
-                        <ul id="keywordadv" class="uk-list uk-list-line">
+                        <ul id="keywordadv" class="uk-list uk-list-line uk-margin-bottom-remove">
                             <li>
                                 <h5>EDIT KEYWORDS</h5>
                                 <div class="wrap_advkeys">
@@ -99,23 +99,21 @@
                                         </div>
                                     @endif
                                 </div>
-                                <a href="javascript:void(0);" class="uk-button btn blue z-depth-0 add_advexcld uk-width-medium-1-5 uk-margin-bottom" title="Add Exclude">ADD MORE EXCLUDE</a>
-
-                                <div class="uk-panel uk-panel-box uk-margin-top">
-                                    <button type="submit" class="btn amber darken-4 right uk-margin-left nextstep" data-uk-tooltip title="Save Query">SAVE NOW</button>
-                                    <a href="#previewquery" class="modal-trigger btn white black-text right uk-margin-left" data-uk-tooltip title="Preview All Query">PREVIEW QUERY</a>
-                                </div>
+                                <a href="javascript:void(0);" class="uk-button btn blue z-depth-0 add_advexcld uk-width-medium-1-5" title="Add Exclude">ADD MORE EXCLUDE</a>
                             </li>
                         </ul>
                     </div>
                 </div>
 
-                <div class="md-card">
+                <div class="md-card" id="addIG">
                     <div class="md-card-toolbar">
+                        <div class="md-card-toolbar-actions">
+                            <a class="btn waves-effect waves-light z-depth-0 green lighten-4" data-uk-tooltip title="Hide Instagram" data-uk-toggle="{target:'#addIG .md-card-content'}"><i class="material-icons md-icon">visibility_off</i></a>
+                        </div>
                         <h2 class="md-card-toolbar-heading-text">INSTAGRAM</h2>
                     </div>
                     <div class="md-card-content">
-                        <ul id="hashtags" class="uk-list uk-list-line">
+                        <ul id="hashtags" class="uk-list uk-list-line uk-margin-bottom-remove">
                            <li>
                                <h5>HASHTAG</h5>
                                <p>Write hashtag with prefix '#' then hit ENTER to add more hashtags.</p>
@@ -145,18 +143,12 @@
                                  </div>
                             </li>
                         </ul>
-                        <div class="uk-panel uk-panel-box">
-                            <button type="submit" class="btn amber darken-4 right uk-margin-left nextstep" data-uk-tooltip title="Save Query">SAVE NOW</button>
-                            <a href="#previewquery" class="modal-trigger btn white black-text right uk-margin-left" data-uk-tooltip title="Preview All Query">PREVIEW QUERY</a>
-                        </div>
-                        <div id="previewquery" class="modal modal-fixed-footer">
-                             <div class="modal-content">
-                                <h4>Your queries :</h4>
-                             </div>
-                             <div class="modal-footer">
-                                <a class="modal-action modal-close waves-effect waves-light btn z-depth-0">CLOSE</a>
-                             </div>
-                        </div>
+
+                    </div>
+                </div>
+                <div class="md-card">
+                    <div class="md-card-content uk-text-right">
+                        <button type="submit" class="btn amber darken-4 z-depth-0" data-uk-tooltip title="Save Query">SAVE NOW</button>
                     </div>
                 </div>
             </form>

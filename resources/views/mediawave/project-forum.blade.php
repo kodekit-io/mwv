@@ -63,9 +63,6 @@
 	<script src="{!! asset('js/projects/convo-forum.js') !!}"></script>
     <script>
         $(document).ready(function() {
-            $('#table_thread').DataTable( {
-                "order": [[ 0, "desc" ]]
-            });
             wordCloudTemporary('wordcloud-container','http://103.28.15.104:8821/dummy_api/project/1/'+mediaId+'/wordcloud');
             influencerTable('top10Forum','http://103.28.15.104:8821/dummy_api/project/1/'+mediaId+'/influencer');
         });

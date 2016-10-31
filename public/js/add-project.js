@@ -112,7 +112,7 @@ $(function(){
         this.submit();
     });
 
-    //INSTAGRAM ADD
+    //INSTAGRAM
     $(".chips-hashtag").material_chip();
     $(".chips-excldhashtag").material_chip();
     $(".chips-user").material_chip();

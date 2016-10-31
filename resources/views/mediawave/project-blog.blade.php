@@ -66,7 +66,7 @@
             $('#table_post').DataTable( {
                 "order": [[ 0, "desc" ]]
             });
-            //wordCloud('wordcloud-container', jQuery.parseJSON('{!! $wordCloud !!}'));
+            //wordCloud('wordcloud-container', jQuery.parseJSON('{{--!! $wordCloud !!--}}'));
             wordCloudTemporary('wordcloud-container','http://103.28.15.104:8821/dummy_api/project/1/'+mediaId+'/wordcloud');
             influencerTable('top10Blog','http://103.28.15.104:8821/dummy_api/project/1/'+mediaId+'/influencer');
         });

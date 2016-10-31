@@ -60,7 +60,7 @@
     <script src="{!! asset('js/projects/influencer.js') !!}"></script>
 	<script src="{!! asset('js/projects/convo-video.js') !!}"></script>
     <script>
-        //wordCloud('wordcloud-container', jQuery.parseJSON('{!! $wordCloud !!}'));
+        //wordCloud('wordcloud-container', jQuery.parseJSON('{{--!! $wordCloud !!--}}'));
         $(document).ready(function() {
             wordCloudTemporary('wordcloud-container','http://103.28.15.104:8821/dummy_api/project/1/'+mediaId+'/wordcloud');
             influencerTable('top10Vid','http://103.28.15.104:8821/dummy_api/project/1/'+mediaId+'/influencer');
