@@ -16,12 +16,13 @@
                                 <h2 class="md-card-toolbar-heading-text">How To Edit Project?</h2>
                             </div>
                             <div class="md-card-content">
-
+                                <p>A step by step guide to edit a Project, just click the button below and follow the instructions.</p>
+                                <a class="btn btn-success blue z-depth-0" href="javascript:void(0);" onclick="introEdit();">Show me how</a>
                             </div>
                         </div>
                     </div>
                     <div class="uk-width-medium-1-2 uk-pull-1-2">
-                        <div class="md-card">
+                        <div class="md-card step1">
                             <div class="md-card-toolbar">
                                 <h2 class="md-card-toolbar-heading-text">EDIT PROJECT INFORMATION</h2>
                             </div>
@@ -43,13 +44,13 @@
                         <ul id="keywordadv" class="uk-list uk-list-line uk-margin-bottom-remove">
                             <li>
                                 <h5>EDIT KEYWORDS</h5>
-                                <div class="wrap_advkeys">
+                                <div class="wrap_advkeys step2">
                                     @if (count($keywords) > 0)
                                         <?php $x = 1; ?>
                                         @foreach($keywords as $keyword)
                                             <div class="advkey">
                                             <textarea id="key-{!! $x !!}" name="field_key[{!! $x !!}]" class="materialize-textarea uk-margin-small-bottom">{!! $keyword->keyword->keywordName !!}</textarea>
-                                            <a href="javascript:void(0);" class="uk-button uk-button-mini red accent-2 remove_form" onclick="removeAdvKey(this)" title="Delete This"><i class="uk-icon uk-icon-close"></i></a>
+                                            <a href="javascript:void(0);" class="uk-button uk-button-mini red accent-2 remove_form step3" onclick="removeAdvKey(this)" title="Delete This"><i class="uk-icon uk-icon-close"></i></a>
                                             </div>
                                             <?php $x++; ?>
                                         @endforeach
@@ -59,17 +60,17 @@
                                     </div>
                                     @endif
                                 </div>
-                                <a href="javascript:void(0);" class="uk-button btn blue z-depth-0 add_advkey uk-width-medium-1-5 uk-margin-bottom" title="Add Keyword">ADD MORE KEYWORD</a>
+                                <a href="javascript:void(0);" class="uk-button btn blue z-depth-0 add_advkey uk-width-medium-1-5 uk-margin-bottom step4" title="Add Keyword">ADD MORE KEYWORD</a>
                             </li>
                             <li>
                                 <h5>EDIT TOPICS</h5>
-                                <div class="wrap_advtopics">
+                                <div class="wrap_advtopics step5">
                                     @if(count($topics) > 0)
                                         <?php $x = 1; ?>
                                         @foreach($topics as $topic)
                                             <div class="advtopic">
                                                 <textarea id="topic-{!! $x !!}" name="field_topic[{!! $x !!}]" class="materialize-textarea uk-margin-small-bottom">{!! $topic->topicName !!}</textarea>
-                                                <a href="javascript:void(0);" class="uk-button uk-button-mini red accent-2 remove_form" onclick="removeAdvTopic(this)" title="Delete This"><i class="uk-icon uk-icon-close"></i></a>
+                                                <a href="javascript:void(0);" class="uk-button uk-button-mini red accent-2 remove_form step6" onclick="removeAdvTopic(this)" title="Delete This"><i class="uk-icon uk-icon-close"></i></a>
                                             </div>
                                             <?php $x++ ?>
                                         @endforeach
@@ -79,17 +80,17 @@
                                         </div>
                                     @endif
                                 </div>
-                                <a href="javascript:void(0);" class="uk-button btn blue z-depth-0 add_advtopic uk-width-medium-1-5 uk-margin-bottom" title="Add Topic">ADD MORE TOPIC</a>
+                                <a href="javascript:void(0);" class="uk-button btn blue z-depth-0 add_advtopic uk-width-medium-1-5 uk-margin-bottom step7" title="Add Topic">ADD MORE TOPIC</a>
                             </li>
                             <li>
                                 <h5>EDIT EXCLUDED TOPICS</h5>
-                                <div class="wrap_advexclds">
+                                <div class="wrap_advexclds step8">
                                     @if (count($excludes) > 0)
                                         <?php $x = 1; ?>
                                         @foreach($excludes as $exclude)
                                             <div class="advexcld">
                                                 <textarea id="excld-{!! $x !!}" name="field_excld[{!! $x !!}]" class="materialize-textarea uk-margin-small-bottom">{!! $exclude->noiseKeyName !!}</textarea>
-                                                <a href="javascript:void(0);" class="uk-button uk-button-mini red accent-2 remove_form" onclick="removeAdvExcld(this)" title="Delete This"><i class="uk-icon uk-icon-close"></i></a>
+                                                <a href="javascript:void(0);" class="uk-button uk-button-mini red accent-2 remove_form step9" onclick="removeAdvExcld(this)" title="Delete This"><i class="uk-icon uk-icon-close"></i></a>
                                             </div>
                                             <?php $x++; ?>
                                         @endforeach
@@ -99,14 +100,14 @@
                                         </div>
                                     @endif
                                 </div>
-                                <a href="javascript:void(0);" class="uk-button btn blue z-depth-0 add_advexcld uk-width-medium-1-5" title="Add Exclude">ADD MORE EXCLUDE</a>
+                                <a href="javascript:void(0);" class="uk-button btn blue z-depth-0 add_advexcld uk-width-medium-1-5 step10" title="Add Exclude">ADD MORE EXCLUDE</a>
                             </li>
                         </ul>
                     </div>
                 </div>
 
                 <div class="md-card" id="addIG">
-                    <div class="md-card-toolbar">
+                    <div class="md-card-toolbar step11">
                         <div class="md-card-toolbar-actions">
                             <a class="btn waves-effect waves-light z-depth-0 green lighten-4" data-uk-tooltip title="Hide Instagram" data-uk-toggle="{target:'#addIG .md-card-content'}"><i class="material-icons md-icon">visibility_off</i></a>
                         </div>
@@ -114,28 +115,28 @@
                     </div>
                     <div class="md-card-content">
                         <ul id="hashtags" class="uk-list uk-list-line uk-margin-bottom-remove">
-                           <li>
+                           <li class="step12">
                                <h5>HASHTAG</h5>
                                <p>Write hashtag with prefix '#' then hit ENTER to add more hashtags.</p>
                                <div class="wrap_hashtag">
                                     <div class="chips-hashtag"></div>
                                </div>
                            </li>
-                           <li>
+                           <li class="step13">
                                  <h5>EXCLUDE HASHTAG</h5>
                                  <p>Write hashtag with prefix '#' then hit ENTER to add more hashtags.</p>
                                  <div class="wrap_excldhashtag">
                                       <div class="chips-excldhashtag"></div>
                                  </div>
                            </li>
-                           <li>
+                           <li class="step14">
                                  <h5>USER</h5>
                                  <p>Write user with prefix '@' then hit ENTER to add more users.</p>
                                  <div class="wrap_user">
                                       <div class="chips-user"></div>
                                  </div>
                            </li>
-                           <li>
+                           <li class="step15">
                                  <h5>EXCLUDE USER</h5>
                                  <p>Write user with prefix '@' then hit ENTER to add more users.</p>
                                  <div class="wrap_exclduser">
@@ -148,7 +149,7 @@
                 </div>
                 <div class="md-card">
                     <div class="md-card-content uk-text-right">
-                        <button type="submit" class="btn amber darken-4 z-depth-0" data-uk-tooltip title="Save Query">SAVE NOW</button>
+                        <button type="submit" class="btn amber darken-4 z-depth-0 step16" data-uk-tooltip title="Save Query">SAVE NOW</button>
                     </div>
                 </div>
             </form>
@@ -159,4 +160,5 @@
 
 @section('page-level-scripts')
     <script src="{!! asset('js/edit-project.js') !!}" type="text/javascript"></script>
+    <script src="{!! asset('js/help-editproject.js') !!}" type="text/javascript"></script>
 @endsection

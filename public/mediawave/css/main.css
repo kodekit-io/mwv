@@ -1793,6 +1793,16 @@ select {
 	line-height: 50px;
 	height: 50px;
 }
+
+/**/
+.introjs-helperLayer.nxtstp:after {
+	content: "NEXT STEP";
+	background: cyan;
+	display: block;
+	position: absolute;
+	width: 100%;
+	height: 100%;
+}
 @media only screen and (max-width: 768px) {
 	.uk-navbar-nav>li>a {
 		padding: 0 0.15em;
