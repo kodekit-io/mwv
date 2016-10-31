@@ -21,7 +21,7 @@
                         </div>
                         <div class="md-card-content">
                             <p>A step by step guide to create a Project, just click the button below and follow the instructions.</p>
-                            <a class="btn btn-success blue" href="javascript:void(0);" onclick="introAdd();">Show me how</a>
+                            <a class="btn btn-success blue z-depth-0" href="javascript:void(0);" onclick="introAdd();">Show me how</a>
                         </div>
                     </div>
                 </div>
@@ -101,6 +101,8 @@
 
                                  <hr>
                                  <a class="btn grey z-depth-0 prevstep backtopic" data-uk-tooltip title="Prev Step: Keywords"><i class="material-icons left">keyboard_arrow_left</i> BACK</a>
+
+
                                  <a class="btn cyan right z-depth-0 nextstep step12" data-uk-tooltip title="Next Step: Create Excluded Topics">NEXT STEP <i class="material-icons right">keyboard_arrow_right</i></a>
                             </li>
                             <li>
@@ -168,36 +170,36 @@
 
             <?php //add ig  ?>
             <div class="md-card" id="addIG">
-                <div class="md-card-toolbar">
+                <div class="md-card-toolbar step17">
                     <div class="md-card-toolbar-actions">
-                        <a class="btn waves-effect waves-light z-depth-0 green lighten-4" data-uk-tooltip title="Hide Instagram" data-uk-toggle="{target:'#addIG .md-card-content'}"><i class="material-icons md-icon">visibility_off</i></a>
+                        <a class="btn waves-effect waves-light z-depth-0 green lighten-4 step18" data-uk-tooltip title="Hide Instagram" data-uk-toggle="{target:'#addIG .md-card-content'}"><i class="material-icons md-icon">visibility_off</i></a>
                     </div>
                     <h2 class="md-card-toolbar-heading-text">INSTAGRAM</h2>
                 </div>
                 <div class="md-card-content">
                     <ul id="hashtags" class="uk-list uk-list-line uk-margin-bottom-remove">
-                       <li>
+                       <li class="step19">
                            <h5>HASHTAG</h5>
                            <p>Write hashtag with prefix '#' then hit ENTER to add more hashtags.</p>
                            <div class="wrap_hashtag">
                                 <div class="chips-hashtag"></div>
                            </div>
                        </li>
-                       <li>
+                       <li class="step20">
                              <h5>EXCLUDE HASHTAG</h5>
                              <p>Write hashtag with prefix '#' then hit ENTER to add more hashtags.</p>
                              <div class="wrap_excldhashtag">
                                   <div class="chips-excldhashtag"></div>
                              </div>
                        </li>
-                       <li>
+                       <li class="step21">
                              <h5>USER</h5>
                              <p>Write user with prefix '@' then hit ENTER to add more users.</p>
                              <div class="wrap_user">
                                   <div class="chips-user"></div>
                              </div>
                        </li>
-                       <li>
+                       <li class="step22">
                              <h5>EXCLUDE USER</h5>
                              <p>Write user with prefix '@' then hit ENTER to add more users.</p>
                              <div class="wrap_exclduser">
@@ -210,7 +212,7 @@
             </div>
             <div class="md-card">
                 <div class="md-card-content uk-text-right">
-                    <button type="submit" class="btn amber darken-4 z-depth-0" data-uk-tooltip title="Save Query">SAVE NOW</button>
+                    <button type="submit" class="btn amber darken-4 z-depth-0 step23" data-uk-tooltip title="Save Query">SAVE NOW</button>
                 </div>
             </div>
 
@@ -230,5 +232,5 @@
 
 @section('page-level-scripts')
     <script src="{!! asset('js/add-project.js') !!}" type="text/javascript"></script>
-    <script src="{!! asset('js/help.js') !!}" type="text/javascript"></script>
+    <script src="{!! asset('js/help-addproject.js') !!}" type="text/javascript"></script>
 @endsection
