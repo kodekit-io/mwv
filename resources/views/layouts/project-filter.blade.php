@@ -24,7 +24,7 @@
                 <ul class="uk-subnav right">
                     <li>
                         <div class="input-field md-search">
-                            <input id="search" type="text" name="search" value="{!! $shownSearch !!}" placeholder="Search">
+                            <input id="search" type="search" name="search" value="{!! $shownSearch !!}" placeholder="Search">
                             <label for="search"><i class="material-icons">search</i></label>
                         </div>
                     </li>
