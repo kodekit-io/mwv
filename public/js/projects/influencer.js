@@ -646,15 +646,19 @@ function top10Forum(id,result) {
 }
 
 function top10IG(id,result) {
-	$data = result.influencer.top10.data;
-	//console.log($data);
+	$data = result.influencer.top10LoveStatus.data;
+
 	if ($data.length === 0) {
 		$('#' + id).html("<div class='center'>No data chart</div>");
 	} else {
 		var $content = [];
 		for (i = 0; i < $data.length; i++) {
-			$user= $data[i].user;
-			$content[i] = [ $user ];
+			$name= $data[i].name;
+			$score= $data[i].score;
+			$value= $data[i].value;
+			$link= $data[i].link;
+			$url= $data[i].url;
+			$content[i] = [ $name, $score, $value, $link, $url ];
 		}
 		//console.log( $content );
 		$('#' + id).DataTable( {
@@ -664,12 +668,32 @@ function top10IG(id,result) {
 			info: false,
 			data: $content,
 			columns: [
-				{ title: "IGer" },
+				//{ title: "Name" },
+				{
+					data: null,
+					title: "Name",
+					render: function ( data ) {
+						var n = data[0];
+						var l = data[3];
+						return '<a href="'+l+'" target="_blank" data-uk-tooltip title="'+n+'" class="uk-link">'+n+'</a>';
+					}
+				},
+				{ title: "Score" },
+				{ title: "Value" },
+				{ title: "Link" },
+				//{ title: "Url" },
+				{
+					data: null,
+					render: function ( data ) {
+						var postlink = data[4];
+						return '<a href="'+postlink+'" target="_blank" data-uk-tooltip title="See Details" class="uk-button uk-button-primary">See Details</a>';
+					}
+				},
 			],
-			/*columnDefs: [{
+			columnDefs: [{
 				visible: false,
 				targets: [3]
-			}],*/
+			}],
 			order: [[ 0, "desc" ]]
 		});
 		$('#' + id + '_wrapper .bottom-row').hide();
