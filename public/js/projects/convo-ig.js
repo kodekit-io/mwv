@@ -6,7 +6,8 @@ $('#table_ig').DataTable( {
             "projectId": projectId,
             "keywords": brands,
             "startDate": startDate,
-            "endDate": endDate
+            "endDate": endDate,
+            "search": search
         }
     },
     "columns": [

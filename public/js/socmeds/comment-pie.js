@@ -3,7 +3,8 @@ $.ajax({
     data : {
         keywords: brands,
         startDate: startDate,
-        endDate: endDate
+        endDate: endDate,
+        search: search
     },
     beforeSend : function(xhr) {
         $('#commentpie').block({

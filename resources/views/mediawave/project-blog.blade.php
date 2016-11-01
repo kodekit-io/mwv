@@ -50,6 +50,7 @@
         var startDate = '{!! $startDate !!}';
         var endDate = '{!! $endDate !!}';
         var brands = '{!! $brands !!}';
+        var search = '{!! $shownSearch !!}';
     </script>
     <script src="{!! asset('js/projects/post-trend.js') !!}"></script>
     <script src="{!! asset('js/projects/post-pie.js') !!}"></script>

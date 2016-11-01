@@ -66,6 +66,12 @@ class ChartController extends Controller
         return \GuzzleHttp\json_encode($chart);
     }
 
+    public function potentialReachTrendData($type = 1)
+    {
+        $chart = $this->projectChartService->potentialReachTrend($type);
+        return \GuzzleHttp\json_encode($chart);
+    }
+
     public function buzzPieData($mediaId, $type = 1)
     {
         $chart = $this->projectChartService->buzzPie($mediaId, $type);

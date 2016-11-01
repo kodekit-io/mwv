@@ -50,6 +50,7 @@ Route::group(['middleware' => 'auth'], function () {
 
     Route::get('/project/chart-data/user-trend/{type?}', 'ChartController@userTrendData');
     Route::get('/project/chart-data/view-trend/{type?}', 'ChartController@viewTrendData');
+    Route::get('/project/chart-data/potential-reach-trend', 'ChartController@potentialReachTrendData');
 
     Route::get('/project/chart-data/unique-user-pie', 'ChartController@uniqueUserPieData');
     Route::get('/project/chart-data/viral-pie/{type?}', 'ChartController@viralPieData');

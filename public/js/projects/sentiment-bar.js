@@ -4,7 +4,8 @@ $.ajax({
         projectId: projectId,
         keywords: brands,
         startDate: startDate,
-        endDate: endDate
+        endDate: endDate,
+        search: search
     },
     beforeSend : function(xhr) {
         $('#sentimentbar').block({

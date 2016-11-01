@@ -13,12 +13,14 @@ trait SocmedRequestParser
         $last7DaysRange = $this->projectService->getLastSevenDaysRange();
         $startDate = $last7DaysRange['startDate'];
         $endDate = $last7DaysRange['endDate'];
+        $shownSearch = '';
         if ($request->has('filter')) {
             $startDate = $request->input('start_date');
             $endDate = $request->input('end_date');
             $startDate = ( $startDate != '' ) ? Carbon::createFromFormat('d/m/y', $startDate)->format('Y-m-d') : null;
             $endDate = ( $endDate != '' ) ? Carbon::createFromFormat('d/m/y', $endDate)->format('Y-m-d') : null;
             $brands = ( $request->has('keywords') ? implode(',', $request->input('keywords')) : '' );
+            $shownSearch = $request->has('search') ? $request->input('search') : '';
         }
 
          $socmedAccounts = $this->profileService->getMediaAccounts();
@@ -35,7 +37,7 @@ trait SocmedRequestParser
         }
 
         // $wordcloudApi = $this->projectService->socialWordCloud(2);
-
+        $data['shownSearch'] = $shownSearch;
         $data['keywords'] = $keywords;
         $data['brands'] = $brands;
         $data['startDate'] = $startDate;

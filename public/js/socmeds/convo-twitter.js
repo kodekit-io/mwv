@@ -10,7 +10,8 @@ var table_twitter = $('#table_twitter').DataTable( {
             //"projectId": projectId,
             "keywords": brands,
             "startDate": startDate,
-            "endDate": endDate
+            "endDate": endDate,
+            "search": search
         }
     },
     "columns": [

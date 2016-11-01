@@ -11,7 +11,8 @@ var table_twitter = $('#table_twitter').DataTable( {
             "mediaId": mediaId,
             "keywords": brands,
             "startDate": startDate,
-            "endDate": endDate
+            "endDate": endDate,
+            "search": search
         }
     },
     "columns": [

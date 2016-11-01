@@ -1,5 +1,12 @@
 $.ajax({
     url : ajaxUrl + '/project/chart-data/reach-pie/' + mediaId,
+    data : {
+        projectId: projectId,
+        keywords: brands,
+        startDate: startDate,
+        endDate: endDate,
+        search: search
+    },
     beforeSend : function(xhr) {
         $('#reachpie').block({
             message: '<img src="' + ajaxUrl + '/mediawave/img/spinner.gif">',

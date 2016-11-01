@@ -51,6 +51,7 @@
         var startDate = '{!! $startDate !!}';
         var endDate = '{!! $endDate !!}';
         var brands = '{!! $brands !!}';
+        var search = '{!! $shownSearch !!}';
     </script>
     <script src="{!! asset('js/socmeds/post-trend.js') !!}"></script>
     <script src="{!! asset('js/socmeds/post-pie.js') !!}"></script>
