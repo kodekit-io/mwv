@@ -11,10 +11,11 @@ $('#table_ig').DataTable( {
         }
     },
     "columns": [
-        { "data": "Date" },
+        { "data": "Date", "title": "Date" },
         //{ "data": "Author" },
         {
             "data": null,
+            "title": "Author",
             "render": function ( data ) {
                 var user = data["Author"];
                 return '<a href="https://www.instagram.com/'+user+'" target="_blank" data-uk-tooltip title="'+user+'" class="uk-link">'+user+'</a>';
@@ -23,6 +24,7 @@ $('#table_ig').DataTable( {
         //{ "data": "Post" },
         {
             "data": null,
+            "title": "Post",
             "render": function ( data ) {
                 var w = $(".ig-img").width();
                 $(".ig-img").css("height", w);
@@ -33,9 +35,9 @@ $('#table_ig').DataTable( {
                 return '<a href="'+plink+'" target="_blank" data-uk-tooltip="{pos:\'top-left\'}" title="'+postrim+'" class="row"><span class="col s3 ig-img uk-responsive-width" style="background-image:url('+img+')"></span><span class="col s9 uk-link">'+post+'</span></a>';
             }
         },
-        { "data": "Likes" },
-        { "data": "Comments" },
-        { "data": "Potential Reach" },
+        { "data": "Likes", "title": "Likes" },
+        { "data": "Comments", "title": "Comments" },
+        { "data": "Potential Reach", "title": "Potential Reach" },
         { "data": "Post Url" },
         { "data": "Image Url" }
     ],
