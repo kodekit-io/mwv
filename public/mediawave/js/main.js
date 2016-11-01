@@ -115,11 +115,6 @@
         });
         $('.collapsible').collapsible();
 
-        //search
-        $('.emptysearch').click(function() {
-            $('input#search').val('');
-            //$('input#search').empty();
-        });
 
         //Login Validate
         $("form[name='login']").validate({
