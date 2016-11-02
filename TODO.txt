@@ -7,4 +7,9 @@
 ---- Video (DONE)
 ---- Blog (NO API sample)
 -- View Detail ==> Post Trend Chart (Invalid json result) to be confirmed
--- Generate PDF report
+
+-- Edit Profile
+-- Change Password
+-- Add Social Media Account
+-- Generate PDF Report
+-- Finalize Wordcloud & Influencer

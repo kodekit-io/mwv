@@ -55,23 +55,24 @@
         var endDate = '{!! $endDate !!}';
         var brands = '{!! $brands !!}';
         var search = '{!! $shownSearch !!}';
+        var influencers = ["top10LikeStatus"];
     </script>
 
-    <script src="{!! asset('js/projects/brand-equity.js') !!}"></script>
+    {{--<script src="{!! asset('js/projects/brand-equity.js') !!}"></script>--}}
 
-    <script src="{!! asset('js/projects/buzz-trend.js') !!}"></script>
-    <script src="{!! asset('js/projects/post-trend.js') !!}"></script>
-    <script src="{!! asset('js/projects/reach-trend.js') !!}"></script>
-    <script src="{!! asset('js/projects/interaction-trend.js') !!}"></script>
+    {{--<script src="{!! asset('js/projects/buzz-trend.js') !!}"></script>--}}
+    {{--<script src="{!! asset('js/projects/post-trend.js') !!}"></script>--}}
+    {{--<script src="{!! asset('js/projects/reach-trend.js') !!}"></script>--}}
+    {{--<script src="{!! asset('js/projects/interaction-trend.js') !!}"></script>--}}
 
-    <script src="{!! asset('js/projects/buzz-pie.js') !!}"></script>
-    <script src="{!! asset('js/projects/post-pie.js') !!}"></script>
-    <script src="{!! asset('js/projects/interaction-pie.js') !!}"></script>
-    <script src="{!! asset('js/projects/unique-user-pie.js') !!}"></script>
+    {{--<script src="{!! asset('js/projects/buzz-pie.js') !!}"></script>--}}
+    {{--<script src="{!! asset('js/projects/post-pie.js') !!}"></script>--}}
+    {{--<script src="{!! asset('js/projects/interaction-pie.js') !!}"></script>--}}
+    {{--<script src="{!! asset('js/projects/unique-user-pie.js') !!}"></script>--}}
 
-    <script src="{!! asset('js/projects/sentiment-bar.js') !!}"></script>
-    <script src="{!! asset('js/projects/interaction-bar.js') !!}"></script>
-    <script src="{!! asset('js/projects/share-of-media-bar.js') !!}"></script>
+    {{--<script src="{!! asset('js/projects/sentiment-bar.js') !!}"></script>--}}
+    {{--<script src="{!! asset('js/projects/interaction-bar.js') !!}"></script>--}}
+    {{--<script src="{!! asset('js/projects/share-of-media-bar.js') !!}"></script>--}}
 
     <script src="{!! asset('js/projects/word-cloud.js') !!}"></script>
 	<script src="{!! asset('js/projects/influencer.js') !!}"></script>
@@ -84,8 +85,7 @@
     <script src="{!! asset('js/projects/convo-blog.js') !!}"></script>
 
     <script type="text/javascript">
-        wordCloudTemporary('wordcloud-container','http://103.28.15.104:8821/dummy_api/project/1/'+mediaId+'/wordcloud');
-        influencerTable('top10LikeStatus','http://103.28.15.104:8821/dummy_api/project/1/'+mediaId+'/influencer');
+        // influencerTable('top10LikeStatus','http://103.28.15.104:8821/dummy_api/project/1/'+mediaId+'/influencer');
     </script>
 
 @endsection

@@ -124,9 +124,14 @@ class ProjectChartService
         return $this->getChartWithMedia('commenttrend', $type, $mediaId);
     }
 
-    public function socialWordCloud($mediaId = '', $type = 1)
+    public function socialWordCloud($mediaId, $type = 1)
     {
         return $this->getChartWithMedia('wordcloud', $type, $mediaId);
+    }
+
+    public function influencer($mediaId, $type = 1)
+    {
+        return $this->getChartWithMedia('influencer', $type, $mediaId);
     }
 
     //chart without media
@@ -205,4 +210,5 @@ class ProjectChartService
 
         return $this->getChart('project/'. $type .'/'. $mediaId .'/'. $action, $params);
     }
+
 }

@@ -51,6 +51,7 @@
         var endDate = '{!! $endDate !!}';
         var brands = '{!! $brands !!}';
         var search = '{!! $shownSearch !!}';
+        var influencers = ["top10News"];
     </script>
     <script src="{!! asset('js/projects/post-trend.js') !!}"></script>
     <script src="{!! asset('js/projects/post-pie.js') !!}"></script>
@@ -63,8 +64,8 @@
     <script>
         $(document).ready(function() {
             //wordCloud('wordcloud-container', jQuery.parseJSON('{{--!! $wordCloud !!--}}'));
-            wordCloudTemporary('wordcloud-container','http://103.28.15.104:8821/dummy_api/project/1/'+mediaId+'/wordcloud');
-            influencerTable('top10News','http://103.28.15.104:8821/dummy_api/project/1/'+mediaId+'/influencer');
+            // wordCloudTemporary('wordcloud-container','http://103.28.15.104:8821/dummy_api/project/1/'+mediaId+'/wordcloud');
+            // influencerTable('top10News','http://103.28.15.104:8821/dummy_api/project/1/'+mediaId+'/influencer');
         });
     </script>
 

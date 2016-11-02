@@ -61,6 +61,9 @@ Route::group(['middleware' => 'auth'], function () {
     Route::get('/project/chart-data/rating-bar/{type?}', 'ChartController@ratingBarData');
     Route::get('/project/chart-data/count-bar/{type?}', 'ChartController@countBarData');
 
+    Route::get('/project/chart-data/wordcloud/{mediaId}/{type?}', 'ChartController@wordcloudData');
+    Route::get('/project/chart-data/influencer/{mediaId}/{type?}', 'ChartController@influencerData');
+
     Route::get('/project/chart-data/convo-twitter', 'ChartController@convoTwitterData');
     Route::get('/project/chart-data/convo-facebook', 'ChartController@convoFacebookData');
     Route::get('/project/chart-data/convo-news', 'ChartController@convoNewsData');

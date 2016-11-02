@@ -152,6 +152,18 @@ class ChartController extends Controller
         return \GuzzleHttp\json_encode($chart);
     }
 
+    public function wordcloudData($mediaId, $type = 1)
+    {
+        $chart = $this->projectChartService->socialWordCloud($mediaId, $type);
+        return \GuzzleHttp\json_encode($chart);
+    }
+
+    public function influencerData($mediaId, $type = 1)
+    {
+        $chart = $this->projectChartService->influencer($mediaId, $type);
+        return \GuzzleHttp\json_encode($chart);
+    }
+
     public function convoTwitterData()
     {
         $chart = $this->projectChartService->convoData(2);
