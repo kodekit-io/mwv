@@ -58,21 +58,21 @@
         var influencers = ["top10LikeStatus"];
     </script>
 
-    {{--<script src="{!! asset('js/projects/brand-equity.js') !!}"></script>--}}
+    <script src="{!! asset('js/projects/brand-equity.js') !!}"></script>
 
-    {{--<script src="{!! asset('js/projects/buzz-trend.js') !!}"></script>--}}
-    {{--<script src="{!! asset('js/projects/post-trend.js') !!}"></script>--}}
-    {{--<script src="{!! asset('js/projects/reach-trend.js') !!}"></script>--}}
-    {{--<script src="{!! asset('js/projects/interaction-trend.js') !!}"></script>--}}
+    <script src="{!! asset('js/projects/buzz-trend.js') !!}"></script>
+    <script src="{!! asset('js/projects/post-trend.js') !!}"></script>
+    <script src="{!! asset('js/projects/reach-trend.js') !!}"></script>
+    <script src="{!! asset('js/projects/interaction-trend.js') !!}"></script>
 
-    {{--<script src="{!! asset('js/projects/buzz-pie.js') !!}"></script>--}}
-    {{--<script src="{!! asset('js/projects/post-pie.js') !!}"></script>--}}
-    {{--<script src="{!! asset('js/projects/interaction-pie.js') !!}"></script>--}}
-    {{--<script src="{!! asset('js/projects/unique-user-pie.js') !!}"></script>--}}
+    <script src="{!! asset('js/projects/buzz-pie.js') !!}"></script>
+    <script src="{!! asset('js/projects/post-pie.js') !!}"></script>
+    <script src="{!! asset('js/projects/interaction-pie.js') !!}"></script>
+    <script src="{!! asset('js/projects/unique-user-pie.js') !!}"></script>
 
-    {{--<script src="{!! asset('js/projects/sentiment-bar.js') !!}"></script>--}}
-    {{--<script src="{!! asset('js/projects/interaction-bar.js') !!}"></script>--}}
-    {{--<script src="{!! asset('js/projects/share-of-media-bar.js') !!}"></script>--}}
+    <script src="{!! asset('js/projects/sentiment-bar.js') !!}"></script>
+    <script src="{!! asset('js/projects/interaction-bar.js') !!}"></script>
+    <script src="{!! asset('js/projects/share-of-media-bar.js') !!}"></script>
 
     <script src="{!! asset('js/projects/word-cloud.js') !!}"></script>
 	<script src="{!! asset('js/projects/influencer.js') !!}"></script>

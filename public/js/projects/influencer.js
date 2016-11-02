@@ -3,6 +3,13 @@ influencerTable(influencers);
 function influencerTable(influencers) {
 	$.ajax({
 		url : ajaxUrl + '/project/chart-data/influencer/' + mediaId,
+        data : {
+            projectId: projectId,
+            keywords: brands,
+            startDate: startDate,
+            endDate: endDate,
+            search: search
+        },
 		beforeSend : function(xhr) {
             for(i = 0; i < influencers.length; i++) {
                 // console.log(influencers[i]);

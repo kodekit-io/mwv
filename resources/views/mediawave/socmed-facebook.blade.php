@@ -52,6 +52,7 @@
         var endDate = '{!! $endDate !!}';
         var brands = '{!! $brands !!}';
         var search = '{!! $shownSearch !!}';
+        var influencers = ["top10LikeStatusFB", "top10LikePhotoFB", "top10LikeLinkFB", "top10LikeVideoFB"];
     </script>
     <script src="{!! asset('js/socmeds/post-trend.js') !!}"></script>
     <script src="{!! asset('js/socmeds/post-pie.js') !!}"></script>
@@ -67,11 +68,11 @@
 
     <script>
         $(document).ready(function() {
-            wordCloudTemporary('wordcloud-container','http://103.28.15.104:8821/dummy_api/project/'+type+'/'+mediaId+'/wordcloud');
-            influencerTable('top10LikeStatusFB','http://103.28.15.104:8821/dummy_api/project/'+type+'/'+mediaId+'/influencer');
-            influencerTable('top10LikePhotoFB','http://103.28.15.104:8821/dummy_api/project/'+type+'/'+mediaId+'/influencer');
-            influencerTable('top10LikeLinkFB','http://103.28.15.104:8821/dummy_api/project/'+type+'/'+mediaId+'/influencer');
-            influencerTable('top10LikeVideoFB','http://103.28.15.104:8821/dummy_api/project/'+type+'/'+mediaId+'/influencer');
+            // wordCloudTemporary('wordcloud-container','http://103.28.15.104:8821/dummy_api/project/'+type+'/'+mediaId+'/wordcloud');
+            // influencerTable('top10LikeStatusFB','http://103.28.15.104:8821/dummy_api/project/'+type+'/'+mediaId+'/influencer');
+            // influencerTable('top10LikePhotoFB','http://103.28.15.104:8821/dummy_api/project/'+type+'/'+mediaId+'/influencer');
+            // influencerTable('top10LikeLinkFB','http://103.28.15.104:8821/dummy_api/project/'+type+'/'+mediaId+'/influencer');
+            // influencerTable('top10LikeVideoFB','http://103.28.15.104:8821/dummy_api/project/'+type+'/'+mediaId+'/influencer');
         });
     </script>
 
