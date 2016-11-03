@@ -83,6 +83,7 @@
     <script src="{!! asset('js/projects/convo-forum.js') !!}"></script>
     <script src="{!! asset('js/projects/convo-video.js') !!}"></script>
     <script src="{!! asset('js/projects/convo-blog.js') !!}"></script>
+    <script src="{!! asset('js/projects/convo-ig.js') !!}"></script>
 
     <script type="text/javascript">
         // influencerTable('top10LikeStatus','http://103.28.15.104:8821/dummy_api/project/1/'+mediaId+'/influencer');

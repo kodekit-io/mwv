@@ -140,19 +140,7 @@
                 </div>
                 <div id="convig" class="">
                     <?php //IG TABLE ?>
-                    <table id="table_ig" class="striped bordered highlight responsive-table">
-                        <thead>
-                        <tr>
-                            <th>Date</th>
-                            <th>Author</th>
-                            <th>Post</th>
-                            <th>Likes</th>
-                            <th>Comments</th>
-                            <th>Author Url</th>
-                            <th>Post Url</th>
-                        </tr>
-                        </thead>
-                    </table>
+                    <table id="table_ig" class="striped bordered highlight responsive-table"></table>
                 </div>
             </div>
         </div>
