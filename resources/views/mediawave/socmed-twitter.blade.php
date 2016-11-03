@@ -53,6 +53,7 @@
         var endDate = '{!! $endDate !!}';
         var brands = '{!! $brands !!}';
         var search = '{!! $shownSearch !!}';
+        var influencers = ["top10ByReachTW", "top10ByNumberTW", "top10ByImpactTW"];
     </script>
     <script src="{!! asset('js/socmeds/post-trend.js') !!}"></script>
     <script src="{!! asset('js/socmeds/user-trend.js') !!}"></script>
@@ -70,10 +71,10 @@
 
     <script>
         $(document).ready(function() {
-            wordCloudTemporary('wordcloud-container','http://103.28.15.104:8821/dummy_api/project/'+type+'/'+mediaId+'/wordcloud');
-            influencerTable('top10ByReachTW','http://103.28.15.104:8821/dummy_api/project/'+type+'/'+mediaId+'/influencer');
-            influencerTable('top10ByNumberTW','http://103.28.15.104:8821/dummy_api/project/'+type+'/'+mediaId+'/influencer');
-            influencerTable('top10ByImpactTW','http://103.28.15.104:8821/dummy_api/project/'+type+'/'+mediaId+'/influencer');
+            // wordCloudTemporary('wordcloud-container','http://103.28.15.104:8821/dummy_api/project/'+type+'/'+mediaId+'/wordcloud');
+            // influencerTable('top10ByReachTW','http://103.28.15.104:8821/dummy_api/project/'+type+'/'+mediaId+'/influencer');
+            // influencerTable('top10ByNumberTW','http://103.28.15.104:8821/dummy_api/project/'+type+'/'+mediaId+'/influencer');
+            // influencerTable('top10ByImpactTW','http://103.28.15.104:8821/dummy_api/project/'+type+'/'+mediaId+'/influencer');
         });
     </script>
 

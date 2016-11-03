@@ -55,6 +55,7 @@
         var endDate = '{!! $endDate !!}';
         var brands = '{!! $brands !!}';
         var search = '{!! $shownSearch !!}';
+        var influencers = ["top10LikeStatus"];
     </script>
 
     <script src="{!! asset('js/projects/brand-equity.js') !!}"></script>
@@ -84,8 +85,7 @@
     <script src="{!! asset('js/projects/convo-blog.js') !!}"></script>
 
     <script type="text/javascript">
-        wordCloudTemporary('wordcloud-container','http://103.28.15.104:8821/dummy_api/project/1/'+mediaId+'/wordcloud');
-        influencerTable('top10LikeStatus','http://103.28.15.104:8821/dummy_api/project/1/'+mediaId+'/influencer');
+        // influencerTable('top10LikeStatus','http://103.28.15.104:8821/dummy_api/project/1/'+mediaId+'/influencer');
     </script>
 
 @endsection

@@ -1,3 +1,4 @@
+
 function wordCloud($id, $data) {
     if ($data.length === 0) {
         $('#' + $id).html("<div class='center'>No data chart</div>");
@@ -21,12 +22,18 @@ function wordCloud($id, $data) {
     }
 }
 
-
-function wordCloudTemporary($id,$url) {
+wordCloudTemporary('wordcloud-container', ajaxUrl + '/project/chart-data/wordcloud/' + mediaId + '/' + type);
+function wordCloudTemporary($id, $url) {
 
 	$.ajax({
 		//url : ajaxUrl + '/project/chart-data/comment-pie/' + mediaId,
 		url : $url,
+        data : {
+            keywords: brands,
+            startDate: startDate,
+            endDate: endDate,
+            search: search
+        },
 		beforeSend : function(xhr) {
 			$('#' + $id).block({
 				message: '<img src="' + ajaxUrl + '/mediawave/img/spinner.gif">',
@@ -38,6 +45,7 @@ function wordCloudTemporary($id,$url) {
 			$('#' + $id).unblock();
 		},
 		success : function(result) {
+            result = jQuery.parseJSON(result);
 			$data = result.dataUnion;
 			//console.log($data);
 			if ($data.length === 0) {

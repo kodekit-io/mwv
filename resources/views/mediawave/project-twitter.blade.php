@@ -56,6 +56,7 @@
         var endDate = '{!! $endDate !!}';
         var brands = '{!! $brands !!}';
         var search = '{!! $shownSearch !!}';
+        var influencers = ["top10ByReachTW", "top10ByNumberTW", "top10ByImpactTW"];
     </script>
     <script src="{!! asset('js/projects/buzz-trend.js') !!}"></script>
     <script src="{!! asset('js/projects/user-trend.js') !!}"></script>
@@ -75,10 +76,10 @@
 
     <script type="text/javascript">
         //wordCloud('wordcloud-container', jQuery.parseJSON('{{--!! $wordCloud !!--}}'));
-        wordCloudTemporary('wordcloud-container','http://103.28.15.104:8821/dummy_api/project/1/'+mediaId+'/wordcloud');
-        influencerTable('top10ByReachTW','http://103.28.15.104:8821/dummy_api/project/1/'+mediaId+'/influencer');
-        influencerTable('top10ByNumberTW','http://103.28.15.104:8821/dummy_api/project/1/'+mediaId+'/influencer');
-        influencerTable('top10ByImpactTW','http://103.28.15.104:8821/dummy_api/project/1/'+mediaId+'/influencer');
+        // wordCloudTemporary('wordcloud-container','http://103.28.15.104:8821/dummy_api/project/1/'+mediaId+'/wordcloud');
+//        influencerTable('top10ByReachTW','http://103.28.15.104:8821/dummy_api/project/1/'+mediaId+'/influencer');
+//        influencerTable('top10ByNumberTW','http://103.28.15.104:8821/dummy_api/project/1/'+mediaId+'/influencer');
+//        influencerTable('top10ByImpactTW','http://103.28.15.104:8821/dummy_api/project/1/'+mediaId+'/influencer');
     </script>
 
 @endsection

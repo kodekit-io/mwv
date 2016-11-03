@@ -48,6 +48,7 @@
         var endDate = '{!! $endDate !!}';
         var brands = '{!! $brands !!}';
         var search = '{!! $shownSearch !!}';
+        var influencers = ["top10Vid"];
     </script>
     <script src="{!! asset('js/socmeds/post-trend.js') !!}"></script>
     <script src="{!! asset('js/socmeds/comment-trend.js') !!}"></script>
@@ -62,8 +63,8 @@
     <script>
         //wordCloud('wordcloud-container', jQuery.parseJSON('{{--!! $wordCloud !!--}}'));
         $(document).ready(function() {
-            wordCloudTemporary('wordcloud-container','http://103.28.15.104:8821/dummy_api/project/'+type+'/'+mediaId+'/wordcloud');
-            influencerTable('top10Vid','http://103.28.15.104:8821/dummy_api/project/'+type+'/'+mediaId+'/influencer');
+            // wordCloudTemporary('wordcloud-container','http://103.28.15.104:8821/dummy_api/project/'+type+'/'+mediaId+'/wordcloud');
+            // influencerTable('top10Vid','http://103.28.15.104:8821/dummy_api/project/'+type+'/'+mediaId+'/influencer');
         });
     </script>
 

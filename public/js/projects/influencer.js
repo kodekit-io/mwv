@@ -1,62 +1,91 @@
-function influencerTable($id,$url) {
 
+influencerTable(influencers);
+function influencerTable(influencers) {
 	$.ajax({
-		url : $url,
+		url : ajaxUrl + '/project/chart-data/influencer/' + mediaId,
+        data : {
+            projectId: projectId,
+            keywords: brands,
+            startDate: startDate,
+            endDate: endDate,
+            search: search
+        },
 		beforeSend : function(xhr) {
-			$('#' + $id).block({
-				message: '<img src="' + ajaxUrl + '/mediawave/img/spinner.gif">',
-				css: { border: 'none', zIndex: 100 },
-				overlayCSS: { backgroundColor: '#fff', zIndex: 100 }
-			});
+            for(i = 0; i < influencers.length; i++) {
+                // console.log(influencers[i]);
+                var $id = influencers[i];
+                $('#' + $id).block({
+                    message: '<img src="' + ajaxUrl + '/mediawave/img/spinner.gif">',
+                    css: { border: 'none', zIndex: 100 },
+                    overlayCSS: { backgroundColor: '#fff', zIndex: 100 }
+                });
+            }
+
 		},
 		complete : function(xhr, status) {
-			$('#' + $id).unblock();
+			//$('#' + $id).unblock();
+            for(i = 0; i < influencers.length; i++) {
+                // console.log(influencers[i]);
+                var $id = influencers[i];
+                $('#' + $id).unblock();
+            }
 		},
 		success : function(result) {
+            result = jQuery.parseJSON(result);
+            if (influencers.length > 0) {
+                for(var i = 0; i < influencers.length; i++) {
+                    var $id = influencers[i];
+                    window[$id]($id, result);
 
-			switch ($id) {
-				case 'top10LikeStatus':
-					top10LikeStatus($id,result);
-					break;
-				case 'top10LikeStatusFB':
-					top10LikeStatusFB($id,result);
-					break;
-				case 'top10LikePhotoFB':
-					top10LikePhotoFB($id,result);
-					break;
-				case 'top10LikeLinkFB':
-					top10LikeLinkFB($id,result);
-					break;
-				case 'top10LikeVideoFB':
-					top10LikeVideoFB($id,result);
-					break;
-				case 'top10ByReachTW':
-					top10ByReachTW($id,result);
-					break;
-				case 'top10ByNumberTW':
-					top10ByNumberTW($id,result);
-					break;
-				case 'top10ByImpactTW':
-					top10ByImpactTW($id,result);
-					break;
-				case 'top10News':
-					top10News($id,result);
-					break;
-				case 'top10Blog':
-					top10Blog($id,result);
-					break;
-				case 'top10Vid':
-					top10Vid($id,result);
-					break;
-				case 'top10Forum':
-					top10Forum($id,result);
-					break;
-				case 'top10IG':
-					top10IG($id,result);
-					break;
-			}
+                    //switch ($id) {
+                    //	case 'top10LikeStatus':
+                    //		top10LikeStatus($id,result);
+                    //		break;
+                    //	case 'top10LikeStatusFB':
+                    //		top10LikeStatusFB($id,result);
+                    //		break;
+                    //	case 'top10LikePhotoFB':
+                    //		top10LikePhotoFB($id,result);
+                    //		break;
+                    //	case 'top10LikeLinkFB':
+                    //		top10LikeLinkFB($id,result);
+                    //		break;
+                    //	case 'top10LikeVideoFB':
+                    //		top10LikeVideoFB($id,result);
+                    //		break;
+                    //	case 'top10ByReachTW':
+                    //		top10ByReachTW($id,result);
+                    //		break;
+                    //	case 'top10ByNumberTW':
+                    //		top10ByNumberTW($id,result);
+                    //		break;
+                    //	case 'top10ByImpactTW':
+                    //		top10ByImpactTW($id,result);
+                    //		break;
+                    //	case 'top10News':
+                    //		top10News($id,result);
+                    //		break;
+                    //	case 'top10Blog':
+                    //		top10Blog($id,result);
+                    //		break;
+                    //	case 'top10Vid':
+                    //		top10Vid($id,result);
+                    //		break;
+                    //	case 'top10Forum':
+                    //		top10Forum($id,result);
+                    //		break;
+                    //	case 'top10IG':
+                    //		top10IG($id,result);
+                    //		break;
+                    //}
+                }
+            }
+
 		}
 	});
+}
+function testAja(ii) {
+    console.log('test aja ' + ii);
 }
 function top10LikeStatus(id,result) {
 	$data = result.influencer.top10LikeStatus.data;
@@ -317,7 +346,7 @@ function top10ByReachTW(id,result) {
 			}],*/
 			order: [[ 1, "desc" ]]
 		});
-		$('#' + id + '_wrapper .bottom-row').hide();
+		// $('#' + id + '_wrapper .bottom-row').hide();
 	}
 }
 
