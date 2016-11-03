@@ -7,9 +7,9 @@
 @section('content')
 <main class="">
     <div class="md-container">
-        <div data-uk-slideset="{small: 2, medium: 6, xlarge: 8}">
-            <div class="uk-grid uk-grid-width-medium-1-2 uk-grid-width-large-1-3 uk-grid-width-xlarge-1-4 uk-grid-medium uk-grid-match uk-slideset" data-uk-grid-margin>
-                <div>
+        <div data-uk-slideset="{small: 2, large: 6, xlarge: 8}">
+            <div class="uk-grid uk-grid-medium uk-grid-match uk-slideset" data-uk-grid-margin>
+                <div class="uk-width-small-1-2 uk-width-medium-1-3 uk-width-large-1-3 uk-width-xlarge-1-4">
                      <div class="uk-panel uk-panel-box valign-wrapper">
                          <div class="valign uk-width-1-1 uk-text-center">
                              <a href="{!! url('/create-project') !!}" title="Create New Project">
@@ -20,24 +20,16 @@
                      </div>
                 </div>
                 @foreach($projects as $project)
-                <div>
+                <div class="uk-width-small-1-2 uk-width-medium-1-3 uk-width-large-1-3 uk-width-xlarge-1-4">
                     <?php //Modal Edit ?>
-                    <div id="edit-{!! $project->pid !!}" class="modal modal-fixed-footer modal-small">
+                    <div id="edit-{!! $project->pid !!}" class="modal modal-small">
                         <form id="" name="" class="" method="post" action="">
                              <div class="modal-content">
-                                 <h4>Edit Project</h4>
-                                 <p>Provide your password then click EDIT to continue</p>
-                                    {!! csrf_field() !!}
-                                    <div class="input-field">
-                                        <i class="material-icons prefix">lock</i>
-                                        <input id="password" name="password" type="password" class="validate" required>
-                                        <label for="password">Password</label>
-                                    </div>
+                                 <h4>Are you sure want to edit?</h4>
                              </div>
                              <div class="modal-footer">
                                  <a href="#" class="left uk-width-medium-2-5 modal-action modal-close waves-effect waves-green btn grey z-depth-0">CANCEL</a>
-                                 <!--<button class="uk-width-medium-2-5 modal-action modal-close waves-effect waves-light btn blue z-depth-0" type="submit" name="action">EDIT</button>-->
-                                 <a href="{!! url('/edit-project/' . $project->pid)  !!}" class="uk-width-medium-2-5 modal-action modal-close waves-effect waves-light btn blue z-depth-0">EDIT</a>
+                                 <a href="{!! url('/edit-project/' . $project->pid)  !!}" class="uk-width-medium-2-5 modal-action modal-close waves-effect waves-light btn blue z-depth-0">YES!</a>
                              </div>
                         </form>
                     </div>
@@ -46,13 +38,6 @@
                         <form id="" name="" class="" method="post" action="">
                              <div class="modal-content">
                                  <h4>Are you sure?</h4>
-                                 <p>Provide your password then click YES to DELETE this project</p>
-                                    {!! csrf_field() !!}
-                                    <div class="input-field">
-                                        <i class="material-icons prefix">lock</i>
-                                        <input id="password" name="password" type="password" class="validate" required>
-                                        <label for="password">Password</label>
-                                    </div>
                              </div>
                              <div class="modal-footer">
                                  <a href="#" class="left uk-width-medium-2-5 modal-action modal-close waves-effect waves-green btn grey z-depth-0">CANCEL</a>

@@ -381,6 +381,9 @@ nav, .navbar-fixed {
 nav ul li.active {
 	background-color: rgba(0, 0, 0, 0.25);
 }
+.nav-dashboard a.active {
+	background-color: rgba(0, 0, 0, 0.1);
+}
 nav ul a {
 	display: inline-block;
 	padding: 0 10px;
@@ -394,6 +397,7 @@ nav ul a {
 #projectlist.dropdown-content li {
 	color: #fff;
 	border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+	min-height: 1em;
 }
 
 #projectlist.dropdown-content li:hover,
@@ -408,11 +412,11 @@ nav ul a {
 
 #projectlist.dropdown-content li > a,
 #projectlist.dropdown-content li > span {
-	font-size: 1rem;
+	font-size: 12px;
 	color: #ffffff;
 	display: block;
-	line-height: 20px;
-	padding: 15px;
+	line-height: 1em;
+	padding: 10px;
 	font-weight: normal;
 }
 
@@ -1804,6 +1808,12 @@ select {
 	height: 100%;
 }
 @media only screen and (max-width: 768px) {
+	.md-container {
+		padding: 1em;
+	}
+	.md-head-container {
+		padding: 0 1em;
+	}
 	.uk-navbar-nav>li>a {
 		padding: 0 0.15em;
 	}
@@ -1824,5 +1834,8 @@ select {
 	}
 	.js-geolocation, #weather {
 		display: none !important;
+	}
+	.row .col.offset-s6 {
+		margin-left: 0;
 	}
 }

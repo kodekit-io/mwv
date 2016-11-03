@@ -149,7 +149,8 @@
                 </div>
                 <div class="md-card">
                     <div class="md-card-content uk-text-right">
-                        <button type="submit" class="btn amber darken-4 z-depth-0 step16" data-uk-tooltip title="Save Query">SAVE NOW</button>
+                        <a class="btn grey z-depth-0 step16 left" data-uk-tooltip title="Cancel Edit" href="{!! url('/dashboard') !!}">CANCEL</a>
+                        <button type="submit" class="btn amber darken-4 z-depth-0 step16" data-uk-tooltip title="Save Editing">SAVE EDITING</button>
                     </div>
                 </div>
             </form>
