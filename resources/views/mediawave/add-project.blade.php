@@ -1,5 +1,9 @@
 @extends('layouts.mediawave')
 
+@section('page-level-styles')
+    <link rel="stylesheet" href="{!! asset('mediawave/css/intro.js.css') !!}" />
+@endsection
+
 @section('content')
 <?php /*
 <nav class="uk-navbar md-subnav gradient-fluenza darken">
@@ -168,7 +172,7 @@
                 </div>
             </div>
 
-            <?php //add ig  ?>
+            <?php /*
             <div class="md-card" id="addIG">
                 <div class="md-card-toolbar step17">
                     <div class="md-card-toolbar-actions">
@@ -210,12 +214,13 @@
 
                 </div>
             </div>
+
             <div class="md-card">
                 <div class="md-card-content uk-text-right">
                     <button type="submit" class="btn amber darken-4 z-depth-0 step23" data-uk-tooltip title="Save Query">SAVE NOW</button>
                 </div>
             </div>
-
+            */ ?>
             <div id="previewquery" class="modal modal-fixed-footer">
                  <div class="modal-content">
                     <div class="previewquery"></div>
@@ -231,6 +236,7 @@
 @endsection
 
 @section('page-level-scripts')
+    <script src="{!! asset('mediawave/js/intro.min.js') !!}"></script>
     <script src="{!! asset('js/add-project.js') !!}" type="text/javascript"></script>
     <script src="{!! asset('js/help-addproject.js') !!}" type="text/javascript"></script>
 @endsection

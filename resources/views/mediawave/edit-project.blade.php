@@ -1,5 +1,9 @@
 @extends('layouts.mediawave')
 
+@section('page-level-styles')
+    <link rel="stylesheet" href="{!! asset('mediawave/css/intro.js.css') !!}" />
+@endsection
+
 @section('content')
     <main class="">
         <div class="md-container">
@@ -105,7 +109,7 @@
                         </ul>
                     </div>
                 </div>
-
+                <?php /*
                 <div class="md-card" id="addIG">
                     <div class="md-card-toolbar step11">
                         <div class="md-card-toolbar-actions">
@@ -147,6 +151,7 @@
 
                     </div>
                 </div>
+                */ ?>
                 <div class="md-card">
                     <div class="md-card-content uk-text-right">
                         <a class="btn grey z-depth-0 step16 left" data-uk-tooltip title="Cancel Edit" href="{!! url('/dashboard') !!}">CANCEL</a>
@@ -160,6 +165,7 @@
 @endsection
 
 @section('page-level-scripts')
+    <script src="{!! asset('mediawave/js/intro.min.js') !!}"></script>
     <script src="{!! asset('js/edit-project.js') !!}" type="text/javascript"></script>
     <script src="{!! asset('js/help-editproject.js') !!}" type="text/javascript"></script>
 @endsection

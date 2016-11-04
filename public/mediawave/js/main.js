@@ -57,12 +57,13 @@
         }
         setInterval(updateGradient, 10);
 
+        /*
         //Active
         var pageTitle = $("h1.md-title-page").eq(0), text = pageTitle.text();
         var current_title = $.trim(text);
         //Main Nav
         $("a[name=topnav]").each(function() {
-            var a = $(this).attr("data-tooltip");
+            var a = $(this).attr("title");
             if (current_title.substring(0, a.length) === a) {
                 $(this).closest('li').addClass("active");
             }
@@ -93,12 +94,12 @@
         var pageSocmed = $("h1.md-card-toolbar-heading-text").eq(0), stext = pageSocmed.text();
         var socmedTitle = $.trim(stext);
         $("a[name=topnav]").each(function() {
-            var a = $(this).attr("data-tooltip");
+            var a = $(this).attr("title");
             if (socmedTitle.substring(0, a.length) === a) {
                 $(this).closest('li').addClass("active");
             }
         });
-
+        */
 
         //Modal
         $('.modal-trigger').leanModal();

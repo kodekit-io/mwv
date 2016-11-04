@@ -23,27 +23,26 @@
                 <div class="uk-width-small-1-2 uk-width-medium-1-3 uk-width-large-1-3 uk-width-xlarge-1-4">
                     <?php //Modal Edit ?>
                     <div id="edit-{!! $project->pid !!}" class="modal modal-small">
-                        <form id="" name="" class="" method="post" action="">
-                             <div class="modal-content">
-                                 <h4>Are you sure want to edit?</h4>
-                             </div>
-                             <div class="modal-footer">
-                                 <a href="#" class="left uk-width-medium-2-5 modal-action modal-close waves-effect waves-green btn grey z-depth-0">CANCEL</a>
-                                 <a href="{!! url('/edit-project/' . $project->pid)  !!}" class="uk-width-medium-2-5 modal-action modal-close waves-effect waves-light btn blue z-depth-0">YES!</a>
-                             </div>
-                        </form>
+                        <div class="modal-content">
+                            <h4>Are you sure want to edit {!! $project->pname !!}?</h4>
+                            <hr>
+                            <ul class="uk-subnav right">
+                                <li><a href="#" class="modal-action modal-close waves-effect waves-green btn grey z-depth-0">CANCEL</a></li>
+                                <li><a href="{!! url('/edit-project/' . $project->pid)  !!}" class="modal-action modal-close waves-effect waves-light btn blue z-depth-0">YES, EDIT NOW!</a></li>
+                            </ul>
+                        </div>
                     </div>
                     <?php //Modal Delete ?>
-                    <div id="delete-{!! $project->pid !!}" class="modal modal-fixed-footer modal-small">
-                        <form id="" name="" class="" method="post" action="">
-                             <div class="modal-content">
-                                 <h4>Are you sure?</h4>
-                             </div>
-                             <div class="modal-footer">
-                                 <a href="#" class="left uk-width-medium-2-5 modal-action modal-close waves-effect waves-green btn grey z-depth-0">CANCEL</a>
-                                 <button class="uk-width-medium-2-5 modal-action modal-close waves-effect waves-light btn red z-depth-0" type="submit" name="action">YES!</button>
-                             </div>
-                        </form>
+                    <div id="delete-{!! $project->pid !!}" class="modal modal-small">
+                        <div class="modal-content">
+                            <h4>Are you sure?</h4>
+                            <p>Project <span class="uk-text-bold">{!! $project->pname !!}</span> will be deleted FOREVER!</p>
+                            <hr>
+                            <ul class="uk-subnav right">
+                                <li><a href="#" class="modal-action modal-close waves-effect waves-green btn grey z-depth-0">CANCEL</a></li>
+                                <li><button class="modal-action modal-close waves-effect waves-light btn red z-depth-0" type="submit" name="action">YES, DELETE NOW!</button></li>
+                            </ul>
+                        </div>
                     </div>
                     <div class="md-card hoverable">
                         <div class="md-card-toolbar">
@@ -70,7 +69,6 @@
 @endsection
 
 @section('page-level-plugins')
-    <script src="{!! asset('mediawave/js/jquery.validate.min.js') !!}"></script>
     <script src="{!! asset('mediawave/js/components/datepicker.min.js') !!}"></script>
     <script src="{!! asset('mediawave/js/components/slideset.min.js') !!}"></script>
     <script src="{!! asset('mediawave/js/highchart/highcharts.js') !!}"></script>
