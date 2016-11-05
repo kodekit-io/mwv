@@ -79,34 +79,7 @@ var options = {
             intro: "Preview your keywords, topics and excludes before save",
         },
         {
-            intro: "Now you're ready to save the project by clicking 'SAVE NOW' button at the bottom of this page.",
-        },
-        {
             element: ".step17",
-            intro: "To create Instagram monitoring project, please follow these next additional steps.",
-        },
-        {
-            element: ".step18",
-            intro: "TIPS: You can show/hide this window by clicking this button",
-        },
-        {
-            element: ".step19",
-            intro: "Write down your hashtags with '#' prefix (e.g. #indonesia) then hit 'ENTER' on your keyboard.<br>TIPS: You can add more hashtags inside the this same box",
-        },
-        {
-            element: ".step20",
-            intro: "You can exclude hashtags here to filter the main hashtags",
-        },
-        {
-            element: ".step21",
-            intro: "Write down username you want to monitor with prefix '@' the hit 'ENTER' on your keyboard.",
-        },
-        {
-            element: ".step22",
-            intro: "You can also filtering username to exclude them from monitoring system",
-        },
-        {
-            element: ".step23",
             intro: "Press 'SAVE NOW' button to save the project.<br>That's all. Happy Monitoring!",
         }
     ]

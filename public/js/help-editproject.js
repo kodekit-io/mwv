@@ -53,26 +53,6 @@ var options = {
         },
         {
             element: ".step11",
-            intro: "These following steps are needed to modify your current Instagram monitoring project.",
-        },
-        {
-            element: ".step12",
-            intro: "Modify your hastags",
-        },
-        {
-            element: ".step13",
-            intro: "Modify your excluded hastags",
-        },
-        {
-            element: ".step14",
-            intro: "Modify current usernames",
-        },
-        {
-            element: ".step15",
-            intro: "Modify your excluded usernames",
-        },
-        {
-            element: ".step16",
             intro: "Don't forget to save your changes",
         }
     ]

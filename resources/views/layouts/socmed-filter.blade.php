@@ -1,6 +1,6 @@
 <div class="md-card uk-width-1-1 md-keywords">
     <div class="md-card-toolbar">
-        <h1 class="md-card-toolbar-heading-text large proxima-nova-bold">
+        <h1 class="md-card-toolbar-heading-text large proxima-nova-bold" data-title="Social Media Page">
             Social Media Page
         </h1>
     </div>

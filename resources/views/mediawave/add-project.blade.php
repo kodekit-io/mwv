@@ -1,5 +1,9 @@
 @extends('layouts.mediawave')
 
+@section('page-level-styles')
+    <link rel="stylesheet" href="{!! asset('mediawave/css/intro.js.css') !!}" />
+@endsection
+
 @section('content')
 <?php /*
 <nav class="uk-navbar md-subnav gradient-fluenza darken">
@@ -75,7 +79,7 @@
                                         </ul>
                                     </div>
                                 </div>
-                                <a href="javascript:void(0);" class="uk-button btn blue z-depth-0 add_key uk-width-medium-1-5 step7" title="Add Keyword">ADD MORE KEYWORD</a>
+                                <a href="javascript:void(0);" class="uk-button btn blue z-depth-0 add_key step7" title="Add Keyword">ADD MORE KEYWORD</a>
                                 <hr>
                                 <a class="btn cyan right z-depth-0 nextstep step8" data-uk-tooltip title="Next Step: Create Topics">NEXT STEP <i class="material-icons right">keyboard_arrow_right</i></a>
                             </li>
@@ -97,7 +101,7 @@
                                          </ul>
                                      </div>
                                  </div>
-                                 <a href="javascript:void(0);" class="uk-button btn blue z-depth-0 add_topic uk-width-medium-1-5 step11" title="Add Topic">ADD MORE TOPIC</a>
+                                 <a href="javascript:void(0);" class="uk-button btn blue z-depth-0 add_topic step11" title="Add Topic">ADD MORE TOPIC</a>
 
                                  <hr>
                                  <a class="btn grey z-depth-0 prevstep backtopic" data-uk-tooltip title="Prev Step: Keywords"><i class="material-icons left">keyboard_arrow_left</i> BACK</a>
@@ -123,11 +127,15 @@
                                          </ul>
                                      </div>
                                  </div>
-                                 <a href="javascript:void(0);" class="uk-button btn blue z-depth-0 add_excld uk-width-medium-1-5 step15" title="Add Exclude">ADD MORE EXCLUDE</a>
+                                 <a href="javascript:void(0);" class="uk-button btn blue z-depth-0 add_excld step15" title="Add Exclude">ADD MORE EXCLUDE</a>
 
                                  <hr>
                                  <a class="btn grey z-depth-0 prevstep backexcld" data-uk-tooltip title="Prev Step: Topics"><i class="material-icons left">keyboard_arrow_left</i> BACK</a>
-                                 <a href="#previewquery" class="modal-trigger btn cyan z-depth-0 right step16" data-uk-tooltip title="Preview All Query" onclick="previewQuery()">PREVIEW QUERY</a>
+
+                                 <ul class="uk-subnav right">
+                                     <li><a href="#previewquery" class="modal-trigger btn cyan z-depth-0 step16" data-uk-tooltip title="Preview All Query" onclick="previewQuery()">PREVIEW</a></li>
+                                     <li><button type="submit" class="btn amber darken-4 z-depth-0 step17" data-uk-tooltip title="Save Query">SAVE NOW</button></li>
+                                 </ul>
                             </li>
                         </ul>
                     </div>
@@ -140,7 +148,7 @@
                                           <textarea id="key-1" name="adv_field_key[1]" class="materialize-textarea uk-margin-small-bottom"></textarea>
                                      </div>
                                 </div>
-                                <a href="javascript:void(0);" class="uk-button btn blue z-depth-0 add_advkey uk-width-medium-1-5 uk-margin-bottom" title="Add Keyword">ADD MORE KEYWORD</a>
+                                <a href="javascript:void(0);" class="uk-button btn blue z-depth-0 add_advkey uk-margin-bottom" title="Add Keyword">ADD MORE KEYWORD</a>
                             </li>
                             <li>
                                   <h5>CREATE TOPICS</h5>
@@ -149,7 +157,7 @@
                                             <textarea id="topic-1" name="adv_field_topic[1]" class="materialize-textarea uk-margin-small-bottom"></textarea>
                                        </div>
                                   </div>
-                                  <a href="javascript:void(0);" class="uk-button btn blue z-depth-0 add_advtopic uk-width-medium-1-5 uk-margin-bottom" title="Add Topic">ADD MORE TOPIC</a>
+                                  <a href="javascript:void(0);" class="uk-button btn blue z-depth-0 add_advtopic uk-margin-bottom" title="Add Topic">ADD MORE TOPIC</a>
                             </li>
                             <li>
                                   <h5>CREATE EXCLUDED TOPICS</h5>
@@ -158,17 +166,21 @@
                                             <textarea id="excld-1" name="adv_field_excld[1]" class="materialize-textarea uk-margin-small-bottom"></textarea>
                                        </div>
                                   </div>
-                                  <a href="javascript:void(0);" class="uk-button btn blue z-depth-0 add_advexcld uk-width-medium-1-5 uk-margin-bottom" title="Add Exclude">ADD MORE EXCLUDE</a>
+                                  <a href="javascript:void(0);" class="uk-button btn blue z-depth-0 add_advexcld uk-margin-bottom" title="Add Exclude">ADD MORE EXCLUDE</a>
 
                                   <hr>
-                                  <a href="#previewquery" class="modal-trigger btn cyan z-depth-0 right" data-uk-tooltip title="Preview All Query" onclick="previewAdavancedQuery()">PREVIEW QUERY</a>
+                                  <ul class="uk-subnav right">
+                                      <li><a href="#previewquery" class="modal-trigger btn cyan z-depth-0" data-uk-tooltip title="Preview All Query" onclick="previewAdavancedQuery()">PREVIEW QUERY</a></li>
+                                      <li><button type="submit" class="btn amber darken-4 z-depth-0 step23" data-uk-tooltip title="Save Query">SAVE NOW</button></li>
+                                  </ul>
+
                             </li>
                          </ul>
                     </div>
                 </div>
             </div>
 
-            <?php //add ig  ?>
+            <?php /*
             <div class="md-card" id="addIG">
                 <div class="md-card-toolbar step17">
                     <div class="md-card-toolbar-actions">
@@ -210,12 +222,13 @@
 
                 </div>
             </div>
+
             <div class="md-card">
                 <div class="md-card-content uk-text-right">
                     <button type="submit" class="btn amber darken-4 z-depth-0 step23" data-uk-tooltip title="Save Query">SAVE NOW</button>
                 </div>
             </div>
-
+            */ ?>
             <div id="previewquery" class="modal modal-fixed-footer">
                  <div class="modal-content">
                     <div class="previewquery"></div>
@@ -231,6 +244,7 @@
 @endsection
 
 @section('page-level-scripts')
+    <script src="{!! asset('mediawave/js/intro.min.js') !!}"></script>
     <script src="{!! asset('js/add-project.js') !!}" type="text/javascript"></script>
     <script src="{!! asset('js/help-addproject.js') !!}" type="text/javascript"></script>
 @endsection
