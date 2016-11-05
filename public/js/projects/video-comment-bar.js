@@ -23,7 +23,7 @@ $.ajax({
 });
 
 function commentBar($id, $data) {
-    console.log($data['data']);
+    //console.log($data['data']);
     $data = $data['data'];
     if ($data.length === 0) {
         $('#' + $id).html("<div class='center'>No Data</div>");

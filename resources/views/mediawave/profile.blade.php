@@ -4,7 +4,7 @@
 
 <nav class="uk-navbar md-subnav gradient-fluenza darken">
     <div class="md-head-container white-text">
-        <div class="left">Hi <span class="appusername">Username</span>!</div>
+        <div class="left">Hi, <span class="appusername">{!! $userProfile->userName !!}</span>!</div>
         <div class="widget-weather right">
             <span class="today"><i class="uk-icon uk-icon-calendar"></i> <?php echo(date("j F Y")); ?> </span>
             <a class="js-geolocation" title="Your locations"><i class="uk-icon uk-icon-map-marker"></i></a>

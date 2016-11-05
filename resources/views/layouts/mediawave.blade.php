@@ -44,7 +44,7 @@
 </footer>
 
 <!-- link all the scripts -->
-<script src="{!! asset('mediawave/js/jquery.min.js') !!}"></script>
+<script src="{!! asset('mediawave/js/jquery.js') !!}"></script>
 <script src="{!! asset('mediawave/js/uikit.min.js') !!}"></script>
 <script src="{!! asset('mediawave/js/components/tooltip.min.js') !!}"></script>
 <script src="{!! asset('mediawave/js/materialize.min.js') !!}"></script>

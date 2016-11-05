@@ -118,10 +118,10 @@ $(function(){
     $(".chips-user").material_chip();
     $(".chips-exclduser").material_chip();
 
-    var htag = $(".wrap_hashtag .chips").material_chip('data');
+    /*var htag = $(".wrap_hashtag .chips").material_chip('data');
     $('.wrap_hashtag  .chips').on('chip.add', function(e, chip){
-         console.log(htag);
-    });
+         //console.log(htag);
+    });*/
 
 });
 

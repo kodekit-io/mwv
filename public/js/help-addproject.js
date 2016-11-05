@@ -103,7 +103,7 @@ function introAdd() {
         }*/
         //console.log(intro._currentStep);
         var current = intro._currentStep;
-        console.log(current);
+        //console.log(current);
         if (current=="6") {
             $("a.switchkeyword")[0].click();
         } else if (current=="7") {

@@ -85,7 +85,7 @@ function influencerTable(influencers) {
 	});
 }
 function testAja(ii) {
-    console.log('test aja ' + ii);
+    //console.log('test aja ' + ii);
 }
 function top10LikeStatus(id,result) {
 	$data = result.influencer.top10LikeStatus.data;
@@ -133,7 +133,7 @@ function top10LikeStatus(id,result) {
 
 function top10LikeStatusFB(id,result) {
 	$data = result.influencer.top10LikeStatus.data;
-	console.log($data);
+	//console.log($data);
 	if ($data.length === 0) {
 		$('#' + id).html("<div class='center'>No data chart</div>");
 	} else {
@@ -177,7 +177,7 @@ function top10LikeStatusFB(id,result) {
 
 function top10LikePhotoFB(id,result) {
 	$data = result.influencer.top10LikePhoto.data;
-	console.log($data);
+	//console.log($data);
 	if ($data.length === 0) {
 		$('#' + id).html("<div class='center'>No data chart</div>");
 	} else {
@@ -221,7 +221,7 @@ function top10LikePhotoFB(id,result) {
 
 function top10LikeLinkFB(id,result) {
 	$data = result.influencer.top10LikeLink.data;
-	console.log($data);
+	//console.log($data);
 	if ($data.length === 0) {
 		$('#' + id).html("<div class='center'>No data chart</div>");
 	} else {
@@ -264,7 +264,7 @@ function top10LikeLinkFB(id,result) {
 
 function top10LikeVideoFB(id,result) {
 	$data = result.influencer.top10LikeVideo.data;
-	console.log($data);
+	//console.log($data);
 	if ($data.length === 0) {
 		$('#' + id).html("<div class='center'>No data chart</div>");
 	} else {

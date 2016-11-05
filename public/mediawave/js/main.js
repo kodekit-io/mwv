@@ -131,7 +131,7 @@
                     .attr("data-error", error.text());
             },
             submitHandler: function(form) {
-                console.log("Form OK");
+                //console.log("Form OK");
                 form.submit();
             }
         });

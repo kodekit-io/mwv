@@ -38,7 +38,7 @@
                 </a>
             </li>
             <li class="uk-margin-left">
-                <a href="{!! url('/logout') !!}" class="uk-margin-remove md-btn-logout" title="LOGOUT">
+                <a href="{!! url('/logout') !!}" class="uk-margin-remove md-btn-logout" data-uk-tooltip title="LOGOUT">
                     <span class="uk-border-circle black"><i class="material-icons">power_settings_new</i></span>
                 </a>
             </li>
@@ -66,12 +66,12 @@
                 </a>
             </li>
             <li class="nav-profile">
-                <a href="{!! url('/profile') !!}" name="topnav" class="" data-tooltip="Profile">
+                <a href="{!! url('/profile') !!}" name="topnav" class="" title="Profile">
                     <i class="material-icons left">account_circle</i>Profile
                 </a>
             </li>
             <li class="">
-                <a href="{!! url('/logout') !!}" class="" data-tooltip="LOGOUT" title="LOGOUT">
+                <a href="{!! url('/logout') !!}" class="" title="LOGOUT">
                     <i class="material-icons left">power_settings_new</i>Logout</span>
                 </a>
             </li>

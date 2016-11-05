@@ -532,7 +532,7 @@ function shareMedia($id, $data) {
         /*
          End of information
          */
-        console.log($content);
+        //console.log($content);
         chartShareMedia($content, $id);
 
     }
