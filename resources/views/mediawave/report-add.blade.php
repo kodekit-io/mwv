@@ -154,7 +154,7 @@
 @section('page-level-scripts')
     <script src="{!! asset('mediawave/js/components/datepicker.min.js') !!}"></script>
 
-    <script src="{!! asset('js/jquery-migrate.min.js') !!}"></script>
+    {{--<script src="{!! asset('js/jquery-migrate.min.js') !!}"></script>--}}
     <script src="{!! asset('js/jquery.chained.js') !!}"></script>
     <script src="{!! asset('js/report.js') !!}"></script>
 @endsection
