@@ -10,9 +10,11 @@
                     <i class="material-icons left">dashboard</i>All Projects
                 </a>
                 <ul id="projectlist" class="dropdown-content">
-                    <li><a href="#!">CHITATO INDOMIE GORENG</a></li>
-                    <li><a href="#!">CAMPAIGN INDOMILK</a></li>
-                    <li><a href="#!">GENERAL INDOFOOD1</a></li>
+                    @if(count($gProjects) > 0)
+                        @foreach($gProjects as $project)
+                            <li><a href="{!! url('project-detail/' . $project->pid) !!}">{!! $project->pname !!}</a></li>
+                        @endforeach
+                    @endif
                 </ul>
             </li>
             <li class="nav-socmed">

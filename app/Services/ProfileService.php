@@ -1,10 +1,4 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: thor
- * Date: 10/26/2016
- * Time: 7:49 PM
- */
 
 namespace App;
 
@@ -44,5 +38,65 @@ class ProfileService
 
         $result = $this->apiService->postDummy('project/sosmedpageinfo', $params);
         return $result->projectInfo;
+    }
+
+    public function updateProfile(array $inputs)
+    {
+        $params = [
+            'id_login' => \Auth::user()->id,
+            'userName' => $inputs['name'],
+            'email' => $inputs['email'],
+            'company' => $inputs['company']
+        ];
+
+        return $this->apiService->postDummy('project/editprofile', $params);
+    }
+
+    public function updateAccounts(array $inputs)
+    {
+        $twitters = $inputs['twitters'];
+        $facebooks = $inputs['facebooks'];
+        $youtubes = $inputs['youtubes'];
+        $instagrams = $inputs['instagrams'];
+
+        $params = [
+            'uid' => \Auth::user()->id,
+        ];
+
+        if (count($twitters) > 0) {
+            foreach ($twitters as $key => $twitter) {
+                $words = $this->validateInput($twitter);
+                $params['tw' . $key] = $words;
+            }
+        }
+
+        if (count($facebooks) > 0) {
+            foreach ($facebooks as $key => $facebook) {
+                $words = $this->validateInput($facebook);
+                $params['fb' . $key] = $words;
+            }
+        }
+
+        if (count($youtubes) > 0) {
+            foreach ($youtubes as $key => $youtube) {
+                $words = $this->validateInput($youtube);
+                $params['yt' . $key] = $words;
+            }
+        }
+
+        if (count($instagrams) > 0) {
+            foreach ($instagrams as $key => $instagram) {
+                $words = $this->validateInput($instagram);
+                $params['ig' . $key] = $words;
+            }
+        }
+
+        return $this->apiService->postDummy('project/editprofile', $params);
+
+    }
+
+    private function validateInput($w)
+    {
+        return str_replace("'", "\\'", $w);
     }
 }

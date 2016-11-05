@@ -8,8 +8,8 @@
 ---- Blog (NO API sample)
 -- View Detail ==> Post Trend Chart (Invalid json result) to be confirmed
 
+-- Finalize Wordcloud & Influencer (DONE)
 -- Edit Profile
 -- Change Password
 -- Add Social Media Account
 -- Generate PDF Report
--- Finalize Wordcloud & Influencer
