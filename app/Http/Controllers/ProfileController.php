@@ -33,4 +33,16 @@ class ProfileController extends Controller
 
         return view('mediawave.profile', $data);
     }
+
+    public function update(Request $request)
+    {
+        $submit = $request->input('submit');
+        if ($submit == 'submit-profile') {
+             $result = $this->profileService->updateProfile($request->only(['name', 'email', 'company']));
+        } else {
+            $result = $this->profileService->updateAccounts($request->only(['twitters', 'facebooks', 'youtubes', 'instagrams']));
+        }
+
+        return redirect('profile')->with(['message' => $result->msg]);
+    }
 }

@@ -23,7 +23,7 @@ Route::post('/logout', 'ApiAuthController@logout');
 Route::get('/logout', 'ApiAuthController@logout');
 
 
-Route::group(['middleware' => 'auth'], function () {
+Route::group(['middleware' => ['auth', 'projects']], function () {
     Route::get('/dashboard', 'DashboardController@index');
     Route::get('/project-management', 'ProjectController@index');
     Route::get('/create-project', 'ProjectController@add');
@@ -72,7 +72,6 @@ Route::group(['middleware' => 'auth'], function () {
     Route::get('/project/chart-data/convo-blog', 'ChartController@convoBlogData');
     Route::get('/project/chart-data/convo-ig', 'ChartController@convoInstagramData');
 
-
     Route::any('/project-detail/{pid}', 'ProjectController@detail');
     Route::any('/project-twitter/{pid}', 'ProjectTwitterController@detail');
     Route::any('/project-facebook/{pid}', 'ProjectFacebookController@detail');
@@ -80,15 +79,15 @@ Route::group(['middleware' => 'auth'], function () {
     Route::any('/project-forum/{pid}', 'ProjectForumController@detail');
     Route::any('/project-video/{pid}', 'ProjectVideoController@detail');
     Route::any('/project-blog/{pid}', 'ProjectBlogController@detail');
-
-    Route::get('/conversation', 'ProjectController@conversation');
-
     Route::get('/project-ig/{pid}', 'ProjectIGController@detail');
+    Route::get('/conversation', 'ProjectController@conversation');
+    Route::get('/chart-1/{pid}', 'ChartController@chartOne');
 
     Route::get('/edit-project/{pid}', 'ProjectController@edit');
-    Route::get('/profile', 'ProfileController@profile');
     Route::post('/update-project', 'ProjectController@update');
-    Route::get('/chart-1/{pid}', 'ChartController@chartOne');
+
+    Route::get('/profile', 'ProfileController@profile');
+    Route::post('/update-profile', 'ProfileController@update');
 
     Route::get('/report-add', 'ReportController@add');
     Route::get('/report-view', 'ReportController@view');

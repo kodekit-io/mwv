@@ -35,7 +35,7 @@
           if(thumbnail.prop('tagName') === 'IMG') {
             thumbnail.attr('src', profile.thumbnailUrl);
           } else {
-            var image = $('<img></img>').attr('src', profile.thumbnailUrl);
+            var image = $('<img />').attr('src', profile.thumbnailUrl);
             thumbnail.append(image);
           }
 
@@ -123,32 +123,37 @@ function addSocmed(type) {
     switch (type) {
         case 'twitter':
             label = 'Twitter';
+            className = 'twitters';
             icon = 'twitter-square';
             color = ' light-blue-text text-lighten-2';
             break;
         case 'facebook':
             label = 'Facebook';
+            className = 'facebooks';
             icon = 'facebook-square';
             color = ' blue-text text-darken-4';
             break;
         case 'youtube':
             label = 'Youtube';
+            className = 'youtubes';
             icon = 'youtube-square';
             color = ' red-text';
             break;
         case 'instagram':
             label = 'Instagram';
+            className = 'instagrams';
             icon = 'instagram';
             color = ' brown-text';
             break;
     }
     //var removeForm = '<a href="javascript:void(0);" class="uk-button uk-button-mini red accent-2 remove_form" onclick="deleteKey(this)" title="Delete This"><i class="uk-icon uk-icon-close"></i></a>';
+    var nextId = $('.' + className).length + 1;
     var fieldForm = '<div class="row"> \
         <div class="input-field col s12"> \
             <a href="javascript:void(0);" onclick="delSocmed(this)" class="right red-text delsocmed" title="Delete This"><i class="uk-icon-remove"></i></a> \
             <i class="uk-icon-'+icon+' prefix '+color+'"></i> \
-            <input value="" id="'+label+'[1][]" type="text"> \
-            <label for="'+label+'[1][]">'+label+'</label> \
+            <input id="'+className+'-'+nextId+'" class="'+className+'" name="'+className+'['+nextId+']" type="text"> \
+            <label for="'+className+'-'+nextId+'">'+label+'</label> \
         </div> \
     </div>';
     $(wrapper).append(fieldForm);
