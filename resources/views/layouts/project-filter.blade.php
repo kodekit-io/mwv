@@ -1,8 +1,8 @@
 <div class="md-card uk-width-1-1 md-keywords">
     <div class="md-card-toolbar">
-        <h1 class="md-card-toolbar-heading-text large proxima-nova-bold">
+        <h2 class="md-card-toolbar-heading-text large proxima-nova-bold" data-title="Dashboard">
             Project Name: {!! $project->pname !!}
-        </h1>
+        </h2>
     </div>
     <form class="md-card-content" action="{!! './' . $project->pid !!}" method="POST">
         {{ csrf_field() }}

@@ -57,49 +57,37 @@
         }
         setInterval(updateGradient, 10);
 
-        /*
+
         //Active
-        var pageTitle = $("h1.md-title-page").eq(0), text = pageTitle.text();
-        var current_title = $.trim(text);
+        var p = $(".md-title-page").eq(0), x = p.text();
+        var current_title = $.trim(x);
+
+        var t = $(".md-card-toolbar-heading-text").eq(0), y = t.attr("data-title");
+        var block_title = $.trim(y);
+        //console.log(current_title);
+        //console.log(block_title);
+
         //Main Nav
-        $("a[name=topnav]").each(function() {
-            var a = $(this).attr("title");
-            if (current_title.substring(0, a.length) === a) {
+        $("a[name=topnav]").each(function(){
+            var title = $(this).attr("title");
+            //console.log(title);
+            if (current_title === title) {
+                $(this).closest('li').addClass("active");
+            } else if ((current_title === "Create Report") || (current_title === "View Report")) {
+                $('li.nav-report').addClass("active");
+            } else if (block_title === title) {
                 $(this).closest('li').addClass("active");
             }
         });
+
         //Sub Nav
         $("a[name=subnav]").each(function() {
             var b = $(this).attr("title");
-            if (current_title.substring(0, b.length) === b) {
+            if (current_title === b) {
                 $(this).closest('li').addClass("uk-active");
             }
         });
-        //manual
-        var a = $(".md-subnav li.uk-active a").text();
-        var b = "Create Instagram Project";
-        var c = "Create Report";
-        var d = "View Report";
-        var e = "Social Media Page";
-        if (a==b) {
-            $('li.nav-newproject').addClass("active");
-        } else if ((a==c)||(a==d)) {
-            $('li.nav-report').addClass("active");
-        }
-        if ((document.documentElement.clientWidth < 768) && (current_title==="Create Instagram Project" || current_title==="Create Project")) {
-            $("h1.md-title-page").hide();
-            $(".md-subnav li a").addClass('truncate');
-        }
-        //socmed
-        var pageSocmed = $("h1.md-card-toolbar-heading-text").eq(0), stext = pageSocmed.text();
-        var socmedTitle = $.trim(stext);
-        $("a[name=topnav]").each(function() {
-            var a = $(this).attr("title");
-            if (socmedTitle.substring(0, a.length) === a) {
-                $(this).closest('li').addClass("active");
-            }
-        });
-        */
+
 
         //Modal
         $('.modal-trigger').leanModal();

@@ -298,6 +298,9 @@ div.jqcloud span.w1 {
 	color: #000;
 	left: 0;
 }
+.uk-button {
+	border-radius: 2px;
+}
 
 .input-field input[type=text]:focus + label,
 .input-field input[type=password]:focus + label,

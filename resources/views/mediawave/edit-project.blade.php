@@ -64,7 +64,7 @@
                                     </div>
                                     @endif
                                 </div>
-                                <a href="javascript:void(0);" class="uk-button btn blue z-depth-0 add_advkey uk-width-medium-1-5 uk-margin-bottom step4" title="Add Keyword">ADD MORE KEYWORD</a>
+                                <a href="javascript:void(0);" class="uk-button btn blue z-depth-0 add_advkey uk-margin-bottom step4" title="Add Keyword">ADD MORE KEYWORD</a>
                             </li>
                             <li>
                                 <h5>EDIT TOPICS</h5>
@@ -84,7 +84,7 @@
                                         </div>
                                     @endif
                                 </div>
-                                <a href="javascript:void(0);" class="uk-button btn blue z-depth-0 add_advtopic uk-width-medium-1-5 uk-margin-bottom step7" title="Add Topic">ADD MORE TOPIC</a>
+                                <a href="javascript:void(0);" class="uk-button btn blue z-depth-0 add_advtopic uk-margin-bottom step7" title="Add Topic">ADD MORE TOPIC</a>
                             </li>
                             <li>
                                 <h5>EDIT EXCLUDED TOPICS</h5>
@@ -104,7 +104,7 @@
                                         </div>
                                     @endif
                                 </div>
-                                <a href="javascript:void(0);" class="uk-button btn blue z-depth-0 add_advexcld uk-width-medium-1-5 step10" title="Add Exclude">ADD MORE EXCLUDE</a>
+                                <a href="javascript:void(0);" class="uk-button btn blue z-depth-0 add_advexcld step10" title="Add Exclude">ADD MORE EXCLUDE</a>
                             </li>
                         </ul>
                     </div>
@@ -154,8 +154,8 @@
                 */ ?>
                 <div class="md-card">
                     <div class="md-card-content uk-text-right">
-                        <a class="btn grey z-depth-0 step16 left" data-uk-tooltip title="Cancel Edit" href="{!! url('/dashboard') !!}">CANCEL</a>
-                        <button type="submit" class="btn amber darken-4 z-depth-0 step16" data-uk-tooltip title="Save Editing">SAVE EDITING</button>
+                        <a class="btn grey z-depth-0 left" data-uk-tooltip title="Cancel Edit" href="{!! url('/dashboard') !!}">CANCEL</a>
+                        <button type="submit" class="btn amber darken-4 z-depth-0 step11" data-uk-tooltip title="Save Editing">SAVE EDITING</button>
                     </div>
                 </div>
             </form>

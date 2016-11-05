@@ -24,7 +24,8 @@
                     <?php //Modal Edit ?>
                     <div id="edit-{!! $project->pid !!}" class="modal modal-small">
                         <div class="modal-content">
-                            <h4>Are you sure want to edit {!! $project->pname !!}?</h4>
+                            <h4>Edit this project?</h4>
+                            <p>Click YES to modify <span class="uk-text-bold">{!! $project->pname !!}</span></p>
                             <hr>
                             <ul class="uk-subnav right">
                                 <li><a href="#" class="modal-action modal-close waves-effect waves-green btn grey z-depth-0">CANCEL</a></li>
