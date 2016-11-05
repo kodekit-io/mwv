@@ -40,7 +40,9 @@
 							<div class="md-card-toolbar">
 								<div class="md-card-toolbar-actions">
 		                            <a class="btn waves-effect waves-light z-depth-0 cyan white-text" data-uk-tooltip title="Edit Profile" onclick="editProfile()" data-uk-toggle="{target:'.saveProfile.uk-hidden'}"><i class="material-icons md-icon">mode_edit</i></a>
+                                    <?php /*
 		                            <a class="btn waves-effect waves-light z-depth-0 red darken-4 white-text" data-uk-tooltip title="Change Password" data-uk-toggle="{target:'.changePass'}"><i class="material-icons md-icon">lock</i></a>
+                                    */ ?>
 		                        </div>
 								<h2 class="md-card-toolbar-heading-text">USER PROFILE</h2>
 							</div>
@@ -68,6 +70,7 @@
 										<button type="submit" class="btn amber darken-4" data-uk-tooltip title="Save Profile">SAVE PROFILE</button>
 									</div>
 								</form>
+                                <?php /*
 								<form class="changePass uk-hidden">
 									<h6 class="md-card-toolbar-heading-text" style="padding-left:0.75rem;">CHANGE PASSWORD</h6>
 									<div class="row">
@@ -92,6 +95,7 @@
 										<button type="submit" class="btn amber darken-4" data-uk-tooltip title="Save Password">SAVE PASSWORD</button>
 									</div>
 								</form>
+                                */ ?>
 							</div>
 						</div>
 					</div>
