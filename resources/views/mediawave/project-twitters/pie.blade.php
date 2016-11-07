@@ -9,7 +9,7 @@
             <h2 class="md-card-toolbar-heading-text">BUZZ</h2>
         </div>
         <div id="buzz" class="md-card-content">
-            <div id="buzzpie" class="md-chart">Pie Chart</div>
+            <div id="buzzpie" class="md-chart"></div>
         </div>
     </div>
 </li>
@@ -24,7 +24,7 @@
             <h2 class="md-card-toolbar-heading-text">INTERACTIONS</h2>
         </div>
         <div id="interaction" class="md-card-content">
-            <div id="interactionpie" class="md-chart">Pie Chart</div>
+            <div id="interactionpie" class="md-chart"></div>
         </div>
     </div>
 </li>
@@ -39,7 +39,7 @@
             <h2 class="md-card-toolbar-heading-text">VIRAL REACH</h2>
         </div>
         <div id="viralreach" class="md-card-content">
-            <div id="viralpie" class="md-chart">Pie Chart</div>
+            <div id="viralpie" class="md-chart"></div>
         </div>
     </div>
 </li>
@@ -55,7 +55,7 @@
             <h2 class="md-card-toolbar-heading-text">POTENTIAL REACH</h2>
         </div>
         <div id="potreach" class="md-card-content">
-            <div id="potentialpie" class="md-chart">Pie Chart</div>
+            <div id="potentialpie" class="md-chart"></div>
         </div>
     </div>
 </li>

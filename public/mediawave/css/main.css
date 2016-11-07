@@ -1841,4 +1841,12 @@ select {
 	.row .col.offset-s6 {
 		margin-left: 0;
 	}
+	.md-card .uk-button-dropdown {
+		margin-top: 8px;
+	}
+	.md-card .uk-dropdown li a:hover,
+	.md-card .uk-dropdown li.uk-active a {
+		background: #880e4f;
+		color: #fff;
+	}
 }

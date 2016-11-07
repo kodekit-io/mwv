@@ -9,7 +9,7 @@
             <h2 class="md-card-toolbar-heading-text">RATING</h2>
         </div>
         <div id="barwrap1" class="md-card-content">
-            <div id="ratingbar" class="md-chart">Bar Chart</div>
+            <div id="ratingbar" class="md-chart"></div>
         </div>
     </div>
 </li>
@@ -25,7 +25,7 @@
             <h2 class="md-card-toolbar-heading-text">VIEW COUNT</h2>
         </div>
         <div id="barwrap2" class="md-card-content">
-            <div id="countbar" class="md-chart">Bar Chart</div>
+            <div id="countbar" class="md-chart"></div>
         </div>
     </div>
 </li>
@@ -41,7 +41,7 @@
             <h2 class="md-card-toolbar-heading-text">COMMENTS</h2>
         </div>
         <div id="barwrap3" class="md-card-content">
-            <div id="commentbar" class="md-chart">Bar Chart</div>
+            <div id="commentbar" class="md-chart"></div>
         </div>
     </div>
 </li>
