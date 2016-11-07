@@ -26,15 +26,11 @@
 @endsection
 
 @section('page-level-plugins')
-    <script src="{!! asset('mediawave/js/jquery.validate.min.js') !!}"></script>
     <script src="{!! asset('mediawave/js/components/datepicker.min.js') !!}"></script>
     <script src="{!! asset('mediawave/js/highchart/highcharts.js') !!}"></script>
     <script src="{!! asset('mediawave/js/highchart/highcharts-more.js') !!}"></script>
     <script src="{!! asset('mediawave/js/highchart/modules/exporting.js') !!}"></script>
     <script src="{!! asset('mediawave/js/highchart/themes/mw.js') !!}"></script>
-    <script src="{!! asset('mediawave/js/html2canvas.js') !!}"></script>
-    <script src="{!! asset('mediawave/js/html2canvas.svg.js') !!}"></script>
-    <script src="{!! asset('mediawave/js/jquery.plugin.html2canvas.js') !!}"></script>
     <script src="{!! asset('mediawave/js/jqcloud.min.js') !!}"></script>
     <script src="{!! asset('mediawave/js/jquery.dataTables.min.js') !!}"></script>
     <script src="{!! asset('mediawave/js/dataTables.select.min.js') !!}"></script>
@@ -61,19 +57,8 @@
     <script src="{!! asset('js/socmeds/share-pie.js') !!}"></script>
     <script src="{!! asset('js/socmeds/sentiment-bar.js') !!}"></script>
     <script src="{!! asset('js/socmeds/comment-bar.js') !!}"></script>
-
     <script src="{!! asset('js/socmeds/word-cloud.js') !!}"></script>
     <script src="{!! asset('js/socmeds/influencer.js') !!}"></script>
     <script src="{!! asset('js/socmeds/convo-facebook.js') !!}"></script>
-
-    <script>
-        $(document).ready(function() {
-            // wordCloudTemporary('wordcloud-container','http://103.28.15.104:8821/dummy_api/project/'+type+'/'+mediaId+'/wordcloud');
-            // influencerTable('top10LikeStatusFB','http://103.28.15.104:8821/dummy_api/project/'+type+'/'+mediaId+'/influencer');
-            // influencerTable('top10LikePhotoFB','http://103.28.15.104:8821/dummy_api/project/'+type+'/'+mediaId+'/influencer');
-            // influencerTable('top10LikeLinkFB','http://103.28.15.104:8821/dummy_api/project/'+type+'/'+mediaId+'/influencer');
-            // influencerTable('top10LikeVideoFB','http://103.28.15.104:8821/dummy_api/project/'+type+'/'+mediaId+'/influencer');
-        });
-    </script>
 
 @endsection

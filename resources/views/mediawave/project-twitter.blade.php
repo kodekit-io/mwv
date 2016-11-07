@@ -30,15 +30,11 @@
 @endsection
 
 @section('page-level-plugins')
-    <script src="{!! asset('mediawave/js/jquery.validate.min.js') !!}"></script>
     <script src="{!! asset('mediawave/js/components/datepicker.min.js') !!}"></script>
     <script src="{!! asset('mediawave/js/highchart/highcharts.js') !!}"></script>
     <script src="{!! asset('mediawave/js/highchart/highcharts-more.js') !!}"></script>
     <script src="{!! asset('mediawave/js/highchart/modules/exporting.js') !!}"></script>
     <script src="{!! asset('mediawave/js/highchart/themes/mw.js') !!}"></script>
-    <script src="{!! asset('mediawave/js/html2canvas.js') !!}"></script>
-    <script src="{!! asset('mediawave/js/html2canvas.svg.js') !!}"></script>
-    <script src="{!! asset('mediawave/js/jquery.plugin.html2canvas.js') !!}"></script>
     <script src="{!! asset('mediawave/js/jqcloud.min.js') !!}"></script>
     <script src="{!! asset('mediawave/js/jquery.dataTables.min.js') !!}"></script>
     <script src="{!! asset('mediawave/js/dataTables.select.min.js') !!}"></script>
@@ -61,25 +57,14 @@
     <script src="{!! asset('js/projects/buzz-trend.js') !!}"></script>
     <script src="{!! asset('js/projects/user-trend.js') !!}"></script>
     <script src="{!! asset('js/projects/reach-trend.js') !!}"></script>
-
     <script src="{!! asset('js/projects/buzz-pie.js') !!}"></script>
     <script src="{!! asset('js/projects/interaction-pie.js') !!}"></script>
     <script src="{!! asset('js/projects/viral-pie.js') !!}"></script>
     <script src="{!! asset('js/projects/potential-pie.js') !!}"></script>
-
     <script src="{!! asset('js/projects/sentiment-bar.js') !!}"></script>
     <script src="{!! asset('js/projects/interaction-bar.js') !!}"></script>
-
     <script src="{!! asset('js/projects/word-cloud.js') !!}"></script>
     <script src="{!! asset('js/projects/influencer.js') !!}"></script>
     <script src="{!! asset('js/projects/convo-twitter.js') !!}"></script>
-
-    <script type="text/javascript">
-        //wordCloud('wordcloud-container', jQuery.parseJSON('{{--!! $wordCloud !!--}}'));
-        // wordCloudTemporary('wordcloud-container','http://103.28.15.104:8821/dummy_api/project/1/'+mediaId+'/wordcloud');
-//        influencerTable('top10ByReachTW','http://103.28.15.104:8821/dummy_api/project/1/'+mediaId+'/influencer');
-//        influencerTable('top10ByNumberTW','http://103.28.15.104:8821/dummy_api/project/1/'+mediaId+'/influencer');
-//        influencerTable('top10ByImpactTW','http://103.28.15.104:8821/dummy_api/project/1/'+mediaId+'/influencer');
-    </script>
 
 @endsection

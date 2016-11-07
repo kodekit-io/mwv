@@ -8,16 +8,13 @@
 
     <title>MediaWave Platform</title>
 
-    <link href="/favicon.ico" rel="shortcut icon">
+    <link href="{!! asset('mediawave/img/favicon.png') !!}" rel="shortcut icon">
 
-    <!-- link all the styles -->
-    <!--<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i" />-->
     <link rel="stylesheet" href="{!! asset('mediawave/css/uikit.min.css') !!}" />
     <link rel="stylesheet" href="{!! asset('mediawave/css/components/datepicker.min.css') !!}" />
     <link rel="stylesheet" href="{!! asset('mediawave/css/components/tooltip.min.css') !!}" />
     <link rel="stylesheet" href="{!! asset('mediawave/css/materialize.min.css') !!}" />
     <link rel="stylesheet" href="{!! asset('mediawave/css/main.css') !!}" />
-
 
     @section('page-level-styles')
     @show
@@ -38,8 +35,8 @@
 
 
 <footer class="page-footer grey lighten-3">
-    <div class="footer-copyright md-head-container grey-text">
-        &copy; <?php echo date('Y'); ?> Copyright <a class="grey-text" href="http://www.mediawave.biz" target="_blank" title="MediaWave">MediaWave</a>
+    <div class="footer-copyright md-head-container grey-text text-darken-1">
+        &copy; <?php echo date('Y'); ?> Copyright <a class="grey-text text-darken-1" href="http://www.mediawave.biz" target="_blank" title="MediaWave">MediaWave</a> | All Rights Reserved
     </div>
 </footer>
 
@@ -58,21 +55,6 @@
 
 <script src="{!! asset('mediawave/js/main.js') !!}"></script>
 
-<script>
-    //Screenshot
-    function capture() {
-        $('main').html2canvas({
-            letterRendering: true,
-            background: '#E6E6E6',
-            onrendered: function (canvas) {
-                var a = document.createElement('a');
-                a.href = canvas.toDataURL("image/jpeg").replace("image/jpeg", "image/octet-stream");
-                a.download = 'mediawave-platform.jpg';
-                a.click();
-            }
-        });
-    }
-</script>
 <div class="fixed-action-btn" style="bottom: 5px; right: 5px;">
     <a class="btn-floating tooltipped" data-position="left" data-delay="25" data-tooltip="Take a Screenshot" onclick="capture();">
         <i class="material-icons">camera_enhance</i>

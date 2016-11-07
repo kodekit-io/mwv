@@ -16,8 +16,8 @@ var table_twitter = $('#table_twitter').DataTable( {
         }
     },
     "columns": [
-        { "data": "Date" },
-        { "data": "Author" },
+        { "data": "Date", "title": "Date" },
+        { "data": "Author", "title": "Author" },
         //{
         //    "data": null,
         //    "render": function ( data ) {
@@ -28,6 +28,7 @@ var table_twitter = $('#table_twitter').DataTable( {
         //{ "data": "Post" },
         {
             "data": null,
+            "title": "Post",
             "render": function ( data ) {
                 var post = data["Post"];
                 var postrim = post.substring(0,100) + "...";
@@ -35,13 +36,14 @@ var table_twitter = $('#table_twitter').DataTable( {
                 return '<a href="'+link+'" target="_blank" data-uk-tooltip title="'+post+'" class="uk-link">'+postrim+'</a>';
             }
         },
-        { "data": "Original Reach" },
-        { "data": "Viral Reach" },
-        { "data": "Interactions" },
-        { "data": "Viral Score" },
+        { "data": "Original Reach", "title": "Original Reach" },
+        { "data": "Viral Reach", "title": "Viral Reach" },
+        { "data": "Interactions", "title": "Interactions" },
+        { "data": "Viral Score", "title": "Viral Score" },
         //{ "data": "Sentiment" },
         {
             "data": null,
+            "title": "Sentiment",
             "render": function ( data ) {
                 var sentiment = data["Sentiment"];
                 var c = "";

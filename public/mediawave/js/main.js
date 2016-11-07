@@ -150,5 +150,20 @@
             $("a.switchtopic")[0].click();
         });
 
+
     }); // end of document ready
 })(jQuery);
+
+//Screenshot
+function capture() {
+    $('main').html2canvas({
+        letterRendering: true,
+        background: '#E6E6E6',
+        onrendered: function (canvas) {
+            var a = document.createElement('a');
+            a.href = canvas.toDataURL("image/jpeg").replace("image/jpeg", "image/octet-stream");
+            a.download = 'mediawave-platform.jpg';
+            a.click();
+        }
+    });
+}

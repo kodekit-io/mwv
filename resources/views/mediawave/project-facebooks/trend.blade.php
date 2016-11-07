@@ -16,7 +16,7 @@
         <div id="trendwrap" class="md-card-content">
             <ul class="uk-switcher">
                 <li>
-                    <div id="posttrend" class="md-chart">Daily Activity TREND</div>
+                    <div id="posttrend" class="md-chart"></div>
                 </li>
             </ul>
         </div>

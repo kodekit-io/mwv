@@ -5,11 +5,20 @@
                 <a class="btn waves-effect waves-light z-depth-0 amber lighten-4" data-uk-tooltip title="{{ config('tooltips.trend-chart') }}"><i class="material-icons">help</i></a>
                 <a class="btn waves-effect waves-light z-depth-0 green lighten-4" data-uk-tooltip title="Minimize" data-uk-toggle="{target:'#trendwrap'}"><i class="material-icons md-icon">fullscreen</i></a>
             </div>
-            <div class="md-card-toolbar-heading-text">
+            <div class="md-card-toolbar-heading-text uk-hidden-small">
                 <ul class="uk-subnav uk-subnav-pill" data-uk-switcher="{connect:'#trendwrap ul'}">
                     <li class="uk-active"><a>THREAD TREND</a></li>
                     <li><a>COMMENT TREND</a></li>
                 </ul>
+            </div>
+            <div class="uk-button-dropdown uk-visible-small" data-uk-dropdown="{mode:'click'}">
+                <button class="uk-button">CHOOSE <i class="uk-icon-caret-down"></i></button>
+                <div class="uk-dropdown uk-dropdown-top">
+                    <ul class="uk-nav uk-nav-dropdown" data-uk-switcher="{connect:'#trendwrap ul'}">
+                        <li class="uk-active"><a>THREAD TREND</a></li>
+                        <li><a>COMMENT TREND</a></li>
+                    </ul>
+                </div>
             </div>
         </div>
         <?php //TRENDS ?>

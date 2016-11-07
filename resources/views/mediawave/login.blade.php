@@ -8,12 +8,9 @@
 
     <title>Login - MediaWave Platform</title>
 
-    <link href="/favicon.ico" rel="shortcut icon">
+    <link href="{!! asset('mediawave/img/favicon.png') !!}" rel="shortcut icon">
 
-    <!-- link all the styles -->
-    <!--<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i" />-->
     <link rel="stylesheet" href="{!! asset('mediawave/css/uikit.min.css') !!}" />
-    <link rel="stylesheet" href="{!! asset('mediawave/css/components/datepicker.min.css') !!}" />
     <link rel="stylesheet" href="{!! asset('mediawave/css/materialize.min.css') !!}" />
     <link rel="stylesheet" href="{!! asset('mediawave/css/main.css') !!}" />
 

@@ -9,7 +9,7 @@
             <h2 class="md-card-toolbar-heading-text">POST</h2>
         </div>
         <div id="piewrap1" class="md-card-content">
-            <div id="postpie" class="md-chart">Pie Chart</div>
+            <div id="postpie" class="md-chart"></div>
         </div>
     </div>
 </li>
@@ -25,7 +25,7 @@
             <h2 class="md-card-toolbar-heading-text">COMMENTS</h2>
         </div>
         <div id="piewrap2" class="md-card-content">
-            <div id="commentpie" class="md-chart">Pie Chart</div>
+            <div id="commentpie" class="md-chart"></div>
         </div>
     </div>
 </li>
@@ -41,7 +41,7 @@
             <h2 class="md-card-toolbar-heading-text">LIKES</h2>
         </div>
         <div id="piewrap3" class="md-card-content">
-            <div id="likepie" class="md-chart">Pie Chart</div>
+            <div id="likepie" class="md-chart"></div>
         </div>
     </div>
 </li>
@@ -57,7 +57,7 @@
             <h2 class="md-card-toolbar-heading-text">SHARE</h2>
         </div>
         <div id="piewrap4" class="md-card-content">
-            <div id="sharepie" class="md-chart">Pie Chart</div>
+            <div id="sharepie" class="md-chart"></div>
         </div>
     </div>
 </li>

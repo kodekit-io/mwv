@@ -1,0 +1,21 @@
+Project FB
+[Error] Failed to load resource: the server responded with a status of 404 (Not Found) (like-pie, line 0)
+[Error] Failed to load resource: the server responded with a status of 404 (Not Found) (comment-bar, line 0)
+
+Project TW
+[Error] Failed to load resource: the server responded with a status of 404 (Not Found) (user-trend, line 0)
+[Error] Failed to load resource: the server responded with a status of 404 (Not Found) (viral-pie, line 0)
+
+Project Video
+[Error] Failed to load resource: the server responded with a status of 404 (Not Found) (count-bar, line 0)
+[Error] Failed to load resource: the server responded with a status of 404 (Not Found) (rating-bar, line 0)
+
+View Report
+[Error] TypeError: $("#reportKeyword").chained is not a function. (In '$("#reportKeyword").chained("#reportProject")', '$("#reportKeyword").chained' is undefined)
+
+Profile
+[Error] Failed to load resource: the server responded with a status of 404 (Not Found) (riset@indofood.co.id.json, line 0)
+
+Socmed IG
+[Error] Failed to load resource: the server responded with a status of 404 (HTTP/2.0 404) (14592044_817981625010889_8507596375263805440_n.jpg, line 0)
+[Error] Failed to load resource: the server responded with a status of 404 (HTTP/2.0 404) (14474452_936646299774147_2937174416854876160_n.jpg, line 0)
