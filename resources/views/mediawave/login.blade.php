@@ -52,8 +52,8 @@
 
 
 <footer class="page-footer grey lighten-3">
-    <div class="footer-copyright md-head-container grey-text">
-        &copy; <?php echo date('Y'); ?> Copyright <a class="grey-text" href="http://www.mediawave.biz" target="_blank" title="MediaWave">MediaWave</a>
+    <div class="footer-copyright md-head-container grey-text text-darken-1">
+        &copy; <?php echo date('Y'); ?> Copyright <a class="grey-text text-darken-1" href="http://www.mediawave.biz" target="_blank" title="MediaWave">MediaWave</a> | All Rights Reserved
     </div>
 </footer>
 
