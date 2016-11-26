@@ -88,7 +88,10 @@ h5 {
 h6 {
 	font-size: 1.1rem;
 }
-
+text tspan {
+	text-decoration: none;
+	text-shadow: none !important;
+}
 .gradient-mauve {
 	position: relative;
 	background: #42275a;
