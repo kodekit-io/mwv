@@ -42,6 +42,14 @@ function interactionTrendChart($id, $data) {
 }
 
 function createInteractionTrend(data, id) {
+    var now = new Date();
+    var offset = Math.abs( now.getTimezoneOffset() / 60 );
+    //console.log(now);
+    Highcharts.setOptions({
+        global: {
+            timezoneOffset: offset * 60
+        }
+    });
     $('#' + id).highcharts({
         chart: {
             type: 'spline',

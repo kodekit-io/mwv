@@ -50,6 +50,7 @@
         var influencers = ["top10Blog"];
     </script>
     <script src="{!! asset('js/projects/post-trend.js') !!}"></script>
+    <script src="{!! asset('js/projects/comment-trend.js') !!}"></script>
     <script src="{!! asset('js/projects/post-pie.js') !!}"></script>
     <script src="{!! asset('js/projects/comment-pie.js') !!}"></script>
     <script src="{!! asset('js/projects/reach-pie.js') !!}"></script>
