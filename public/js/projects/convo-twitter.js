@@ -1,4 +1,3 @@
-
 var table_twitter = $('#table_twitter').DataTable( {
     //"processing": true,
     //"serverSide": true,
@@ -16,7 +15,20 @@ var table_twitter = $('#table_twitter').DataTable( {
         }
     },
     "columns": [
-        { "data": "Date", "title": "Date" },
+        {
+            "data": null,
+            "title": "Date",
+            "render": function ( data ) {
+                var date = data["Date"];
+                var now = new Date();
+                var offset = now.getTimezoneOffset() / 60;
+                var newdate = new Date(date);
+                var timezoneDif = offset * 60 + newdate.getTimezoneOffset();
+                var localtime = new Date(newdate.getTime() + timezoneDif * 60 * 1000);
+
+                return localtime;
+            }
+        },
         { "data": "Author", "title": "Author" },
         //{
         //    "data": null,
