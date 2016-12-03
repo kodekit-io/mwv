@@ -9,11 +9,11 @@
             "mediaChart": [{
                 "chartId": "1",
                 "chartName": "Brand Equity",
-                "chartActive": "true"
+                "chartActive": "false"
             }, {
                 "chartId": "2",
                 "chartName": "Buzz Trend",
-                "chartActive": "true"
+                "chartActive": "false"
             }, {
                 "chartId": "3",
                 "chartName": "Post Trend",
