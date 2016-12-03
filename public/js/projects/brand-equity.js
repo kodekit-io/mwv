@@ -95,7 +95,7 @@ function showEquityChart($id, $data) {
                 format: '{value}'
             },
 			min: 0,
-			max: 4000,
+			//max: 4000,
             tickInterval: 500,
         },
         yAxis: {
