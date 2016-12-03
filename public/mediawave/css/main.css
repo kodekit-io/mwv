@@ -92,6 +92,7 @@ text tspan {
 	text-decoration: none;
 	text-shadow: none !important;
 }
+
 .gradient-mauve {
 	position: relative;
 	background: #42275a;
@@ -1317,6 +1318,7 @@ select {
 	border-radius: 0;
 	position: relative;
 	z-index: 0;
+	border: 1px solid #ddd;
 }
 
 [type="checkbox"]+label {
@@ -1813,6 +1815,33 @@ select {
 	width: 100%;
 	height: 100%;
 }
+
+/**/
+.md-radiogroup li a {
+	position: relative;
+	line-height: 40px !important;
+}
+.md-radiogroup li a:before {
+	position: relative;
+	content: "\f10c";
+	left: 0;
+	top: 0;
+	display: inline-block;
+	margin: 0 10px 0 0;
+	font-family: 'FontAwesome';
+	color: #c2185b;
+	font-size: 1.1em;
+
+}
+.md-radiogroup li.uk-active a:before {
+	content: "\f192";
+}
+.uk-grid-medium.uk-switcher {
+	margin-left: -25px !important;
+	margin-bottom: 25px;
+
+}
+
 @media only screen and (max-width: 768px) {
 	.md-container {
 		padding: 1em;

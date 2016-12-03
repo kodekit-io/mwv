@@ -11,9 +11,9 @@
     <div class="md-container">
         <form method="post" action="{!! url('report-save') !!}" >
             {!! csrf_field() !!}
-            <div class="uk-grid uk-grid-medium uk-grid-match" data-uk-grid-match="{target:'.md-card'}" data-uk-grid-margin>
+            <div class="uk-grid uk-grid-medium uk-grid-match" data-uk-grid-margin>
                 <div class="uk-width-medium-1-3">
-                    <div class="md-card hoverable">
+                    <div class="md-card z-depth-0">
                         <div class="md-card-toolbar">
                             <h2 class="md-card-toolbar-heading-text">REPORT INFORMATIONS</h2>
                         </div>
@@ -30,7 +30,7 @@
                     </div>
                 </div>
                 <div class="uk-width-medium-1-3">
-                    <div class="md-card hoverable">
+                    <div class="md-card z-depth-0">
                         <div class="md-card-toolbar">
                             <h2 class="md-card-toolbar-heading-text">REPORT PERIOD</h2>
                         </div>
@@ -46,103 +46,74 @@
                                 <label for="enddate"><i class="material-icons prefix">date_range</i></label>
                             </div>
                         </div>
-                        <div class="md-card-toolbar">
-                            <h2 class="md-card-toolbar-heading-text">CHOOSE PROJECT</h2>
-                        </div>
-                        <div class="md-card-content">
-                            <div class="select-field">
-                                {!! $projectSelect !!}
-                            </div>
-                        </div>
-                        <div class="md-card-toolbar">
-                            <h2 class="md-card-toolbar-heading-text">CHOOSE KEYWORDS</h2>
-                        </div>
-                        <div class="md-card-content">
-                            <div class="select-field">
-                                {!! $keywordSelect !!}
-                            </div>
-                        </div>
-                        <div class="md-card-toolbar">
-                            <h2 class="md-card-toolbar-heading-text">CHOOSE MEDIA</h2>
-                        </div>
-                        <div class="md-card-content">
-                            <div class="select-field">
-                                <select id="reportMedia" name="media" class="browser-default">
-            						<option value="">All Media</option>
-            						<option value="1">Facebook</option>
-            						<option value="2">Twitter</option>
-            						<option value="3">Blog</option>
-            						<option value="4">News</option>
-            						<option value="5">Forum</option>
-            						<option value="6">Video</option>
-            					</select>
-                            </div>
-                        </div>
                     </div>
                 </div>
                 <div class="uk-width-medium-1-3">
-                    <div class="md-card hoverable">
+                    <div class="md-card z-depth-0">
                         <div class="md-card-toolbar">
-                            <h2 class="md-card-toolbar-heading-text">CHOOSE CHART TO EXPORT</h2>
+                            <div class="md-card-toolbar-heading-text uk-hidden-small">
+                                <ul class="uk-subnav uk-subnav-pill md-radiogroup" data-uk-switcher="{connect:'#switchproject, #switchchart'}">
+                                    <li class="uk-active"><a>PROJECT</a></li>
+                                    <li><a>SOCMED PAGE</a></li>
+                                </ul>
+                            </div>
+                            <div class="uk-button-dropdown uk-visible-small" data-uk-dropdown="{mode:'click'}">
+                                <button class="uk-button">CHOOSE <i class="uk-icon-caret-down"></i></button>
+                                <div class="uk-dropdown uk-dropdown-top">
+                                    <ul class="uk-nav uk-nav-dropdown" data-uk-switcher="{connect:'#switchproject, #switchchart'}">
+                                        <li class="uk-active"><a>PROJECT</a></li>
+                                        <li><a>SOCMED PAGE</a></li>
+                                    </ul>
+                                </div>
+                            </div>
                         </div>
                         <div class="md-card-content">
-                            <ul class="uk-list uk-list-line">
-                                <li class="uk-margin-bottom">
-                                    <input type="checkbox" name="checkedAll" id="checkedAll" class="filled-in" />
-                                    <label for="checkedAll" class="black-text">Select All</label>
+                            <ul id="switchproject" class="uk-switcher">
+                                <li>
+                                    <h6>CHOOSE PROJECT</h6>
+                                    <div class="select-field">
+                                        {!! $projectSelect !!}
+                                    </div>
+                                    <h6 class="uk-margin-top">CHOOSE KEYWORDS</h6>
+                                    <div class="select-field">
+                                        {!! $keywordSelect !!}
+                                    </div>
                                 </li>
                                 <li>
-                                    <input type="checkbox" name="widgets[]" id="id1" value="1" class="filled-in checkSingle" />
-                                    <label for="id1" class="black-text">Brand Equity</label>
-                                </li>
-                                <li>
-                                    <input type="checkbox" name="widgets[]" id="id2" value="2" class="filled-in checkSingle" />
-                                    <label for="id2" class="black-text">Share of Voice</label>
-                                </li>
-                                <li>
-                                    <input type="checkbox" name="widgets[]" id="id3" value="3" class="filled-in checkSingle" />
-                                    <label for="id3" class="black-text">Volume Trending</label>
-                                </li>
-                                <li>
-                                    <input type="checkbox" name="widgets[]" id="id4" value="4" class="filled-in checkSingle" />
-                                    <label for="id4" class="black-text">Media Distribution</label>
-                                </li>
-                                <li>
-                                    <input type="checkbox" name="widgets[]" id="id5" value="5" class="filled-in checkSingle" />
-                                    <label for="id5" class="black-text">Sentiment Media Distribution</label>
-                                </li>
-                                <li>
-                                    <input type="checkbox" name="widgets[]" id="id6" value="6" class="filled-in checkSingle" />
-                                    <label for="id6" class="black-text">Topic Distribution</label>
-                                </li>
-                                <li>
-                                    <input type="checkbox" name="widgets[]" id="id12" value="12" class="filled-in checkSingle" />
-                                    <label for="id12" class="black-text">Sentiment Brand Distribution</label>
-                                </li>
-                                <li>
-                                    <input type="checkbox" name="widgets[]" id="id8"  value="8" class="filled-in checkSingle" />
-                                    <label for="id8" class="black-text">Cloud</label>
-                                </li>
-                                <li>
-                                    <input type="checkbox" name="widgets[]" id="id9" value="9" class="filled-in checkSingle" />
-                                    <label for="id9" class="black-text">Media Per Brand Distribution</label>
-                                </li>
-                                <li>
-                                    <input type="checkbox" name="widgets[]" id="idF" value="F" class="filled-in checkSingle" />
-                                    <label for="idF" class="black-text">Media Details</label>
-                                </li>
-                                <li>
-                                    <input type="checkbox" name="widgets[]" id="idE"  value="E" class="filled-in checkSingle" />
-                                    <label for="idE" class="black-text">Influencer</label>
+                                    <h6>CHOOSE ACCOUNT</h6>
+                                    <div class="select-field">
+                                        {!! $keywordSelect !!}
+                                    </div>
                                 </li>
                             </ul>
                         </div>
                     </div>
                 </div>
-                <div class="uk-width-medium-1-1">
-                    <div class="uk-panel uk-panel-box">
-                        <button type="submit" class="btn amber darken-4 right" data-uk-tooltip title="Save Report Request">SAVE NOW</button>
-                    </div>
+            </div>
+            <ul id="switchchart" class="uk-switcher" style="margin:25px 0;">
+                <li class="uk-width-medium-1-1 disiniproject">
+                    <ul class="uk-grid uk-grid-medium uk-grid-width-1-1 uk-grid-match"  data-uk-grid-margin>
+                        <li id="pFB"></li>
+                        <li id="pTW"></li>
+                        <li id="pBL"></li>
+                        <li id="pNW"></li>
+                        <li id="pVD"></li>
+                        <li id="pFR"></li>
+                        <li id="pIG"></li>
+                    </ul>
+                </li>
+                <li class="uk-width-medium-1-1 disinisocmed">
+                    <ul class="uk-grid uk-grid-medium uk-grid-width-1-1 uk-grid-match"  data-uk-grid-margin>
+                        <li id="sFB"></li>
+                        <li id="sTW"></li>
+                        <li id="sVD"></li>
+                        <li id="sIG"></li>
+                    </ul>
+                </li>
+            </ul>
+            <div class="uk-width-medium-1-1">
+                <div class="uk-panel uk-panel-box white">
+                    <button type="submit" class="btn amber darken-4 right" data-uk-tooltip title="Save Report Request">SAVE NOW</button>
                 </div>
             </div>
         </form>
