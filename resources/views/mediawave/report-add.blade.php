@@ -93,21 +93,12 @@
             <ul id="switchchart" class="uk-switcher" style="margin:25px 0;">
                 <li class="uk-width-medium-1-1 disiniproject">
                     <ul class="uk-grid uk-grid-medium uk-grid-width-1-1 uk-grid-match"  data-uk-grid-margin>
-                        <li id="pFB"></li>
-                        <li id="pTW"></li>
-                        <li id="pBL"></li>
-                        <li id="pNW"></li>
-                        <li id="pVD"></li>
-                        <li id="pFR"></li>
-                        <li id="pIG"></li>
+                        <li id="plist"></li>
                     </ul>
                 </li>
                 <li class="uk-width-medium-1-1 disinisocmed">
                     <ul class="uk-grid uk-grid-medium uk-grid-width-1-1 uk-grid-match"  data-uk-grid-margin>
-                        <li id="sFB"></li>
-                        <li id="sTW"></li>
-                        <li id="sVD"></li>
-                        <li id="sIG"></li>
+                        <li id="slist"></li>
                     </ul>
                 </li>
             </ul>

@@ -94,8 +94,8 @@ function showEquityChart($id, $data) {
             labels: {
                 format: '{value}'
             },
-			min: 0,
-			max: 4000,
+			//min: 0,
+			//max: 4000,
             tickInterval: 500,
         },
         yAxis: {
@@ -107,7 +107,7 @@ function showEquityChart($id, $data) {
             labels: {
                 format: '{value}'
             },
-            min: 0,
+            //min: 0,
             tickInterval: 0.1,
             lineWidth: 1,
         },

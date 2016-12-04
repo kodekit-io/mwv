@@ -36,14 +36,12 @@ $(function() {
                                 <h2 class="md-card-toolbar-heading-text">'+$mediaName+'</h2> \
                             </div> \
                             <div class="md-card-content"> \
-                                <div class="uk-grid uk-grid-collapse uk-grid-width-1-5 uk-grid-match"  data-uk-grid-margin> \
-                                    <ul id="listChart0'+$mediaId+'"> \
-                                        <li class="hehelist"> \
+                                    <ul id="listChart0'+$mediaId+'" class="uk-grid uk-grid-collapse uk-grid-width-1-5 uk-grid-match"  data-uk-grid-margin> \
+                                        <li> \
                                         <input type="checkbox" name="all'+$mediaName+'" id="all'+$mediaName+'" class="filled-in checkedAll" /> \
                                         <label for="all'+$mediaName+'" class="black-text">Select All</label> \
                                         </li> \
                                     </ul> \
-                                <div> \
                             </div> \
                             </div>';
                         $('#' + divID).append(selection);
@@ -54,7 +52,7 @@ $(function() {
                             //list ceklist chart
                             var $mediaChartName = $mediaChart[y].chartName;
                             var $mediaChartId = $mediaChart[y].chartId;
-                            var list = '<li class="hehelist"> \
+                            var list = '<li> \
                             <input type="checkbox" name="'+$mediaId+''+$mediaChartId+'" id="'+$mediaId+''+$mediaChartId+'" class="filled-in checkSingle" /> \
                             <label for="'+$mediaId+''+$mediaChartId+'" class="black-text">'+$mediaChartName+'</label> \
                             </li>';
@@ -101,17 +99,7 @@ $(function() {
 		});
     }
 
-    chartSelector(0,0,"pFB");
-    /*chartSelector(0,1,"pTW");
-    chartSelector(0,2,"pBL");
-    chartSelector(0,3,"pNW");
-    chartSelector(0,4,"pVD");
-    chartSelector(0,5,"pFR");
-    chartSelector(0,6,"pIG");*/
-
-    /*chartSelector(1,0,"sFB");
-    chartSelector(1,1,"sTW");
-    chartSelector(1,4,"sVD");*/
-    //chartSelector(1,6,"sIG");
+    chartSelector(0,0,"plist");
+    chartSelector(1,0,"slist");
 
 });
