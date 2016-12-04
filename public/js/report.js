@@ -2,7 +2,7 @@ $(function() {
     //$('select').material_select();
     $("#reportKeyword").chained("#reportProject");
 
-    function chartSelector(x,y,divID) {
+    function chartSelector(x,divID) {
         // x -> 0 = Project, 1 = Socmed
         // y -> media/page apa? 0 = fb, 1 = twiter 2 = blog dst...
 		$.ajax({
@@ -31,7 +31,8 @@ $(function() {
                         $mediaChart = $data[i].mediaChart;
 
                         //list media/page
-                        var selection = '<div class="md-card z-depth-0"> \
+                        if ($mediaActive == 'true') {
+                            var selection = '<div class="md-card z-depth-0"> \
                             <div class="md-card-toolbar"> \
                                 <h2 class="md-card-toolbar-heading-text">'+$mediaName+'</h2> \
                             </div> \
@@ -44,24 +45,25 @@ $(function() {
                                     </ul> \
                             </div> \
                             </div>';
-                        $('#' + divID).append(selection);
+                            $('#' + divID).append(selection);
 
-                        $media[i] = {id:$mediaId,name:$mediaName,active:$mediaActive};
+                            $media[i] = {id:$mediaId,name:$mediaName,active:$mediaActive};
 
-                        for (y = 0; y < $mediaChart.length; y++) {
-                            //list ceklist chart
-                            var $mediaChartName = $mediaChart[y].chartName;
-                            var $mediaChartId = $mediaChart[y].chartId;
-                            var list = '<li> \
+                            for (y = 0; y < $mediaChart.length; y++) {
+                                //list ceklist chart
+                                var $mediaChartName = $mediaChart[y].chartName;
+                                var $mediaChartId = $mediaChart[y].chartId;
+                                var list = '<li> \
                             <input type="checkbox" name="'+$mediaId+''+$mediaChartId+'" id="'+$mediaId+''+$mediaChartId+'" class="filled-in checkSingle" /> \
                             <label for="'+$mediaId+''+$mediaChartId+'" class="black-text">'+$mediaChartName+'</label> \
                             </li>';
 
-                            if ($mediaChart[y].chartActive=='true') {
-                                $('#listChart0'+$mediaId).append(list);
+                                if ($mediaChart[y].chartActive=='true') {
+                                    $('#listChart0'+$mediaId).append(list);
+                                }
                             }
-                        }
 
+                        }
                     }
 				}
 
@@ -99,7 +101,7 @@ $(function() {
 		});
     }
 
-    chartSelector(0,0,"plist");
-    chartSelector(1,0,"slist");
+    chartSelector(0, "plist");
+    chartSelector(1, "slist");
 
 });
