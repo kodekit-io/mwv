@@ -1,3 +1,5 @@
+<?php
+/* DELETED
 <li class="uk-width-medium-1-1">
     <div class="md-card hoverable">
         <div class="md-card-toolbar">
@@ -12,7 +14,7 @@
         </div>
     </div>
 </li>
-
+*/ ?>
 <li class="uk-width-medium-1-1">
     <div class="md-card hoverable">
         <div class="md-card-toolbar">

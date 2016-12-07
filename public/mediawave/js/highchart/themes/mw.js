@@ -49,7 +49,10 @@ Highcharts.theme = {
 		itemStyle: {
 			fontWeight: 'normal',
 			fontSize: '12px',
-			lineHeight: '14px'
+			lineHeight: '14px',
+			width:'150px',
+			textOverflow: 'ellipsis',
+			overflow: 'hidden'
 		}
 	},
 	labels: {

@@ -50,28 +50,27 @@ $('#table_facebook').DataTable( {
         { "data": "Shares" },
         { "data": "Media Type" },
         {
-            "data": null,
-            "render": function ( data ) {
-                var sentiment = data["Sentiment"];
-                //var c = "";
-				switch (sentiment) {
+            "data": "Sentiment",
+            "title": "",
+            "orderable": false,
+            "createdCell": function (td, cellData, rowData, row, col) {
+                switch (cellData) {
                     case 'positive':
-					case 'Positif':
-					case 'positif':
-                        c = 'teal white-text uk-button uk-button-mini';
+                    case 'Positif':
+                    case 'positif':
+                        $(td).css('color', 'green');
                         break;
                     case 'neutral':
-					case 'Netral':
-					case 'netral':
-                        c = 'blue-grey lighten-3 white-text uk-button uk-button-mini';
+                    case 'Netral':
+                    case 'netral':
+                        $(td).css('color', 'grey');
                         break;
                     case 'negative':
-					case 'Negatif':
-					case 'negatif':
-                        c = 'red white-text uk-button uk-button-mini';
+                    case 'Negatif':
+                    case 'negatif':
+                        $(td).css('color', 'red');
                         break;
                 }
-                return '<span class="'+c+'">'+sentiment+'</span>';
             }
         },
         //{ "data": "Author Link" },
@@ -81,5 +80,26 @@ $('#table_facebook').DataTable( {
         "visible": false,
         "targets": [8]
     }],
-    "order": [[ 0, "desc" ]]
+    "order": [[ 0, "desc" ]],
+    "initComplete": function () {
+        this.api().columns().every( function () {
+            var column = this;
+            if(column[0][0] == 7) {
+                var select = $('<select class="browser-default uk-width-1-1"><option value="">All</option></select>')
+                    .appendTo( $(column.header()).empty() )
+                    .on( 'change', function () {
+                        var val = $.fn.dataTable.util.escapeRegex(
+                            $(this).val()
+                        );
+                        column
+                            .search( val ? '^'+val+'$' : '', true, false )
+                            .draw();
+                    } );
+
+                column.data().unique().sort().each( function ( d, j ) {
+                    select.append( '<option value="'+d+'">'+d+'</option>' )
+                });
+            }
+        });
+    },
 });
