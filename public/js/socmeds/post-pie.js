@@ -49,7 +49,7 @@ function createPostPie(dataSet, id) {
         },
         tooltip: {
             //pointFormat: '{series.name}: <b>{point.percentage:.1f}%</b>'
-            pointFormat: 'Total Post: <b>{point.y}</b> ({point.percentage:.1f}%)<br/>'
+            pointFormat: 'Post: {point.y} ({point.percentage:.1f}%)'
         },
         /*plotOptions: {
             pie: {

@@ -8,7 +8,7 @@
             </div>
             <h2 class="md-card-toolbar-heading-text">WORD CLOUDS</h2>
         </div>
-        <div id="wordcloudwrap" class="md-card-content">
+        <div id="wordcloud" class="md-card-content">
             <div id="wordcloud-container" class="md-chart"></div>
         </div>
     </div>

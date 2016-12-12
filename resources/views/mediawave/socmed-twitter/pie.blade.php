@@ -1,5 +1,5 @@
 <li class="uk-width-medium-1-4">
-    <?php //POST PIE ?>
+    <?php //BUZZ PIE ?>
     <div class="md-card hoverable">
         <div class="md-card-toolbar">
             <div class="md-card-toolbar-actions">
@@ -13,6 +13,23 @@
         </div>
     </div>
 </li>
+
+<li class="uk-width-medium-1-4">
+    <?php //POST PIE ?>
+    <div class="md-card hoverable">
+        <div class="md-card-toolbar">
+            <div class="md-card-toolbar-actions">
+                <a class="btn waves-effect waves-light z-depth-0 amber lighten-4" data-uk-tooltip title="{{ config('tooltips.vreach-pie') }}"><i class="material-icons">help</i></a>
+                <a class="btn waves-effect waves-light z-depth-0 green lighten-4" data-uk-tooltip title="Minimize" data-uk-toggle="{target:'#piewrap3'}"><i class="material-icons md-icon">fullscreen</i></a>
+            </div>
+            <h2 class="md-card-toolbar-heading-text">POST</h2>
+        </div>
+        <div id="piewrap3" class="md-card-content">
+            <div id="postpie" class="md-chart"></div>
+        </div>
+    </div>
+</li>
+
 <li class="uk-width-medium-1-4">
     <?php //INTERACTION PIE ?>
     <div class="md-card hoverable">
@@ -28,21 +45,7 @@
         </div>
     </div>
 </li>
-<li class="uk-width-medium-1-4">
-    <?php //VIRAL REACH PIE ?>
-    <div class="md-card hoverable">
-        <div class="md-card-toolbar">
-            <div class="md-card-toolbar-actions">
-                <a class="btn waves-effect waves-light z-depth-0 amber lighten-4" data-uk-tooltip title="{{ config('tooltips.vreach-pie') }}"><i class="material-icons">help</i></a>
-                <a class="btn waves-effect waves-light z-depth-0 green lighten-4" data-uk-tooltip title="Minimize" data-uk-toggle="{target:'#piewrap3'}"><i class="material-icons md-icon">fullscreen</i></a>
-            </div>
-            <h2 class="md-card-toolbar-heading-text">VIRAL REACH</h2>
-        </div>
-        <div id="piewrap3" class="md-card-content">
-            <div id="viralpie" class="md-chart"></div>
-        </div>
-    </div>
-</li>
+
 <li class="uk-width-medium-1-4">
     <?php //POTENTIAL REACH PIE ?>
     <div class="md-card hoverable">

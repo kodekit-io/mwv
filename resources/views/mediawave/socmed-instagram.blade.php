@@ -50,16 +50,19 @@
         var endDate = '{!! $endDate !!}';
         var brands = '{!! $brands !!}';
         var search = '{!! $shownSearch !!}';
-        var influencers = ["top10IG"];
+        var influencers = ["top10Comment", "top10Like", "top10View"];
     </script>
     <script src="{!! asset('js/socmeds/post-trend.js') !!}"></script>
     <script src="{!! asset('js/socmeds/comment-trend.js') !!}"></script>
     <script src="{!! asset('js/socmeds/interaction-trend.js') !!}"></script>
     <script src="{!! asset('js/socmeds/reach-trend.js') !!}"></script>
+
     <script src="{!! asset('js/socmeds/post-pie.js') !!}"></script>
     <script src="{!! asset('js/socmeds/reach-pie.js') !!}"></script>
+
     <script src="{!! asset('js/socmeds/sentiment-bar.js') !!}"></script>
     <script src="{!! asset('js/socmeds/interaction-bar.js') !!}"></script>
+
     <script src="{!! asset('js/socmeds/word-cloud.js') !!}"></script>
     <script src="{!! asset('js/socmeds/influencer.js') !!}"></script>
     <script src="{!! asset('js/socmeds/convo-ig.js') !!}"></script>

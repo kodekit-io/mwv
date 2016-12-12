@@ -1320,6 +1320,12 @@ select {
 	z-index: 0;
 	border: 1px solid #ddd;
 }
+.select-sentiment {
+	padding: 5px;
+	font-weight: normal;
+	background: url(../img/angle-down.png) no-repeat 95% center;
+}
+
 
 [type="checkbox"]+label {
 	height: 24px;
@@ -1718,7 +1724,6 @@ select {
 	font: 300 13px/18px 'proxima_nova_rgregular';
 }
 .conv-wrap table tr > * {
-	vertical-align: top;
 }
 .conv-wrap .uk-grid + .uk-grid {
 	margin-top: 10px;
@@ -1736,21 +1741,23 @@ select {
 }
 
 /*TABLES*/
-#table_twitter tr > *:nth-child(1) { width:10%; }
-#table_twitter tr > *:nth-child(2) { width:15%; }
-#table_twitter tr > *:nth-child(3) { width:45%; }
-#table_twitter tr > *:nth-child(4) { width:10%; }
-#table_twitter tr > *:nth-child(5) { width:10%; }
-#table_twitter tr > *:nth-child(6) { width:10%; }
+#table_twitter tr > *:nth-child(1) { width:17.5%; }
+#table_twitter tr > *:nth-child(2) { width:12.5%; }
+#table_twitter tr > *:nth-child(3) { width:30%; }
+#table_twitter tr > *:nth-child(4) { width:7.5%; text-align: right; }
+#table_twitter tr > *:nth-child(5) { width:7.5%; text-align: right; }
+#table_twitter tr > *:nth-child(6) { width:7.5%; text-align: right; }
+#table_twitter tr > *:nth-child(7) { width:7.5%; text-align: right; }
+#table_twitter tr > *:nth-child(8) { width:10%; text-align: center; padding-right: 0;}
 
-#table_facebook tr > *:nth-child(1) { width:10%; }
+#table_facebook tr > *:nth-child(1) { width:17.5%; }
 #table_facebook tr > *:nth-child(2) { width:12.5%; }
-#table_facebook tr > *:nth-child(3) { width:35%; }
-#table_facebook tr > *:nth-child(4) { width:10%; }
-#table_facebook tr > *:nth-child(5) { width:5%; }
-#table_facebook tr > *:nth-child(6) { width:5%; }
-#table_facebook tr > *:nth-child(7) { width:12.5%; }
-#table_facebook tr > *:nth-child(8) { width:10%; }
+#table_facebook tr > *:nth-child(3) { width:30%; }
+#table_facebook tr > *:nth-child(4) { width:7.5%; text-align: right; }
+#table_facebook tr > *:nth-child(5) { width:7.5%; text-align: right; }
+#table_facebook tr > *:nth-child(6) { width:7.5%; text-align: right; }
+#table_facebook tr > *:nth-child(7) { width:7.5%; text-align: right; }
+#table_facebook tr > *:nth-child(8) { width:10%; text-align: center; padding-right: 0;}
 
 #table_news tr > *:nth-child(1) { width:10%; }
 #table_news tr > *:nth-child(2) { width:15%; }
@@ -1846,6 +1853,7 @@ select {
 	position: absolute;
 	top: 12px;
 	right: 72px;
+	height: 24px;
 }
 
 @media only screen and (max-width: 768px) {
