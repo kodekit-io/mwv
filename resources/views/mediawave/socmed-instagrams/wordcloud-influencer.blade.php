@@ -8,7 +8,7 @@
             </div>
             <h2 class="md-card-toolbar-heading-text">WORD CLOUDS</h2>
         </div>
-        <div id="wordcloudwrap" class="md-card-content">
+        <div id="wordcloud" class="md-card-content">
             <div id="wordcloud-container" class="md-chart"></div>
         </div>
     </div>
@@ -23,16 +23,18 @@
             </div>
             <div class="md-card-toolbar-heading-text">
                 <ul class="uk-subnav uk-subnav-pill" data-uk-switcher="{connect:'#author ul'}">
-                    <li class="uk-active"><a>TOP INSTAGRAMERS</a></li>
+                    <li class="uk-active"><a>TOP COMMENT</a></li>
+                    <li><a>TOP LOVE</a></li>
+                    <li><a>TOP VIEW</a></li>
                 </ul>
             </div>
         </div>
         <div id="author" class="md-card-content conv-wrap">
-            <?php //INFLUENCER/AUTHOR TABLE ?>
+            <?php //TOP COMMENT ?>
             <ul class="uk-switcher">
-                <li>
-                    <table id="top10IG" class="striped bordered highlight responsive-table"></table>
-                </li>
+                <li><table id="top10Comment" class="striped bordered highlight responsive-table"></table></li>
+                <li><table id="top10Love" class="striped bordered highlight responsive-table"></table></li>
+                <li><table id="top10View" class="striped bordered highlight responsive-table"></table></li>
             </ul>
 
         </div>

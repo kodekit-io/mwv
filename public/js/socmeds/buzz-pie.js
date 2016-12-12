@@ -49,7 +49,7 @@ function createBuzzPieChart(dataSet, id) {
         },
         tooltip: {
             //pointFormat: '{series.name}: <b>{point.percentage:.1f}%</b>'
-            pointFormat: 'Total Buzz: <b>{point.y}</b> ({point.percentage:.1f}%)<br/>'
+            pointFormat: 'Buzz: {point.y} ({point.percentage:.1f}%)'
         },
         /*plotOptions: {
             pie: {

@@ -48,7 +48,7 @@ function createPotentialPie(dataSet, id) {
         },
         tooltip: {
             //pointFormat: '{series.name}: <b>{point.percentage:.1f}%</b>'
-            pointFormat: 'Interactions: <b>{point.y}</b> ({point.percentage:.1f}%)<br/>'
+            pointFormat: 'Potential Reach: {point.y} ({point.percentage:.1f}%)'
         },
         plotOptions: {
             pie: {

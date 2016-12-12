@@ -61,11 +61,12 @@ function top10LikeStatusFB(id,result) {
 			data: $content,
 			columns: [
 				{ title: "Name" },
-				{ title: "Score" },
-				{ title: "Value" },
-				//{ title: "Link" },
+				{ title: "Like" },
+				{ title: "Comments" },
+				{ title: "Share" },
 				{
 					data: null,
+					className: "uk-text-right",
 					render: function ( data ) {
 						var postlink = data[3];
 						return '<a href="'+postlink+'" target="_blank" data-uk-tooltip title="See Details" class="uk-button uk-button-primary">See Details</a>';
@@ -103,12 +104,13 @@ function top10LikePhotoFB(id,result) {
 			info: false,
 			data: $content,
 			columns: [
-				{ title: "User" },
-				{ title: "Foto" },
-				{ title: "URL Like" },
-				//{ title: "Link" },
+				{ title: "Name" },
+				{ title: "Like" },
+				{ title: "Comments" },
+				{ title: "Share" },
 				{
 					data: null,
+					className: "uk-text-right",
 					render: function ( data ) {
 						var postlink = data[3];
 						return '<a href="'+postlink+'" target="_blank" data-uk-tooltip title="See Details" class="uk-button uk-button-primary">See Details</a>';
@@ -145,12 +147,13 @@ function top10LikeLinkFB(id,result) {
 			info: false,
 			data: $content,
 			columns: [
-				{ title: "User" },
+				{ title: "Name" },
 				{ title: "Like" },
-				//{ title: "URL Like" },
-				//{ title: "Link" },
+				{ title: "Comments" },
+				{ title: "Share" },
 				{
 					data: null,
+					className: "uk-text-right",
 					render: function ( data ) {
 						var postlink = data[2];
 						return '<a href="'+postlink+'" target="_blank" data-uk-tooltip title="See Details" class="uk-button uk-button-primary">See Details</a>';
@@ -188,12 +191,13 @@ function top10LikeVideoFB(id,result) {
 			info: false,
 			data: $content,
 			columns: [
-				{ title: "User" },
+				{ title: "Name" },
 				{ title: "Like" },
-				{ title: "Link" },
-				//{ title: "Link" },
+				{ title: "Comments" },
+				{ title: "Share" },
 				{
 					data: null,
+					className: "uk-text-right",
 					render: function ( data ) {
 						var postlink = data[3];
 						return '<a href="'+postlink+'" target="_blank" data-uk-tooltip title="See Details" class="uk-button uk-button-primary">See Video</a>';
@@ -233,11 +237,12 @@ function top10ByReachTW(id,result) {
 			data: $content,
 			columns: [
 				{ title: "Name" },
-				{ title: "Score" },
-				{ title: "Value" },
+				{ title: "Score", visible: false },
+				{ title: "Value", className: "uk-text-right", },
 				//{ title: "Link" },
 				{
 					data: null,
+					className: "uk-text-right",
 					render: function ( data ) {
 						var postlink = data[3];
 						return '<a href="'+postlink+'" target="_blank" data-uk-tooltip title="See Details" class="uk-button uk-button-primary">See Details</a>';
@@ -277,11 +282,12 @@ function top10ByNumberTW(id,result) {
 			data: $content,
 			columns: [
 				{ title: "Name" },
-				{ title: "Score" },
-				{ title: "Value" },
+				{ title: "Score", visible: false },
+				{ title: "Value", className: "uk-text-right", },
 				//{ title: "Link" },
 				{
 					data: null,
+					className: "uk-text-right",
 					render: function ( data ) {
 						var postlink = data[3];
 						return '<a href="'+postlink+'" target="_blank" data-uk-tooltip title="See Details" class="uk-button uk-button-primary">See Details</a>';
@@ -321,11 +327,12 @@ function top10ByImpactTW(id,result) {
 			data: $content,
 			columns: [
 				{ title: "Name" },
-				{ title: "Score" },
-				{ title: "Value" },
+				{ title: "Score", visible: false },
+				{ title: "Value", className: "uk-text-right", },
 				//{ title: "Link" },
 				{
 					data: null,
+					className: "uk-text-right",
 					render: function ( data ) {
 						var postlink = data[3];
 						return '<a href="'+postlink+'" target="_blank" data-uk-tooltip title="See Details" class="uk-button uk-button-primary">See Details</a>';
@@ -387,6 +394,7 @@ function top10Vid(id,result) {
 				{
 					data: null,
 					title: "Score",
+					visible: false,
 					render: function ( data ) {
 						var a = data[1];
 						return a;
@@ -395,6 +403,7 @@ function top10Vid(id,result) {
 				{
 					data: null,
 					title: "Value",
+					className: "uk-text-right",
 					render: function ( data ) {
 						var a = data[2];
 						return a;
@@ -402,6 +411,7 @@ function top10Vid(id,result) {
 				},
 				{
 					data: null,
+					className: "uk-text-right",
 					render: function ( data ) {
 						var postlink = data[5];
 						return '<a href="'+postlink+'" target="_blank" data-uk-tooltip title="See Details" class="uk-button uk-button-primary">See Video</a>';
@@ -450,12 +460,13 @@ function top10IG(id,result) {
 						return '<a href="'+l+'" target="_blank" data-uk-tooltip title="'+n+'" class="uk-link">'+n+'</a>';
 					}
 				},
-				{ title: "Score" },
-				{ title: "Value" },
+				{ title: "Score", visible: false },
+				{ title: "Value", className: "uk-text-right", },
 				{ title: "Link" },
 				//{ title: "Url" },
 				{
 					data: null,
+					className: "uk-text-right",
 					render: function ( data ) {
 						var postlink = data[4];
 						return '<a href="'+postlink+'" target="_blank" data-uk-tooltip title="See Details" class="uk-button uk-button-primary">See Details</a>';

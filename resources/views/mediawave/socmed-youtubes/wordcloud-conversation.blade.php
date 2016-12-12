@@ -20,18 +20,30 @@
                 <a class="btn waves-effect waves-light z-depth-0 amber lighten-4" data-uk-tooltip title="{{ config('tooltips.influencer') }}"><i class="material-icons">help</i></a>
                 <a class="btn waves-effect waves-light z-depth-0 green lighten-4" data-uk-tooltip title="Minimize" data-uk-toggle="{target:'#author'}"><i class="material-icons md-icon">fullscreen</i></a>
             </div>
-            <div class="md-card-toolbar-heading-text">
-                <ul class="uk-subnav uk-subnav-pill" data-uk-switcher="{connect:'#authorwrap ul'}">
-                    <li class="uk-active"><a>TOP 10 RATE VIDEO</a></li>
+            <div class="md-card-toolbar-heading-text uk-hidden-small">
+                <ul class="uk-subnav uk-subnav-pill" data-uk-switcher="{connect:'#influencer ul'}">
+                    <li class="uk-active"><a>TOP RATE</a></li>
+                    <li><a>TOP LIKE</a></li>
+                    <li><a>TOP POST</a></li>
                 </ul>
+            </div>
+            <div class="uk-button-dropdown uk-visible-small" data-uk-dropdown="{mode:'click'}">
+                <button class="uk-button">CHOOSE <i class="uk-icon-caret-down"></i></button>
+                <div class="uk-dropdown uk-dropdown-top">
+                    <ul class="uk-nav uk-nav-dropdown" data-uk-switcher="{connect:'#influencer ul'}">
+                        <li class="uk-active"><a>TOP RATE</a></li>
+                        <li><a>TOP LIKE</a></li>
+                        <li><a>TOP POST</a></li>
+                    </ul>
+                </div>
             </div>
         </div>
         <div id="authorwrap" class="md-card-content conv-wrap">
             <?php //INFLUENCER/AUTHOR TABLE ?>
             <ul class="uk-switcher">
-                <li>
-                    <table id="top10Vid" class="striped bordered highlight responsive-table"></table>
-                </li>
+                <li><table id="top10Vid" class="striped bordered highlight responsive-table"></table></li>
+                <li><table id="top10Like" class="striped bordered highlight responsive-table"></table></li>
+                <li><table id="top10Post" class="striped bordered highlight responsive-table"></table></li>
             </ul>
         </div>
     </div>
@@ -47,20 +59,7 @@
         </div>
         <div id="convwrap" class="md-card-content conv-wrap">
 			<?php //VIDEO TABLE ?>
-			<table id="table_video" class="striped bordered highlight responsive-table">
-				<thead>
-				<tr>
-					<th>Date</th>
-					<th>Author</th>
-					<th>Post</th>
-					<th>Likes</th>
-					<th>Comments</th>
-					<th>View</th>
-					<th>Author Url</th>
-					<th>Post Url</th>
-				</tr>
-				</thead>
-			</table>
+			<table id="table_video" class="striped bordered highlight responsive-table"></table>
         </div>
     </div>
 
