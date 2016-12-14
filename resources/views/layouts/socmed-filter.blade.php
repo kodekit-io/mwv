@@ -13,7 +13,7 @@
                     @foreach($keywords as $key => $keywords)
                     <li class="">
                         <input type="checkbox" name="keywords[]" value="{!! $key !!}" class="filled-in" id="{!! $key !!}" {!! $keywords['selected'] !!}  />
-                        <label for="{!! $key !!}">{!! $keywords['value'] !!}</label>
+                        <label for="{!! $key !!}" data-uk-tooltip title="{!! $keywords['value'] !!}">{!! $keywords['value'] !!}</label>
                     </li>
                    @endforeach
                 </ul>
