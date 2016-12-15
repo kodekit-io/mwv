@@ -33,7 +33,7 @@ $(document).ready( function () {
                 "render": function ( data ) {
                     var post = data["Post"];
                     var postrim = post.substring(0,100) + "...";
-                    var plink = data["Post Link"];
+                    var plink = data["Link"];
                     return '<a href="'+plink+'" target="_blank" data-uk-tooltip title="'+post+'" class="uk-link">'+postrim+'</a>';
                 }
             },
@@ -41,7 +41,7 @@ $(document).ready( function () {
             { "data": "Likes", "title": "Likes", "render": $.fn.dataTable.render.number( '\.', '', 0, '' ) },
             { "data": "Shares", "title": "Shares", "render": $.fn.dataTable.render.number( '\.', '', 0, '' ) },
             { "data": "Media Type", "title": "Media Type", },
-            { "data": "Post Link", visible: false },
+            { "data": "Link", visible: false },
             {
                 "data": "Sentiment",
                 "title": "",

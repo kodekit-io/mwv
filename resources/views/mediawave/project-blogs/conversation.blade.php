@@ -33,18 +33,7 @@
         </div>
         <div id="convwrap" class="md-card-content conv-wrap">
 			<?php //BLOG TABLE ?>
-			<table id="table_blog" class="striped bordered highlight responsive-table">
-				<thead>
-				<tr>
-					<th>Date</th>
-					<th>Author</th>
-					<th>Title</th>
-					<th>Summary</th>
-					<th>Author Url</th>
-					<th>Url</th>
-				</tr>
-				</thead>
-			</table>
+			<table id="table_blog" class="striped bordered highlight responsive-table"></table>
         </div>
     </div>
 

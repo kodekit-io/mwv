@@ -10,6 +10,7 @@ $('#table_news').DataTable( {
             "search": search
         }
     },
+
     "columns": [
         //{ "data": "Date" },
         {
@@ -28,58 +29,70 @@ $('#table_news').DataTable( {
         },
         //{ "data": "Media" },
         {
-            "data": null,
-            "render": function ( data ) {
-                var media = data["Media"];
-                var mlink = data["Media Url"];
-                return '<a href="'+mlink+'" target="_blank" data-uk-tooltip title="'+media+'" class="uk-link">'+media+'</a>';
-            }
+            "data": "Media",
+            "title": "Media"
         },
         //{ "data": "Title" },
         {
             "data": null,
+            "title": "Title",
             "render": function ( data ) {
                 var post = data["Title"];
                 var postrim = post.substring(0,100) + "...";
-                var plink = data["Url"];
+                var plink = data["url"];
                 return '<a href="'+plink+'" target="_blank" data-uk-tooltip title="'+post+'" class="uk-link">'+postrim+'</a>';
             }
         },
-        { "data": "Summary" },
-        { "data": "Comments" },
-        { "data": "Reach" },
+        { "data": "Summary", "title": "Summary", },
+        { "data": "Comments", "title": "Comments", },
+        { "data": "Reach", "title": "Reach", },
         //{ "data": "Sentiment" },
         {
-            "data": null,
-            "render": function ( data ) {
-                var sentiment = data["Sentiment"];
-                //var c = "";
-				switch (sentiment) {
+            "data": "sentiment",
+            "title": "",
+            "orderable": false,
+            "createdCell": function (td, cellData, rowData, row, col) {
+                switch (cellData) {
                     case 'positive':
-					case 'Positif':
-					case 'positif':
-                        c = 'teal white-text uk-button uk-button-mini';
+                    case 'Positif':
+                    case 'positif':
+                        $(td).css('color', 'green');
                         break;
                     case 'neutral':
-					case 'Netral':
-					case 'netral':
-                        c = 'blue-grey lighten-3 white-text uk-button uk-button-mini';
+                    case 'Netral':
+                    case 'netral':
+                        $(td).css('color', 'grey');
                         break;
                     case 'negative':
-					case 'Negatif':
-					case 'negatif':
-                        c = 'red white-text uk-button uk-button-mini';
+                    case 'Negatif':
+                    case 'negatif':
+                        $(td).css('color', 'red');
                         break;
                 }
-                return '<span class="'+c+'">'+sentiment+'</span>';
             }
         },
-        { "data": "Media Url" },
-        { "data": "Url" },
+        { "data": "url", "visible": false },
     ],
-    "columnDefs": [{
-        "visible": false,
-        "targets": [7, 8]
-    }],
-    "order": [[ 0, "desc" ]]
+    "order": [[ 0, "desc" ]],
+    "initComplete": function () {
+        this.api().columns().every( function () {
+            var column = this;
+            if(column[0][0] == 6) {
+                var select = $('<select class="browser-default uk-width-1-1 select-sentiment"><option value="">All Sentiment</option></select>')
+                    .appendTo( $(column.header()).empty() )
+                    .on( 'change', function () {
+                        var val = $.fn.dataTable.util.escapeRegex(
+                            $(this).val()
+                        );
+                        column
+                            .search( val ? '^'+val+'$' : '', true, false )
+                            .draw();
+                    } );
+
+                column.data().unique().sort().each( function ( d, j ) {
+                    select.append( '<option value="'+d+'">'+d+'</option>' )
+                });
+            }
+        });
+    },
 });
