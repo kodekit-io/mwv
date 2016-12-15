@@ -9,7 +9,7 @@
                 <ul class="uk-subnav uk-subnav-pill" data-uk-switcher="{connect:'#trendwrap ul'}">
                     <li class="uk-active"><a>POST TREND</a></li>
                     <li><a>COMMENT TREND</a></li>
-                    <li><a>INTERACTIONS TREND</a></li>
+                    <li><a>LOVE TREND</a></li>
                     <li><a>POTENTIAL REACH TREND</a></li>
                 </ul>
             </div>
@@ -19,7 +19,7 @@
                     <ul class="uk-nav uk-nav-dropdown" data-uk-switcher="{connect:'#trendwrap ul'}">
                         <li class="uk-active"><a>POST TREND</a></li>
                         <li><a>COMMENT TREND</a></li>
-                        <li><a>INTERACTIONS TREND</a></li>
+                        <li><a>LOVE TREND</a></li>
                         <li><a>POTENTIAL REACH TREND</a></li>
                     </ul>
                 </div>
@@ -28,18 +28,10 @@
         <?php //TRENDS ?>
         <div id="trendwrap" class="md-card-content">
             <ul class="uk-switcher">
-                <li>
-                    <div id="posttrend" class="md-chart"></div>
-                </li>
-                <li>
-                    <div id="commenttrend" class="md-chart"></div>
-                </li>
-                <li>
-                    <div id="interacttrend" class="md-chart"></div>
-                </li>
-                <li>
-                    <div id="reachtrend" class="md-chart"></div>
-                </li>
+                <li><div id="posttrend" class="md-chart"></div></li>
+                <li><div id="commenttrend" class="md-chart"></div></li>
+                <li><div id="lovetrend" class="md-chart"></div></li>
+                <li><div id="reachtrend" class="md-chart"></div></li>
             </ul>
         </div>
     </div>

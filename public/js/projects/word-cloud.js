@@ -15,9 +15,16 @@ function wordCloud($id, $data) {
             },
             //shape: 'rectangular'
         });
-		$('#' + $id).on('click','span',function(){
-			$(this).hide();
-		});
+        $('#' + $id).on('click','span',function(){
+            $(this).hide();
+            $('.unhide').removeClass('uk-hidden');
+        });
+        var unhide = '<a id="unhide" class="uk-button uk-button-mini uk-button-primary unhide uk-hidden">SHOW ALL</a>';
+        $('#wordcloud').append(unhide);
+        $('#unhide').click(function(){
+            $('#'+$id+' span').show();
+            $(this).addClass('uk-hidden');
+        });
     }
 }
 
@@ -65,8 +72,14 @@ function wordCloudTemporary($id, $url) {
 				});
 				$('#' + $id).on('click','span',function(){
 					$(this).hide();
+                    $('.unhide').removeClass('uk-hidden');
 				});
-
+                var unhide = '<a id="unhide" class="uk-button uk-button-mini uk-button-primary unhide uk-hidden">SHOW ALL</a>';
+                $('#wordcloud').append(unhide);
+                $('#unhide').click(function(){
+                    $('#'+$id+' span').show();
+                    $(this).addClass('uk-hidden');
+                });
 			}
 		}
 	});

@@ -25,9 +25,15 @@ Highcharts.theme = {
 		}
 	},
 	xAxis: {
-		labels: {
-
-		},
+		labels:{
+            formatter: function(){
+                if (this.value.length > 10){
+                    return this.value.substr(0,10) + "...";
+                }else{
+                     return this.value;
+                }
+            }
+        },
 		title: {
 
 		}
@@ -49,7 +55,10 @@ Highcharts.theme = {
 		itemStyle: {
 			fontWeight: 'normal',
 			fontSize: '12px',
-			lineHeight: '14px'
+			lineHeight: '14px',
+			width:'60px',
+			textOverflow: 'ellipsis',
+			overflow: 'hidden'
 		}
 	},
 	labels: {

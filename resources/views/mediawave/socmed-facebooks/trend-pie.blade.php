@@ -8,6 +8,7 @@
             <div class="md-card-toolbar-heading-text">
                 <ul class="uk-subnav uk-subnav-pill" data-uk-switcher="{connect:'#trendwrap ul'}">
                     <li class="uk-active"><a>Daily Activity</a></li>
+                    <li><a>Fans Trend</a></li>
                 </ul>
             </div>
         </div>
@@ -16,6 +17,9 @@
             <ul class="uk-switcher">
                 <li>
                     <div id="posttrend" class="md-chart"></div>
+                </li>
+                <li>
+                    <div id="fanstrend" class="md-chart"></div>
                 </li>
             </ul>
         </div>

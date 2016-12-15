@@ -13,6 +13,8 @@
 
                 @include('mediawave.socmed-youtubes.trend')
 
+                @include('mediawave.socmed-youtubes.pie')
+
                 @include('mediawave.socmed-youtubes.bar')
 
                 @include('mediawave.socmed-youtubes.wordcloud-conversation')
@@ -44,14 +46,23 @@
         var endDate = '{!! $endDate !!}';
         var brands = '{!! $brands !!}';
         var search = '{!! $shownSearch !!}';
-        var influencers = ["top10Vid"];
+        var influencers = ["top10Vid", "top10Like", "top10Post"];
     </script>
     <script src="{!! asset('js/socmeds/post-trend.js') !!}"></script>
     <script src="{!! asset('js/socmeds/comment-trend.js') !!}"></script>
     <script src="{!! asset('js/socmeds/view-trend.js') !!}"></script>
+    <script src="{!! asset('js/socmeds/like-trend.js') !!}"></script>
+    <script src="{!! asset('js/socmeds/dislike-trend.js') !!}"></script>
+    <script src="{!! asset('js/socmeds/subscribe-trend.js') !!}"></script>
+
+    <script src="{!! asset('js/socmeds/post-pie.js') !!}"></script>
+    <script src="{!! asset('js/socmeds/view-pie.js') !!}"></script>
+    <script src="{!! asset('js/socmeds/comment-pie.js') !!}"></script>
+
     <script src="{!! asset('js/socmeds/rating-bar.js') !!}"></script>
     <script src="{!! asset('js/socmeds/count-bar.js') !!}"></script>
     <script src="{!! asset('js/socmeds/comment-bar.js') !!}"></script>
+
     <script src="{!! asset('js/socmeds/word-cloud.js') !!}"></script>
     <script src="{!! asset('js/socmeds/influencer.js') !!}"></script>
 	<script src="{!! asset('js/socmeds/convo-video.js') !!}"></script>

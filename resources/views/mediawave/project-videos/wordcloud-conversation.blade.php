@@ -21,7 +21,7 @@
                 <a class="btn waves-effect waves-light z-depth-0 green lighten-4" data-uk-tooltip title="Minimize" data-uk-toggle="{target:'#author'}"><i class="material-icons md-icon">fullscreen</i></a>
             </div>
             <div class="md-card-toolbar-heading-text">
-                <ul class="uk-subnav uk-subnav-pill" data-uk-switcher="{connect:'#authorwrap ul'}">
+                <ul class="uk-subnav uk-subnav-pill" data-uk-switcher="{connect:'#influencer ul'}">
                     <li class="uk-active"><a>TOP 10 RATE VIDEO</a></li>
                 </ul>
             </div>

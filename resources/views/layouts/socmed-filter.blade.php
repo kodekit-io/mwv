@@ -13,7 +13,7 @@
                     @foreach($keywords as $key => $keywords)
                     <li class="">
                         <input type="checkbox" name="keywords[]" value="{!! $key !!}" class="filled-in" id="{!! $key !!}" {!! $keywords['selected'] !!}  />
-                        <label for="{!! $key !!}">{!! $keywords['value'] !!}</label>
+                        <label for="{!! $key !!}" data-uk-tooltip title="{!! $keywords['value'] !!}">{!! $keywords['value'] !!}</label>
                     </li>
                    @endforeach
                 </ul>
@@ -21,6 +21,21 @@
             </div>
             <div class="uk-width-medium-1-1 uk-width-small-1-1">
                 <hr>
+                <ul class="uk-subnav left uk-margin-bottom-remove" style="padding-top:5px;">
+                    <li style="line-height:24px;">Sentiment: </li>
+                    <li>
+                        <input type="checkbox" name="pstv" value="1" class="filled-in" id="pstv" checked/>
+                        <label for="pstv">Positive</label>
+                    </li>
+                    <li>
+                        <input type="checkbox" name="ntrl" value="0" class="filled-in" id="ntrl" checked/>
+                        <label for="ntrl">Neutral</label>
+                    </li>
+                    <li>
+                        <input type="checkbox" name="ngtv" value="-1" class="filled-in" id="ngtv" checked/>
+                        <label for="ngtv">Negative</label>
+                    </li>
+                </ul>
                 <ul class="uk-subnav right">
                     <li>
                         <div class="input-field md-search">
