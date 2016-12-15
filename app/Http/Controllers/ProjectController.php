@@ -82,9 +82,9 @@ class ProjectController extends Controller
         $rpp = $request->input('length');
         $media = $request->input('source');
         $startDate = $request->input('start_date');
-        $startDate = Carbon::createFromFormat('d/m/y', $startDate)->format("Y-m-d");
+        $startDate = Carbon::createFromFormat('d/m/y', $startDate)->format("Y-m-d\TH:i:s\Z");
         $endDate = $request->input('end_date');
-        $endDate = Carbon::createFromFormat('d/m/y', $endDate)->format("Y-m-d");
+        $endDate = Carbon::createFromFormat('d/m/y', $endDate)->format("Y-m-d\TH:i:s\Z");
         $page = ($start/$rpp) + 1;
         $search = $request->input('search');
         $searchClause = ( $search['value'] != '' ? $search['value'] : '' );
@@ -125,8 +125,8 @@ class ProjectController extends Controller
             // var_dump($request->input());
             $startDate = $request->input('start_date');
             $endDate = $request->input('end_date');
-            $startDate = ( $startDate != '' ) ? Carbon::createFromFormat('d/m/y', $startDate)->format('Y-m-d') : null;
-            $endDate = ( $endDate != '' ) ? Carbon::createFromFormat('d/m/y', $endDate)->format('Y-m-d') : null;
+            $startDate = ( $startDate != '' ) ? Carbon::createFromFormat('d/m/y', $startDate)->format('Y-m-d\TH:i:s\Z') : null;
+            $endDate = ( $endDate != '' ) ? Carbon::createFromFormat('d/m/y', $endDate)->format('Y-m-d\TH:i:s\Z') : null;
             $brands = ( $request->has('keywords') ? implode(',', $request->input('keywords')) : '' );
         }
 
@@ -146,8 +146,8 @@ class ProjectController extends Controller
         $data['pageTitle'] = 'Online Media';
         $data['project'] = $chart->project;
         $data['keywords'] = $keywords;
-        $data['startDate'] = Carbon::createFromFormat('Y-m-d', $startDate)->format('d/m/y');
-        $data['endDate'] = Carbon::createFromFormat('Y-m-d', $endDate)->format('d/m/y');;
+        $data['startDate'] = Carbon::createFromFormat('Y-m-d\TH:i:s\Z', $startDate)->format('d/m/y');
+        $data['endDate'] = Carbon::createFromFormat('Y-m-d\TH:i:s\Z', $endDate)->format('d/m/y');;
         $data['project'] = $chart->project;
         $data['projectId'] = $projectId;
         return view('mediawave.project-news', $data);
@@ -162,8 +162,8 @@ class ProjectController extends Controller
             // var_dump($request->input());
             $startDate = $request->input('start_date');
             $endDate = $request->input('end_date');
-            $startDate = ( $startDate != '' ) ? Carbon::createFromFormat('d/m/y', $startDate)->format('Y-m-d') : null;
-            $endDate = ( $endDate != '' ) ? Carbon::createFromFormat('d/m/y', $endDate)->format('Y-m-d') : null;
+            $startDate = ( $startDate != '' ) ? Carbon::createFromFormat('d/m/y', $startDate)->format('Y-m-d\TH:i:s\Z') : null;
+            $endDate = ( $endDate != '' ) ? Carbon::createFromFormat('d/m/y', $endDate)->format('Y-m-d\TH:i:s\Z') : null;
             $brands = ( $request->has('keywords') ? implode(',', $request->input('keywords')) : '' );
         }
 
@@ -183,8 +183,8 @@ class ProjectController extends Controller
         $data['pageTitle'] = 'Forum';
         $data['project'] = $chart->project;
         $data['keywords'] = $keywords;
-        $data['startDate'] = Carbon::createFromFormat('Y-m-d', $startDate)->format('d/m/y');
-        $data['endDate'] = Carbon::createFromFormat('Y-m-d', $endDate)->format('d/m/y');;
+        $data['startDate'] = Carbon::createFromFormat('Y-m-d\TH:i:s\Z', $startDate)->format('d/m/y');
+        $data['endDate'] = Carbon::createFromFormat('Y-m-d\TH:i:s\Z', $endDate)->format('d/m/y');;
         $data['project'] = $chart->project;
         $data['projectId'] = $projectId;
         return view('mediawave.project-forum', $data);
@@ -199,8 +199,8 @@ class ProjectController extends Controller
             // var_dump($request->input());
             $startDate = $request->input('start_date');
             $endDate = $request->input('end_date');
-            $startDate = ( $startDate != '' ) ? Carbon::createFromFormat('d/m/y', $startDate)->format('Y-m-d') : null;
-            $endDate = ( $endDate != '' ) ? Carbon::createFromFormat('d/m/y', $endDate)->format('Y-m-d') : null;
+            $startDate = ( $startDate != '' ) ? Carbon::createFromFormat('d/m/y', $startDate)->format('Y-m-d\TH:i:s\Z') : null;
+            $endDate = ( $endDate != '' ) ? Carbon::createFromFormat('d/m/y', $endDate)->format('Y-m-d\TH:i:s\Z') : null;
             $brands = ( $request->has('keywords') ? implode(',', $request->input('keywords')) : '' );
         }
 
@@ -220,8 +220,8 @@ class ProjectController extends Controller
         $data['pageTitle'] = 'Video';
         $data['project'] = $chart->project;
         $data['keywords'] = $keywords;
-        $data['startDate'] = Carbon::createFromFormat('Y-m-d', $startDate)->format('d/m/y');
-        $data['endDate'] = Carbon::createFromFormat('Y-m-d', $endDate)->format('d/m/y');;
+        $data['startDate'] = Carbon::createFromFormat('Y-m-d\TH:i:s\Z', $startDate)->format('d/m/y');
+        $data['endDate'] = Carbon::createFromFormat('Y-m-d\TH:i:s\Z', $endDate)->format('d/m/y');;
         $data['project'] = $chart->project;
         $data['projectId'] = $projectId;
         return view('mediawave.project-video', $data);
@@ -236,8 +236,8 @@ class ProjectController extends Controller
             // var_dump($request->input());
             $startDate = $request->input('start_date');
             $endDate = $request->input('end_date');
-            $startDate = ( $startDate != '' ) ? Carbon::createFromFormat('d/m/y', $startDate)->format('Y-m-d') : null;
-            $endDate = ( $endDate != '' ) ? Carbon::createFromFormat('d/m/y', $endDate)->format('Y-m-d') : null;
+            $startDate = ( $startDate != '' ) ? Carbon::createFromFormat('d/m/y', $startDate)->format('Y-m-d\TH:i:s\Z') : null;
+            $endDate = ( $endDate != '' ) ? Carbon::createFromFormat('d/m/y', $endDate)->format('Y-m-d\TH:i:s\Z') : null;
             $brands = ( $request->has('keywords') ? implode(',', $request->input('keywords')) : '' );
         }
 
@@ -257,8 +257,8 @@ class ProjectController extends Controller
         $data['pageTitle'] = 'Blog';
         $data['project'] = $chart->project;
         $data['keywords'] = $keywords;
-        $data['startDate'] = Carbon::createFromFormat('Y-m-d', $startDate)->format('d/m/y');
-        $data['endDate'] = Carbon::createFromFormat('Y-m-d', $endDate)->format('d/m/y');;
+        $data['startDate'] = Carbon::createFromFormat('Y-m-d\TH:i:s\Z', $startDate)->format('d/m/y');
+        $data['endDate'] = Carbon::createFromFormat('Y-m-d\TH:i:s\Z', $endDate)->format('d/m/y');;
         $data['project'] = $chart->project;
         $data['projectId'] = $projectId;
         return view('mediawave.project-blog', $data);
@@ -274,8 +274,8 @@ class ProjectController extends Controller
             // var_dump($request->input());
             $startDate = $request->input('start_date');
             $endDate = $request->input('end_date');
-            $startDate = ( $startDate != '' ) ? Carbon::createFromFormat('d/m/y', $startDate)->format('Y-m-d') : null;
-            $endDate = ( $endDate != '' ) ? Carbon::createFromFormat('d/m/y', $endDate)->format('Y-m-d') : null;
+            $startDate = ( $startDate != '' ) ? Carbon::createFromFormat('d/m/y', $startDate)->format('Y-m-d\TH:i:s\Z') : null;
+            $endDate = ( $endDate != '' ) ? Carbon::createFromFormat('d/m/y', $endDate)->format('Y-m-d\TH:i:s\Z') : null;
             $brands = ( $request->has('keywords') ? implode(',', $request->input('keywords')) : '' );
         }
 
@@ -295,8 +295,8 @@ class ProjectController extends Controller
         $data['pageTitle'] = 'Instagram';
         $data['project'] = $chart->project;
         $data['keywords'] = $keywords;
-        $data['startDate'] = Carbon::createFromFormat('Y-m-d', $startDate)->format('d/m/y');
-        $data['endDate'] = Carbon::createFromFormat('Y-m-d', $endDate)->format('d/m/y');;
+        $data['startDate'] = Carbon::createFromFormat('Y-m-d\TH:i:s\Z', $startDate)->format('d/m/y');
+        $data['endDate'] = Carbon::createFromFormat('Y-m-d\TH:i:s\Z', $endDate)->format('d/m/y');;
         $data['project'] = $chart->project;
         $data['projectId'] = $projectId;
         return view('mediawave.project-ig', $data);
@@ -334,8 +334,8 @@ class ProjectController extends Controller
             // var_dump($request->input());
             $startDate = $request->input('start_date');
             $endDate = $request->input('end_date');
-            $startDate = ( $startDate != '' ) ? Carbon::createFromFormat('d/m/y', $startDate)->format('Y-m-d') : null;
-            $endDate = ( $endDate != '' ) ? Carbon::createFromFormat('d/m/y', $endDate)->format('Y-m-d') : null;
+            $startDate = ( $startDate != '' ) ? Carbon::createFromFormat('d/m/y', $startDate)->format('Y-m-d\TH:i:s\Z') : null;
+            $endDate = ( $endDate != '' ) ? Carbon::createFromFormat('d/m/y', $endDate)->format('Y-m-d\TH:i:s\Z') : null;
             $brands = ( $request->has('keywords') ? implode(',', $request->input('keywords')) : '' );
         }
 
@@ -355,8 +355,8 @@ class ProjectController extends Controller
         $data['pageTitle'] = 'Facebook';
         $data['project'] = $chart->project;
         $data['keywords'] = $keywords;
-        $data['startDate'] = Carbon::createFromFormat('Y-m-d', $startDate)->format('d/m/y');
-        $data['endDate'] = Carbon::createFromFormat('Y-m-d', $endDate)->format('d/m/y');;
+        $data['startDate'] = Carbon::createFromFormat('Y-m-d\TH:i:s\Z', $startDate)->format('d/m/y');
+        $data['endDate'] = Carbon::createFromFormat('Y-m-d\TH:i:s\Z', $endDate)->format('d/m/y');;
         $data['project'] = $chart->project;
         $data['projectId'] = $projectId;
         return view('mediawave.socmed-facebook', $data);
@@ -371,8 +371,8 @@ class ProjectController extends Controller
             // var_dump($request->input());
             $startDate = $request->input('start_date');
             $endDate = $request->input('end_date');
-            $startDate = ( $startDate != '' ) ? Carbon::createFromFormat('d/m/y', $startDate)->format('Y-m-d') : null;
-            $endDate = ( $endDate != '' ) ? Carbon::createFromFormat('d/m/y', $endDate)->format('Y-m-d') : null;
+            $startDate = ( $startDate != '' ) ? Carbon::createFromFormat('d/m/y', $startDate)->format('Y-m-d\TH:i:s\Z') : null;
+            $endDate = ( $endDate != '' ) ? Carbon::createFromFormat('d/m/y', $endDate)->format('Y-m-d\TH:i:s\Z') : null;
             $brands = ( $request->has('keywords') ? implode(',', $request->input('keywords')) : '' );
         }
 
@@ -392,8 +392,8 @@ class ProjectController extends Controller
         $data['pageTitle'] = 'Youtube';
         $data['project'] = $chart->project;
         $data['keywords'] = $keywords;
-        $data['startDate'] = Carbon::createFromFormat('Y-m-d', $startDate)->format('d/m/y');
-        $data['endDate'] = Carbon::createFromFormat('Y-m-d', $endDate)->format('d/m/y');;
+        $data['startDate'] = Carbon::createFromFormat('Y-m-d\TH:i:s\Z', $startDate)->format('d/m/y');
+        $data['endDate'] = Carbon::createFromFormat('Y-m-d\TH:i:s\Z', $endDate)->format('d/m/y');;
         $data['project'] = $chart->project;
         $data['projectId'] = $projectId;
         return view('mediawave.socmed-youtube', $data);
@@ -408,8 +408,8 @@ class ProjectController extends Controller
             // var_dump($request->input());
             $startDate = $request->input('start_date');
             $endDate = $request->input('end_date');
-            $startDate = ( $startDate != '' ) ? Carbon::createFromFormat('d/m/y', $startDate)->format('Y-m-d') : null;
-            $endDate = ( $endDate != '' ) ? Carbon::createFromFormat('d/m/y', $endDate)->format('Y-m-d') : null;
+            $startDate = ( $startDate != '' ) ? Carbon::createFromFormat('d/m/y', $startDate)->format('Y-m-d\TH:i:s\Z') : null;
+            $endDate = ( $endDate != '' ) ? Carbon::createFromFormat('d/m/y', $endDate)->format('Y-m-d\TH:i:s\Z') : null;
             $brands = ( $request->has('keywords') ? implode(',', $request->input('keywords')) : '' );
         }
 
@@ -429,8 +429,8 @@ class ProjectController extends Controller
         $data['pageTitle'] = 'Instagram';
         $data['project'] = $chart->project;
         $data['keywords'] = $keywords;
-        $data['startDate'] = Carbon::createFromFormat('Y-m-d', $startDate)->format('d/m/y');
-        $data['endDate'] = Carbon::createFromFormat('Y-m-d', $endDate)->format('d/m/y');;
+        $data['startDate'] = Carbon::createFromFormat('Y-m-d\TH:i:s\Z', $startDate)->format('d/m/y');
+        $data['endDate'] = Carbon::createFromFormat('Y-m-d\TH:i:s\Z', $endDate)->format('d/m/y');;
         $data['project'] = $chart->project;
         $data['projectId'] = $projectId;
         return view('mediawave.socmed-instagram', $data);

@@ -22,9 +22,9 @@ class ReportService
         $apiMode = config('services.mediawave.api_mode');
         if ($apiMode == 'PRODUCTION') {
             $startDate = $inputs['start_date'];
-            $startDate = Carbon::createFromFormat('d/m/y', $startDate)->format('Y-m-d');
+            $startDate = Carbon::createFromFormat('d/m/y', $startDate)->format('Y-m-d\TH:i:s\Z');
             $endDate = $inputs['end_date'];
-            $endDate = Carbon::createFromFormat('d/m/y', $endDate)->format('Y-m-d');
+            $endDate = Carbon::createFromFormat('d/m/y', $endDate)->format('Y-m-d\TH:i:s\Z');
             $media = $inputs['media'];
             if ($media == '') {
                 $media = '1,2,3,4,5,6';
