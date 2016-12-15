@@ -29,7 +29,7 @@
 					</div>
 					<div class="md-card-content center-align">
 						<h6 class="appusername">{!! $userProfile->userName !!}</h6>
-						<div class="uk-text-small gravmail">{!! $userProfile->email !!}</div>
+						<div class="uk-text-small gravmail">@if(isset($userProfile->email)){!! $userProfile->email !!}@endif</div>
 					</div>
 				</div>
 			</div>
@@ -57,7 +57,7 @@
 									</div>
 									<div class="row">
 										<div class="input-field col s12">
-											<input disabled value="{!! $userProfile->email !!}" name="email" id="email" type="email">
+											<input disabled value="@if(isset($userProfile->email)){!! $userProfile->email !!}@endif" name="email" id="email" type="email">
 											<label for="email">Email</label>
 										</div>
 									</div>
