@@ -32,21 +32,7 @@
         </div>
         <div id="conv" class="md-card-content conv-wrap">
 			<?php //NEWS TABLE ?>
-			<table id="table_news" class="striped bordered highlight responsive-table">
-				<thead>
-				<tr>
-					<th>Date</th>
-					<th>Media</th>
-					<th>Title</th>
-					<th>Summary</th>
-					<th>Comments</th>
-					<th>Reach</th>
-					<th>Sentiment</th>
-					<th>Media Url</th>
-					<th>Url</th>
-				</tr>
-				</thead>
-			</table>
+			<table id="table_news" class="striped bordered highlight responsive-table"></table>
         </div>
     </div>
 

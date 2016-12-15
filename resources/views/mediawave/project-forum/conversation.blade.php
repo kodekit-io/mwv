@@ -33,19 +33,7 @@
         </div>
         <div id="convwrap" class="md-card-content conv-wrap">
 			<?php //FORUM TABLE ?>
-			<table id="table_forum" class="striped bordered highlight responsive-table">
-				<thead>
-				<tr>
-					<th>Date</th>
-					<th>Forum</th>
-					<th>Thread Starter</th>
-					<th>Thread Title</th>
-					<th>Replies</th>
-					<th>Sentiment</th>
-					<th>Url</th>
-				</tr>
-				</thead>
-			</table>
+			<table id="table_forum" class="striped bordered highlight responsive-table"></table>
         </div>
     </div>
 

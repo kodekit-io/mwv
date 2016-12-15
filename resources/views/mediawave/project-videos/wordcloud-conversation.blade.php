@@ -47,20 +47,7 @@
         </div>
         <div id="convwrap" class="md-card-content conv-wrap">
 			<?php //VIDEO TABLE ?>
-			<table id="table_video" class="striped bordered highlight responsive-table">
-				<thead>
-				<tr>
-					<th>Date</th>
-					<th>Author</th>
-					<th>Post</th>
-					<th>Likes</th>
-					<th>Comments</th>
-					<th>View</th>
-					<th>Author Url</th>
-					<th>Post Url</th>
-				</tr>
-				</thead>
-			</table>
+			<table id="table_video" class="striped bordered highlight responsive-table"></table>
         </div>
     </div>
 
