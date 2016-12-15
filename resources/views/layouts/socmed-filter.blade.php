@@ -11,7 +11,7 @@
                 @if (count($keywords) > 0)
                 <ul class="uk-subnav">
                     @foreach($keywords as $key => $keywords)
-                    <li class="">
+                    <li class="md-keyword">
                         <input type="checkbox" name="keywords[]" value="{!! $key !!}" class="filled-in" id="{!! $key !!}" {!! $keywords['selected'] !!}  />
                         <label for="{!! $key !!}" data-uk-tooltip title="{!! $keywords['value'] !!}">{!! $keywords['value'] !!}</label>
                     </li>
