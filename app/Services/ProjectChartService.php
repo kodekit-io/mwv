@@ -38,7 +38,7 @@ class ProjectChartService
     {
         $params = $this->generateParams();
 
-        return $this->getChart('project/uniqueuser', $params);
+        return $this->getChart('project/1/uniqueuser', $params);
     }
 
     public function shareOfMediaBar()
