@@ -17,4 +17,17 @@ trait KeywordSelected {
         return $select;
     }
 
+    protected function isSentimentSelected($sentiment, $request)
+    {
+        $select = '';
+        if ($request->has('sentiments')) {
+            if (in_array($sentiment, $request->input('sentiments'))) {
+                $select = 'checked';
+            }
+        } else {
+            $select = 'checked';
+        }
+        return $select;
+    }
+
 }

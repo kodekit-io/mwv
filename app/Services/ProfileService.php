@@ -30,13 +30,14 @@ class ProfileService
         return $profile;
     }
 
-    public function getMediaAccounts()
+    public function getMediaAccounts($idMedia = 1)
     {
         $params = [
-            'id_login'  => \Auth::user()->id
+            'id_login'  => \Auth::user()->id,
+            'id_Media' => $idMedia
         ];
 
-        $result = $this->apiService->postDummy('project/sosmedpageinfo', $params);
+        $result = $this->apiService->postDummy('sosmedpageinfo', $params);
         return $result->projectInfo;
     }
 

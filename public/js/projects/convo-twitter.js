@@ -10,6 +10,7 @@ $(document).ready( function () {
                 "projectId": projectId,
                 "mediaId": mediaId,
                 "keywords": brands,
+                "sentiment": sentiments,
                 "startDate": startDate,
                 "endDate": endDate,
                 "search": search
