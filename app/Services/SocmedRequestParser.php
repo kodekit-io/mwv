@@ -7,7 +7,7 @@ use Illuminate\Http\Request;
 
 trait SocmedRequestParser
 {
-    protected function parseRequest(Request $request)
+    protected function parseRequest(Request $request, $idMedia = 1)
     {
         $brands = '';
         $last7DaysRange = $this->projectService->getLastSevenDaysRange();
@@ -23,7 +23,7 @@ trait SocmedRequestParser
             $shownSearch = $request->has('search') ? $request->input('search') : '';
         }
 
-         $socmedAccounts = $this->profileService->getMediaAccounts();
+        $socmedAccounts = $this->profileService->getMediaAccounts($idMedia);
 
         $keywords = [];
         if (count($socmedAccounts->mediaAkunList) > 0) {

@@ -39,7 +39,7 @@ class SocialMediaController extends Controller
 
     public function twitter(Request $request)
     {
-        $data = $this->parseRequest($request);
+        $data = $this->parseRequest($request, 2);
         $data['pageTitle'] = 'Twitter';
 
         return view('mediawave.socmed-twitter', $data);
@@ -47,7 +47,7 @@ class SocialMediaController extends Controller
 
     public function facebook(Request $request)
     {
-        $data = $this->parseRequest($request);
+        $data = $this->parseRequest($request, 1);
         $data['pageTitle'] = 'Facebook';
 
         return view('mediawave.socmed-facebook', $data);
@@ -55,7 +55,7 @@ class SocialMediaController extends Controller
 
     public function youtube(Request $request)
     {
-        $data = $this->parseRequest($request);
+        $data = $this->parseRequest($request, 5);
         $data['pageTitle'] = 'Youtube';
 
         return view('mediawave.socmed-youtube', $data);
@@ -63,7 +63,7 @@ class SocialMediaController extends Controller
 
     public function instagram(Request $request)
     {
-        $data = $this->parseRequest($request);
+        $data = $this->parseRequest($request, 7);
         $data['pageTitle'] = 'Instagram';
 
         return view('mediawave.socmed-instagram', $data);

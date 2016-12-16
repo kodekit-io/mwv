@@ -4,7 +4,7 @@
 
 <nav class="uk-navbar md-subnav gradient-fluenza darken">
     <div class="md-head-container white-text">
-        <div class="left">Hi, <span class="appusername">{!! $userProfile->userName !!}</span>!</div>
+        <div class="left">Hi, <span class="appusername">@if(isset($userProfile->userName)){!! $userProfile->userName !!}@endif</span>!</div>
         <div class="widget-weather right">
             <span class="today"><i class="uk-icon uk-icon-calendar"></i> <?php echo(date("j F Y")); ?> </span>
             <a class="js-geolocation" title="Your locations"><i class="uk-icon uk-icon-map-marker"></i></a>
@@ -22,13 +22,13 @@
 						<div class="profile valign-wrapper">
 							<div class="valign uk-width-1-1 center-align">
 								<div class="gravatar uk-border-circle">
-									<img class="thumbnailUrl uk-border-circle" src="@if($userProfile->picture != '') http://www.megacynics.com/img/avatar_sample_01.jpg @endif" />
+									<img class="thumbnailUrl uk-border-circle" src="@if(isset($userProfile->picture) && $userProfile->picture != '') http://www.megacynics.com/img/avatar_sample_01.jpg @endif" />
 								</div>
 							</div>
 						</div>
 					</div>
 					<div class="md-card-content center-align">
-						<h6 class="appusername">{!! $userProfile->userName !!}</h6>
+						<h6 class="appusername">@if(isset($userProfile->userName)){!! $userProfile->userName !!}@endif</h6>
 						<div class="uk-text-small gravmail">@if(isset($userProfile->email)){!! $userProfile->email !!}@endif</div>
 					</div>
 				</div>
@@ -51,7 +51,7 @@
 									{!! csrf_field() !!}
 									<div class="row">
 										<div class="input-field col s12">
-											<input disabled value="{!! $userProfile->userName !!}" name="name" id="name" type="text">
+											<input disabled value="@if(isset($userProfile->userName)){!! $userProfile->userName !!}@endif" name="name" id="name" type="text">
 											<label for="name">Name</label>
 										</div>
 									</div>
@@ -63,7 +63,7 @@
 									</div>
 									<div class="row">
 										<div class="input-field col s12">
-											<input disabled value="{!! $userProfile->company !!}" name="company" id="company" type="text">
+											<input disabled value="@if(isset($userProfile->company)){!! $userProfile->company !!}@endif" name="company" id="company" type="text">
 											<label for="company">Company</label>
 										</div>
 									</div>

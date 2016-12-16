@@ -10,6 +10,7 @@ trait ProjectRequestParser
     function parseRequest(Request $request, $projectId)
     {
         $brands = '';
+        $sentiments = '';
         $last7DaysRange = $this->chartService->getLastSevenDaysRange();
         $startDate = $last7DaysRange['startDate'];
         $endDate = $last7DaysRange['endDate'];
@@ -20,6 +21,7 @@ trait ProjectRequestParser
             $startDate = ( $startDate != '' ) ? Carbon::createFromFormat('d/m/y', $startDate)->format('Y-m-d\TH:i:s\Z') : null;
             $endDate = ( $endDate != '' ) ? Carbon::createFromFormat('d/m/y', $endDate)->format('Y-m-d\TH:i:s\Z') : null;
             $brands = ( $request->has('keywords') ? implode(',', $request->input('keywords')) : '' );
+            $sentiments = ( $request->has('sentiments') ? implode(',', $request->input('sentiments')) : '' );
             $shownSearch = $request->has('search') ? $request->input('search') : '';
         }
 
@@ -38,10 +40,32 @@ trait ProjectRequestParser
             }
         }
 
+        $sentimentCheckboxes = [];
+        $sentimentArrays = [
+            ['1', 'pstv', 'Positive'],
+            ['0', 'ntrl', 'Neutral'],
+            ['-1', 'ngtv', 'Negative']
+        ];
+        foreach ($sentimentArrays as $sentiment) {
+            $sentimentCheckboxes[$sentiment[1]]['value'] = $sentiment[0];
+            $sentimentCheckboxes[$sentiment[1]]['checked'] = $this->isSentimentSelected($sentiment[0], $request);
+            $sentimentCheckboxes[$sentiment[1]]['showName'] = $sentiment[2];
+        }
+
+        if ($request->has('keywords')) {
+            if (in_array($keywordId, $request->input('keywords'))) {
+                $select = 'checked';
+            }
+        } else {
+            $select = 'checked';
+        }
+
         $data['shownSearch'] = $shownSearch;
         $data['brands'] = $brands;
         $data['project'] = $profiles->project;
         $data['keywords'] = $keywords;
+        $data['sentimentCheckboxes'] = $sentimentCheckboxes;
+        $data['sentiments'] = $sentiments;
         $data['startDate'] = $startDate;
         $data['endDate'] = $endDate;
         $data['shownStartDate'] = Carbon::createFromFormat('Y-m-d\TH:i:s\Z', $startDate)->format('d/m/y');

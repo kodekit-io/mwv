@@ -3,6 +3,7 @@ $.ajax({
     data : {
         projectId: projectId,
         keywords: brands,
+        sentiment: sentiments,
         startDate: startDate,
         endDate: endDate,
         search: search
