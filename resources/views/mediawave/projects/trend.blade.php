@@ -27,13 +27,13 @@
         <div id="trendwrap" class="md-card-content">
             <ul class="uk-switcher">
                 <li>
-                    <div id="vid" class="md-chart">Vid TREND</div>
+                    <div id="vid" class="md-chart"></div>
                 </li>
                 <li>
-                    <div id="comment" class="md-chart">Comment TREND</div>
+                    <div id="comment" class="md-chart"></div>
                 </li>
                 <li>
-                    <div id="view" class="md-chart">View TREND</div>
+                    <div id="view" class="md-chart"></div>
                 </li>
             </ul>
         </div>

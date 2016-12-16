@@ -46,13 +46,13 @@
                     <div id="buzztrend" class="md-chart"></div>
                 </li>
                 <li>
-                    <div id="posttrend" class="md-chart">Line Chart</div>
+                    <div id="posttrend" class="md-chart"></div>
                 </li>
                 <li>
-                    <div id="reachtrend" class="md-chart">Line Chart</div>
+                    <div id="reachtrend" class="md-chart"></div>
                 </li>
                 <li>
-                    <div id="interacttrend" class="md-chart">Line Chart</div>
+                    <div id="interacttrend" class="md-chart"></div>
                 </li>
             </ul>
         </div>

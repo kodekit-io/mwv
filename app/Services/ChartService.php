@@ -184,10 +184,10 @@ class ChartService
         $arrDays = [];
 //        $now = Carbon::today();
 //        $loopDay = $now->copy()->subDays(7);
-        $loopDay = Carbon::createFromFormat('Y-m-d', $startDate);
-        $now = Carbon::createFromFormat('Y-m-d', $endDate);
+        $loopDay = Carbon::createFromFormat('Y-m-d\TH:i:s\Z', $startDate);
+        $now = Carbon::createFromFormat('Y-m-d\TH:i:s\Z', $endDate);
         for ($loopDay; $loopDay->lte($now); $loopDay->addDay()) {
-            $arrDays[] = $loopDay->format('Y-m-d');
+            $arrDays[] = $loopDay->format('Y-m-d\TH:i:s\Z');
         }
         return $arrDays;
     }

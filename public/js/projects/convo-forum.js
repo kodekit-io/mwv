@@ -10,8 +10,8 @@ $('#table_forum').DataTable( {
             "search": search
         }
     },
+
     "columns": [
-        //{ "data": "Date" },
         {
             "data": null,
             "title": "Date",
@@ -26,50 +26,66 @@ $('#table_forum').DataTable( {
                 return localtime;
             }
         },
-        { "data": "Forum" },
-        { "data": "Thread Starter" },
-        //{ "data": "Thread Title" },
+        { "data": "Media", "title": "Forum" },
         {
-            "data": null,
-            "render": function ( data ) {
-                var post = data["Thread Title"];
+            "data": "Title",
+            "title": "Title",
+            /*"render": function ( data ) {
+                var post = data["Title"];
                 var postrim = post.substring(0,100) + "...";
-                var plink = data["Url"];
+                var plink = data["url"];
                 return '<a href="'+plink+'" target="_blank" data-uk-tooltip title="'+post+'" class="uk-link">'+postrim+'</a>';
-            }
+            }*/
         },
-        { "data": "Replies" },
-        //{ "data": "Sentiment" },
+        { "data": "Summary", "title": "Summary" },
+        { "data": "Reach", "title": "Reach" },
+        { "data": "Comments", "title": "Comments" },
         {
-            "data": null,
-            "render": function ( data ) {
-                var sentiment = data["Sentiment"];
-                //var c = "";
-				switch (sentiment) {
+            "data": "sentiment",
+            "title": "",
+            "orderable": false,
+            "createdCell": function (td, cellData, rowData, row, col) {
+                switch (cellData) {
                     case 'positive':
-					case 'Positif':
-					case 'positif':
-                        c = 'teal white-text uk-button uk-button-mini';
+                    case 'Positif':
+                    case 'positif':
+                        $(td).css('color', 'green');
                         break;
                     case 'neutral':
-					case 'Netral':
-					case 'netral':
-                        c = 'blue-grey lighten-3 white-text uk-button uk-button-mini';
+                    case 'Netral':
+                    case 'netral':
+                        $(td).css('color', 'grey');
                         break;
                     case 'negative':
-					case 'Negatif':
-					case 'negatif':
-                        c = 'red white-text uk-button uk-button-mini';
+                    case 'Negatif':
+                    case 'negatif':
+                        $(td).css('color', 'red');
                         break;
                 }
-                return '<span class="'+c+'">'+sentiment+'</span>';
             }
         },
-        { "data": "Url" }
+        { "data": "url", "visible": false }
     ],
-    "columnDefs": [{
-        "visible": false,
-        "targets": [6]
-    }],
-    "order": [[ 0, "desc" ]]
+    "order": [[ 0, "desc" ]],
+    "initComplete": function () {
+        this.api().columns().every( function () {
+            var column = this;
+            if(column[0][0] == 6) {
+                var select = $('<select class="browser-default uk-width-1-1 select-sentiment"><option value="">All Sentiment</option></select>')
+                    .appendTo( $(column.header()).empty() )
+                    .on( 'change', function () {
+                        var val = $.fn.dataTable.util.escapeRegex(
+                            $(this).val()
+                        );
+                        column
+                            .search( val ? '^'+val+'$' : '', true, false )
+                            .draw();
+                    } );
+
+                column.data().unique().sort().each( function ( d, j ) {
+                    select.append( '<option value="'+d+'">'+d+'</option>' )
+                });
+            }
+        });
+    },
 });
