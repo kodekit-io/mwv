@@ -9,7 +9,7 @@
             <h2 class="md-card-toolbar-heading-text">SENTIMENT</h2>
         </div>
         <div id="sentiment" class="md-card-content">
-            <div id="sentimentbar" class="md-chart">Bar Chart</div>
+            <div id="sentimentbar" class="md-chart"></div>
         </div>
     </div>
 </li>
@@ -24,7 +24,7 @@
             <h2 class="md-card-toolbar-heading-text">INTERACTION RATE</h2>
         </div>
         <div id="ir" class="md-card-content">
-            <div id="interactionbar" class="md-chart">Bar Chart</div>
+            <div id="interactionbar" class="md-chart"></div>
         </div>
     </div>
 </li>
@@ -39,7 +39,7 @@
             <h2 class="md-card-toolbar-heading-text">SHARE OF MEDIA</h2>
         </div>
         <div id="mediashare" class="md-card-content">
-            <div id="shareofmediabar" class="md-chart">Bar Chart</div>
+            <div id="shareofmediabar" class="md-chart"></div>
         </div>
     </div>
 </li>

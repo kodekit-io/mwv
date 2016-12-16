@@ -150,6 +150,8 @@
             $("a.switchtopic")[0].click();
         });
 
+        var wthumb = $(".ig-img").width();
+        $(".ig-img").height(wthumb);
 
     }); // end of document ready
 })(jQuery);

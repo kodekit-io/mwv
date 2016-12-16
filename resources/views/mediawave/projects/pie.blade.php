@@ -9,7 +9,7 @@
             <h2 class="md-card-toolbar-heading-text">BUZZ</h2>
         </div>
         <div id="buzz" class="md-card-content">
-            <div id="buzzpie" class="md-chart">Pie Chart</div>
+            <div id="buzzpie" class="md-chart"></div>
         </div>
     </div>
 </li>
@@ -24,7 +24,7 @@
             <h2 class="md-card-toolbar-heading-text">POST</h2>
         </div>
         <div id="post" class="md-card-content">
-            <div id="postpie" class="md-chart">Pie Chart</div>
+            <div id="postpie" class="md-chart"></div>
         </div>
     </div>
 </li>
@@ -39,7 +39,7 @@
             <h2 class="md-card-toolbar-heading-text">INTERACTIONS</h2>
         </div>
         <div id="interaction" class="md-card-content">
-            <div id="interactionpie" class="md-chart">Pie Chart</div>
+            <div id="interactionpie" class="md-chart"></div>
         </div>
     </div>
 </li>
@@ -54,7 +54,7 @@
             <h2 class="md-card-toolbar-heading-text">UNIQUE USERS</h2>
         </div>
         <div id="unique" class="md-card-content">
-            <div id="authorpie" class="md-chart">Pie Chart</div>
+            <div id="authorpie" class="md-chart"></div>
         </div>
     </div>
 </li>
