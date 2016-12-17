@@ -30,7 +30,7 @@ Highcharts.theme = {
                 if (this.value.length > 10){
                     return this.value.substr(0,10) + "...";
                 }else{
-                     return this.value;
+					return this.value;
                 }
             }
         },
@@ -39,9 +39,9 @@ Highcharts.theme = {
 		}
 	},
 	yAxis: {
-		labels: {
+		labels:{
 
-		},
+        },
 		title: {
 
 		}
@@ -66,7 +66,7 @@ Highcharts.theme = {
 			if (this.value.length > 10){
 				return this.value.substr(0,10) + "...";
 			}else{
-				 return this.value;
+				return this.value;
 			}
 		}
 	}

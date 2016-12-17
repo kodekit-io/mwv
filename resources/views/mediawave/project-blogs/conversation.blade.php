@@ -7,11 +7,11 @@
             </div>
             <div class="md-card-toolbar-heading-text">
                 <ul class="uk-subnav uk-subnav-pill" data-uk-switcher="{connect:'#influencer ul'}">
-                    <li class="uk-active"><a>TOP 10 BLOG</a></li>
+                    <li class="uk-active"><a>TOP BLOG</a></li>
                 </ul>
             </div>
         </div>
-        <div id="authorwrap" class="md-card-content conv-wrap">
+        <div id="influencer" class="md-card-content conv-wrap">
             <?php //INFLUENCER/AUTHOR TABLE ?>
             <ul class="uk-switcher">
                 <li>

@@ -22,15 +22,15 @@
             </div>
             <div class="md-card-toolbar-heading-text">
                 <ul class="uk-subnav uk-subnav-pill" data-uk-switcher="{connect:'#influencer ul'}">
-                    <li class="uk-active"><a>TOP 10 RATE VIDEO</a></li>
+                    <li class="uk-active"><a>TOP LIKE VIDEO</a></li>
                 </ul>
             </div>
         </div>
-        <div id="authorwrap" class="md-card-content conv-wrap">
+        <div id="influencer" class="md-card-content conv-wrap">
             <?php //INFLUENCER/AUTHOR TABLE ?>
             <ul class="uk-switcher">
                 <li>
-                    <table id="top10Vid" class="striped bordered highlight responsive-table"></table>
+                    <table id="topLikeVid" class="striped bordered highlight responsive-table"></table>
                 </li>
             </ul>
         </div>

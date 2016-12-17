@@ -39,7 +39,7 @@
                 </div>
             </div>
         </div>
-        <div id="authorwrap" class="md-card-content conv-wrap">
+        <div id="influencer" class="md-card-content conv-wrap">
             <?php //INFLUENCER/AUTHOR TABLE ?>
             <ul class="uk-switcher">
                 <li>

@@ -127,8 +127,8 @@ Route::get( '/apiclient', function() {
             'auth_token'    => $authToken,
             'widgetID'      => '1,2,3,4',
             'pid'           => '1715362982016',
-            'StartDate'     => '2016-07-01',
-            'EndDate'       => '2016-07-30',
+            'StartDate'     => '2016-07-01T00:00:00Z',
+            'EndDate'       => '2016-07-30T00:00:00Z',
             'sentiment'     => '1,0,-1'
         ]
     ]);
