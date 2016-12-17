@@ -6,6 +6,7 @@ $('#table_news').DataTable( {
             "projectId": projectId,
             "keywords": brands,
             "startDate": startDate,
+            "sentiment": sentiments,
             "endDate": endDate,
             "search": search
         }
