@@ -1,12 +1,6 @@
 $.ajax({
     url : ajaxUrl + '/project/chart-data/like-pie/',
-    data : {
-        projectId: projectId,
-        keywords: brands,
-        startDate: startDate,
-        endDate: endDate,
-        search: search
-    },
+    data : data,
     beforeSend : function(xhr) {
         $('#likepie').block({
             message: '<img src="' + ajaxUrl + '/mediawave/img/spinner.gif">',

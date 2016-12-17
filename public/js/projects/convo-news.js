@@ -2,14 +2,7 @@ $('#table_news').DataTable( {
     "ajax": {
         "url": ajaxUrl + '/project/chart-data/convo-news',
         //"url": ajaxUrl + "/mediawave/jsontest/convo-news.json",
-        "data" : {
-            "projectId": projectId,
-            "keywords": brands,
-            "startDate": startDate,
-            "sentiment": sentiments,
-            "endDate": endDate,
-            "search": search
-        }
+        "data" : data
     },
 
     "columns": [

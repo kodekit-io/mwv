@@ -1,13 +1,6 @@
 $.ajax({
     url : ajaxUrl + '/project/chart-data/buzz-trend/' + mediaId,
-    data : {
-        projectId: projectId,
-        keywords: brands,
-        sentiment: sentiments,
-        startDate: startDate,
-        endDate: endDate,
-        search: search
-    },
+    data : data,
     beforeSend : function(xhr) {
         $('#buzztrend').block({
             message: '<img src="' + ajaxUrl + '/mediawave/img/spinner.gif">',

@@ -216,7 +216,7 @@ class ProjectChartService
         $params = $this->generateParams($projectId, $keywords, $startDate, $endDate, $search);
         $url = 'project/'. $type .'/'. $mediaId .'/'. $action;
 
-        Log::warning('url ==> ' . $url . ', ' . $action . '==>' . json_encode($params));
+        // Log::warning('url ==> ' . $url . ', ' . $action . '==>' . json_encode($params));
 
         return $this->getChart($url, $params);
     }

@@ -34,13 +34,7 @@ function wordCloudTemporary($id, $url) {
 	$.ajax({
 		//url : ajaxUrl + '/project/chart-data/comment-pie/' + mediaId,
 		url : $url,
-        data : {
-            projectId: projectId,
-            keywords: brands,
-            startDate: startDate,
-            endDate: endDate,
-            search: search
-        },
+        data : data,
 		beforeSend : function(xhr) {
 			$('#' + $id).block({
 				message: '<img src="' + ajaxUrl + '/mediawave/img/spinner.gif">',

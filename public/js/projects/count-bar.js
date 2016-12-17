@@ -1,12 +1,6 @@
 $.ajax({
     url : ajaxUrl + '/project/chart-data/count-bar/',
-    data : {
-        projectId: projectId,
-        keywords: brands,
-        startDate: startDate,
-        endDate: endDate,
-        search: search
-    },
+    data : data,
     beforeSend : function(xhr) {
         $('#countbar').block({
             message: '<img src="' + ajaxUrl + '/mediawave/img/spinner.gif">',
