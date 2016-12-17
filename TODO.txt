@@ -21,3 +21,7 @@
     + Interaction trend become Love trend ==> Status: UI Done (waiting for api)
     + Pie chart becoming:  Post, Love, Comment, View ==> Status: UI Done (waiting for api)
     + Influencer: Top Comment, Top Love, Top View ==> Status: UI Done (waiting for api)
+
+ERROR
+viewtrend (project page - video)
+potensialreachtrend (project page - instagram)

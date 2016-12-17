@@ -48,6 +48,7 @@
         var startDate = '{!! $startDate !!}';
         var endDate = '{!! $endDate !!}';
         var brands = '{!! $brands !!}';
+        //var sentiments = '{!! $sentiments !!}';
         var search = '{!! $shownSearch !!}';
         var influencers = ["top10ByReachTW", "top10ByNumberTW", "top10ByImpactTW"];
     </script>

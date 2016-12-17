@@ -106,16 +106,15 @@ function showEquityChart($id, $data) {
                 text: 'Sims Score'
             },
             labels: {
-                format: '{value}'
+
             },
-            //min: 0,
-            tickInterval: 0.1,
+            tickInterval: 0.5,
             lineWidth: 1,
         },
         tooltip: {
             useHTML: true,
             headerFormat: '<ul class="uk-list uk-margin-remove" style="width:200px;">',
-            pointFormat: '<li><h6 class="white-text uk-margin-remove">{point.name}</h6></li>' +
+            pointFormat: '<li><h6 class="white-text uk-margin-remove truncate">{point.name}</h6></li>' +
             '<li>Net Sentiment: <div class="right">{point.x}</div></li>' +
             '<li>Sims Score: <div class="right">{point.y}</div></li>' +
             '<li>Unique User: <div class="right">{point.z}</div></li>' +
@@ -129,7 +128,7 @@ function showEquityChart($id, $data) {
         plotOptions: {
             series: {
                 dataLabels: {
-                    enabled: true,
+                    enabled: false,
                     format: '{point.name}',
                     style: {
                         fontWeight: 'normal',

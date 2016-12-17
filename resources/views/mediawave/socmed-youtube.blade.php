@@ -45,6 +45,7 @@
         var startDate = '{!! $startDate !!}';
         var endDate = '{!! $endDate !!}';
         var brands = '{!! $brands !!}';
+        //var sentiments = '{!! $sentiments !!}';
         var search = '{!! $shownSearch !!}';
         var influencers = ["top10Vid", "top10Like", "top10Post"];
     </script>
