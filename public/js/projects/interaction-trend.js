@@ -1,12 +1,6 @@
 $.ajax({
     url : ajaxUrl + '/project/chart-data/interaction-trend/' + mediaId,
-    data : {
-        projectId: projectId,
-        keywords: brands,
-        startDate: startDate,
-        endDate: endDate,
-        search: search
-    },
+    data : data,
     beforeSend : function(xhr) {
         $('#interacttrend').block({
             message: '<img src="' + ajaxUrl + '/mediawave/img/spinner.gif">',

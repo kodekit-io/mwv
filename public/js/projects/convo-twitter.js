@@ -6,15 +6,7 @@ $(document).ready( function () {
         //"info": false,
         "ajax": {
             "url": ajaxUrl + '/project/chart-data/convo-twitter',
-            "data" : {
-                "projectId": projectId,
-                "mediaId": mediaId,
-                "keywords": brands,
-                "sentiment": sentiments,
-                "startDate": startDate,
-                "endDate": endDate,
-                "search": search
-            }
+            "data" : data
         },
         "columns": [
             {

@@ -53,6 +53,14 @@
         var sentiments = '{!! $sentiments !!}';
         var search = '{!! $shownSearch !!}';
         var influencers = ["top10LikeStatus"];
+        var data = {
+            "projectId": '{!! $project->pid !!}',
+            "keywords": '{!! $brands !!}',
+            "startDate": '{!! $startDate !!}',
+            "sentiment": '{!! $sentiments !!}',
+            "endDate": '{!! $endDate !!}',
+            "search": '{!! $shownSearch !!}'
+        };
     </script>
 
     <script src="{!! asset('js/projects/brand-equity.js') !!}"></script>

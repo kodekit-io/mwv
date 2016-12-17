@@ -1,13 +1,6 @@
 $.ajax({
     url : ajaxUrl + '/project/chart-data/brand-equity',
-    data : {
-        projectId: projectId,
-        keywords: brands,
-        sentiment: sentiments,
-        startDate: startDate,
-        endDate: endDate,
-        search: search
-    },
+    data : data,
     beforeSend : function(xhr) {
         $('#brand-equity-container').block({
             message: '<img src="' + ajaxUrl + '/mediawave/img/spinner.gif">',
