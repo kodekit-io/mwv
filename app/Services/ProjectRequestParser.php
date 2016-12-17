@@ -52,14 +52,6 @@ trait ProjectRequestParser
             $sentimentCheckboxes[$sentiment[1]]['showName'] = $sentiment[2];
         }
 
-        if ($request->has('keywords')) {
-            if (in_array($keywordId, $request->input('keywords'))) {
-                $select = 'checked';
-            }
-        } else {
-            $select = 'checked';
-        }
-
         $data['shownSearch'] = $shownSearch;
         $data['brands'] = $brands;
         $data['project'] = $profiles->project;

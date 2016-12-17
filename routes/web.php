@@ -79,7 +79,7 @@ Route::group(['middleware' => ['auth', 'projects']], function () {
     Route::any('/project-forum/{pid}', 'ProjectForumController@detail');
     Route::any('/project-video/{pid}', 'ProjectVideoController@detail');
     Route::any('/project-blog/{pid}', 'ProjectBlogController@detail');
-    Route::get('/project-ig/{pid}', 'ProjectIGController@detail');
+    Route::any('/project-ig/{pid}', 'ProjectIGController@detail');
     Route::get('/conversation', 'ProjectController@conversation');
     Route::get('/chart-1/{pid}', 'ChartController@chartOne');
 

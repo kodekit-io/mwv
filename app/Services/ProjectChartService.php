@@ -190,12 +190,13 @@ class ProjectChartService
         $startDate = $startDate == '' ? ( $this->request->has('startDate') ? $this->request->input('startDate') : '') : $startDate;
         $endDate = $endDate == '' ? ( $this->request->has('endDate') ? $this->request->input('endDate') : '') : $endDate;
         $searchText = $search == '' ? ( $this->request->has('search') ? $this->request->input('search') : '') : $search;
+        $sentiment = $this->request->has('sentiment') ? $this->request->input('sentiment') : '';
 
         return [
             'pid' => $projectId,
             'StartDate' => $startDate,
             'EndDate' => $endDate,
-            'sentiment' => '1,0,-1',
+            'sentiment' => $sentiment,
             'brandID' => $keywords,
             'text' => $searchText
         ];
@@ -213,10 +214,11 @@ class ProjectChartService
     private function getChartWithMedia($action, $type = 1, $mediaId, $projectId = '', $keywords = '', $startDate = '', $endDate = '', $search = '')
     {
         $params = $this->generateParams($projectId, $keywords, $startDate, $endDate, $search);
+        $url = 'project/'. $type .'/'. $mediaId .'/'. $action;
 
-        // Log::warning($action . '==>' . json_encode($params));
+        Log::warning('url ==> ' . $url . ', ' . $action . '==>' . json_encode($params));
 
-        return $this->getChart('project/'. $type .'/'. $mediaId .'/'. $action, $params);
+        return $this->getChart($url, $params);
     }
 
 }
