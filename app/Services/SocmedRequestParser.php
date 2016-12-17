@@ -10,6 +10,7 @@ trait SocmedRequestParser
     protected function parseRequest(Request $request, $idMedia = 1)
     {
         $brands = '';
+        $sentiments = '';
         $last7DaysRange = $this->projectService->getLastSevenDaysRange();
         $startDate = $last7DaysRange['startDate'];
         $endDate = $last7DaysRange['endDate'];
@@ -20,6 +21,7 @@ trait SocmedRequestParser
             $startDate = ( $startDate != '' ) ? Carbon::createFromFormat('d/m/y', $startDate)->format('Y-m-d\TH:i:s\Z') : null;
             $endDate = ( $endDate != '' ) ? Carbon::createFromFormat('d/m/y', $endDate)->format('Y-m-d\TH:i:s\Z') : null;
             $brands = ( $request->has('keywords') ? implode(',', $request->input('keywords')) : '' );
+            $sentiments = ( $request->has('sentiments') ? implode(',', $request->input('sentiments')) : '' );
             $shownSearch = $request->has('search') ? $request->input('search') : '';
         }
 
@@ -36,9 +38,23 @@ trait SocmedRequestParser
             }
         }
 
+        $sentimentCheckboxes = [];
+        $sentimentArrays = [
+            ['1', 'pstv', 'Positive'],
+            ['0', 'ntrl', 'Neutral'],
+            ['-1', 'ngtv', 'Negative']
+        ];
+        foreach ($sentimentArrays as $sentiment) {
+            $sentimentCheckboxes[$sentiment[1]]['value'] = $sentiment[0];
+            $sentimentCheckboxes[$sentiment[1]]['checked'] = $this->isSentimentSelected($sentiment[0], $request);
+            $sentimentCheckboxes[$sentiment[1]]['showName'] = $sentiment[2];
+        }
+
         // $wordcloudApi = $this->projectService->socialWordCloud(2);
         $data['shownSearch'] = $shownSearch;
         $data['keywords'] = $keywords;
+        $data['sentimentCheckboxes'] = $sentimentCheckboxes;
+        $data['sentiments'] = $sentiments;
         $data['brands'] = $brands;
         $data['startDate'] = $startDate;
         $data['endDate'] = $endDate;
