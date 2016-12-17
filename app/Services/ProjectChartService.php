@@ -214,10 +214,11 @@ class ProjectChartService
     private function getChartWithMedia($action, $type = 1, $mediaId, $projectId = '', $keywords = '', $startDate = '', $endDate = '', $search = '')
     {
         $params = $this->generateParams($projectId, $keywords, $startDate, $endDate, $search);
+        $url = 'project/'. $type .'/'. $mediaId .'/'. $action;
 
-        //Log::warning($action . '==>' . json_encode($params));
+        Log::warning('url ==> ' . $url . ', ' . $action . '==>' . json_encode($params));
 
-        return $this->getChart('project/'. $type .'/'. $mediaId .'/'. $action, $params);
+        return $this->getChart($url, $params);
     }
 
 }
