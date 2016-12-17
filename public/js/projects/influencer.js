@@ -133,7 +133,7 @@ function top10LikeStatus(id,result) {
 
 function top10LikeStatusFB(id,result) {
 	$data = result.influencer.top10LikeStatus.data;
-	//console.log($data);
+	console.log($data);
 	if ($data.length === 0) {
 		$('#' + id).html("<div class='center'>No data chart</div>");
 	} else {
@@ -323,14 +323,14 @@ function top10ByReachTW(id,result) {
 		//console.log( $content );
 		$('#' + id).DataTable( {
 			processing: true,
-			paging: false,
+			paging: true,
 			searching: false,
 			info: false,
 			data: $content,
 			columns: [
 				{ title: "Name" },
-				{ title: "Score" },
-				{ title: "Value" },
+				{ title: "Score", "render": $.fn.dataTable.render.number( '\.', '', 0, '' ) },
+				{ title: "Value", "render": $.fn.dataTable.render.number( '\.', '', 0, '' ) },
 				//{ title: "Link" },
 				{
 					data: null,
@@ -367,14 +367,14 @@ function top10ByNumberTW(id,result) {
 		//console.log( $content );
 		$('#' + id).DataTable( {
 			processing: true,
-			paging: false,
+			paging: true,
 			searching: false,
 			info: false,
 			data: $content,
 			columns: [
 				{ title: "Name" },
-				{ title: "Score" },
-				{ title: "Value" },
+				{ title: "Score", "render": $.fn.dataTable.render.number( '\.', '', 0, '' ) },
+				{ title: "Value", "render": $.fn.dataTable.render.number( '\.', '', 0, '' ) },
 				//{ title: "Link" },
 				{
 					data: null,
@@ -390,7 +390,7 @@ function top10ByNumberTW(id,result) {
 			}],*/
 			order: [[ 1, "desc" ]]
 		});
-		$('#' + id + '_wrapper .bottom-row').hide();
+		//$('#' + id + '_wrapper .bottom-row').hide();
 	}
 }
 
@@ -411,14 +411,14 @@ function top10ByImpactTW(id,result) {
 		//console.log( $content );
 		$('#' + id).DataTable( {
 			processing: true,
-			paging: false,
+			paging: true,
 			searching: false,
 			info: false,
 			data: $content,
 			columns: [
 				{ title: "Name" },
-				{ title: "Score" },
-				{ title: "Value" },
+				{ title: "Score", "render": $.fn.dataTable.render.number( '\.', '', 0, '' ) },
+				{ title: "Value", "render": $.fn.dataTable.render.number( '\.', '', 0, '' ) },
 				//{ title: "Link" },
 				{
 					data: null,
@@ -434,12 +434,12 @@ function top10ByImpactTW(id,result) {
 			}],*/
 			order: [[ 1, "desc" ]]
 		});
-		$('#' + id + '_wrapper .bottom-row').hide();
+		//$('#' + id + '_wrapper .bottom-row').hide();
 	}
 }
 
 function top10News(id,result) {
-	$data = result.influencer.top10.data;
+	$data = result.influencer.top10LikeStatus.data;
 	//console.log($data);
 	if ($data.length === 0) {
 		$('#' + id).html("<div class='center'>No data chart</div>");
@@ -450,58 +450,37 @@ function top10News(id,result) {
 			$score= $data[i].score;
 			$value= $data[i].value;
 			$link= $data[i].link;
-			$url= $data[i].url;
 			$popularity= $data[i].popularity;
-			$content[i] = [ $name, $score, $value, $link, $url, $popularity ];
+			$content[i] = [ $name, $score, $value, $popularity, $link ];
 		}
 		//console.log( $content );
 		$('#' + id).DataTable( {
 			processing: true,
-			paging: false,
+			paging: true,
 			searching: false,
 			info: false,
 			data: $content,
 			columns: [
-				//{ title: "Media" },
+				{ title: "Media", },
+				{ title: "Score", "render": $.fn.dataTable.render.number( '\.', '', 0, '' ) },
+				{ title: "Value", "render": $.fn.dataTable.render.number( '\.', '', 0, '' ) },
+				{ title: "Popularity", "render": $.fn.dataTable.render.number( '\.', '', 0, '' ) },
 				{
 					data: null,
-					title: "Media",
 					render: function ( data ) {
-						var media = data[0];
 						var postlink = data[4];
-						return '<a href="'+postlink+'" target="_blank" data-uk-tooltip title="See Details" class="uk-link">'+media+'</a>';
-					}
-				},
-				{ title: "Score" },
-				{ title: "Value" },
-				{
-					data: null,
-					title: "Popularity",
-					render: function ( data ) {
-						var p = data[5];
-						return p;
-					}
-				},
-				{
-					data: null,
-					render: function ( data ) {
-						var postlink = data[3];
 						return '<a href="'+postlink+'" target="_blank" data-uk-tooltip title="See Details" class="uk-button uk-button-primary">See Details</a>';
 					}
 				},
 			],
-			/*columnDefs: [{
-				visible: false,
-				targets: [3]
-			}],*/
-			order: [[ 1, "desc" ]]
+			order: [[ 2, "desc" ]]
 		});
-		$('#' + id + '_wrapper .bottom-row').hide();
+		//$('#' + id + '_wrapper .bottom-row').hide();
 	}
 }
 
 function top10Blog(id,result) {
-	$data = result.influencer.top10.data;
+	$data = result.influencer.top10LikeStatus.data;
 	//console.log($data);
 	if ($data.length === 0) {
 		$('#' + id).html("<div class='center'>No data chart</div>");
@@ -512,59 +491,38 @@ function top10Blog(id,result) {
 			$score= $data[i].score;
 			$value= $data[i].value;
 			$link= $data[i].link;
-			$url= $data[i].url;
 			$popularity= $data[i].popularity;
-			$content[i] = [ $name, $score, $value, $link, $url, $popularity ];
+			$content[i] = [ $name, $score, $value, $popularity, $link ];
 		}
 		//console.log( $content );
 		$('#' + id).DataTable( {
 			processing: true,
-			paging: false,
+			paging: true,
 			searching: false,
 			info: false,
 			data: $content,
 			columns: [
-				//{ title: "Media" },
+				{ title: "Blog", },
+				{ title: "Score", "render": $.fn.dataTable.render.number( '\.', '', 0, '' ) },
+				{ title: "Value", "render": $.fn.dataTable.render.number( '\.', '', 0, '' ) },
+				{ title: "Popularity", "render": $.fn.dataTable.render.number( '\.', '', 0, '' ) },
 				{
 					data: null,
-					title: "Blog",
 					render: function ( data ) {
-						var media = data[0];
 						var postlink = data[4];
-						return '<a href="'+postlink+'" target="_blank" data-uk-tooltip title="See Details" class="uk-link">'+media+'</a>';
-					}
-				},
-				{ title: "Score" },
-				{ title: "Value" },
-				{
-					data: null,
-					title: "Popularity",
-					render: function ( data ) {
-						var p = data[5];
-						return p;
-					}
-				},
-				{
-					data: null,
-					render: function ( data ) {
-						var postlink = data[3];
 						return '<a href="'+postlink+'" target="_blank" data-uk-tooltip title="See Details" class="uk-button uk-button-primary">See Details</a>';
 					}
 				},
 			],
-			/*columnDefs: [{
-				visible: false,
-				targets: [3]
-			}],*/
 			order: [[ 1, "desc" ]]
 		});
-		$('#' + id + '_wrapper .bottom-row').hide();
+		//$('#' + id + '_wrapper .bottom-row').hide();
 	}
 }
 
-function top10Vid(id,result) {
-	$data = result.influencer.top10ByRate.data;
-	//console.log($data);
+function topLikeVid(id,result) {
+	$data = result.influencer.video_like.data;
+	console.log($data);
 	if ($data.length === 0) {
 		$('#' + id).html("<div class='center'>No data chart</div>");
 	} else {
@@ -639,38 +597,43 @@ function top10Vid(id,result) {
 }
 
 function top10Forum(id,result) {
-	$data = result.influencer.top10.data;
+	$data = result.influencer.top10LikeStatus.data;
 	//console.log($data);
 	if ($data.length === 0) {
 		$('#' + id).html("<div class='center'>No data chart</div>");
 	} else {
 		var $content = [];
 		for (i = 0; i < $data.length; i++) {
-			$user= $data[i].user;
-			$alexa= $data[i]['alexa(ID)'];
+			$name= $data[i].name;
+			$score= $data[i].score;
+			$value= $data[i].value;
+			$link= $data[i].link;
 			$popularity= $data[i].popularity;
-			$content[i] = [ $user, $alexa, $popularity ];
-			//console.log( $alexa );
+			$content[i] = [ $name, $score, $value, $popularity, $link ];
 		}
-
+		//console.log( $content );
 		$('#' + id).DataTable( {
 			processing: true,
-			paging: false,
+			paging: true,
 			searching: false,
 			info: false,
 			data: $content,
 			columns: [
-				{ title: "Forum" },
-				{ title: "Rating" },
-				{ title: "Popularity" },
+				{ title: "Forum", },
+				{ title: "Score", "render": $.fn.dataTable.render.number( '\.', '', 0, '' ) },
+				{ title: "Value", "render": $.fn.dataTable.render.number( '\.', '', 0, '' ) },
+				{ title: "Popularity", "render": $.fn.dataTable.render.number( '\.', '', 0, '' ) },
+				{
+					data: null,
+					render: function ( data ) {
+						var postlink = data[4];
+						return '<a href="'+postlink+'" target="_blank" data-uk-tooltip title="See Details" class="uk-button uk-button-primary">See Details</a>';
+					}
+				},
 			],
-			/*columnDefs: [{
-				visible: false,
-				targets: [3]
-			}],*/
 			order: [[ 1, "desc" ]]
 		});
-		$('#' + id + '_wrapper .bottom-row').hide();
+		//$('#' + id + '_wrapper .bottom-row').hide();
 	}
 }
 
@@ -707,8 +670,8 @@ function top10IG(id,result) {
 						return '<a href="'+l+'" target="_blank" data-uk-tooltip title="'+n+'" class="uk-link">'+n+'</a>';
 					}
 				},
-				{ title: "Score" },
-				{ title: "Value" },
+				{ title: "Score", "render": $.fn.dataTable.render.number( '\.', '', 0, '' ) },
+				{ title: "Value", "render": $.fn.dataTable.render.number( '\.', '', 0, '' ) },
 				{ title: "Link" },
 				//{ title: "Url" },
 				{

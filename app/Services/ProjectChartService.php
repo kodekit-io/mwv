@@ -109,10 +109,13 @@ class ProjectChartService
         return $this->getChartWithMedia('comment', $type, $mediaId);
     }
 
+    /*
+    edited on 2016/12/17
     public function sharePie($mediaId, $type = 1)
     {
         return $this->getChartWithMedia('share', $type, $mediaId);
     }
+    */
 
     public function reachPie($mediaId, $type = 1)
     {
@@ -138,6 +141,11 @@ class ProjectChartService
     public function userTrend($type = 1)
     {
         return $this->getChartWithoutMedia('usertrend', $type);
+    }
+
+    public function sharePie($type = 1)
+    {
+        return $this->getChartWithoutMedia('share', $type);
     }
 
     public function viralPie($type = 1)

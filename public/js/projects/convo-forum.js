@@ -28,14 +28,14 @@ $('#table_forum').DataTable( {
         },
         { "data": "Media", "title": "Forum" },
         {
-            "data": "Title",
+            "data": null,
             "title": "Title",
-            /*"render": function ( data ) {
+            "render": function ( data ) {
                 var post = data["Title"];
                 var postrim = post.substring(0,100) + "...";
                 var plink = data["url"];
                 return '<a href="'+plink+'" target="_blank" data-uk-tooltip title="'+post+'" class="uk-link">'+postrim+'</a>';
-            }*/
+            }
         },
         { "data": "Summary", "title": "Summary" },
         { "data": "Reach", "title": "Reach" },

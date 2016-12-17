@@ -45,8 +45,9 @@
         var startDate = '{!! $startDate !!}';
         var endDate = '{!! $endDate !!}';
         var brands = '{!! $brands !!}';
+        var sentiments = '{!! $sentiments !!}';
         var search = '{!! $shownSearch !!}';
-        var influencers = ["top10Vid"];
+        var influencers = ["topLikeVid"];
     </script>
     <script src="{!! asset('js/projects/post-trend.js') !!}"></script>
     <script src="{!! asset('js/projects/comment-trend.js') !!}"></script>
