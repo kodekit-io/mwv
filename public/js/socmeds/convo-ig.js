@@ -40,13 +40,14 @@ $('#table_ig').DataTable( {
             "data": null,
             "title": "Post",
             "render": function ( data ) {
-                var w = $(".ig-img").width();
-                $(".ig-img").css("height", w);
                 var post = data["Post"];
                 var postrim = post.substring(0,100) + "...";
                 var plink = data["Post Url"];
                 var img = data["Image Url"];
-                return '<a href="'+plink+'" target="_blank" data-uk-tooltip="{pos:\'top-left\'}" title="'+postrim+'" class="row"><span class="col s3 ig-img uk-responsive-width" style="background-image:url('+img+')"></span><span class="col s9 uk-link">'+post+'</span></a>';
+                return '<div class="thumb-wrap">' +
+                '<a href="'+plink+'" target="_blank" data-uk-tooltip="{pos:\'top-left\'}" title="'+postrim+'" class="thumb-img"><span style="background-image:url('+img+');"></span></a>' +
+                '<a href="'+plink+'" target="_blank" data-uk-tooltip="{pos:\'top-left\'}" title="'+postrim+'" class="thumb-txt">'+post+'</a>' +
+                '</div>';
             }
         },
         { "data": "Likes", "title": "Likes" },

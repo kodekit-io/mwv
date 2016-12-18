@@ -47,7 +47,15 @@
         var brands = '{!! $brands !!}';
         var sentiments = '{!! $sentiments !!}';
         var search = '{!! $shownSearch !!}';
-        var influencers = ["topLikeVid"];
+        var influencers = ["topLikeVid","topRateVid"];
+        var data = {
+            "projectId": '{!! $project->pid !!}',
+            "keywords": '{!! $brands !!}',
+            "startDate": '{!! $startDate !!}',
+            "sentiment": '{!! $sentiments !!}',
+            "endDate": '{!! $endDate !!}',
+            "search": '{!! $shownSearch !!}'
+        };
     </script>
     <script src="{!! asset('js/projects/post-trend.js') !!}"></script>
     <script src="{!! asset('js/projects/comment-trend.js') !!}"></script>
