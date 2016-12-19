@@ -47,7 +47,7 @@
         var brands = '{!! $brands !!}';
         var sentiments = '{!! $sentiments !!}';
         var search = '{!! $shownSearch !!}';
-        var influencers = ["topLikeVid","topRateVid"];
+        var influencers = ["top10LikeStatus"];
         var data = {
             "projectId": '{!! $project->pid !!}',
             "keywords": '{!! $brands !!}',
