@@ -54,6 +54,14 @@
         var sentiments = '{!! $sentiments !!}';
         var search = '{!! $shownSearch !!}';
         var influencers = ["top10ByReachTW", "top10ByNumberTW", "top10ByImpactTW"];
+        var data = {
+            "projectId": '{!! $project->pid !!}',
+            "keywords": '{!! $brands !!}',
+            "startDate": '{!! $startDate !!}',
+            "sentiment": '{!! $sentiments !!}',
+            "endDate": '{!! $endDate !!}',
+            "search": '{!! $shownSearch !!}'
+        };
     </script>
     <script src="{!! asset('js/projects/buzz-trend.js') !!}"></script>
     <script src="{!! asset('js/projects/user-trend.js') !!}"></script>

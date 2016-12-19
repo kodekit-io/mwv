@@ -23,13 +23,14 @@ $('#table_video').DataTable( {
             "data": null,
             "title": "Video",
             "render": function ( data ) {
-                var w = $(".ig-img").width();
-                $(".ig-img").css("height", w);
                 var post = data["Title"];
                 var postrim = post.substring(0,100) + "...";
                 var plink = data["Url"];
                 var img = data["Thumbnail"];
-                return '<a href="'+plink+'" target="_blank" data-uk-tooltip="{pos:\'top-left\'}" title="'+postrim+'" class="row"><span class="col s3 ig-img uk-responsive-width" style="background-image:url('+img+');"></span><span class="col s9 uk-link">'+post+'</span></a>';
+                return '<div class="thumb-wrap" data-uk-tooltip="{pos:\'top-left\'}" title="'+postrim+'">' +
+                '<a href="'+plink+'" target="_blank" class="thumb-img"><span style="background-image:url('+img+');"></span></a>' +
+                '<a href="'+plink+'" target="_blank" class="thumb-txt">'+post+'</a>' +
+                '</div>';
             }
         },
         { "data": "Summary", "title": "Summary" },

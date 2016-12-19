@@ -23,6 +23,7 @@
             <div class="md-card-toolbar-heading-text">
                 <ul class="uk-subnav uk-subnav-pill" data-uk-switcher="{connect:'#influencer ul'}">
                     <li class="uk-active"><a>TOP LIKE VIDEO</a></li>
+                    <li><a>TOP RATE VIDEO</a></li>
                 </ul>
             </div>
         </div>
@@ -31,6 +32,9 @@
             <ul class="uk-switcher">
                 <li>
                     <table id="topLikeVid" class="striped bordered highlight responsive-table"></table>
+                </li>
+                <li>
+                    <table id="topRateVid" class="striped bordered highlight responsive-table"></table>
                 </li>
             </ul>
         </div>

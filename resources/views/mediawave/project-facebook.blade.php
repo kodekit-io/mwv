@@ -50,7 +50,15 @@
         var brands = '{!! $brands !!}';
         var sentiments = '{!! $sentiments !!}';
         var search = '{!! $shownSearch !!}';
-        var influencers = ["top10LikeStatusFB", "top10LikePhotoFB", "top10LikeLinkFB", "top10LikeVideoFB"];
+        var influencers = ["topStatusFB", "topPhotoFB", "topLinkFB", "topVideoFB"];
+        var data = {
+            "projectId": '{!! $project->pid !!}',
+            "keywords": '{!! $brands !!}',
+            "startDate": '{!! $startDate !!}',
+            "sentiment": '{!! $sentiments !!}',
+            "endDate": '{!! $endDate !!}',
+            "search": '{!! $shownSearch !!}'
+        };
     </script>
     <script src="{!! asset('js/projects/post-trend.js') !!}"></script>
     <script src="{!! asset('js/projects/post-pie.js') !!}"></script>
