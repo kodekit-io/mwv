@@ -36,9 +36,7 @@ function influencerTable(influencers) {
 		}
 	});
 }
-function testAja(ii) {
-    //console.log('test aja ' + ii);
-}
+
 function top10LikeStatus(id,result) {
 	$data = result.influencer.top10LikeStatus.data;
 	//console.log($data);
@@ -420,7 +418,7 @@ function top10Forum(id,result) {
 }
 
 function topCommentIG(id,result) {
-	$data = result.influencer.["top Comment"].data;
+	$data = result.influencer['top Comment'].data;
 
 	if ($data.length === 0) {
 		$('#' + id).html("<div class='center'>No data chart</div>");
@@ -457,7 +455,7 @@ function topCommentIG(id,result) {
 	}
 }
 function topLoveIG(id,result) {
-	$data = result.influencer.["top Love"].data;
+	$data = result.influencer['top Love'].data;
 
 	if ($data.length === 0) {
 		$('#' + id).html("<div class='center'>No data chart</div>");
@@ -494,7 +492,7 @@ function topLoveIG(id,result) {
 	}
 }
 function topViewIG(id,result) {
-	$data = result.influencer.["top View"].data;
+	$data = result.influencer['top View'].data;
 
 	if ($data.length === 0) {
 		$('#' + id).html("<div class='center'>No data chart</div>");

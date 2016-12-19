@@ -48,11 +48,11 @@
         var startDate = '{!! $startDate !!}';
         var endDate = '{!! $endDate !!}';
         var brands = '{!! $brands !!}';
-        //var sentiments = '{!! $sentiments !!}';
         var search = '{!! $shownSearch !!}';
-        var influencers = ["top10ByReachTW", "top10ByNumberTW", "top10ByImpactTW"];
+        //var influencers = ["top10ByReachTW", "top10ByNumberTW", "top10ByImpactTW"];
     </script>
     <script src="{!! asset('js/socmeds/post-trend.js') !!}"></script>
+    <?php /*
     <script src="{!! asset('js/socmeds/user-trend.js') !!}"></script>
     <script src="{!! asset('js/socmeds/reach-trend.js') !!}"></script>
 
@@ -67,5 +67,6 @@
     <script src="{!! asset('js/socmeds/word-cloud.js') !!}"></script>
     <script src="{!! asset('js/socmeds/influencer.js') !!}"></script>
     <script src="{!! asset('js/socmeds/convo-twitter.js') !!}"></script>
+    */ ?>
 
 @endsection
