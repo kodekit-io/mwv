@@ -36,9 +36,9 @@ class ChartController extends Controller
         return \GuzzleHttp\json_encode($chart->brandEquity);
     }
 
-    public function buzzTrendData($mediaId)
+    public function buzzTrendData($mediaId, $type = 1)
     {
-        $chart = $this->projectChartService->buzzTrend($mediaId);
+        $chart = $this->projectChartService->buzzTrend($mediaId, $type);
         return \GuzzleHttp\json_encode($chart);
     }
 
