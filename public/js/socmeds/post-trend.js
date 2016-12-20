@@ -1,11 +1,8 @@
 $.ajax({
-    url : ajaxUrl + '/project/chart-data/post-trend/' + mediaId + '/' + type,
-    data : {
-        keywords: brands,
-        startDate: startDate,
-        endDate: endDate,
-        search: search
-    },
+    //url : ajaxUrl + '/project/chart-data/post-trend/' + mediaId + '/' + type,
+    url : 'http://103.28.15.104:8821/api_3.02/project/2/2/buzztrend',
+    data : data,
+    dataType: 'jsonp',
     beforeSend : function(xhr) {
         $('#posttrend').block({
             message: '<img src="' + ajaxUrl + '/mediawave/img/spinner.gif">',
@@ -17,11 +14,13 @@ $.ajax({
         $('#posttrend').unblock();
     },
     success : function(result) {
-        postTrendChart('posttrend', jQuery.parseJSON(result));
+        console.log(result);
+        //postTrendChart('posttrend', jQuery.parseJSON(result));
     }
 });
 
 function postTrendChart($id, $data) {
+
     if ($data.length === 0) {
         $('#'+$id).html("<div class='center'>No data chart</div>");
     } else {

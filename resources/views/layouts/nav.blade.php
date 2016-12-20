@@ -17,13 +17,11 @@
                     @endif
                 </ul>
             </li>
-            <?php /*
             <li class="nav-socmed">
                 <a href="{!! url('/socmed-twitter') !!}" name="topnav" title="Social Media Page">
                     <i class="material-icons left">group</i>Socmed Page
                 </a>
             </li>
-            */ ?>
             <li class="nav-newproject">
                 <a href="{!! url('/create-project') !!}" name="topnav" title="Create Project">
                     <i class="material-icons left">add_circle</i>New Project

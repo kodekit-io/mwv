@@ -1,6 +1,7 @@
 @extends('layouts.mediawave')
 
 @section('page-level-styles')
+    <?php header('Access-Control-Allow-Origin: *'); ?>
     <link rel="stylesheet" href="{!! asset('mediawave/css/dataTables.mw.css') !!}" />
 @endsection
 
@@ -49,7 +50,16 @@
         var endDate = '{!! $endDate !!}';
         var brands = '{!! $brands !!}';
         var search = '{!! $shownSearch !!}';
-        //var influencers = ["top10ByReachTW", "top10ByNumberTW", "top10ByImpactTW"];
+        var influencers = ["top10ByReachTW", "top10ByNumberTW", "top10ByImpactTW"];
+        var data = {
+            "uid": '350',
+            "idMedia": '2',
+            "keywords": '1,2,3,4,5',
+            "startDate": '2016-11-01T00:00:00Z',
+            "endDate": '2016-11-15T00:00:00Z',
+            "sentiment": '1,0,-1',
+            "search": ''
+        };
     </script>
     <script src="{!! asset('js/socmeds/post-trend.js') !!}"></script>
     <?php /*
@@ -68,5 +78,4 @@
     <script src="{!! asset('js/socmeds/influencer.js') !!}"></script>
     <script src="{!! asset('js/socmeds/convo-twitter.js') !!}"></script>
     */ ?>
-
 @endsection
