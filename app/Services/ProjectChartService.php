@@ -175,7 +175,7 @@ class ProjectChartService
 
     public function potentialReachTrend($type = 1)
     {
-        return $this->getChartWithoutMedia('potensialreachtrend', $type);
+        return $this->getChartWithoutMedia('potentialreachtrend', $type);
     }
 
     public function countBar($type = 1)
