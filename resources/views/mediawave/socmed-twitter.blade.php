@@ -52,16 +52,15 @@
         var search = '{!! $shownSearch !!}';
         var influencers = ["top10ByReachTW", "top10ByNumberTW", "top10ByImpactTW"];
         var data = {
-            "uid": '350',
             "idMedia": '2',
-            "keywords": '1,2,3,4,5',
-            "startDate": '2016-11-01T00:00:00Z',
-            "endDate": '2016-11-15T00:00:00Z',
+            "keywords": '{!! $brands !!}',
+            "startDate": '{!! $startDate !!}',
+            "endDate": '{!! $endDate !!}',
             "sentiment": '1,0,-1',
-            "search": ''
+            "search": '{!! $shownSearch !!}'
         };
     </script>
-    <script src="{!! asset('js/socmeds/post-trend.js') !!}"></script>
+    <script src="{!! asset('js/socmeds/buzz-trend.js') !!}"></script>
     <?php /*
     <script src="{!! asset('js/socmeds/user-trend.js') !!}"></script>
     <script src="{!! asset('js/socmeds/reach-trend.js') !!}"></script>

@@ -27,7 +27,7 @@
         <div id="trendwrap" class="md-card-content">
             <ul class="uk-switcher">
                 <li>
-                    <div id="posttrend" class="md-chart"></div>
+                    <div id="buzztrend" class="md-chart"></div>
                 </li>
                 <li>
                     <div id="usertrend" class="md-chart"></div>

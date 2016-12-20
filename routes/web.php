@@ -35,7 +35,7 @@ Route::group(['middleware' => ['auth', 'projects']], function () {
     // Reusable chart
     Route::get('/project/chart-data/post-trend/{mediaId}/{type?}', 'ChartController@postTrendData');
     Route::get('/project/chart-data/reach-trend/{mediaId}/{type?}', 'ChartController@reachTrendData');
-    Route::get('/project/chart-data/buzz-trend/{mediaId}', 'ChartController@buzzTrendData');
+    Route::get('/project/chart-data/buzz-trend/{mediaId}/{type?}', 'ChartController@buzzTrendData');
     Route::get('/project/chart-data/comment-trend/{mediaId}/{type?}', 'ChartController@commentTrendData');
     Route::get('/project/chart-data/interaction-trend/{media}/{type?}', 'ChartController@interactionTrendData');
     Route::get('/project/chart-data/buzz-pie/{mediaId}/{type?}', 'ChartController@buzzPieData');

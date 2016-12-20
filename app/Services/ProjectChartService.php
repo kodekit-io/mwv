@@ -48,15 +48,16 @@ class ProjectChartService
         return $this->getChart('project/shareofmedia', $params);
     }
 
+    // with uid for socmed
+    public function buzzTrend($mediaId, $type = 1)
+    {
+        return $this->getChartWithMediaAndUid('buzztrend', $type, $mediaId);
+    }
+
     // chart with media
     public function postTrend($mediaId, $type = 1)
     {
         return $this->getChartWithMedia('posttrend', $type, $mediaId);
-    }
-
-    public function buzzTrend($mediaId, $type = 1)
-    {
-        return $this->getChartWithMedia('buzztrend', $type, $mediaId);
     }
 
     public function reachTrend($mediaId, $type = 1)
@@ -216,7 +217,21 @@ class ProjectChartService
         $params = $this->generateParams($projectId, $keywords, $startDate, $endDate, $search);
         $url = 'project/'. $type .'/'. $mediaId .'/'. $action;
 
-        // Log::warning('url ==> ' . $url . ', ' . $action . '==>' . json_encode($params));
+        Log::warning('url ==> ' . $url . ', ' . $action . '==>' . json_encode($params));
+
+        return $this->getChart($url, $params);
+    }
+
+    public function getChartWithMediaAndUid($action, $type = 1, $mediaId, $uid = '')
+    {
+        $params = $this->generateParams();
+        if ($type == 2) {
+            $params['uid'] = \Auth::user()->id;
+        }
+
+        $url = 'project/'. $type .'/'. $mediaId .'/'. $action;
+
+        Log::warning('url ==> ' . $url . ', ' . $action . '==>' . json_encode($params));
 
         return $this->getChart($url, $params);
     }
