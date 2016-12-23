@@ -49,9 +49,16 @@
         var startDate = '{!! $startDate !!}';
         var endDate = '{!! $endDate !!}';
         var brands = '{!! $brands !!}';
-        //var sentiments = '{!! $sentiments !!}';
         var search = '{!! $shownSearch !!}';
         var influencers = ["top10Comment", "top10Like", "top10View"];
+        var data = {
+            "idMedia": '7',
+            "keywords": '{!! $brands !!}',
+            "startDate": '{!! $startDate !!}',
+            "endDate": '{!! $endDate !!}',
+            "sentiment": '1,0,-1',
+            "search": '{!! $shownSearch !!}'
+        };
     </script>
     <script src="{!! asset('js/socmeds/post-trend.js') !!}"></script>
     <script src="{!! asset('js/socmeds/comment-trend.js') !!}"></script>

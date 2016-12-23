@@ -19,7 +19,7 @@
     <div class="md-card hoverable">
         <div class="md-card-toolbar">
             <div class="md-card-toolbar-actions">
-                <a class="btn waves-effect waves-light z-depth-0 amber lighten-4" data-uk-tooltip title="{{ config('tooltips.vreach-pie') }}"><i class="material-icons">help</i></a>
+                <a class="btn waves-effect waves-light z-depth-0 amber lighten-4" data-uk-tooltip title="{{ config('tooltips.post-pie') }}"><i class="material-icons">help</i></a>
                 <a class="btn waves-effect waves-light z-depth-0 green lighten-4" data-uk-tooltip title="Minimize" data-uk-toggle="{target:'#piewrap3'}"><i class="material-icons md-icon">fullscreen</i></a>
             </div>
             <h2 class="md-card-toolbar-heading-text">POST</h2>

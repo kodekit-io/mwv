@@ -1,4 +1,3 @@
-
 <li class="uk-width-medium-1-1">
     <div class="md-card hoverable">
         <div class="md-card-toolbar">
@@ -10,21 +9,7 @@
         </div>
         <div id="convfacebook" class="md-card-content">
             <?php //FB TABLE ?>
-            <table id="table_facebook" class="striped bordered highlight responsive-table">
-                <thead>
-                <tr>
-                    <th>Date</th>
-                    <th>Page</th>
-                    <th>Post</th>
-                    <th>Comments</th>
-                    <th>Likes</th>
-                    <th>Shares</th>
-                    <th>Media Type</th>
-                    <th>Sentiment</th>
-                    <th>Post Link</th>
-                </tr>
-                </thead>
-            </table>
+            <table id="table_facebook" class="striped bordered highlight responsive-table"></table>
         </div>
     </div>
 </li>

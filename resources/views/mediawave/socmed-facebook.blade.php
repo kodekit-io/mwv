@@ -47,9 +47,16 @@
         var startDate = '{!! $startDate !!}';
         var endDate = '{!! $endDate !!}';
         var brands = '{!! $brands !!}';
-        //var sentiments = '{!! $sentiments !!}';
         var search = '{!! $shownSearch !!}';
-        var influencers = ["top10LikeStatusFB", "top10LikePhotoFB", "top10LikeLinkFB", "top10LikeVideoFB"];
+        var influencers = ["topStatusFB", "topPhotoFB", "topLinkFB", "topVideoFB"];
+        var data = {
+            "idMedia": '1',
+            "keywords": '{!! $brands !!}',
+            "startDate": '{!! $startDate !!}',
+            "endDate": '{!! $endDate !!}',
+            "sentiment": '1,0,-1',
+            "search": '{!! $shownSearch !!}'
+        };
     </script>
     <script src="{!! asset('js/socmeds/post-trend.js') !!}"></script>
     <script src="{!! asset('js/socmeds/post-pie.js') !!}"></script>
