@@ -7,13 +7,7 @@ $(document).ready( function () {
         "ajax": {
             "url": ajaxUrl + '/project/chart-data/convo-twitter',
             //"url": ajaxUrl + '/mediawave/jsontest/conv-twitter.json',
-            "data" : {
-                //"projectId": projectId,
-                "keywords": brands,
-                "startDate": startDate,
-                "endDate": endDate,
-                "search": search
-            }
+            "data" : data
         },
         "columns": [
             {

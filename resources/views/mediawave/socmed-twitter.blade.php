@@ -1,7 +1,6 @@
 @extends('layouts.mediawave')
 
 @section('page-level-styles')
-    <?php header('Access-Control-Allow-Origin: *'); ?>
     <link rel="stylesheet" href="{!! asset('mediawave/css/dataTables.mw.css') !!}" />
 @endsection
 
@@ -61,13 +60,11 @@
         };
     </script>
     <script src="{!! asset('js/socmeds/buzz-trend.js') !!}"></script>
-    <?php /*
     <script src="{!! asset('js/socmeds/user-trend.js') !!}"></script>
     <script src="{!! asset('js/socmeds/reach-trend.js') !!}"></script>
-
     <script src="{!! asset('js/socmeds/buzz-pie.js') !!}"></script>
+    <script src="{!! asset('js/socmeds/post-pie.js') !!}"></script>
     <script src="{!! asset('js/socmeds/interaction-pie.js') !!}"></script>
-    <script src="{!! asset('js/socmeds/viral-pie.js') !!}"></script>
     <script src="{!! asset('js/socmeds/potential-pie.js') !!}"></script>
 
     <script src="{!! asset('js/socmeds/sentiment-bar.js') !!}"></script>
@@ -76,5 +73,4 @@
     <script src="{!! asset('js/socmeds/word-cloud.js') !!}"></script>
     <script src="{!! asset('js/socmeds/influencer.js') !!}"></script>
     <script src="{!! asset('js/socmeds/convo-twitter.js') !!}"></script>
-    */ ?>
 @endsection

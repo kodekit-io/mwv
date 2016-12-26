@@ -2,12 +2,7 @@ influencerTable(influencers);
 function influencerTable(influencers) {
 	$.ajax({
         url : ajaxUrl + '/project/chart-data/influencer/' + mediaId + '/' + type,
-        data : {
-            keywords: brands,
-            startDate: startDate,
-            endDate: endDate,
-            search: search
-        },
+        data : data,
 		beforeSend : function(xhr) {
             for(i = 0; i < influencers.length; i++) {
                 // console.log(influencers[i]);
@@ -39,8 +34,9 @@ function influencerTable(influencers) {
 	});
 }
 
-function top10LikeStatusFB(id,result) {
+function top10LikeStatus(id,result) {
 	$data = result.influencer.top10LikeStatus.data;
+	//console.log($data);
 	if ($data.length === 0) {
 		$('#' + id).html("<div class='center'>No data chart</div>");
 	} else {
@@ -61,146 +57,14 @@ function top10LikeStatusFB(id,result) {
 			data: $content,
 			columns: [
 				{ title: "Name" },
-				{ title: "Like" },
-				{ title: "Comments" },
-				{ title: "Share" },
+				{ title: "Score" },
+				{ title: "Value" },
+				//{ title: "Link" },
 				{
 					data: null,
-					className: "uk-text-right",
 					render: function ( data ) {
 						var postlink = data[3];
 						return '<a href="'+postlink+'" target="_blank" data-uk-tooltip title="See Details" class="uk-button uk-button-primary">See Details</a>';
-					}
-				},
-			],
-			/*columnDefs: [{
-				visible: false,
-				targets: [3]
-			}],*/
-			order: [[ 1, "desc" ]]
-		});
-		$('#' + id + '_wrapper .bottom-row').hide();
-	}
-}
-
-function top10LikePhotoFB(id,result) {
-	$data = result.influencer.top10LikePhoto.data;
-	if ($data.length === 0) {
-		$('#' + id).html("<div class='center'>No data chart</div>");
-	} else {
-		var $content = [];
-		for (i = 0; i < $data.length; i++) {
-			$user= $data[i].user;
-			$photo= $data[i].photo;
-			$urloflike= $data[i].urloflike;
-			$link= $data[i].link;
-			$content[i] = [ $user, $photo, $urloflike, $link ];
-		}
-		//console.log( $content );
-		$('#' + id).DataTable( {
-			processing: true,
-			paging: false,
-			searching: false,
-			info: false,
-			data: $content,
-			columns: [
-				{ title: "Name" },
-				{ title: "Like" },
-				{ title: "Comments" },
-				{ title: "Share" },
-				{
-					data: null,
-					className: "uk-text-right",
-					render: function ( data ) {
-						var postlink = data[3];
-						return '<a href="'+postlink+'" target="_blank" data-uk-tooltip title="See Details" class="uk-button uk-button-primary">See Details</a>';
-					}
-				},
-			],
-			/*columnDefs: [{
-				visible: false,
-				targets: [3]
-			}],*/
-			order: [[ 1, "desc" ]]
-		});
-		$('#' + id + '_wrapper .bottom-row').hide();
-	}
-}
-
-function top10LikeLinkFB(id,result) {
-	$data = result.influencer.top10LikeLink.data;
-	if ($data.length === 0) {
-		$('#' + id).html("<div class='center'>No data chart</div>");
-	} else {
-		var $content = [];
-		for (i = 0; i < $data.length; i++) {
-			$user= $data[i].user;
-			$oflike= $data[i].oflike;
-			$link= $data[i].link;
-			$content[i] = [ $user, $oflike, $link ];
-		}
-		//console.log( $content );
-		$('#' + id).DataTable( {
-			processing: true,
-			paging: false,
-			searching: false,
-			info: false,
-			data: $content,
-			columns: [
-				{ title: "Name" },
-				{ title: "Like" },
-				{ title: "Comments" },
-				{ title: "Share" },
-				{
-					data: null,
-					className: "uk-text-right",
-					render: function ( data ) {
-						var postlink = data[2];
-						return '<a href="'+postlink+'" target="_blank" data-uk-tooltip title="See Details" class="uk-button uk-button-primary">See Details</a>';
-					}
-				},
-			],
-			/*columnDefs: [{
-				visible: false,
-				targets: [3]
-			}],*/
-			order: [[ 1, "desc" ]]
-		});
-		$('#' + id + '_wrapper .bottom-row').hide();
-	}
-}
-
-function top10LikeVideoFB(id,result) {
-	$data = result.influencer.top10LikeVideo.data;
-	if ($data.length === 0) {
-		$('#' + id).html("<div class='center'>No data chart</div>");
-	} else {
-		var $content = [];
-		for (i = 0; i < $data.length; i++) {
-			$user= $data[i].user;
-			$oflike= $data[i].oflike;
-			$link= $data[i].link;
-			$videourl= $data[i].videourl;
-			$content[i] = [ $user, $oflike, $link, $videourl ];
-		}
-		//console.log( $content );
-		$('#' + id).DataTable( {
-			processing: true,
-			paging: false,
-			searching: false,
-			info: false,
-			data: $content,
-			columns: [
-				{ title: "Name" },
-				{ title: "Like" },
-				{ title: "Comments" },
-				{ title: "Share" },
-				{
-					data: null,
-					className: "uk-text-right",
-					render: function ( data ) {
-						var postlink = data[3];
-						return '<a href="'+postlink+'" target="_blank" data-uk-tooltip title="See Details" class="uk-button uk-button-primary">See Video</a>';
 					}
 				},
 			],
@@ -231,18 +95,17 @@ function top10ByReachTW(id,result) {
 		//console.log( $content );
 		$('#' + id).DataTable( {
 			processing: true,
-			paging: false,
+			paging: true,
 			searching: false,
 			info: false,
 			data: $content,
 			columns: [
 				{ title: "Name" },
-				{ title: "Score", visible: false },
-				{ title: "Value", className: "uk-text-right", },
+				{ title: "Score", "render": $.fn.dataTable.render.number( '\.', '', 0, '' ) },
+				{ title: "Value", "render": $.fn.dataTable.render.number( '\.', '', 0, '' ) },
 				//{ title: "Link" },
 				{
 					data: null,
-					className: "uk-text-right",
 					render: function ( data ) {
 						var postlink = data[3];
 						return '<a href="'+postlink+'" target="_blank" data-uk-tooltip title="See Details" class="uk-button uk-button-primary">See Details</a>';
@@ -255,7 +118,7 @@ function top10ByReachTW(id,result) {
 			}],*/
 			order: [[ 1, "desc" ]]
 		});
-		$('#' + id + '_wrapper .bottom-row').hide();
+		// $('#' + id + '_wrapper .bottom-row').hide();
 	}
 }
 
@@ -276,18 +139,17 @@ function top10ByNumberTW(id,result) {
 		//console.log( $content );
 		$('#' + id).DataTable( {
 			processing: true,
-			paging: false,
+			paging: true,
 			searching: false,
 			info: false,
 			data: $content,
 			columns: [
 				{ title: "Name" },
-				{ title: "Score", visible: false },
-				{ title: "Value", className: "uk-text-right", },
+				{ title: "Score", "render": $.fn.dataTable.render.number( '\.', '', 0, '' ) },
+				{ title: "Value", "render": $.fn.dataTable.render.number( '\.', '', 0, '' ) },
 				//{ title: "Link" },
 				{
 					data: null,
-					className: "uk-text-right",
 					render: function ( data ) {
 						var postlink = data[3];
 						return '<a href="'+postlink+'" target="_blank" data-uk-tooltip title="See Details" class="uk-button uk-button-primary">See Details</a>';
@@ -300,7 +162,7 @@ function top10ByNumberTW(id,result) {
 			}],*/
 			order: [[ 1, "desc" ]]
 		});
-		$('#' + id + '_wrapper .bottom-row').hide();
+		//$('#' + id + '_wrapper .bottom-row').hide();
 	}
 }
 
@@ -321,18 +183,17 @@ function top10ByImpactTW(id,result) {
 		//console.log( $content );
 		$('#' + id).DataTable( {
 			processing: true,
-			paging: false,
+			paging: true,
 			searching: false,
 			info: false,
 			data: $content,
 			columns: [
 				{ title: "Name" },
-				{ title: "Score", visible: false },
-				{ title: "Value", className: "uk-text-right", },
+				{ title: "Score", "render": $.fn.dataTable.render.number( '\.', '', 0, '' ) },
+				{ title: "Value", "render": $.fn.dataTable.render.number( '\.', '', 0, '' ) },
 				//{ title: "Link" },
 				{
 					data: null,
-					className: "uk-text-right",
 					render: function ( data ) {
 						var postlink = data[3];
 						return '<a href="'+postlink+'" target="_blank" data-uk-tooltip title="See Details" class="uk-button uk-button-primary">See Details</a>';
@@ -345,12 +206,12 @@ function top10ByImpactTW(id,result) {
 			}],*/
 			order: [[ 1, "desc" ]]
 		});
-		$('#' + id + '_wrapper .bottom-row').hide();
+		//$('#' + id + '_wrapper .bottom-row').hide();
 	}
 }
 
-function top10Vid(id,result) {
-	$data = result.influencer.top10ByRate.data;
+function top10News(id,result) {
+	$data = result.influencer.top10LikeStatus.data;
 	//console.log($data);
 	if ($data.length === 0) {
 		$('#' + id).html("<div class='center'>No data chart</div>");
@@ -361,75 +222,38 @@ function top10Vid(id,result) {
 			$score= $data[i].score;
 			$value= $data[i].value;
 			$link= $data[i].link;
-			$author= $data[i].author;
-			$url= $data[i].url;
-			$content[i] = [ $name, $score, $value, $link, $author, $url ];
+			$popularity= $data[i].popularity;
+			$content[i] = [ $name, $score, $value, $popularity, $link ];
 		}
 		//console.log( $content );
 		$('#' + id).DataTable( {
 			processing: true,
-			paging: false,
+			paging: true,
 			searching: false,
 			info: false,
 			data: $content,
 			columns: [
-				//{ title: "Media" },
+				{ title: "Media", },
+				{ title: "Score", "render": $.fn.dataTable.render.number( '\.', '', 0, '' ) },
+				{ title: "Value", "render": $.fn.dataTable.render.number( '\.', '', 0, '' ) },
+				{ title: "Popularity", "render": $.fn.dataTable.render.number( '\.', '', 0, '' ) },
 				{
 					data: null,
-					title: "Author",
 					render: function ( data ) {
-						var a = data[4];
-						var p = data[3];
-						return '<a href="'+p+'" target="_blank" data-uk-tooltip title="See Details" class="uk-link">'+a+'</a>';
-					}
-				},
-				{
-					data: null,
-					title: "Title",
-					render: function ( data ) {
-						var a = data[0];
-						return a;
-					}
-				},
-				{
-					data: null,
-					title: "Score",
-					visible: false,
-					render: function ( data ) {
-						var a = data[1];
-						return a;
-					}
-				},
-				{
-					data: null,
-					title: "Value",
-					className: "uk-text-right",
-					render: function ( data ) {
-						var a = data[2];
-						return a;
-					}
-				},
-				{
-					data: null,
-					className: "uk-text-right",
-					render: function ( data ) {
-						var postlink = data[5];
-						return '<a href="'+postlink+'" target="_blank" data-uk-tooltip title="See Details" class="uk-button uk-button-primary">See Video</a>';
+						var postlink = data[4];
+						return '<a href="'+postlink+'" target="_blank" data-uk-tooltip title="See Details" class="uk-button uk-button-primary">See Details</a>';
 					}
 				},
 			],
-			/*columnDefs: [{
-				visible: false,
-				targets: [3]
-			}],*/
 			order: [[ 2, "desc" ]]
 		});
-		$('#' + id + '_wrapper .bottom-row').hide();
+		//$('#' + id + '_wrapper .bottom-row').hide();
 	}
 }
 
-function top10IG(id,result) {
-	$data = result.influencer.top10LoveStatus.data;
+function top10Blog(id,result) {
+	$data = result.influencer.top10LikeStatus.data;
+	//console.log($data);
 	if ($data.length === 0) {
 		$('#' + id).html("<div class='center'>No data chart</div>");
 	} else {
@@ -439,46 +263,486 @@ function top10IG(id,result) {
 			$score= $data[i].score;
 			$value= $data[i].value;
 			$link= $data[i].link;
-			$url= $data[i].url;
-			$content[i] = [ $name, $score, $value, $link, $url ];
+			$popularity= $data[i].popularity;
+			$content[i] = [ $name, $score, $value, $popularity, $link ];
 		}
 		//console.log( $content );
 		$('#' + id).DataTable( {
 			processing: true,
-			paging: false,
+			paging: true,
 			searching: false,
 			info: false,
 			data: $content,
 			columns: [
-				//{ title: "Name" },
+				{ title: "Blog", },
+				{ title: "Score", "render": $.fn.dataTable.render.number( '\.', '', 0, '' ) },
+				{ title: "Value", "render": $.fn.dataTable.render.number( '\.', '', 0, '' ) },
+				{ title: "Popularity", "render": $.fn.dataTable.render.number( '\.', '', 0, '' ) },
 				{
 					data: null,
-					title: "Name",
-					render: function ( data ) {
-						var n = data[0];
-						var l = data[3];
-						return '<a href="'+l+'" target="_blank" data-uk-tooltip title="'+n+'" class="uk-link">'+n+'</a>';
-					}
-				},
-				{ title: "Score", visible: false },
-				{ title: "Value", className: "uk-text-right", },
-				{ title: "Link" },
-				//{ title: "Url" },
-				{
-					data: null,
-					className: "uk-text-right",
 					render: function ( data ) {
 						var postlink = data[4];
 						return '<a href="'+postlink+'" target="_blank" data-uk-tooltip title="See Details" class="uk-button uk-button-primary">See Details</a>';
 					}
 				},
 			],
-			columnDefs: [{
-				visible: false,
-				targets: [3]
-			}],
+			order: [[ 1, "desc" ]]
+		});
+		//$('#' + id + '_wrapper .bottom-row').hide();
+	}
+}
+
+function topLikeVid(id,result) {
+	$data = result.influencer.video_like.data;
+
+	console.log($data);
+	if ($data.length === 0) {
+		$('#' + id).html("<div class='center'>No data chart</div>");
+	} else {
+		var $content = [];
+		for (i = 0; i < $data.length; i++) {
+			$name= $data[i].name;
+			$score= $data[i].score;
+			$value= $data[i].value;
+			$link= $data[i].link;
+			$author= $data[i].author;
+			$content[i] = [ $author, $name, $value, $link ];
+		}
+		//console.log( $content );
+		$('#' + id).DataTable( {
+			processing: true,
+			paging: true,
+			searching: false,
+			info: false,
+			data: $content,
+			columns: [
+				{ title: "Author" },
+				{ title: "Title" },
+				{ title: "Value", "render": $.fn.dataTable.render.number( '\.', '', 0, '' ) },
+				{
+					data: null,
+					render: function ( data ) {
+						var postlink = data[3];
+						return '<a href="'+postlink+'" target="_blank" data-uk-tooltip title="See Details" class="uk-button uk-button-primary">See Video</a>';
+					}
+				},
+			],
+			order: [[ 2, "desc" ]]
+		});
+		$('#' + id + '_wrapper .bottom-row').hide();
+	}
+}
+function topRateVid(id,result) {
+	$data = result.influencer.video_rating.data;
+
+	console.log($data);
+	if ($data.length === 0) {
+		$('#' + id).html("<div class='center'>No data chart</div>");
+	} else {
+		var $content = [];
+		for (i = 0; i < $data.length; i++) {
+			$name= $data[i].name;
+			$score= $data[i].score;
+			$value= $data[i].value;
+			$link= $data[i].link;
+			$author= $data[i].author;
+			$content[i] = [ $author, $name, $value, $link ];
+		}
+		//console.log( $content );
+		$('#' + id).DataTable( {
+			processing: true,
+			paging: true,
+			searching: false,
+			info: false,
+			data: $content,
+			columns: [
+				{ title: "Author" },
+				{ title: "Title" },
+				{ title: "Value", "render": $.fn.dataTable.render.number( '\.', '', 0, '' ) },
+				{
+					data: null,
+					render: function ( data ) {
+						var postlink = data[3];
+						return '<a href="'+postlink+'" target="_blank" data-uk-tooltip title="See Details" class="uk-button uk-button-primary">See Video</a>';
+					}
+				},
+			],
+			order: [[ 2, "desc" ]]
+		});
+		$('#' + id + '_wrapper .bottom-row').hide();
+	}
+}
+
+function top10Forum(id,result) {
+	$data = result.influencer.top10LikeStatus.data;
+	//console.log($data);
+	if ($data.length === 0) {
+		$('#' + id).html("<div class='center'>No data chart</div>");
+	} else {
+		var $content = [];
+		for (i = 0; i < $data.length; i++) {
+			$name= $data[i].name;
+			$score= $data[i].score;
+			$value= $data[i].value;
+			$link= $data[i].link;
+			$popularity= $data[i].popularity;
+			$content[i] = [ $name, $score, $value, $popularity, $link ];
+		}
+		//console.log( $content );
+		$('#' + id).DataTable( {
+			processing: true,
+			paging: true,
+			searching: false,
+			info: false,
+			data: $content,
+			columns: [
+				{ title: "Forum", },
+				{ title: "Score", "render": $.fn.dataTable.render.number( '\.', '', 0, '' ) },
+				{ title: "Value", "render": $.fn.dataTable.render.number( '\.', '', 0, '' ) },
+				{ title: "Popularity", "render": $.fn.dataTable.render.number( '\.', '', 0, '' ) },
+				{
+					data: null,
+					render: function ( data ) {
+						var postlink = data[4];
+						return '<a href="'+postlink+'" target="_blank" data-uk-tooltip title="See Details" class="uk-button uk-button-primary">See Details</a>';
+					}
+				},
+			],
+			order: [[ 1, "desc" ]]
+		});
+		//$('#' + id + '_wrapper .bottom-row').hide();
+	}
+}
+
+function topCommentIG(id,result) {
+	$data = result.influencer['top Comment'].data;
+
+	if ($data.length === 0) {
+		$('#' + id).html("<div class='center'>No data chart</div>");
+	} else {
+		var $content = [];
+		for (i = 0; i < $data.length; i++) {
+			$name= $data[i].name;
+			$score= $data[i].score;
+			$value= $data[i].value;
+			$link= $data[i].link;
+			$content[i] = [ $name, $value, $link ];
+		}
+		//console.log( $content );
+		$('#' + id).DataTable( {
+			processing: true,
+			paging: true,
+			searching: false,
+			info: false,
+			data: $content,
+			columns: [
+				{ title: "Name" },
+				{ title: "Value", "render": $.fn.dataTable.render.number( '\.', '', 0, '' ) },
+				{
+					data: null,
+					render: function ( data ) {
+						var postlink = data[2];
+						return '<a href="'+postlink+'" target="_blank" data-uk-tooltip title="See Details" class="uk-button uk-button-primary">See Details</a>';
+					}
+				},
+			],
 			order: [[ 0, "desc" ]]
 		});
 		$('#' + id + '_wrapper .bottom-row').hide();
+	}
+}
+function topLoveIG(id,result) {
+	$data = result.influencer['top Love'].data;
+
+	if ($data.length === 0) {
+		$('#' + id).html("<div class='center'>No data chart</div>");
+	} else {
+		var $content = [];
+		for (i = 0; i < $data.length; i++) {
+			$name= $data[i].name;
+			$score= $data[i].score;
+			$value= $data[i].value;
+			$link= $data[i].link;
+			$content[i] = [ $name, $value, $link ];
+		}
+		//console.log( $content );
+		$('#' + id).DataTable( {
+			processing: true,
+			paging: true,
+			searching: false,
+			info: false,
+			data: $content,
+			columns: [
+				{ title: "Name" },
+				{ title: "Value", "render": $.fn.dataTable.render.number( '\.', '', 0, '' ) },
+				{
+					data: null,
+					render: function ( data ) {
+						var postlink = data[2];
+						return '<a href="'+postlink+'" target="_blank" data-uk-tooltip title="See Details" class="uk-button uk-button-primary">See Details</a>';
+					}
+				},
+			],
+			order: [[ 0, "desc" ]]
+		});
+		$('#' + id + '_wrapper .bottom-row').hide();
+	}
+}
+function topViewIG(id,result) {
+	$data = result.influencer['top View'].data;
+
+	if ($data.length === 0) {
+		$('#' + id).html("<div class='center'>No data chart</div>");
+	} else {
+		var $content = [];
+		for (i = 0; i < $data.length; i++) {
+			$name= $data[i].name;
+			$score= $data[i].score;
+			$value= $data[i].value;
+			$link= $data[i].link;
+			$content[i] = [ $name, $value, $link ];
+		}
+		//console.log( $content );
+		$('#' + id).DataTable( {
+			processing: true,
+			paging: true,
+			searching: false,
+			info: false,
+			data: $content,
+			columns: [
+				{ title: "Name" },
+				{ title: "Value", "render": $.fn.dataTable.render.number( '\.', '', 0, '' ) },
+				{
+					data: null,
+					render: function ( data ) {
+						var postlink = data[2];
+						return '<a href="'+postlink+'" target="_blank" data-uk-tooltip title="See Details" class="uk-button uk-button-primary">See Details</a>';
+					}
+				},
+			],
+			order: [[ 0, "desc" ]]
+		});
+		$('#' + id + '_wrapper .bottom-row').hide();
+	}
+}
+
+function topStatusFB(id,result) {
+	$data = result.influencer.status.data;
+	$share = result.influencer.status.data.share;
+	$comment = result.influencer.status.data.comment;
+	$like = result.influencer.status.data.like;
+	//console.log($data);
+	if ($data.length === 0) {
+		$('#' + id).html("<div class='center'>No data chart</div>");
+	} else {
+		var $content = [];
+		for (i = 0; i < $share.length; i++) {
+			$shareName= $share[i].name;
+			$shareValue= $share[i].value;
+			$shareScore= $share[i].score;
+			$shareLink= $share[i].link;
+
+			$commentName= $comment[i].name;
+			$commentValue= $comment[i].value;
+			$commentScore= $comment[i].score;
+			$commentLink= $comment[i].link;
+
+			$likeName= $like[i].name;
+			$likeValue= $like[i].value;
+			$likeScore= $like[i].score;
+			$likeLink= $like[i].link;
+
+			$content[i] = [ $commentName, $commentValue, $likeValue, $shareValue, $shareLink ]
+
+		}
+
+		$('#' + id).DataTable( {
+			processing: true,
+			paging: true,
+			searching: false,
+			info: false,
+			data: $content,
+			columns: [
+				{ title: "Name" },
+				{ title: "Comment", "render": $.fn.dataTable.render.number( '\.', '', 0, '' ) },
+				{ title: "Like", "render": $.fn.dataTable.render.number( '\.', '', 0, '' ) },
+				{ title: "Share", "render": $.fn.dataTable.render.number( '\.', '', 0, '' ) },
+				{
+					data: null,
+					render: function ( data ) {
+						var postlink = data[4];
+						return '<a href="'+postlink+'" target="_blank" data-uk-tooltip title="See Details" class="uk-button uk-button-primary">See Details</a>';
+					}
+				},
+			],
+			order: [[ 1, "desc" ]]
+		});
+		//$('#' + id + '_wrapper .bottom-row').hide();
+	}
+}
+
+function topLinkFB(id,result) {
+	$data = result.influencer.link.data;
+	$share = result.influencer.link.data.share;
+	$comment = result.influencer.link.data.comment;
+	$like = result.influencer.link.data.like;
+	//console.log($data);
+	if ($data.length === 0) {
+		$('#' + id).html("<div class='center'>No data chart</div>");
+	} else {
+		var $content = [];
+		for (i = 0; i < $share.length; i++) {
+			$shareName= $share[i].name;
+			$shareValue= $share[i].value;
+			$shareScore= $share[i].score;
+			$shareLink= $share[i].link;
+
+			$commentName= $comment[i].name;
+			$commentValue= $comment[i].value;
+			$commentScore= $comment[i].score;
+			$commentLink= $comment[i].link;
+
+			$likeName= $like[i].name;
+			$likeValue= $like[i].value;
+			$likeScore= $like[i].score;
+			$likeLink= $like[i].link;
+
+			$content[i] = [ $commentName, $commentValue, $likeValue, $shareValue, $shareLink ]
+
+		}
+
+		$('#' + id).DataTable( {
+			processing: true,
+			paging: true,
+			searching: false,
+			info: false,
+			data: $content,
+			columns: [
+				{ title: "Name" },
+				{ title: "Comment", "render": $.fn.dataTable.render.number( '\.', '', 0, '' ) },
+				{ title: "Like", "render": $.fn.dataTable.render.number( '\.', '', 0, '' ) },
+				{ title: "Share", "render": $.fn.dataTable.render.number( '\.', '', 0, '' ) },
+				{
+					data: null,
+					render: function ( data ) {
+						var postlink = data[4];
+						return '<a href="'+postlink+'" target="_blank" data-uk-tooltip title="See Details" class="uk-button uk-button-primary">See Details</a>';
+					}
+				},
+			],
+			order: [[ 1, "desc" ]]
+		});
+		//$('#' + id + '_wrapper .bottom-row').hide();
+	}
+}
+
+function topPhotoFB(id,result) {
+	$data = result.influencer.photo.data;
+	$share = result.influencer.photo.data.share;
+	$comment = result.influencer.photo.data.comment;
+	$like = result.influencer.photo.data.like;
+	//console.log($data);
+	if ($data.length === 0) {
+		$('#' + id).html("<div class='center'>No data chart</div>");
+	} else {
+		var $content = [];
+		for (i = 0; i < $share.length; i++) {
+			$shareName= $share[i].name;
+			$shareValue= $share[i].value;
+			$shareScore= $share[i].score;
+			$shareLink= $share[i].link;
+
+			$commentName= $comment[i].name;
+			$commentValue= $comment[i].value;
+			$commentScore= $comment[i].score;
+			$commentLink= $comment[i].link;
+
+			$likeName= $like[i].name;
+			$likeValue= $like[i].value;
+			$likeScore= $like[i].score;
+			$likeLink= $like[i].link;
+
+			$content[i] = [ $commentName, $commentValue, $likeValue, $shareValue, $shareLink ]
+
+		}
+
+		$('#' + id).DataTable( {
+			processing: true,
+			paging: true,
+			searching: false,
+			info: false,
+			data: $content,
+			columns: [
+				{ title: "Name" },
+				{ title: "Comment", "render": $.fn.dataTable.render.number( '\.', '', 0, '' ) },
+				{ title: "Like", "render": $.fn.dataTable.render.number( '\.', '', 0, '' ) },
+				{ title: "Share", "render": $.fn.dataTable.render.number( '\.', '', 0, '' ) },
+				{
+					data: null,
+					render: function ( data ) {
+						var postlink = data[4];
+						return '<a href="'+postlink+'" target="_blank" data-uk-tooltip title="See Details" class="uk-button uk-button-primary">See Details</a>';
+					}
+				},
+			],
+			order: [[ 1, "desc" ]]
+		});
+		//$('#' + id + '_wrapper .bottom-row').hide();
+	}
+}
+
+function topVideoFB(id,result) {
+	$data = result.influencer.video.data;
+	$share = result.influencer.video.data.share;
+	$comment = result.influencer.video.data.comment;
+	$like = result.influencer.video.data.like;
+	//console.log($data);
+	if ($data.length === 0) {
+		$('#' + id).html("<div class='center'>No data chart</div>");
+	} else {
+		var $content = [];
+		for (i = 0; i < $share.length; i++) {
+			$shareName= $share[i].name;
+			$shareValue= $share[i].value;
+			$shareScore= $share[i].score;
+			$shareLink= $share[i].link;
+
+			$commentName= $comment[i].name;
+			$commentValue= $comment[i].value;
+			$commentScore= $comment[i].score;
+			$commentLink= $comment[i].link;
+
+			$likeName= $like[i].name;
+			$likeValue= $like[i].value;
+			$likeScore= $like[i].score;
+			$likeLink= $like[i].link;
+
+			$content[i] = [ $commentName, $commentValue, $likeValue, $shareValue, $shareLink ]
+
+		}
+		console.log( $content );
+
+		$('#' + id).DataTable( {
+			processing: true,
+			paging: true,
+			searching: false,
+			info: false,
+			data: $content,
+			columns: [
+				{ title: "Name" },
+				{ title: "Comment", "render": $.fn.dataTable.render.number( '\.', '', 0, '' ) },
+				{ title: "Like", "render": $.fn.dataTable.render.number( '\.', '', 0, '' ) },
+				{ title: "Share", "render": $.fn.dataTable.render.number( '\.', '', 0, '' ) },
+				{
+					data: null,
+					render: function ( data ) {
+						var postlink = data[4];
+						return '<a href="'+postlink+'" target="_blank" data-uk-tooltip title="See Details" class="uk-button uk-button-primary">See Details</a>';
+					}
+				},
+			],
+			order: [[ 1, "desc" ]]
+		});
+		//$('#' + id + '_wrapper .bottom-row').hide();
 	}
 }

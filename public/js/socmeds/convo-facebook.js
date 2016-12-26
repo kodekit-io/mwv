@@ -3,13 +3,7 @@ $(document).ready( function () {
         "ajax": {
             "url": ajaxUrl + '/project/chart-data/convo-facebook',
             //"url": ajaxUrl + "/mediawave/jsontest/convo-fb.json",
-            "data" : {
-                //"projectId": projectId,
-                "keywords": brands,
-                "startDate": startDate,
-                "endDate": endDate,
-                "search": search
-            }
+            "data" : data
         },
         "columns": [
             {

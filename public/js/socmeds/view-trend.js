@@ -1,11 +1,6 @@
 $.ajax({
     url : ajaxUrl + '/project/chart-data/view-trend/' + type,
-    data : {
-        keywords: brands,
-        startDate: startDate,
-        endDate: endDate,
-        search: search
-    },
+    data : data,
     beforeSend : function(xhr) {
         $('#viewtrend').block({
             message: '<img src="' + ajaxUrl + '/mediawave/img/spinner.gif">',

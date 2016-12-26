@@ -62,7 +62,7 @@ class ProjectChartService
 
     public function reachTrend($mediaId, $type = 1)
     {
-        return $this->getChartWithMedia('reachtrend', $type, $mediaId);
+        return $this->getChartWithMediaAndUid('reachtrend', $type, $mediaId);
     }
 
     public function interactionTrend($mediaId, $type = 1)
@@ -141,7 +141,7 @@ class ProjectChartService
     //chart without media
     public function userTrend($type = 1)
     {
-        return $this->getChartWithoutMedia('usertrend', $type);
+        return $this->getChartWithUidWithoutMedia('usertrend', $type);
     }
 
     public function sharePie($type = 1)
@@ -205,7 +205,17 @@ class ProjectChartService
 
     private function getChartWithoutMedia($action, $type = 1, $projectId = '', $keywords = '', $startDate = '', $endDate = '', $search = '')
     {
+        /*
         $params = $this->generateParams($projectId, $keywords, $startDate, $endDate, $search);
+
+        // Log::warning($action . '==>' . json_encode($params));
+
+        return $this->getChart('project/' . $type .'/' . $action, $params);
+        */
+        $params = $this->generateParams($projectId, $keywords, $startDate, $endDate, $search);
+        if ($type == 2) {
+            $params['uid'] = \Auth::user()->id;
+        }
 
         // Log::warning($action . '==>' . json_encode($params));
 
@@ -214,7 +224,19 @@ class ProjectChartService
 
     private function getChartWithMedia($action, $type = 1, $mediaId, $projectId = '', $keywords = '', $startDate = '', $endDate = '', $search = '')
     {
+        /*
         $params = $this->generateParams($projectId, $keywords, $startDate, $endDate, $search);
+        $url = 'project/'. $type .'/'. $mediaId .'/'. $action;
+
+        Log::warning('url ==> ' . $url . ', ' . $action . '==>' . json_encode($params));
+
+        return $this->getChart($url, $params);
+        */
+        $params = $this->generateParams();
+        if ($type == 2) {
+            $params['uid'] = \Auth::user()->id;
+        }
+
         $url = 'project/'. $type .'/'. $mediaId .'/'. $action;
 
         Log::warning('url ==> ' . $url . ', ' . $action . '==>' . json_encode($params));
@@ -234,6 +256,18 @@ class ProjectChartService
         Log::warning('url ==> ' . $url . ', ' . $action . '==>' . json_encode($params));
 
         return $this->getChart($url, $params);
+    }
+
+    private function getChartWithUidWithoutMedia($action, $type = 1, $projectId = '', $keywords = '', $startDate = '', $endDate = '', $search = '', $uid = '')
+    {
+        $params = $this->generateParams($projectId, $keywords, $startDate, $endDate, $search);
+        if ($type == 2) {
+            $params['uid'] = \Auth::user()->id;
+        }
+
+        // Log::warning($action . '==>' . json_encode($params));
+
+        return $this->getChart('project/' . $type .'/' . $action, $params);
     }
 
 }

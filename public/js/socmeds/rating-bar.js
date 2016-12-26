@@ -1,11 +1,6 @@
 $.ajax({
     url : ajaxUrl + '/project/chart-data/rating-bar/' + type,
-    data : {
-        keywords: brands,
-        startDate: startDate,
-        endDate: endDate,
-        search: search
-    },
+    data : data,
     beforeSend : function(xhr) {
         $('#ratingbar').block({
             message: '<img src="' + ajaxUrl + '/mediawave/img/spinner.gif">',
