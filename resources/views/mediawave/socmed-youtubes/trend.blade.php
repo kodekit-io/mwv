@@ -37,7 +37,7 @@
                 <li><div id="viewtrend" class="md-chart"></div></li>
                 <li><div id="liketrend" class="md-chart"></div></li>
                 <li><div id="disliketrend" class="md-chart"></div></li>
-                <li><div id="subscribetrend" class="md-chart"></div></li>
+                <li><div id="subscribestrend" class="md-chart"></div></li>
             </ul>
         </div>
     </div>

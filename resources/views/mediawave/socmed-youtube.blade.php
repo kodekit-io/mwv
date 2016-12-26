@@ -61,7 +61,7 @@
     <script src="{!! asset('js/socmeds/view-trend.js') !!}"></script>
     <script src="{!! asset('js/socmeds/like-trend.js') !!}"></script>
     <script src="{!! asset('js/socmeds/dislike-trend.js') !!}"></script>
-    <script src="{!! asset('js/socmeds/subscribe-trend.js') !!}"></script>
+    <script src="{!! asset('js/socmeds/subscribes-trend.js') !!}"></script>
 
     <script src="{!! asset('js/socmeds/post-pie.js') !!}"></script>
     <script src="{!! asset('js/socmeds/view-pie.js') !!}"></script>

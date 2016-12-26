@@ -47,6 +47,43 @@ class ChartController extends Controller
         $chart = $this->projectChartService->postTrend($mediaId, $type);
         return \GuzzleHttp\json_encode($chart);
     }
+    //START 2016-12-25
+    public function fansTrendData($mediaId, $type = 1)
+    {
+        $chart = $this->projectChartService->fansTrend($mediaId, $type);
+        return \GuzzleHttp\json_encode($chart);
+    }
+    public function likeTrendData($mediaId, $type = 1)
+    {
+        $chart = $this->projectChartService->likeTrend($mediaId, $type);
+        return \GuzzleHttp\json_encode($chart);
+    }
+    public function dislikeTrendData($mediaId, $type = 1)
+    {
+        $chart = $this->projectChartService->dislikeTrend($mediaId, $type);
+        return \GuzzleHttp\json_encode($chart);
+    }
+    public function subscribesTrendData($mediaId, $type = 1)
+    {
+        $chart = $this->projectChartService->subscribeTrend($mediaId, $type);
+        return \GuzzleHttp\json_encode($chart);
+    }
+    public function loveTrendData($mediaId, $type = 1)
+    {
+        $chart = $this->projectChartService->loveTrend($mediaId, $type);
+        return \GuzzleHttp\json_encode($chart);
+    }
+    public function loveData($mediaId, $type = 1)
+    {
+        $chart = $this->projectChartService->lovePie($mediaId, $type);
+        return \GuzzleHttp\json_encode($chart);
+    }
+    public function viewData($mediaId, $type = 1)
+    {
+        $chart = $this->projectChartService->viewPie($mediaId, $type);
+        return \GuzzleHttp\json_encode($chart);
+    }
+    //END 2016-12-25
 
     public function reachTrendData($mediaId, $type = 1)
     {
