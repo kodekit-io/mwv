@@ -68,7 +68,7 @@ function createViewTrendChart(chartData, id) {
         },
         yAxis: {
             title: {
-                text: 'Post'
+                text: 'View'
             },
             plotLines: [{
                 value: 0,
@@ -77,7 +77,7 @@ function createViewTrendChart(chartData, id) {
             }]
         },
         tooltip: {
-            valueSuffix: ' Post'
+            valueSuffix: ' View'
         },
         series: chartData.content
     });

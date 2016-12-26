@@ -62,11 +62,13 @@
     </script>
     <script src="{!! asset('js/socmeds/post-trend.js') !!}"></script>
     <script src="{!! asset('js/socmeds/comment-trend.js') !!}"></script>
-    <script src="{!! asset('js/socmeds/interaction-trend.js') !!}"></script>
+    <script src="{!! asset('js/socmeds/love-trend.js') !!}"></script>
     <script src="{!! asset('js/socmeds/reach-trend.js') !!}"></script>
 
     <script src="{!! asset('js/socmeds/post-pie.js') !!}"></script>
-    <script src="{!! asset('js/socmeds/reach-pie.js') !!}"></script>
+    <script src="{!! asset('js/socmeds/love-pie.js') !!}"></script>
+    <script src="{!! asset('js/socmeds/comment-pie.js') !!}"></script>
+    <script src="{!! asset('js/socmeds/view-pie.js') !!}"></script>
 
     <script src="{!! asset('js/socmeds/sentiment-bar.js') !!}"></script>
     <script src="{!! asset('js/socmeds/interaction-bar.js') !!}"></script>

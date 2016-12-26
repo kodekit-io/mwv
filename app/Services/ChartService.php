@@ -200,7 +200,8 @@ class ChartService
              'blog' => '3',
              'news' => '4',
              'video' => '5',
-             'forum' => '9'
+             'forum' => '6',
+             'instagram' => '7'
         ];
 
         return $arrMedia[$name];

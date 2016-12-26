@@ -1,44 +1,40 @@
 $.ajax({
-    url : ajaxUrl + '/project/chart-data/post-trend/' + mediaId + '/' + type,
-    //url : 'http://103.28.15.104:8821/api_3.02/project/2/2/buzztrend',
+    url : ajaxUrl + '/project/chart-data/love-trend/' + type,
     data : data,
-    dataType: 'jsonp',
     beforeSend : function(xhr) {
-        $('#posttrend').block({
+        $('#lovetrend').block({
             message: '<img src="' + ajaxUrl + '/mediawave/img/spinner.gif">',
             css: { border: 'none', zIndex: 100 },
             overlayCSS: { backgroundColor: '#fff', zIndex: 100 }
         });
     },
     complete : function(xhr, status) {
-        $('#posttrend').unblock();
+        $('#lovetrend').unblock();
     },
     success : function(result) {
-        console.log(result);
-        postTrendChart('posttrend', jQuery.parseJSON(result));
+        loveTrendChart('lovetrend', jQuery.parseJSON(result));
     }
 });
 
-function postTrendChart($id, $data) {
-
+function loveTrendChart($id, $data) {
     if ($data.length === 0) {
         $('#'+$id).html("<div class='center'>No data chart</div>");
     } else {
         $dates = $data.dates;
         $content = [];
         for (var i = 0; i < $data.data.length; i++) {
-            $content[i] = { name: $data.data[i].keywordName, data: $data.data[i].post };
+            $content[i] = { name: $data.data[i].keywordName, data: $data.data[i].love };
         }
         var chartData = {
             content: $content,
             categories: $dates
         };
 
-        createPostTrend(chartData, $id);
+        createLoveTrendChart(chartData, $id);
     }
 }
 
-function createPostTrend(chartData, id) {
+function createLoveTrendChart(chartData, id) {
     var now = new Date();
     var offset = Math.abs( now.getTimezoneOffset() / 60 );
     //console.log(now);
@@ -72,7 +68,7 @@ function createPostTrend(chartData, id) {
         },
         yAxis: {
             title: {
-                text: 'Post'
+                text: 'Love'
             },
             plotLines: [{
                 value: 0,
@@ -81,7 +77,7 @@ function createPostTrend(chartData, id) {
             }]
         },
         tooltip: {
-            valueSuffix: ' Post'
+            valueSuffix: ' Love'
         },
         series: chartData.content
     });
