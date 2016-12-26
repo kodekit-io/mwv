@@ -21,6 +21,3 @@
     + Interaction trend become Love trend ==> Status:
     + Pie chart becoming:  Post, Love, Comment, View ==> Status:
     + Influencer: Top Comment, Top Love, Top View ==> Status:
-
-ERROR
-Socmed FB Share Pie

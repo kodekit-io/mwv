@@ -12,24 +12,26 @@ $.ajax({
         $('#commentbar').unblock();
     },
     success : function(result) {
+        //console.log(result);
         commentBar('commentbar', jQuery.parseJSON(result));
     }
 });
 
 function commentBar($id, $data) {
-    $data = $data['interactionrate'];
+    $data = $data.data;
     if ($data.length === 0) {
         $('#' + $id).html("<div class='center'>No Data</div>");
     } else {
         var $content = [];
         var $dataSum = 0;
         for (var i = 0; i < $data.length; i++) {
-            $x = $data[i].name;
-            $y = $data[i].data;
+            $x = $data[i].keywordName;
+            $y = $data[i].interaction;
+            $c = $data[i].color;
             $length = $data.length;
-            $dataSum += $data[i].data;
+            $dataSum += $data[i].interaction;
 
-            $content[i] = {name: $x, data: [[$x,$y]] };
+            $content[i] = {name: $x, data: [[$x,$y]], color: $c };
             $mean = $dataSum / $length;
         }
 
@@ -53,7 +55,7 @@ function createCommentBar(id, dataSet, mean) {
             enabled: false
         },
         tooltip: {
-            pointFormat: 'Interaction Rate: <b>{point.y}</b>'
+            pointFormat: 'Comment Interaction: <b>{point.y}</b>'
         },
         xAxis: {
             type: "category",
