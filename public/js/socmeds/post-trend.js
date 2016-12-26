@@ -2,7 +2,7 @@ $.ajax({
     url : ajaxUrl + '/project/chart-data/post-trend/' + mediaId + '/' + type,
     //url : 'http://103.28.15.104:8821/api_3.02/project/2/2/buzztrend',
     data : data,
-    dataType: 'jsonp',
+    //dataType: 'jsonp',
     beforeSend : function(xhr) {
         $('#posttrend').block({
             message: '<img src="' + ajaxUrl + '/mediawave/img/spinner.gif">',
@@ -14,7 +14,7 @@ $.ajax({
         $('#posttrend').unblock();
     },
     success : function(result) {
-        console.log(result);
+        //console.log(result);
         postTrendChart('posttrend', jQuery.parseJSON(result));
     }
 });

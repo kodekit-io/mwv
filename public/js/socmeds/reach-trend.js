@@ -12,7 +12,7 @@ $.ajax({
         $('#reachtrend').unblock();
     },
     success : function(result) {
-        // console.log(result);
+        console.log(result);
         reachTrendChart('reachtrend', jQuery.parseJSON(result));
     }
 });
@@ -24,7 +24,7 @@ function reachTrendChart($id, $data) {
         $dates = $data.dates;
         $content = [];
         for (var i = 0; i < $data.data.length; i++) {
-            $content[i] = { name: $data.data[i].keywordName, data: $data.data[i].post };
+            $content[i] = { name: $data.data[i].keywordName, data: $data.data[i].preach };
         }
         var data = {
             content: $content,

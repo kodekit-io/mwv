@@ -17,8 +17,7 @@ $.ajax({
 });
 
 function countBar($id, $data) {
-    //console.log($data['data']);
-    $data = $data['data'];
+    $data = $data.data;
     if ($data.length === 0) {
         $('#' + $id).html("<div class='center'>No Data</div>");
     } else {
@@ -27,10 +26,11 @@ function countBar($id, $data) {
         for (var i = 0; i < $data.length; i++) {
             $x = $data[i].keywordName;
             $y = $data[i].view;
+            $c = $data[i].color;
             $length = $data.length;
             $dataSum += $data[i].view;
 
-            $content[i] = {name: $x, data: [[$x,$y]] };
+            $content[i] = {name: $x, data: [[$x,$y]], color: $c };
             $mean = $dataSum / $length;
         }
 
