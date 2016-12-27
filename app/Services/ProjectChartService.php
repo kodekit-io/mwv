@@ -146,7 +146,7 @@ class ProjectChartService
 
     public function sharePie($type = 1)
     {
-        return $this->getChartWithoutMedia('share', $type);
+        return $this->getChartWithUidWithoutMedia('share', $type);
     }
 
     public function viralPie($type = 1)

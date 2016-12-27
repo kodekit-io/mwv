@@ -30,6 +30,10 @@ class ProfileController extends Controller
         $data['userProfile'] = $profiles['user'];
         $data['socmeds'] = $profiles['socmed'];
         $data['pageTitle'] = 'Profile';
+        $twitter = $profiles['socmed'][0]->twitter[0];
+        $twitter = str_replace('=', ':', $twitter);
+        echo $twitter;
+        var_dump(json_encode($twitter)); exit();
 
         return view('mediawave.profile', $data);
     }
