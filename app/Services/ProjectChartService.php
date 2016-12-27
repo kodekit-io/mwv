@@ -135,7 +135,7 @@ class ProjectChartService
 
     public function influencer($mediaId, $type = 1)
     {
-        return $this->getChartWithMedia('influencer', $type, $mediaId);
+        return $this->getChartWithMediaAndUid('influencer', $type, $mediaId);
     }
 
     //chart without media
@@ -152,6 +152,41 @@ class ProjectChartService
     public function fansTrend($type = 2)
     {
         return $this->getChartWithUidWithoutMedia('fanstrend', $type);
+    }
+
+    public function likeTrend($type = 2)
+    {
+        return $this->getChartWithUidWithoutMedia('liketrend', $type);
+    }
+
+    public function dislikeTrend($type = 2)
+    {
+        return $this->getChartWithUidWithoutMedia('liketrend', $type);
+    }
+
+    public function subscribeTrend($type = 2)
+    {
+        return $this->getChartWithUidWithoutMedia('subscribestrend', $type);
+    }
+
+    public function viewPie($type)
+    {
+        return $this->getChartWithUidWithoutMedia('view', $type);
+    }
+
+    public function loveTrend($type)
+    {
+        return $this->getChartWithUidWithoutMedia('lovetrend', $type);
+    }
+
+    public function potentialReachTrend($type = 1)
+    {
+        return $this->getChartWithUidWithoutMedia('potentialreachtrend', $type);
+    }
+
+    public function lovePie($type = 2)
+    {
+        return $this->getChartWithUidWithoutMedia('love', $type);
     }
 
     public function viralPie($type = 1)
@@ -174,14 +209,9 @@ class ProjectChartService
         return $this->getChartWithoutMedia('rating', $type);
     }
 
-    public function viewTrend($type = 1)
+    public function viewTrend($type)
     {
         return $this->getChartWithoutMedia('viewtrend', $type);
-    }
-
-    public function potentialReachTrend($type = 1)
-    {
-        return $this->getChartWithoutMedia('potentialreachtrend', $type);
     }
 
     public function countBar($type = 1)

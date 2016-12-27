@@ -53,34 +53,40 @@ class ChartController extends Controller
         $chart = $this->projectChartService->fansTrend($type);
         return \GuzzleHttp\json_encode($chart);
     }
-    public function likeTrendData($mediaId, $type = 1)
+
+    public function likeTrendData($type)
     {
-        $chart = $this->projectChartService->likeTrend($mediaId, $type);
+        $chart = $this->projectChartService->likeTrend($type);
         return \GuzzleHttp\json_encode($chart);
     }
-    public function dislikeTrendData($mediaId, $type = 1)
+
+    public function dislikeTrendData($type)
     {
-        $chart = $this->projectChartService->dislikeTrend($mediaId, $type);
+        $chart = $this->projectChartService->dislikeTrend($type);
         return \GuzzleHttp\json_encode($chart);
     }
-    public function subscribesTrendData($mediaId, $type = 1)
+
+    public function subscribesTrendData($type = 2)
     {
-        $chart = $this->projectChartService->subscribeTrend($mediaId, $type);
+        $chart = $this->projectChartService->subscribeTrend($type);
         return \GuzzleHttp\json_encode($chart);
     }
-    public function loveTrendData($mediaId, $type = 1)
+
+    public function loveTrendData($type = 2)
     {
-        $chart = $this->projectChartService->loveTrend($mediaId, $type);
+        $chart = $this->projectChartService->loveTrend($type);
         return \GuzzleHttp\json_encode($chart);
     }
-    public function loveData($mediaId, $type = 1)
+
+    public function loveData($type = 2)
     {
-        $chart = $this->projectChartService->lovePie($mediaId, $type);
+        $chart = $this->projectChartService->lovePie($type);
         return \GuzzleHttp\json_encode($chart);
     }
-    public function viewData($mediaId, $type = 1)
+
+    public function viewData($type = 2)
     {
-        $chart = $this->projectChartService->viewPie($mediaId, $type);
+        $chart = $this->projectChartService->viewPie($type);
         return \GuzzleHttp\json_encode($chart);
     }
     //END 2016-12-25
@@ -261,15 +267,15 @@ class ChartController extends Controller
         return \GuzzleHttp\json_encode($chart);
     }
 
-    public function viewTrendData($type = 1)
+    public function viewTrendData($type = 2)
     {
         $chart = $this->projectChartService->viewTrend($type);
         return \GuzzleHttp\json_encode($chart);
     }
 
-    public function countBarData()
+    public function countBarData($type = 2)
     {
-        $chart = $this->projectChartService->countBar();
+        $chart = $this->projectChartService->countBar($type);
         return \GuzzleHttp\json_encode($chart);
     }
 

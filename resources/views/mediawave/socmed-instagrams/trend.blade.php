@@ -31,7 +31,7 @@
                 <li><div id="posttrend" class="md-chart"></div></li>
                 <li><div id="commenttrend" class="md-chart"></div></li>
                 <li><div id="lovetrend" class="md-chart"></div></li>
-                <li><div id="reachtrend" class="md-chart"></div></li>
+                <li><div id="potentialreachtrend" class="md-chart"></div></li>
             </ul>
         </div>
     </div>

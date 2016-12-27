@@ -1,7 +1,7 @@
 $(document).ready( function () {
     var table_facebook = $('#table_facebook').DataTable( {
         "ajax": {
-            "url": ajaxUrl + '/project/chart-data/convo-facebook/' + 2,
+            "url": ajaxUrl + '/project/chart-data/convo-facebook/' + type,
             "data" : data
         },
         "columns": [

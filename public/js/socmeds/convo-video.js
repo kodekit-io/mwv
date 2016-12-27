@@ -1,6 +1,6 @@
 $('#table_video').DataTable( {
     "ajax": {
-        "url": ajaxUrl + '/project/chart-data/convo-video/' + 2,
+        "url": ajaxUrl + '/project/chart-data/convo-video/' + type,
         //"url": ajaxUrl + "/mediawave/jsontest/convo-video.json",
         "data" : data
     },
@@ -21,26 +21,24 @@ $('#table_video').DataTable( {
         },
         {
             "data": null,
-            "title": "Author",
+            "title": "Video",
             "render": function ( data ) {
-                var page = data["Author"];
-                var link = data["Author Url"];
-                return '<a href="'+link+'" target="_blank" data-uk-tooltip title="'+page+'" class="uk-link">'+page+'</a>';
+                var post = data["Title"];
+                var postrim = post.substring(0,100) + "...";
+                var plink = data["Url"];
+                return '<a href="'+plink+'" target="_blank" data-uk-tooltip title="'+post+'" class="uk-link">'+postrim+'</a>';
             }
         },
         {
             "data": null,
-            "title": "Post",
+            "title": "Summary",
             "render": function ( data ) {
-                var post = data["Post"];
-                var postrim = post.substring(0,100) + "...";
-                var plink = data["Post Url"];
-                return '<a href="'+plink+'" target="_blank" data-uk-tooltip title="'+post+'" class="uk-link">'+postrim+'</a>';
+                var post = data["Summary"];
+                return post;
             }
         },
-        { "data": "Likes", "title": "Likes", "render": $.fn.dataTable.render.number( '\.', '', 0, '' )},
-        { "data": "Comments", "title": "Comments", "render": $.fn.dataTable.render.number( '\.', '', 0, '' )},
-        { "data": "View", "title": "View", "render": $.fn.dataTable.render.number( '\.', '', 0, '' )}
+        { "data": "view", "title": "View", "render": $.fn.dataTable.render.number( '\.', '', 0, '' )},
+        { "data": "Comments", "title": "Comments", "render": $.fn.dataTable.render.number( '\.', '', 0, '' )}
     ],
     "order": [[ 0, "desc" ]]
 });

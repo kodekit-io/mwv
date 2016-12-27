@@ -82,7 +82,7 @@
                                 <li>
                                     <h6>CHOOSE ACCOUNT</h6>
                                     <div class="select-field">
-                                        {!! $keywordSelect !!}
+                                        {!! $accountSelect !!}
                                     </div>
                                 </li>
                             </ul>

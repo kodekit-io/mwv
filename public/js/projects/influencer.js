@@ -298,7 +298,7 @@ function top10Blog(id,result) {
 function topLikeVid(id,result) {
 	$data = result.influencer.video_like.data;
 
-	console.log($data);
+	// console.log($data);
 	if ($data.length === 0) {
 		$('#' + id).html("<div class='center'>No data chart</div>");
 	} else {
@@ -338,7 +338,7 @@ function topLikeVid(id,result) {
 function topRateVid(id,result) {
 	$data = result.influencer.video_rating.data;
 
-	console.log($data);
+	//console.log($data);
 	if ($data.length === 0) {
 		$('#' + id).html("<div class='center'>No data chart</div>");
 	} else {
@@ -723,7 +723,7 @@ function topVideoFB(id,result) {
 			$content[i] = [ $commentName, $commentValue, $likeValue, $shareValue, $shareLink ]
 
 		}
-		console.log( $content );
+		//console.log( $content );
 
 		$('#' + id).DataTable( {
 			processing: true,

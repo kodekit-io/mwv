@@ -42,17 +42,13 @@
         var csrfToken = '{!! csrf_token() !!}';
         var mediaId = 5;
         var type = 2;
-        var startDate = '{!! $startDate !!}';
-        var endDate = '{!! $endDate !!}';
-        var brands = '{!! $brands !!}';
-        var search = '{!! $shownSearch !!}';
-        var influencers = ["top10Vid", "top10Like", "top10Post"];
+        var influencers = ["topRateVid", "topLikeVid"];
         var data = {
             "idMedia": '5',
             "keywords": '{!! $brands !!}',
             "startDate": '{!! $startDate !!}',
             "endDate": '{!! $endDate !!}',
-            "sentiment": '1,0,-1',
+            "sentiment": '{!! $sentiments !!}',
             "search": '{!! $shownSearch !!}'
         };
     </script>

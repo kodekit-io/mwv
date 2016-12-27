@@ -30,6 +30,7 @@ class ReportController extends Controller
         $projectInfos = $this->projectService->projectListWithKeywords();
         $data['projectSelect'] = $this->projectService->projectSelect($projectInfos, 'project', 'reportProject');
         $data['keywordSelect'] = $this->projectService->keywordSelect($projectInfos, 'keyword', 'reportKeyword');
+        $data['accountSelect'] = $this->projectService->accountSelect('account', 'account');
 
         return view('mediawave.report-add', $data);
     }

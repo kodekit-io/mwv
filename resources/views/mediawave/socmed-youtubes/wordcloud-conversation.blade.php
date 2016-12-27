@@ -24,7 +24,7 @@
                 <ul class="uk-subnav uk-subnav-pill" data-uk-switcher="{connect:'#influencer ul'}">
                     <li class="uk-active"><a>TOP RATE</a></li>
                     <li><a>TOP LIKE</a></li>
-                    <li><a>TOP POST</a></li>
+                    {{--<li><a>TOP POST</a></li>--}}
                 </ul>
             </div>
             <div class="uk-button-dropdown uk-visible-small" data-uk-dropdown="{mode:'click'}">
@@ -33,7 +33,7 @@
                     <ul class="uk-nav uk-nav-dropdown" data-uk-switcher="{connect:'#influencer ul'}">
                         <li class="uk-active"><a>TOP RATE</a></li>
                         <li><a>TOP LIKE</a></li>
-                        <li><a>TOP POST</a></li>
+                        {{--<li><a>TOP POST</a></li>--}}
                     </ul>
                 </div>
             </div>
@@ -41,9 +41,9 @@
         <div id="influencer" class="md-card-content conv-wrap">
             <?php //INFLUENCER/AUTHOR TABLE ?>
             <ul class="uk-switcher">
-                <li><table id="top10Vid" class="striped bordered highlight responsive-table"></table></li>
-                <li><table id="top10Like" class="striped bordered highlight responsive-table"></table></li>
-                <li><table id="top10Post" class="striped bordered highlight responsive-table"></table></li>
+                <li><table id="topRateVid" class="striped bordered highlight responsive-table"></table></li>
+                <li><table id="topLikeVid" class="striped bordered highlight responsive-table"></table></li>
+                {{--<li><table id="top10Post" class="striped bordered highlight responsive-table"></table></li>--}}
             </ul>
         </div>
     </div>
