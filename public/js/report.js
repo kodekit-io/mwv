@@ -28,7 +28,7 @@ $(function() {
                         $mediaActive = $data[i].mediaActive;
                         $mediaChart = $data[i].mediaChart;
 
-                        console.log($mediaChart);
+                        // console.log($mediaChart);
 
                         //list media/page
                         if ($mediaActive == 'true') {
