@@ -74,13 +74,13 @@ Route::group(['middleware' => ['auth', 'projects']], function () {
     Route::get('/project/chart-data/wordcloud/{mediaId}/{type?}', 'ChartController@wordcloudData');
     Route::get('/project/chart-data/influencer/{mediaId}/{type?}', 'ChartController@influencerData');
 
-    Route::get('/project/chart-data/convo-twitter', 'ChartController@convoTwitterData');
-    Route::get('/project/chart-data/convo-facebook', 'ChartController@convoFacebookData');
+    Route::get('/project/chart-data/convo-twitter/{type?}', 'ChartController@convoTwitterData');
+    Route::get('/project/chart-data/convo-facebook/{type?}', 'ChartController@convoFacebookData');
     Route::get('/project/chart-data/convo-news', 'ChartController@convoNewsData');
     Route::get('/project/chart-data/convo-forum', 'ChartController@convoForumData');
-    Route::get('/project/chart-data/convo-video', 'ChartController@convoVideoData');
+    Route::get('/project/chart-data/convo-video/{type?}', 'ChartController@convoVideoData');
     Route::get('/project/chart-data/convo-blog', 'ChartController@convoBlogData');
-    Route::get('/project/chart-data/convo-ig', 'ChartController@convoInstagramData');
+    Route::get('/project/chart-data/convo-ig/{type?}', 'ChartController@convoInstagramData');
 
     Route::any('/project-detail/{pid}', 'ProjectController@detail');
     Route::any('/project-twitter/{pid}', 'ProjectTwitterController@detail');

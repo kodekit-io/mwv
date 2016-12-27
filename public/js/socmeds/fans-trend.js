@@ -1,8 +1,6 @@
 $.ajax({
-    url : ajaxUrl + '/project/chart-data/fans-trend/' + mediaId + '/' + type,
-    //url : 'http://103.28.15.104:8821/api_3.02/project/2/fanstrend',
+    url : ajaxUrl + '/project/chart-data/fans-trend/' + type,
     data : data,
-    dataType: 'jsonp',
     beforeSend : function(xhr) {
         $('#fanstrend').block({
             message: '<img src="' + ajaxUrl + '/mediawave/img/spinner.gif">',
@@ -14,7 +12,7 @@ $.ajax({
         $('#fanstrend').unblock();
     },
     success : function(result) {
-        //console.log(result);
+        // console.log(result);
         fansTrendChart('fanstrend', jQuery.parseJSON(result));
     }
 });

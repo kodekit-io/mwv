@@ -48,9 +48,9 @@ class ChartController extends Controller
         return \GuzzleHttp\json_encode($chart);
     }
     //START 2016-12-25
-    public function fansTrendData($mediaId, $type = 1)
+    public function fansTrendData($type)
     {
-        $chart = $this->projectChartService->fansTrend($mediaId, $type);
+        $chart = $this->projectChartService->fansTrend($type);
         return \GuzzleHttp\json_encode($chart);
     }
     public function likeTrendData($mediaId, $type = 1)
@@ -201,15 +201,15 @@ class ChartController extends Controller
         return \GuzzleHttp\json_encode($chart);
     }
 
-    public function convoTwitterData()
+    public function convoTwitterData($type = 1)
     {
-        $chart = $this->projectChartService->convoData(2);
+        $chart = $this->projectChartService->convoData(2, $type);
         return \GuzzleHttp\json_encode($chart);
     }
 
-    public function convoFacebookData()
+    public function convoFacebookData($type = 1)
     {
-        $chart = $this->projectChartService->convoData(1);
+        $chart = $this->projectChartService->convoData(1, $type);
         return \GuzzleHttp\json_encode($chart);
     }
 
@@ -225,9 +225,9 @@ class ChartController extends Controller
         return \GuzzleHttp\json_encode($chart);
     }
 
-    public function convoVideoData()
+    public function convoVideoData($type = 1)
     {
-        $chart = $this->projectChartService->convoData(5);
+        $chart = $this->projectChartService->convoData(5, $type);
         return \GuzzleHttp\json_encode($chart);
     }
 
@@ -237,9 +237,9 @@ class ChartController extends Controller
         return \GuzzleHttp\json_encode($chart);
     }
 
-    public function convoInstagramData()
+    public function convoInstagramData($type = 1)
     {
-        $chart = $this->projectChartService->convoData(7);
+        $chart = $this->projectChartService->convoData(7, $type);
         return \GuzzleHttp\json_encode($chart);
     }
 

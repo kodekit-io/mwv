@@ -5,7 +5,7 @@ $(document).ready( function () {
         //"searching": false,
         //"info": false,
         "ajax": {
-            "url": ajaxUrl + '/project/chart-data/convo-twitter',
+            "url": ajaxUrl + '/project/chart-data/convo-twitter/' + 2,
             //"url": ajaxUrl + '/mediawave/jsontest/conv-twitter.json',
             "data" : data
         },

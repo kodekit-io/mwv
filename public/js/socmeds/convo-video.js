@@ -1,6 +1,6 @@
 $('#table_video').DataTable( {
     "ajax": {
-        "url": ajaxUrl + '/project/chart-data/convo-video',
+        "url": ajaxUrl + '/project/chart-data/convo-video/' + 2,
         //"url": ajaxUrl + "/mediawave/jsontest/convo-video.json",
         "data" : data
     },

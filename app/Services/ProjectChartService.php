@@ -149,6 +149,11 @@ class ProjectChartService
         return $this->getChartWithUidWithoutMedia('share', $type);
     }
 
+    public function fansTrend($type = 2)
+    {
+        return $this->getChartWithUidWithoutMedia('fanstrend', $type);
+    }
+
     public function viralPie($type = 1)
     {
         return $this->getChartWithoutMedia('viralreach', $type);
@@ -191,7 +196,7 @@ class ProjectChartService
         $startDate = $startDate == '' ? ( $this->request->has('startDate') ? $this->request->input('startDate') : '') : $startDate;
         $endDate = $endDate == '' ? ( $this->request->has('endDate') ? $this->request->input('endDate') : '') : $endDate;
         $searchText = $search == '' ? ( $this->request->has('search') ? $this->request->input('search') : '') : $search;
-        $sentiment = $this->request->has('sentiment') ? $this->request->input('sentiment') : '';
+        $sentiment = $this->request->has('sentiment') ? $this->request->input('sentiment') : '1,0,-1';
 
         return [
             'pid' => $projectId,

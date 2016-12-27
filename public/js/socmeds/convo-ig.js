@@ -1,7 +1,7 @@
 $(document).ready( function () {
     var table_ig = $('#table_ig').DataTable( {
         "ajax": {
-            "url": ajaxUrl + '/project/chart-data/convo-ig',
+            "url": ajaxUrl + '/project/chart-data/convo-ig/' + 2,
             //"url": ajaxUrl + "/mediawave/jsontest/convo-ig.json",
             "data": data
         },
