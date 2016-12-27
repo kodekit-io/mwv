@@ -61,7 +61,7 @@ class ProfileService
         $instagrams = $inputs['instagrams'];
 
         $params = [
-            'uid' => \Auth::user()->id,
+            'id_login' => \Auth::user()->id,
         ];
 
         if (count($twitters) > 0) {
@@ -91,6 +91,8 @@ class ProfileService
                 $params['ig' . $key] = $words;
             }
         }
+
+//        var_dump($params); exit();
 
         return $this->apiService->postDummy('project/editprofile', $params);
 

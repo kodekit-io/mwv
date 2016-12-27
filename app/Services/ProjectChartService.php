@@ -265,7 +265,9 @@ class ProjectChartService
             $params['uid'] = \Auth::user()->id;
         }
 
-        // Log::warning($action . '==>' . json_encode($params));
+        $url = 'project/'. $type .'/'. $action;
+
+        Log::warning('url ==> ' . $url . ', ' . $action . '==>' . json_encode($params));
 
         return $this->getChart('project/' . $type .'/' . $action, $params);
     }
