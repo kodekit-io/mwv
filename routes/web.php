@@ -59,7 +59,7 @@ Route::group(['middleware' => ['auth', 'projects']], function () {
     Route::get('/project/chart-data/subscribes-trend/{type?}', 'ChartController@subscribesTrendData');
     Route::get('/project/chart-data/love-trend/{type?}', 'ChartController@loveTrendData');
     Route::get('/project/chart-data/love/{type?}', 'ChartController@loveData');
-    Route::get('/project/chart-data/view/{type?}', 'ChartController@viewData');
+    Route::get('/project/chart-data/view-pie/{type?}', 'ChartController@viewData');
     //END 2016-12-25
 
     Route::get('/project/chart-data/unique-user-pie', 'ChartController@uniqueUserPieData');
