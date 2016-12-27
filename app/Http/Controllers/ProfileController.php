@@ -30,6 +30,8 @@ class ProfileController extends Controller
         $data['userProfile'] = $profiles['user'];
         $data['socmeds'] = $profiles['socmed'];
         $data['pageTitle'] = 'Profile';
+//        $socmed = $profiles['socmed'];
+//        var_dump($socmed[0]); exit();
 
         return view('mediawave.profile', $data);
     }

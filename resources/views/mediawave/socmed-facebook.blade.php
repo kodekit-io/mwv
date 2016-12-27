@@ -44,17 +44,13 @@
         var csrfToken = '{!! csrf_token() !!}';
         var mediaId = 1;
         var type = 2;
-        var startDate = '{!! $startDate !!}';
-        var endDate = '{!! $endDate !!}';
-        var brands = '{!! $brands !!}';
-        var search = '{!! $shownSearch !!}';
         var influencers = ["topStatusFB", "topPhotoFB", "topLinkFB", "topVideoFB"];
         var data = {
             "idMedia": '1',
             "keywords": '{!! $brands !!}',
             "startDate": '{!! $startDate !!}',
             "endDate": '{!! $endDate !!}',
-            "sentiment": '1,0,-1',
+            "sentiment": '{!! $sentiments !!}',
             "search": '{!! $shownSearch !!}'
         };
     </script>

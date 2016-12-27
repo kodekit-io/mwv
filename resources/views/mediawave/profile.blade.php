@@ -103,34 +103,79 @@
 								<form action="{!! url('update-profile') !!}" method="post">
                                     {!! csrf_field() !!}
 									<div class="addsocmed">
-										<div class="row">
-											<div class="input-field col s12">
-												<i class="uk-icon-twitter-square prefix light-blue-text text-lighten-2"></i>
-												<input value="" id="twitter-1" class="twitters" name="twitters[1]" type="text">
-												<label for="twitter-1">Twitter</label>
-											</div>
-										</div>
-										<div class="row">
-											<div class="input-field col s12">
-												<i class="uk-icon-facebook-square prefix blue-text text-darken-4"></i>
-												<input value="" id="facebook-1" class="facebooks" name="facebooks[1]" type="text">
-												<label for="facebook-1">Facebook</label>
-											</div>
-										</div>
-										<div class="row">
-											<div class="input-field col s12">
-												<i class="uk-icon-youtube-square prefix red-text"></i>
-												<input value="" id="youtube-1" class="youtubes" name="youtubes[1]" type="text">
-												<label for="youtube-1">Youtube</label>
-											</div>
-										</div>
-										<div class="row">
-											<div class="input-field col s12">
-												<i class="uk-icon-instagram prefix brown-text"></i>
-												<input value="" id="instagram-1" class="instagrams" name="instagrams[1]" type="text">
-												<label for="instagram-1">Instagram</label>
-											</div>
-										</div>
+                                        @if(count($socmeds) > 0)
+                                            <?php
+                                            $twitters = isset($socmeds[0]->twitter) ? $socmeds[0]->twitter : [];
+                                            $instagrams = isset($socmeds[0]->instagram) ? $socmeds[0]->instagram : [];
+                                            $facebooks = isset($socmeds[0]->facebook) ? $socmeds[0]->facebook : [];
+                                            $youtubes = isset($socmeds[0]->youtube) ? $socmeds[0]->youtube : [];
+                                            ?>
+                                        @endif
+                                        @if(count($twitters) > 0)
+                                            @foreach($twitters as $twitter)
+                                                <div class="row">
+                                                    <div class="input-field col s12">
+                                                        <i class="uk-icon-twitter-square prefix light-blue-text text-lighten-2"></i>
+                                                        <input value="{!! $twitter->name !!}" id="twitter-{!! $twitter->id !!}" class="twitters" name="twitters[{!! $twitter->id !!}]" type="text">
+                                                        <label for="twitter-{!! $twitter->id !!}">Twitter</label>
+                                                    </div>
+                                                </div>
+                                            @endforeach
+                                        @endif
+                                        @if(count($facebooks) > 0)
+                                            @foreach($facebooks as $facebook)
+                                                <div class="row">
+                                                    <div class="input-field col s12">
+                                                        <i class="uk-icon-facebook-square prefix blue-text text-darken-4"></i>
+                                                        <input value="{!! $facebook->name !!}" id="facebook-{!! $facebook->id !!}" class="facebooks" name="facebooks[{!! $facebook->id !!}]" type="text">
+                                                        <label for="facebook-{!! $facebook->id !!}">Facebook</label>
+                                                    </div>
+                                                </div>
+                                            @endforeach
+                                        @endif
+                                        @if(count($youtubes) > 0)
+                                            @foreach($youtubes as $youtube)
+                                                <div class="row">
+                                                    <div class="input-field col s12">
+                                                        <i class="uk-icon-youtube-square prefix red-text"></i>
+                                                        <input value="{!! $youtube->name !!}" id="youtube-{!! $youtube->id !!}" class="youtubes" name="youtubes[{!! $youtube->id !!}]" type="text">
+                                                        <label for="youtube-{!! $youtube->id !!}">Youtube</label>
+                                                    </div>
+                                                </div>
+                                            @endforeach
+                                        @endif
+                                        @if(count($instagrams) > 0)
+                                            @foreach($instagrams as $instagram)
+                                                <div class="row">
+                                                    <div class="input-field col s12">
+                                                        <i class="uk-icon-instagram prefix brown-text"></i>
+                                                        <input value="{!! $instagram->name !!}" id="instagram-{!! $instagram->id !!}" class="instagrams" name="instagrams[{!! $instagram->id !!}]" type="text">
+                                                        <label for="instagram-{!! $instagram->id !!}">Instagram</label>
+                                                    </div>
+                                                </div>
+                                            @endforeach
+                                        @endif
+										{{--<div class="row">--}}
+											{{--<div class="input-field col s12">--}}
+												{{--<i class="uk-icon-facebook-square prefix blue-text text-darken-4"></i>--}}
+												{{--<input value="" id="facebook-1" class="facebooks" name="facebooks[1]" type="text">--}}
+												{{--<label for="facebook-1">Facebook</label>--}}
+											{{--</div>--}}
+										{{--</div>--}}
+										{{--<div class="row">--}}
+											{{--<div class="input-field col s12">--}}
+												{{--<i class="uk-icon-youtube-square prefix red-text"></i>--}}
+												{{--<input value="" id="youtube-1" class="youtubes" name="youtubes[1]" type="text">--}}
+												{{--<label for="youtube-1">Youtube</label>--}}
+											{{--</div>--}}
+										{{--</div>--}}
+										{{--<div class="row">--}}
+											{{--<div class="input-field col s12">--}}
+												{{--<i class="uk-icon-instagram prefix brown-text"></i>--}}
+												{{--<input value="" id="instagram-1" class="instagrams" name="instagrams[1]" type="text">--}}
+												{{--<label for="instagram-1">Instagram</label>--}}
+											{{--</div>--}}
+										{{--</div>--}}
 									</div>
 									<div class="row uk-margin-bottom uk-text-center">
 										<button type="submit" name="submit" value="submit-account" class="btn amber darken-4" data-uk-tooltip title="Save Social Media">SAVE NOW</button>

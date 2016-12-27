@@ -146,7 +146,7 @@ class ProjectChartService
 
     public function sharePie($type = 1)
     {
-        return $this->getChartWithoutMedia('share', $type);
+        return $this->getChartWithUidWithoutMedia('share', $type);
     }
 
     public function viralPie($type = 1)
@@ -265,7 +265,9 @@ class ProjectChartService
             $params['uid'] = \Auth::user()->id;
         }
 
-        // Log::warning($action . '==>' . json_encode($params));
+        $url = 'project/'. $type .'/'. $action;
+
+        Log::warning('url ==> ' . $url . ', ' . $action . '==>' . json_encode($params));
 
         return $this->getChart('project/' . $type .'/' . $action, $params);
     }
