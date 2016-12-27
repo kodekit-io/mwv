@@ -12,16 +12,23 @@ class ProjectService
      */
     private $fakeResult;
     private $apiMode;
+    /**
+     * @var ProfileService
+     */
+    private $profileService;
 
     /**
      * ProjectService constructor.
-     * @param $apiService
+     * @param ApiService $apiService
+     * @param ProfileService $profileService
+     * @param FakeResult $fakeResult
      */
-    public function __construct(ApiService $apiService, FakeResult $fakeResult)
+    public function __construct(ApiService $apiService, ProfileService $profileService, FakeResult $fakeResult)
     {
         $this->apiService = $apiService;
         $this->fakeResult = $fakeResult;
         $this->apiMode = config('services.mediawave.api_mode');
+        $this->profileService = $profileService;
     }
 
     public function projectList()
@@ -222,6 +229,36 @@ class ProjectService
             $keywords = $projectInfo->projectInfo->keywordList;
             foreach ($keywords as $keyword) {
                 $select .= '<option value="' . $keyword->keyword->keywordId . '" class="' . $project->pid . '">' . $keyword->keyword->keywordName . '</option>';
+            }
+        }
+        $select.= '</select>';
+
+        return $select;
+    }
+
+    public function accountSelect($name, $id)
+    {
+        $profiles = $this->profileService->getProfile();
+        $socmedAccounts = $profiles['socmed'];
+        $select = '<select name="' . $name . '" id="' . $id . '" class="browser-default">';
+        if (count($socmedAccounts) > 0) {
+            foreach ($socmedAccounts as $socmedAccount) {
+                $twitters = isset($socmedAccount->twitter) ? $socmedAccount->twitter : [];
+                $instagrams = isset($socmedAccount->instagram) ? $socmedAccount->instagram : [];
+                $facebooks = isset($socmedAccount->facebook) ? $socmedAccount->facebook : [];
+                $youtubes = isset($socmedAccount->youtube) ? $socmedAccount->youtube : [];
+                foreach ($twitters as $twitter) {
+                    $select .= '<option value="' . $twitter->id . '" >' . $twitter->name . '</option>';
+                }
+                foreach ($instagrams as $instagram) {
+                    $select .= '<option value="' . $instagram->id . '" >' . $instagram->name . '</option>';
+                }
+                foreach ($facebooks as $facebook) {
+                    $select .= '<option value="' . $facebook->id . '" >' . $facebook->name . '</option>';
+                }
+                foreach ($youtubes as $youtube) {
+                    $select .= '<option value="' . $youtube->id . '" >' . $youtube->name . '</option>';
+                }
             }
         }
         $select.= '</select>';
