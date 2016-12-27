@@ -46,24 +46,20 @@
         var csrfToken = '{!! csrf_token() !!}';
         var mediaId = 7;
         var type = 2;
-        var startDate = '{!! $startDate !!}';
-        var endDate = '{!! $endDate !!}';
-        var brands = '{!! $brands !!}';
-        var search = '{!! $shownSearch !!}';
-        var influencers = ["top10Comment", "top10Like", "top10View"];
+        var influencers = ["topCommentIG", "topLoveIG", "topViewIG"];
         var data = {
             "idMedia": '7',
             "keywords": '{!! $brands !!}',
             "startDate": '{!! $startDate !!}',
             "endDate": '{!! $endDate !!}',
-            "sentiment": '1,0,-1',
+            "sentiment": '{!! $sentiments !!}',
             "search": '{!! $shownSearch !!}'
         };
     </script>
     <script src="{!! asset('js/socmeds/post-trend.js') !!}"></script>
     <script src="{!! asset('js/socmeds/comment-trend.js') !!}"></script>
     <script src="{!! asset('js/socmeds/love-trend.js') !!}"></script>
-    <script src="{!! asset('js/socmeds/reach-trend.js') !!}"></script>
+    <script src="{!! asset('js/socmeds/potential-trend.js') !!}"></script>
 
     <script src="{!! asset('js/socmeds/post-pie.js') !!}"></script>
     <script src="{!! asset('js/socmeds/love-pie.js') !!}"></script>

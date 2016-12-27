@@ -174,6 +174,21 @@ class ProjectChartService
         return $this->getChartWithUidWithoutMedia('view', $type);
     }
 
+    public function loveTrend($type)
+    {
+        return $this->getChartWithUidWithoutMedia('lovetrend', $type);
+    }
+
+    public function potentialReachTrend($type = 1)
+    {
+        return $this->getChartWithUidWithoutMedia('potentialreachtrend', $type);
+    }
+
+    public function lovePie($type = 2)
+    {
+        return $this->getChartWithUidWithoutMedia('love', $type);
+    }
+
     public function viralPie($type = 1)
     {
         return $this->getChartWithoutMedia('viralreach', $type);
@@ -197,11 +212,6 @@ class ProjectChartService
     public function viewTrend($type)
     {
         return $this->getChartWithoutMedia('viewtrend', $type);
-    }
-
-    public function potentialReachTrend($type = 1)
-    {
-        return $this->getChartWithoutMedia('potentialreachtrend', $type);
     }
 
     public function countBar($type = 1)

@@ -72,15 +72,15 @@ class ChartController extends Controller
         return \GuzzleHttp\json_encode($chart);
     }
 
-    public function loveTrendData($mediaId, $type = 1)
+    public function loveTrendData($type = 2)
     {
-        $chart = $this->projectChartService->loveTrend($mediaId, $type);
+        $chart = $this->projectChartService->loveTrend($type);
         return \GuzzleHttp\json_encode($chart);
     }
 
-    public function loveData($mediaId, $type = 1)
+    public function loveData($type = 2)
     {
-        $chart = $this->projectChartService->lovePie($mediaId, $type);
+        $chart = $this->projectChartService->lovePie($type);
         return \GuzzleHttp\json_encode($chart);
     }
 
