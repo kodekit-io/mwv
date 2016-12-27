@@ -1,41 +1,40 @@
 $.ajax({
-    url : ajaxUrl + '/project/chart-data/reach-trend/' + mediaId + '/' + type,
+    url : ajaxUrl + '/project/chart-data/like-trend/' + type,
     data : data,
     beforeSend : function(xhr) {
-        $('#reachtrend').block({
+        $('#liketrend').block({
             message: '<img src="' + ajaxUrl + '/mediawave/img/spinner.gif">',
             css: { border: 'none', zIndex: 100 },
             overlayCSS: { backgroundColor: '#fff', zIndex: 100 }
         });
     },
     complete : function(xhr, status) {
-        $('#reachtrend').unblock();
+        $('#liketrend').unblock();
     },
     success : function(result) {
-        console.log(result);
-        reachTrendChart('reachtrend', jQuery.parseJSON(result));
+        likeTrendChart('liketrend', jQuery.parseJSON(result));
     }
 });
 
-function reachTrendChart($id, $data) {
+function likeTrendChart($id, $data) {
     if ($data.length === 0) {
         $('#'+$id).html("<div class='center'>No data chart</div>");
     } else {
         $dates = $data.dates;
         $content = [];
         for (var i = 0; i < $data.data.length; i++) {
-            $content[i] = { name: $data.data[i].keywordName, data: $data.data[i].preach };
+            $content[i] = { name: $data.data[i].keywordName, data: $data.data[i].like };
         }
-        var data = {
+        var chartData = {
             content: $content,
             categories: $dates
         };
 
-        createReachTrend(data, $id);
+        createLikeTrendChart(chartData, $id);
     }
 }
 
-function createReachTrend(data, id) {
+function createLikeTrendChart(chartData, id) {
     var now = new Date();
     var offset = Math.abs( now.getTimezoneOffset() / 60 );
     //console.log(now);
@@ -55,7 +54,7 @@ function createReachTrend(data, id) {
             text: null
         },
         xAxis: {
-            categories: data.categories,
+            categories: chartData.categories,
             labels: {
                 formatter: function() {
                     //return(this.value.substring(0,10) + "...");
@@ -69,7 +68,7 @@ function createReachTrend(data, id) {
         },
         yAxis: {
             title: {
-                text: 'Reach'
+                text: 'Like'
             },
             plotLines: [{
                 value: 0,
@@ -78,8 +77,8 @@ function createReachTrend(data, id) {
             }]
         },
         tooltip: {
-            valueSuffix: ' Reach'
+            valueSuffix: ' Like'
         },
-        series: data.content
+        series: chartData.content
     });
 }

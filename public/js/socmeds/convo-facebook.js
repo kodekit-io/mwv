@@ -35,7 +35,7 @@ $(document).ready( function () {
             { "data": "Likes", "title": "Likes", "render": $.fn.dataTable.render.number( '\.', '', 0, '' ) },
             { "data": "Shares", "title": "Shares", "render": $.fn.dataTable.render.number( '\.', '', 0, '' ) },
             { "data": "Media Type", "title": "Media Type", },
-            { "data": "Post Link", visible: false },
+            { "data": "Link", visible: false },
             {
                 "data": "Sentiment",
                 "title": "",
@@ -61,10 +61,6 @@ $(document).ready( function () {
                 }
             },
         ],
-        /*"columnDefs": [{
-            "visible": false,
-            "targets": [8]
-        }],*/
         "order": [[ 0, "desc" ]],
         "initComplete": function () {
             this.api().columns().every( function () {

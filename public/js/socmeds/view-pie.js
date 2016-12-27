@@ -1,22 +1,22 @@
 $.ajax({
-    url : ajaxUrl + '/project/chart-data/share-pie/' + type,
+    url : ajaxUrl + '/project/chart-data/view-pie/' + type,
     data : data,
     beforeSend : function(xhr) {
-        $('#sharepie').block({
+        $('#viewpie').block({
             message: '<img src="' + ajaxUrl + '/mediawave/img/spinner.gif">',
             css: { border: 'none', zIndex: 100 },
             overlayCSS: { backgroundColor: '#fff', zIndex: 100 }
         });
     },
     complete : function(xhr, status) {
-        $('#sharepie').unblock();
+        $('#viewpie').unblock();
     },
     success : function(result) {
-        sharePieChart('sharepie', jQuery.parseJSON(result));
+        viewPieChart('viewpie', jQuery.parseJSON(result));
     }
 });
 
-function sharePieChart($id, $data) {
+function viewPieChart($id, $data) {
     $data = $data.data;
     if ($data.length === 0) {
         $('#' + $id).html("<div class='center'>No Data</div>");
@@ -24,14 +24,14 @@ function sharePieChart($id, $data) {
         var $content = [];
         for (var i = 0; i < $data.length; i++) {
             $keywordname = $data[i].keywordName;
-            $buzz = $data[i].share;
+            $buzz = $data[i].view;
             $content[i] = {name: $keywordname, y: $buzz};
         }
-        createSharePieChart($content, $id);
+        createViewPieChart($content, $id);
     }
 }
 
-function createSharePieChart(dataSet, id) {
+function createViewPieChart(dataSet, id) {
     $('#'+id).highcharts({
         chart: {
             plotBackgroundColor: null,
@@ -44,8 +44,18 @@ function createSharePieChart(dataSet, id) {
         },
         tooltip: {
             //pointFormat: '{series.name}: <b>{point.percentage:.1f}%</b>'
-            pointFormat: 'Share: {point.y} ({point.percentage:.1f}%)'
+            pointFormat: 'View: {point.y} ({point.percentage:.1f}%)'
         },
+        /*plotOptions: {
+         pie: {
+         allowPointSelect: true,
+         cursor: 'pointer',
+         dataLabels: {
+         enabled: false
+         },
+         showInLegend: true
+         }
+         },*/
         plotOptions: {
             pie: {
                 allowPointSelect: true,

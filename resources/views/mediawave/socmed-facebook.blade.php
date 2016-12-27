@@ -55,6 +55,7 @@
         };
     </script>
     <script src="{!! asset('js/socmeds/post-trend.js') !!}"></script>
+    <script src="{!! asset('js/socmeds/fans-trend.js') !!}"></script>
     <script src="{!! asset('js/socmeds/post-pie.js') !!}"></script>
     <script src="{!! asset('js/socmeds/comment-pie.js') !!}"></script>
     <script src="{!! asset('js/socmeds/like-pie.js') !!}"></script>

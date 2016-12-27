@@ -7,19 +7,17 @@
 - Socmed Influencer show column Value only, text align right ==> Status: Done
 - Make sure UTC date format yyyy-mm-ddThh:mm:ssZ
 - Socmed Twitter page:
-    + pie chart viral reach change into Post pie ==> Status: UI Done
-    + ordering chart : buzz, post, interaction, potential reach ==> Status: UI Done (waiting for Post API)
+    + pie chart viral reach change into Post pie ==> Status:
+    + ordering chart : buzz, post, interaction, potential reach ==> Status:
 - Socmed Facebook page :
-    + influencer columns become : Name | Like | Comment | Share ==> Status: UI Done (waiting for api)
-    + Adding Fans Trend ==> Status: UI Done (waiting for api)
+    + influencer columns become : Name | Like | Comment | Share ==> Status:
+    + Adding Fans Trend ==> Status:
 - Sosmed Youtube page :
     + Video trend become Post trend ==> Status: Done
-    + Ordering video pie: Post, View, Comment ==> Status: UI Done (waiting for api)
-    + Add: Like Trend, Dislike Trend, Subscribe Trend ==> Status: UI Done (waiting for api)
-    + Influencer, add Top Like, Top Post ==> Status: UI Done (waiting for api)
+    + Ordering video pie: Post, View, Comment ==> Status:
+    + Add: Like Trend, Dislike Trend, Subscribe Trend ==> Status:
+    + Influencer, add Top Like, Top Post ==> Status:
 - Sosmed IG page :
-    + Interaction trend become Love trend ==> Status: UI Done (waiting for api)
-    + Pie chart becoming:  Post, Love, Comment, View ==> Status: UI Done (waiting for api)
-    + Influencer: Top Comment, Top Love, Top View ==> Status: UI Done (waiting for api)
-
-ERROR
+    + Interaction trend become Love trend ==> Status:
+    + Pie chart becoming:  Post, Love, Comment, View ==> Status:
+    + Influencer: Top Comment, Top Love, Top View ==> Status:
