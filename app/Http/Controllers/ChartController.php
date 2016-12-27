@@ -48,9 +48,9 @@ class ChartController extends Controller
         return \GuzzleHttp\json_encode($chart);
     }
     //START 2016-12-25
-    public function fansTrendData($mediaId, $type = 1)
+    public function fansTrendData($type)
     {
-        $chart = $this->projectChartService->fansTrend($mediaId, $type);
+        $chart = $this->projectChartService->fansTrend($type);
         return \GuzzleHttp\json_encode($chart);
     }
     public function likeTrendData($mediaId, $type = 1)
