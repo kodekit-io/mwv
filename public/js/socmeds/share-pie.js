@@ -1,5 +1,5 @@
 $.ajax({
-    url : ajaxUrl + '/project/chart-data/share-pie/' + mediaId + '/' + type,
+    url : ajaxUrl + '/project/chart-data/share-pie/' + type,
     data : data,
     beforeSend : function(xhr) {
         $('#sharepie').block({
