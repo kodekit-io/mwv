@@ -41,7 +41,7 @@
                             <hr>
                             <ul class="uk-subnav right">
                                 <li><a href="#" class="modal-action modal-close waves-effect waves-green btn grey z-depth-0">CANCEL</a></li>
-                                <li><button class="modal-action modal-close waves-effect waves-light btn red z-depth-0" type="submit" name="action">YES, DELETE NOW!</button></li>
+                                <li><a href="{!! url('delete-project/' . $project->pid) !!}" class="modal-action modal-close waves-effect waves-light btn red z-depth-0 btn-delete" name="action">YES, DELETE NOW!</a></li>
                             </ul>
                         </div>
                     </div>
@@ -81,7 +81,7 @@
 @section('page-level-scripts')
     <script type="text/javascript" src="{{ asset('js/dashboard_brand-equity.js') }}"></script>
     <script type="text/javascript" src="{{ asset('js/jquery.blockUI.js') }}"></script>
-    <script>
+    <script type="text/javascript">
         @foreach($projects as $project)
             $.ajax({
                 url : '{{ url('chart-1/' . $project->pid) }}',

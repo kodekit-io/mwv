@@ -49,6 +49,16 @@ class ProjectController extends Controller
         $data['pageTitle'] = 'Create Project';
         return view('mediawave.add-project', $data);
     }
+
+    public function delete($projectId)
+    {
+        $response = $this->projectService->deleteProject($projectId);
+        if ($response->status == 'OK') {
+            return redirect('dashboard')->with(['message' => 'Project has been deleted.']);
+        }
+        return redirect('dashboard')->with(['message' => 'Can not delete this project.']);
+    }
+
     public function addig()
     {
         $data['pageTitle'] = 'Create Instagram Project';
