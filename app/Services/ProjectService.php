@@ -215,6 +215,14 @@ class ProjectService
 
     }
 
+    public function deleteProject($projectId)
+    {
+        $params['pid'] = $projectId;
+        $response = $this->apiService->post('project/delete', $params);
+
+        return $response;
+    }
+
     public function projectSelect($projectInfos, $name, $id=null)
     {
         $select = '<select name="' . $name . '" id="' . $id . '" class="browser-default">';

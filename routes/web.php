@@ -29,6 +29,7 @@ Route::group(['middleware' => ['auth', 'projects']], function () {
     Route::get('/create-project', 'ProjectController@add');
     Route::get('/create-project-ig', 'ProjectController@addig');
     Route::post('/save-project', 'ProjectController@save');
+    Route::get('/delete-project/{pid}', 'ProjectController@delete');
 
     Route::get('/project/chart-data/brand-equity', 'ChartController@brandEquityData');
 
