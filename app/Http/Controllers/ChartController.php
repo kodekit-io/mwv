@@ -26,13 +26,13 @@ class ChartController extends Controller
         $dateRange = $this->chartService->getLastSevenDaysRange();
         $startDate = $dateRange['startDate'];
         $endDate = $dateRange['endDate'];
-        $chart = $this->chartService->projectChart($projectId, '1', '', $startDate, $endDate);
+        $chart = $this->projectChartService->brandEquity($projectId, $startDate, $endDate);
         return \GuzzleHttp\json_encode($chart->brandEquity);
     }
 
-    public function brandEquityData()
+    public function brandEquityData($projectId = '', $startDate = '', $endDate = '')
     {
-        $chart = $this->projectChartService->brandEquity();
+        $chart = $this->projectChartService->brandEquity($projectId, $startDate, $endDate);
         return \GuzzleHttp\json_encode($chart->brandEquity);
     }
 

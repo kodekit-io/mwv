@@ -27,9 +27,9 @@ class ProjectChartService
         return $this->apiService->postDummy($url, $params, true);
     }
 
-    public function brandEquity()
+    public function brandEquity($projectId = '', $startDate = '', $endDate = '')
     {
-        $params = $this->generateParams();
+        $params = $this->generateParams($projectId, '', $startDate, $endDate);
 
         return $this->getChart('project/brandequity', $params);
     }
