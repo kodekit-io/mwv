@@ -23,18 +23,12 @@
                 <hr>
                 <ul class="uk-subnav left uk-margin-bottom-remove" style="padding-top:5px;">
                     <li style="line-height:24px;">Sentiment: </li>
-                    <li>
-                        <input type="checkbox" name="sentiments[]" value="1" class="filled-in" id="pstv" checked/>
-                        <label for="pstv">Positives</label>
-                    </li>
-                    <li>
-                        <input type="checkbox" name="sentiments[]" value="0" class="filled-in" id="ntrl" checked/>
-                        <label for="ntrl">Neutral</label>
-                    </li>
-                    <li>
-                        <input type="checkbox" name="sentiments[]" value="-1" class="filled-in" id="ngtv" checked/>
-                        <label for="ngtv">Negative</label>
-                    </li>
+                    @foreach($sentimentCheckboxes as $key => $sentiment)
+                        <li>
+                            <input type="checkbox" name="sentiments[]" value="{!! $sentiment['value'] !!}" class="filled-in" id="{!! $key !!}" {!! $sentiment['checked'] !!}/>
+                            <label for="{!! $key !!}">{!! $sentiment['showName'] !!}</label>
+                        </li>
+                    @endforeach
                 </ul>
                 <ul class="uk-subnav right">
                     <li>

@@ -81,8 +81,14 @@ class ProjectService
 
     public function addProject(array $inputs)
     {
+//        var_dump($inputs); exit();
         $projectName = $inputs['projectname'];
-        $mode = $inputs['form_mode'];
+//        $mode = $inputs['form_mode'];
+        $mode = '';
+        if ($inputs['adv_field_key'] == '' && $inputs['adv_field_topic'] == '' && $excludes = $inputs['adv_field_excld'] == '') {
+            $mode = 'advanced';
+        }
+
         $params = [
             'uid' => \Auth::user()->id,
             'pname' => $projectName
