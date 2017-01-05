@@ -85,9 +85,11 @@ class ProjectService
         $projectName = $inputs['projectname'];
 //        $mode = $inputs['form_mode'];
         $mode = '';
-        if ($inputs['adv_field_key'] == '' && $inputs['adv_field_topic'] == '' && $excludes = $inputs['adv_field_excld'] == '') {
+        if (count($inputs['adv_field_key']) > 1 && count($inputs['adv_field_topic']) > 1 && count($inputs['adv_field_excld']) > 1) {
             $mode = 'advanced';
         }
+
+        echo $mode;
 
         $params = [
             'uid' => \Auth::user()->id,
@@ -133,20 +135,18 @@ class ProjectService
 
             if (count($topics) > 0) {
                 foreach ($topics as $key => $topic) {
-                    $words = $this->generateWords($keyword);
+                    $words = $this->generateWords($topic);
                     $params['to' . $key] = $words;
                 }
             }
 
             if (count($excludes) > 0) {
                 foreach ($excludes as $key => $exclude) {
-                    $words = $this->generateWords($keyword);
+                    $words = $this->generateWords($exclude);
                     $params['no' . $key] = $words;
                 }
             }
         }
-
-//        var_dump($params); exit;
 
         $addProjectResponse = $this->apiService->post('project/add', $params);
 
