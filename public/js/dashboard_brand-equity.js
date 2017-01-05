@@ -66,7 +66,7 @@ function showEquityChart($id, $data) {
         },
 
         legend: {
-            enabled: true
+            enabled: false
         },
 
         //title: {
@@ -82,34 +82,32 @@ function showEquityChart($id, $data) {
         },
 
         xAxis: {
-            gridLineWidth: 1,
             title: {
-                text: 'Net Sentiment'
+                text: ''
             },
             labels: {
+                enabled: false,
                 format: '{value}'
             },
-			min: 0,
-            tickInterval: 500,
-			lineWidth: 1,
         },
 
         yAxis: {
             startOnTick: false,
             endOnTick: false,
             title: {
-                text: 'Sims Score'
+                text: ''
             },
             labels: {
+                enabled: false,
                 format: '{value}'
             },
-			min: 0,
 			tickInterval: 0.1,
 			lineWidth: 1,
         },
 
         tooltip: {
             useHTML: true,
+            /*
             headerFormat: '<ul class="uk-list uk-margin-remove" style="width:200px;">',
             pointFormat: '<li><h6 class="white-text uk-margin-remove">{point.name}</h6></li>' +
             '<li>Net Sentiment: <div class="right">{point.x}</div></li>' +
@@ -120,13 +118,14 @@ function showEquityChart($id, $data) {
             '<li>Earned Media Share: <div class="right">{point.EarnedMediaShare}</div></li>' +
             '<li>Net Brand Reputation: <div class="right">{point.NetBrandReputation}</div></li>',
             footerFormat: '</ul>',
+            */
             followPointer: true
         },
 
         plotOptions: {
             series: {
                 dataLabels: {
-                    enabled: true,
+                    enabled: false,
                     format: '{point.name}',
                     style: {
                         fontWeight: 'normal',
