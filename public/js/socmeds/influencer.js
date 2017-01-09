@@ -58,7 +58,7 @@ function top10LikeStatus(id,result) {
 			columns: [
 				{ title: "Name" },
 				{ title: "Score" },
-				{ title: "Value" },
+				//{ title: "Value" },
 				//{ title: "Link" },
 				{
 					data: null,
@@ -102,7 +102,7 @@ function top10ByReachTW(id,result) {
 			columns: [
 				{ title: "Name" },
 				{ title: "Score", "render": $.fn.dataTable.render.number( '\.', '', 0, '' ) },
-				{ title: "Value", "render": $.fn.dataTable.render.number( '\.', '', 0, '' ) },
+				//{ title: "Value", "render": $.fn.dataTable.render.number( '\.', '', 0, '' ) },
 				//{ title: "Link" },
 				{
 					data: null,
@@ -146,7 +146,7 @@ function top10ByNumberTW(id,result) {
 			columns: [
 				{ title: "Name" },
 				{ title: "Score", "render": $.fn.dataTable.render.number( '\.', '', 0, '' ) },
-				{ title: "Value", "render": $.fn.dataTable.render.number( '\.', '', 0, '' ) },
+				//{ title: "Value", "render": $.fn.dataTable.render.number( '\.', '', 0, '' ) },
 				//{ title: "Link" },
 				{
 					data: null,
@@ -190,7 +190,7 @@ function top10ByImpactTW(id,result) {
 			columns: [
 				{ title: "Name" },
 				{ title: "Score", "render": $.fn.dataTable.render.number( '\.', '', 0, '' ) },
-				{ title: "Value", "render": $.fn.dataTable.render.number( '\.', '', 0, '' ) },
+				//{ title: "Value", "render": $.fn.dataTable.render.number( '\.', '', 0, '' ) },
 				//{ title: "Link" },
 				{
 					data: null,
@@ -235,7 +235,7 @@ function top10News(id,result) {
 			columns: [
 				{ title: "Media", },
 				{ title: "Score", "render": $.fn.dataTable.render.number( '\.', '', 0, '' ) },
-				{ title: "Value", "render": $.fn.dataTable.render.number( '\.', '', 0, '' ) },
+				//{ title: "Value", "render": $.fn.dataTable.render.number( '\.', '', 0, '' ) },
 				{ title: "Popularity", "render": $.fn.dataTable.render.number( '\.', '', 0, '' ) },
 				{
 					data: null,
@@ -276,7 +276,7 @@ function top10Blog(id,result) {
 			columns: [
 				{ title: "Blog", },
 				{ title: "Score", "render": $.fn.dataTable.render.number( '\.', '', 0, '' ) },
-				{ title: "Value", "render": $.fn.dataTable.render.number( '\.', '', 0, '' ) },
+				//{ title: "Value", "render": $.fn.dataTable.render.number( '\.', '', 0, '' ) },
 				{ title: "Popularity", "render": $.fn.dataTable.render.number( '\.', '', 0, '' ) },
 				{
 					data: null,
@@ -398,7 +398,7 @@ function top10Forum(id,result) {
 			columns: [
 				{ title: "Forum", },
 				{ title: "Score", "render": $.fn.dataTable.render.number( '\.', '', 0, '' ) },
-				{ title: "Value", "render": $.fn.dataTable.render.number( '\.', '', 0, '' ) },
+				//{ title: "Value", "render": $.fn.dataTable.render.number( '\.', '', 0, '' ) },
 				{ title: "Popularity", "render": $.fn.dataTable.render.number( '\.', '', 0, '' ) },
 				{
 					data: null,

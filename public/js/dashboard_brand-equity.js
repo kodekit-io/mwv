@@ -35,7 +35,7 @@ function brandChart($id, $data) {
                 data: [
                     {
                         x: $netsen,
-                        y: $sim,
+                        y: $EarnedMediaShare,
                         z: $uniq,
                         keywordId: $keywordID,
                         name: $keywordName,
