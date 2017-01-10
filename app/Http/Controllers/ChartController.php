@@ -267,7 +267,7 @@ class ChartController extends Controller
         return \GuzzleHttp\json_encode($chart);
     }
 
-    public function viewTrendData($type = 2)
+    public function viewTrendData($type = 1)
     {
         $chart = $this->projectChartService->viewTrend($type);
         return \GuzzleHttp\json_encode($chart);
