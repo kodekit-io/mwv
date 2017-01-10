@@ -42,11 +42,6 @@
         var csrfToken = '{!! csrf_token() !!}';
         var projectId = '{!! $project->pid !!}';
         var mediaId = 5;
-        var startDate = '{!! $startDate !!}';
-        var endDate = '{!! $endDate !!}';
-        var brands = '{!! $brands !!}';
-        var sentiments = '{!! $sentiments !!}';
-        var search = '{!! $shownSearch !!}';
         var influencers = ["top10LikeStatus"];
         var data = {
             "projectId": '{!! $project->pid !!}',
