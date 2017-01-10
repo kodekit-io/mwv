@@ -273,7 +273,7 @@ class ChartController extends Controller
         return \GuzzleHttp\json_encode($chart);
     }
 
-    public function countBarData($type = 2)
+    public function countBarData($type = 1)
     {
         $chart = $this->projectChartService->countBar($type);
         return \GuzzleHttp\json_encode($chart);
