@@ -49,7 +49,7 @@ function brandEquityChart($id, $data) {
                 data: [
                     {
                         x: $netsen,
-                        y: $sim,
+                        y: $EarnedMediaShare,
                         z: $uniq,
                         keywordId: $keywordID,
                         name: $keywordName,
@@ -96,7 +96,7 @@ function showEquityChart($id, $data) {
             startOnTick: false,
             endOnTick: false,
             title: {
-                text: 'Sims Score'
+                text: 'Earned Media Share'
             },
             labels: {
 
