@@ -52,23 +52,12 @@
                     <div class="md-card z-depth-0">
                         <div class="md-card-toolbar">
                             <div class="md-card-toolbar-heading-text uk-hidden-small">
-                                <ul class="uk-subnav uk-subnav-pill md-radiogroup" data-uk-switcher="{connect:'#switchproject, #switchchart'}">
-                                    <li class="uk-active"><a>PROJECT</a></li>
-                                    <li><a>SOCMED PAGE</a></li>
-                                </ul>
-                            </div>
-                            <div class="uk-button-dropdown uk-visible-small" data-uk-dropdown="{mode:'click'}">
-                                <button class="uk-button">CHOOSE <i class="uk-icon-caret-down"></i></button>
-                                <div class="uk-dropdown uk-dropdown-top">
-                                    <ul class="uk-nav uk-nav-dropdown" data-uk-switcher="{connect:'#switchproject, #switchchart'}">
-                                        <li class="uk-active"><a>PROJECT</a></li>
-                                        <li><a>SOCMED PAGE</a></li>
-                                    </ul>
-                                </div>
+                                <input type="radio" name="report_type" value="project" id="p"> <label for="p">Project</label>
+                                <input type="radio" name="report_type" value="socmed" id="s"> <label for="s">Social Media</label>
                             </div>
                         </div>
                         <div class="md-card-content">
-                            <ul id="switchproject" class="uk-switcher">
+                            <ul id="switchproject">
                                 <li>
                                     <h6>CHOOSE PROJECT</h6>
                                     <div class="select-field">
@@ -90,7 +79,7 @@
                     </div>
                 </div>
             </div>
-            <ul id="switchchart" class="uk-switcher" style="margin:25px 0;">
+            <ul id="switchchart" style="margin:25px 0;">
                 <li class="uk-width-medium-1-1 disiniproject">
                     <ul class="uk-grid uk-grid-medium uk-grid-width-1-1 uk-grid-match"  data-uk-grid-margin>
                         <li id="plist"></li>
