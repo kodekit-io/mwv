@@ -3,8 +3,10 @@
 namespace App;
 
 use GuzzleHttp\Client;
+use GuzzleHttp\Exception\RequestException;
 use GuzzleHttp\Psr7\Response;
 use Illuminate\Support\Facades\Log;
+use stdClass;
 
 class ApiService
 {
@@ -92,6 +94,14 @@ class ApiService
     public function login($params)
     {
         if ($this->apiMode == 'PRODUCTION') {
+            try {
+                $this->post('auth/login', $params, false);
+            } catch (RequestException $e) {
+                $ret = new stdClass();
+                $ret->status = 'KO';
+                $ret->msg = 'Network error.';
+                return $ret;
+            }
             return $this->post('auth/login', $params, false);
         }
 

@@ -55,8 +55,8 @@ $(function() {
                                 var $mediaChartName = $mediaChart[y].chartName;
                                 var $mediaChartId = $mediaChart[y].chartId;
                                 list = list + '<li> \
-                            <input type="checkbox" name="'+$mediaId+''+$mediaChartId+'" id="'+$mediaId+''+$mediaChartId+'" class="filled-in checkSingle" /> \
-                            <label for="'+$mediaId+''+$mediaChartId+'" class="black-text">'+$mediaChartName+'</label> \
+                            <input type="checkbox" name="'+$mediaChartId+'" id="'+$mediaChartId+'" class="filled-in checkSingle" /> \
+                            <label for="'+$mediaChartId+'" class="black-text">'+$mediaChartName+'</label> \
                             </li>';
 
                                 if ($mediaChart[y].chartActive=='true') {

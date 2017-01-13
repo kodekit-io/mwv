@@ -189,6 +189,11 @@ class ProjectChartService
         return $this->getChartWithUidWithoutMedia('love', $type);
     }
 
+    public function commentBar($type = 1)
+    {
+        return $this->getChartWithUidWithoutMedia('commentinteraction', $type);
+    }
+
     public function viralPie($type = 1)
     {
         return $this->getChartWithoutMedia('viralreach', $type);
@@ -197,11 +202,6 @@ class ProjectChartService
     public function likePie($type = 1)
     {
         return $this->getChartWithoutMedia('like', $type);
-    }
-
-    public function commentBar($type = 1)
-    {
-        return $this->getChartWithoutMedia('commentinteraction', $type);
     }
 
     public function ratingBar($type = 1)
