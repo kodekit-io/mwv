@@ -368,7 +368,13 @@ input[type="checkbox"].filled-in:checked +label:after {
 	background-color: #880e4f;
 	border-color: #880e4f;
 }
-
+input[type="radio"].with-gap:checked+label:after{
+	background-color: #880e4f;
+	border-color: #880e4f !important;
+}
+input[type="radio"].with-gap:checked+label:before{
+	border-color: #880e4f !important;
+}
 footer.page-footer {
 	padding-top: 0;
 	text-align: center;
@@ -1941,6 +1947,14 @@ table td { vertical-align: top !important; }
 }
 .md-radiogroup li.uk-active a:before {
 	content: "\f192";
+}
+.md-radiogroup  {
+	padding-top: 1px;
+}
+.md-radiogroup label {
+	color: #333;
+	font-weight: bold;
+	margin-right: 1em;
 }
 .uk-grid-medium.uk-switcher {
 	margin-left: -25px !important;
