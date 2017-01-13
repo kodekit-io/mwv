@@ -37,7 +37,6 @@ class ReportController extends Controller
 
     public function save(Request $request)
     {
-        var_dump($request->all()); exit();
         $response = $this->reportService->createReport($request->except(['_token']));
 
         if ($response->status == 'OK') {

@@ -19,6 +19,43 @@ class ReportService
 
     public function createReport(array $inputs)
     {
+        $startDate = $inputs['start_date'];
+        $startDate = Carbon::createFromFormat('d/m/y', $startDate)->format('Y-m-d\TH:i:s\Z');
+        $endDate = $inputs['end_date'];
+        $endDate = Carbon::createFromFormat('d/m/y', $endDate)->format('Y-m-d\TH:i:s\Z');
+        $reportDate = Carbon::now()->format('Y-m-d\TH:i:s\Z');
+
+        $params['reportDate'] = $reportDate;
+        $params['name'] = $inputs['report_name'];
+        $params['description'] = $inputs['report_desc'];
+        $params['pid'] = $inputs['project'];
+        $params['brandID'] = $inputs['keyword'];
+        $params['StartDate'] = $startDate;
+        $params['EndDate'] = $endDate;
+
+        $charts =  array_except($inputs,
+            ['report_name', 'report_desc', 'start_date', 'end_date', 'project',
+                'keyword', 'account', 'allFacebook', 'allTwitter', 'allBlog', 'allNews',
+                'allVideo', 'allForum', 'allInstagram', 'allAll Media', 'allYoutube']
+        );
+
+        $chartString = '';
+        foreach ($charts as $chart => $val) {
+            $chartString .= $chartString != '' ? ', ' : '';
+            $chartString .= $chart;
+        }
+
+        if ($chartString != '') {
+            $params['ChartList'] = $chartString;
+        }
+
+        var_dump($inputs);
+
+        exit();
+    }
+
+    public function createReportOld(array $inputs)
+    {
         $apiMode = config('services.mediawave.api_mode');
         if ($apiMode == 'PRODUCTION') {
             $startDate = $inputs['start_date'];
