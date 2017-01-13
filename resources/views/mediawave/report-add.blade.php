@@ -52,11 +52,12 @@
                     <div class="md-card z-depth-0">
                         <div class="md-card-toolbar">
                             <div class="md-card-toolbar-heading-text uk-hidden-small">
-                                <ul class="uk-subnav uk-subnav-pill md-radiogroup" data-uk-switcher="{connect:'#switchproject, #switchchart'}">
-                                    <li class="uk-active"><a>PROJECT</a></li>
-                                    <li><a>SOCMED PAGE</a></li>
-                                </ul>
+                                <div class="uk-button-group md-radiogroup" data-uk-switcher="{connect:'#switchproject, #switchchart'}">
+                                    <input class="uk-button" type="button" name="report_type" value="project">
+                                    <input class="uk-button" type="button" name="report_type" value="socmed">
+                                </div>
                             </div>
+                            <?php /*
                             <div class="uk-button-dropdown uk-visible-small" data-uk-dropdown="{mode:'click'}">
                                 <button class="uk-button">CHOOSE <i class="uk-icon-caret-down"></i></button>
                                 <div class="uk-dropdown uk-dropdown-top">
@@ -65,10 +66,11 @@
                                         <li><a>SOCMED PAGE</a></li>
                                     </ul>
                                 </div>
-
-
-
                             </div>
+
+                            <input type="radio" name="report_type" value="project" id="p" checked> <label for="p">Project</label>
+                            <input type="radio" name="report_type" value="socmed" id="s"> <label for="s">Social Media</label>
+                            */ ?>
                         </div>
                         <div class="md-card-content ">
                             <ul id="switchproject" class="uk-switcher">
@@ -90,8 +92,7 @@
                                 </li>
                             </ul>
                         </div>
-                    <input type="radio" name="report_type" value="project" id="p" checked> <label for="p">Project</label>
-                    <input type="radio" name="report_type" value="socmed" id="s"> <label for="s">Social Media</label>
+
                     </div>
                 </div>
             </div>
