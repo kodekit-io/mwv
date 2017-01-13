@@ -52,8 +52,6 @@
                     <div class="md-card z-depth-0">
                         <div class="md-card-toolbar">
                             <div class="md-card-toolbar-heading-text uk-hidden-small">
-                                <input type="radio" name="report_type" value="project"> Project
-                                <input type="radio" name="report_type" value="socmed"> Socmed
                                 <ul class="uk-subnav uk-subnav-pill md-radiogroup" data-uk-switcher="{connect:'#switchproject, #switchchart'}">
                                     <li class="uk-active"><a>PROJECT</a></li>
                                     <li><a>SOCMED PAGE</a></li>
@@ -67,9 +65,12 @@
                                         <li><a>SOCMED PAGE</a></li>
                                     </ul>
                                 </div>
+
+
+
                             </div>
                         </div>
-                        <div class="md-card-content">
+                        <div class="md-card-content ">
                             <ul id="switchproject" class="uk-switcher">
                                 <li>
                                     <h6>CHOOSE PROJECT</h6>
@@ -89,6 +90,8 @@
                                 </li>
                             </ul>
                         </div>
+                    <input type="radio" name="report_type" value="project" id="p" checked> <label for="p">Project</label>
+                    <input type="radio" name="report_type" value="socmed" id="s"> <label for="s">Social Media</label>
                     </div>
                 </div>
             </div>

@@ -15,6 +15,10 @@ $(function() {
 			},
 			success : function(result) {
                 $data = result.chartlist[x].media;
+                var reportType = 'project';
+                if (x == '1') {
+                    reportType = 'socmed';
+                }
 
 				if ($data.length === 0) {
 					$('#' + divID).html("<div class='center'>No data chart</div>");
@@ -39,8 +43,8 @@ $(function() {
                             <div class="md-card-content"> \
                                     <ul id="listChart'+x+'-'+$mediaId+'" class="uk-grid uk-grid-collapse uk-grid-width-1-5 uk-grid-match"  data-uk-grid-margin> \
                                         <li> \
-                                        <input type="checkbox" name="all'+$mediaName+'" id="all'+$mediaName+'" class="filled-in checkedAll" /> \
-                                        <label for="all'+$mediaName+'" class="black-text">Select All</label> \
+                                        <input type="checkbox" name="all'+reportType+$mediaName+'" id="all'+reportType+$mediaName+'" class="filled-in checkedAll" /> \
+                                        <label for="all'+reportType+$mediaName+'" class="black-text">Select All</label> \
                                         </li> \
                                     </ul> \
                             </div> \

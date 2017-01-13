@@ -1,0 +1,13 @@
+[{
+    "auth_token": "xxxx",
+    "reportType": "project",
+    "reportDate": "xxx",
+    "name": "Report Name",
+    "description": "Report Description",
+    "pid": "xxx",
+    "brandID": "1,2,3,4",
+    "StartDate": "xxx",
+    "EndDate": "xxx",
+    "Account": "xxx",
+    "ChartList": "fb_brand_equity, fb_buzz_trend, tw_interaction_trend, blog_interaction_trend"
+}]

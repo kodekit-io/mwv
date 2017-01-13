@@ -3,6 +3,7 @@
 namespace App;
 
 use Carbon\Carbon;
+use Illuminate\Support\Facades\Log;
 
 class ReportService
 {
@@ -19,24 +20,30 @@ class ReportService
 
     public function createReport(array $inputs)
     {
+//        var_dump($inputs);
+
         $startDate = $inputs['start_date'];
         $startDate = Carbon::createFromFormat('d/m/y', $startDate)->format('Y-m-d\TH:i:s\Z');
         $endDate = $inputs['end_date'];
         $endDate = Carbon::createFromFormat('d/m/y', $endDate)->format('Y-m-d\TH:i:s\Z');
         $reportDate = Carbon::now()->format('Y-m-d\TH:i:s\Z');
+        $reportType = $inputs['report_type'];
+        $keywords = $inputs['keyword'] == '' ? '0' : $inputs['keyword'];
 
+        $params['reportType'] = $reportType;
         $params['reportDate'] = $reportDate;
         $params['name'] = $inputs['report_name'];
         $params['description'] = $inputs['report_desc'];
         $params['pid'] = $inputs['project'];
-        $params['brandID'] = $inputs['keyword'];
+        $params['brandID'] = $keywords;
         $params['StartDate'] = $startDate;
         $params['EndDate'] = $endDate;
+        $params['account'] = $inputs['account'];
 
         $charts =  array_except($inputs,
-            ['report_name', 'report_desc', 'start_date', 'end_date', 'project',
-                'keyword', 'account', 'allFacebook', 'allTwitter', 'allBlog', 'allNews',
-                'allVideo', 'allForum', 'allInstagram', 'allAll Media', 'allYoutube']
+            ['report_name', 'report_type', 'report_desc', 'start_date', 'end_date', 'project',
+                'keyword', 'account', 'allprojectFacebook', 'allprojectTwitter', 'allprojectBlog', 'allprojectNews',
+                'allprojectVideo', 'allprojectForum', 'allprojectInstagram', 'allprojectAll Media', 'allprojectYoutube']
         );
 
         $chartString = '';
@@ -46,12 +53,19 @@ class ReportService
         }
 
         if ($chartString != '') {
-            $params['ChartList'] = $chartString;
+            $params['chartList'] = $chartString;
         }
 
-        var_dump($inputs);
+        // $reportResponse = $this->apiService->post('report/create', $params);
+        Log::warning('URL =====> report/create');
+        Log::warning('params ====> ' . \GuzzleHttp\json_encode($params));
 
-        exit();
+        $ret = new \stdClass();
+        $ret->status = 'OK';
+        $ret->msg = 'Report has been created.';
+
+        return $ret;
+
     }
 
     public function createReportOld(array $inputs)
