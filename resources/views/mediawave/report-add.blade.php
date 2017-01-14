@@ -54,7 +54,7 @@
                             <div class="md-card-toolbar-heading-text uk-hidden-small">
                                 <div class="uk-button-group md-radiogroup" data-uk-switcher="{connect:'#switchproject, #switchchart'}">
                                     <input class="uk-button" type="button" name="report_type" value="project">
-                                    <input class="uk-button" type="button" name="report_type" value="socmed">
+                                    <input class="uk-button" type="button" name="report_type2" value="socmed">
                                 </div>
                             </div>
                             <?php /*
