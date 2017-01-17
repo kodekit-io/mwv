@@ -2,6 +2,8 @@
 
 namespace App;
 
+use Illuminate\Support\Facades\Log;
+
 class ProjectService
 {
     use LastSevenDays;
@@ -89,8 +91,6 @@ class ProjectService
             $mode = 'advanced';
         }
 
-        echo $mode;
-
         $params = [
             'uid' => \Auth::user()->id,
             'pname' => $projectName
@@ -148,6 +148,8 @@ class ProjectService
             }
         }
 
+        Log::warning("create project ==> project/add ==> " . \GuzzleHttp\json_encode($params));
+
         $addProjectResponse = $this->apiService->post('project/add', $params);
 
         return $addProjectResponse;
@@ -169,21 +171,21 @@ class ProjectService
         if ($oriKeywordsNumber >= count($keywords)) {
             for ($x = 1; $x <= $oriKeywordsNumber; $x++) {
                 if (isset($keywords[$x])) {
-                    $params['mo' . $x] = str_replace("'", "\\'", $keywords[$x]);
+                    $params['mo' . $x] = $this->validateInput($keywords[$x]);
                 } else {
                     $params['mo' . $x] = '';
                 }
             }
         } else {
             foreach ($keywords as $id => $keyword) {
-                $params['mo' . $id] = str_replace("'", "\\'", $keyword);
+                $params['mo' . $id] = $this->validateInput($keyword);
             }
         }
 
         if ($oriTopicsNumber >= count($topics)) {
             for ($x = 1; $x <= $oriTopicsNumber; $x++) {
                 if (isset($topics[$x])) {
-                    $params['to' . $x] = str_replace("'", "\\'", $topics[$x]);
+                    $params['to' . $x] = $this->validateInput($topics[$x]);
                 } else {
                     $params['to' . $x] = '';
                 }
@@ -191,23 +193,25 @@ class ProjectService
             }
         } else {
             foreach ($topics as $id => $topic) {
-                $params['to' . $id] = str_replace("'", "\\'", $topic);
+                $params['to' . $id] = $this->validateInput($topic);
             }
         }
 
         if ($oriExcludesNumber >= count($excludes)) {
             for ($x = 1; $x <= $oriExcludesNumber; $x++) {
                 if (isset($excludes[$x])) {
-                    $params['no' . $x] = str_replace("'", "\\'", $excludes[$x]);
+                    $params['no' . $x] = $this->validateInput($excludes[$x]);
                 } else {
                     $params['no' . $x] = '';
                 }
             }
         } else {
             foreach ($excludes as $id => $exclude) {
-                $params['no' . $id] = str_replace("'", "\\'", $exclude);
+                $params['no' . $id] = $this->validateInput($exclude);
             }
         }
+
+        Log::warning("update project ==> project/edit ==> " . \GuzzleHttp\json_encode($params));
 
         $updateProjectResponse = $this->apiService->post('project/edit', $params);
 
@@ -284,7 +288,7 @@ class ProjectService
     {
         $words = '';
         foreach ($keyword as $word) {
-            $w = ( $word == '' ? $word : ' ' . $word );
+            $w = ( $word == '' ? $word : '' . $word );
             $words .= $this->validateInput($w);
         }
         return $words;
@@ -292,7 +296,39 @@ class ProjectService
 
     private function validateInput($w)
     {
-        return str_replace("'", "\\'", $w);
+        $word = str_replace("'", "\\'", $w);
+
+        if (preg_match('/AND /', $word)) {
+            $word = $this->parseConjunction($word, 'AND');
+        } elseif (preg_match('/OR /', $word)) {
+            $word = $this->parseConjunction($word, 'OR');
+        } elseif (preg_match('/NOT /', $word)) {
+            $word = $this->parseConjunction($word, 'NOT');
+        } else {
+            $word = $this->spaceToVerticalBar($word);
+        }
+
+        echo $word.'<br>';
+
+        return $word;
     }
+
+    private function parseConjunction($word, $conjuction)
+    {
+        $conj = $conjuction . ' ';
+        $xplodedWord = explode($conj, $word);
+        $word = $xplodedWord[1];
+        $word = $this->spaceToVerticalBar($word);
+        return $conj . $word;
+    }
+
+    private function spaceToVerticalBar($word)
+    {
+        if (preg_match('/\s/', $word)) {
+            $word = '|' . $word . '|';
+        }
+        return $word;
+    }
+
 
 }

@@ -52,9 +52,11 @@
                     <div class="md-card z-depth-0">
                         <div class="md-card-toolbar">
                             <div class="md-card-toolbar-heading-text uk-hidden-small">
-                                <div class="uk-button-group md-radiogroup" data-uk-switcher="{connect:'#switchproject, #switchchart'}">
-                                    <input class="uk-button" type="button" name="report_type" value="project">
-                                    <input class="uk-button" type="button" name="report_type2" value="socmed">
+
+                                <div class="md-radiogroup" >
+                                    <input class="with-gap" type="radio" name="report_type" value="project" id="p" checked="checked"> <label for="p">Project</label>
+                                    <input class="with-gap" type="radio" name="report_type" value="socmed" id="s"> <label for="s">Social Media</label>
+
                                 </div>
                             </div>
                             <?php /*
@@ -73,8 +75,8 @@
                             */ ?>
                         </div>
                         <div class="md-card-content ">
-                            <ul id="switchproject" class="uk-switcher">
-                                <li>
+                            <ul id="switchproject">
+                                <li class="uk-width-medium-1-1 disiniproject">
                                     <h6>CHOOSE PROJECT</h6>
                                     <div class="select-field">
                                         {!! $projectSelect !!}
@@ -84,7 +86,7 @@
                                         {!! $keywordSelect !!}
                                     </div>
                                 </li>
-                                <li>
+                                <li class="uk-width-medium-1-1 disinisocmed uk-hidden">
                                     <h6>CHOOSE ACCOUNT</h6>
                                     <div class="select-field">
                                         {!! $accountSelect !!}
@@ -96,13 +98,13 @@
                     </div>
                 </div>
             </div>
-            <ul id="switchchart" class="uk-switcher" style="margin:25px 0;">
+            <ul id="switchchart" style="margin:25px 0;">
                 <li class="uk-width-medium-1-1 disiniproject">
                     <ul class="uk-grid uk-grid-medium uk-grid-width-1-1 uk-grid-match"  data-uk-grid-margin>
                         <li id="plist"></li>
                     </ul>
                 </li>
-                <li class="uk-width-medium-1-1 disinisocmed">
+                <li class="uk-width-medium-1-1 disinisocmed uk-hidden">
                     <ul class="uk-grid uk-grid-medium uk-grid-width-1-1 uk-grid-match"  data-uk-grid-margin>
                         <li id="slist"></li>
                     </ul>
@@ -125,4 +127,16 @@
     {{--<script src="{!! asset('js/jquery-migrate.min.js') !!}"></script>--}}
     <script src="{!! asset('js/jquery.chained.js') !!}"></script>
     <script src="{!! asset('js/report.js') !!}"></script>
+    <script>
+    $(document).ready(function() {
+        $('input#p').change(function() {
+            $('.disiniproject').removeClass('uk-hidden');
+            $('.disinisocmed').addClass('uk-hidden');
+        });
+        $('input#s').change(function() {
+            $('.disiniproject').addClass('uk-hidden');
+            $('.disinisocmed').removeClass('uk-hidden');
+        });
+    });
+    </script>
 @endsection

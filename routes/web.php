@@ -112,6 +112,30 @@ Route::group(['middleware' => ['auth', 'projects']], function () {
 
 });
 
+Route::get('test/regex', function() {
+    $words = [
+        'asdfsadf',
+        'AND asdfas asdfsadfa asdfsadfasdf',
+        'OR asdf asf asdf asdf asd fads fasdf asdf sadf'
+    ];
+    foreach ($words as $word) {
+        if (preg_match('/AND /', $word)) {
+            $xplodedWord = explode('AND ', $word);
+            $word = $xplodedWord[1];
+        }
+        if (preg_match('/OR /', $word)) {
+            $xplodedWord = explode('OR ', $word);
+            $word = $xplodedWord[1];
+        }
+        if (preg_match('/\s/', $word)) {
+            $word = '|' . $word . '|';
+        }
+
+        echo $word . '<BR>';
+
+    }
+});
+
 Route::get('/datatable', function() {
     return view('datatable');
 });
