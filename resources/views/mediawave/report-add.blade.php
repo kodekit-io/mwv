@@ -52,9 +52,11 @@
                     <div class="md-card z-depth-0">
                         <div class="md-card-toolbar">
                             <div class="md-card-toolbar-heading-text uk-hidden-small">
+
                                 <div class="md-radiogroup" >
                                     <input class="with-gap" type="radio" name="report_type" value="project" id="p" checked="checked"> <label for="p">Project</label>
                                     <input class="with-gap" type="radio" name="report_type" value="socmed" id="s"> <label for="s">Social Media</label>
+
                                 </div>
                             </div>
                             <?php /*

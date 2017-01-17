@@ -20,8 +20,6 @@ class ReportService
 
     public function createReport(array $inputs)
     {
-//        var_dump($inputs);
-
         $startDate = $inputs['start_date'];
         $startDate = Carbon::createFromFormat('d/m/y', $startDate)->format('Y-m-d\TH:i:s\Z');
         $endDate = $inputs['end_date'];
