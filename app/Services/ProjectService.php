@@ -319,7 +319,7 @@ class ProjectService
         $xplodedWord = explode($conj, $word);
         $word = $xplodedWord[1];
         $word = $this->spaceToVerticalBar($word);
-        return $conj . $word;
+        return ' ' . $conj . $word;
     }
 
     private function spaceToVerticalBar($word)
