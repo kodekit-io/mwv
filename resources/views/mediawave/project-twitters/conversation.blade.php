@@ -9,7 +9,7 @@
         </div>
         <div id="convtwiter" class="md-card-content">
             <?php //TWITTER TABLE ?>
-            <table id="table_twitter" class="striped bordered highlight responsive-table"></table>
+            <table id="table_twitter" class="uk-table uk-table-hover uk-table-striped uk-margin-remove responsive-table"></table>
         </div>
     </div>
 

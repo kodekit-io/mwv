@@ -41,9 +41,9 @@
         <div id="influencer" class="md-card-content conv-wrap">
             <?php //INFLUENCER/AUTHOR TABLE ?>
             <ul class="uk-switcher">
-                <li><table id="topRateVid" class="striped bordered highlight responsive-table"></table></li>
-                <li><table id="topLikeVid" class="striped bordered highlight responsive-table"></table></li>
-                {{--<li><table id="top10Post" class="striped bordered highlight responsive-table"></table></li>--}}
+                <li><table id="topRateVid" class="uk-table uk-table-hover uk-table-striped uk-margin-remove responsive-table"></table></li>
+                <li><table id="topLikeVid" class="uk-table uk-table-hover uk-table-striped uk-margin-remove responsive-table"></table></li>
+                {{--<li><table id="top10Post" class="uk-table uk-table-hover uk-table-striped uk-margin-remove responsive-table"></table></li>--}}
             </ul>
         </div>
     </div>
@@ -59,7 +59,7 @@
         </div>
         <div id="convwrap" class="md-card-content conv-wrap">
 			<?php //VIDEO TABLE ?>
-			<table id="table_video" class="striped bordered highlight responsive-table"></table>
+			<table id="table_video" class="uk-table uk-table-hover uk-table-striped uk-margin-remove responsive-table"></table>
         </div>
     </div>
 
