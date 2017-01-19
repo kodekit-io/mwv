@@ -171,21 +171,21 @@ class ProjectService
         if ($oriKeywordsNumber >= count($keywords)) {
             for ($x = 1; $x <= $oriKeywordsNumber; $x++) {
                 if (isset($keywords[$x])) {
-                    $params['mo' . $x] = $this->validateInput($keywords[$x]);
+                    $params['mo' . $x] = $keywords[$x];
                 } else {
                     $params['mo' . $x] = '';
                 }
             }
         } else {
             foreach ($keywords as $id => $keyword) {
-                $params['mo' . $id] = $this->validateInput($keyword);
+                $params['mo' . $id] = $keyword;
             }
         }
 
         if ($oriTopicsNumber >= count($topics)) {
             for ($x = 1; $x <= $oriTopicsNumber; $x++) {
                 if (isset($topics[$x])) {
-                    $params['to' . $x] = $this->validateInput($topics[$x]);
+                    $params['to' . $x] = $topics[$x];
                 } else {
                     $params['to' . $x] = '';
                 }
@@ -193,21 +193,21 @@ class ProjectService
             }
         } else {
             foreach ($topics as $id => $topic) {
-                $params['to' . $id] = $this->validateInput($topic);
+                $params['to' . $id] = $topic;
             }
         }
 
         if ($oriExcludesNumber >= count($excludes)) {
             for ($x = 1; $x <= $oriExcludesNumber; $x++) {
                 if (isset($excludes[$x])) {
-                    $params['no' . $x] = $this->validateInput($excludes[$x]);
+                    $params['no' . $x] = $excludes[$x];
                 } else {
                     $params['no' . $x] = '';
                 }
             }
         } else {
             foreach ($excludes as $id => $exclude) {
-                $params['no' . $id] = $this->validateInput($exclude);
+                $params['no' . $id] = $exclude;
             }
         }
 
