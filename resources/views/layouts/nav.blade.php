@@ -27,11 +27,13 @@
                     <i class="material-icons left">add_circle</i>New Project
                 </a>
             </li>
+            {{--
             <li class="nav-report">
                 <a href="{!! url('/report-add') !!}" name="topnav" title="Report">
                     <i class="material-icons left">assignment</i>Report
                 </a>
             </li>
+            --}}
             <li class="nav-profile">
                 <a href="{!! url('/profile') !!}" name="topnav" title="Profile">
                     <i class="material-icons left">account_circle</i>Profile

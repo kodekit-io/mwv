@@ -15,7 +15,7 @@
             <?php //INFLUENCER/AUTHOR TABLE ?>
             <ul class="uk-switcher">
                 <li>
-                    <table id="top10News" class="striped bordered highlight responsive-table"></table>
+                    <table id="top10News" class="uk-table uk-table-hover uk-table-striped uk-margin-remove responsive-table"></table>
                 </li>
             </ul>
         </div>
@@ -32,7 +32,7 @@
         </div>
         <div id="conv" class="md-card-content conv-wrap">
 			<?php //NEWS TABLE ?>
-			<table id="table_news" class="striped bordered highlight responsive-table"></table>
+			<table id="table_news" class="uk-table uk-table-hover uk-table-striped uk-margin-remove responsive-table"></table>
         </div>
     </div>
 

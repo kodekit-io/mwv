@@ -54,7 +54,7 @@
                                         @foreach($keywords as $keyword)
                                             <div class="advkey">
                                             <textarea id="key-{!! $x !!}" name="field_key[{!! $x !!}]" class="materialize-textarea uk-margin-small-bottom">{!! $keyword->keyword->keywordName !!}</textarea>
-                                            <a href="javascript:void(0);" class="uk-button uk-button-mini red accent-2 remove_form step3" onclick="removeAdvKey(this)" title="Delete This"><i class="uk-icon uk-icon-close"></i></a>
+                                            {{-- <a href="javascript:void(0);" class="uk-button uk-button-mini red accent-2 remove_form step3" onclick="removeAdvKey(this)" title="Delete This"><i class="uk-icon uk-icon-close"></i></a> --}}
                                             </div>
                                             <?php $x++; ?>
                                         @endforeach
@@ -74,7 +74,7 @@
                                         @foreach($topics as $topic)
                                             <div class="advtopic">
                                                 <textarea id="topic-{!! $x !!}" name="field_topic[{!! $x !!}]" class="materialize-textarea uk-margin-small-bottom">{!! $topic->topicName !!}</textarea>
-                                                <a href="javascript:void(0);" class="uk-button uk-button-mini red accent-2 remove_form step6" onclick="removeAdvTopic(this)" title="Delete This"><i class="uk-icon uk-icon-close"></i></a>
+                                                {{-- <a href="javascript:void(0);" class="uk-button uk-button-mini red accent-2 remove_form step6" onclick="removeAdvTopic(this)" title="Delete This"><i class="uk-icon uk-icon-close"></i></a> --}}
                                             </div>
                                             <?php $x++ ?>
                                         @endforeach
@@ -94,7 +94,7 @@
                                         @foreach($excludes as $exclude)
                                             <div class="advexcld">
                                                 <textarea id="excld-{!! $x !!}" name="field_excld[{!! $x !!}]" class="materialize-textarea uk-margin-small-bottom">{!! $exclude->noiseKeyName !!}</textarea>
-                                                <a href="javascript:void(0);" class="uk-button uk-button-mini red accent-2 remove_form step9" onclick="removeAdvExcld(this)" title="Delete This"><i class="uk-icon uk-icon-close"></i></a>
+                                                {{-- <a href="javascript:void(0);" class="uk-button uk-button-mini red accent-2 remove_form step9" onclick="removeAdvExcld(this)" title="Delete This"><i class="uk-icon uk-icon-close"></i></a> --}}
                                             </div>
                                             <?php $x++; ?>
                                         @endforeach
