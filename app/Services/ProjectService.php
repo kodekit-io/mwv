@@ -103,22 +103,22 @@ class ProjectService
 
             if (count($keywords) > 0) {
                 foreach ($keywords as $key => $keyword) {
-                    $words = $this->validateInput($keyword);
-                    $params['mo' . $key] = $words;
+//                    $words = $this->validateInput($keyword);
+                    $params['mo' . $key] = $keyword;
                 }
             }
 
             if (count($topics) > 0) {
                 foreach ($topics as $key => $topic) {
-                    $words = $this->validateInput($topic);
-                    $params['to' . $key] = $words;
+//                    $words = $this->validateInput($topic);
+                    $params['to' . $key] = $topic;
                 }
             }
 
             if (count($excludes) > 0) {
                 foreach ($excludes as $key => $exclude) {
-                    $words = $this->validateInput($exclude);
-                    $params['no' . $key] = $words;
+//                    $words = $this->validateInput($exclude);
+                    $params['no' . $key] = $exclude;
                 }
             }
         } else {
@@ -161,12 +161,14 @@ class ProjectService
         $oriTopicsNumber = $inputs['topics_number'];
         $oriExcludesNumber = $inputs['excludes_number'];
 
-        $keywords = $inputs['field_key'];
-        $topics = $inputs['field_topic'];
-        $excludes = $inputs['field_excld'];
+        $keywords = isset($inputs['field_key']) ? $inputs['field_key'] : [] ;
+        $topics = isset($inputs['field_topic']) ? $inputs['field_topic'] : [];
+        $excludes = isset($inputs['field_excld']) ? $inputs['field_excld'] : [];
 
         $params['pname'] = $inputs['projectname'];
         $params['pid'] = $inputs['project_id'];
+
+//        var_dump($inputs); exit();
 
         if ($oriKeywordsNumber >= count($keywords)) {
             for ($x = 1; $x <= $oriKeywordsNumber; $x++) {
