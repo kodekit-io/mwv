@@ -45,16 +45,16 @@
             <?php //INFLUENCER/AUTHOR TABLE ?>
             <ul class="uk-switcher">
                 <li>
-                    <table id="topStatusFB" class="striped bordered highlight responsive-table"></table>
+                    <table id="topStatusFB" class="uk-table uk-table-hover uk-table-striped uk-margin-remove responsive-table"></table>
                 </li>
                 <li>
-                    <table id="topPhotoFB" class="striped bordered highlight responsive-table"></table>
+                    <table id="topPhotoFB" class="uk-table uk-table-hover uk-table-striped uk-margin-remove responsive-table"></table>
                 </li>
                 <li>
-                    <table id="topLinkFB" class="striped bordered highlight responsive-table"></table>
+                    <table id="topLinkFB" class="uk-table uk-table-hover uk-table-striped uk-margin-remove responsive-table"></table>
                 </li>
                 <li>
-                    <table id="topVideoFB" class="striped bordered highlight responsive-table"></table>
+                    <table id="topVideoFB" class="uk-table uk-table-hover uk-table-striped uk-margin-remove responsive-table"></table>
                 </li>
             </ul>
         </div>

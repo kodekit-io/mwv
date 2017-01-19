@@ -8,6 +8,10 @@ $(document).ready( function () {
         "columns": [
             {
                 "data": null,
+                "orderable": false,
+            },
+            {
+                "data": null,
                 "title": "Date",
                 "render": function ( data ) {
                     var date = data["Date"];
@@ -61,15 +65,11 @@ $(document).ready( function () {
                 }
             },
         ],
-        /*"columnDefs": [{
-            "visible": false,
-            "targets": [8]
-        }],*/
-        "order": [[ 0, "desc" ]],
+        "order": [[ 1, "desc" ]],
         "initComplete": function () {
             this.api().columns().every( function () {
                 var column = this;
-                if(column[0][0] == 8) {
+                if(column[0][0] == 9) {
                     var select = $('<select class="browser-default uk-width-1-1 select-sentiment"><option value="">All Sentiment</option></select>')
                         .appendTo( $(column.header()).empty() )
                         .on( 'change', function () {
@@ -88,4 +88,10 @@ $(document).ready( function () {
             });
         },
     });
+    table_facebook.on( 'order.dt search.dt', function () {
+        table_facebook.column(0, {search:'applied', order:'applied'}).nodes().each( function (cell, i) {
+            cell.innerHTML = i+1;
+        } );
+    } ).draw();
+    table_facebook.columns.adjust().draw();
 });

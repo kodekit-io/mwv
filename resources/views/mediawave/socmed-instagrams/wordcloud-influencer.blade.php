@@ -32,9 +32,9 @@
         <div id="author" class="md-card-content conv-wrap">
             <?php //TOP COMMENT ?>
             <ul class="uk-switcher">
-                <li><table id="topCommentIG" class="striped bordered highlight responsive-table"></table></li>
-                <li><table id="topLoveIG" class="striped bordered highlight responsive-table"></table></li>
-                <li><table id="topViewIG" class="striped bordered highlight responsive-table"></table></li>
+                <li><table id="topCommentIG" class="uk-table uk-table-hover uk-table-striped uk-margin-remove responsive-table"></table></li>
+                <li><table id="topLoveIG" class="uk-table uk-table-hover uk-table-striped uk-margin-remove responsive-table"></table></li>
+                <li><table id="topViewIG" class="uk-table uk-table-hover uk-table-striped uk-margin-remove responsive-table"></table></li>
             </ul>
 
         </div>

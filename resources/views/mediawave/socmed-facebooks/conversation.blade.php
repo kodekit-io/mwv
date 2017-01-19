@@ -9,7 +9,7 @@
         </div>
         <div id="convfacebook" class="md-card-content">
             <?php //FB TABLE ?>
-            <table id="table_facebook" class="striped bordered highlight responsive-table"></table>
+            <table id="table_facebook" class="uk-table uk-table-hover uk-table-striped uk-margin-remove responsive-table"></table>
         </div>
     </div>
 </li>

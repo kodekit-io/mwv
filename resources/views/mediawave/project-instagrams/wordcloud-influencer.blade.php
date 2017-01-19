@@ -31,7 +31,7 @@
             <?php //INFLUENCER/AUTHOR TABLE ?>
             <ul class="uk-switcher">
                 <li>
-                    <table id="top10IG" class="striped bordered highlight responsive-table"></table>
+                    <table id="top10IG" class="uk-table uk-table-hover uk-table-striped uk-margin-remove responsive-table"></table>
                 </li>
             </ul>
 

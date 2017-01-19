@@ -10,7 +10,7 @@
             <h2 class="md-card-toolbar-heading-text">TOP 10 STATUS INFLUENCER</h2>
         </div>
         <div id="author" class="md-card-content conv-wrap">
-			<table id="top10LikeStatus" class="striped bordered highlight responsive-table"></table>
+			<table id="top10LikeStatus" class="uk-table uk-table-hover uk-table-striped uk-margin-remove responsive-table"></table>
         </div>
     </div>
 </li>
@@ -39,31 +39,31 @@
                 </div>
                 <div id="convtwiter" class="">
                     <?php //TWITTER TABLE ?>
-                    <table id="table_twitter" class="striped bordered highlight responsive-table"></table>
+                    <table id="table_twitter" class="uk-table uk-table-hover uk-table-striped uk-margin-remove responsive-table"></table>
                 </div>
                 <div id="convfacebook" class="">
                     <?php //FB TABLE ?>
-                    <table id="table_facebook" class="striped bordered highlight responsive-table"></table>
+                    <table id="table_facebook" class="uk-table uk-table-hover uk-table-striped uk-margin-remove responsive-table"></table>
                 </div>
                 <div id="convnews" class="">
                     <?php //NEWS TABLE ?>
-                    <table id="table_news" class="striped bordered highlight responsive-table"></table>
+                    <table id="table_news" class="uk-table uk-table-hover uk-table-striped uk-margin-remove responsive-table"></table>
                 </div>
                 <div id="convforum" class="">
                     <?php //FORUM TABLE ?>
-                    <table id="table_forum" class="striped bordered highlight responsive-table"></table>
+                    <table id="table_forum" class="uk-table uk-table-hover uk-table-striped uk-margin-remove responsive-table"></table>
                 </div>
                 <div id="convvideo" class="">
                     <?php //VIDEO TABLE ?>
-                    <table id="table_video" class="striped bordered highlight responsive-table"></table>
+                    <table id="table_video" class="uk-table uk-table-hover uk-table-striped uk-margin-remove responsive-table"></table>
                 </div>
                 <div id="convblog" class="">
                     <?php //BLOG TABLE ?>
-                    <table id="table_blog" class="striped bordered highlight responsive-table"></table>
+                    <table id="table_blog" class="uk-table uk-table-hover uk-table-striped uk-margin-remove responsive-table"></table>
                 </div>
                 <div id="convig" class="">
                     <?php //IG TABLE ?>
-                    <table id="table_ig" class="striped bordered highlight responsive-table"></table>
+                    <table id="table_ig" class="uk-table uk-table-hover uk-table-striped uk-margin-remove responsive-table"></table>
                 </div>
             </div>
         </div>

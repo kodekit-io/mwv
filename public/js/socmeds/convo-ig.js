@@ -9,6 +9,10 @@ $(document).ready( function () {
         "columns": [
             {
                 "data": null,
+                "orderable": false,
+            },
+            {
+                "data": null,
                 "title": "Date",
                 "render": function ( data ) {
                     var date = data["Date"];
@@ -42,6 +46,12 @@ $(document).ready( function () {
             { "data": "Likes", "title": "Likes" },
             { "data": "Comments", "title": "Comments" },
         ],
-        "order": [[ 0, "desc" ]],
+        "order": [[ 1, "desc" ]],
     });
+    table_ig.on( 'order.dt search.dt', function () {
+        table_ig.column(0, {search:'applied', order:'applied'}).nodes().each( function (cell, i) {
+            cell.innerHTML = i+1;
+        } );
+    } ).draw();
+    table_ig.columns.adjust().draw();
 });
