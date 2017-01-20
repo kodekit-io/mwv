@@ -5,7 +5,14 @@
 @endsection
 
 @section('content')
-
+<?php /*
+<nav class="uk-navbar md-subnav gradient-fluenza darken">
+    <ul class="uk-navbar-nav md-head-container">
+        <li class="uk-active"><a href="{!! url('/create-project') !!}">Create Project</a></li>
+        <li><a href="{!! url('/create-project-ig') !!}">Create Instagram Project</a></li>
+    </ul>
+</nav>
+*/ ?>
 <main class="">
     <div class="md-container">
         <form action="{!! url('save-project') !!}" method="post" name="project-form" class="project-form">
@@ -43,18 +50,14 @@
             <div class="md-card">
                 <ul class="tabs uk-margin-top step4">
                     <li class="tab"><a class="active" href="#mode1">STEP BY STEP</a></li>
-                    {{--Temporary hide
                     <li class="tab"><a href="#mode2">ADVANCED</a></li>
-                    --}}
                 </ul>
                 <div class="md-card-content">
                     <div id="mode1">
-                        <ul class="uk-grid uk-grid-collapse uk-grid-width-1-2 uk-text-center md-steps uk-margin-top uk-margin-bottom" data-uk-switcher="{connect:'#keywordsteps'}">
+                        <ul class="uk-grid uk-grid-collapse uk-grid-width-1-3 uk-text-center md-steps uk-margin-top uk-margin-bottom" data-uk-switcher="{connect:'#keywordsteps'}">
                             <li class="uk-active"><a href="#" class="switchkeyword"><span class="uk-border-circle">1</span>Keyword</a></li>
                             <li class=""><a href="#" class="switchtopic"><span class="uk-border-circle">2</span>Topic</a></li>
-                            {{--Temporary hide
                             <li class=""><a href="#" class="switchexcld"><span class="uk-border-circle">3</span>Topic Not Include</a></li>
-                            --}}
                         </ul>
 
                         <ul id="keywordsteps" class="uk-switcher">
@@ -103,14 +106,8 @@
                                  <hr>
                                  <a class="btn grey z-depth-0 prevstep backtopic" data-uk-tooltip title="Prev Step: Keywords"><i class="material-icons left">keyboard_arrow_left</i> BACK</a>
 
-                                 {{-- Temporary Save --}}
-                                 <ul class="uk-subnav right">
-                                     <li><a href="#previewquery" class="modal-trigger btn cyan z-depth-0 step16" data-uk-tooltip title="Preview All Query" onclick="previewQuery()">PREVIEW</a></li>
-                                     <li><button type="submit" class="btn amber darken-4 z-depth-0 step17" data-uk-tooltip title="Save Query">SAVE NOW</button></li>
-                                 </ul>
-                                 {{-- Temporary hide
+
                                  <a class="btn cyan right z-depth-0 nextstep step12" data-uk-tooltip title="Next Step: Create Excluded Topics">NEXT STEP <i class="material-icons right">keyboard_arrow_right</i></a>
-                                 --}}
                             </li>
                             <li>
                                  <h5>CREATE EXCLUDED TOPICS</h5>
@@ -142,7 +139,7 @@
                             </li>
                         </ul>
                     </div>
-                    <div id="mode2" style="visibility:hidden;height:0 !important;">
+                    <div id="mode2">
                         <ul id="keywordadv" class="uk-list uk-list-line uk-margin-bottom-remove">
                             <li>
                                 <h5>CREATE KEYWORDS</h5>
@@ -183,6 +180,55 @@
                 </div>
             </div>
 
+            <?php /*
+            <div class="md-card" id="addIG">
+                <div class="md-card-toolbar step17">
+                    <div class="md-card-toolbar-actions">
+                        <a class="btn waves-effect waves-light z-depth-0 green lighten-4 step18" data-uk-tooltip title="Hide Instagram" data-uk-toggle="{target:'#addIG .md-card-content'}"><i class="material-icons md-icon">visibility_off</i></a>
+                    </div>
+                    <h2 class="md-card-toolbar-heading-text">INSTAGRAM</h2>
+                </div>
+                <div class="md-card-content">
+                    <ul id="hashtags" class="uk-list uk-list-line uk-margin-bottom-remove">
+                       <li class="step19">
+                           <h5>HASHTAG</h5>
+                           <p>Write hashtag with prefix '#' then hit ENTER to add more hashtags.</p>
+                           <div class="wrap_hashtag">
+                                <div class="chips-hashtag"></div>
+                           </div>
+                       </li>
+                       <li class="step20">
+                             <h5>EXCLUDE HASHTAG</h5>
+                             <p>Write hashtag with prefix '#' then hit ENTER to add more hashtags.</p>
+                             <div class="wrap_excldhashtag">
+                                  <div class="chips-excldhashtag"></div>
+                             </div>
+                       </li>
+                       <li class="step21">
+                             <h5>USER</h5>
+                             <p>Write user with prefix '@' then hit ENTER to add more users.</p>
+                             <div class="wrap_user">
+                                  <div class="chips-user"></div>
+                             </div>
+                       </li>
+                       <li class="step22">
+                             <h5>EXCLUDE USER</h5>
+                             <p>Write user with prefix '@' then hit ENTER to add more users.</p>
+                             <div class="wrap_exclduser">
+                                  <div class="chips-exclduser"></div>
+                             </div>
+                        </li>
+                    </ul>
+
+                </div>
+            </div>
+
+            <div class="md-card">
+                <div class="md-card-content uk-text-right">
+                    <button type="submit" class="btn amber darken-4 z-depth-0 step23" data-uk-tooltip title="Save Query">SAVE NOW</button>
+                </div>
+            </div>
+            */ ?>
             <div id="previewquery" class="modal modal-fixed-footer">
                  <div class="modal-content">
                     <div class="previewquery"></div>
