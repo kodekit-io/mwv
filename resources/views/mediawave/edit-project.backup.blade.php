@@ -86,7 +86,7 @@
                                 </div>
                                 <a href="javascript:void(0);" class="uk-button btn blue z-depth-0 add_advtopic uk-margin-bottom step7" title="Add Topic">ADD MORE TOPIC</a>
                             </li>
-                            <li style="visibility:hidden;height:0!important;">
+                            <li>
                                 <h5>EDIT EXCLUDED TOPICS</h5>
                                 <div class="wrap_advexclds step8">
                                     @if (count($excludes) > 0)
@@ -106,11 +106,52 @@
                                 </div>
                                 <a href="javascript:void(0);" class="uk-button btn blue z-depth-0 add_advexcld step10" title="Add Exclude">ADD MORE EXCLUDE</a>
                             </li>
-
                         </ul>
                     </div>
                 </div>
+                <?php /*
+                <div class="md-card" id="addIG">
+                    <div class="md-card-toolbar step11">
+                        <div class="md-card-toolbar-actions">
+                            <a class="btn waves-effect waves-light z-depth-0 green lighten-4" data-uk-tooltip title="Hide Instagram" data-uk-toggle="{target:'#addIG .md-card-content'}"><i class="material-icons md-icon">visibility_off</i></a>
+                        </div>
+                        <h2 class="md-card-toolbar-heading-text">INSTAGRAM</h2>
+                    </div>
+                    <div class="md-card-content">
+                        <ul id="hashtags" class="uk-list uk-list-line uk-margin-bottom-remove">
+                           <li class="step12">
+                               <h5>HASHTAG</h5>
+                               <p>Write hashtag with prefix '#' then hit ENTER to add more hashtags.</p>
+                               <div class="wrap_hashtag">
+                                    <div class="chips-hashtag"></div>
+                               </div>
+                           </li>
+                           <li class="step13">
+                                 <h5>EXCLUDE HASHTAG</h5>
+                                 <p>Write hashtag with prefix '#' then hit ENTER to add more hashtags.</p>
+                                 <div class="wrap_excldhashtag">
+                                      <div class="chips-excldhashtag"></div>
+                                 </div>
+                           </li>
+                           <li class="step14">
+                                 <h5>USER</h5>
+                                 <p>Write user with prefix '@' then hit ENTER to add more users.</p>
+                                 <div class="wrap_user">
+                                      <div class="chips-user"></div>
+                                 </div>
+                           </li>
+                           <li class="step15">
+                                 <h5>EXCLUDE USER</h5>
+                                 <p>Write user with prefix '@' then hit ENTER to add more users.</p>
+                                 <div class="wrap_exclduser">
+                                      <div class="chips-exclduser"></div>
+                                 </div>
+                            </li>
+                        </ul>
 
+                    </div>
+                </div>
+                */ ?>
                 <div class="md-card">
                     <div class="md-card-content uk-text-right">
                         <a class="btn grey z-depth-0 left" data-uk-tooltip title="Cancel Edit" href="{!! url('/dashboard') !!}">CANCEL</a>
