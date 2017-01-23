@@ -39,13 +39,15 @@ class ReportController extends Controller
     {
         $response = $this->reportService->createReport($request->except(['_token']));
 
-        if ($response->status == 'OK') {
-            return redirect('report-view')->with(['message' => $response->msg]);
-        } else {
-            return redirect('report-add')
-                ->withInput()
-                ->with(['message' => $response->msg]);
-        }
+        return redirect('report-view')->with(['message' => 'Report has been created.']);
+
+//        if ($response->status == 'OK') {
+//            return redirect('report-view')->with(['message' => $response->msg]);
+//        } else {
+//            return redirect('report-add')
+//                ->withInput()
+//                ->with(['message' => $response->msg]);
+//        }
     }
 
     public function view()
