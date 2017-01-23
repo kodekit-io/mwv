@@ -170,5 +170,8 @@ div.dataTables_wrapper .uk-grid+.uk-grid {
 }
 div.dataTables_wrapper select {
     position: relative !important;
-    background: url(../img/angle-down.png) no-repeat 90% center; 
+    background: url(../img/angle-down.png) no-repeat 90% center;
+}
+div.dataTables_wrapper .uk-grid {
+    display: block !important;
 }
