@@ -32,11 +32,11 @@ class ReportService
         $params['reportDate'] = $reportDate;
         $params['name'] = $inputs['report_name'];
         $params['description'] = $inputs['report_desc'];
-        $params['pid'] = $inputs['project'];
+        $params['pid'] = isset($inputs['project']) ? $inputs['project'] : '';
         $params['brandID'] = $keywords;
         $params['StartDate'] = $startDate;
         $params['EndDate'] = $endDate;
-        $params['account'] = $inputs['account'];
+        $params['account'] = isset($inputs['account']) ? $inputs['account'] : '';
 
         $charts =  array_except($inputs,
             ['report_name', 'report_type', 'report_desc', 'start_date', 'end_date', 'project',
@@ -54,16 +54,15 @@ class ReportService
             $params['chartList'] = $chartString;
         }
 
-        // $reportResponse = $this->apiService->post('report/create', $params);
-        Log::warning('URL =====> report/create');
+        Log::warning('URL =====> project/newreport');
         Log::warning('params ====> ' . \GuzzleHttp\json_encode($params));
 
-        $ret = new \stdClass();
-        $ret->status = 'OK';
-        $ret->msg = 'Report has been created.';
+        $ret = $this->apiService->post('project/newreport', $params);
+//        $ret = new \stdClass();
+//        $ret->status = 'OK';
+//        $ret->msg = 'Report has been created.';
 
         return $ret;
-
     }
 
     public function createReportOld(array $inputs)
