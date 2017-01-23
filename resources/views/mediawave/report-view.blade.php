@@ -41,12 +41,14 @@
                             <td>{!! $report->startDate !!}</td>
                             <td>{!! $report->endDate !!}</td>
                             <td>
-                                <a class="chip hoverable green white-text" data-uk-tooltip title="Export as Excel" onclick="window.location='{!! $report->excel !!}'">
+                                <a class="chip hoverable green white-text" data-uk-tooltip title="Save Report" onclick="window.location='{!! $report->excel !!}'">
                                     <i class="uk-icon uk-icon-file-excel-o"></i> <span class="uk-hidden-small">EXCEL</span>
                                 </a>
+                                {{--
                                 <a class="chip hoverable red white-text" data-uk-tooltip title="Export as PDF" onclick="generatePDF('10049','testing','1715362982016','2016-08-30','2016-08-30','1,2,3','1,2,3,4,5,6','1','','1,0,-1');">
                                     <i class="uk-icon uk-icon-file-pdf-o"></i> <span class="uk-hidden-small">PDF</span>
                                 </a>
+                                --}}
                                 <a class="chip hoverable black white-text" href="{!! url('delete-report/' . $report->id) !!}" title="Delete Forever" onclick="deleteReport(10049)">
                                     <i class="uk-icon uk-icon-trash-o"></i> <span class="uk-hidden-small">DELETE</span>
                                 </a>
