@@ -1,12 +1,9 @@
 function brandChart($id, $data) {
-
     if ($data.length === 0) {
-        $('#' + $id).html("<div class='center'>No data chart</div>");
+        $('#' + $id).html("");
         //$('#' + 'btnview-{!! $project->pid !!}').block();
     } else {
-
         var $content = [];
-
         var $netsen = 0,
             $sim = 0,
             $buzz = 0,
@@ -17,8 +14,6 @@ function brandChart($id, $data) {
             $BrandFavourableTalkability = 0,
             $EarnedMediaShare = 0,
             $NetBrandReputation = 0;
-
-
         for (var i = 0; i < $data.length; i++) {
             $netsen = $data[i].netsen;
             $sim = $data[i].sim;
@@ -30,7 +25,6 @@ function brandChart($id, $data) {
             $BrandFavourableTalkability = $data[i].brandFavourableTalkability;
             $EarnedMediaShare = $data[i].earnedMediaShare;
             $NetBrandReputation = $data[i].netBrandReputation;
-
             $content[i] = {
                 data: [
                     {
@@ -57,30 +51,18 @@ function showEquityChart($id, $data) {
     var w = $('.uk-grid div').width();
     //console.log(w);
     $('#' + $id).highcharts({
-
         chart: {
             type: 'bubble',
             plotBorderWidth: 1,
             height: 200,
             width: w - 50
         },
-
         legend: {
             enabled: false
         },
-
-        //title: {
-        //    text: 'Sugar and fat intake per country'
-        //},
-
-        //subtitle: {
-        //    text: 'Source: <a href="http://www.euromonitor.com/">Euromonitor</a> and <a href="https://data.oecd.org/">OECD</a>'
-        //},
-
         title: {
             text: 'Brand Equity'
         },
-
         xAxis: {
             title: {
                 text: ''
@@ -90,7 +72,6 @@ function showEquityChart($id, $data) {
                 format: '{value}'
             },
         },
-
         yAxis: {
             startOnTick: false,
             endOnTick: false,
@@ -104,7 +85,6 @@ function showEquityChart($id, $data) {
 			tickInterval: 0.1,
 			lineWidth: 1,
         },
-
         tooltip: {
             useHTML: true,
             /*
@@ -121,7 +101,6 @@ function showEquityChart($id, $data) {
             */
             followPointer: true
         },
-
         plotOptions: {
             series: {
                 dataLabels: {
@@ -138,8 +117,6 @@ function showEquityChart($id, $data) {
                 maxSize:'40%'
             }
         },
-
         series: $data
-
     });
 };
