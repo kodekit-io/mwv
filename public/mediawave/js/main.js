@@ -159,13 +159,20 @@
 //Screenshot
 function capture() {
     $('main').html2canvas({
-        letterRendering: true,
-        background: '#E6E6E6',
+        //letterRendering: true,
+        allowTaint: true,
+        background: '#eeeeee',
         onrendered: function (canvas) {
-            var a = document.createElement('a');
-            a.href = canvas.toDataURL("image/jpeg").replace("image/jpeg", "image/octet-stream");
-            a.download = 'mediawave-platform.jpg';
-            a.click();
+            var url = canvas.toDataURL();
+            //var url = Canvas2Image.saveAsPNG(canvas);
+            $("<a>", {
+                href: url,
+                download: "mediawave.png"
+            })
+            .on("click", function() {
+                $(this).remove();
+            })
+            .appendTo("body")[0].click();
         }
     });
 }
