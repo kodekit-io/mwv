@@ -314,7 +314,8 @@ class ProjectController extends Controller
 
     public function edit($projectId)
     {
-        $projectInfo = $this->projectService->projectInfo($projectId);
+        //$projectInfo = $this->projectService->projectInfo($projectId);
+        $projectInfo = $this->projectService->projectInfoEdit($projectId);
         $data['project'] = $projectInfo->project;
         $data['keywords'] = $projectInfo->projectInfo->keywordList;
         $data['topics'] = $projectInfo->projectInfo->topicList;
