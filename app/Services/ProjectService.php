@@ -72,7 +72,8 @@ class ProjectService
             $params = [
                 'pid'   => $projectId
             ];
-            $projectInfoApi = $this->apiService->post('project/get', $params);
+            //$projectInfoApi = $this->apiService->post('project/get', $params);
+            $projectInfoApi = $this->apiService->post('project/getEdit', $params);
 
             return $projectInfoApi;
         }
