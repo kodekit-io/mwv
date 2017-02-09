@@ -72,7 +72,21 @@ class ProjectService
             $params = [
                 'pid'   => $projectId
             ];
-            //$projectInfoApi = $this->apiService->post('project/get', $params);
+            $projectInfoApi = $this->apiService->post('project/get', $params);
+
+            return $projectInfoApi;
+        }
+
+        $fakeProjects = \GuzzleHttp\json_decode($this->fakeResult->projectInfo());
+        return $fakeProjects;
+    }
+
+    public function projectInfoEdit($projectId)
+    {
+        if ($this->apiMode == 'PRODUCTION') {
+            $params = [
+                'pid'   => $projectId
+            ];
             $projectInfoApi = $this->apiService->post('project/getEdit', $params);
 
             return $projectInfoApi;
@@ -81,6 +95,7 @@ class ProjectService
         $fakeProjects = \GuzzleHttp\json_decode($this->fakeResult->projectInfo());
         return $fakeProjects;
     }
+
 
     public function addProject(array $inputs)
     {
