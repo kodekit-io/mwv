@@ -22,7 +22,7 @@ $(document).ready( function () {
                     var offset = now.getTimezoneOffset() / 60;
                     var newdate = new Date(date);
                     var timezoneDif = offset * 60 + newdate.getTimezoneOffset();
-                    var localtime = new Date(newdate.getTime() + timezoneDif * 60 * 1000);
+                    var localtime = newdate; //new Date(newdate.getTime() + timezoneDif * 60 * 1000);
 
                     return localtime;
                 }

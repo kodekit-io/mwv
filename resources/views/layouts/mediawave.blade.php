@@ -47,7 +47,6 @@
 <script src="{!! asset('mediawave/js/materialize.min.js') !!}"></script>
 <script src="{!! asset('mediawave/js/jquery.validate.min.js') !!}"></script>
 <script src="{!! asset('mediawave/js/html2canvas.js') !!}"></script>
-<script src="{!! asset('mediawave/js/html2canvas.svg.js') !!}"></script>
 <script src="{!! asset('mediawave/js/jquery.plugin.html2canvas.js') !!}"></script>
 
 @section('page-level-plugins')
