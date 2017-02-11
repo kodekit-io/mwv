@@ -18,8 +18,8 @@ trait SocmedRequestParser
         if ($request->has('filter')) {
             $startDate = $request->input('start_date');
             $endDate = $request->input('end_date');
-            $startDate = ( $startDate != '' ) ? Carbon::createFromFormat('d/m/y', $startDate)->format('Y-m-d\TH:i:s\Z') : null;
-            $endDate = ( $endDate != '' ) ? Carbon::createFromFormat('d/m/y', $endDate)->format('Y-m-d\TH:i:s\Z') : null;
+            $startDate = ( $startDate != '' ) ? Carbon::createFromFormat('d/m/y', $startDate)->setTime(00, 00, 01)->format('Y-m-d\TH:i:s\Z') : null;
+            $endDate = ( $endDate != '' ) ? Carbon::createFromFormat('d/m/y', $endDate)->setTime(23, 59, 59)->format('Y-m-d\TH:i:s\Z') : null;
             $brands = ( $request->has('keywords') ? implode(',', $request->input('keywords')) : '' );
             $sentiments = ( $request->has('sentiments') ? implode(',', $request->input('sentiments')) : '' );
             $shownSearch = $request->has('search') ? $request->input('search') : '';
