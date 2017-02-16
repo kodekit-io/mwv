@@ -43,19 +43,17 @@
             <div class="md-card">
                 <ul class="tabs uk-margin-top step4">
                     <li class="tab"><a class="active" href="#mode1">STEP BY STEP</a></li>
-                    <li class="tab"><a href="#mode2">ADVANCED</a></li>
                     {{--Temporary hide
-
+                    <li class="tab"><a href="#mode2">ADVANCED</a></li>
                     --}}
                 </ul>
                 <div class="md-card-content">
                     <div id="mode1">
-                        <ul class="uk-grid uk-grid-collapse uk-grid-width-1-3 uk-text-center md-steps uk-margin-top uk-margin-bottom" data-uk-switcher="{connect:'#keywordsteps'}">
+                        <ul class="uk-grid uk-grid-collapse uk-grid-width-1-2 uk-text-center md-steps uk-margin-top uk-margin-bottom" data-uk-switcher="{connect:'#keywordsteps'}">
                             <li class="uk-active"><a href="#" class="switchkeyword"><span class="uk-border-circle">1</span>Keyword</a></li>
                             <li class=""><a href="#" class="switchtopic"><span class="uk-border-circle">2</span>Topic</a></li>
-                            <li class=""><a href="#" class="switchexcld"><span class="uk-border-circle">3</span>Noise Filter</a></li>
                             {{--Temporary hide
-
+                            <li class=""><a href="#" class="switchexcld"><span class="uk-border-circle">3</span>Topic Not Include</a></li>
                             --}}
                         </ul>
 
@@ -105,18 +103,17 @@
                                  <hr>
                                  <a class="btn grey z-depth-0 prevstep backtopic" data-uk-tooltip title="Prev Step: Keywords"><i class="material-icons left">keyboard_arrow_left</i> BACK</a>
 
-                                 {{-- Temporary Save
+                                 {{-- Temporary Save --}}
                                  <ul class="uk-subnav right">
                                      <li><a href="#previewquery" class="modal-trigger btn cyan z-depth-0 step16" data-uk-tooltip title="Preview All Query" onclick="previewQuery()">PREVIEW</a></li>
                                      <li><button type="submit" class="btn amber darken-4 z-depth-0 step17" data-uk-tooltip title="Save Query">SAVE NOW</button></li>
-                                 </ul>--}}
-                                 <a class="btn cyan right z-depth-0 nextstep step12" data-uk-tooltip title="Next Step: Create Excluded Topics">NEXT STEP <i class="material-icons right">keyboard_arrow_right</i></a>
+                                 </ul>
                                  {{-- Temporary hide
-
+                                 <a class="btn cyan right z-depth-0 nextstep step12" data-uk-tooltip title="Next Step: Create Excluded Topics">NEXT STEP <i class="material-icons right">keyboard_arrow_right</i></a>
                                  --}}
                             </li>
                             <li>
-                                 <h5>CREATE NOISE FILTER</h5>
+                                 <h5>CREATE EXCLUDED TOPICS</h5>
                                  <div class="wrap_exclds">
                                      <div id="topic-1" class="excld uk-panel uk-panel-box uk-margin-bottom">
                                           <ul class="uk-grid uk-grid-small uk-grid-width-medium-1-4 excld-op-1 step13">
@@ -133,7 +130,7 @@
                                          </ul>
                                      </div>
                                  </div>
-                                 <a href="javascript:void(0);" class="uk-button btn blue z-depth-0 add_excld step15" title="Add Exclude">ADD MORE NOISE FILTER</a>
+                                 <a href="javascript:void(0);" class="uk-button btn blue z-depth-0 add_excld step15" title="Add Exclude">ADD MORE EXCLUDE</a>
 
                                  <hr>
                                  <a class="btn grey z-depth-0 prevstep backexcld" data-uk-tooltip title="Prev Step: Topics"><i class="material-icons left">keyboard_arrow_left</i> BACK</a>
@@ -145,7 +142,7 @@
                             </li>
                         </ul>
                     </div>
-                    <div id="mode2">
+                    <div id="mode2" style="visibility:hidden;height:0 !important;">
                         <ul id="keywordadv" class="uk-list uk-list-line uk-margin-bottom-remove">
                             <li>
                                 <h5>CREATE KEYWORDS</h5>
@@ -166,13 +163,13 @@
                                   <a href="javascript:void(0);" class="uk-button btn blue z-depth-0 add_advtopic uk-margin-bottom" title="Add Topic">ADD MORE TOPIC</a>
                             </li>
                             <li>
-                                  <h5>CREATE NOISE FILTER</h5>
+                                  <h5>CREATE EXCLUDED TOPICS</h5>
                                   <div class="wrap_advexclds">
                                        <div class="advexcld">
                                             <textarea id="excld-1" name="adv_field_excld[1]" class="materialize-textarea uk-margin-small-bottom"></textarea>
                                        </div>
                                   </div>
-                                  <a href="javascript:void(0);" class="uk-button btn blue z-depth-0 add_advexcld uk-margin-bottom" title="Add Exclude">ADD MORE NOISE FILTER</a>
+                                  <a href="javascript:void(0);" class="uk-button btn blue z-depth-0 add_advexcld uk-margin-bottom" title="Add Exclude">ADD MORE EXCLUDE</a>
 
                                   <hr>
                                   <ul class="uk-subnav right">

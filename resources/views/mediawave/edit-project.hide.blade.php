@@ -86,8 +86,8 @@
                                 </div>
                                 <a href="javascript:void(0);" class="uk-button btn blue z-depth-0 add_advtopic uk-margin-bottom step7" title="Add Topic">ADD MORE TOPIC</a>
                             </li>
-                            <li>
-                                <h5>EDIT NOISE FILTER</h5>
+                            <li style="visibility:hidden;height:0!important;">
+                                <h5>EDIT EXCLUDED TOPICS</h5>
                                 <div class="wrap_advexclds step8">
                                     @if (count($excludes) > 0)
                                         <?php $x = 1; ?>
@@ -104,7 +104,7 @@
                                         </div>
                                     @endif
                                 </div>
-                                <a href="javascript:void(0);" class="uk-button btn blue z-depth-0 add_advexcld step10" title="Add Exclude">ADD MORE NOISE FILTER</a>
+                                <a href="javascript:void(0);" class="uk-button btn blue z-depth-0 add_advexcld step10" title="Add Exclude">ADD MORE EXCLUDE</a>
                             </li>
 
                         </ul>
