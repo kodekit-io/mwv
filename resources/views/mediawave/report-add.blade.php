@@ -37,12 +37,12 @@
                         <div class="md-card-content">
                             From
                             <div class="input-field md-daterange">
-                                <input id="startdate" name="start_date" type="text" class="uk-datepicker" data-uk-datepicker="{pos:'bottom',format:'DD/MM/YY'}" placeholder="10/12/16">
+                                <input id="startdate" name="start_date" type="text" class="uk-datepicker validate" data-uk-datepicker="{pos:'bottom',format:'DD/MM/YY'}" required>
                                 <label for="startdate"><i class="material-icons prefix">date_range</i></label>
                             </div>
                             to
                             <div class="input-field md-daterange">
-                                <input id="enddate" name="end_date" type="text" class="uk-datepicker" data-uk-datepicker="{pos:'bottom',format:'DD/MM/YY'}" placeholder="17/12/16">
+                                <input id="enddate" name="end_date" type="text" class="uk-datepicker validate" data-uk-datepicker="{pos:'bottom',format:'DD/MM/YY'}" required>
                                 <label for="enddate"><i class="material-icons prefix">date_range</i></label>
                             </div>
                         </div>
@@ -129,6 +129,12 @@
     <script src="{!! asset('js/report.js') !!}"></script>
     <script>
     $(document).ready(function() {
+        $("form").validate({
+            errorElement: "span",
+			errorPlacement: function(error, element) {
+			    error.insertAfter(element);
+			}
+        });
         $('input#p').change(function() {
             $('.disiniproject').removeClass('uk-hidden');
             $('.disinisocmed').addClass('uk-hidden');

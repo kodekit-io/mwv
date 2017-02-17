@@ -375,6 +375,16 @@ input[type="radio"].with-gap:checked+label:after{
 input[type="radio"].with-gap:checked+label:before{
 	border-color: #880e4f !important;
 }
+.input-field label {
+	top: inherit;
+}
+span.error {
+	font-size: .75em !important;
+	color: #d00 !important;
+	position: absolute;
+	left: 0;
+	bottom: 0;
+}
 footer.page-footer {
 	padding-top: 0;
 	text-align: center;
