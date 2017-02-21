@@ -49,12 +49,12 @@ class ReportService
         $params['brandID'] = $keywords;
         $params['StartDate'] = $startDate;
         $params['EndDate'] = $endDate;
+        $params['sentiment'] = '1,0,-1';
         $params['account'] = isset($inputs['account']) ? $inputs['account'] : '';
 
         $charts =  array_except($inputs,
             ['report_name', 'report_type', 'report_desc', 'start_date', 'end_date', 'project',
-                'keyword', 'account', 'allprojectFacebook', 'allprojectTwitter', 'allprojectBlog', 'allprojectNews',
-                'allprojectVideo', 'allprojectForum', 'allprojectInstagram', 'allprojectAll Media', 'allprojectYoutube']
+                'keyword', 'sentiment', 'account', 'allprojectFacebook', 'allprojectTwitter', 'allprojectBlog', 'allprojectNews', 'allprojectVideo', 'allprojectForum', 'allprojectInstagram', 'allprojectAll Media', 'allprojectYoutube']
         );
 
         $chartString = '';
