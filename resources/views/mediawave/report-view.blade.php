@@ -38,8 +38,8 @@
                             <td>{!! $loop->iteration !!}</td>
                             <td>{!! $report->name !!}</td>
                             <td>{!! $report->summary !!}</td>
-                            <td>{!! $report->startDate !!}</td>
-                            <td>{!! $report->endDate !!}</td>
+                            <td>{!! Carbon\Carbon::parse($report->startDate)->format('d/m/Y H:i') !!}</td>
+                            <td>{!! Carbon\Carbon::parse($report->endDate)->format('d/m/Y H:i') !!}</td>
                             <td>
                                 <a class="chip hoverable green white-text" data-uk-tooltip title="Save Report" onclick="window.location='{!! $report->excel !!}'">
                                     <i class="uk-icon uk-icon-file-excel-o"></i> <span class="uk-hidden-small">EXCEL</span>
@@ -49,7 +49,7 @@
                                     <i class="uk-icon uk-icon-file-pdf-o"></i> <span class="uk-hidden-small">PDF</span>
                                 </a>
                                 --}}
-                                <a class="chip hoverable black white-text" href="{!! url('delete-report/' . $report->id) !!}" title="Delete Forever" onclick="deleteReport(10049)">
+                                <a class="chip hoverable black white-text" href="{!! url('delete-report/' . $report->id) !!}" title="Delete Forever">
                                     <i class="uk-icon uk-icon-trash-o"></i> <span class="uk-hidden-small">DELETE</span>
                                 </a>
                             </td>

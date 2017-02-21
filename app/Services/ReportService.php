@@ -21,6 +21,13 @@ class ReportService
     public function createReport(array $inputs)
     {
         $startDate = $inputs['start_date'];
+        $startDate = Carbon::createFromFormat('d/m/y', $startDate)->setTime(00, 00, 01)->format('Y-m-d\TH:i:s\Z');
+        $endDate = $inputs['end_date'];
+        $endDate = Carbon::createFromFormat('d/m/y', $endDate)->setTime(23, 59, 59)->format('Y-m-d\TH:i:s\Z');
+        Log::warning("Start Date => " . \GuzzleHttp\json_encode($startDate));
+        Log::warning("End Date => " . \GuzzleHttp\json_encode($endDate));
+/*
+        $startDate = $inputs['start_date'];
         $startDate = Carbon::createFromFormat('d/m/y', $startDate)->format('Y-m-d\TH:i:s\Z');
         $endDate = $inputs['end_date'];
         $endDate = Carbon::createFromFormat('d/m/y', $endDate)->format('Y-m-d\TH:i:s\Z');
@@ -29,7 +36,7 @@ class ReportService
         Log::warning("Start Date => " . \GuzzleHttp\json_encode($startDate));
         $endDate = ( $endDate != '' ) ? Carbon::createFromFormat('d/m/y', $endDate)->setTime(23, 59, 59)->format('Y-m-d\TH:i:s\Z') : null;
         Log::warning("End Date => " . \GuzzleHttp\json_encode($endDate));
-
+*/
         $reportDate = Carbon::now()->format('Y-m-d\TH:i:s\Z');
         $reportType = $inputs['report_type'];
         $keywords = $inputs['keyword'] == '' ? '0' : $inputs['keyword'];
