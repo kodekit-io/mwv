@@ -15,7 +15,8 @@
 </li>
 
 <li class="uk-width-medium-1-2">
-    <?php //COMMENT INTERACTIONS BAR ?>
+    <?php //COMMENT INTERACTIONS BAR
+    /*
     <div class="md-card hoverable">
         <div class="md-card-toolbar">
             <div class="md-card-toolbar-actions">
@@ -26,6 +27,20 @@
         </div>
         <div id="barwrap2" class="md-card-content">
             <div id="commentbar" class="md-chart"></div>
+        </div>
+    </div>
+    */ ?>
+    <?php //INTERACTIONS RATE ?>
+    <div class="md-card hoverable">
+        <div class="md-card-toolbar">
+            <div class="md-card-toolbar-actions">
+                <a class="btn waves-effect waves-light z-depth-0 amber lighten-4" data-uk-tooltip title="{{ config('tooltips.interactions-bar') }}"><i class="material-icons">help</i></a>
+                <a class="btn waves-effect waves-light z-depth-0 green lighten-4" data-uk-tooltip title="Minimize" data-uk-toggle="{target:'#barwrap2'}"><i class="material-icons md-icon">fullscreen</i></a>
+            </div>
+            <h2 class="md-card-toolbar-heading-text">INTERACTION RATE</h2>
+        </div>
+        <div id="barwrap2" class="md-card-content">
+            <div id="interactionbar" class="md-chart"></div>
         </div>
     </div>
 </li>

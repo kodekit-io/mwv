@@ -66,7 +66,8 @@
     <script src="{!! asset('js/projects/like-pie.js') !!}"></script>
     <script src="{!! asset('js/projects/share-pie.js') !!}"></script>
     <script src="{!! asset('js/projects/sentiment-bar.js') !!}"></script>
-    <script src="{!! asset('js/projects/comment-bar.js') !!}"></script>
+    {{--<script src="{!! asset('js/projects/comment-bar.js') !!}"></script>--}}
+    <script src="{!! asset('js/projects/interaction-bar.js') !!}"></script>
     <script src="{!! asset('js/projects/word-cloud.js') !!}"></script>
     <script src="{!! asset('js/projects/influencer.js') !!}"></script>
     <script src="{!! asset('js/projects/convo-facebook.js') !!}"></script>

@@ -276,7 +276,7 @@ class ProjectService
     {
         $profiles = $this->profileService->getProfile();
         $socmedAccounts = $profiles['socmed'];
-        $select = '<select name="' . $name . '" id="' . $id . '" class="browser-default">';
+        $select = '<select name="' . $name . '" id="' . $id . '" class="browser-default"><option value="" >-</option>';
         if (count($socmedAccounts) > 0) {
             foreach ($socmedAccounts as $socmedAccount) {
                 $twitters = isset($socmedAccount->twitter) ? $socmedAccount->twitter : [];
@@ -284,16 +284,16 @@ class ProjectService
                 $facebooks = isset($socmedAccount->facebook) ? $socmedAccount->facebook : [];
                 $youtubes = isset($socmedAccount->youtube) ? $socmedAccount->youtube : [];
                 foreach ($twitters as $twitter) {
-                    $select .= '<option value="' . $twitter->id . '" >' . $twitter->name . '</option>';
+                    $select .= '<option value="twitter_' . $twitter->name . '" >' . $twitter->name . ' (Twitter)</option>';
                 }
                 foreach ($instagrams as $instagram) {
-                    $select .= '<option value="' . $instagram->id . '" >' . $instagram->name . '</option>';
+                    $select .= '<option value="instagram_' . $instagram->name . '" >' . $instagram->name . ' (Instagram)</option>';
                 }
                 foreach ($facebooks as $facebook) {
-                    $select .= '<option value="' . $facebook->id . '" >' . $facebook->name . '</option>';
+                    $select .= '<option value="facebook_' . $facebook->name . '" >' . $facebook->name . ' (Facebook)</option>';
                 }
                 foreach ($youtubes as $youtube) {
-                    $select .= '<option value="' . $youtube->id . '" >' . $youtube->name . '</option>';
+                    $select .= '<option value="youtube_' . $youtube->name . '" >' . $youtube->name . ' (Youtube)</option>';
                 }
             }
         }
