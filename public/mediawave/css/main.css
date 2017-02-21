@@ -375,9 +375,7 @@ input[type="radio"].with-gap:checked+label:after{
 input[type="radio"].with-gap:checked+label:before{
 	border-color: #880e4f !important;
 }
-.input-field label {
-	/*top: inherit;*/
-}
+.input-field label {}
 span.error {
 	font-size: .75em !important;
 	color: #d00 !important;
