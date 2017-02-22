@@ -108,13 +108,10 @@ function showEquityChart($id, $data) {
             useHTML: true,
             headerFormat: '<ul class="uk-list uk-margin-remove" style="width:200px;">',
             pointFormat: '<li><h6 class="white-text uk-margin-remove truncate">{point.name}</h6></li>' +
-            '<li>Net Sentiment: <div class="right">{point.x}</div></li>' +
-            '<li>Sims Score: <div class="right">{point.y}</div></li>' +
-            '<li>Unique User: <div class="right">{point.z}</div></li>' +
-            '<li>Buzz Size: <div class="right">{point.Buzz}</div></li>',
-            //'<li>Brand Favourable Talkability: <div class="right">{point.BrandFavourableTalkability}</div></li>' +
-            //'<li>Earned Media Share: <div class="right">{point.EarnedMediaShare}</div></li>' +
-            //'<li>Net Brand Reputation: <div class="right">{point.NetBrandReputation}</div></li>',
+            '<li><span class="left">Net Sentiment: </span><span class="right">{point.x}</span></li>' +
+            '<li><span class="left">Earned Media Share: </span><span class="right">{point.y}</span></li>' +
+            '<li><span class="left">Unique User: </span><span class="right">{point.z}</span></li>' +
+            '<li><span class="left">Buzz Size: </span><span class="right">{point.Buzz}</span></li>',
             footerFormat: '</ul>',
             followPointer: true
         },

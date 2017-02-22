@@ -51,21 +51,21 @@ $(document).ready( function () {
                 "title": "Original Reach",
                 "render": $.fn.dataTable.render.number( '\.', '', 0, '' )
             },
-            {
+            /*{
                 "data": "Viral Reach",
                 "title": "Viral Reach",
                 "render": $.fn.dataTable.render.number( '\.', '', 0, '' )
-            },
+            },*/
             {
                 "data": "Interactions",
                 "title": "Interactions",
                 "render": $.fn.dataTable.render.number( '\.', '', 0, '' )
             },
-            {
+            /*{
                 "data": "Viral Score",
                 "title": "Viral Score",
                 "render": $.fn.dataTable.render.number( '\.', '', 0, '' )
-            },
+            },*/
             {
                 "data": "sentiment",
                 "title": "",
@@ -99,7 +99,7 @@ $(document).ready( function () {
         "initComplete": function () {
             this.api().columns().every( function () {
                 var column = this;
-                if(column[0][0] == 8) {
+                if(column[0][0] == 6) {
                     var select = $('<select class="browser-default uk-width-1-1 select-sentiment"><option value="">All Sentiment</option></select>')
                         .appendTo( $(column.header()).empty() )
                         .on( 'change', function () {

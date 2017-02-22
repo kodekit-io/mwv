@@ -53,8 +53,7 @@ class ReportService
         $params['account'] = isset($inputs['account']) ? $inputs['account'] : '';
 
         $charts =  array_except($inputs,
-            ['report_name', 'report_type', 'report_desc', 'start_date', 'end_date', 'project',
-                'keyword', 'sentiment', 'account', 'allprojectFacebook', 'allprojectTwitter', 'allprojectBlog', 'allprojectNews', 'allprojectVideo', 'allprojectForum', 'allprojectInstagram', 'allprojectAll Media', 'allprojectYoutube']
+            [ 'report_name', 'report_type', 'report_desc', 'start_date', 'end_date', 'project', 'keyword', 'sentiment', 'account', 'allprojectFacebook', 'allprojectTwitter', 'allprojectBlog', 'allprojectNews', 'allprojectVideo', 'allprojectForum', 'allprojectInstagram', 'allprojectAll Media', 'allprojectYoutube' ]
         );
 
         $chartString = '';

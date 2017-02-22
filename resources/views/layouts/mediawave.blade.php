@@ -59,7 +59,11 @@
         <i class="material-icons">camera_enhance</i>
     </a>
 </div>
-
+<div class="fixed-action-btn" style="bottom: 50px; right: 5px;">
+    <a href="{!! url('/glossary') !!}" class="btn-floating tooltipped" data-position="left" data-delay="25" data-tooltip="Glossary">
+        <i class="material-icons">help</i>
+    </a>
+</div>
 @section('page-level-scripts')
 @show
 </body>

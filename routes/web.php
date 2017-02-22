@@ -25,6 +25,8 @@ Route::get('/logout', 'ApiAuthController@logout');
 
 Route::group(['middleware' => ['auth', 'projects']], function () {
     Route::get('/dashboard', 'DashboardController@index');
+    Route::get('/glossary', 'DashboardController@glossary');
+
     Route::get('/project-management', 'ProjectController@index');
     Route::get('/create-project', 'ProjectController@add');
     Route::get('/create-project-ig', 'ProjectController@addig');
@@ -53,7 +55,6 @@ Route::group(['middleware' => ['auth', 'projects']], function () {
     Route::get('/project/chart-data/view-trend/{type?}', 'ChartController@viewTrendData');
     Route::get('/project/chart-data/potential-reach-trend/{type?}', 'ChartController@potentialReachTrendData');
 
-    //START 2016-12-25
     Route::get('/project/chart-data/fans-trend/{type?}', 'ChartController@fansTrendData');
     Route::get('/project/chart-data/like-trend/{type?}', 'ChartController@likeTrendData');
     Route::get('/project/chart-data/dislike-trend/{type?}', 'ChartController@dislikeTrendData');
@@ -61,7 +62,6 @@ Route::group(['middleware' => ['auth', 'projects']], function () {
     Route::get('/project/chart-data/love-trend/{type?}', 'ChartController@loveTrendData');
     Route::get('/project/chart-data/love-pie/{type?}', 'ChartController@loveData');
     Route::get('/project/chart-data/view-pie/{type?}', 'ChartController@viewData');
-    //END 2016-12-25
 
     Route::get('/project/chart-data/unique-user-pie', 'ChartController@uniqueUserPieData');
     Route::get('/project/chart-data/viral-pie/{type?}', 'ChartController@viralPieData');

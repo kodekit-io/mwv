@@ -30,5 +30,10 @@ class DashboardController extends Controller
         return view('mediawave.home', $data);
     }
 
+    public function glossary()
+    {
+        $data['pageTitle'] = 'Glossary';
+        return view('mediawave.glossary', $data);
+    }
 
 }
