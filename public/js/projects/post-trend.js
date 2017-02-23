@@ -56,11 +56,11 @@ function createPostTrend(chartData, id) {
         xAxis: {
             categories: chartData.categories,
             labels: {
-                formatter: function() {
+                /*formatter: function() {
                     //return(this.value.substring(0,10) + "...");
                     return( jQuery.trim(this.value.split('-')[2]) + "/" + jQuery.trim(this.value.split('-')[1]) );
                 },
-                rotation: 0,
+                rotation: 0,*/
                 style: {
                     fontSize: '.75em'
                 }
