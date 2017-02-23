@@ -1766,12 +1766,12 @@ select {
 #table_twitter tr > *:nth-child(1) { width:2.5%; }
 #table_twitter tr > *:nth-child(2) { width:10%; }
 #table_twitter tr > *:nth-child(3) { width:10%; }
-#table_twitter tr > *:nth-child(4) { width:40%; }
+#table_twitter tr > *:nth-child(4) { width:52.5%; }
 #table_twitter tr > *:nth-child(5) { width:10%; text-align: right; padding-right: 1em; }
-/* #table_twitter tr > *:nth-child(6) { width:10%; text-align: right; padding-right: 1em; } */
+/* #table_twitter tr > *:nth-child(6) { width:10%; text-align: right; padding-right: 1em; }
 #table_twitter tr > *:nth-child(6) { width:10%; text-align: right; padding-right: 1em; }
-/* #table_twitter tr > *:nth-child(8) { width:10%; text-align: right; padding-right: 1em; } */
-#table_twitter tr > *:nth-child(7) { width:17.5%; padding-right: 0; text-align: center; }
+#table_twitter tr > *:nth-child(8) { width:10%; text-align: right; padding-right: 1em; } */
+#table_twitter tr > *:nth-child(6) { width:15%; padding-right: 0; text-align: center; }
 
 #table_facebook tr > *:nth-child(1) { width:2.5%; }
 #table_facebook tr > *:nth-child(2) { width:10%; }

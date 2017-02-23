@@ -54,13 +54,13 @@ $(document).ready( function () {
                 "data": "Viral Reach",
                 "title": "Viral Reach",
                 "render": $.fn.dataTable.render.number( '\.', '', 0, '' )
-            },*/
+            },
             {
                 "data": "Interactions",
                 "title": "Interactions",
                 "render": $.fn.dataTable.render.number( '\.', '', 0, '' )
             },
-            /*{
+            {
                 "data": "Viral Score",
                 "title": "Viral Score",
                 "render": $.fn.dataTable.render.number( '\.', '', 0, '' )
