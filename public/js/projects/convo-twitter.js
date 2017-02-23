@@ -94,7 +94,7 @@ $(document).ready( function () {
         "initComplete": function () {
             this.api().columns().every( function () {
                 var column = this;
-                if(column[0][0] == 6) {
+                if(column[0][0] == 5) {
                     var select = $('<select class="browser-default uk-width-1-1 select-sentiment"><option value="">All Sentiment</option></select>')
                         .appendTo( $(column.header()).empty() )
                         .on( 'change', function () {
