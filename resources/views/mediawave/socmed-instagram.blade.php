@@ -6,6 +6,8 @@
 
 @section('content')
 @include('layouts.socmed-subnav')
+
+@if (count($keywords) > 0)
     <main class="uk-width-1-1">
         <div class="md-container">
             @include('layouts.socmed-filter')
@@ -24,6 +26,26 @@
             </ul>
         </div>
     </main>
+@else
+    <main class="valign-wrapper">
+        <div class="uk-width-medium-1-3 uk-width-4-5 uk-container-center valign uk-text-center">
+            <div class="md-card hoverable">
+                <div class="md-card-content">
+                    <h3>Please Contact Our Sales Representative</h3>
+                    <h5 class="uk-margin-bottom-remove">Mediawave</h5>
+                    <p class="uk-margin-top-remove">Parahyangan Business Park<br>
+                    Blok D No. 5 The Suites Metro<br>
+                    Jl. Soekarno Hatta No. 389<br>
+                    Bandung 40286<br>
+                    Telp. +62 22 87793101<br>
+                    Fax. +62 22 87793102</p>
+                </div>
+            </div>
+
+        </div>
+    </main>
+@endif
+
 @endsection
 
 @section('page-level-plugins')
