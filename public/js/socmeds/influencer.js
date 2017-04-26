@@ -415,7 +415,7 @@ function top10Forum(id,result) {
 }
 
 function topCommentIG(id,result) {
-	$data = result.influencer['top Comment'].data;
+	$data = result.influencer.topComment.data;
 
 	if ($data.length === 0) {
 		$('#' + id).html("<div class='center'>No data chart</div>");
@@ -452,7 +452,7 @@ function topCommentIG(id,result) {
 	}
 }
 function topLoveIG(id,result) {
-	$data = result.influencer['top Love'].data;
+	$data = result.influencer.topLove.data;
 
 	if ($data.length === 0) {
 		$('#' + id).html("<div class='center'>No data chart</div>");
@@ -489,7 +489,7 @@ function topLoveIG(id,result) {
 	}
 }
 function topViewIG(id,result) {
-	$data = result.influencer['top View'].data;
+	$data = result.influencer.topView.data;
 
 	if ($data.length === 0) {
 		$('#' + id).html("<div class='center'>No data chart</div>");
